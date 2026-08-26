@@ -1,0 +1,2 @@
+﻿method,event_id,semantic_type,attempts,oracle_successes,oracle_accuracy,all_runs_correct,selection_stable,invalid_outputs,abstains
+DIRECT_FREE,E14,TEMPORAL_VERSION,1,1,1.0,True,True,0,0

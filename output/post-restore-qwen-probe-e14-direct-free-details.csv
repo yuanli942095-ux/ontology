@@ -1,0 +1,6 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,policy_loaded,applicable_rule,allowed_values,survivor_count,decision_path,description_variant,qwen_called,oracle_candidate_id,oracle_value,oracle_correct
+test,E14,TEMPORAL_VERSION,1,20260820,DIRECT_FREE,SELECTED,OPTION_A,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故取62周岁。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3818,json_schema,1048,133,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故取62周岁。""
+}",,,,,,,True,CAND_002,62,True

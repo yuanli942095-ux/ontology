@@ -68,7 +68,7 @@ The manifest records the current frozen file state for the 30-test split. It has
 
 Important limitation:
 
-The freeze commit was created after the development experiments in this report, so it cannot retroactively prove that earlier experiments were run after a freeze. It does provide a concrete fixed state for future headline reruns. For a paper artifact, rerun the headline Qwen experiments from this commit and, ideally, archive the benchmark with an external timestamp or DOI.
+The freeze commit was created after the development experiments in this report, so it cannot retroactively prove that earlier experiments were run after a freeze. It does provide a concrete fixed state for headline reruns. For a paper artifact, archive the benchmark with an external timestamp or DOI.
 
 Post-freeze deterministic validation:
 
@@ -79,9 +79,11 @@ Post-freeze deterministic validation:
 
 Post-freeze Qwen headline rerun status:
 
-The post-freeze main-table Qwen rerun was retried from HEAD `c69833693297555e0691b28f87b1e574845bdbed`. A minimal `/api/chat` JSON request succeeded but took 34.12 seconds, indicating degraded local inference service state. The full post-freeze main-table command was then started, but the first two official Qwen calls returned `REJECTED_ERROR` after waiting near the per-call timeout boundary, so the run was interrupted before any main-table output files were written. A one-call diagnostic probe on E14 with `--timeout 60` also returned `REJECTED_ERROR` with `reason=TimeoutError: timed out`.
+The post-freeze main-table Qwen rerun initially failed because the local Ollama/Qwen service was degraded. A minimal `/api/chat` JSON request took 34.12 seconds, and a one-call E14 diagnostic probe with `--timeout 60` returned `REJECTED_ERROR` with `reason=TimeoutError: timed out`. After unloading and reloading `qwen3.5:9b`, the same E14 benchmark prompt completed in 3.8 seconds.
 
-Therefore no post-freeze Qwen headline result is reported yet. The existing Qwen results remain development-run evidence until rerun from a healthy inference service at the frozen benchmark state.
+The full post-freeze main-table rerun then completed from HEAD `e0ab5e9ef8e3d5592a6e9010fb7ca9934f4f3697`. The result exactly reproduces the development headline table: `DIRECT_FREE` 77.33%, `OPTION_VALUE_ONLY` 81.33%, `OPTION_FORMAL_OPERATION` 76.00%, `OPTION_FORMAL_POLICY` 97.33%, and `OPTION_FORMAL_POLICY_HARD_GATE` 100.00%.
+
+The post-freeze OWL repair closure rerun also completed from the post-freeze main-table details and reproduced the repair-closure result.
 
 Evidence files:
 
@@ -95,6 +97,15 @@ Evidence files:
 - `output/post-freeze-repair-closure-hardgate-test-summary.csv`
 - `output/post-freeze-qwen-error-probe-e14-direct-free-details.csv`
 - `output/post-freeze-qwen-error-probe-e14-direct-free.json`
+- `output/post-restore-qwen-probe-e14-direct-free-details.csv`
+- `output/post-restore-qwen-probe-e14-direct-free.json`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-summary.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-event-level.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-details.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820.json`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820-summary.csv`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820-details.csv`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820.json`
 
 ## 4. Main 30-Test Reproduction
 
@@ -137,6 +148,10 @@ Interpretation:
 
 `OPTION_FORMAL_POLICY` is the fair LLM-assisted method in the policy-available prompt setting. `OPTION_FORMAL_POLICY_HARD_GATE` is a symbolic execution upper bound showing that, once policy has been correctly structured, candidate selection can be made deterministic.
 
+Post-freeze reproduction:
+
+The same command was rerun with prefix `post-freeze-final-main-table-test-r5-seed20260820` after the benchmark freeze. It reproduced the same call-level and event-level headline results.
+
 Evidence files:
 
 - `output/final-main-table-test-r5-seed20260820-summary.csv`
@@ -144,6 +159,11 @@ Evidence files:
 - `output/final-main-table-test-r5-seed20260820-by-event.csv`
 - `output/final-main-table-test-r5-seed20260820-details.csv`
 - `output/final-main-table-test-r5-seed20260820.json`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-summary.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-event-level.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-by-event.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-details.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820.json`
 
 ## 5. Description Contrast on 30-Test
 
@@ -456,6 +476,10 @@ Interpretation:
 
 The repair closure shows that the OWL execution layer is working for the generated candidates: every selected candidate OWL is reasoner-consistent and passes the selected-operation CQ. The remaining failures are semantic selection failures, not OWL patch execution failures. Therefore the current method can now be described as selecting among executable OWL repair candidates and validating the selected artifact with Reasoner and CQ regression. It still should not be described as fully automatic candidate generation from raw documents, because the candidate OWLs are generated from finite candidate operations already present in the benchmark.
 
+Post-freeze reproduction:
+
+The repair-closure command was rerun against `output/post-freeze-final-main-table-test-r5-seed20260820-details.csv` and reproduced the same full-closure headline result: `DIRECT_FREE` 77.33%, `OPTION_VALUE_ONLY` 81.33%, `OPTION_FORMAL_OPERATION` 76.00%, `OPTION_FORMAL_POLICY` 97.33%, and `OPTION_FORMAL_POLICY_HARD_GATE` 100.00%.
+
 Evidence files:
 
 - `src/run_semantic_v2_repair_closure.py`
@@ -463,6 +487,10 @@ Evidence files:
 - `output/semantic-v2-repair-closure-test-r5-seed20260820-summary.csv`
 - `output/semantic-v2-repair-closure-test-r5-seed20260820-by-event.csv`
 - `output/semantic-v2-repair-closure-test-r5-seed20260820.json`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820-details.csv`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820-summary.csv`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820-by-event.csv`
+- `output/post-freeze-repair-closure-final-main-table-test-r5-seed20260820.json`
 
 ## 13. LLM-Extracted Facts + Template Policy
 
@@ -550,10 +578,9 @@ The largest remaining gaps are now narrower:
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
 3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
-4. Post-freeze headline Qwen rerun from the frozen benchmark state; the deterministic post-freeze checks are complete, but the Qwen rerun is still pending because the local inference service timed out during official calls.
-5. Measured annotation-time pilot study for formal-policy construction, because the current 1312 score is a complexity proxy only.
-6. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
-7. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
+4. Measured annotation-time pilot study for formal-policy construction, because the current 1312 score is a complexity proxy only.
+5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
+6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
 
 ## 16. Paper-Safe Claims
 
@@ -570,7 +597,7 @@ Safe:
 - Replacing manual fact values with Qwen-extracted facts drops template-policy accuracy to 86.00%, showing that automatic fact normalization is the current bottleneck.
 - In zero-survivor and multi-survivor stress tests, the deterministic gate fails closed with `ABSTAIN` rather than forcing an unsafe selection.
 - The upper bound has zero Qwen runtime calls but non-zero manual construction effort; in the current heuristic audit this is 1312 policy-complexity points for 30 test policies, not measured minutes.
-- A local freeze commit is available for future reruns, but the current Qwen headline results should be treated as development-run evidence until rerun from the frozen benchmark state with a healthy inference service.
+- The frozen benchmark state now has a completed post-freeze Qwen headline rerun and a post-freeze repair-closure rerun.
 
 Unsafe:
 

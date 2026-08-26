@@ -1,0 +1,20 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[DIRECT_FREE] Oracle=77.33% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=22.67%
+[OPTION_FORMAL_OPERATION] Oracle=76.00% | 错误选择=7.33% | 无效=0.00% | ABSTAIN=16.67%
+[OPTION_FORMAL_POLICY] Oracle=97.33% | 错误选择=2.67% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] Oracle=100.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_VALUE_ONLY] Oracle=81.33% | 错误选择=8.00% | 无效=0.00% | ABSTAIN=10.67%
+
+[DIRECT_FREE] 严格事件成功=22/30 (73.33%) | 事件宏平均=77.33% | 选择稳定事件=28/30
+[OPTION_FORMAL_OPERATION] 严格事件成功=20/30 (66.67%) | 事件宏平均=76.00% | 选择稳定事件=23/30
+[OPTION_FORMAL_POLICY] 严格事件成功=28/30 (93.33%) | 事件宏平均=97.33% | 选择稳定事件=28/30
+[OPTION_FORMAL_POLICY_HARD_GATE] 严格事件成功=30/30 (100.00%) | 事件宏平均=100.00% | 选择稳定事件=30/30
+[OPTION_VALUE_ONLY] 严格事件成功=22/30 (73.33%) | 事件宏平均=81.33% | 选择稳定事件=24/30
+
+明细：G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820.json
