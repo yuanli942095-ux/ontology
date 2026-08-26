@@ -1,0 +1,2 @@
+﻿role,event_id,privacy,path,sha256,bytes,mtime_utc
+private_oracle_csv,,private,benchmark\external-real-v1\private\external-real-oracle-template.csv,6f64a3273991b1d46e3f0738415b12b25b010172976aff855bdab11144ee808d,150,2026-08-26T12:18:57.171984+00:00

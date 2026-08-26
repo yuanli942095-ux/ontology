@@ -1,0 +1,12 @@
+﻿role,event_id,privacy,path,sha256,bytes,mtime_utc
+benchmark_readme,,public,benchmark\external-real-v1\README.md,83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754,382,2026-08-26T12:18:57.168207+00:00
+collection_protocol,,public,benchmark\external-real-v1\protocol.md,287a946cc94e9d97f707e989f3e3e314b205bd41acc4b1dde01e9b1f1b8a31cb,2135,2026-08-26T12:26:48.062418+00:00
+input_candidates_csv,,public,benchmark\external-real-v1\input\external-real-candidate-template.csv,4a740bfa392ed344f591d4748780d0a48031d8c67f9281d8ffc33690355131ce,64,2026-08-26T12:18:57.170985+00:00
+input_documents_csv,,public,benchmark\external-real-v1\input\external-real-document-template.csv,d717a7d1876934ea1cbb43035b22865f594f2e29b4ecdab52991d5c8d3aa5bd4,169,2026-08-26T12:18:57.170985+00:00
+input_events_csv,,public,benchmark\external-real-v1\input\external-real-event-template.csv,ad0cea87c0a2bef2fa53ddfa9e0b8bc3c378377e47e997a6ad42fe306d3302c6,181,2026-08-26T12:18:57.169979+00:00
+reproduction_script,,public,src\generate_external_real_v1_freeze_manifest.py,d06dcc7ba42c48bd206f93038d28937e7273c0c5c421f956ec718b2fccd3caa8,9362,2026-08-26T12:27:09.481818+00:00
+reproduction_script,,public,src\semantic_v2_common.py,d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de,6623,2026-08-21T08:45:50.829498+00:00
+reproduction_script,,public,src\update_external_real_v1_document_hashes.py,a35c31f0a99a3d5b8403d80acf135c19970a91be83c7287bbbc8a73363ac4248,2351,2026-08-26T12:26:48.062418+00:00
+reproduction_script,,public,src\validate_external_real_v1.py,4e88f001aba32fcd0ae1c947ae59fb90c973f8fa9f8a66facce607e7b176831e,13425,2026-08-26T12:18:57.174051+00:00
+source_intake_csv,,public,benchmark\external-real-v1\source-intake\external-real-source-intake.csv,9e9b92146ae197399cacdd34333ed7919adaac44e45255eca730630b6cb3bb8f,249,2026-08-26T12:26:48.062418+00:00
+source_intake_readme,,public,benchmark\external-real-v1\source-intake\README.md,525549ec89e0ec7342ba05c47b0ae567736617ee27f9693ad39352fbe9e26684,710,2026-08-26T12:26:48.062418+00:00

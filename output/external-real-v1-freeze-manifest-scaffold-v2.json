@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T12:27:15.091948+00:00",
+  "benchmark": "external-real-v1",
+  "benchmark_dir": "benchmark\\external-real-v1",
+  "events_total": 0,
+  "events_ready": 0,
+  "event_ids_ready": [],
+  "semantic_type_counts_ready": {},
+  "documents_total": 0,
+  "candidates_total": 0,
+  "private_oracle_rows": 0,
+  "public_file_count": 11,
+  "private_integrity_rows": 1,
+  "oracle_used_for_candidate_filtering": false,
+  "git": {
+    "available": true,
+    "commit": "4c82a4d55706091a98a6657804f699ac9de93ea9",
+    "dirty": true,
+    "status_short": [
+      " M benchmark/external-real-v1/protocol.md",
+      " M output/formal-policy-gate-validation.csv",
+      " M output/formal-policy-gate-validation.json",
+      " M output/formal-policy-gate-validation.log",
+      " M src/generate_external_real_v1_freeze_manifest.py",
+      "?? benchmark/external-real-v1/source-intake/",
+      "?? output/annotation-time-pilot-completed-check-details.csv",
+      "?? output/annotation-time-pilot-completed-check-summary.csv",
+      "?? output/annotation-time-pilot-completed-check.json",
+      "?? output/annotation-time-pilot-completed-check.log",
+      "?? output/external-real-v1-freeze-manifest-scaffold-v2-files.csv",
+      "?? output/external-real-v1-freeze-manifest-scaffold-v2-private-oracle.csv",
+      "?? output/external-real-v1-freeze-manifest-scaffold-v2.json",
+      "?? output/external-real-v1-freeze-manifest-scaffold-v2.log",
+      "?? output/external-real-v1-validation-scaffold-v2-details.csv",
+      "?? output/external-real-v1-validation-scaffold-v2-summary.csv",
+      "?? output/external-real-v1-validation-scaffold-v2.json",
+      "?? output/external-real-v1-validation-scaffold-v2.log",
+      "?? src/update_external_real_v1_document_hashes.py"
+    ]
+  },
+  "limitations": [
+    "An empty scaffold manifest proves only structure, not external validation.",
+    "Private Oracle integrity rows are for local audit only and must not be published if filled.",
+    "A freeze manifest proves file state at generation time; use Git or external archives for timestamped evidence."
+  ],
+  "public_files": [
+    {
+      "role": "benchmark_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\README.md",
+      "sha256": "83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754",
+      "bytes": 382,
+      "mtime_utc": "2026-08-26T12:18:57.168207+00:00"
+    },
+    {
+      "role": "collection_protocol",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\protocol.md",
+      "sha256": "287a946cc94e9d97f707e989f3e3e314b205bd41acc4b1dde01e9b1f1b8a31cb",
+      "bytes": 2135,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "input_candidates_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-candidate-template.csv",
+      "sha256": "4a740bfa392ed344f591d4748780d0a48031d8c67f9281d8ffc33690355131ce",
+      "bytes": 64,
+      "mtime_utc": "2026-08-26T12:18:57.170985+00:00"
+    },
+    {
+      "role": "input_documents_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-document-template.csv",
+      "sha256": "d717a7d1876934ea1cbb43035b22865f594f2e29b4ecdab52991d5c8d3aa5bd4",
+      "bytes": 169,
+      "mtime_utc": "2026-08-26T12:18:57.170985+00:00"
+    },
+    {
+      "role": "input_events_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-event-template.csv",
+      "sha256": "ad0cea87c0a2bef2fa53ddfa9e0b8bc3c378377e47e997a6ad42fe306d3302c6",
+      "bytes": 181,
+      "mtime_utc": "2026-08-26T12:18:57.169979+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\generate_external_real_v1_freeze_manifest.py",
+      "sha256": "d06dcc7ba42c48bd206f93038d28937e7273c0c5c421f956ec718b2fccd3caa8",
+      "bytes": 9362,
+      "mtime_utc": "2026-08-26T12:27:09.481818+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623,
+      "mtime_utc": "2026-08-21T08:45:50.829498+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\update_external_real_v1_document_hashes.py",
+      "sha256": "a35c31f0a99a3d5b8403d80acf135c19970a91be83c7287bbbc8a73363ac4248",
+      "bytes": 2351,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_external_real_v1.py",
+      "sha256": "4e88f001aba32fcd0ae1c947ae59fb90c973f8fa9f8a66facce607e7b176831e",
+      "bytes": 13425,
+      "mtime_utc": "2026-08-26T12:18:57.174051+00:00"
+    },
+    {
+      "role": "source_intake_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\external-real-source-intake.csv",
+      "sha256": "9e9b92146ae197399cacdd34333ed7919adaac44e45255eca730630b6cb3bb8f",
+      "bytes": 249,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "source_intake_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\README.md",
+      "sha256": "525549ec89e0ec7342ba05c47b0ae567736617ee27f9693ad39352fbe9e26684",
+      "bytes": 710,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    }
+  ]
+}

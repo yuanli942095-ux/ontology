@@ -27,6 +27,7 @@ DOCUMENT_DIR = BENCHMARK_DIR / "documents"
 MUTANT_DIR = BENCHMARK_DIR / "mutants"
 RULE_DIR = BENCHMARK_DIR / "rules"
 BUILT_DIR = BENCHMARK_DIR / "built"
+SOURCE_INTAKE_DIR = BENCHMARK_DIR / "source-intake"
 
 EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
 DOCUMENT_CSV = INPUT_DIR / "external-real-document-template.csv"
@@ -36,6 +37,8 @@ ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
 PUBLIC_FILES = [
     (BENCHMARK_DIR / "README.md", "benchmark_readme"),
     (BENCHMARK_DIR / "protocol.md", "collection_protocol"),
+    (SOURCE_INTAKE_DIR / "README.md", "source_intake_readme"),
+    (SOURCE_INTAKE_DIR / "external-real-source-intake.csv", "source_intake_csv"),
     (EVENT_CSV, "input_events_csv"),
     (DOCUMENT_CSV, "input_documents_csv"),
     (CANDIDATE_CSV, "input_candidates_csv"),
@@ -43,6 +46,7 @@ PUBLIC_FILES = [
 
 REPRODUCTION_SCRIPTS = [
     "src/validate_external_real_v1.py",
+    "src/update_external_real_v1_document_hashes.py",
     "src/generate_external_real_v1_freeze_manifest.py",
     "src/semantic_v2_common.py",
 ]

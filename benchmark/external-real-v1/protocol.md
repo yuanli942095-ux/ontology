@@ -26,13 +26,15 @@ Do not include:
 
 ## Freeze Procedure
 
-1. Fill public templates under `input/`.
-2. Add source excerpts under `documents/`.
-3. Add mutant OWL and candidate OWL artifacts only after the public event is stable.
-4. Run `src/validate_external_real_v1.py`.
-5. Commit the public benchmark state.
-6. Only then fill `private/external-real-oracle-template.csv`.
-7. Commit or archive a private integrity manifest separately.
+1. Record candidate sources under `source-intake/`.
+2. Fill public templates under `input/`.
+3. Add source excerpts under `documents/`.
+4. Run `src/update_external_real_v1_document_hashes.py --allow-empty`.
+5. Add mutant OWL and candidate OWL artifacts only after the public event is stable.
+6. Run `src/validate_external_real_v1.py`.
+7. Commit the public benchmark state.
+8. Only then fill `private/external-real-oracle-template.csv`.
+9. Commit or archive a private integrity manifest separately.
 
 ## Allowed Public Inputs
 
