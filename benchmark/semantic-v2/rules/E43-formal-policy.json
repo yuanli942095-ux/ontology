@@ -1,0 +1,52 @@
+{
+  "event_id": "E43",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "contract_issue_date": "2026-09-12",
+    "endorsement_effective_for_issue_from": "2026-09-15"
+  },
+  "rules": [
+    {
+      "rule_id": "E43_ENDORSEMENT_APPLIES",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "contract_issue_date",
+          "operator": "on_or_after",
+          "value": "2026-09-15"
+        }
+      ],
+      "allowed_values": [
+        "66"
+      ]
+    },
+    {
+      "rule_id": "E43_PRE_ENDORSEMENT_CONTRACT",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "contract_issue_date",
+          "operator": "on_or_before",
+          "value": "2026-09-14"
+        }
+      ],
+      "allowed_values": [
+        "62"
+      ]
+    },
+    {
+      "rule_id": "E43_OLDER_HISTORY",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "60"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E43_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

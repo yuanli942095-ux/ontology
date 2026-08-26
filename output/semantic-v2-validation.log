@@ -1,0 +1,7 @@
+语义歧义基准V2校验日志
+事件总数=36，READY=36
+类型分布={'TEMPORAL_VERSION': 12, 'GENERAL_RULE_EXCEPTION': 12, 'CROSS_SENTENCE_SCOPE': 12}
+划分分布={'dev': 6, 'test': 30}
+错误=0，警告=0
+
+[INFO] VALIDATION_PASS | benchmark | 未发现结构或泄漏问题

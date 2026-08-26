@@ -1,0 +1,4 @@
+﻿error_id,file_name,error_type,affected_subject,affected_predicate,old_value,new_value,injected_change,expected_reasoner_result,expected_evidence_result,expected_cq_result,primary_detector,ontology_iri
+E6,E6_missing_subclass_link.owl,类层级链路缺失,医疗保险,rdfs:subClassOf,健康保险,,删除 医疗保险 SubClassOf 健康保险,CONSISTENT,PASS,FAIL,CQ,https://w3id.org/ontology-evolution/insurance-benchmark/E6-cq-specific
+E7,E7_wrong_superclass.owl,错误直接父类,疾病保险,rdfs:subClassOf,健康保险,人身保险,将 疾病保险 的直接父类由健康保险替换为人身保险,CONSISTENT,PASS,FAIL,CQ,https://w3id.org/ontology-evolution/insurance-benchmark/E7-cq-specific
+E8,E8_missing_property_range.owl,对象属性值域缺失,保障疾病,rdfs:range,疾病,,删除 保障疾病 Range 疾病,CONSISTENT,PASS,FAIL,CQ,https://w3id.org/ontology-evolution/insurance-benchmark/E8-cq-specific

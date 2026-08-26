@@ -1,0 +1,22 @@
+Qwen直接生成错误类型审计日志
+独立语义事件：3
+重复运行：5
+总尝试：15
+归一化仅用于离线审计，不会绕过严格门禁。
+
+严格接口Oracle成功率：6.67%
+归一化诊断Oracle成功率：6.67%
+弱文本抽取Oracle匹配率：13.33%
+JSON错误率：6.67%
+Schema错误率：20.00%
+可归一化但被严格拒绝：0.00%
+白名单外数值率：0.00%
+归一化后语义选错率：0.00%
+类别计数：{"ALPHANUMERIC_TOKEN": 2, "AMBIGUOUS_MULTIPLE_NUMBERS": 2, "JSON_FORMAT_ERROR": 1, "NON_NUMERIC_VALUE": 4, "SCHEMA_ERROR": 3, "STRICT_VALID_SELECTED": 1, "WEAK_TEXT_EXTRACTION_CANDIDATE": 2}
+
+论文中不要把全部接口失败统称为幻觉。
+应分别报告：格式错误、强归一化违规、弱文本抽取、白名单外数值、语义错误。
+明细：G:\LearnAI\ontology-evolution\output\direct-generation-audit-details.csv
+汇总：G:\LearnAI\ontology-evolution\output\direct-generation-audit-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\direct-generation-audit-by-event.csv
+JSON：G:\LearnAI\ontology-evolution\output\direct-generation-audit.json

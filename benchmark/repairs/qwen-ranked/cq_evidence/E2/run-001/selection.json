@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "候选 CAND_001 直接利用当前有效证据 EVID_015（产品A等待期为60天）来修复 CQ006 的失败，该证据权威且已人工验证，完全匹配预期答案。"
+}

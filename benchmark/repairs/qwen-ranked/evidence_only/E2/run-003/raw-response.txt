@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "候选 CAND_001 直接对应证据 EVID_015，该证据明确记录了产品 A 的等待期为 60 天且状态为当前有效。此操作能精确修复 CQ006 失败所导致的属性缺失问题，完全匹配业务语义需求。"
+}

@@ -1,0 +1,15 @@
+形式化约束反馈层级对比日志
+说明：first-choice衡量首次候选；多候选子集的first-choice才衡量LLM选择。
+final衡量约束反馈后的最终结果。
+完整安全验证和开发集Oracle仅用于评估，不进入模型反馈。
+
+[candidate_only] 首选安全=17/25 | 多候选LLM首选安全=7/15 | 反馈后安全=17/25 | 错误接受=8 | 纠正=0/8 | LLM调用=15
+[reasoner] 首选安全=17/25 | 多候选LLM首选安全=7/15 | 反馈后安全=20/25 | 错误接受=5 | 纠正=3/8 | LLM调用=18
+[reasoner_evidence] 首选安全=17/25 | 多候选LLM首选安全=7/15 | 反馈后安全=25/25 | 错误接受=0 | 纠正=8/8 | LLM调用=23
+[reasoner_evidence_cq] 首选安全=17/25 | 多候选LLM首选安全=7/15 | 反馈后安全=25/25 | 错误接受=0 | 纠正=8/8 | LLM调用=23
+
+注意：重复seed运行衡量稳定性，不等同于独立真实错误事件。
+最终论文置信区间应按独立事件计算。
+汇总CSV：G:\LearnAI\ontology-evolution\output\constraint-level-comparison.csv
+明细CSV：G:\LearnAI\ontology-evolution\output\constraint-level-validation-details.csv
+JSON：G:\LearnAI\ontology-evolution\output\constraint-level-comparison.json

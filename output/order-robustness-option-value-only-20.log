@@ -1,0 +1,12 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[OPTION_VALUE_ONLY] Oracle=30.00% | 错误选择=70.00% | 无效=0.00% | ABSTAIN=0.00%
+
+[OPTION_VALUE_ONLY] 严格事件成功=0/2 (0.00%) | 事件宏平均=30.00% | 选择稳定事件=0/2
+
+明细：G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20.json

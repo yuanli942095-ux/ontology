@@ -1,0 +1,18 @@
+无LLM修复候选选择基线对比日志
+独立错误事件：8（E1, E2, E3, E4, E5, E6, E7, E8）
+候选效果目录：candidate-effects.json, tbox-candidate-effects.json
+
+[FIRST_CANDIDATE_ORDER_BIASED] 尝试=8 | 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | 接受精度=100.00% | Oracle=100.00%
+[HASH_FIRST] 尝试=800 | 覆盖=100.00% | 安全接受=54.12% | 错误接受=45.88% | 接受精度=54.12% | Oracle=54.12%
+[RANDOM] 尝试=800 | 覆盖=100.00% | 安全接受=54.00% | 错误接受=46.00% | 接受精度=54.00% | Oracle=54.00%
+[UNIQUE_MIN_EDIT] 尝试=8 | 覆盖=37.50% | 安全接受=25.00% | 错误接受=12.50% | 接受精度=66.67% | Oracle=25.00%
+[REASONER_UNIQUE_ONLY] 尝试=8 | 覆盖=25.00% | 安全接受=25.00% | 错误接受=0.00% | 接受精度=100.00% | Oracle=25.00%
+[SYMBOLIC_UNIQUE_FULL_GATE] 尝试=8 | 覆盖=87.50% | 安全接受=87.50% | 错误接受=0.00% | 接受精度=100.00% | Oracle=87.50%
+[SYMBOLIC_FULL_GATE_TIEBREAK] 尝试=8 | 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | 接受精度=100.00% | Oracle=100.00%
+[QWEN_FORMAL_FEEDBACK_OBSERVED] 尝试=25 | 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | 接受精度=100.00% | Oracle=100.00%
+
+解释注意：重复随机运行衡量策略稳定性，不等同于独立真实事件。
+FIRST_CANDIDATE若很高，首先检查正确候选是否总被生成器排在第一位。
+CSV：G:\LearnAI\ontology-evolution\output\no-llm-baseline-comparison.csv
+明细：G:\LearnAI\ontology-evolution\output\no-llm-baseline-details.csv
+JSON：G:\LearnAI\ontology-evolution\output\no-llm-baseline-comparison.json

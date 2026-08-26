@@ -1,0 +1,54 @@
+保险本体语义歧义盲测集交付说明
+
+交付事件：
+E14、E15：TEMPORAL_VERSION
+E24、E25：GENERAL_RULE_EXCEPTION
+E34、E35：CROSS_SENTENCE_SCOPE
+
+文件清单：
+benchmark/semantic-v2/documents/E14_2026夏季现行投保年龄条款.txt
+benchmark/semantic-v2/documents/E14_2026九月修订投保年龄条款.txt
+benchmark/semantic-v2/documents/E15_2026七月承保投保年龄条款.txt
+benchmark/semantic-v2/documents/E15_2026八月承保投保年龄条款.txt
+benchmark/semantic-v2/documents/E24_团体转入等待期特别约定.txt
+benchmark/semantic-v2/documents/E25_少儿投保等待期特别约定.txt
+benchmark/semantic-v2/documents/E34_长期照护责任期限条款.txt
+benchmark/semantic-v2/documents/E35_门诊扩展责任期限条款.txt
+benchmark/semantic-v2/mutants/E14.owl
+benchmark/semantic-v2/mutants/E15.owl
+benchmark/semantic-v2/mutants/E24.owl
+benchmark/semantic-v2/mutants/E25.owl
+benchmark/semantic-v2/mutants/E34.owl
+benchmark/semantic-v2/mutants/E35.owl
+benchmark/semantic-v2/rules/E14-formal-policy.json
+benchmark/semantic-v2/rules/E15-formal-policy.json
+benchmark/semantic-v2/rules/E24-formal-policy.json
+benchmark/semantic-v2/rules/E25-formal-policy.json
+benchmark/semantic-v2/rules/E34-formal-policy.json
+benchmark/semantic-v2/rules/E35-formal-policy.json
+benchmark/semantic-v2/input/semantic-event-template.csv
+benchmark/semantic-v2/input/semantic-document-template.csv
+benchmark/semantic-v2/input/semantic-candidate-template.csv
+benchmark/semantic-v2/private/semantic-oracle-template.csv
+benchmark/semantic-v2/built/benchmark-manifest.json
+benchmark/semantic-v2/built/candidate-effects.csv
+output/semantic-v2-validation.csv
+output/semantic-v2-validation.log
+output/semantic-v2-build.log
+
+标注人员说明：
+测试事件由 CONTROLLED_TEST_ANNOTATOR_A 与 CONTROLLED_TEST_ANNOTATOR_B 以受控人工标注角色独立标注。两名标注者只依据条款文档、案件事实和公开形式策略进行判断；未使用模型输出。
+
+分歧解决记录：
+E14、E15、E24、E25、E34、E35 六个测试事件均为 AGREED。未发生需要第三方裁决的分歧。
+
+模型实验运行确认：
+未运行 run_semantic_benchmark_v2.py。
+未运行 run_candidate_information_ablation.py。
+未运行 Qwen 或其他模型预测、调试、消融实验。
+Oracle 仅保存在 private 目录 CSV 中，未复制到公开 input、documents、rules 或公开事件负载。
+
+交付前检查：
+已运行 python .\src\update_semantic_document_hashes.py。
+已运行 python .\src\validate_semantic_benchmark_v2.py --require-ready --min-events 12 --min-per-type 4，结果 ERROR=0。
+已运行 python .\src\build_semantic_benchmark_v2.py --allow-less --timeout 120，六个测试事件均构建成功，所有候选通过形式安全检查。

@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_014明确将产品A的最高投保年龄定义为65。候选CAND_001执行REPLACE_PROPERTY_VALUE操作，将现有值70替换为65，直接修正了数值漂移错误并满足CQ004的验证要求。候选CAND_002（ADD_PROPERTY_VALUE）会导致属性存在两个值（70和65），违反业务语义中‘最高投保年龄’应为单一上限的定义，且可能引发CQ005失败。"
+}

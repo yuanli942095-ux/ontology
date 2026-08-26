@@ -1,0 +1,2 @@
+﻿method,events,attempts,oracle_successes,accuracy,wrong_rate,abstain_rate,invalid_rate,strict_order_robust_events,stable_selected_candidate_events,outcome_consistent_events,order_sensitive_events
+VALUE_ENUM,1,20,5,0.25,0.0,0.75,0.0,0,1,0,1

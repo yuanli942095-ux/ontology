@@ -1,0 +1,3 @@
+﻿method,independent_events,all_runs_correct_events,strict_event_accuracy,macro_event_accuracy,stable_events
+OPTION_FORMAL_POLICY,2,0,0.0,0.725,0
+OPTION_FORMAL_POLICY_HARD_GATE,2,2,1.0,1.0,2

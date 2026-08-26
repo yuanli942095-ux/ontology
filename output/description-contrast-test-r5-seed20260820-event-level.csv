@@ -1,0 +1,4 @@
+﻿method,independent_events,all_runs_correct_events,strict_event_accuracy,macro_event_accuracy,stable_events
+OPTION_DESCRIPTION,30,27,0.9,0.9733333333333334,27
+OPTION_DESCRIPTION_MASKED,30,22,0.7333333333333333,0.7933333333333333,25
+OPTION_DESCRIPTION_SHUFFLED,30,0,0.0,0.1,0

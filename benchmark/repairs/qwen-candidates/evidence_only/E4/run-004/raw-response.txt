@@ -1,0 +1,16 @@
+{
+  "abstain": true,
+  "confidence": 0.0,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ002"
+      ],
+      "rationale": "根据提供的证据 `EVID_011`，'产品A' 被断言为 '医疗保险'。然而，在当前的上下文中，并没有关于 '产品A' 的 '最低投保年龄'、'最高投保年龄' 或其他具体属性的直接证据支持。因此，无法从现有信息中推断或移除这些属性值，除非有明确的规则或证据表明这些属性不存在或需要更新。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最低投保年龄",
+      "old_value": {"kind": "literal", "lexical": "18", "datatype": "http://www.w3.org/2001/XMLSchema#integer"}
+    }
+  ]
+}

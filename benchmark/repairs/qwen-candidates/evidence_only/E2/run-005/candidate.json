@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ006"
+      ],
+      "rationale": "根据证据 EVID_015，'等待期天数' 属性被更新为 '60'。之前的值（如 CQ006 中可能存在的旧值）应被移除或覆盖，以反映最新的保险条款信息。此操作确保知识库中的产品 A 数据与当前有效的文档 DOC-PA-2026-V2 (v2.0) 保持一致。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "30",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[OPTION_DESCRIPTION_MASKED] Oracle=75.00% | 错误选择=23.33% | 无效=0.00% | ABSTAIN=1.67%
+[OPTION_DESCRIPTION_SHUFFLED] Oracle=8.33% | 错误选择=91.67% | 无效=0.00% | ABSTAIN=0.00%
+
+[OPTION_DESCRIPTION_MASKED] 严格事件成功=8/12 (66.67%) | 事件宏平均=75.00% | 选择稳定事件=8/12
+[OPTION_DESCRIPTION_SHUFFLED] 严格事件成功=0/12 (0.00%) | 事件宏平均=8.33% | 选择稳定事件=0/12
+
+明细：G:\LearnAI\ontology-evolution\output\description-perturbation-ablation-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\description-perturbation-ablation-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\description-perturbation-ablation-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\description-perturbation-ablation-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\description-perturbation-ablation.json

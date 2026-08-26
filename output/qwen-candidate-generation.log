@@ -1,0 +1,60 @@
+本地Qwen受限修复候选生成日志
+模型：qwen3.5:9b
+提示模式：evidence_only
+每类错误运行次数：5
+temperature：0.2
+首个seed：20260820
+证据文件：G:\LearnAI\ontology-evolution\data\axiom-evidence.csv
+[qwen-E1-run-001]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#最高投保年龄'), rdflib.term.Literal('65', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#string')))
+[qwen-E1-run-002]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=8652ms
+[qwen-E1-run-003]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=8073ms
+[qwen-E1-run-004]
+  结果=REJECTED | CandidateValidationError: A Literal can only have one of lang or datatype, per http://www.w3.org/TR/rdf-concepts/#section-Graph-Literal
+[qwen-E1-run-005]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#最高投保年龄'), rdflib.term.Literal('65 周岁', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#string')))
+[qwen-E2-run-001]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#等待期天数'), rdflib.term.Literal('30', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+[qwen-E2-run-002]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#等待期天数'), rdflib.term.Literal('12', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+[qwen-E2-run-003]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#等待期天数'), rdflib.term.Literal('30', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+[qwen-E2-run-004]
+  结果=REJECTED | CandidateValidationError: 待删除的类别断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#等待期天数'))
+[qwen-E2-run-005]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#等待期天数'), rdflib.term.Literal('30', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+[qwen-E3-run-001]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#由公司承保'), rdflib.term.Literal('保险公司甲', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#string')))
+[qwen-E3-run-002]
+  结果=REJECTED | CandidateValidationError: 拒绝模型生成的非白名单字面量：{'kind': 'literal', 'lexical': '保险公司甲', 'datatype': 'http://www.w3.org/2001/XMLSchema#string'}
+[qwen-E3-run-003]
+  结果=ACCEPTED | 操作=ADD_PROPERTY_VALUE | confidence=0.95 | 耗时=5724ms
+[qwen-E3-run-004]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=7094ms
+[qwen-E3-run-005]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#由公司承保'), rdflib.term.Literal('保险公司乙', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#string')))
+[qwen-E4-run-001]
+  结果=REJECTED | CandidateValidationError: 拒绝模型生成的非白名单IRI：predicate_iri=file:///G:/LearnAI/ontology-1#承保类型
+[qwen-E4-run-002]
+  结果=REJECTED | CandidateValidationError: 拒绝模型生成的非白名单IRI：predicate_iri=file:///G:/LearnAI/ontology-1#类型
+[qwen-E4-run-003]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#疾病保险'), rdflib.term.Literal('true', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#boolean')))
+[qwen-E4-run-004]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.0 | 耗时=7555ms
+[qwen-E4-run-005]
+  结果=ACCEPTED | 操作=REMOVE_CLASS_ASSERTION | confidence=0.95 | 耗时=7090ms
+[qwen-E5-run-001]
+  结果=REJECTED | CandidateValidationError: 待删除的旧断言不存在：(rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#产品A'), rdflib.term.URIRef('file:///G:/LearnAI/ontology-1#最高投保年龄'), rdflib.term.Literal('60', datatype=rdflib.term.URIRef('http://www.w3.org/2001/XMLSchema#integer')))
+[qwen-E5-run-002]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=6795ms
+[qwen-E5-run-003]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=6455ms
+[qwen-E5-run-004]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=7841ms
+[qwen-E5-run-005]
+  结果=ACCEPTED | 操作=REMOVE_PROPERTY_VALUE | confidence=0.95 | 耗时=6811ms
+
+候选生成汇总：总尝试=25，JSON可解析=25，候选已接受=10，主动放弃=0，程序拒绝=15
+候选清单：G:\LearnAI\ontology-evolution\benchmark\repairs\qwen-repair-candidates.csv

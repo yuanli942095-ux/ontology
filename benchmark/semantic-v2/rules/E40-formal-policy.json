@@ -1,0 +1,58 @@
+{
+  "event_id": "E40",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "plan_type": "ADULT_STANDARD",
+    "remote_consultation_selected": true,
+    "elder_care_plan": false
+  },
+  "rules": [
+    {
+      "rule_id": "E40_ELDER_CARE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "elder_care_plan",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    },
+    {
+      "rule_id": "E40_ADULT_REMOTE",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "plan_type",
+          "operator": "equals",
+          "value": "ADULT_STANDARD"
+        },
+        {
+          "fact": "remote_consultation_selected",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E40_ADULT_BASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "12"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E40_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

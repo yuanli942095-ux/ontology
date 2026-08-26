@@ -1,0 +1,53 @@
+{
+  "event_id": "E21",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "acceptance_date": "2026-12-12",
+    "endorsement_signed_date": "2026-12-10",
+    "endorsement_filing_completed_date": "2026-12-20"
+  },
+  "rules": [
+    {
+      "rule_id": "E21_FILED_CURRENT_VERSION",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "acceptance_date",
+          "operator": "on_or_before",
+          "value": "2026-12-19"
+        }
+      ],
+      "allowed_values": [
+        "67"
+      ]
+    },
+    {
+      "rule_id": "E21_ENDORSEMENT_AFTER_FILING",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "acceptance_date",
+          "operator": "on_or_after",
+          "value": "2026-12-20"
+        }
+      ],
+      "allowed_values": [
+        "74"
+      ]
+    },
+    {
+      "rule_id": "E21_PRIOR_YEAR",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "65"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E21_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

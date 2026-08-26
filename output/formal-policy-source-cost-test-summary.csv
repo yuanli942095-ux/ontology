@@ -1,0 +1,5 @@
+﻿semantic_type,events,manual_formalized_events,forbidden_source_marker_events,total_facts,total_rules,total_conditions,mean_facts_per_event,mean_rules_per_event,mean_conditions_per_event,total_policy_complexity_points,mean_policy_complexity_points,measured_annotation_time
+ALL,30,30,0,85,91,117,2.8333333333333335,3.033333333333333,3.9,1312,43.733333333333334,False
+CROSS_SENTENCE_SCOPE,10,10,0,26,31,39,2.6,3.1,3.9,431,43.1,False
+GENERAL_RULE_EXCEPTION,10,10,0,30,30,45,3.0,3.0,4.5,450,45.0,False
+TEMPORAL_VERSION,10,10,0,29,30,33,2.9,3.0,3.3,431,43.1,False

@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_003",
+  "confidence": 0.95,
+  "rationale": "当前实际值'癌症'与证据EVID_012中的有效值'保险公司甲'冲突。由于EVID_012已标记为manual_verified且当前有效，说明'癌症'是错误的对象值。CAND_003直接删除错误值，符合业务语义；CAND_002会保留错误值并添加正确值，导致属性存在多个值（含错误），不符合PROPERTY_EXACT_SET的精确集要求；CAND_001虽替换但描述中未明确是否先删除旧值，而REMOVE_PROPERTY_VALUE是更安全的原子操作。"
+}

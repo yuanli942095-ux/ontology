@@ -1,0 +1,55 @@
+保险本体错误检测基准：自动化实验日志
+Python：3.11.3
+证据文件：G:\LearnAI\ontology-evolution\data\axiom-evidence.csv
+实验文件数：6
+
+[1/6] BASELINE insurance-validation-baseline.owl
+  Reasoner：期望=CONSISTENT，实际=CONSISTENT
+  证据校验：期望=PASS，实际=PASS
+  CQ回归：期望=PASS，实际=PASS
+  检测机制：未检出错误
+  结论：PASS
+
+[2/6] E1 E1_numeric_drift.owl
+  Reasoner：期望=CONSISTENT，实际=CONSISTENT
+  证据校验：期望=FAIL，实际=FAIL
+  CQ回归：期望=FAIL，实际=FAIL
+  检测机制：证据校验 + CQ回归
+  结论：PASS
+    - 产品A—最高投保年龄：期望=['65']，实际=['70']
+
+[3/6] E2 E2_missing_axiom.owl
+  Reasoner：期望=CONSISTENT，实际=CONSISTENT
+  证据校验：期望=FAIL，实际=FAIL
+  CQ回归：期望=FAIL，实际=FAIL
+  检测机制：证据校验 + CQ回归
+  结论：PASS
+    - 产品A—等待期天数：期望=['60']，实际=[]
+
+[4/6] E3 E3_wrong_relation_target.owl
+  Reasoner：期望=INCONSISTENT，实际=INCONSISTENT
+  证据校验：期望=FAIL，实际=FAIL
+  CQ回归：期望=FAIL，实际=FAIL
+  检测机制：HermiT Reasoner + 证据校验 + CQ回归
+  结论：PASS
+    - 产品A—由公司承保：期望=['保险公司甲']，实际=['癌症']
+
+[5/6] E4 E4_disjoint_class_conflict.owl
+  Reasoner：期望=INCONSISTENT，实际=INCONSISTENT
+  证据校验：期望=FAIL，实际=FAIL
+  CQ回归：期望=FAIL，实际=FAIL
+  检测机制：HermiT Reasoner + 证据校验 + CQ回归
+  结论：PASS
+    - 产品A—类型：期望=['医疗保险']，实际=['医疗保险', '财产保险']
+
+[6/6] E5 E5_conflicting_functional_value.owl
+  Reasoner：期望=INCONSISTENT，实际=INCONSISTENT
+  证据校验：期望=FAIL，实际=FAIL
+  CQ回归：期望=FAIL，实际=FAIL
+  检测机制：HermiT Reasoner + 证据校验 + CQ回归
+  结论：PASS
+    - 产品A—最高投保年龄：期望=['65']，实际=['65', '70']
+
+汇总：6/6 个实验通过
+CSV：G:\LearnAI\ontology-evolution\output\benchmark-results.csv
+JSON：G:\LearnAI\ontology-evolution\output\benchmark-results.json

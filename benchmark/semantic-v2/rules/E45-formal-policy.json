@@ -1,0 +1,57 @@
+{
+  "event_id": "E45",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "waiting_code": "WAIT-CODE-REINSTATE",
+    "waiver_condition_met": false
+  },
+  "rules": [
+    {
+      "rule_id": "E45_WAIT_WAIVER",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "waiting_code",
+          "operator": "equals",
+          "value": "WAIT-CODE-WAIVER"
+        },
+        {
+          "fact": "waiver_condition_met",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "0"
+      ]
+    },
+    {
+      "rule_id": "E45_WAIT_REINSTATE",
+      "priority": 250,
+      "conditions": [
+        {
+          "fact": "waiting_code",
+          "operator": "equals",
+          "value": "WAIT-CODE-REINSTATE"
+        }
+      ],
+      "allowed_values": [
+        "45"
+      ]
+    },
+    {
+      "rule_id": "E45_WAIT_GENERAL",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "90"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E45_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

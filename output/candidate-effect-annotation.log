@@ -1,0 +1,20 @@
+符号候选反事实执行与效果标注日志
+输入目录：G:\LearnAI\ontology-evolution\benchmark\repairs\feasible-candidates.json
+候选总数：11
+硬门禁：可执行 + Reasoner一致 + 当前证据匹配 + 受影响CQ通过 + 全部CQ通过 + 单步最小修改
+
+[1/11] E1/CAND_001 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+[2/11] E1/CAND_002 | Reasoner=INCONSISTENT | 证据=FAIL | CQ=FAIL | 最小修改=True | FILTER_OUT
+[3/11] E1/CAND_003 | Reasoner=CONSISTENT | 证据=FAIL | CQ=FAIL | 最小修改=True | FILTER_OUT
+[4/11] E2/CAND_001 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+[5/11] E3/CAND_001 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+[6/11] E3/CAND_002 | Reasoner=INCONSISTENT | 证据=FAIL | CQ=FAIL | 最小修改=True | FILTER_OUT
+[7/11] E3/CAND_003 | Reasoner=CONSISTENT | 证据=FAIL | CQ=FAIL | 最小修改=True | FILTER_OUT
+[8/11] E4/CAND_001 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+[9/11] E5/CAND_001 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+[10/11] E5/CAND_002 | Reasoner=CONSISTENT | 证据=FAIL | CQ=FAIL | 最小修改=True | FILTER_OUT
+[11/11] E5/CAND_003 | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 最小修改=True | SURVIVE
+
+通过硬门禁：6/11
+JSON：G:\LearnAI\ontology-evolution\benchmark\repairs\candidate-effects.json
+CSV：G:\LearnAI\ontology-evolution\benchmark\repairs\candidate-effects.csv

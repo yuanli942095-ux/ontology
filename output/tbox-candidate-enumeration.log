@@ -1,0 +1,18 @@
+TBox CQ专属候选枚举与反事实验证日志
+基线：G:\LearnAI\ontology-evolution\benchmark\clean\insurance-validation-baseline.owl
+CQ：G:\LearnAI\ontology-evolution\benchmark\cq\cq-tbox-tests.csv
+设计：干扰候选应通过Reasoner与ABox证据，但由CQ过滤。
+
+[1/9] E6/CAND_001 | ADD_SUBCLASS_AXIOM | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | Oracle=True | SURVIVE
+[2/9] E6/CAND_002 | ADD_SUBCLASS_AXIOM | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+[3/9] E6/CAND_003 | ADD_SUBCLASS_AXIOM | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+[4/9] E7/CAND_001 | REPLACE_SUPERCLASS | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | Oracle=True | SURVIVE
+[5/9] E7/CAND_002 | REMOVE_SUBCLASS_AXIOM | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+[6/9] E7/CAND_003 | REPLACE_SUPERCLASS | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+[7/9] E8/CAND_001 | ADD_PROPERTY_RANGE | Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | Oracle=True | SURVIVE
+[8/9] E8/CAND_002 | ADD_PROPERTY_RANGE | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+[9/9] E8/CAND_003 | ADD_PROPERTY_RANGE | Reasoner=CONSISTENT | 证据=PASS | CQ=FAIL | Oracle=False | FILTER_OUT
+
+候选总数=9，完整门禁通过=3，开发集Oracle匹配=3
+JSON：G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects.json
+CSV：G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects.csv

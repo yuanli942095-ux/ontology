@@ -1,0 +1,40 @@
+source=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-failure-cases-summary.csv
+by_method=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-failure-cases-by-method.csv
+failed_runs=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-failure-cases-failed-runs.csv
+markdown=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-failure-cases.md
+json=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-failure-cases.json
+
+*[DIRECT_FREE/E17] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+ [DIRECT_FREE/E21] success=2/5 | failures=3 | wrong=0 | abstain=3 | failed_values=
+*[DIRECT_FREE/E27] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[DIRECT_FREE/E37] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[DIRECT_FREE/E42] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+ [DIRECT_FREE/E43] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+*[DIRECT_FREE/E45] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[DIRECT_FREE/E47] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+ [OPTION_FORMAL_OPERATION/E15] success=3/5 | failures=2 | wrong=2 | abstain=0 | failed_values=68:2
+*[OPTION_FORMAL_OPERATION/E17] success=1/5 | failures=4 | wrong=1 | abstain=3 | failed_values=73:1
+*[OPTION_FORMAL_OPERATION/E27] success=0/5 | failures=5 | wrong=4 | abstain=1 | failed_values=0:4
+ [OPTION_FORMAL_OPERATION/E30] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+ [OPTION_FORMAL_OPERATION/E34] success=2/5 | failures=3 | wrong=3 | abstain=0 | failed_values=18:3
+*[OPTION_FORMAL_OPERATION/E37] success=0/5 | failures=5 | wrong=1 | abstain=4 | failed_values=12:1
+ [OPTION_FORMAL_OPERATION/E39] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+*[OPTION_FORMAL_OPERATION/E42] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[OPTION_FORMAL_OPERATION/E45] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[OPTION_FORMAL_OPERATION/E47] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[OPTION_FORMAL_POLICY/E27] success=4/5 | failures=1 | wrong=1 | abstain=0 | failed_values=0:1
+*[OPTION_FORMAL_POLICY/E47] success=2/5 | failures=3 | wrong=3 | abstain=0 | failed_values=12:3
+*[OPTION_VALUE_ONLY/E17] success=1/5 | failures=4 | wrong=4 | abstain=0 | failed_values=58:1|73:3
+ [OPTION_VALUE_ONLY/E21] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+*[OPTION_VALUE_ONLY/E27] success=0/5 | failures=5 | wrong=2 | abstain=3 | failed_values=0:2
+ [OPTION_VALUE_ONLY/E34] success=4/5 | failures=1 | wrong=1 | abstain=0 | failed_values=18:1
+*[OPTION_VALUE_ONLY/E37] success=0/5 | failures=5 | wrong=5 | abstain=0 | failed_values=12:3|24:2
+*[OPTION_VALUE_ONLY/E42] success=3/5 | failures=2 | wrong=0 | abstain=2 | failed_values=
+*[OPTION_VALUE_ONLY/E45] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+*[OPTION_VALUE_ONLY/E47] success=0/5 | failures=5 | wrong=0 | abstain=5 | failed_values=
+
+[DIRECT_FREE] failed_runs=34/150 | failed_events=8 | focus_failed=E17|E27|E37|E42|E45|E47
+[OPTION_FORMAL_OPERATION] failed_runs=36/150 | failed_events=10 | focus_failed=E17|E27|E37|E42|E45|E47
+[OPTION_FORMAL_POLICY] failed_runs=4/150 | failed_events=2 | focus_failed=E27|E47
+[OPTION_VALUE_ONLY] failed_runs=28/150 | failed_events=8 | focus_failed=E17|E27|E37|E42|E45|E47

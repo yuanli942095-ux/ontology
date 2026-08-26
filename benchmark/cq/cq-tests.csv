@@ -1,0 +1,13 @@
+﻿cq_id,question,query_type,subject_label,predicate_label,expected_answer,expected_count,hard_constraint,requirement_origin,rationale,expected_fail_on
+CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,产品A,rdf:type,医疗保险,,true,stakeholder_requirement,确认产品的基本业务分类,
+CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,产品A,rdf:type,财产保险,,true,stakeholder_requirement,禁止产品同时落入互斥的财产保险分类,E4
+CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,产品A,由公司承保,保险公司甲,,true,stakeholder_requirement,承保主体必须与业务合同一致,E3
+CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,产品A,最高投保年龄,65,,true,stakeholder_requirement,验证当前有效年龄上限,E1|E5
+CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,产品A,最高投保年龄,,1,true,stakeholder_requirement,防止功能字段出现多个冲突值,E5
+CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,产品A,等待期天数,60,,true,stakeholder_requirement,等待期是核保和理赔的重要条件,E2
+CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,产品A,保障疾病,癌症,,true,stakeholder_requirement,确认保障责任对象,
+CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,产品A,最低投保年龄,18,,true,stakeholder_requirement,确认投保年龄下限,
+CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,产品A,保险期限月数,12,,true,stakeholder_requirement,确认保险期间,
+CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,产品A,保额,500000,,true,stakeholder_requirement,确认核心给付额度,
+CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,产品A,适用于人群,成人投保群体,,true,stakeholder_requirement,确认适用对象,
+CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,产品A,具有免责条款,标准免责条款A,,true,stakeholder_requirement,确认免责边界,

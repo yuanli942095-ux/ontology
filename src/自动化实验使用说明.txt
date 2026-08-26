@@ -1,0 +1,80 @@
+保险本体错误检测基准：自动化实验使用说明
+==========================================
+
+一、把文件放到哪里
+
+将下面三个文件复制到：
+G:\LearnAI\ontology-evolution\src\
+
+1. inject_errors.py
+2. validate_benchmark.py
+3. requirements-automation.txt
+4. run_automation.ps1
+
+工程中还应存在：
+data\insurance-v2.owl
+data\axiom-evidence.csv
+
+
+二、安装依赖（只需要执行一次）
+
+cd G:\LearnAI\ontology-evolution
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r src\requirements-automation.txt -i https://pypi.org/simple
+
+如果网络导致一次安装失败，可分开安装：
+python -m pip install rdflib -i https://pypi.org/simple
+python -m pip install owlready2 -i https://pypi.org/simple
+
+
+三、重新生成隔离的实验本体
+
+python src\inject_errors.py
+
+新版本脚本会为baseline和E1-E5分别生成唯一Ontology IRI，避免Protégé缓存、
+同名本体和推理器上下文污染。
+
+
+四、一条命令运行全部实验
+
+推荐直接执行：
+powershell -ExecutionPolicy Bypass -File src\run_automation.ps1
+
+也可以分两步执行：
+python src\inject_errors.py
+python src\validate_benchmark.py
+
+脚本自动执行：
+1. 检查6个本体的Ontology IRI是否唯一；
+2. 每个OWL在独立Python进程中调用Pellet Reasoner；
+3. 对照当前有效文档证据检查公理和值；
+4. 执行CQ期望答案回归；
+5. 将结果与error-manifest.csv标准答案比较；
+6. 自动生成CSV、JSON和纯文本日志。
+
+
+五、正确结果
+
+BASELINE：Reasoner=CONSISTENT，证据=PASS，CQ=PASS
+E1：Reasoner=CONSISTENT，证据=FAIL，CQ=FAIL
+E2：Reasoner=CONSISTENT，证据=FAIL，CQ=FAIL
+E3：Reasoner=INCONSISTENT，证据=FAIL，CQ=FAIL
+E4：Reasoner=INCONSISTENT，证据=FAIL，CQ=FAIL
+E5：Reasoner=INCONSISTENT，证据=FAIL，CQ=FAIL
+
+终端最后应显示：
+[自动化实验通过] 基线无误报，五类错误均按预期被对应机制识别。
+
+
+六、结果文件
+
+output\benchmark-results.csv
+output\benchmark-results.json
+output\benchmark-experiment.log
+
+
+七、Protégé是否被自动化
+
+不是自动点击Protégé界面。Protégé是本体编辑和人工核查工具，不适合作为批量实验引擎。
+自动化脚本直接调用与Protégé中同类的OWL推理器Pellet，因此不需要打开Protégé，也不需要
+手工依次点击“开始推理”。Protégé仍用于人工抽查、查看公理和生成论文截图。

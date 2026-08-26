@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="file:///G:/LearnAI/ontology-1#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:nodeID="N87c6241853564262b364aaf2cfef941e">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#财产损失保险"/>
+    <rdf:rest rdf:nodeID="N87e0c39d4257437ab20b39fd2ed1c138"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险公司">
+    <owl:disjointWith rdf:resource="file:///G:/LearnAI/ontology-1#疾病"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险机构"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#最低投保年龄">
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#一般疾病">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#疾病"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="file:///G:/LearnAI/ontology-1#重大疾病"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保额">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#最高投保年龄">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na60669f34caf4ed885784bc43fcf9d67">
+    <owl:members rdf:nodeID="N790bcb93af5e47bea66c69aade3f9ed6"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#投保人">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险参与人"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#适用于人群">
+    <rdfs:range rdf:resource="file:///G:/LearnAI/ontology-1#适用人群"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8dee0d64a680401e9d1e878a2716aca5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="N87c6241853564262b364aaf2cfef941e"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#具有免责条款">
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdfs:range rdf:resource="file:///G:/LearnAI/ontology-1#免责条款"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#疾病">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#产品B">
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#疾病保险"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N54324eaec2aa4821add356ee69b221be">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#等待期条款"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险期限月数">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#医疗保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:disjointWith rdf:resource="file:///G:/LearnAI/ontology-1#疾病保险"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#健康保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndd14ec82cefe4a35860a96651f84cf5e">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#保险参与人"/>
+    <rdf:rest rdf:nodeID="Nec063479301a4513961542297742a4b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naf42111c556348e58339af4a46124e81">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#未成年人群"/>
+    <rdf:rest rdf:nodeID="N9f0e3248e77645d198ae21ee19b52647"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac00ec7e4f6440f08d101208a66fde61">
+    <rdf:rest rdf:nodeID="N29876a3c5db74002a7dfd7651c1ad60d"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#受益人"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险参与人">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3fc92836cd0e4300b5ed808192b3b02b">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#保障条款"/>
+    <rdf:rest rdf:nodeID="N5b17b94c16134fe082cd32369434829c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#人身保险">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <owl:disjointWith rdf:resource="file:///G:/LearnAI/ontology-1#财产保险"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N531c2f556a274562923db5bb5f6d4ffd">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#适用人群"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#成人投保群体">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#成年人群"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险条款">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#财产保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保障疾病">
+    <rdfs:range rdf:resource="file:///G:/LearnAI/ontology-1#疾病"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险产品">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#标准免责条款A">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#免责条款"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na29d52810c5140e296343ddbfdd38bd2">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#车辆保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险公司甲">
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#保险公司"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne442ff2e5abc491395216d1240e3ca38">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#意外伤害保险"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#产品A">
+    <ns1:最高投保年龄 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</ns1:最高投保年龄>
+    <ns1:具有免责条款 rdf:resource="file:///G:/LearnAI/ontology-1#标准免责条款A"/>
+    <ns1:适用于人群 rdf:resource="file:///G:/LearnAI/ontology-1#成人投保群体"/>
+    <ns1:保额 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500000</ns1:保额>
+    <ns1:最低投保年龄 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</ns1:最低投保年龄>
+    <ns1:保险期限月数 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</ns1:保险期限月数>
+    <ns1:保障疾病 rdf:resource="file:///G:/LearnAI/ontology-1#癌症"/>
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#医疗保险"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ns1:由公司承保 rdf:resource="file:///G:/LearnAI/ontology-1#保险公司甲"/>
+    <ns1:等待期天数 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</ns1:等待期天数>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险机构">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#重大疾病">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#疾病"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ea769927f4d4670af658184b11b977d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nac00ec7e4f6440f08d101208a66fde61"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#健康保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#人身保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N29876a3c5db74002a7dfd7651c1ad60d">
+    <rdf:rest rdf:nodeID="N50820bda4911409a9f963cf5b43ea42d"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#投保人"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#被保险人">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险参与人"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#等待期天数">
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec063479301a4513961542297742a4b1">
+    <rdf:rest rdf:nodeID="N0d08610f8af546fdb7165f4744ac46d3"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#保险机构"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87e0c39d4257437ab20b39fd2ed1c138">
+    <rdf:rest rdf:nodeID="Na29d52810c5140e296343ddbfdd38bd2"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#责任保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#由公司承保">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="file:///G:/LearnAI/ontology-1#保险公司"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd7e9ec399e944c889a6ec76055c7d527">
+    <owl:members rdf:nodeID="N3fc92836cd0e4300b5ed808192b3b02b"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#受益人">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险参与人"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保障条款">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险条款"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#成年人群">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#适用人群"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#老年人群">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#适用人群"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7fa01ade186545eb813bd39014d0c5fb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+    <owl:members rdf:nodeID="Nadbe024c7f4940d69d8f2072ce6e58a7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#疾病保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#健康保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N65c73314a81f4b2f96875dbdedc45463">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#人寿保险"/>
+    <rdf:rest rdf:nodeID="Nd78b39c0e557491892864497dd9adb79"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ontology-evolution/insurance-benchmark/constraint-feedback/reasoner_evidence/E5/run-004/round-01/seed-20260823">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/ontology-evolution/insurance-benchmark/constraint-feedback/reasoner_evidence/E5/run-004/round-01/seed-20260823/1.0.0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nabe717f38cd04fff85f415ae5a5fe826">
+    <rdf:rest rdf:nodeID="N531c2f556a274562923db5bb5f6d4ffd"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#疾病"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5b17b94c16134fe082cd32369434829c">
+    <rdf:rest rdf:nodeID="N54324eaec2aa4821add356ee69b221be"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#免责条款"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nadbe024c7f4940d69d8f2072ce6e58a7">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#保险产品"/>
+    <rdf:rest rdf:nodeID="Ndd14ec82cefe4a35860a96651f84cf5e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9f0e3248e77645d198ae21ee19b52647">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#老年人群"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N967b1b0ee4094837b7929a86f1811e4f">
+    <owl:members rdf:nodeID="N65c73314a81f4b2f96875dbdedc45463"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#癌症">
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-1#重大疾病"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#免责条款">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险条款"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#意外伤害保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#人身保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#未成年人群">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#适用人群"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#适用人群">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#人寿保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#人身保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#保险中介机构">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险机构"/>
+    <owl:disjointWith rdf:resource="file:///G:/LearnAI/ontology-1#保险公司"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0d08610f8af546fdb7165f4744ac46d3">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#保险条款"/>
+    <rdf:rest rdf:nodeID="Nabe717f38cd04fff85f415ae5a5fe826"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#等待期条款">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#保险条款"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#责任保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#财产保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#财产损失保险">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#财产保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-1#车辆保险">
+    <rdfs:subClassOf rdf:resource="file:///G:/LearnAI/ontology-1#财产保险"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd78b39c0e557491892864497dd9adb79">
+    <rdf:rest rdf:nodeID="Ne442ff2e5abc491395216d1240e3ca38"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#健康保险"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N790bcb93af5e47bea66c69aade3f9ed6">
+    <rdf:rest rdf:nodeID="Naf42111c556348e58339af4a46124e81"/>
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#成年人群"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50820bda4911409a9f963cf5b43ea42d">
+    <rdf:first rdf:resource="file:///G:/LearnAI/ontology-1#被保险人"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,63 @@
+{
+  "event_id": "E47",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "duration_code": "DURATION-CODE-FOOTNOTE-STD",
+    "premium_plan": false
+  },
+  "rules": [
+    {
+      "rule_id": "E47_BASE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "duration_code",
+          "operator": "equals",
+          "value": "DURATION-CODE-BASE"
+        }
+      ],
+      "allowed_values": [
+        "12"
+      ]
+    },
+    {
+      "rule_id": "E47_FOOTNOTE_STD",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "duration_code",
+          "operator": "equals",
+          "value": "DURATION-CODE-FOOTNOTE-STD"
+        },
+        {
+          "fact": "premium_plan",
+          "operator": "equals",
+          "value": false
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E47_PREMIUM",
+      "priority": 250,
+      "conditions": [
+        {
+          "fact": "duration_code",
+          "operator": "equals",
+          "value": "DURATION-CODE-PREMIUM"
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E47_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

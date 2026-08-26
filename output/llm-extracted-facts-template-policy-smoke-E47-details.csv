@@ -1,0 +1,9 @@
+﻿run_index,event_id,split,semantic_type,method,status,selected_candidate_id,selected_value,template_id,source_policy_file,fact_names,fact_schema,extracted_facts,manual_fact_match_count,manual_fact_total,manual_fact_accuracy,manual_fact_mismatches,missing_facts_reported,coerced_facts,applicable_rule_slot,allowed_values,survivor_count,decision_error,extraction_error,evidence_notes,manual_schema_used,manual_rule_template_used,manual_fact_values_used_in_prompt,candidate_descriptions_used_in_prompt,allowed_values_used_in_prompt,oracle_loaded_in_decision_phase,qwen_called,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,oracle_candidate_id,oracle_value,oracle_correct
+1,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。,True,True,False,False,False,False,True,2648,json_schema,650,90,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。""
+}",CAND_002,18,True

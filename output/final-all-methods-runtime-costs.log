@@ -1,0 +1,17 @@
+source=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv,G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-details.csv
+rows=6420
+summary=G:\LearnAI\ontology-evolution\output\final-all-methods-runtime-costs-summary.csv
+json=G:\LearnAI\ontology-evolution\output\final-all-methods-runtime-costs.json
+
+[DIRECT_FREE] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=4419.95 | mean_ms_qwen=4419.95 | tokens=49088
+[FIRST_POSITION] Qwen=0/1200 (0.00%) | direct=1200/1200 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[HASH_FIRST] Qwen=0/1200 (0.00%) | direct=1200/1200 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[LATEST_AUTHORITY_UNIQUE] Qwen=0/1200 (0.00%) | direct=1200/1200 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[LOWEST_ORIGINAL_ID] Qwen=0/1200 (0.00%) | direct=1200/1200 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[OPTION_DESCRIPTION] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=5028.08 | mean_ms_qwen=5028.08 | tokens=68074
+[OPTION_FORMAL_OPERATION] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=5317.42 | mean_ms_qwen=5317.42 | tokens=84354
+[OPTION_FORMAL_POLICY] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=4994.57 | mean_ms_qwen=4994.57 | tokens=109828
+[OPTION_FORMAL_POLICY_HARD_GATE] Qwen=0/60 (0.00%) | direct=60/60 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[OPTION_VALUE_ONLY] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=5020.38 | mean_ms_qwen=5020.38 | tokens=55736
+[RANDOM] Qwen=0/1200 (0.00%) | direct=1200/1200 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[VALUE_ENUM] Qwen=60/60 (100.00%) | direct=0/60 (0.00%) | mean_ms_all=4226.90 | mean_ms_qwen=4226.90 | tokens=49266

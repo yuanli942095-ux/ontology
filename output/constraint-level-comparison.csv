@@ -1,0 +1,5 @@
+﻿feedback_level,attempts,multi_candidate_attempts,first_choice_safe,first_choice_safe_rate,multi_candidate_first_choice_safe,multi_candidate_first_choice_safe_rate,loop_accepted,abstained,final_safe_accepts,final_safe_accept_rate,dev_oracle_successes,dev_oracle_success_rate,unsafe_accepts,unsafe_accept_rate,correction_opportunities,corrected_after_feedback,correction_rate,total_llm_calls,average_llm_calls,average_rounds,average_llm_runtime_ms
+candidate_only,25,15,17,0.68,7,0.466667,25,0,17,0.68,17,0.68,8,0.32,8,0,0.0,15,0.6,1.0,2234.12
+reasoner,25,15,17,0.68,7,0.466667,25,0,20,0.8,20,0.8,5,0.2,8,3,0.375,18,0.72,1.12,2670.36
+reasoner_evidence,25,15,17,0.68,7,0.466667,25,0,25,1.0,25,1.0,0,0.0,8,8,1.0,23,0.92,1.32,3290.16
+reasoner_evidence_cq,25,15,17,0.68,7,0.466667,25,0,25,1.0,25,1.0,0,0.0,8,8,1.0,23,0.92,1.32,3441.64

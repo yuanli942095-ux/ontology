@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-20T12:06:21.808212+00:00",
+  "generator": "build_semantic_ambiguity_benchmark.py",
+  "events": [
+    {
+      "event_id": "E9",
+      "semantic_type": "TEMPORAL_VERSION",
+      "title": "现行条款版本消歧",
+      "case_context": "评估日期为2026年8月20日，需要修复产品A当前有效的最高投保年龄。",
+      "subject_label": "产品A",
+      "predicate_label": "最高投保年龄",
+      "allowed_numeric_range": [
+        0,
+        100
+      ],
+      "documents": [
+        {
+          "document_id": "DOC_E9_OLD",
+          "file_name": "E9_旧版正式条款.txt",
+          "authority": 100,
+          "effective_from": "2025-01-01",
+          "effective_to": "2026-06-30"
+        },
+        {
+          "document_id": "DOC_E9_CURRENT",
+          "file_name": "E9_现行正式条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": ""
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "候选修复值1",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 718,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              60
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E9\\CAND_001.owl"
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "候选修复值2",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 592,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              65
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E9\\CAND_002.owl"
+        }
+      ],
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\mutants\\E9_semantic_gap.owl"
+    },
+    {
+      "event_id": "E10",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "title": "一般条款与续保例外消歧",
+      "case_context": "产品A本次属于保障从未中断的连续续保，不是首次投保，也不是中断后重新投保。",
+      "subject_label": "产品A",
+      "predicate_label": "等待期天数",
+      "allowed_numeric_range": [
+        0,
+        365
+      ],
+      "documents": [
+        {
+          "document_id": "DOC_E10_TERMS",
+          "file_name": "E10_等待期及续保例外条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": ""
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "候选修复值1",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 597,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              0
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E10\\CAND_001.owl"
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "候选修复值2",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 593,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              60
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E10\\CAND_002.owl"
+        }
+      ],
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\mutants\\E10_semantic_gap.owl"
+    },
+    {
+      "event_id": "E11",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "title": "附加责任条件与期限消歧",
+      "case_context": "需要根据已经确认的产品A具体投保方案修复保险期限。",
+      "subject_label": "产品A",
+      "predicate_label": "保险期限月数",
+      "allowed_numeric_range": [
+        1,
+        120
+      ],
+      "documents": [
+        {
+          "document_id": "DOC_E11_TERMS",
+          "file_name": "E11_保险期限与附加责任条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": ""
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "候选修复值1",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 586,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              12
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E11\\CAND_001.owl"
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "候选修复值2",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "execution_pass": true,
+            "iri_guard_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "single_value_gate": true,
+            "numeric_range_gate": true,
+            "minimal_edit_gate": true,
+            "formal_gate_pass": true,
+            "error_message": "",
+            "reasoner_runtime_ms": 595,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "property_values": [
+              24
+            ],
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "business_triples_removed": 0,
+            "business_triples_added": 1,
+            "serialized_triples_removed_including_metadata": 2,
+            "serialized_triples_added_including_metadata": 3
+          },
+          "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\candidate-owls\\E11\\CAND_002.owl"
+        }
+      ],
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\semantic-ambiguity\\mutants\\E11_semantic_gap.owl"
+    }
+  ]
+}

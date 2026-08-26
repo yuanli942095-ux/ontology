@@ -1,0 +1,41 @@
+{
+  "event_id": "E25",
+  "semantics": "general_rule_exception_with_nested_age_window",
+  "facts": {
+    "days_after_birth": 46,
+    "health_disclosure_abnormal": false,
+    "prior_major_disease_record": false
+  },
+  "rules": [
+    {
+      "rule_id": "E25_NEONATAL_EXCEPTION",
+      "priority": 300,
+      "conditions": [
+        {"fact": "days_after_birth", "operator": "less_or_equal", "value": 30},
+        {"fact": "health_disclosure_abnormal", "operator": "equals", "value": false}
+      ],
+      "allowed_values": ["0"]
+    },
+    {
+      "rule_id": "E25_DELAYED_CHILD_EXCEPTION",
+      "priority": 250,
+      "conditions": [
+        {"fact": "days_after_birth", "operator": "greater_than", "value": 30},
+        {"fact": "days_after_birth", "operator": "less_or_equal", "value": 90},
+        {"fact": "health_disclosure_abnormal", "operator": "equals", "value": false},
+        {"fact": "prior_major_disease_record", "operator": "equals", "value": false}
+      ],
+      "allowed_values": ["15"]
+    },
+    {
+      "rule_id": "E25_GENERAL_WAITING_PERIOD",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": ["60"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E25_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

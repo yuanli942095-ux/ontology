@@ -1,0 +1,5 @@
+﻿method,semantic_type,attempts,selected_repairs,repair_coverage,reasoner_pass_rate_selected,selected_operation_cq_pass_rate,oracle_repair_cq_pass_rate_selected,full_repair_closure_accuracy,mutant_oracle_cq_trigger_rate,mean_reasoner_runtime_ms_selected
+OPTION_FORMAL_POLICY_HARD_GATE,ALL,150,150,1.0,1.0,1.0,1.0,1.0,1.0,505.3
+OPTION_FORMAL_POLICY_HARD_GATE,CROSS_SENTENCE_SCOPE,50,50,1.0,1.0,1.0,1.0,1.0,1.0,494.2
+OPTION_FORMAL_POLICY_HARD_GATE,GENERAL_RULE_EXCEPTION,50,50,1.0,1.0,1.0,1.0,1.0,1.0,489.4
+OPTION_FORMAL_POLICY_HARD_GATE,TEMPORAL_VERSION,50,50,1.0,1.0,1.0,1.0,1.0,1.0,532.3

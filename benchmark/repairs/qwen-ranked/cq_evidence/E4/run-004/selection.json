@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "候选 CAND_001 直接针对 CQ002 的失败原因（产品 A 错误地属于财产保险）执行删除操作，符合互斥类别冲突的修复逻辑。"
+}

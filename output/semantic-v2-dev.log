@@ -1,0 +1,14 @@
+语义歧义基准V2实验日志
+split=dev，事件=6，runs=5
+Oracle在全部预测结束后加载=True
+
+[FIRST_POSITION] 覆盖=100.00% | Oracle=30.00% | 95%CI=[16.66%, 47.88%] | 错误选择=70.00% | 无效=0.00% | ABSTAIN=0.00%
+[LATEST_AUTHORITY_UNIQUE] 覆盖=33.33% | Oracle=16.67% | 95%CI=[7.34%, 33.56%] | 错误选择=16.67% | 无效=0.00% | ABSTAIN=66.67%
+[QWEN_CONSTRAINED_CANDIDATE] 覆盖=100.00% | Oracle=100.00% | 95%CI=[88.65%, 100.00%] | 错误选择=0.00% | 无效=0.00% | ABSTAIN=0.00%
+[QWEN_DIRECT_VALUE] 覆盖=100.00% | Oracle=83.33% | 95%CI=[66.44%, 92.66%] | 错误选择=16.67% | 无效=0.00% | ABSTAIN=0.00%
+[RANDOM] 覆盖=100.00% | Oracle=20.00% | 95%CI=[9.51%, 37.31%] | 错误选择=80.00% | 无效=0.00% | ABSTAIN=0.00%
+
+明细：G:\LearnAI\ontology-evolution\output\semantic-v2-dev-details.csv
+汇总：G:\LearnAI\ontology-evolution\output\semantic-v2-dev-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\semantic-v2-dev-by-event.csv
+JSON：G:\LearnAI\ontology-evolution\output\semantic-v2-dev-results.json

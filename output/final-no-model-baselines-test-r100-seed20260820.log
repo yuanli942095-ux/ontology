@@ -1,0 +1,12 @@
+semantic-v2无模型baseline
+
+[FIRST_POSITION] Oracle=34.83% | 错选=65.17% | ABSTAIN=0.00%
+[HASH_FIRST] Oracle=41.67% | 错选=58.33% | ABSTAIN=0.00%
+[LATEST_AUTHORITY_UNIQUE] Oracle=0.00% | 错选=16.67% | ABSTAIN=83.33%
+[LOWEST_ORIGINAL_ID] Oracle=16.67% | 错选=83.33% | ABSTAIN=0.00%
+[RANDOM] Oracle=35.08% | 错选=64.92% | ABSTAIN=0.00%
+
+明细：G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-details.csv
+汇总：G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-by-event.csv
+JSON：G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820.json

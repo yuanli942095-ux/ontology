@@ -1,0 +1,227 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,policy_loaded,applicable_rule,allowed_values,survivor_count,decision_path,qwen_called,oracle_candidate_id,oracle_value,oracle_correct
+test,E17,TEMPORAL_VERSION,1,20260901,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,63,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。在规则优先级中，E17_FILED_AGE_BAND_G2（priority 200）匹配条件age_band_code='AGE-BAND,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3792,json_schema,1540,97,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。在规则优先级中，E17_FILED_AGE_BAND_G2（priority 200）匹配条件age_band_code='AGE-BAND""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,1,20260901,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,1,20260901,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,0,根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3344,json_schema,1530,78,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,1,20260901,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,2,20260902,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,63,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false，匹配规则E17_FILED_AGE_BAND_G2（优先级200），该规则允许值为'63'。OPTION_C的新值'63'符合此规则。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3785,json_schema,1540,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false，匹配规则E17_FILED_AGE_BAND_G2（优先级200），该规则允许值为'63'。OPTION_C的新值'63'符合此规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,2,20260902,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,2,20260902,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据formal_policy规则E27_WAIT_LATE_PROOF（优先级250），当waiting_code为WAIT-CODE-LATE-PROOF且proof_confirmed_valid为true时，适用等待期天数为30。文档DOC_E27_TERMS确认了案件事实（代码为WAIT-CODE-LATE-PROOF，证明标记D_PLUS_18且,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4094,json_schema,1530,110,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy规则E27_WAIT_LATE_PROOF（优先级250），当waiting_code为WAIT-CODE-LATE-PROOF且proof_confirmed_valid为true时，适用等待期天数为30。文档DOC_E27_TERMS确认了案件事实（代码为WAIT-CODE-LATE-PROOF，证明标记D_PLUS_18且""
+  }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,2,20260902,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,3,20260903,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,63,根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用，其allowed_values为63。OPTION_C的新值为63，符合该规则。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2711,json_schema,1540,88,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用，其allowed_values为63。OPTION_C的新值为63，符合该规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,3,20260903,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,3,20260903,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,30,案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_B 的新值为 30，符合规则要求。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3853,json_schema,1530,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_B 的新值为 30，符合规则要求。""
+}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,3,20260903,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,4,20260904,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,73,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4039,json_schema,1540,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile""
+}",,,,,,True,CAND_002,63,False
+test,E17,TEMPORAL_VERSION,4,20260904,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,4,20260904,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,2537,json_schema,1530,78,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,4,20260904,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,5,20260905,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'，marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件匹配且允许值为'63'；其他规则不匹配。OPTION_B的新值为'63',OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4040,json_schema,1540,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'，marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件匹配且允许值为'63'；其他规则不匹配。OPTION_B的新值为'63'""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,5,20260905,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,5,20260905,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3532,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,5,20260905,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,6,20260906,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的事实，age_band_code为AGE-BAND-G2，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足（age_band_code等于AGE-BAND-G2），其允许值为,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3988,json_schema,1540,97,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的事实，age_band_code为AGE-BAND-G2，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足（age_band_code等于AGE-BAND-G2），其允许值为"" }",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,6,20260906,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,6,20260906,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2593,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,6,20260906,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,7,20260907,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件匹配（age_band_code等于'AGE-BAND-G2',OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3067,json_schema,1540,97,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件匹配（age_band_code等于'AGE-BAND-G2'""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,7,20260907,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,7,20260907,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,0,根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3490,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,7,20260907,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,8,20260908,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,63,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false，规则E17_FILED_AGE_BAND_G2（优先级200）被触发，其allowed_values为['63']。OPTION_C的新值为6,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4004,json_schema,1540,99,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false，规则E17_FILED_AGE_BAND_G2（优先级200）被触发，其allowed_values为['63']。OPTION_C的新值为6""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,8,20260908,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,8,20260908,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_C 的新值为 30，符合规则要求。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3954,json_schema,1530,99,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_C 的新值为 30，符合规则要求。""
+}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,8,20260908,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,9,20260909,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,73,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4207,json_schema,1540,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile""
+}",,,,,,True,CAND_002,63,False
+test,E17,TEMPORAL_VERSION,9,20260909,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,9,20260909,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用值为 30。case_context 中 waiting_code 为 WAIT-CODE-LATE-PROOF ,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3030,json_schema,1530,96,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用值为 30。case_context 中 waiting_code 为 WAIT-CODE-LATE-PROOF ""}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,9,20260909,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,10,20260910,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,63,根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3688,json_schema,1540,85,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,10,20260910,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,10,20260910,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3699,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,10,20260910,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,11,20260911,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,63,根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2799,json_schema,1540,85,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,11,20260911,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,11,20260911,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_C 的新值为 30，符合规则要求。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4220,json_schema,1530,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实中 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配 formal_policy 中 priority 250 的 E27_WAIT_LATE_PROOF 规则，该规则允许值为 30。OPTION_C 的新值为 30，符合规则要求。""
+}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,11,20260911,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,12,20260912,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,73,根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4319,json_schema,1540,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的显式事实age_band_code为'AGE-BAND-G2'，且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足，允许值为'63'。然而，在提供的formally_execubile""
+}",,,,,,True,CAND_002,63,False
+test,E17,TEMPORAL_VERSION,12,20260912,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,12,20260912,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,0,根据 formal_policy 中的规则优先级判断：当前事实 waiting_code 为 WAIT-CODE-LATE-PROOF，proof_confirmed_valid 为 true。规则 E27_WAIT_LATE_PROOF (priority 250) 匹配该条件，其 allowed_values 为 [,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3978,json_schema,1530,88,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 中的规则优先级判断：当前事实 waiting_code 为 WAIT-CODE-LATE-PROOF，proof_confirmed_valid 为 true。规则 E27_WAIT_LATE_PROOF (priority 250) 匹配该条件，其 allowed_values 为 ["" }",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,12,20260912,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,13,20260913,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的事实（age_band_code为AGE-BAND-G2，marketing_draft_applicable和renewal_channel_confirmed均为false），规则E17_FILED_AGE_BAND_G2（优先级200）条件满足且允许值为63。规则E17_MARKETING_DRAFT_BAND（优先级,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4330,json_schema,1540,98,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的事实（age_band_code为AGE-BAND-G2，marketing_draft_applicable和renewal_channel_confirmed均为false），规则E17_FILED_AGE_BAND_G2（优先级200）条件满足且允许值为63。规则E17_MARKETING_DRAFT_BAND（优先级""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,13,20260913,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,13,20260913,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用值为 30。case_context 中 waiting_code 为 WAIT-CODE-LATE-PROOF ,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4194,json_schema,1530,96,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用值为 30。case_context 中 waiting_code 为 WAIT-CODE-LATE-PROOF ""}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,13,20260913,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,14,20260914,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,63,根据formal_policy中的事实（age_band_code为AGE-BAND-G2），匹配规则E17_FILED_AGE_BAND_G2（优先级200），该规则允许的值为63。在给定选项中，只有OPTION_C的新值为63，符合规则要求。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4059,json_schema,1540,89,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy中的事实（age_band_code为AGE-BAND-G2），匹配规则E17_FILED_AGE_BAND_G2（优先级200），该规则允许的值为63。在给定选项中，只有OPTION_C的新值为63，符合规则要求。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,14,20260914,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,14,20260914,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,0,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，允许值为 30。然而，文档 DOC_E27_TERMS 第三条明确指出“本体更新只采用等待期规则代码对应的候选修复；规则,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4584,json_schema,1530,107,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，允许值为 30。然而，文档 DOC_E27_TERMS 第三条明确指出“本体更新只采用等待期规则代码对应的候选修复；规则""
+}",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,14,20260914,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,15,20260915,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2的优先级为200，条件匹配（age_band_code等于'AGE-BAND-G2'），允许,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4388,json_schema,1540,98,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2的优先级为200，条件匹配（age_band_code等于'AGE-BAND-G2'），允许""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,15,20260915,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,15,20260915,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2716,json_schema,1530,78,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,15,20260915,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,16,20260916,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,73,根据formal_policy中的facts，age_band_code为AGE-BAND-G2，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足（age_band_code等于AGE-BAND-G2），其新,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4345,json_schema,1540,95,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的facts，age_band_code为AGE-BAND-G2，marketing_draft_applicable为false，renewal_channel_confirmed为false。规则E17_FILED_AGE_BAND_G2（优先级200）条件满足（age_band_code等于AGE-BAND-G2），其新""
+}",,,,,,True,CAND_002,63,False
+test,E17,TEMPORAL_VERSION,16,20260916,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,16,20260916,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,0,根据 formal_policy 中的规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，允许值为 30。然而，文档 DOC_E27_TERMS 第三条明确指出“本体更新只采用等待期规则代码对应的候选修复；,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4545,json_schema,1530,128,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 中的规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，允许值为 30。然而，文档 DOC_E27_TERMS 第三条明确指出“本体更新只采用等待期规则代码对应的候选修复；""
+  																		}",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,16,20260916,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,17,20260917,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,63,根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2的优先级为200，条件匹配（age_band_code等于'AGE-BAND-G2'），允许,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3319,json_schema,1540,98,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的facts，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2的优先级为200，条件匹配（age_band_code等于'AGE-BAND-G2'），允许""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,17,20260917,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,17,20260917,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3842,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,17,20260917,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,18,20260918,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,73,根据formal_policy中的显式事实，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）匹配该条件，其allowed_values为['63']。然而，在formly,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3413,json_schema,1540,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据formal_policy中的显式事实，age_band_code为'AGE-BAND-G2'且marketing_draft_applicable和renewal_channel_confirmed均为false。规则E17_FILED_AGE_BAND_G2（优先级200）匹配该条件，其allowed_values为['63']。然而，在formly""
+}",,,,,,True,CAND_002,63,False
+test,E17,TEMPORAL_VERSION,18,20260918,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,18,20260918,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,0,根据 formal_policy 事实 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配规则 E27_WAIT_LATE_PROOF (优先级 250)，该规则允许值为 '30'。文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4639,json_schema,1530,106,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 事实 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true，匹配规则 E27_WAIT_LATE_PROOF (优先级 250)，该规则允许值为 '30'。文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’""
+}",,,,,,True,CAND_002,30,False
+test,E27,GENERAL_RULE_EXCEPTION,18,20260918,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,19,20260919,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,63,根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4023,json_schema,1540,85,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,19,20260919,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,19,20260919,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values [,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2832,json_schema,1530,79,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF（优先级 250），当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用 allowed_values ["" }",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,19,20260919,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True
+test,E17,TEMPORAL_VERSION,20,20260920,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,63,根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3023,json_schema,1540,85,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据formal_policy中的事实(age_band_code为AGE-BAND-G2)和规则优先级，E17_FILED_AGE_BAND_G2规则（优先级200）适用且允许值为63。OPTION_A的新值63符合该规则。""
+}",,,,,,True,CAND_002,63,True
+test,E17,TEMPORAL_VERSION,20,20260920,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,63,硬门禁：规则E17_FILED_AGE_BAND_G2唯一允许值=['63']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E17_FILED_AGE_BAND_G2,63,1,DETERMINISTIC_SELECT,False,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,20,20260920,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,30,根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用等待期天数为 30。该条件完全匹配案件上下文事实（代码为 WAIT-CODE-LATE-PROOF，标记为 D_+,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4609,json_schema,1530,106,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据 formal_policy 规则 E27_WAIT_LATE_PROOF (优先级 250)，当 waiting_code 为 WAIT-CODE-LATE-PROOF 且 proof_confirmed_valid 为 true 时，适用等待期天数为 30。该条件完全匹配案件上下文事实（代码为 WAIT-CODE-LATE-PROOF，标记为 D_+""}",,,,,,True,CAND_002,30,True
+test,E27,GENERAL_RULE_EXCEPTION,20,20260920,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,30,硬门禁：规则E27_WAIT_LATE_PROOF唯一允许值=['30']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E27_WAIT_LATE_PROOF,30,1,DETERMINISTIC_SELECT,False,CAND_002,30,True

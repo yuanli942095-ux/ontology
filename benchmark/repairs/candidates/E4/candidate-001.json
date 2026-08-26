@@ -1,0 +1,23 @@
+{
+  "candidate_id": "candidate-001",
+  "error_id": "E4",
+  "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E4_disjoint_class_conflict.owl",
+  "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidates\\E4\\candidate-001.owl",
+  "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/repair/E4/candidate-001",
+  "generator": "finite_operator_cq_baseline",
+  "violated_cq_ids": [
+    "CQ002"
+  ],
+  "unresolved_notes": [],
+  "operations": [
+    {
+      "operator": "REMOVE_CLASS_ASSERTION",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "class_iri": "file:///G:/LearnAI/ontology-1#财产保险",
+      "source_cq_ids": [
+        "CQ002"
+      ],
+      "rationale": "禁止产品同时落入互斥的财产保险分类"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+semantic-v2 repair closure
+split=test
+methods=DIRECT_FREE,OPTION_FORMAL_OPERATION,OPTION_FORMAL_POLICY,OPTION_FORMAL_POLICY_HARD_GATE,OPTION_VALUE_ONLY
+rows=750
+unique_reasoner_runs=38
+oracle_loaded_after_selection_rows=True
+
+[DIRECT_FREE] full_repair=77.33% | coverage=77.33% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=100.00%
+[OPTION_FORMAL_OPERATION] full_repair=76.00% | coverage=83.33% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=91.20%
+[OPTION_FORMAL_POLICY] full_repair=97.33% | coverage=100.00% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=97.33%
+[OPTION_FORMAL_POLICY_HARD_GATE] full_repair=100.00% | coverage=100.00% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=100.00%
+[OPTION_VALUE_ONLY] full_repair=81.33% | coverage=89.33% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=91.04%
+
+details=G:\LearnAI\ontology-evolution\output\semantic-v2-repair-closure-test-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\semantic-v2-repair-closure-test-r5-seed20260820-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\semantic-v2-repair-closure-test-r5-seed20260820-by-event.csv
+json=G:\LearnAI\ontology-evolution\output\semantic-v2-repair-closure-test-r5-seed20260820.json

@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ006"
+      ],
+      "rationale": "根据证据 EVID_015，'等待期天数' 属性被更新为 '60'。由于该属性具有 FunctionalProperty（函数属性）特性，旧值必须被移除以避免冲突。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "30",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

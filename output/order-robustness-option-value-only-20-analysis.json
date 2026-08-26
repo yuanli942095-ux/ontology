@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-08-25T14:02:34.378933+00:00",
+  "source_details": "G:\\LearnAI\\ontology-evolution\\output\\order-robustness-option-value-only-20-details.csv",
+  "rows": 40,
+  "summary": [
+    {
+      "method": "OPTION_VALUE_ONLY",
+      "events": 2,
+      "attempts": 40,
+      "oracle_successes": 12,
+      "accuracy": 0.3,
+      "wrong_rate": 0.7,
+      "abstain_rate": 0.0,
+      "invalid_rate": 0.0,
+      "strict_order_robust_events": 0,
+      "stable_selected_candidate_events": 0,
+      "outcome_consistent_events": 0,
+      "order_sensitive_events": 2
+    }
+  ],
+  "by_event": [
+    {
+      "method": "OPTION_VALUE_ONLY",
+      "event_id": "E17",
+      "semantic_type": "TEMPORAL_VERSION",
+      "attempts": 20,
+      "distinct_candidate_orders": 6,
+      "oracle_successes": 4,
+      "accuracy": 0.2,
+      "wrong": 16,
+      "abstains": 0,
+      "invalid": 0,
+      "selected_candidate_ids": "CAND_001|CAND_002|CAND_003",
+      "selected_values": "58|63|73",
+      "selected_option_ids": "OPTION_A|OPTION_B|OPTION_C",
+      "stable_selected_candidate": false,
+      "strict_order_robust": false,
+      "outcome_consistent": false,
+      "order_sensitive": true
+    },
+    {
+      "method": "OPTION_VALUE_ONLY",
+      "event_id": "E37",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "attempts": 20,
+      "distinct_candidate_orders": 6,
+      "oracle_successes": 8,
+      "accuracy": 0.4,
+      "wrong": 12,
+      "abstains": 0,
+      "invalid": 0,
+      "selected_candidate_ids": "CAND_001|CAND_002|CAND_003",
+      "selected_values": "12|18|24",
+      "selected_option_ids": "OPTION_A",
+      "stable_selected_candidate": false,
+      "strict_order_robust": false,
+      "outcome_consistent": false,
+      "order_sensitive": true
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,oracle_candidate_id,oracle_value,oracle_correct
+dev,E12,TEMPORAL_VERSION,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,1,20260820,RANDOM,SELECTED,OPTION_A,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,1,20260820,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,65,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,65,评估日期2026-08-20落在DOC_E12_NEW生效期间（2026-07-01至今），且该文档明确修订最高投保年龄为65周岁并规定以新条款为准，故取65。,OPTION_A=CAND_001|OPTION_B=CAND_002,10982,json_schema,775,87,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20落在DOC_E12_NEW生效期间（2026-07-01至今），且该文档明确修订最高投保年龄为65周岁并规定以新条款为准，故取65。""
+}",CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,65,评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01生效）规定最高投保年龄为65周岁且声明以本修订版为准。因此应修复为65。,OPTION_A=CAND_001|OPTION_B=CAND_002,3299,json_schema,993,107,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01生效）规定最高投保年龄为65周岁且声明以本修订版为准。因此应修复为65。""
+}",CAND_002,65,True
+dev,E13,TEMPORAL_VERSION,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,65,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,1,20260820,RANDOM,SELECTED,OPTION_B,CAND_002,70,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,1,20260820,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,70,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_001,65,评估日期为2026年8月20日，处于DOC_E13_CURRENT（生效至2026-08-31）的有效期内。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明在生效日前不适用。因此，依据当前生效文档，最高投保年龄为65周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002,3360,json_schema,798,113,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期为2026年8月20日，处于DOC_E13_CURRENT（生效至2026-08-31）的有效期内。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明在生效日前不适用。因此，依据当前生效文档，最高投保年龄为65周岁。""
+}",CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_001,65,评估日期为2026年8月20日，DOC_E13_CURRENT（生效至2026-08-31）在此日期有效且规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且在生效日前明确不适用于判定，故排除OPTION_B。,OPTION_A=CAND_001|OPTION_B=CAND_002,3471,json_schema,1009,112,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E13_CURRENT（生效至2026-08-31）在此日期有效且规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且在生效日前明确不适用于判定，故排除OPTION_B。""
+}",CAND_001,65,True
+dev,E22,GENERAL_RULE_EXCEPTION,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,0,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,1,20260820,RANDOM,SELECTED,OPTION_B,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,1,20260820,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_002,0,文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条规定连续续保且保障未中断时等待期为0天，并明确该例外优先于第三条一般规定。案件上下文确认本次为连续续保且无中断，条件满足。,OPTION_A=CAND_002|OPTION_B=CAND_001,2857,json_schema,538,95,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条规定连续续保且保障未中断时等待期为0天，并明确该例外优先于第三条一般规定。案件上下文确认本次为连续续保且无中断，条件满足。""
+}",CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_002,0,案件上下文明确为连续续保且无中断，文档DOC_E22_TERMS第四条规定此情形下等待期为0天并优先于第三条的60天一般规则。因此应选OPTION_A（0天）。,OPTION_A=CAND_002|OPTION_B=CAND_001,2635,json_schema,752,78,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件上下文明确为连续续保且无中断，文档DOC_E22_TERMS第四条规定此情形下等待期为0天并优先于第三条的60天一般规则。因此应选OPTION_A（0天）。""
+}",CAND_002,0,True
+dev,E23,GENERAL_RULE_EXCEPTION,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,1,20260820,RANDOM,SELECTED,OPTION_B,CAND_002,0,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,1,20260820,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_C,CAND_003,30,文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3262,json_schema,570,114,stop,"{
+  ""abstain"": false,
+  ""value"": ""30"",
+  ""reason"": ""文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_C,CAND_003,30,案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。文档DOC_E23_TERMS第五条规定此情形下等待期为30天，且该条款优先于第四条（连续未中断）和第三条（首次投保）。因此适用OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2987,json_schema,873,91,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。文档DOC_E23_TERMS第五条规定此情形下等待期为30天，且该条款优先于第四条（连续未中断）和第三条（首次投保）。因此适用OPTION_C。""
+}",CAND_003,30,True
+dev,E32,CROSS_SENTENCE_SCOPE,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,1,20260820,RANDOM,SELECTED,OPTION_A,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,1,20260820,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,24,DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2822,json_schema,514,95,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。""
+}",CAND_002,24,True
+dev,E32,CROSS_SENTENCE_SCOPE,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2862,json_schema,726,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。""
+}",CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,1,20260820,FIRST_POSITION,SELECTED,OPTION_A,CAND_003,36,打乱后的首个候选,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,1,20260820,RANDOM,SELECTED,OPTION_C,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,1,20260820,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,1,20260820,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_003,36,DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3900,json_schema,574,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""36"",
+  ""reason"": ""DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的""
+}",CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,1,20260820,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E33_TERMS，投保人选择了长期医疗附加责任（第七条），且核保确认未选择海外医疗扩展责任（第八条条件不满足）。因此适用第七条规定的24个月期限。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,2565,json_schema,874,73,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E33_TERMS，投保人选择了长期医疗附加责任（第七条），且核保确认未选择海外医疗扩展责任（第八条条件不满足）。因此适用第七条规定的24个月期限。""
+}",CAND_002,24,True
+dev,E12,TEMPORAL_VERSION,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,2,20260821,RANDOM,SELECTED,OPTION_B,CAND_002,65,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,2,20260821,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,65,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,65,评估日期2026-08-20落在DOC_E12_NEW生效期间（2026-07-01至今），且该文档明确修订最高投保年龄为65周岁并规定与旧版不一致时以新版为准。,OPTION_A=CAND_001|OPTION_B=CAND_002,2368,json_schema,775,86,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20落在DOC_E12_NEW生效期间（2026-07-01至今），且该文档明确修订最高投保年龄为65周岁并规定与旧版不一致时以新版为准。""
+}",CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,65,评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01起）当前有效且明确规定最高投保年龄为65周岁。因此应修复为65。,OPTION_A=CAND_001|OPTION_B=CAND_002,2763,json_schema,993,103,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01起）当前有效且明确规定最高投保年龄为65周岁。因此应修复为65。""
+}",CAND_002,65,True
+dev,E13,TEMPORAL_VERSION,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,70,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,2,20260821,RANDOM,SELECTED,OPTION_A,CAND_002,70,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,2,20260821,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_A,CAND_002,70,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_001,65,评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）的有效期内，该文件规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采纳其70周岁的数值。,OPTION_A=CAND_002|OPTION_B=CAND_001,3182,json_schema,798,124,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）的有效期内，该文件规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采纳其70周岁的数值。""
+}",CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_001,65,评估日期为2026年8月20日，DOC_E13_FUTURE（9月版）生效时间为2026-09-01，尚未生效且明确声明生效日前不适用；DOC_E13_CURRENT（现行版）生效时间覆盖2026-07-01至2026-08-31，包含评估日，规定最高投保年龄为65周岁。依据文件权威性、生效时间及例外规则，应采纳OPTION_B。,OPTION_A=CAND_002|OPTION_B=CAND_001,3879,json_schema,1009,139,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E13_FUTURE（9月版）生效时间为2026-09-01，尚未生效且明确声明生效日前不适用；DOC_E13_CURRENT（现行版）生效时间覆盖2026-07-01至2026-08-31，包含评估日，规定最高投保年龄为65周岁。依据文件权威性、生效时间及例外规则，应采纳OPTION_B。""
+}",CAND_001,65,True
+dev,E22,GENERAL_RULE_EXCEPTION,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,2,20260821,RANDOM,SELECTED,OPTION_A,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,2,20260821,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,0,文档 DOC_E22_TERMS 权威性强（authority=100）且生效时间覆盖当前。案件上下文表明为连续续保且无中断，满足第四条例外条款条件。根据‘本例外优先于第三条的一般规定’，适用例外规则，等待期为 0 天。,OPTION_A=CAND_001|OPTION_B=CAND_002,2469,json_schema,538,91,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""文档 DOC_E22_TERMS 权威性强（authority=100）且生效时间覆盖当前。案件上下文表明为连续续保且无中断，满足第四条例外条款条件。根据‘本例外优先于第三条的一般规定’，适用例外规则，等待期为 0 天。""
+}",CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,0,案件上下文明确指出本次投保为'连续续保'且'上一保险期间与本次保险期间没有中断'，满足文档DOC_E22_TERMS中第四条'连续续保例外'的触发条件。根据该条款'本例外优先于第三条的一般规定'，应适用例外规则将等待期设为0天，而非一般规则的60天。,OPTION_A=CAND_001|OPTION_B=CAND_002,3157,json_schema,752,106,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文明确指出本次投保为'连续续保'且'上一保险期间与本次保险期间没有中断'，满足文档DOC_E22_TERMS中第四条'连续续保例外'的触发条件。根据该条款'本例外优先于第三条的一般规定'，应适用例外规则将等待期设为0天，而非一般规则的60天。""
+}",CAND_002,0,True
+dev,E23,GENERAL_RULE_EXCEPTION,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,2,20260821,RANDOM,SELECTED,OPTION_C,CAND_003,30,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,2,20260821,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_C,CAND_003,30,文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2981,json_schema,570,114,stop,"{
+  ""abstain"": false,
+  ""value"": ""30"",
+  ""reason"": ""文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_C,CAND_003,30,案件上下文明确描述客户'续保资格曾中断，之后经保险公司批准恢复保障'。根据文档DOC_E23_TERMS第五条（中断后复效的再例外），此情形适用30天等待期。该条款第五条优先于第四条（连续未中断）和第三条（一般首次投保）。因此，OPTION_C是唯一语义上适用的选项。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2817,json_schema,873,105,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文明确描述客户'续保资格曾中断，之后经保险公司批准恢复保障'。根据文档DOC_E23_TERMS第五条（中断后复效的再例外），此情形适用30天等待期。该条款第五条优先于第四条（连续未中断）和第三条（一般首次投保）。因此，OPTION_C是唯一语义上适用的选项。""
+}",CAND_003,30,True
+dev,E32,CROSS_SENTENCE_SCOPE,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,2,20260821,RANDOM,SELECTED,OPTION_A,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,2,20260821,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,24,DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础方案为 12 个月，但投保确认记录明确选择了‘长期医疗附加责任’，根据一般规则与例外优先级，该附加条件触发保险期限调整为 24 个月的例外规则。,OPTION_A=CAND_001|OPTION_B=CAND_002,2868,json_schema,514,108,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础方案为 12 个月，但投保确认记录明确选择了‘长期医疗附加责任’，根据一般规则与例外优先级，该附加条件触发保险期限调整为 24 个月的例外规则。""
+}",CAND_002,24,True
+dev,E32,CROSS_SENTENCE_SCOPE,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E32_TERMS，产品A基础方案期限为12个月，但投保确认记录明确本次选择了长期医疗附加责任。条款规定选择该附加责任时，整个方案期限调整为24个月。因此，适用选项B（24个月）。,OPTION_A=CAND_001|OPTION_B=CAND_002,2414,json_schema,726,86,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E32_TERMS，产品A基础方案期限为12个月，但投保确认记录明确本次选择了长期医疗附加责任。条款规定选择该附加责任时，整个方案期限调整为24个月。因此，适用选项B（24个月）。""
+}",CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,2,20260821,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,2,20260821,RANDOM,SELECTED,OPTION_C,CAND_002,24,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,2,20260821,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,2,20260821,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_003,36,DOC_E33_TERMS (生效时间2026-07-01) 规定：基础期限为12个月；选择长期医疗附加责任调整为24个月；同时选择长期医疗附加责任和海外医疗扩展责任调整为36个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据文档逻辑，仅满足‘同时选择’条件时期限才为36个月，否则为24个月。当前情况仅满足第七条（长期,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3578,json_schema,574,138,stop,"{
+  ""abstain"": false,
+  ""value"": ""36"",
+  ""reason"": ""DOC_E33_TERMS (生效时间2026-07-01) 规定：基础期限为12个月；选择长期医疗附加责任调整为24个月；同时选择长期医疗附加责任和海外医疗扩展责任调整为36个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据文档逻辑，仅满足‘同时选择’条件时期限才为36个月，否则为24个月。当前情况仅满足第七条（长期""
+}",CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,2,20260821,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_C,CAND_002,24,根据文档DOC_E33_TERMS，投保产品A基础保障时期限为12个月（第六条）；若选择长期医疗附加责任则调整为24个月（第七条）；若同时选择长期医疗附加责任和海外医疗扩展责任则调整为36个月（第八条）。案件上下文中，投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。因此，满足第七条条件但不满足第八条的‘同时’条件，适用期限为2,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3779,json_schema,874,131,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E33_TERMS，投保产品A基础保障时期限为12个月（第六条）；若选择长期医疗附加责任则调整为24个月（第七条）；若同时选择长期医疗附加责任和海外医疗扩展责任则调整为36个月（第八条）。案件上下文中，投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。因此，满足第七条条件但不满足第八条的‘同时’条件，适用期限为2""
+}",CAND_002,24,True
+dev,E12,TEMPORAL_VERSION,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,65,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,3,20260822,RANDOM,SELECTED,OPTION_B,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,3,20260822,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_A,CAND_002,65,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_002,65,评估日期2026年8月20日落在DOC_E12_NEW生效期间（2026-07-01至今），且DOC_E12_NEW明确修订最高投保年龄为65周岁，DOC_E12_OLD已失效。,OPTION_A=CAND_002|OPTION_B=CAND_001,2383,json_schema,775,87,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026年8月20日落在DOC_E12_NEW生效期间（2026-07-01至今），且DOC_E12_NEW明确修订最高投保年龄为65周岁，DOC_E12_OLD已失效。""
+}",CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_002,65,评估日期为2026年8月20日，DOC_E12_NEW（生效至2026-07-01）已生效且规定最高投保年龄为65周岁，DOC_E12_OLD（截至2026-06-30）已失效。因此应采纳65周岁。,OPTION_A=CAND_002|OPTION_B=CAND_001,3077,json_schema,993,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E12_NEW（生效至2026-07-01）已生效且规定最高投保年龄为65周岁，DOC_E12_OLD（截至2026-06-30）已失效。因此应采纳65周岁。""
+}",CAND_002,65,True
+dev,E13,TEMPORAL_VERSION,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,65,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,3,20260822,RANDOM,SELECTED,OPTION_B,CAND_002,70,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,3,20260822,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,70,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_001,65,评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）有效期内，该文档规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采用其70周岁的数值。,OPTION_A=CAND_001|OPTION_B=CAND_002,3182,json_schema,798,123,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）有效期内，该文档规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采用其70周岁的数值。""
+}",CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_001,65,评估日期为2026年8月20日，DOC_E13_CURRENT（生效至2026-08-31）处于有效期内且规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明在生效日前不适用。根据文件权威性、生效时间及例外规则，应采纳OPTION_A（65周岁）。,OPTION_A=CAND_001|OPTION_B=CAND_002,3551,json_schema,1009,125,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E13_CURRENT（生效至2026-08-31）处于有效期内且规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明在生效日前不适用。根据文件权威性、生效时间及例外规则，应采纳OPTION_A（65周岁）。""
+}",CAND_001,65,True
+dev,E22,GENERAL_RULE_EXCEPTION,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,3,20260822,RANDOM,SELECTED,OPTION_B,CAND_002,0,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,3,20260822,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,0,文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条规定连续续保且保障未中断时不重新计算等待期，按0天处理，并明确该例外优先于第三条。案件上下文确认本次为连续续保且无中断，条件满足，故取值为0。,OPTION_A=CAND_001|OPTION_B=CAND_002,2762,json_schema,538,104,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条规定连续续保且保障未中断时不重新计算等待期，按0天处理，并明确该例外优先于第三条。案件上下文确认本次为连续续保且无中断，条件满足，故取值为0。""
+}",CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,0,案件上下文明确描述为'连续续保'且'没有中断'，满足文档DOC_E22_TERMS第四条'连续续保例外'的适用条件。该例外条款明确规定'不重新计算等待期，等待期按0天处理'，并声明'本例外优先于第三条的一般规定'。因此，应依据例外规则选择OPTION_B（0天），而非一般规则的OPTION_A（60天）。,OPTION_A=CAND_001|OPTION_B=CAND_002,3170,json_schema,752,120,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文明确描述为'连续续保'且'没有中断'，满足文档DOC_E22_TERMS第四条'连续续保例外'的适用条件。该例外条款明确规定'不重新计算等待期，等待期按0天处理'，并声明'本例外优先于第三条的一般规定'。因此，应依据例外规则选择OPTION_B（0天），而非一般规则的OPTION_A（60天）。""
+}",CAND_002,0,True
+dev,E23,GENERAL_RULE_EXCEPTION,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,3,20260822,RANDOM,SELECTED,OPTION_C,CAND_002,0,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,3,20260822,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_003,30,文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2958,json_schema,570,114,stop,"{
+  ""abstain"": false,
+  ""value"": ""30"",
+  ""reason"": ""文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_003,30,案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。根据文档DOC_E23_TERMS第五条（中断后复效的再例外），此情形下等待期为30天。该条款第五条优先于第四条（连续续保）和第三条（一般首次投保）。因此，OPTION_B是唯一符合规则优先级且满足条件的选项。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3333,json_schema,873,108,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。根据文档DOC_E23_TERMS第五条（中断后复效的再例外），此情形下等待期为30天。该条款第五条优先于第四条（连续续保）和第三条（一般首次投保）。因此，OPTION_B是唯一符合规则优先级且满足条件的选项。""
+}",CAND_003,30,True
+dev,E32,CROSS_SENTENCE_SCOPE,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,3,20260822,RANDOM,SELECTED,OPTION_A,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,3,20260822,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,24,DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础方案为 12 个月，但投保确认记录明确选择了长期医疗附加责任，根据例外规则（附加责任时调整为 24 个月），最终保险期限月数为 24。,OPTION_A=CAND_001|OPTION_B=CAND_002,2794,json_schema,514,107,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础方案为 12 个月，但投保确认记录明确选择了长期医疗附加责任，根据例外规则（附加责任时调整为 24 个月），最终保险期限月数为 24。""
+}",CAND_002,24,True
+dev,E32,CROSS_SENTENCE_SCOPE,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2480,json_schema,726,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。""
+}",CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,3,20260822,FIRST_POSITION,SELECTED,OPTION_A,CAND_003,36,打乱后的首个候选,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,3,20260822,RANDOM,SELECTED,OPTION_B,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,3,20260822,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,3,20260822,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_003,36,DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3596,json_schema,574,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""36"",
+  ""reason"": ""DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的""
+}",CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,3,20260822,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_C,CAND_002,24,条款第七条规定投保长期医疗附加责任时保险期限为24个月，第八条规定同时选择海外扩展责任时才调整为36个月。根据投保申请记录（选择了长期医疗）和核保确认记录（未选择海外扩展），条件仅满足第七条，故适用OPTION_C的24个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2833,json_schema,874,93,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""条款第七条规定投保长期医疗附加责任时保险期限为24个月，第八条规定同时选择海外扩展责任时才调整为36个月。根据投保申请记录（选择了长期医疗）和核保确认记录（未选择海外扩展），条件仅满足第七条，故适用OPTION_C的24个月。""
+}",CAND_002,24,True
+dev,E12,TEMPORAL_VERSION,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,65,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,4,20260823,RANDOM,SELECTED,OPTION_B,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,4,20260823,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_A,CAND_002,65,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_002,65,评估日期2026-08-20处于DOC_E12_NEW生效期间（2026-07-01起），且该文档明确修订最高投保年龄为65周岁并规定不一致时以新为准，故采用65。,OPTION_A=CAND_002|OPTION_B=CAND_001,2399,json_schema,775,88,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E12_NEW生效期间（2026-07-01起），且该文档明确修订最高投保年龄为65周岁并规定不一致时以新为准，故采用65。""
+}",CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_002,65,评估日期为2026年8月20日，DOC_E12_NEW（生效至2026-07-01）已生效且规定最高投保年龄为65周岁，DOC_E12_OLD（截至2026-06-30）已失效。因此应采纳65周岁。,OPTION_A=CAND_002|OPTION_B=CAND_001,2814,json_schema,993,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E12_NEW（生效至2026-07-01）已生效且规定最高投保年龄为65周岁，DOC_E12_OLD（截至2026-06-30）已失效。因此应采纳65周岁。""
+}",CAND_002,65,True
+dev,E13,TEMPORAL_VERSION,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,70,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,4,20260823,RANDOM,SELECTED,OPTION_B,CAND_001,65,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,4,20260823,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_A,CAND_002,70,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_001,65,"评估日期2026-08-20处于DOC_E13_CURRENT生效区间[2026-07-01, 2026-08-31]内，且DOC_E13_FUTURE尚未生效。依据文件权威性（均为100）及时间有效性，仅采纳DOC_E13_CURRENT中规定的最高投保年龄65周岁。",OPTION_A=CAND_002|OPTION_B=CAND_001,3020,json_schema,798,115,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E13_CURRENT生效区间[2026-07-01, 2026-08-31]内，且DOC_E13_FUTURE尚未生效。依据文件权威性（均为100）及时间有效性，仅采纳DOC_E13_CURRENT中规定的最高投保年龄65周岁。""
+}",CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_001,65,评估日期为2026年8月20日，DOC_E13_FUTURE（9月修订版）生效时间为2026-09-01，尚未生效且明确声明不适用于生效日前。DOC_E13_CURRENT生效时间为2026-07-01至2026-08-31，覆盖评估日期，规定最高投保年龄为65周岁。依据时间有效性原则，应采纳当前生效版本。,OPTION_A=CAND_002|OPTION_B=CAND_001,3736,json_schema,1009,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E13_FUTURE（9月修订版）生效时间为2026-09-01，尚未生效且明确声明不适用于生效日前。DOC_E13_CURRENT生效时间为2026-07-01至2026-08-31，覆盖评估日期，规定最高投保年龄为65周岁。依据时间有效性原则，应采纳当前生效版本。""
+}",CAND_001,65,True
+dev,E22,GENERAL_RULE_EXCEPTION,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,4,20260823,RANDOM,SELECTED,OPTION_A,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,4,20260823,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,0,文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条明确规定连续续保且保障未中断的例外情况等待期为0天，该例外优先于第三条的一般规定。案件上下文确认本次为连续续保且无中断，满足例外条件。,OPTION_A=CAND_001|OPTION_B=CAND_002,2603,json_schema,538,96,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""文档DOC_E22_TERMS（权威性100，生效时间2026-07-01）第四条明确规定连续续保且保障未中断的例外情况等待期为0天，该例外优先于第三条的一般规定。案件上下文确认本次为连续续保且无中断，满足例外条件。""
+}",CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,0,案件上下文明确指出本次投保为'连续续保'且'上一保险期间与本次保险期间没有中断'。文档DOC_E22_TERMS第四条规定此情形下适用'连续续保例外'，等待期为0天，并明确该例外优先于第三条的一般规定（60天）。因此，应选择OPTION_B将等待期设为0天。,OPTION_A=CAND_001|OPTION_B=CAND_002,2891,json_schema,752,107,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文明确指出本次投保为'连续续保'且'上一保险期间与本次保险期间没有中断'。文档DOC_E22_TERMS第四条规定此情形下适用'连续续保例外'，等待期为0天，并明确该例外优先于第三条的一般规定（60天）。因此，应选择OPTION_B将等待期设为0天。""
+}",CAND_002,0,True
+dev,E23,GENERAL_RULE_EXCEPTION,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,4,20260823,RANDOM,SELECTED,OPTION_C,CAND_002,0,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,4,20260823,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_003,30,文档DOC_E23_TERMS生效时间（2026-07-01）早于当前时间，具有最高权威性。案件上下文描述客户“续保资格曾中断，之后经保险公司批准恢复保障”，完全匹配第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五则适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3063,json_schema,570,118,stop,"{
+  ""abstain"": false,
+  ""value"": ""30"",
+  ""reason"": ""文档DOC_E23_TERMS生效时间（2026-07-01）早于当前时间，具有最高权威性。案件上下文描述客户“续保资格曾中断，之后经保险公司批准恢复保障”，完全匹配第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五则适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_003,30,案件上下文指出客户续保资格曾中断并经批准恢复，符合文档第五条‘中断后复效的再例外’情形。根据第五条优先于第四条、不符合前两者时适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2310,json_schema,873,82,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文指出客户续保资格曾中断并经批准恢复，符合文档第五条‘中断后复效的再例外’情形。根据第五条优先于第四条、不符合前两者时适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E32,CROSS_SENTENCE_SCOPE,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,4,20260823,RANDOM,SELECTED,OPTION_A,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,4,20260823,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,24,DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2546,json_schema,514,95,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。""
+}",CAND_002,24,True
+dev,E32,CROSS_SENTENCE_SCOPE,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2470,json_schema,726,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E32_TERMS第六条，产品A基础方案期限为12个月，投保含长期医疗附加责任时调整为24个月。案件上下文（投保确认记录）明确指出本次投保已选择长期医疗附加责任，因此适用例外规则，保险期限应为24个月。""
+}",CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,4,20260823,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,4,20260823,RANDOM,SELECTED,OPTION_C,CAND_003,36,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,4,20260823,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,4,20260823,QWEN_DIRECT_VALUE,SELECTED,OPTION_C,CAND_003,36,DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3567,json_schema,574,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""36"",
+  ""reason"": ""DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的""
+}",CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,4,20260823,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E33_TERMS，投保产品A基础保障时期限为12个月（第六条）；选择长期医疗附加责任时调整为24个月（第七条）；同时选择长期医疗和海外扩展责任时才为36个月（第八条）。案件上下文显示申请人选择了长期医疗附加责任，核保确认未选择海外医疗扩展责任。因此，适用第七条规则，保险期限为24个月，对应OPTION_B。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3452,json_schema,874,120,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E33_TERMS，投保产品A基础保障时期限为12个月（第六条）；选择长期医疗附加责任时调整为24个月（第七条）；同时选择长期医疗和海外扩展责任时才为36个月（第八条）。案件上下文显示申请人选择了长期医疗附加责任，核保确认未选择海外医疗扩展责任。因此，适用第七条规则，保险期限为24个月，对应OPTION_B。""
+}",CAND_002,24,True
+dev,E12,TEMPORAL_VERSION,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,60,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,5,20260824,RANDOM,SELECTED,OPTION_A,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,False
+dev,E12,TEMPORAL_VERSION,5,20260824,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,65,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,65,评估日期2026-08-20处于DOC_E12_NEW生效期间（2026-07-01起），且该文档明确修订最高投保年龄为65周岁并规定不一致时以新为准，故采用65。,OPTION_A=CAND_001|OPTION_B=CAND_002,2399,json_schema,775,88,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E12_NEW生效期间（2026-07-01起），且该文档明确修订最高投保年龄为65周岁并规定不一致时以新为准，故采用65。""
+}",CAND_002,65,True
+dev,E12,TEMPORAL_VERSION,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,65,评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01起）有效且规定最高投保年龄为65周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002,2885,json_schema,993,95,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E12_OLD（至2026-06-30）已失效。DOC_E12_NEW（自2026-07-01起）有效且规定最高投保年龄为65周岁。""
+}",CAND_002,65,True
+dev,E13,TEMPORAL_VERSION,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,65,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,5,20260824,RANDOM,SELECTED,OPTION_B,CAND_002,70,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,5,20260824,LATEST_AUTHORITY_UNIQUE,SELECTED,OPTION_B,CAND_002,70,最高权威且最新文档中的唯一候选值,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_001,65,False
+dev,E13,TEMPORAL_VERSION,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_001,65,评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）有效期内，该文档规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采用其70周岁的数值。,OPTION_A=CAND_001|OPTION_B=CAND_002,3175,json_schema,798,123,stop,"{
+  ""abstain"": false,
+  ""value"": ""65"",
+  ""reason"": ""评估日期2026-08-20处于DOC_E13_CURRENT（2026-07-01至2026-08-31）有效期内，该文档规定最高投保年龄为65周岁。DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，且明确声明生效日前不适用，故不采用其70周岁的数值。""
+}",CAND_001,65,True
+dev,E13,TEMPORAL_VERSION,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_001,65,评估日期为2026年8月20日，DOC_E13_CURRENT（生效时间2026-07-01至2026-08-31）处于有效期内且权威性最高；DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，明确声明在生效日前不适用。因此应采纳当前生效版本中的65周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002,3493,json_schema,1009,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""评估日期为2026年8月20日，DOC_E13_CURRENT（生效时间2026-07-01至2026-08-31）处于有效期内且权威性最高；DOC_E13_FUTURE虽已发布但生效时间为2026-09-01，明确声明在生效日前不适用。因此应采纳当前生效版本中的65周岁。""
+}",CAND_001,65,True
+dev,E22,GENERAL_RULE_EXCEPTION,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,0,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,5,20260824,RANDOM,SELECTED,OPTION_A,CAND_002,0,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,5,20260824,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_002|OPTION_B=CAND_001,0,,0,0,,,CAND_002,0,False
+dev,E22,GENERAL_RULE_EXCEPTION,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_002,0,文档DOC_E22_TERMS生效时间（2026-07-01）早于或等于当前时间，具有最高权威性。案件上下文描述为‘连续续保’且‘没有中断’，满足第四条例外条款条件。根据优先级规则，第四条例外优先于第三条一般规定，因此等待期按0天处理。,OPTION_A=CAND_002|OPTION_B=CAND_001,2736,json_schema,538,102,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""文档DOC_E22_TERMS生效时间（2026-07-01）早于或等于当前时间，具有最高权威性。案件上下文描述为‘连续续保’且‘没有中断’，满足第四条例外条款条件。根据优先级规则，第四条例外优先于第三条一般规定，因此等待期按0天处理。""
+}",CAND_002,0,True
+dev,E22,GENERAL_RULE_EXCEPTION,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_002,0,案件上下文明确为连续续保且无中断，文档DOC_E22_TERMS第四条规定此情形下不重新计算等待期（0天），并声明该例外优先于第三条一般规则。因此应采纳OPTION_A的0天值。,OPTION_A=CAND_002|OPTION_B=CAND_001,2747,json_schema,752,83,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件上下文明确为连续续保且无中断，文档DOC_E22_TERMS第四条规定此情形下不重新计算等待期（0天），并声明该例外优先于第三条一般规则。因此应采纳OPTION_A的0天值。""
+}",CAND_002,0,True
+dev,E23,GENERAL_RULE_EXCEPTION,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_003,30,打乱后的首个候选,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,5,20260824,RANDOM,SELECTED,OPTION_B,CAND_001,60,候选中均匀随机选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,5,20260824,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,,0,0,,,CAND_003,30,False
+dev,E23,GENERAL_RULE_EXCEPTION,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_A,CAND_003,30,文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2979,json_schema,570,114,stop,"{
+  ""abstain"": false,
+  ""value"": ""30"",
+  ""reason"": ""文档DOC_E23_TERMS生效时间（2026-07-01）早于或等于当前案件时间，具有最高权威性。案件上下文指出客户续保资格曾中断后恢复，符合第五条“中断后复效的再例外”条件。根据第五条优先于第四条、不符合四/五时适用第三条的规则，本案应适用第五条规定的30天等待期。""
+}",CAND_003,30,True
+dev,E23,GENERAL_RULE_EXCEPTION,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_003,30,案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。根据文档 DOC_E23_TERMS 第五条（中断后复效的再例外），该情形适用 30 天等待期，且第五条优先于第四条和第三条。因此 OPTION_A (30) 为正确选择。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3200,json_schema,873,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件上下文明确描述客户‘续保资格曾中断，之后经保险公司批准恢复保障’。根据文档 DOC_E23_TERMS 第五条（中断后复效的再例外），该情形适用 30 天等待期，且第五条优先于第四条和第三条。因此 OPTION_A (30) 为正确选择。""
+}",CAND_003,30,True
+dev,E32,CROSS_SENTENCE_SCOPE,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_001,12,打乱后的首个候选,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,5,20260824,RANDOM,SELECTED,OPTION_A,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,5,20260824,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配2个,OPTION_A=CAND_001|OPTION_B=CAND_002,0,,0,0,,,CAND_002,24,False
+dev,E32,CROSS_SENTENCE_SCOPE,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_B,CAND_002,24,DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。,OPTION_A=CAND_001|OPTION_B=CAND_002,2570,json_schema,514,95,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E32_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第六条规定基础期限为 12 个月，但投保确认记录明确选择长期医疗附加责任，触发例外规则将期限调整为 24 个月。""
+}",CAND_002,24,True
+dev,E32,CROSS_SENTENCE_SCOPE,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_B,CAND_002,24,根据文档DOC_E32_TERMS，产品A基础方案期限为12个月，但投保确认记录明确本次选择了长期医疗附加责任。依据条款第六条，选择该附加责任时整个方案期限调整为24个月。因此，语义上适用的选项是OPTION_B（24个月）。,OPTION_A=CAND_001|OPTION_B=CAND_002,2499,json_schema,726,91,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E32_TERMS，产品A基础方案期限为12个月，但投保确认记录明确本次选择了长期医疗附加责任。依据条款第六条，选择该附加责任时整个方案期限调整为24个月。因此，语义上适用的选项是OPTION_B（24个月）。""
+}",CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,5,20260824,FIRST_POSITION,SELECTED,OPTION_A,CAND_002,24,打乱后的首个候选,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,True
+dev,E33,CROSS_SENTENCE_SCOPE,5,20260824,RANDOM,SELECTED,OPTION_B,CAND_001,12,候选中均匀随机选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,5,20260824,LATEST_AUTHORITY_UNIQUE,ABSTAIN,,,,最高权威且最新文档无法唯一决定：匹配3个,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,,0,0,,,CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,5,20260824,QWEN_DIRECT_VALUE,SELECTED,OPTION_C,CAND_003,36,DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3558,json_schema,574,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""36"",
+  ""reason"": ""DOC_E33_TERMS 生效时间 (2026-07-01) 早于当前时间，具有最高权威性。条款第八条规定同时选择长期医疗附加责任和海外医疗扩展责任时保险期限为 36 个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级，第八条（同时选择）是第七条（仅选择长期医疗）的例外情况，但需满足‘同时选择’的""
+}",CAND_002,24,False
+dev,E33,CROSS_SENTENCE_SCOPE,5,20260824,QWEN_CONSTRAINED_CANDIDATE,SELECTED,OPTION_A,CAND_002,24,条款第六条规定基础期限为12个月，第七条规定选择长期医疗附加责任时调整为24个月，第八条规定同时选择海外医疗扩展责任时调整为36个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级（具体附加责任条款优于基础条款），且条件满足（仅选择长期医疗附加责任），保险期限应确定为24个月。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3511,json_schema,874,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""条款第六条规定基础期限为12个月，第七条规定选择长期医疗附加责任时调整为24个月，第八条规定同时选择海外医疗扩展责任时调整为36个月。投保申请记录显示选择了长期医疗附加责任，核保确认记录显示未选择海外医疗扩展责任。根据一般规则与例外优先级（具体附加责任条款优于基础条款），且条件满足（仅选择长期医疗附加责任），保险期限应确定为24个月。""
+}",CAND_002,24,True

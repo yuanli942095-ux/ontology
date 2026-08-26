@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ004"
+      ],
+      "rationale": "根据证据 EVID_014，'最高投保年龄' 属性的当前有效值为 '65'。该属性在 CQ004 中被引用，但基于最新的权威文档 DOC-PA-2026-V2 (版本 2.0)，该值已更新或需重新确认。由于存在明确的当前有效证据 (EVID_014) 覆盖了之前的状态，且该证据标记为 'manual_verified' 和 '当前有效'，因此需要移除 CQ004 中可能存在的过时或不一致的值引用，以确保知识图谱与最新业务规则一致。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "60",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

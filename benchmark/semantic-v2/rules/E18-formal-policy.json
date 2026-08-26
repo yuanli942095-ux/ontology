@@ -1,0 +1,59 @@
+{
+  "event_id": "E18",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "new_version_effective": true,
+    "application_queue_date": "2026-09-29",
+    "acceptance_date": "2026-10-05",
+    "old_version_grace_until": "2026-10-10"
+  },
+  "rules": [
+    {
+      "rule_id": "E18_OLD_GRACE_QUEUE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "application_queue_date",
+          "operator": "on_or_before",
+          "value": "2026-09-30"
+        },
+        {
+          "fact": "acceptance_date",
+          "operator": "on_or_before",
+          "value": "2026-10-10"
+        }
+      ],
+      "allowed_values": [
+        "61"
+      ]
+    },
+    {
+      "rule_id": "E18_NEW_VERSION",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "new_version_effective",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "69"
+      ]
+    },
+    {
+      "rule_id": "E18_HISTORICAL_STANDARD",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "65"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E18_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

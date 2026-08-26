@@ -1,0 +1,929 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,policy_loaded,applicable_rule,allowed_values,survivor_count,decision_path,qwen_called,oracle_candidate_id,oracle_value,oracle_correct,audit_class,audit_confidence,audit_explanation,reason_oracle_mentions,reason_oracle_positive,reason_oracle_negative,reason_oracle_score,reason_selected_mentions,reason_selected_positive,reason_selected_negative,reason_selected_score,oracle_excerpts,selected_excerpts
+test,E14,TEMPORAL_VERSION,1,20260820,DIRECT_FREE,SELECTED,OPTION_A,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。依据DOC_E14_CURRENT第二条及第四条，当前适用最高投保年龄为62周岁。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3663,json_schema,1048,124,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。依据DOC_E14_CURRENT第二条及第四条，当前适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,依据DOC_E14_CURRENT第二条及第四条，当前适用最高投保年龄为62周岁。,依据DOC_E14_CURRENT第二条及第四条，当前适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,1,20260820,VALUE_ENUM,ABSTAIN,,,,核保受理日2026-08-20处于DOC_E14_CURRENT生效期（2026-08-01至2026-08-31），该文档第四条规定最高投保年龄以核保受理日正在生效的条款版本为准，故适用值为62周岁。但目标约束allowed_max为100且value_kind为literal_integer，而DOC_E14_CURRENT第二条一般规则明确最高投保年龄,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3757,json_schema,1052,125,stop,"{""abstain"": false, ""value"": ""ABSTAIN"", ""reason"": ""核保受理日2026-08-20处于DOC_E14_CURRENT生效期（2026-08-01至2026-08-31），该文档第四条规定最高投保年龄以核保受理日正在生效的条款版本为准，故适用值为62周岁。但目标约束allowed_max为100且value_kind为literal_integer，而DOC_E14_CURRENT第二条一般规则明确最高投保年龄""
+  }",,,,,,True,CAND_002,62,False,OUTPUT_CONTRADICTION,HIGH,结构化输出中的abstain/value与程序记录的状态或动作冲突,1,3,0,7,0,0,0,0,文档第四条规定最高投保年龄以核保受理日正在生效的条款版本为准，故适用值为62周岁。但目标约束allowed_max为100且value_kind为l,
+test,E14,TEMPORAL_VERSION,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效的修订版本不适用。因此适用最高投保年龄为62周岁（OPTION_A），团体转入例外,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3977,json_schema,1144,139,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效的修订版本不适用。因此适用最高投保年龄为62周岁（OPTION_A），团体转入例外""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,4_FUTURE第三条，尚未生效的修订版本不适用。因此适用最高投保年龄为62周岁（OPTION_A），团体转入例外,4_FUTURE第三条，尚未生效的修订版本不适用。因此适用最高投保年龄为62周岁（OPTION_A），团体转入例外
+test,E14,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_002,62,案件核保受理日为2026年8月20日。DOC_E14_CURRENT（夏季条款）生效期为2026-08-01至2026-08-31，覆盖受理日，其一般规则规定最高投保年龄为62周岁。DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效的修订版,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4339,json_schema,1617,146,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件核保受理日为2026年8月20日。DOC_E14_CURRENT（夏季条款）生效期为2026-08-01至2026-08-31，覆盖受理日，其一般规则规定最高投保年龄为62周岁。DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效的修订版""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,8-01至2026-08-31，覆盖受理日，其一般规则规定最高投保年龄为62周岁。DOC_E14_FUTURE（九月修订版）生效日为2026-09-,8-01至2026-08-31，覆盖受理日，其一般规则规定最高投保年龄为62周岁。DOC_E14_FUTURE（九月修订版）生效日为2026-09-
+test,E14,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,62,"核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。",OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3786,json_schema,2087,125,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,2,1,0,4,2,1,0,4,T_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。 || 保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。,T_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。 || 保年龄62。DOC_E14_FUTURE尚未生效。OPTION_A对应值62。
+test,E14,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,62,硬门禁：规则E14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E14_CURRENT_EFFECTIVE_VERSION,62,1,DETERMINISTIC_SELECT,False,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择
+test,E14,TEMPORAL_VERSION,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_002,62,案件核保受理日为2026年8月20日，DOC_E14_CURRENT生效期为2026-08-01至2026-08-31，完全覆盖受理日；DOC_E14_FUTURE生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本（即夏季现行版）为准，排除尚未生效的九月修订版。且案件未,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4237,json_schema,1347,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件核保受理日为2026年8月20日，DOC_E14_CURRENT生效期为2026-08-01至2026-08-31，完全覆盖受理日；DOC_E14_FUTURE生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本（即夏季现行版）为准，排除尚未生效的九月修订版。且案件未""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E15,TEMPORAL_VERSION,1,20260820,DIRECT_FREE,SELECTED,OPTION_B,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3434,json_schema,1044,120,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,1,20260820,VALUE_ENUM,SELECTED,OPTION_B,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3376,json_schema,1048,119,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_003,64,投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）有效期内。DOC_E15_AUGUST虽已发布但尚未生效（2026-08-01），且其例外规则明确排除该日期前进入流程的申请。因此适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3926,json_schema,1140,140,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）有效期内。DOC_E15_AUGUST虽已发布但尚未生效（2026-08-01），且其例外规则明确排除该日期前进入流程的申请。因此适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,入流程的申请。因此适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,入流程的申请。因此适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。
+test,E15,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4100,json_schema,1613,140,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月 || 定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月 || 定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。
+test,E15,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_003,64,案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性值从70更新为,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4392,json_schema,2096,147,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性值从70更新为""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性
+test,E15,TEMPORAL_VERSION,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_003,64,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E15_JULY_VERSION_SCOPE,64,1,DETERMINISTIC_SELECT,False,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择
+test,E15,TEMPORAL_VERSION,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。根据DOC_E15_JULY第四条，版本判断日期为申请进入核保流程的日期（2026年7月20日），人工评估日期（8月21日）不改变该日期。DOC_E15_AUGUST虽于8月1日生效，但其第三条明确规定2026年8月1日前,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4484,json_schema,1343,160,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。根据DOC_E15_JULY第四条，版本判断日期为申请进入核保流程的日期（2026年7月20日），人工评估日期（8月21日）不改变该日期。DOC_E15_AUGUST虽于8月1日生效，但其第三条明确规定2026年8月1日前""
+  }",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,DIRECT_FREE,SELECTED,OPTION_A,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确描述适用该文档的例外规则情形（连续转入、原保障未中断、第 20 日提交证明），且第六条规定例外规则优先于一般规则。因此，等待期天数取例外规则确定的 0 天。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3148,json_schema,686,107,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确描述适用该文档的例外规则情形（连续转入、原保障未中断、第 20 日提交证明），且第六条规定例外规则优先于一般规则。因此，等待期天数取例外规则确定的 0 天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,，且第六条规定例外规则优先于一般规则。因此，等待期天数取例外规则确定的 0 天。,，且第六条规定例外规则优先于一般规则。因此，等待期天数取例外规则确定的 0 天。
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,VALUE_ENUM,SELECTED,OPTION_A,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确本案属于合作单位团体计划转入、原保障连续且证明在第 20 日提交，满足第三条例外规则条件。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3048,json_schema,690,107,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确本案属于合作单位团体计划转入、原保障连续且证明在第 20 日提交，满足第三条例外规则条件。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,条例外规则条件。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,条例外规则条件。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_002,0,文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。第三条例外规则规定满足该条件时等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3286,json_schema,781,109,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。第三条例外规则规定满足该条件时等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,、原保障连续且证明在第20日提交。第三条例外规则规定满足该条件时等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。 || 等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。,、原保障连续且证明在第20日提交。第三条例外规则规定满足该条件时等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。 || 等待期为0天，且第六条确认例外优先于一般规则。因此适用OPTION_A（0天）。
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_002,0,文档DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于第二条一般规则（90天）。因此选择OPTION_A将值设为0。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3622,json_schema,1254,118,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于第二条一般规则（90天）。因此选择OPTION_A将值设为0。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于第二条一般规则（90天）。因此选择OPT || 例外规则优先于第二条一般规则（90天）。因此选择OPTION_A将值设为0。,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于第二条一般规则（90天）。因此选择OPT || 例外规则优先于第二条一般规则（90天）。因此选择OPTION_A将值设为0。
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,0,案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy规则E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3189,json_schema,1670,100,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy规则E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,XCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。 || ），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。,XCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。 || ），满足所有条件，适用例外规则，等待期应为0天。OPTION_A对应新值0，符合规则要求。
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,0,硬门禁：规则E24_CONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E24_CONTINUOUS_TRANSFER_EXCEPTION,0,1,DETERMINISTIC_SELECT,False,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择
+test,E24,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_002,0,文档DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于一般规则。因此OPTION_A正确。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3376,json_schema,982,109,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于一般规则。因此OPTION_A正确。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于一般规则。因此OPTION_A正确。,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条确认例外规则优先于一般规则。因此OPTION_A正确。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,DIRECT_FREE,SELECTED,OPTION_C,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2284,json_schema,675,70,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,VALUE_ENUM,SELECTED,OPTION_C,CAND_001,15,案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（超过30日但不超过90日，且健康告知无异常、无既往重疾），故适用该例外规则，等待期天数为15天。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2663,json_schema,679,88,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（超过30日但不超过90日，且健康告知无异常、无既往重疾），故适用该例外规则，等待期天数为15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,过90日，且健康告知无异常、无既往重疾），故适用该例外规则，等待期天数为15天。,过90日，且健康告知无异常、无既往重疾），故适用该例外规则，等待期天数为15天。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_001,15,案件事实显示申请在第46日提交，满足出生后超过30日但不超过90日的条件（延迟投保规则），且健康告知无异常、无既往重大疾病记录。根据文档第四条例外规则，等待期按15天处理。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2574,json_schema,770,82,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示申请在第46日提交，满足出生后超过30日但不超过90日的条件（延迟投保规则），且健康告知无异常、无既往重大疾病记录。根据文档第四条例外规则，等待期按15天处理。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,，且健康告知无异常、无既往重大疾病记录。根据文档第四条例外规则，等待期按15天处理。,，且健康告知无异常、无既往重大疾病记录。根据文档第四条例外规则，等待期按15天处理。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,15,案件事实显示投保时间为出生后第46日（超过30日但不超过90日），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3314,json_schema,1243,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（超过30日但不超过90日），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。 || 条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。,据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。 || 条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_C。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,15,案件事实显示投保时间为出生后第46日（满足30<天数<=90），健康告知无异常且无既往重疾记录。根据formal_policy规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3349,json_schema,1692,105,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（满足30<天数<=90），健康告知无异常且无既往重疾记录。根据formal_policy规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。 || 于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。,CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。 || 于一般规则，其允许值为15天。因此选择OPTION_C将等待期天数更新为15。
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_001,15,硬门禁：规则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E25_DELAYED_CHILD_EXCEPTION,15,1,DETERMINISTIC_SELECT,False,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择
+test,E25,GENERAL_RULE_EXCEPTION,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_001,15,案件事实显示投保时间为出生后第46日，满足第三条（0天）的30日内条件不成立；满足第四条（15天）的超过30日但不超过90日、健康告知无异常、无既往重大疾病记录的条件。根据第六条优先级规则，适用延迟投保规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2961,json_schema,972,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日，满足第三条（0天）的30日内条件不成立；满足第四条（15天）的超过30日但不超过90日、健康告知无异常、无既往重大疾病记录的条件。根据第六条优先级规则，适用延迟投保规则。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,间为出生后第46日，满足第三条（0天）的30日内条件不成立；满足第四条（15天）的超过30日但不超过90日、健康告知无异常、无既往重大疾病记录的条件,间为出生后第46日，满足第三条（0天）的30日内条件不成立；满足第四条（15天）的超过30日但不超过90日、健康告知无异常、无既往重大疾病记录的条件
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件；投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制），跨句指代一致，最终确定为 24 个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3020,json_schema,671,102,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件；投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制），跨句指代一致，最终确定为 24 个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,8-01，满足适用条件；投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制），跨句指代一 || 认未选择费用垫付责任（不触发第四条例外限制），跨句指代一致，最终确定为 24 个月。,8-01，满足适用条件；投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制），跨句指代一 || 认未选择费用垫付责任（不触发第四条例外限制），跨句指代一致，最终确定为 24 个月。
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件；投保记录勾选长期照护附加责任（第三条），核保确认未选择费用垫付责任（第四条例外限制不触发）；依据第七条跨句指代规则，综合附加责任选择与否定确认，取第三条数值 24。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3034,json_schema,675,105,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件；投保记录勾选长期照护附加责任（第三条），核保确认未选择费用垫付责任（第四条例外限制不触发）；依据第七条跨句指代规则，综合附加责任选择与否定确认，取第三条数值 24。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,发）；依据第七条跨句指代规则，综合附加责任选择与否定确认，取第三条数值 24。,发）；依据第七条跨句指代规则，综合附加责任选择与否定确认，取第三条数值 24。
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,24,依据DOC_E34_TERMS条款：1. 适用条件满足（2026-08-01后投保）；2. 一般规则为12个月，但本案选择长期照护附加责任，触发第三条例外调整为24个月；3. 第四条限制检查：核保确认未选择费用垫付责任，故不适用18个月规则。最终结果为24个月（OPTION_C）。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3353,json_schema,767,118,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""依据DOC_E34_TERMS条款：1. 适用条件满足（2026-08-01后投保）；2. 一般规则为12个月，但本案选择长期照护附加责任，触发第三条例外调整为24个月；3. 第四条限制检查：核保确认未选择费用垫付责任，故不适用18个月规则。最终结果为24个月（OPTION_C）。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,2,8,2,6,2,8,. 一般规则为12个月，但本案选择长期照护附加责任，触发第三条例外调整为24个月；3. 第四条限制检查：核保确认未选择费用垫付责任，故不适用18个月 || 条限制检查：核保确认未选择费用垫付责任，故不适用18个月规则。最终结果为24个月（OPTION_C）。,. 一般规则为12个月，但本案选择长期照护附加责任，触发第三条例外调整为24个月；3. 第四条限制检查：核保确认未选择费用垫付责任，故不适用18个月 || 条限制检查：核保确认未选择费用垫付责任，故不适用18个月规则。最终结果为24个月（OPTION_C）。
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4224,json_schema,1243,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡""
+}",,,,,,True,CAND_003,24,False,ACTION_MAPPING_ERROR,HIGH,理由对Oracle值的正向支持强于对最终所选值的支持,2,5,0,12,1,3,0,7,条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适 || ’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡,择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,24,根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3313,json_schema,1649,99,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该""
+  }",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,24,硬门禁：规则E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E34_LONG_TERM_CARE_EXTENSION,24,1,DETERMINISTIC_SELECT,False,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择
+test,E34,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,24,根据文档DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不满足此条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3153,json_schema,969,119,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不满足此条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,1,9,2,5,1,9,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不 || 条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不 || 条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,DIRECT_FREE,SELECTED,OPTION_C,CAND_001,18,根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第六条和第七条，本案选择了癌症门诊扩展责任且未选择境外就医责任。依据第三条例外规则，选择癌症门诊扩展责任时保险期限为18个月。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2822,json_schema,703,94,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第六条和第七条，本案选择了癌症门诊扩展责任且未选择境外就医责任。依据第三条例外规则，选择癌症门诊扩展责任时保险期限为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,未选择境外就医责任。依据第三条例外规则，选择癌症门诊扩展责任时保险期限为18个月。,未选择境外就医责任。依据第三条例外规则，选择癌症门诊扩展责任时保险期限为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,VALUE_ENUM,SELECTED,OPTION_C,CAND_001,18,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,2684,json_schema,707,89,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,0,12,2,5,0,12,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且 || 的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且 || 的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS，一般规则（第二条）规定未选扩展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）要求同时选择境外就医责任才为24个月。案件补充确认（第七条）显示被保险人58周岁且未选择境外就医责任，满足第三条条件但不满足第四条条件。作用域限制（第五条）允许58周岁适用延长期限。因此综合判定为,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3805,json_schema,799,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS，一般规则（第二条）规定未选扩展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）要求同时选择境外就医责任才为24个月。案件补充确认（第七条）显示被保险人58周岁且未选择境外就医责任，满足第三条条件但不满足第四条条件。作用域限制（第五条）允许58周岁适用延长期限。因此综合判定为""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,0,7,1,3,0,7,展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）要求同时选择境外就医责任才为24个月。案件补充确,展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）要求同时选择境外就医责任才为24个月。案件补充确
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,18,文档DOC_E35_TERMS生效日期为2026-08-01，适用条件满足（投保产品A且选择门诊扩展责任）。一般规则规定未选扩展责任期限为12个月。例外规则第三条规定选择癌症门诊扩展责任时调整为18个月。第五条作用域限制规定延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文确认被保险人58周岁（满足<=60条件）且未选择境外就医责任（不触发第四条组合的,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4254,json_schema,1275,138,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E35_TERMS生效日期为2026-08-01，适用条件满足（投保产品A且选择门诊扩展责任）。一般规则规定未选扩展责任期限为12个月。例外规则第三条规定选择癌症门诊扩展责任时调整为18个月。第五条作用域限制规定延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文确认被保险人58周岁（满足<=60条件）且未选择境外就医责任（不触发第四条组合的""
+  }",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,4,0,9,1,4,0,9,选扩展责任期限为12个月。例外规则第三条规定选择癌症门诊扩展责任时调整为18个月。第五条作用域限制规定延长期限仅在被保险人年龄不超过60周岁时适用。,选扩展责任期限为12个月。例外规则第三条规定选择癌症门诊扩展责任时调整为18个月。第五条作用域限制规定延长期限仅在被保险人年龄不超过60周岁时适用。
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS及formal_policy，被保险人年龄58周岁（满足<=60条件），选择了癌症门诊扩展责任且未选择境外就医责任。规则E35_CANCER_OUTPATIENT_EXTENSION（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3420,json_schema,1857,105,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS及formal_policy，被保险人年龄58周岁（满足<=60条件），选择了癌症门诊扩展责任且未选择境外就医责任。规则E35_CANCER_OUTPATIENT_EXTENSION（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,TPATIENT_EXTENSION（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。 || N（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。,TPATIENT_EXTENSION（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。 || N（优先级250）适用，规定保险期限为18个月。OPTION_C的新值为18，符合该规则。
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_001,18,硬门禁：规则E35_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E35_CANCER_OUTPATIENT_EXTENSION,18,1,DETERMINISTIC_SELECT,False,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择
+test,E35,CROSS_SENTENCE_SCOPE,1,20260820,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_001,18,文档DOC_E35_TERMS生效日期为2026-08-01，适用于当前案件。被保险人年龄58周岁（满足第五条不超过60周岁的条件），勾选了癌症门诊扩展责任（触发第三条），且未选择境外就医责任（不触发第四条）。根据一般规则与例外优先级，适用第三条规定的18个月期限。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3085,json_schema,1001,105,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E35_TERMS生效日期为2026-08-01，适用于当前案件。被保险人年龄58周岁（满足第五条不超过60周岁的条件），勾选了癌症门诊扩展责任（触发第三条），且未选择境外就医责任（不触发第四条）。根据一般规则与例外优先级，适用第三条规定的18个月期限。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,境外就医责任（不触发第四条）。根据一般规则与例外优先级，适用第三条规定的18个月期限。,境外就医责任（不触发第四条）。根据一般规则与例外优先级，适用第三条规定的18个月期限。
+test,E14,TEMPORAL_VERSION,2,20260821,DIRECT_FREE,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3787,json_schema,1048,139,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,2,20260821,VALUE_ENUM,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（生效日期2026-08-01至2026-08-31）有效期内。DOC_E14_FUTURE虽已发布但生效日期为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3790,json_schema,1052,138,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（生效日期2026-08-01至2026-08-31）有效期内。DOC_E14_FUTURE虽已发布但生效日期为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,C_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。,C_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，DOC_E14_CURRENT（生效期2026-08-01至2026-08-31）在该日期有效且明确适用；DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效版本不适用。因此当前最高投保年龄为62周岁（OPTION_B）。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3847,json_schema,1144,139,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""核保受理日为2026年8月20日，DOC_E14_CURRENT（生效期2026-08-01至2026-08-31）在该日期有效且明确适用；DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，尚未生效版本不适用。因此当前最高投保年龄为62周岁（OPTION_B）。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,_E14_FUTURE第三条，尚未生效版本不适用。因此当前最高投保年龄为62周岁（OPTION_B）。,_E14_FUTURE第三条，尚未生效版本不适用。因此当前最高投保年龄为62周岁（OPTION_B）。
+test,E14,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,62,案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，该修订版不适用。因此当前适用版本为DOC_,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4293,json_schema,1617,144,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，该修订版不适用。因此当前适用版本为DOC_""}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01
+test,E14,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,62,"核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入（group_transfer_confirmed=false），满足E14_CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。",OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3619,json_schema,2087,117,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入（group_transfer_confirmed=false），满足E14_CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。,CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。
+test,E14,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,62,硬门禁：规则E14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E14_CURRENT_EFFECTIVE_VERSION,62,1,DETERMINISTIC_SELECT,False,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择
+test,E14,TEMPORAL_VERSION,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_002,62,案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖受理日；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日正在生效的版本为准，即夏季现行版。一般无,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4055,json_schema,1347,144,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖受理日；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日正在生效的版本为准，即夏季现行版。一般无"" }",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E15,TEMPORAL_VERSION,2,20260821,DIRECT_FREE,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3396,json_schema,1044,120,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,2,20260821,VALUE_ENUM,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3351,json_schema,1048,119,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。DOC_E15_AUGUST虽已发布但尚未生效（2026-08-01），且其例外规则明确排除了该日期前已进入核保流程的申请。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3963,json_schema,1140,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。DOC_E15_AUGUST虽已发布但尚未生效（2026-08-01），且其例外规则明确排除了该日期前已进入核保流程的申请。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,流程的申请。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,流程的申请。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。
+test,E15,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,"案件上下文显示投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。DOC_E15_AUGUST（八月条款）规定：'2026年8月1日前已经进入核保流程的申请...仍按进入核保流程当日有效版本处理'。由于申请在7月20日已进入核保，适用DOC_E15_JULY的数值64周岁？不对，需重新核对逻辑。
+
+重新分析：
+1. 事件时间线：
+",OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4570,json_schema,1613,157,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。DOC_E15_AUGUST（八月条款）规定：'2026年8月1日前已经进入核保流程的申请...仍按进入核保流程当日有效版本处理'。由于申请在7月20日已进入核保，适用DOC_E15_JULY的数值64周岁？不对，需重新核对逻辑。\n\n重新分析：\n1. 事件时间线：\n""
+}",,,,,,True,CAND_003,64,False,ACTION_MAPPING_ERROR,HIGH,理由对Oracle值的正向支持强于对最终所选值的支持,1,1,0,3,0,0,0,0,理'。由于申请在7月20日已进入核保，适用DOC_E15_JULY的数值64周岁？不对，需重新核对逻辑。  重新分析： 1. 事件时间线： ,
+test,E15,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_003,64,案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期满足条件，适用最高投保年龄为64周岁。DOC_E15_AUGUST虽已发布但尚未生效，且其例外规则明确排除8月1,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4242,json_schema,2096,143,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期满足条件，适用最高投保年龄为64周岁。DOC_E15_AUGUST虽已发布但尚未生效，且其例外规则明确排除8月1""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,SION_SCOPE（优先级300），该日期满足条件，适用最高投保年龄为64周岁。DOC_E15_AUGUST虽已发布但尚未生效，且其例外规则明确排,SION_SCOPE（优先级300），该日期满足条件，适用最高投保年龄为64周岁。DOC_E15_AUGUST虽已发布但尚未生效，且其例外规则明确排
+test,E15,TEMPORAL_VERSION,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_003,64,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E15_JULY_VERSION_SCOPE,64,1,DETERMINISTIC_SELECT,False,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择
+test,E15,TEMPORAL_VERSION,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，该日期落在DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）内。根据DOC_E15_JULY第四条，版本判断日期为进入核保流程的日期（即7月20日），而非人工评估日期（8月21日）。因此适用七月版本的一般规则，最高投保年龄为64周岁。DOC_E15_AUGUST明确排除8,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4193,json_schema,1343,153,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，该日期落在DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）内。根据DOC_E15_JULY第四条，版本判断日期为进入核保流程的日期（即7月20日），而非人工评估日期（8月21日）。因此适用七月版本的一般规则，最高投保年龄为64周岁。DOC_E15_AUGUST明确排除8""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,非人工评估日期（8月21日）。因此适用七月版本的一般规则，最高投保年龄为64周岁。DOC_E15_AUGUST明确排除8,非人工评估日期（8月21日）。因此适用七月版本的一般规则，最高投保年龄为64周岁。DOC_E15_AUGUST明确排除8
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,DIRECT_FREE,SELECTED,OPTION_B,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3856,json_schema,686,140,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,VALUE_ENUM,SELECTED,OPTION_B,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3060,json_schema,690,105,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_002,0,文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述适用条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（满足30日内）。根据第三条例外规则及第六条目标数值说明，例外规则优先于一般规则，故等待期按0天处理。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3334,json_schema,781,117,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述适用条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（满足30日内）。根据第三条例外规则及第六条目标数值说明，例外规则优先于一般规则，故等待期按0天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,据第三条例外规则及第六条目标数值说明，例外规则优先于一般规则，故等待期按0天处理。,据第三条例外规则及第六条目标数值说明，例外规则优先于一般规则，故等待期按0天处理。
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,0,文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则的所有条件（团体转入、原保障连续、30日内提交证明），第六条明确规定例外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3033,json_schema,1254,91,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则的所有条件（团体转入、原保障连续、30日内提交证明），第六条明确规定例外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,明），第六条明确规定例外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。 || 外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。,明），第六条明确规定例外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。 || 外规则优先于一般规则。第三条规定满足条件的等待期为0天，故选择将值替换为0的OPTION_B。
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,0,案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy规则E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3095,json_schema,1670,96,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy规则E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,XCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。 || ），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。,XCEPTION（优先级300），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。 || ），满足所有条件，适用例外规则，等待期应为0天。OPTION_B对应新值0。
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,0,硬门禁：规则E24_CONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E24_CONTINUOUS_TRANSFER_EXCEPTION,0,1,DETERMINISTIC_SELECT,False,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择
+test,E24,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_002,0,案件事实满足例外规则第三条所有条件（合作单位团体计划转入、原保障连续有效、第20日提交证明<30日），根据第六条例外规则优先于一般规则，等待期应为0天。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,2499,json_schema,982,77,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实满足例外规则第三条所有条件（合作单位团体计划转入、原保障连续有效、第20日提交证明<30日），根据第六条例外规则优先于一般规则，等待期应为0天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,第20日提交证明<30日），根据第六条例外规则优先于一般规则，等待期应为0天。,第20日提交证明<30日），根据第六条例外规则优先于一般规则，等待期应为0天。
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,DIRECT_FREE,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2297,json_schema,675,70,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,VALUE_ENUM,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（30-90日内且无异常），故适用15天等待期。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2348,json_schema,679,72,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（30-90日内且无异常），故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,25_TERMS第四条延迟投保规则条件（30-90日内且无异常），故适用15天等待期。,25_TERMS第四条延迟投保规则条件（30-90日内且无异常），故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_001,15,案件事实显示申请在被保险人出生后第46日提交，处于30日至90日区间内；健康告知无异常且无既往重大疾病记录。根据文档DOC_E25_TERMS第四条（延迟投保规则），此情形下疾病责任等待期按15天处理。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2780,json_schema,770,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示申请在被保险人出生后第46日提交，处于30日至90日区间内；健康告知无异常且无既往重大疾病记录。根据文档DOC_E25_TERMS第四条（延迟投保规则），此情形下疾病责任等待期按15天处理。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,OC_E25_TERMS第四条（延迟投保规则），此情形下疾病责任等待期按15天处理。,OC_E25_TERMS第四条（延迟投保规则），此情形下疾病责任等待期按15天处理。
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日，满足'超过30日但不超过90日'的延迟投保规则条件（一般规则为60天，新生儿例外为0天），故适用15天等待期。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2757,json_schema,1243,80,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日，满足'超过30日但不超过90日'的延迟投保规则条件（一般规则为60天，新生儿例外为0天），故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,90日'的延迟投保规则条件（一般规则为60天，新生儿例外为0天），故适用15天等待期。,90日'的延迟投保规则条件（一般规则为60天，新生儿例外为0天），故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,15,"案件事实显示投保时间为出生后第46日（大于30且小于等于90），健康告知无异常，无既往重大疾病记录。根据formal_policy规则优先级：E25_NEONATAL_EXCEPTION不满足（46>30）；E25_DELAYED_CHILD_EXCEPTION完全满足（30<46<=90, 健康正常, 无重疾），对应允许值15；E25_GENERAL等待期",OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3896,json_schema,1692,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（大于30且小于等于90），健康告知无异常，无既往重大疾病记录。根据formal_policy规则优先级：E25_NEONATAL_EXCEPTION不满足（46>30）；E25_DELAYED_CHILD_EXCEPTION完全满足（30<46<=90, 健康正常, 无重疾），对应允许值15；E25_GENERAL等待期""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,"TION完全满足（30<46<=90, 健康正常, 无重疾），对应允许值15；E25_GENERAL等待期","TION完全满足（30<46<=90, 健康正常, 无重疾），对应允许值15；E25_GENERAL等待期"
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_001,15,硬门禁：规则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E25_DELAYED_CHILD_EXCEPTION,15,1,DETERMINISTIC_SELECT,False,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择
+test,E25,GENERAL_RULE_EXCEPTION,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_001,15,案件事实显示申请在第46日提交，满足'出生后超过30日但不超过90日'的条件（46在30-90区间），且健康告知无异常、无既往重疾记录。根据文档第四条延迟投保规则，适用15天等待期。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2771,json_schema,972,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示申请在第46日提交，满足'出生后超过30日但不超过90日'的条件（46在30-90区间），且健康告知无异常、无既往重疾记录。根据文档第四条延迟投保规则，适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,间），且健康告知无异常、无既往重疾记录。根据文档第四条延迟投保规则，适用15天等待期。,间），且健康告知无异常、无既往重疾记录。根据文档第四条延迟投保规则，适用15天等待期。
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件。投保人选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。根据第三条例外规则，选择长期照护附加责任时保险期限为 24 个月；第四条限制该调整不适用于同时选择费用垫付责任的方案，因本案不满足费用垫付条件，故不适用 18 个月规则。依据第七条，综合附加责任选择和否定费,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3813,json_schema,671,134,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件。投保人选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。根据第三条例外规则，选择长期照护附加责任时保险期限为 24 个月；第四条限制该调整不适用于同时选择费用垫付责任的方案，因本案不满足费用垫付条件，故不适用 18 个月规则。依据第七条，综合附加责任选择和否定费""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,1,4,1,3,1,4,付责任（第六条）。根据第三条例外规则，选择长期照护附加责任时保险期限为 24 个月；第四条限制该调整不适用于同时选择费用垫付责任的方案，因本案不满足,付责任（第六条）。根据第三条例外规则，选择长期照护附加责任时保险期限为 24 个月；第四条限制该调整不适用于同时选择费用垫付责任的方案，因本案不满足
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2679,json_schema,675,90,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,24,依据DOC_E34_TERMS条款：1. 投保记录显示选择长期照护附加责任（第五条），触发第三条例外规则，期限调整为24个月。2. 核保确认未选择费用垫付责任（第六条），满足第四条例外限制中‘不适用’的前提，因此不执行按18个月处理的规则。3. 综合跨句指代与条件判断，最终适用值为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3347,json_schema,767,117,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""依据DOC_E34_TERMS条款：1. 投保记录显示选择长期照护附加责任（第五条），触发第三条例外规则，期限调整为24个月。2. 核保确认未选择费用垫付责任（第六条），满足第四条例外限制中‘不适用’的前提，因此不执行按18个月处理的规则。3. 综合跨句指代与条件判断，最终适用值为24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,0,12,2,5,0,12,保记录显示选择长期照护附加责任（第五条），触发第三条例外规则，期限调整为24个月。2. 核保确认未选择费用垫付责任（第六条），满足第四条例外限制中‘ || 此不执行按18个月处理的规则。3. 综合跨句指代与条件判断，最终适用值为24个月。,保记录显示选择长期照护附加责任（第五条），触发第三条例外规则，期限调整为24个月。2. 核保确认未选择费用垫付责任（第六条），满足第四条例外限制中‘ || 此不执行按18个月处理的规则。3. 综合跨句指代与条件判断，最终适用值为24个月。
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月；但投保方案选择了长期照护附加责任（第五条），触发例外规则（第三条），期限调整为24个月。同时核保确认未选择费用垫付责任（第六条），因此不适用第四条的18个月限制。最终确定保险期限为24个月，对应OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3712,json_schema,1243,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月；但投保方案选择了长期照护附加责任（第五条），触发例外规则（第三条），期限调整为24个月。同时核保确认未选择费用垫付责任（第六条），因此不适用第四条的18个月限制。最终确定保险期限为24个月，对应OPTION_C。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,2,6,2,5,2,6,方案选择了长期照护附加责任（第五条），触发例外规则（第三条），期限调整为24个月。同时核保确认未选择费用垫付责任（第六条），因此不适用第四条的18个 || 用垫付责任（第六条），因此不适用第四条的18个月限制。最终确定保险期限为24个月，对应OPTION_C。,方案选择了长期照护附加责任（第五条），触发例外规则（第三条），期限调整为24个月。同时核保确认未选择费用垫付责任（第六条），因此不适用第四条的18个 || 用垫付责任（第六条），因此不适用第四条的18个月限制。最终确定保险期限为24个月，对应OPTION_C。
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,24,根据formal_policy事实：long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2979,json_schema,1649,90,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy事实：long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,M_CARE_EXTENSION（优先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。 || 先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。,M_CARE_EXTENSION（优先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。 || 先级250）条件完全满足，允许值为'24'。选项OPTION_C的新值'24'符合该规则。
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,24,硬门禁：规则E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E34_LONG_TERM_CARE_EXTENSION,24,1,DETERMINISTIC_SELECT,False,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择
+test,E34,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据一般规则（第二条），基础期限为12个月；但第五条确认选择了长期照护附加责任，触发第三条例外规则将期限调整为24个月。第六条确认未选择费用垫付责任，因此第四条例外限制不适用。综合跨句指代与条件满足情况，最终适用值为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3126,json_schema,969,118,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据一般规则（第二条），基础期限为12个月；但第五条确认选择了长期照护附加责任，触发第三条例外规则将期限调整为24个月。第六条确认未选择费用垫付责任，因此第四条例外限制不适用。综合跨句指代与条件满足情况，最终适用值为24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,2,8,2,6,2,8,个月；但第五条确认选择了长期照护附加责任，触发第三条例外规则将期限调整为24个月。第六条确认未选择费用垫付责任，因此第四条例外限制不适用。综合跨句指 || 责任，因此第四条例外限制不适用。综合跨句指代与条件满足情况，最终适用值为24个月。,个月；但第五条确认选择了长期照护附加责任，触发第三条例外规则将期限调整为24个月。第六条确认未选择费用垫付责任，因此第四条例外限制不适用。综合跨句指 || 责任，因此第四条例外限制不适用。综合跨句指代与条件满足情况，最终适用值为24个月。
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,DIRECT_FREE,SELECTED,OPTION_A,CAND_001,18,根据DOC_E35_TERMS，被保险人选择癌症门诊扩展责任（第三条），未选择境外就医责任（第七条），且年龄58周岁不超过60周岁（第五条）。适用一般规则下的例外调整：基础12个月 + 癌症扩展延长6个月 = 18个月。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2756,json_schema,703,91,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS，被保险人选择癌症门诊扩展责任（第三条），未选择境外就医责任（第七条），且年龄58周岁不超过60周岁（第五条）。适用一般规则下的例外调整：基础12个月 + 癌症扩展延长6个月 = 18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,）。适用一般规则下的例外调整：基础12个月 + 癌症扩展延长6个月 = 18个月。,）。适用一般规则下的例外调整：基础12个月 + 癌症扩展延长6个月 = 18个月。
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,VALUE_ENUM,SELECTED,OPTION_A,CAND_001,18,根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判定保险期限月数为18。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2909,json_schema,707,98,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判定保险期限月数为18。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,2,6,2,5,2,6,超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判定 || 条确认未选择境外就医责任，故第四条组合规则不适用。综合判定保险期限月数为18。,超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判定 || 条确认未选择境外就医责任，故第四条组合规则不适用。综合判定保险期限月数为18。
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_001,18,根据文档DOC_E35_TERMS，被保险人年龄58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（触发第三条18个月），且未选择境外就医责任（不触发第四条24个月）。综合一般规则、例外规则及作用域限制，适用期限为18个月。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2897,json_schema,799,96,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据文档DOC_E35_TERMS，被保险人年龄58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（触发第三条18个月），且未选择境外就医责任（不触发第四条24个月）。综合一般规则、例外规则及作用域限制，适用期限为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,0,8,2,3,0,8,岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（触发第三条18个月），且未选择境外就医责任（不触发第四条24个月）。综合一般规则、例外 || （不触发第四条24个月）。综合一般规则、例外规则及作用域限制，适用期限为18个月。,岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（触发第三条18个月），且未选择境外就医责任（不触发第四条24个月）。综合一般规则、例外 || （不触发第四条24个月）。综合一般规则、例外规则及作用域限制，适用期限为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,18,文档DOC_E35_TERMS第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件上下文确认被保险人为58周岁且未选择境外就医责任，满足第三条适用条件且不触发第四条组合规则或第五条排除条件，故应采纳OPTION_A（18个月）。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3363,json_schema,1275,106,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E35_TERMS第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件上下文确认被保险人为58周岁且未选择境外就医责任，满足第三条适用条件且不触发第四条组合规则或第五条排除条件，故应采纳OPTION_A（18个月）。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,1,5,2,3,1,5,文档DOC_E35_TERMS第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件上下文确 || 用条件且不触发第四条组合规则或第五条排除条件，故应采纳OPTION_A（18个月）。,文档DOC_E35_TERMS第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件上下文确 || 用条件且不触发第四条组合规则或第五条排除条件，故应采纳OPTION_A（18个月）。
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_001,18,事实确认：被保险人年龄58周岁（<=60），勾选癌症门诊扩展责任，未勾选境外就医责任。规则匹配：E35_CANCER_OUTPATIENT_EXTENSION（优先级250）条件满足，允许值18。规则冲突检查：E35_COMBINED_EXTENSION因overseas_medical_selected为false不满足；E35_AGE_SCOPE_LIM,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3750,json_schema,1857,114,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""事实确认：被保险人年龄58周岁（<=60），勾选癌症门诊扩展责任，未勾选境外就医责任。规则匹配：E35_CANCER_OUTPATIENT_EXTENSION（优先级250）条件满足，允许值18。规则冲突检查：E35_COMBINED_EXTENSION因overseas_medical_selected为false不满足；E35_AGE_SCOPE_LIM""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,OUTPATIENT_EXTENSION（优先级250）条件满足，允许值18。规则冲突检查：E35_COMBINED_EXTENSION因overs,OUTPATIENT_EXTENSION（优先级250）条件满足，允许值18。规则冲突检查：E35_COMBINED_EXTENSION因overs
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_001,18,硬门禁：规则E35_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E35_CANCER_OUTPATIENT_EXTENSION,18,1,DETERMINISTIC_SELECT,False,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择
+test,E35,CROSS_SENTENCE_SCOPE,2,20260821,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_001,18,文档DOC_E35_TERMS生效（2026-08-01），适用条件满足（投保后、选癌症门诊）。一般规则为12个月，例外规则第三条规定选癌症门诊扩展责任时调整为18个月。第五条作用域限制要求年龄不超过60周岁，本案被保险人58周岁，满足条件。第七条补充确认明确未选择境外就医责任，故第四条组合规则不适用。综上，应适用第三条，保险期限为18个月（OPTION_A,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3791,json_schema,1001,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E35_TERMS生效（2026-08-01），适用条件满足（投保后、选癌症门诊）。一般规则为12个月，例外规则第三条规定选癌症门诊扩展责任时调整为18个月。第五条作用域限制要求年龄不超过60周岁，本案被保险人58周岁，满足条件。第七条补充确认明确未选择境外就医责任，故第四条组合规则不适用。综上，应适用第三条，保险期限为18个月（OPTION_A""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,1,7,2,4,1,7,门诊）。一般规则为12个月，例外规则第三条规定选癌症门诊扩展责任时调整为18个月。第五条作用域限制要求年龄不超过60周岁，本案被保险人58周岁，满足 || 选择境外就医责任，故第四条组合规则不适用。综上，应适用第三条，保险期限为18个月（OPTION_A,门诊）。一般规则为12个月，例外规则第三条规定选癌症门诊扩展责任时调整为18个月。第五条作用域限制要求年龄不超过60周岁，本案被保险人58周岁，满足 || 选择境外就医责任，故第四条组合规则不适用。综上，应适用第三条，保险期限为18个月（OPTION_A
+test,E14,TEMPORAL_VERSION,3,20260822,DIRECT_FREE,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3815,json_schema,1048,139,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,3,20260822,VALUE_ENUM,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（生效日期2026-08-01至2026-08-31）有效期内。DOC_E14_FUTURE虽已发布但生效日期为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3765,json_schema,1052,138,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（生效日期2026-08-01至2026-08-31）有效期内。DOC_E14_FUTURE虽已发布但生效日期为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,C_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。,C_E14_FUTURE第三条，不适用新修订版本。因此适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，且其条款第四条明确规定‘发布日早于受理日但生效日晚于受理日的版本暂不适用’。因此当前适用最高投保年龄为62周岁（OPTION_B）。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3818,json_schema,1144,137,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，且其条款第四条明确规定‘发布日早于受理日但生效日晚于受理日的版本暂不适用’。因此当前适用最高投保年龄为62周岁（OPTION_B）。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,早于受理日但生效日晚于受理日的版本暂不适用’。因此当前适用最高投保年龄为62周岁（OPTION_B）。,早于受理日但生效日晚于受理日的版本暂不适用’。因此当前适用最高投保年龄为62周岁（OPTION_B）。
+test,E14,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,62,案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，该修订版不适用。因此当前适用版本为DOC_,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4284,json_schema,1617,144,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，该修订版不适用。因此当前适用版本为DOC_""}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01
+test,E14,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_002,62,"核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入（group_transfer_confirmed=false），满足E14_CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。",OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3632,json_schema,2087,117,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入（group_transfer_confirmed=false），满足E14_CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。,CURRENT_EFFECTIVE_VERSION规则，适用最高投保年龄62周岁；DOC_E14_FUTURE尚未生效。
+test,E14,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_002,62,硬门禁：规则E14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E14_CURRENT_EFFECTIVE_VERSION,62,1,DETERMINISTIC_SELECT,False,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择
+test,E14,TEMPORAL_VERSION,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_002,62,案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖受理日；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版数值62。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3716,json_schema,1347,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖受理日；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖受理日。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版数值62。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版数值62。,E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版数值62。
+test,E15,TEMPORAL_VERSION,3,20260822,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3398,json_schema,1044,120,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,3,20260822,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3359,json_schema,1048,119,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。根据DOC_E15_JULY第四条，以进入核保流程日期为版本判断日期，适用该版本的一般规则（第二条），即最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但DOC_E15_AUGUST第三条明确规定2026,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4219,json_schema,1140,151,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（生效2026-07-01至2026-07-31）的有效期内。根据DOC_E15_JULY第四条，以进入核保流程日期为版本判断日期，适用该版本的一般规则（第二条），即最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但DOC_E15_AUGUST第三条明确规定2026""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,流程日期为版本判断日期，适用该版本的一般规则（第二条），即最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但DOC_E15_A,流程日期为版本判断日期，适用该版本的一般规则（第二条），即最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但DOC_E15_A
+test,E15,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条明确排适用于8月1日前已进入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4470,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条明确排适用于8月1日前已进入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁， || 入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁， || 入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项
+test,E15,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,64,案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将值设为64的,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4379,json_schema,2096,147,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将值设为64的""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,0,8,2,3,0,8,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将 || 人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将值设为64的,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将 || 人工评估日期2026年8月21日不改变版本判断日期。因此，应选用将值设为64的
+test,E15,TEMPORAL_VERSION,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,64,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E15_JULY_VERSION_SCOPE,64,1,DETERMINISTIC_SELECT,False,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择
+test,E15,TEMPORAL_VERSION,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3657,json_schema,1343,130,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,2,0,2,2,2,0,期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前 || 于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64。,期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前 || 于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,DIRECT_FREE,SELECTED,OPTION_A,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3852,json_schema,686,140,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,VALUE_ENUM,SELECTED,OPTION_A,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3102,json_schema,690,105,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_002,0,文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条规定例外规则优先于一般规则（第二条90天）。因此适用OPTION_A（0天）。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3354,json_schema,781,116,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条规定例外规则优先于一般规则（第二条90天）。因此适用OPTION_A（0天）。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条规定例外规则优先于一般规则（第二条90天）。因此适用OPT || 条规定例外规则优先于一般规则（第二条90天）。因此适用OPTION_A（0天）。,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第六条规定例外规则优先于一般规则（第二条90天）。因此适用OPT || 条规定例外规则优先于一般规则（第二条90天）。因此适用OPTION_A（0天）。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_002,0,文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则的所有条件（团体转入、原保障连续、30日内提交证明）。根据第六条及第三条，满足条件的例外规则优先于第二条一般规则。因此，等待期应适用例外规则的0天，而非一般规则的90天或限制规则的30天。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3275,json_schema,1254,101,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则的所有条件（团体转入、原保障连续、30日内提交证明）。根据第六条及第三条，满足条件的例外规则优先于第二条一般规则。因此，等待期应适用例外规则的0天，而非一般规则的90天或限制规则的30天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,条，满足条件的例外规则优先于第二条一般规则。因此，等待期应适用例外规则的0天，而非一般规则的90天或限制规则的30天。,条，满足条件的例外规则优先于第二条一般规则。因此，等待期应适用例外规则的0天，而非一般规则的90天或限制规则的30天。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_002,0,案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy中优先级最高的规则E24_CONTINUOUS_TRANSFER_EXCEPTION（条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3194,json_schema,1670,98,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示：团体转入(true)、原保障未中断(true)、证明提交第20日(<=30)。根据formal_policy中优先级最高的规则E24_CONTINUOUS_TRANSFER_EXCEPTION（条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,8,0,18,2,8,0,18,NSFER_EXCEPTION（条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。 || （条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。,NSFER_EXCEPTION（条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。 || （条件完全匹配），适用例外规则，等待期应为0天。OPTION_A的新值为0，符合该规则结论。
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_002,0,硬门禁：规则E24_CONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E24_CONTINUOUS_TRANSFER_EXCEPTION,0,1,DETERMINISTIC_SELECT,False,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择
+test,E24,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_002,0,案件事实（第五条）明确满足例外规则（第三条）的所有条件：合作单位团体计划转入、原保障未中断、连续保障证明在第20日提交（在30日内）。根据第六条及文档规则，例外规则优先于一般规则，因此等待期应设为0天。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,2832,json_schema,982,92,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实（第五条）明确满足例外规则（第三条）的所有条件：合作单位团体计划转入、原保障未中断、连续保障证明在第20日提交（在30日内）。根据第六条及文档规则，例外规则优先于一般规则，因此等待期应设为0天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0日内）。根据第六条及文档规则，例外规则优先于一般规则，因此等待期应设为0天。,0日内）。根据第六条及文档规则，例外规则优先于一般规则，因此等待期应设为0天。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,DIRECT_FREE,SELECTED,OPTION_A,CAND_001,15,案件事实（出生后第46日投保，健康告知无异常，无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2538,json_schema,675,81,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保，健康告知无异常，无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,S第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。,S第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,VALUE_ENUM,SELECTED,OPTION_A,CAND_001,15,案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（30-90日内，健康告知无异常，无既往重疾），故适用15天等待期。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,2434,json_schema,679,77,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保）满足DOC_E25_TERMS第四条延迟投保规则条件（30-90日内，健康告知无异常，无既往重疾），故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,条延迟投保规则条件（30-90日内，健康告知无异常，无既往重疾），故适用15天等待期。,条延迟投保规则条件（30-90日内，健康告知无异常，无既往重疾），故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）完全满足DOC_E25_TERMS第四条“延迟投保规则”的条件（30日<46日<=90日，且健康告知及既往史符合要求）。根据第六条目标数值判断逻辑，优先匹配例外规则，故适用15天。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3075,json_schema,770,103,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）完全满足DOC_E25_TERMS第四条“延迟投保规则”的条件（30日<46日<=90日，且健康告知及既往史符合要求）。根据第六条目标数值判断逻辑，优先匹配例外规则，故适用15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,及既往史符合要求）。根据第六条目标数值判断逻辑，优先匹配例外规则，故适用15天。,及既往史符合要求）。根据第六条目标数值判断逻辑，优先匹配例外规则，故适用15天。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,15,案件事实显示投保时间为出生后第46日（满足30日<天数<=90日的延迟投保条件），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3313,json_schema,1243,103,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（满足30日<天数<=90日的延迟投保条件），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。 || _TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。,重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。 || _TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_A。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_001,15,案件事实显示投保时间为出生后第46日（大于30日且小于等于90日），健康告知无异常且无既往重大疾病记录。根据formal_policy中的规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3340,json_schema,1692,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（大于30日且小于等于90日），健康告知无异常且无既往重大疾病记录。根据formal_policy中的规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,D_CHILD_EXCEPTION（延迟投保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。 || 保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。,D_CHILD_EXCEPTION（延迟投保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。 || 保规则）条件满足，对应等待期为15天。因此选择OPTION_A将值更新为15。
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_001,15,硬门禁：规则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E25_DELAYED_CHILD_EXCEPTION,15,1,DETERMINISTIC_SELECT,False,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择
+test,E25,GENERAL_RULE_EXCEPTION,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）完全满足DOC_E25_TERMS第四条“延迟投保规则”的条件（30日<46日<=90日，且健康/病史条件符合）。根据第六条目标数值判断逻辑，应先排除第三条例外（不满足），再匹配第四条规则，故适用15天。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3290,json_schema,972,110,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）完全满足DOC_E25_TERMS第四条“延迟投保规则”的条件（30日<46日<=90日，且健康/病史条件符合）。根据第六条目标数值判断逻辑，应先排除第三条例外（不满足），再匹配第四条规则，故适用15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,1,2,1,2,1,2,目标数值判断逻辑，应先排除第三条例外（不满足），再匹配第四条规则，故适用15天。,目标数值判断逻辑，应先排除第三条例外（不满足），再匹配第四条规则，故适用15天。
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,DIRECT_FREE,SELECTED,OPTION_A,CAND_003,24,DOC_E34_TERMS 生效日期为 2026-08-01，适用于本案。根据第五条投保记录勾选长期照护附加责任，第三条例外规则规定此时保险期限调整为 24 个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制（同时选择费用垫付则按 18 个月）不适用。第七条要求综合读取附加责任选择和否定确认，故最终值为 24。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3561,json_schema,671,125,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效日期为 2026-08-01，适用于本案。根据第五条投保记录勾选长期照护附加责任，第三条例外规则规定此时保险期限调整为 24 个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制（同时选择费用垫付则按 18 个月）不适用。第七条要求综合读取附加责任选择和否定确认，故最终值为 24。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,1,9,2,5,1,9,五条投保记录勾选长期照护附加责任，第三条例外规则规定此时保险期限调整为 24 个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制（同时选择费 || 8 个月）不适用。第七条要求综合读取附加责任选择和否定确认，故最终值为 24。,五条投保记录勾选长期照护附加责任，第三条例外规则规定此时保险期限调整为 24 个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制（同时选择费 || 8 个月）不适用。第七条要求综合读取附加责任选择和否定确认，故最终值为 24。
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,VALUE_ENUM,SELECTED,OPTION_A,CAND_003,24,DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件。投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制）。依据第七条跨句指代规则，综合附加责任选择与否定确认后，确定保险期限为 24 个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3237,json_schema,675,113,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效日期为 2026-08-01，满足适用条件。投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制）。依据第七条跨句指代规则，综合附加责任选择与否定确认后，确定保险期限为 24 个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,0,12,2,5,0,12,8-01，满足适用条件。投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制）。依据第七条 || 。依据第七条跨句指代规则，综合附加责任选择与否定确认后，确定保险期限为 24 个月。,8-01，满足适用条件。投保记录勾选长期照护附加责任（触发第三条调整为 24 个月），核保确认未选择费用垫付责任（不触发第四条例外限制）。依据第七条 || 。依据第七条跨句指代规则，综合附加责任选择与否定确认后，确定保险期限为 24 个月。
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_003,24,根据DOC_E34_TERMS条款：1. 适用条件满足（2026-08-01后投保产品A）；2. 一般规则为12个月，但第三条例外规则规定选择长期照护附加责任时调整为24个月；3. 第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案；4. 案件上下文显示投保记录选择了长期照护附加责任，核保确认未选择费用垫付责任。因此，条件满足第三条例外规则，不适用其,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3991,json_schema,767,139,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据DOC_E34_TERMS条款：1. 适用条件满足（2026-08-01后投保产品A）；2. 一般规则为12个月，但第三条例外规则规定选择长期照护附加责任时调整为24个月；3. 第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案；4. 案件上下文显示投保记录选择了长期照护附加责任，核保确认未选择费用垫付责任。因此，条件满足第三条例外规则，不适用其""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,1,4,1,3,1,4,. 一般规则为12个月，但第三条例外规则规定选择长期照护附加责任时调整为24个月；3. 第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案；,. 一般规则为12个月，但第三条例外规则规定选择长期照护附加责任时调整为24个月；3. 第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案；
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,24,文档DOC_E34_TERMS生效日期2026-08-01，适用条件满足（投保产品A且选长期照护）。一般规则为12个月。例外规则规定选择长期照护附加责任时调整为24个月。例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，故适用例外规则中的24个月，排除OPTION_B（基础保障）和OPTION_C（费用垫付情形）,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4038,json_schema,1243,134,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期2026-08-01，适用条件满足（投保产品A且选长期照护）。一般规则为12个月。例外规则规定选择长期照护附加责任时调整为24个月。例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，故适用例外规则中的24个月，排除OPTION_B（基础保障）和OPTION_C（费用垫付情形）""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,1,7,2,4,1,7,长期照护）。一般规则为12个月。例外规则规定选择长期照护附加责任时调整为24个月。例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选 || 月处理。案件上下文显示选择了长期照护但未选择费用垫付，故适用例外规则中的24个月，排除OPTION_B（基础保障）和OPTION_C（费用垫付情形）,长期照护）。一般规则为12个月。例外规则规定选择长期照护附加责任时调整为24个月。例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选 || 月处理。案件上下文显示选择了长期照护但未选择费用垫付，故适用例外规则中的24个月，排除OPTION_B（基础保障）和OPTION_C（费用垫付情形）
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_003,24,根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件完全匹配，允许值为'24'。规则E34_BASIC_TERM和E34_EXPENSE_ADVANCE_RULE,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3187,json_schema,1649,93,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件完全匹配，允许值为'24'。规则E34_BASIC_TERM和E34_EXPENSE_ADVANCE_RULE""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,0,7,1,3,0,7,M_CARE_EXTENSION（优先级250）条件完全匹配，允许值为'24'。规则E34_BASIC_TERM和E34_EXPENSE_ADVAN,M_CARE_EXTENSION（优先级250）条件完全匹配，允许值为'24'。规则E34_BASIC_TERM和E34_EXPENSE_ADVAN
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_003,24,硬门禁：规则E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E34_LONG_TERM_CARE_EXTENSION,24,1,DETERMINISTIC_SELECT,False,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择
+test,E34,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据第五条投保记录勾选长期照护附加责任，第三条例外规则规定选择该责任时期限调整为24个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制不适用（即不执行18个月规则）。依据第七条目标数值需综合判断，最终适用长期照护附加责任的24个月期限。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3662,json_schema,969,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据第五条投保记录勾选长期照护附加责任，第三条例外规则规定选择该责任时期限调整为24个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制不适用（即不执行18个月规则）。依据第七条目标数值需综合判断，最终适用长期照护附加责任的24个月期限。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,1,7,2,4,1,7,条投保记录勾选长期照护附加责任，第三条例外规则规定选择该责任时期限调整为24个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制不适用（即不执 || 18个月规则）。依据第七条目标数值需综合判断，最终适用长期照护附加责任的24个月期限。,条投保记录勾选长期照护附加责任，第三条例外规则规定选择该责任时期限调整为24个月。第六条核保确认未选择费用垫付责任，因此第四条例外限制不适用（即不执 || 18个月规则）。依据第七条目标数值需综合判断，最终适用长期照护附加责任的24个月期限。
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,DIRECT_FREE,SELECTED,OPTION_C,CAND_001,18,文档DOC_E35_TERMS生效日期为2026-08-01，满足适用条件（投保时间隐含在条款发布后）。被保险人年龄58周岁<=60周岁，满足第五条例外规则中的年龄限制。根据第三条，选择癌症门诊扩展责任时期限为18个月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3322,json_schema,703,116,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""文档DOC_E35_TERMS生效日期为2026-08-01，满足适用条件（投保时间隐含在条款发布后）。被保险人年龄58周岁<=60周岁，满足第五条例外规则中的年龄限制。根据第三条，选择癌症门诊扩展责任时期限为18个月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,2,8,2,6,2,8,满足第五条例外规则中的年龄限制。根据第三条，选择癌症门诊扩展责任时期限为18个月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果 || 月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果为18个月。,满足第五条例外规则中的年龄限制。根据第三条，选择癌症门诊扩展责任时期限为18个月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果 || 月；第七条确认未选择境外就医责任，故第四条组合规则不适用。综合判断结果为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,VALUE_ENUM,SELECTED,OPTION_C,CAND_001,18,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,2703,json_schema,707,89,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,0,12,2,5,0,12,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且 || 的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。,根据DOC_E35_TERMS第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认被保险人年龄58周岁（满足第五条不超过60周岁的条件）且 || 的条件）且未选境外就医责任（不触发第四条24个月规则）。综合判定适用值为18。
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS，一般规则（第二条）规定未选扩展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）规定同时选择癌症和境外就医为24个月。第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件补充确认显示：1. 选择了癌症门诊扩展责任；2. 未选择境外就医责任；3. 被保险人58周岁（满足<,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3868,json_schema,799,135,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS，一般规则（第二条）规定未选扩展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）规定同时选择癌症和境外就医为24个月。第五条限制延长期限仅适用于被保险人年龄不超过60周岁。案件补充确认显示：1. 选择了癌症门诊扩展责任；2. 未选择境外就医责任；3. 被保险人58周岁（满足<""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,0,7,1,3,0,7,展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）规定同时选择癌症和境外就医为24个月。第五条限制,展责任期限为12个月；例外规则（第三条）规定选择癌症门诊扩展责任时调整为18个月；组合规则（第四条）规定同时选择癌症和境外就医为24个月。第五条限制
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条），基础期限应为18个月；2. 未选择境外就医责任，不触发第四条组合规则（24个月）；3. 被保险人年龄58周岁，满足第五条延长期限的年龄限制（不超过60周岁）。综上，保险期限应确定为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3457,json_schema,1275,111,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条），基础期限应为18个月；2. 未选择境外就医责任，不触发第四条组合规则（24个月）；3. 被保险人年龄58周岁，满足第五条延长期限的年龄限制（不超过60周岁）。综上，保险期限应确定为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条），基础期限应为18个月；2. 未选择境外就医责任，不触发第四条组合规则（24个月）；3.  || ，满足第五条延长期限的年龄限制（不超过60周岁）。综上，保险期限应确定为18个月。,_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条），基础期限应为18个月；2. 未选择境外就医责任，不触发第四条组合规则（24个月）；3.  || ，满足第五条延长期限的年龄限制（不超过60周岁）。综上，保险期限应确定为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医(overseas_medical_selected=false)、年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATIENT_EXP,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3311,json_schema,1857,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医(overseas_medical_selected=false)、年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATIENT_EXP""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_001,18,硬门禁：规则E35_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E35_CANCER_OUTPATIENT_EXTENSION,18,1,DETERMINISTIC_SELECT,False,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择
+test,E35,CROSS_SENTENCE_SCOPE,3,20260822,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_001,18,文档DOC_E35_TERMS生效日期为2026-08-01，适用于本案。被保险人年龄58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（第三条适用），且未选择境外就医责任（第四条不适用）。根据一般规则与例外优先级，应适用第三条规定的18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3024,json_schema,1001,102,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E35_TERMS生效日期为2026-08-01，适用于本案。被保险人年龄58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（第三条适用），且未选择境外就医责任（第四条不适用）。根据一般规则与例外优先级，应适用第三条规定的18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,外就医责任（第四条不适用）。根据一般规则与例外优先级，应适用第三条规定的18个月。,外就医责任（第四条不适用）。根据一般规则与例外优先级，应适用第三条规定的18个月。
+test,E14,TEMPORAL_VERSION,4,20260823,DIRECT_FREE,SELECTED,OPTION_C,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日在修订生效前的申请适用旧版条款。因此最高投保年龄为62周岁。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3777,json_schema,1048,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日在修订生效前的申请适用旧版条款。因此最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,TURE第三条，受理日在修订生效前的申请适用旧版条款。因此最高投保年龄为62周岁。,TURE第三条，受理日在修订生效前的申请适用旧版条款。因此最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,4,20260823,VALUE_ENUM,SELECTED,OPTION_C,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，尚未生效。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用最高投保年龄为62周岁。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3776,json_schema,1052,137,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，尚未生效。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,E14_FUTURE第三条，应以受理日有效版本为准，故适用最高投保年龄为62周岁。,E14_FUTURE第三条，应以受理日有效版本为准，故适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应适用受理日有效版本（即DOC_E14_CURRENT），其一般规则规定最高为,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4023,json_schema,1144,140,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应适用受理日有效版本（即DOC_E14_CURRENT），其一般规则规定最高为""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E14,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_002,62,案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新条款。因此当前适用版本为DOC_E,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4310,json_schema,1617,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件核保受理日为2026年8月20日。DOC_E14_CURRENT（生效2026-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，晚于受理日，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，不适用新条款。因此当前适用版本为DOC_E""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01,26-08-01至2026-08-31）在受理日有效，规定最高投保年龄为62周岁。DOC_E14_FUTURE虽已发布但生效日为2026-09-01
+test,E14,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,62,"核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入例外。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。",OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3751,json_schema,2087,121,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入例外。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,T_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。 || SION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。,T_EFFECTIVE_VERSION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。 || SION（优先级300），适用最高投保年龄62。OPTION_C提供新值62，符合规则。
+test,E14,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,62,硬门禁：规则E14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E14_CURRENT_EFFECTIVE_VERSION,62,1,DETERMINISTIC_SELECT,False,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择
+test,E14,TEMPORAL_VERSION,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_002,62,案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖该日期；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，即夏季现行版。虽然存在团体转入可,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4293,json_schema,1347,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖该日期；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，即夏季现行版。虽然存在团体转入可""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E15,TEMPORAL_VERSION,4,20260823,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3412,json_schema,1044,120,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,4,20260823,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3359,json_schema,1048,119,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,效2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64（OPTION_C）。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3691,json_schema,1140,130,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64（OPTION_C）。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,2,0,2,2,2,0,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前 || 于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64（OPTION_C）。,026-07-01至2026-07-31），其一般规则规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前 || 于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此适用数值为64（OPTION_C）。
+test,E15,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4506,json_schema,1613,154,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，,-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，
+test,E15,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,64,案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性值从70更新为,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4439,json_schema,2096,147,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY（2026-07-01至2026-07-31）的有效期内。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性值从70更新为""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性,VERSION_SCOPE（优先级300），该日期段适用的最高投保年龄为64周岁。人工评估日期2026年8月21日不改变版本判断日期。因此，应将属性
+test,E15,TEMPORAL_VERSION,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,64,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E15_JULY_VERSION_SCOPE,64,1,DETERMINISTIC_SELECT,False,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择
+test,E15,TEMPORAL_VERSION,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第四条规定以进入核保流程日期为版本判断日期，且第三条规定失效后才进入核保才不适用。因此应适用七月版本数值64周岁。DOC_E15_AUGUST明确排除8月1日前已进入核保的申请。OPTION_B的66周岁无文档依据,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4085,json_schema,1343,147,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第四条规定以进入核保流程日期为版本判断日期，且第三条规定失效后才进入核保才不适用。因此应适用七月版本数值64周岁。DOC_E15_AUGUST明确排除8月1日前已进入核保的申请。OPTION_B的66周岁无文档依据""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,2,-3,1,1,2,-3,本判断日期，且第三条规定失效后才进入核保才不适用。因此应适用七月版本数值64周岁。DOC_E15_AUGUST明确排除8月1日前已进入核保的申请。O,本判断日期，且第三条规定失效后才进入核保才不适用。因此应适用七月版本数值64周岁。DOC_E15_AUGUST明确排除8月1日前已进入核保的申请。O
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,DIRECT_FREE,SELECTED,OPTION_C,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确描述适用该文件的情形：由合作单位团体计划转入、原保障未中断、连续保障证明在第 20 日提交。根据第三条例外规则，满足上述条件时等待期按 0 天处理；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目标值为 0。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3544,json_schema,686,127,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）明确描述适用该文件的情形：由合作单位团体计划转入、原保障未中断、连续保障证明在第 20 日提交。根据第三条例外规则，满足上述条件时等待期按 0 天处理；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目标值为 0。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,保障证明在第 20 日提交。根据第三条例外规则，满足上述条件时等待期按 0 天处理；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目 || ；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目标值为 0。,保障证明在第 20 日提交。根据第三条例外规则，满足上述条件时等待期按 0 天处理；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目 || ；第六条确认例外规则优先于一般规则（第二条的 90 天）。因此目标值为 0。
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,VALUE_ENUM,SELECTED,OPTION_C,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3076,json_schema,690,105,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实满足第三条例外规则所有条件（团体转入、原保障连续、证明在第 20 日即 30 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日内提交），依据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_002,0,文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第四条限制规则仅适用于超过30日但不超过60日的情况，本案为第20日，故适用例外规则，结果为0天（OPTION_C）。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3631,json_schema,781,129,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确描述本次申请属于合作单位团体计划转入、原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第四条限制规则仅适用于超过30日但不超过60日的情况，本案为第20日，故适用例外规则，结果为0天（OPTION_C）。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,0,8,2,3,0,8,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第四条限制规则仅适用于超过30日但不超过60日的情况，本案为第2 || 于超过30日但不超过60日的情况，本案为第20日，故适用例外规则，结果为0天（OPTION_C）。,原保障连续且证明在第20日提交。根据第三条例外规则，满足该条件时等待期按0天处理；第四条限制规则仅适用于超过30日但不超过60日的情况，本案为第2 || 于超过30日但不超过60日的情况，本案为第20日，故适用例外规则，结果为0天（OPTION_C）。
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_002,0,文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则（连续转入、原保障未中断、证明在第20日提交，即30日内）。根据第六条及第三条，满足条件的例外规则优先于一般规则（第二条90天），故等待期按0天处理。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3119,json_schema,1254,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则（连续转入、原保障未中断、证明在第20日提交，即30日内）。根据第六条及第三条，满足条件的例外规则优先于一般规则（第二条90天），故等待期按0天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,条及第三条，满足条件的例外规则优先于一般规则（第二条90天），故等待期按0天处理。,条及第三条，满足条件的例外规则优先于一般规则（第二条90天），故等待期按0天处理。
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,0,"案件事实显示：group_transfer=true, prior_coverage_uninterrupted=true, proof_submitted_days=20。根据formal_policy规则优先级，E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300）条件满足（20<=30），允许值为0。因此选择OPTION_C",OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3090,json_schema,1670,92,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示：group_transfer=true, prior_coverage_uninterrupted=true, proof_submitted_days=20。根据formal_policy规则优先级，E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300）条件满足（20<=30），允许值为0。因此选择OPTION_C""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,3,0,7,1,3,0,7,R_EXCEPTION（优先级300）条件满足（20<=30），允许值为0。因此选择OPTION_C,R_EXCEPTION（优先级300）条件满足（20<=30），允许值为0。因此选择OPTION_C
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,0,硬门禁：规则E24_CONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E24_CONTINUOUS_TRANSFER_EXCEPTION,0,1,DETERMINISTIC_SELECT,False,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择
+test,E24,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_002,0,案件事实（第五条）明确满足例外规则（第三条）的所有条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2893,json_schema,982,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实（第五条）明确满足例外规则（第三条）的所有条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。,日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,DIRECT_FREE,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2279,json_schema,675,70,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,VALUE_ENUM,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2347,json_schema,679,71,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_001,15,根据文档DOC_E25_TERMS第五条，本案投保时间为出生后第46日（满足30日<日期<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2714,json_schema,770,87,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E25_TERMS第五条，本案投保时间为出生后第46日（满足30日<日期<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。,则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日（满足30日<天数<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3340,json_schema,1243,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（满足30日<天数<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。 || _TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。,重大疾病记录。根据文档DOC_E25_TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。 || _TERMS第四条，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日（30 < 46 <= 90），健康告知无异常且无既往重大疾病记录。根据formal_policy规则，E25_DELAYED_CHILD_EXCEPTION（优先级250）条件满足，对应等待期15天；E25_NEONATAL_EXCEPTION不满足（46 > 30）。因此选择OPTION_B将值设为15。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3694,json_schema,1692,119,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（30 < 46 <= 90），健康告知无异常且无既往重大疾病记录。根据formal_policy规则，E25_DELAYED_CHILD_EXCEPTION（优先级250）条件满足，对应等待期15天；E25_NEONATAL_EXCEPTION不满足（46 > 30）。因此选择OPTION_B将值设为15。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,1,0,4,2,1,0,4,ED_CHILD_EXCEPTION（优先级250）条件满足，对应等待期15天；E25_NEONATAL_EXCEPTION不满足（46 > 30） || CEPTION不满足（46 > 30）。因此选择OPTION_B将值设为15。,ED_CHILD_EXCEPTION（优先级250）条件满足，对应等待期15天；E25_NEONATAL_EXCEPTION不满足（46 > 30） || CEPTION不满足（46 > 30）。因此选择OPTION_B将值设为15。
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_001,15,硬门禁：规则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E25_DELAYED_CHILD_EXCEPTION,15,1,DETERMINISTIC_SELECT,False,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择
+test,E25,GENERAL_RULE_EXCEPTION,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日，满足‘超过30日但不超过90日’的条件（条款第四条），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2608,json_schema,972,81,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日，满足‘超过30日但不超过90日’的条件（条款第四条），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。,），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,24,根据DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制因不满足“同时选择费用垫付责任”的条件而无效。第七条要求综合读取附加责任选择和否定确认，故最终值为24。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3205,json_schema,671,111,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""根据DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制因不满足“同时选择费用垫付责任”的条件而无效。第七条要求综合读取附加责任选择和否定确认，故最终值为24。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制因不满足“同时选择费用垫付责任”的条件而无效。第七条 || 责任”的条件而无效。第七条要求综合读取附加责任选择和否定确认，故最终值为24。,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制因不满足“同时选择费用垫付责任”的条件而无效。第七条 || 责任”的条件而无效。第七条要求综合读取附加责任选择和否定确认，故最终值为24。
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2725,json_schema,675,90,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,24,根据DOC_E34_TERMS条款：1. 投保记录勾选长期照护附加责任（满足第三条）；2. 核保确认未选择费用垫付责任（不触发第四条例外限制）；3. 依据一般规则与例外优先级，适用第三条调整后的24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2784,json_schema,767,91,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据DOC_E34_TERMS条款：1. 投保记录勾选长期照护附加责任（满足第三条）；2. 核保确认未选择费用垫付责任（不触发第四条例外限制）；3. 依据一般规则与例外优先级，适用第三条调整后的24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,触发第四条例外限制）；3. 依据一般规则与例外优先级，适用第三条调整后的24个月。,触发第四条例外限制）；3. 依据一般规则与例外优先级，适用第三条调整后的24个月。
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4272,json_schema,1243,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡""
+}",,,,,,True,CAND_003,24,False,ACTION_MAPPING_ERROR,HIGH,理由对Oracle值的正向支持强于对最终所选值的支持,2,5,0,12,1,3,0,7,条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适 || ’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡,择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,24,根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3331,json_schema,1649,99,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该""
+  }",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,24,硬门禁：规则E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E34_LONG_TERM_CARE_EXTENSION,24,1,DETERMINISTIC_SELECT,False,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择
+test,E34,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据第七条目标数值及跨句指代要求，需综合第五条（勾选长期照护）与第六条（未选费用垫付）。第三条规定选择长期照护时期限为24个月；第四条虽提及同时选择费用垫付的例外，但本案不满足该条件。因此适用第三条规则，结果为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3526,json_schema,969,121,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，覆盖案件时间。根据第七条目标数值及跨句指代要求，需综合第五条（勾选长期照护）与第六条（未选费用垫付）。第三条规定选择长期照护时期限为24个月；第四条虽提及同时选择费用垫付的例外，但本案不满足该条件。因此适用第三条规则，结果为24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,（勾选长期照护）与第六条（未选费用垫付）。第三条规定选择长期照护时期限为24个月；第四条虽提及同时选择费用垫付的例外，但本案不满足该条件。因此适用第 || 及同时选择费用垫付的例外，但本案不满足该条件。因此适用第三条规则，结果为24个月。,（勾选长期照护）与第六条（未选费用垫付）。第三条规定选择长期照护时期限为24个月；第四条虽提及同时选择费用垫付的例外，但本案不满足该条件。因此适用第 || 及同时选择费用垫付的例外，但本案不满足该条件。因此适用第三条规则，结果为24个月。
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,DIRECT_FREE,SELECTED,OPTION_B,CAND_001,18,根据DOC_E35_TERMS第五条，年龄超过60周岁按基础保障（第二条，12个月）；该被保险人58周岁（未超60），适用第三条癌症门诊扩展责任规则（18个月）；第七条确认未选境外就医，故不适用第四条。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2776,json_schema,703,90,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第五条，年龄超过60周岁按基础保障（第二条，12个月）；该被保险人58周岁（未超60），适用第三条癌症门诊扩展责任规则（18个月）；第七条确认未选境外就医，故不适用第四条。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,个月）；该被保险人58周岁（未超60），适用第三条癌症门诊扩展责任规则（18个月）；第七条确认未选境外就医，故不适用第四条。,个月）；该被保险人58周岁（未超60），适用第三条癌症门诊扩展责任规则（18个月）；第七条确认未选境外就医，故不适用第四条。
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,VALUE_ENUM,SELECTED,OPTION_B,CAND_001,18,根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条，未选择境外就医责任，故不适用第四条的24个月组合规则。综合判定值为18。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2879,json_schema,707,98,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""根据DOC_E35_TERMS第五条，延长期限适用条件为被保险人年龄不超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条，未选择境外就医责任，故不适用第四条的24个月组合规则。综合判定值为18。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,2,8,2,6,2,8,超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条，未选择境外就医责任，故不适用第四条的24个月组合规则。 || 七条，未选择境外就医责任，故不适用第四条的24个月组合规则。综合判定值为18。,超过60周岁（本案58岁满足）；根据第三条，选择癌症门诊扩展责任时期限为18个月；根据第七条，未选择境外就医责任，故不适用第四条的24个月组合规则。 || 七条，未选择境外就医责任，故不适用第四条的24个月组合规则。综合判定值为18。
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_001,18,根据文档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文中被保险人58周岁且未选择境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3074,json_schema,799,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文中被保险人58周岁且未选择境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下 || 境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。,档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下 || 境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,18,依据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条适用，基础期限18个月）；2. 未选择境外就医责任（第四条组合规则不适用，不叠加至24个月）；3. 被保险人年龄58周岁（第五条限制条件满足，延长期限有效）。综合判定保险期限为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3442,json_schema,1275,109,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""依据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条适用，基础期限18个月）；2. 未选择境外就医责任（第四条组合规则不适用，不叠加至24个月）；3. 被保险人年龄58周岁（第五条限制条件满足，延长期限有效）。综合判定保险期限为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,1,5,2,3,1,5,5_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条适用，基础期限18个月）；2. 未选择境外就医责任（第四条组合规则不适用，不叠加至24个月 || 险人年龄58周岁（第五条限制条件满足，延长期限有效）。综合判定保险期限为18个月。,5_TERMS：1. 被保险人勾选癌症门诊扩展责任（第三条适用，基础期限18个月）；2. 未选择境外就医责任（第四条组合规则不适用，不叠加至24个月 || 险人年龄58周岁（第五条限制条件满足，延长期限有效）。综合判定保险期限为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,18,根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医责任(overseas_medical_selected=false)、被保险人年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATI_,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3344,json_schema,1857,95,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医责任(overseas_medical_selected=false)、被保险人年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATI_""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_001,18,硬门禁：规则E35_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E35_CANCER_OUTPATIENT_EXTENSION,18,1,DETERMINISTIC_SELECT,False,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择
+test,E35,CROSS_SENTENCE_SCOPE,4,20260823,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_001,18,根据文档DOC_E35_TERMS，被保险人年龄为58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（第三条适用），且未选择境外就医责任（第四条不适用）。因此保险期限应按第三条确定为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2628,json_schema,1001,83,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E35_TERMS，被保险人年龄为58周岁（满足第五条不超过60周岁的条件），选择了癌症门诊扩展责任（第三条适用），且未选择境外就医责任（第四条不适用）。因此保险期限应按第三条确定为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,1,2,1,2,1,2,用），且未选择境外就医责任（第四条不适用）。因此保险期限应按第三条确定为18个月。,用），且未选择境外就医责任（第四条不适用）。因此保险期限应按第三条确定为18个月。
+test,E14,TEMPORAL_VERSION,5,20260824,DIRECT_FREE,SELECTED,OPTION_C,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3845,json_schema,1048,139,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。,第三条，受理日早于新条款生效日的申请不适用新条款。因此适用最高投保年龄为62周岁。
+test,E14,TEMPORAL_VERSION,5,20260824,VALUE_ENUM,SELECTED,OPTION_C,CAND_002,62,核保受理日（2026-08-20）处于 DOC_E14_CURRENT 生效区间内，且 DOC_E14_FUTURE 尚未生效。DOC_E14_CURRENT 第二条规定最高投保年龄为 62 周岁。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2679,json_schema,1052,87,stop,"{
+  ""abstain"": false,
+  ""value"": ""62"",
+  ""reason"": ""核保受理日（2026-08-20）处于 DOC_E14_CURRENT 生效区间内，且 DOC_E14_FUTURE 尚未生效。DOC_E14_CURRENT 第二条规定最高投保年龄为 62 周岁。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,E 尚未生效。DOC_E14_CURRENT 第二条规定最高投保年龄为 62 周岁。,E 尚未生效。DOC_E14_CURRENT 第二条规定最高投保年龄为 62 周岁。
+test,E14,TEMPORAL_VERSION,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_002,62,核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应适用受理日有效版本（即DOC_E14_CURRENT），其一般规则规定最高为,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4024,json_schema,1144,140,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""核保受理日为2026年8月20日，处于DOC_E14_CURRENT（2026-08-01至2026-08-31）生效期内。DOC_E14_FUTURE虽已发布但生效日为2026-09-01，未满足条件。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应适用受理日有效版本（即DOC_E14_CURRENT），其一般规则规定最高为""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E14,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_002,62,案件核保受理日为2026年8月20日。DOC_E14_CURRENT生效期为2026-08-01至2026-08-31，覆盖受理日，规定最高投保年龄为62周岁。DOC_E14_FUTURE生效日为2026-09-01，晚于受理日，根据文档第四条及案件上下文（需确定当前适用），不适用。因此适用值为62，对应OPTION_C。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4063,json_schema,1617,137,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件核保受理日为2026年8月20日。DOC_E14_CURRENT生效期为2026-08-01至2026-08-31，覆盖受理日，规定最高投保年龄为62周岁。DOC_E14_FUTURE生效日为2026-09-01，晚于受理日，根据文档第四条及案件上下文（需确定当前适用），不适用。因此适用值为62，对应OPTION_C。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,2,3,1,5,2,3,1,5,026-08-01至2026-08-31，覆盖受理日，规定最高投保年龄为62周岁。DOC_E14_FUTURE生效日为2026-09-01，晚于受理 || 理日，根据文档第四条及案件上下文（需确定当前适用），不适用。因此适用值为62，对应OPTION_C。,026-08-01至2026-08-31，覆盖受理日，规定最高投保年龄为62周岁。DOC_E14_FUTURE生效日为2026-09-01，晚于受理 || 理日，根据文档第四条及案件上下文（需确定当前适用），不适用。因此适用值为62，对应OPTION_C。
+test,E14,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,62,"核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入例外。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。",OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3865,json_schema,2087,127,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""核保受理日2026-08-20在DOC_E14_CURRENT生效期[2026-08-01, 2026-08-31]内，且非团体转入例外。根据formal_policy规则E14_CURRENT_EFFECTIVE_VERSION（优先级300），适用最高投保年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,2,1,0,4,2,1,0,4,_EFFECTIVE_VERSION（优先级300），适用最高投保年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。 || 年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。,_EFFECTIVE_VERSION（优先级300），适用最高投保年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。 || 年龄为62。DOC_E14_FUTURE尚未生效。OPTION_C对应值62。
+test,E14,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,62,硬门禁：规则E14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E14_CURRENT_EFFECTIVE_VERSION,62,1,DETERMINISTIC_SELECT,False,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择,14_CURRENT_EFFECTIVE_VERSION唯一允许值=['62']，唯一存活候选直接选择
+test,E14,TEMPORAL_VERSION,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_002,62,案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖该日期；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版一般规则62周岁,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3790,json_schema,1347,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件核保受理日为2026年8月20日，DOC_E14_CURRENT（夏季现行版）生效期为2026-08-01至2026-08-31，覆盖该日期；DOC_E14_FUTURE（九月修订版）生效日为2026-09-01，未覆盖。根据DOC_E14_CURRENT第四条及DOC_E14_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版一般规则62周岁""
+}",,,,,,True,CAND_002,62,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,4_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版一般规则62周岁,4_FUTURE第三条，应以受理日有效版本为准，故适用夏季现行版一般规则62周岁
+test,E15,TEMPORAL_VERSION,5,20260824,DIRECT_FREE,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），其规定最高投保年龄为64周岁；DOC_E15_AUGUST虽于8月1日生效，但仅适用于8月1日及以后进入核保流程的申请。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3431,json_schema,1044,121,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），其规定最高投保年龄为64周岁；DOC_E15_AUGUST虽于8月1日生效，但仅适用于8月1日及以后进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,生效期2026-07-01至2026-07-31），其规定最高投保年龄为64周岁；DOC_E15_AUGUST虽于8月1日生效，但仅适用于8月1日及,生效期2026-07-01至2026-07-31），其规定最高投保年龄为64周岁；DOC_E15_AUGUST虽于8月1日生效，但仅适用于8月1日及
+test,E15,TEMPORAL_VERSION,5,20260824,VALUE_ENUM,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3354,json_schema,1048,118,stop,"{
+  ""abstain"": false,
+  ""value"": ""64"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,1,-2,1,0,1,-2,（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前,（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前
+test,E15,TEMPORAL_VERSION,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_A,CAND_003,64,投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（2026-07-01至2026-07-31）有效期内。DOC_E15_AUGUST规定8月1日前进入核保的申请不适用其版本。DOC_E15_JULY明确规定最高投保年龄为64周岁。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3391,json_schema,1140,117,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，处于DOC_E15_JULY（2026-07-01至2026-07-31）有效期内。DOC_E15_AUGUST规定8月1日前进入核保的申请不适用其版本。DOC_E15_JULY明确规定最高投保年龄为64周岁。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,1,0,1,1,1,0,入核保的申请不适用其版本。DOC_E15_JULY明确规定最高投保年龄为64周岁。,入核保的申请不适用其版本。DOC_E15_JULY明确规定最高投保年龄为64周岁。
+test,E15,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,68,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4347,json_schema,1613,148,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，""
+}",,,,,,True,CAND_003,64,False,ACTION_MAPPING_ERROR,HIGH,理由对Oracle值的正向支持强于对最终所选值的支持,2,3,0,8,0,0,0,0,2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文 || _E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGU,
+test,E15,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_A,CAND_003,64,案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）且未在该版本失效后首次进入核保。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期适用最高投保年龄64周岁。DOC_E15_AUGUST规则要求进入核保流程日期在2,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4300,json_schema,2096,143,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件事实显示投保申请进入核保流程日期为2026年7月20日，处于DOC_E15_JULY的生效期间（2026-07-01至2026-07-31）且未在该版本失效后首次进入核保。根据formal_policy规则E15_JULY_VERSION_SCOPE（优先级300），该日期适用最高投保年龄64周岁。DOC_E15_AUGUST规则要求进入核保流程日期在2""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,LY_VERSION_SCOPE（优先级300），该日期适用最高投保年龄64周岁。DOC_E15_AUGUST规则要求进入核保流程日期在2,LY_VERSION_SCOPE（优先级300），该日期适用最高投保年龄64周岁。DOC_E15_AUGUST规则要求进入核保流程日期在2
+test,E15,TEMPORAL_VERSION,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_A,CAND_003,64,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E15_JULY_VERSION_SCOPE,64,1,DETERMINISTIC_SELECT,False,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择,硬门禁：规则E15_JULY_VERSION_SCOPE唯一允许值=['64']，唯一存活候选直接选择
+test,E15,TEMPORAL_VERSION,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_A,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，DOC_E15_JULY（生效日期2026-07-01）明确适用于该期间。DOC_E15_AUGUST规定其版本仅适用于2026年8月1日及以后的申请，且对于8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3933,json_schema,1343,142,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，DOC_E15_JULY（生效日期2026-07-01）明确适用于该期间。DOC_E15_AUGUST规定其版本仅适用于2026年8月1日及以后的申请，且对于8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。""
+}",,,,,,True,CAND_003,64,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,效版本处理。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。,效版本处理。因此，适用DOC_E15_JULY的一般规则，最高投保年龄为64周岁。
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,DIRECT_FREE,SELECTED,OPTION_C,CAND_002,0,DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3866,json_schema,686,140,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 生效日期为 2026-07-10，案件事实（第五条）确认适用该文件。一般规则规定等待期 90 天；例外规则（第三条）条件为：团体转入、原保障连续至新合同生效日前一日、30 日内提交证明。案件事实满足所有例外条件（第 20 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。,0 日提交<30 日）。根据第六条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,VALUE_ENUM,SELECTED,OPTION_C,CAND_002,0,DOC_E24_TERMS 文件生效日期为 2026-07-10，案件事实（第五条）明确满足第三条例外规则的所有条件（团体转入、原保障连续、证明在第 20 日提交即小于 30 日）。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3180,json_schema,690,110,stop,"{
+  ""abstain"": false,
+  ""value"": ""0"",
+  ""reason"": ""DOC_E24_TERMS 文件生效日期为 2026-07-10，案件事实（第五条）明确满足第三条例外规则的所有条件（团体转入、原保障连续、证明在第 20 日提交即小于 30 日）。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,于 30 日）。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。,于 30 日）。根据第六条及第三条，例外规则优先于一般规则，故等待期按 0 天处理。
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_002,0,文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确属于合作单位团体计划转入、原保障连续且证明在第20日提交。第三条例外规则规定满足条件时等待期为0天；第四条限制规则仅针对超过30日但不超过60日的情况（本案为第20日，不触发）。第六条确认例外规则优先于一般规则。因此适用例外规则，结果为0天（OPTION_C）。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3780,json_schema,781,134,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文件DOC_E24_TERMS生效日期为2026-07-10，案件事实（第五条）明确属于合作单位团体计划转入、原保障连续且证明在第20日提交。第三条例外规则规定满足条件时等待期为0天；第四条限制规则仅针对超过30日但不超过60日的情况（本案为第20日，不触发）。第六条确认例外规则优先于一般规则。因此适用例外规则，结果为0天（OPTION_C）。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,入、原保障连续且证明在第20日提交。第三条例外规则规定满足条件时等待期为0天；第四条限制规则仅针对超过30日但不超过60日的情况（本案为第20日， || 日，不触发）。第六条确认例外规则优先于一般规则。因此适用例外规则，结果为0天（OPTION_C）。,入、原保障连续且证明在第20日提交。第三条例外规则规定满足条件时等待期为0天；第四条限制规则仅针对超过30日但不超过60日的情况（本案为第20日， || 日，不触发）。第六条确认例外规则优先于一般规则。因此适用例外规则，结果为0天（OPTION_C）。
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_002,0,文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则（连续转入、原保障有效、30日内提交证明），第六条明确例外规则优先于一般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2955,json_schema,1254,87,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E24_TERMS第五条确认案件事实满足第三条例外规则（连续转入、原保障有效、30日内提交证明），第六条明确例外规则优先于一般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,交证明），第六条明确例外规则优先于一般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。 || 般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。,交证明），第六条明确例外规则优先于一般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。 || 般规则。第三条规定满足条件时等待期为0天，故选择OPTION_C将值设为0。
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_002,0,案件事实显示：团体转入(group_transfer=true)、原保障未中断(prior_coverage_uninterrupted=true)、证明提交第20日(proof_submitted_days=20)。根据formal_policy规则优先级，E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300）条件满足（20<=,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3284,json_schema,1670,95,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实显示：团体转入(group_transfer=true)、原保障未中断(prior_coverage_uninterrupted=true)、证明提交第20日(proof_submitted_days=20)。根据formal_policy规则优先级，E24_CONTINUOUS_TRANSFER_EXCEPTION（优先级300）条件满足（20<=""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_002,0,硬门禁：规则E24_CONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E24_CONTINUOUS_TRANSFER_EXCEPTION,0,1,DETERMINISTIC_SELECT,False,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择,ONTINUOUS_TRANSFER_EXCEPTION唯一允许值=['0']，唯一存活候选直接选择
+test,E24,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_002,0,案件事实（第五条）明确满足例外规则（第三条）的所有条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2624,json_schema,982,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件事实（第五条）明确满足例外规则（第三条）的所有条件：由合作单位团体计划转入、原保障至新合同生效日前一日有效、连续保障证明在第20日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。""
+}",,,,,,True,CAND_002,0,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。,日提交（在30日内）。根据第六条，例外规则优先于一般规则，因此等待期应为0天。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,DIRECT_FREE,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保，健康告知无异常，无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2517,json_schema,675,81,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保，健康告知无异常，无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,S第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。,S第四条延迟投保规则条件（30日至90日内），故适用该例外规则，等待期为15天。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,VALUE_ENUM,SELECTED,OPTION_B,CAND_001,15,案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2290,json_schema,679,69,stop,"{
+  ""abstain"": false,
+  ""value"": ""15"",
+  ""reason"": ""案件事实（出生后第46日投保、健康告知无异常、无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天。,无既往重疾）满足DOC_E25_TERMS第四条延迟投保规则条件，故适用15天。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_B,CAND_001,15,根据文档DOC_E25_TERMS第五条，本案投保时间为出生后第46日（满足30日<日期<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2690,json_schema,770,87,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""根据文档DOC_E25_TERMS第五条，本案投保时间为出生后第46日（满足30日<日期<=90日的延迟投保规则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。,则条件），且健康告知无异常、无既往重大疾病记录。依据第四条例外规则，适用15天等待期。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日（超过30日但不超过90日），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3354,json_schema,1243,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（超过30日但不超过90日），且健康告知无异常、无既往重大疾病记录。根据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,2,0,6,2,2,0,6,据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。 || 条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。,据文档DOC_E25_TERMS第四条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。 || 条‘延迟投保规则’，此情形下等待期按15天处理。因此选择将值从30替换为15的OPTION_B。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日（满足30 < 46 <= 90），健康告知无异常且无既往重大疾病记录。根据formal_policy规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,3418,json_schema,1692,108,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日（满足30 < 46 <= 90），健康告知无异常且无既往重大疾病记录。根据formal_policy规则优先级，E25_DELAYED_CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。 || 于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。,CHILD_EXCEPTION（延迟投保规则）优先于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。 || 于一般规则，其允许值为15天。因此选择OPTION_B将等待期天数更新为15。
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_B,CAND_001,15,硬门禁：规则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,0,formal_policy_hard_gate,0,0,,,True,E25_DELAYED_CHILD_EXCEPTION,15,1,DETERMINISTIC_SELECT,False,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择,则E25_DELAYED_CHILD_EXCEPTION唯一允许值=['15']，唯一存活候选直接选择
+test,E25,GENERAL_RULE_EXCEPTION,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_B,CAND_001,15,案件事实显示投保时间为出生后第46日，满足‘超过30日但不超过90日’的条件（条款第四条），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,2284,json_schema,972,81,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事实显示投保时间为出生后第46日，满足‘超过30日但不超过90日’的条件（条款第四条），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。""
+}",,,,,,True,CAND_001,15,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。,），且健康告知无异常、无既往重大疾病记录，因此适用延迟投保规则，等待期为15天。
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,DIRECT_FREE,SELECTED,OPTION_C,CAND_003,24,根据DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，因本案不满足此条件，故适用第三条的24个月。第七条要求综合读取附加责任选择和否定确认，本案满足所有条件。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3475,json_schema,671,123,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""根据DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，因本案不满足此条件，故适用第三条的24个月。第七条要求综合读取附加责任选择和否定确认，本案满足所有条件。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,2,6,2,5,2,6,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，因本案 || 整不适用于同时选择费用垫付责任的方案，因本案不满足此条件，故适用第三条的24个月。第七条要求综合读取附加责任选择和否定确认，本案满足所有条件。,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，因本案 || 整不适用于同时选择费用垫付责任的方案，因本案不满足此条件，故适用第三条的24个月。第七条要求综合读取附加责任选择和否定确认，本案满足所有条件。
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,VALUE_ENUM,SELECTED,OPTION_C,CAND_003,24,DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,2689,json_schema,675,90,stop,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""reason"": ""DOC_E34_TERMS 生效且权威。投保记录满足‘选择长期照护附加责任’（第三条），核保确认满足‘未选择费用垫付责任’（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,1,0,3,1,1,0,3,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。,（第四条）。根据例外限制，不触发18个月规则；根据一般规则与第三条，适用24个月。
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_003,24,根据DOC_E34_TERMS条款：1. 投保记录显示选择长期照护附加责任（触发第三条，期限调整为24个月）；2. 核保确认未选择费用垫付责任（满足第四条例外限制中的否定条件，不执行18个月规则）。综合跨句指代与优先级判断，适用结果为24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3075,json_schema,767,103,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据DOC_E34_TERMS条款：1. 投保记录显示选择长期照护附加责任（触发第三条，期限调整为24个月）；2. 核保确认未选择费用垫付责任（满足第四条例外限制中的否定条件，不执行18个月规则）。综合跨句指代与优先级判断，适用结果为24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,MS条款：1. 投保记录显示选择长期照护附加责任（触发第三条，期限调整为24个月）；2. 核保确认未选择费用垫付责任（满足第四条例外限制中的否定条件 || 中的否定条件，不执行18个月规则）。综合跨句指代与优先级判断，适用结果为24个月。,MS条款：1. 投保记录显示选择长期照护附加责任（触发第三条，期限调整为24个月）；2. 核保确认未选择费用垫付责任（满足第四条例外限制中的否定条件 || 中的否定条件，不执行18个月规则）。综合跨句指代与优先级判断，适用结果为24个月。
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月。第三条例外规则规定选择长期照护附加责任时调整为24个月。第四条例外限制明确规定：同时选择费用垫付责任的方案不适用第三条调整，按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。由于未选择费用垫付责任，不,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3986,json_schema,1243,131,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月。第三条例外规则规定选择长期照护附加责任时调整为24个月。第四条例外限制明确规定：同时选择费用垫付责任的方案不适用第三条调整，按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。由于未选择费用垫付责任，不""
+}",,,,,,True,CAND_003,24,False,ACTION_MAPPING_ERROR,HIGH,理由对Oracle值的正向支持强于对最终所选值的支持,1,4,1,6,1,2,1,2,，基础保障期限为12个月。第三条例外规则规定选择长期照护附加责任时调整为24个月。第四条例外限制明确规定：同时选择费用垫付责任的方案不适用第三条调整,。第四条例外限制明确规定：同时选择费用垫付责任的方案不适用第三条调整，按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_003,24,根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3322,json_schema,1649,99,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据formal_policy，事实为long_term_care_addon_selected=true且expense_advance_selected=false。规则E34_LONG_TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该""
+  }",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该,TERM_CARE_EXTENSION（优先级250）条件满足，允许值为24。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为2 || 4。文档DOC_E34_TERMS第三条确认选择长期照护附加责任时调整为24个月，第四条明确该
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_003,24,硬门禁：规则E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,0,formal_policy_hard_gate,0,0,,,True,E34_LONG_TERM_CARE_EXTENSION,24,1,DETERMINISTIC_SELECT,False,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择,E34_LONG_TERM_CARE_EXTENSION唯一允许值=['24']，唯一存活候选直接选择
+test,E34,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_003,24,根据文档DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不满足此条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,3185,json_schema,969,119,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E34_TERMS，投保记录显示选择了长期照护附加责任（第五条），核保确认未选择费用垫付责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不满足此条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。""
+}",,,,,,True,CAND_003,24,True,SUCCESS,HIGH,最终动作与Oracle一致,2,5,1,9,2,5,1,9,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不 || 条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。,责任（第六条）。依据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月。第四条例外限制指出该调整不适用于同时选择费用垫付责任的方案，本案不 || 条件。第七条要求综合读取附加责任选择和否定确认，故适用OPTION_C的24个月。
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,DIRECT_FREE,SELECTED,OPTION_C,CAND_001,18,文档DOC_E35_TERMS生效日期为2026-08-01，满足适用条件（2026年8月1日以后投保）。被保险人年龄58周岁（<=60），满足第五条例外规则中延长期限的年龄限制。根据第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3526,json_schema,703,125,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""文档DOC_E35_TERMS生效日期为2026-08-01，满足适用条件（2026年8月1日以后投保）。被保险人年龄58周岁（<=60），满足第五条例外规则中延长期限的年龄限制。根据第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,2,8,2,6,2,8,外规则中延长期限的年龄限制。根据第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果 || 月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果为18个月。,外规则中延长期限的年龄限制。根据第三条，选择癌症门诊扩展责任时保险期限为18个月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果 || 月；第七条确认未选择境外就医责任，故不适用第四条组合规则。综合判定结果为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,VALUE_ENUM,SELECTED,OPTION_C,CAND_001,18,DOC_E35_TERMS 生效日期为 2026-08-01，满足时间要求；被保险人年龄 58 周岁（<=60），满足第五条例外规则适用条件；勾选癌症门诊扩展责任且未选境外就医责任，满足第三条一般规则及第四条组合规则前提，故取第三条规定的 18 个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3105,json_schema,707,107,stop,"{
+  ""abstain"": false,
+  ""value"": ""18"",
+  ""reason"": ""DOC_E35_TERMS 生效日期为 2026-08-01，满足时间要求；被保险人年龄 58 周岁（<=60），满足第五条例外规则适用条件；勾选癌症门诊扩展责任且未选境外就医责任，满足第三条一般规则及第四条组合规则前提，故取第三条规定的 18 个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,0,0,1,1,0,0,1,境外就医责任，满足第三条一般规则及第四条组合规则前提，故取第三条规定的 18 个月。,境外就医责任，满足第三条一般规则及第四条组合规则前提，故取第三条规定的 18 个月。
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_VALUE_ONLY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文中被保险人58周岁且未选择境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3065,json_schema,799,104,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下文中被保险人58周岁且未选择境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下 || 境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。,档DOC_E35_TERMS，第三条规定选择癌症门诊扩展责任时保险期限为18个月；第五条规定该延长期限仅在被保险人年龄不超过60周岁时适用。案件上下 || 境外就医责任（不触发第四条24个月规则），满足第三条和第五条条件，故适用18个月。
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（满足第三条），基础期限调整为18个月；2. 未选择境外就医责任（不满足第四条组合规则）；3. 被保险人年龄58周岁，不超过60周岁（满足第五条延长期限适用条件）。综合判定保险期限为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3351,json_schema,1275,105,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS：1. 被保险人勾选癌症门诊扩展责任（满足第三条），基础期限调整为18个月；2. 未选择境外就医责任（不满足第四条组合规则）；3. 被保险人年龄58周岁，不超过60周岁（满足第五条延长期限适用条件）。综合判定保险期限为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,4,0,10,2,4,0,10,RMS：1. 被保险人勾选癌症门诊扩展责任（满足第三条），基础期限调整为18个月；2. 未选择境外就医责任（不满足第四条组合规则）；3. 被保险人年 || 8周岁，不超过60周岁（满足第五条延长期限适用条件）。综合判定保险期限为18个月。,RMS：1. 被保险人勾选癌症门诊扩展责任（满足第三条），基础期限调整为18个月；2. 未选择境外就医责任（不满足第四条组合规则）；3. 被保险人年 || 8周岁，不超过60周岁（满足第五条延长期限适用条件）。综合判定保险期限为18个月。
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_POLICY,SELECTED,OPTION_C,CAND_001,18,根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医(overseas_medical_selected=false)、年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATIENT_EXP,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3317,json_schema,1857,94,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""根据文档DOC_E35_TERMS及formal_policy：事实为选择癌症门诊扩展责任(cancer_outpatient_extension_selected=true)、未选择境外就医(overseas_medical_selected=false)、年龄58周岁(insured_age=58)。规则E35_CANCER_OUTPATIENT_EXP""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,0,0,0,0,0,0,0,0,,
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_FORMAL_POLICY_HARD_GATE,SELECTED,OPTION_C,CAND_001,18,硬门禁：规则E35_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,0,formal_policy_hard_gate,0,0,,,True,E35_CANCER_OUTPATIENT_EXTENSION,18,1,DETERMINISTIC_SELECT,False,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,1,2,0,5,1,2,0,5,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择,_CANCER_OUTPATIENT_EXTENSION唯一允许值=['18']，唯一存活候选直接选择
+test,E35,CROSS_SENTENCE_SCOPE,5,20260824,OPTION_DESCRIPTION,SELECTED,OPTION_C,CAND_001,18,依据文档DOC_E35_TERMS：1) 被保险人年龄58周岁（<=60），满足第五条延长期限适用条件；2) 选择癌症门诊扩展责任，触发第三条将期限调整为18个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为18个月。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,3023,json_schema,1001,102,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""依据文档DOC_E35_TERMS：1) 被保险人年龄58周岁（<=60），满足第五条延长期限适用条件；2) 选择癌症门诊扩展责任，触发第三条将期限调整为18个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为18个月。""
+}",,,,,,True,CAND_001,18,True,SUCCESS,HIGH,最终动作与Oracle一致,2,6,0,14,2,6,0,14,五条延长期限适用条件；2) 选择癌症门诊扩展责任，触发第三条将期限调整为18个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为 || 个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为18个月。,五条延长期限适用条件；2) 选择癌症门诊扩展责任，触发第三条将期限调整为18个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为 || 个月；3) 未选择境外就医责任，不触发第四条组合规则。综上，保险期限应为18个月。

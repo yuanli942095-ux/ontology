@@ -1,0 +1,15 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_CLASS_ASSERTION",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ002"
+      ],
+      "rationale": "根据证据 EVID_011，'产品A' 被断言为 '医疗保险'。然而，在当前的上下文中（通常涉及疾病保险或特定条款分析），如果存在冲突的断言或需要移除过时的/错误的分类，此操作用于修正本体状态。特别是当其他证据表明该产品属于'疾病保险'而非单纯的'医疗保险'时，或者为了清理不需要的实例断言。在此场景下，移除该断言以保持一致性或遵循最新的修订指令（如从DOC-PA-2026-V2 2.0版本更新）。",
+      "class_iri": "file:///G:/LearnAI/ontology-1#医疗保险"
+    }
+  ]
+}

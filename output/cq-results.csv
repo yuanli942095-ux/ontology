@@ -1,0 +1,73 @@
+﻿error_id,file_name,cq_id,question,query_type,expected,actual,result
+BASELINE,insurance-validation-baseline.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险,PASS
+BASELINE,insurance-validation-baseline.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险,PASS
+BASELINE,insurance-validation-baseline.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],保险公司甲,PASS
+BASELINE,insurance-validation-baseline.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],65,PASS
+BASELINE,insurance-validation-baseline.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,65,PASS
+BASELINE,insurance-validation-baseline.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],60,PASS
+BASELINE,insurance-validation-baseline.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+BASELINE,insurance-validation-baseline.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+BASELINE,insurance-validation-baseline.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+BASELINE,insurance-validation-baseline.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+BASELINE,insurance-validation-baseline.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+BASELINE,insurance-validation-baseline.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS
+E1,E1_numeric_drift.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险,PASS
+E1,E1_numeric_drift.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险,PASS
+E1,E1_numeric_drift.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],保险公司甲,PASS
+E1,E1_numeric_drift.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],70,FAIL
+E1,E1_numeric_drift.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,70,PASS
+E1,E1_numeric_drift.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],60,PASS
+E1,E1_numeric_drift.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+E1,E1_numeric_drift.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+E1,E1_numeric_drift.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+E1,E1_numeric_drift.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+E1,E1_numeric_drift.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+E1,E1_numeric_drift.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS
+E2,E2_missing_axiom.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险,PASS
+E2,E2_missing_axiom.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险,PASS
+E2,E2_missing_axiom.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],保险公司甲,PASS
+E2,E2_missing_axiom.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],65,PASS
+E2,E2_missing_axiom.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,65,PASS
+E2,E2_missing_axiom.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],,FAIL
+E2,E2_missing_axiom.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+E2,E2_missing_axiom.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+E2,E2_missing_axiom.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+E2,E2_missing_axiom.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+E2,E2_missing_axiom.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+E2,E2_missing_axiom.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS
+E3,E3_wrong_relation_target.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险,PASS
+E3,E3_wrong_relation_target.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险,PASS
+E3,E3_wrong_relation_target.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],癌症,FAIL
+E3,E3_wrong_relation_target.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],65,PASS
+E3,E3_wrong_relation_target.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,65,PASS
+E3,E3_wrong_relation_target.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],60,PASS
+E3,E3_wrong_relation_target.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+E3,E3_wrong_relation_target.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+E3,E3_wrong_relation_target.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+E3,E3_wrong_relation_target.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+E3,E3_wrong_relation_target.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+E3,E3_wrong_relation_target.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS
+E4,E4_disjoint_class_conflict.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险 | 财产保险,PASS
+E4,E4_disjoint_class_conflict.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险 | 财产保险,FAIL
+E4,E4_disjoint_class_conflict.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],保险公司甲,PASS
+E4,E4_disjoint_class_conflict.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],65,PASS
+E4,E4_disjoint_class_conflict.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,65,PASS
+E4,E4_disjoint_class_conflict.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],60,PASS
+E4,E4_disjoint_class_conflict.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+E4,E4_disjoint_class_conflict.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+E4,E4_disjoint_class_conflict.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+E4,E4_disjoint_class_conflict.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+E4,E4_disjoint_class_conflict.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+E4,E4_disjoint_class_conflict.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS
+E5,E5_conflicting_functional_value.owl,CQ001,产品A是否属于医疗保险？,CLASS_PRESENT,包含医疗保险,NamedIndividual | 医疗保险,PASS
+E5,E5_conflicting_functional_value.owl,CQ002,产品A是否错误地属于财产保险？,CLASS_ABSENT,不包含财产保险,NamedIndividual | 医疗保险,PASS
+E5,E5_conflicting_functional_value.owl,CQ003,产品A由哪家公司承保？,PROPERTY_EXACT_SET,['保险公司甲'],保险公司甲,PASS
+E5,E5_conflicting_functional_value.owl,CQ004,产品A的最高投保年龄是多少？,PROPERTY_EXACT_SET,['65'],65 | 70,FAIL
+E5,E5_conflicting_functional_value.owl,CQ005,产品A是否只有一个最高投保年龄？,PROPERTY_CARDINALITY,数量=1,65 | 70,FAIL
+E5,E5_conflicting_functional_value.owl,CQ006,产品A的等待期是多少天？,PROPERTY_EXACT_SET,['60'],60,PASS
+E5,E5_conflicting_functional_value.owl,CQ007,产品A保障什么疾病？,PROPERTY_EXACT_SET,['癌症'],癌症,PASS
+E5,E5_conflicting_functional_value.owl,CQ008,产品A的最低投保年龄是多少？,PROPERTY_EXACT_SET,['18'],18,PASS
+E5,E5_conflicting_functional_value.owl,CQ009,产品A的保险期限是多少个月？,PROPERTY_EXACT_SET,['12'],12,PASS
+E5,E5_conflicting_functional_value.owl,CQ010,产品A的保险金额是多少？,PROPERTY_EXACT_SET,['500000'],500000,PASS
+E5,E5_conflicting_functional_value.owl,CQ011,产品A适用于哪类人群？,PROPERTY_EXACT_SET,['成人投保群体'],成人投保群体,PASS
+E5,E5_conflicting_functional_value.owl,CQ012,产品A采用哪项免责条款？,PROPERTY_EXACT_SET,['标准免责条款A'],标准免责条款A,PASS

@@ -1,0 +1,48 @@
+{
+  "event_id": "E24",
+  "semantics": "general_rule_exception_with_submission_window",
+  "facts": {
+    "group_transfer": true,
+    "prior_coverage_uninterrupted": true,
+    "proof_submitted_days": 20
+  },
+  "rules": [
+    {
+      "rule_id": "E24_CONTINUOUS_TRANSFER_EXCEPTION",
+      "priority": 300,
+      "when": {
+        "group_transfer": {
+          "equals": true
+        },
+        "prior_coverage_uninterrupted": {
+          "equals": true
+        },
+        "proof_submitted_days": {
+          "less_or_equal": 30
+        }
+      },
+      "allowed_values": ["0"]
+    },
+    {
+      "rule_id": "E24_LATE_PROOF_EXCEPTION",
+      "priority": 200,
+      "when": {
+        "proof_submitted_days": {
+          "greater_than": 30,
+          "less_or_equal": 60
+        }
+      },
+      "allowed_values": ["30"]
+    },
+    {
+      "rule_id": "E24_GENERAL_WAITING_PERIOD",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["90"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E24_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

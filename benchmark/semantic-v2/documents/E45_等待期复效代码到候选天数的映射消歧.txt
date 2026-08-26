@@ -1,0 +1,6 @@
+E45 产品A等待期复效代码记录
+文件性质：核保代码记录。
+第一条 本案复效审核系统返回 WAIT-CODE-REINSTATE。
+第二条 WAIT-CODE-WAIVER、WAIT-CODE-REINSTATE、WAIT-CODE-GENERAL 分别代表不同候选修复映射。
+第三条 代码到等待期天数的映射由候选修复表维护，文档不直接展开数值。
+核保记录：本案未满足豁免条件，按复效审核代码处理。

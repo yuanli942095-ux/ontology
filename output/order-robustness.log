@@ -1,0 +1,12 @@
+source=G:\LearnAI\ontology-evolution\output\candidate-information-ablation-details.csv
+rows=420
+by_event=G:\LearnAI\ontology-evolution\output\order-robustness-by-event.csv
+summary=G:\LearnAI\ontology-evolution\output\order-robustness-summary.csv
+json=G:\LearnAI\ontology-evolution\output\order-robustness.json
+[DIRECT_FREE] strict=9/12 | stable=9/12 | order_sensitive=0/12 | accuracy=75.00% | abstain=25.00%
+[OPTION_DESCRIPTION] strict=12/12 | stable=12/12 | order_sensitive=0/12 | accuracy=100.00% | abstain=0.00%
+[OPTION_FORMAL_OPERATION] strict=7/12 | stable=9/12 | order_sensitive=5/12 | accuracy=68.33% | abstain=13.33%
+[OPTION_FORMAL_POLICY] strict=10/12 | stable=10/12 | order_sensitive=2/12 | accuracy=96.67% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] strict=12/12 | stable=12/12 | order_sensitive=0/12 | accuracy=100.00% | abstain=0.00%
+[OPTION_VALUE_ONLY] strict=9/12 | stable=9/12 | order_sensitive=2/12 | accuracy=76.67% | abstain=8.33%
+[VALUE_ENUM] strict=8/12 | stable=9/12 | order_sensitive=1/12 | accuracy=73.33% | abstain=26.67%

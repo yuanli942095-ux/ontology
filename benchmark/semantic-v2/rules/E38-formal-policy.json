@@ -1,0 +1,57 @@
+{
+  "event_id": "E38",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "remote_consultation_selected": true,
+    "dental_addon_selected": false
+  },
+  "rules": [
+    {
+      "rule_id": "E38_DENTAL_ADDON",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "dental_addon_selected",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    },
+    {
+      "rule_id": "E38_REMOTE_ONLY",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "remote_consultation_selected",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "dental_addon_selected",
+          "operator": "equals",
+          "value": false
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E38_BASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "12"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E38_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

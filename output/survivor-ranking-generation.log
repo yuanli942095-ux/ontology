@@ -1,0 +1,59 @@
+反事实存活候选分流与Qwen排序日志
+模型：qwen3.5:9b
+运行次数：5
+策略：0个=ABSTAIN；1个=确定性选择；多个=Qwen排序。
+Ollama格式：普通JSON + think=false；程序执行严格字段与白名单校验。
+
+[survivor-E1-run-001]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E1-run-002]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E1-run-003]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E1-run-004]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E1-run-005]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E2-run-001]
+  结果=DETERMINISTIC_SELECT | CAND_001 | ADD_PROPERTY_VALUE | Ollama未调用
+[survivor-E2-run-002]
+  结果=DETERMINISTIC_SELECT | CAND_001 | ADD_PROPERTY_VALUE | Ollama未调用
+[survivor-E2-run-003]
+  结果=DETERMINISTIC_SELECT | CAND_001 | ADD_PROPERTY_VALUE | Ollama未调用
+[survivor-E2-run-004]
+  结果=DETERMINISTIC_SELECT | CAND_001 | ADD_PROPERTY_VALUE | Ollama未调用
+[survivor-E2-run-005]
+  结果=DETERMINISTIC_SELECT | CAND_001 | ADD_PROPERTY_VALUE | Ollama未调用
+[survivor-E3-run-001]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E3-run-002]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E3-run-003]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E3-run-004]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E3-run-005]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REPLACE_PROPERTY_VALUE | Ollama未调用
+[survivor-E4-run-001]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REMOVE_CLASS_ASSERTION | Ollama未调用
+[survivor-E4-run-002]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REMOVE_CLASS_ASSERTION | Ollama未调用
+[survivor-E4-run-003]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REMOVE_CLASS_ASSERTION | Ollama未调用
+[survivor-E4-run-004]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REMOVE_CLASS_ASSERTION | Ollama未调用
+[survivor-E4-run-005]
+  结果=DETERMINISTIC_SELECT | CAND_001 | REMOVE_CLASS_ASSERTION | Ollama未调用
+[survivor-E5-run-001]
+  结果=QWEN_SELECT | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 4192ms
+[survivor-E5-run-002]
+  结果=QWEN_SELECT | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 4231ms
+[survivor-E5-run-003]
+  结果=QWEN_SELECT | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3143ms
+[survivor-E5-run-004]
+  结果=QWEN_SELECT | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 2952ms
+[survivor-E5-run-005]
+  结果=QWEN_SELECT | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3151ms
+
+分流汇总：总尝试=25，选择=25，ABSTAIN=0，拒绝=0，确定性选择=20，Qwen调用=5，避免Qwen调用=20
+候选清单：G:\LearnAI\ontology-evolution\benchmark\repairs\qwen-ranked-candidates.csv

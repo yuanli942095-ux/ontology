@@ -1,0 +1,52 @@
+{
+  "event_id": "E20",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "service_region": "EAST",
+    "regional_version_available": true
+  },
+  "rules": [
+    {
+      "rule_id": "E20_EAST_REGION",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "service_region",
+          "operator": "equals",
+          "value": "EAST"
+        }
+      ],
+      "allowed_values": [
+        "66"
+      ]
+    },
+    {
+      "rule_id": "E20_NORTH_REGION",
+      "priority": 250,
+      "conditions": [
+        {
+          "fact": "service_region",
+          "operator": "equals",
+          "value": "NORTH"
+        }
+      ],
+      "allowed_values": [
+        "72"
+      ]
+    },
+    {
+      "rule_id": "E20_NATIONAL",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "68"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E20_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

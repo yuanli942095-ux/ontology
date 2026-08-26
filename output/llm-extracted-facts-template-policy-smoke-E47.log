@@ -1,0 +1,18 @@
+LLM-extracted facts + template policy
+split=test
+runs=1
+seed=20260820
+manual_schema_used=True
+manual_rule_template_used=True
+manual_fact_values_used_in_prompt=False
+candidate_descriptions_used_in_prompt=False
+allowed_values_used_in_prompt=False
+oracle_loaded_after_decisions=True
+
+[ALL] Oracle=100.00% wrong=0.00% abstain=0.00% extract_err=0.00% fact_acc=100.00% qwen_calls=1 tokens=740
+[CROSS_SENTENCE_SCOPE] Oracle=100.00% wrong=0.00% abstain=0.00% extract_err=0.00% fact_acc=100.00% qwen_calls=1 tokens=740
+
+details=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-smoke-E47-details.csv
+summary=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-smoke-E47-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-smoke-E47-by-event.csv
+json=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-smoke-E47.json

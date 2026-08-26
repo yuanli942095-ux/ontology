@@ -1,0 +1,6 @@
+﻿method,event_id,semantic_type,attempts,oracle_successes,oracle_accuracy,all_runs_correct,selection_stable,invalid_outputs,abstains
+OPTION_FORMAL_OPERATION,E15,TEMPORAL_VERSION,20,12,0.6,False,False,0,0
+OPTION_FORMAL_OPERATION,E17,TEMPORAL_VERSION,20,2,0.1,False,False,0,12
+OPTION_FORMAL_OPERATION,E27,GENERAL_RULE_EXCEPTION,20,0,0.0,False,False,0,2
+OPTION_FORMAL_OPERATION,E34,CROSS_SENTENCE_SCOPE,20,14,0.7,False,False,0,1
+OPTION_FORMAL_OPERATION,E37,CROSS_SENTENCE_SCOPE,20,0,0.0,False,False,0,16

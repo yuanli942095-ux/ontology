@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "event_id": "E12",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {"evaluation_date": "2026-08-20"},
+  "rules": [
+    {
+      "rule_id": "E12_NEW_ACTIVE",
+      "priority": 200,
+      "conditions": [
+        {"fact": "evaluation_date", "operator": "on_or_after", "value": "2026-07-01"}
+      ],
+      "allowed_values": ["65"]
+    },
+    {
+      "rule_id": "E12_OLD_ACTIVE",
+      "priority": 100,
+      "conditions": [
+        {"fact": "evaluation_date", "operator": "on_or_before", "value": "2026-06-30"}
+      ],
+      "allowed_values": ["60"]
+    }
+  ],
+  "provenance": {
+    "source": "DOC_E12_OLD与DOC_E12_NEW中的生效区间",
+    "annotation_status": "CONTROLLED_DEV_MANUAL_FORMALIZATION"
+  }
+}

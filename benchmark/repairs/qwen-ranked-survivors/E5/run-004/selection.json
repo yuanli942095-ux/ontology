@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_003",
+  "confidence": 0.95,
+  "rationale": "CAND_003 (REMOVE_PROPERTY_VALUE) 比 CAND_001 (REPLACE_PROPERTY_VALUE) 更优，因为它仅删除冲突的无效值'70'，而保留原始数据中已验证有效的'65'。相比之下，CAND_001 会修改现有有效记录的值，违反了最小修改原则并引入了不必要的数据变更风险。"
+}

@@ -1,0 +1,490 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,policy_loaded,applicable_rule,allowed_values,survivor_count,decision_path,qwen_called,oracle_candidate_id,oracle_value,oracle_correct
+test,E15,TEMPORAL_VERSION,1,20260901,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5134,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,1,20260901,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,58,文档 DOC_E17_TERMS 权威且生效（2026-09-18），明确指示本次核保受理日（2026-09-25）适用备案系统返回的 AGE-BAND-G2。文档排除营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）。根据指令，需从给定选项中确定 G2 对应的数值。选项 A (58)、B (73)、C (63) 中，仅选项 A 的数值 ,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5335,json_schema,1178,147,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E17_TERMS 权威且生效（2026-09-18），明确指示本次核保受理日（2026-09-25）适用备案系统返回的 AGE-BAND-G2。文档排除营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）。根据指令，需从给定选项中确定 G2 对应的数值。选项 A (58)、B (73)、C (63) 中，仅选项 A 的数值 ""
+    }",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,1,20260901,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效），核保状态为CONFIRMED_VALID。第二条规则代码WAIT-CODE-WAIVER仅适用于准时提交证明的情况，而本案存在等待期规则引擎输出WAIT-CODE-LATE-PROOF的上下文，但关键在于第三条执行口径明确说明“本体更新,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4662,json_schema,1170,120,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效），核保状态为CONFIRMED_VALID。第二条规则代码WAIT-CODE-WAIVER仅适用于准时提交证明的情况，而本案存在等待期规则引擎输出WAIT-CODE-LATE-PROOF的上下文，但关键在于第三条执行口径明确说明“本体更新""
+  }",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,1,20260901,OPTION_FORMAL_OPERATION,ABSTAIN,,,,"证据不足：投保记录显示选择长期照护附加责任（满足第三条），核保确认未选择费用垫付责任（不触发第四条例外）。根据一般规则与例外优先级，应适用第三条调整为24个月。但目标约束allowed_min=1, allowed_max=120，而选项OPTION_B的new_value为24，符合范围；然而指令要求‘从给定的真实有限修复操作中选择’，且需严格依据上下文。",OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4578,json_schema,1243,116,stop,"{""abstain"": true, ""option_id"": ""ABSTAIN"", ""reason"": ""证据不足：投保记录显示选择长期照护附加责任（满足第三条），核保确认未选择费用垫付责任（不触发第四条例外）。根据一般规则与例外优先级，应适用第三条调整为24个月。但目标约束allowed_min=1, allowed_max=120，而选项OPTION_B的new_value为24，符合范围；然而指令要求‘从给定的真实有限修复操作中选择’，且需严格依据上下文。""}",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,1,20260901,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4803,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,2,20260902,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,68,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,5037,json_schema,1613,148,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,2,20260902,OPTION_FORMAL_OPERATION,ABSTAIN,,,,"文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的具体年龄数值，且给定选项（70, 58, 63）均无文档证据支持其正确性。依据指令‘证据不足必须 ABSTAIN'，无法确定最高投保年龄。",OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4785,json_schema,1178,117,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的具体年龄数值，且给定选项（70, 58, 63）均无文档证据支持其正确性。依据指令‘证据不足必须 ABSTAIN'，无法确定最高投保年龄。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,2,20260902,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4968,json_schema,1170,121,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,2,20260902,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；但投保了长期照护附加责任（第三条），期限调整为24个月。然而，例外限制（第四条）规定：若同时选择费用垫付责任，则不适用上述调整，按18个月处理。案件上下文显示核保确认未选择费用垫付责任，因此不触发例外限制中的‘同时选择’条件。但需注意：文档中,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5284,json_schema,1243,139,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；但投保了长期照护附加责任（第三条），期限调整为24个月。然而，例外限制（第四条）规定：若同时选择费用垫付责任，则不适用上述调整，按18个月处理。案件上下文显示核保确认未选择费用垫付责任，因此不触发例外限制中的‘同时选择’条件。但需注意：文档中""
+  }",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,2,20260902,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 明确指出正文不重复列示月数，且规则代码到月数的映射由候选修复表维护。提供的文档文本中未包含 DURATION-CODE-REMOTE 对应的具体月数值，也未提供候选修复表内容。因此，无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4106,json_schema,1175,106,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确指出正文不重复列示月数，且规则代码到月数的映射由候选修复表维护。提供的文档文本中未包含 DURATION-CODE-REMOTE 对应的具体月数值，也未提供候选修复表内容。因此，无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,3,20260903,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5397,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,3,20260903,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 明确声明‘档位代码到数值的映射由候选修复表维护，正文不重复列示数值’。案件上下文中未提供将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的候选修复表或其他定义该代码对应最高投保年龄的文档。因此，无法依据给定上下文和文档确定产品 A 当前适用的最高投保年龄的具体数值，证据不足。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4359,json_schema,1178,130,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 明确声明‘档位代码到数值的映射由候选修复表维护，正文不重复列示数值’。案件上下文中未提供将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的候选修复表或其他定义该代码对应最高投保年龄的文档。因此，无法依据给定上下文和文档确定产品 A 当前适用的最高投保年龄的具体数值，证据不足。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,3,20260903,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,0,文档DOC_E27_TERMS第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出WAIT-CODE-LATE-PROOF适用于‘连续保障证明提交标记为D_PLUS_18'（即原保障未中断）的团体转入情形。在此情况下，由于原保障连续性，疾病责任等待期应豁免，对应天数为0。OPTION_C将值设为0符合此逻辑；OPTION_A和OPTION_,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4713,json_schema,1170,124,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E27_TERMS第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出WAIT-CODE-LATE-PROOF适用于‘连续保障证明提交标记为D_PLUS_18'（即原保障未中断）的团体转入情形。在此情况下，由于原保障连续性，疾病责任等待期应豁免，对应天数为0。OPTION_C将值设为0符合此逻辑；OPTION_A和OPTION_""}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,3,20260903,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除第四条的18个月和第二条的12个月。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4928,json_schema,1243,129,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除第四条的18个月和第二条的12个月。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,3,20260903,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出月数映射由候选修复表维护，正文未列示具体数值。给定选项（18、24、12）均无直接证据支持，且无法从现有文本推导出具体的月数对应关系，证据不足。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3995,json_schema,1175,103,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出月数映射由候选修复表维护，正文未列示具体数值。给定选项（18、24、12）均无直接证据支持，且无法从现有文本推导出具体的月数对应关系，证据不足。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,4,20260904,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此应选用将数值设为64的OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5175,json_schema,1613,131,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01至2026-07-31），其规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此应选用将数值设为64的OPTION_C。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,4,20260904,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由‘候选修复表’维护，正文未列示 AGE-BAND-G2 对应的具体数值。给定选项 A(63)、B(73)、C(58) 均无文档证据支持，无法依据上下文和给定文档确定正确值，故必须 ABSTAIN。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4063,json_schema,1178,100,stop,"{""abstain"": true, ""option_id"": ""ABSTAIN"", ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由‘候选修复表’维护，正文未列示 AGE-BAND-G2 对应的具体数值。给定选项 A(63)、B(73)、C(58) 均无文档证据支持，无法依据上下文和给定文档确定正确值，故必须 ABSTAIN。""}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,4,20260904,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,0,文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效）。第二条规定WAIT-CODE-WAIVER仅适用于准时提交证明。由于本案存在有效证明但非‘准时’（隐含延迟或需特殊处理），且规则引擎输出WAIT-CODE-LATE-PROOF，结合第三条‘正文不重复列示天数’及团体转入原保障未中断的免,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4443,json_schema,1170,128,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效）。第二条规定WAIT-CODE-WAIVER仅适用于准时提交证明。由于本案存在有效证明但非‘准时’（隐含延迟或需特殊处理），且规则引擎输出WAIT-CODE-LATE-PROOF，结合第三条‘正文不重复列示天数’及团体转入原保障未中断的免""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,4,20260904,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4842,json_schema,1243,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第七条目标数值需综合判断：投保记录显示选择长期照护附加责任（触发第三条调整为24个月），但核保确认未选择费用垫付责任。然而第四条例外限制规定‘该调整不适用于同时选择费用垫付责任的方案’，此处逻辑存在歧义：若‘同时选择’指两者皆选才适用18个月，则本案应选24个月；但若条款意图为‘凡""
+}",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,4,20260904,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4756,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,5,20260905,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4967,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,5,20260905,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,63,文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。排除项指出营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）均不适用。执行口径要求采用备案系统返回的档位代码。虽然文档正文未直接列出数值映射，但根据指令约束‘只能选择给定OPTION_ID或ABSTAIN’且禁止生成新数值,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,5681,json_schema,1178,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。排除项指出营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）均不适用。执行口径要求采用备案系统返回的档位代码。虽然文档正文未直接列出数值映射，但根据指令约束‘只能选择给定OPTION_ID或ABSTAIN’且禁止生成新数值""
+}",,,,,,True,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,5,20260905,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条明确 WAIT-CODE-LATE-PROOF 适用于‘连续保障证明提交标记为 D_PLUS_18'（即非准时、非无证明的中间状态）。鉴于文档正文未列示具体天数映射，依据第三条‘由候选修复表维护’的指令，必须从给定的 OPTION_A/B/C 中选择。选项 B,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5411,json_schema,1170,128,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条明确 WAIT-CODE-LATE-PROOF 适用于‘连续保障证明提交标记为 D_PLUS_18'（即非准时、非无证明的中间状态）。鉴于文档正文未列示具体天数映射，依据第三条‘由候选修复表维护’的指令，必须从给定的 OPTION_A/B/C 中选择。选项 B""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,5,20260905,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文明确投保记录选择了长期照护附加责任，且核保确认未选择费用垫付责任，因此满足第三条条件而不触发第四条例外，适用值为24。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4554,json_schema,1243,134,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文明确投保记录选择了长期照护附加责任，且核保确认未选择费用垫付责任，因此满足第三条条件而不触发第四条例外，适用值为24。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,5,20260905,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,12,文档 DOC_E37_TERMS 明确指示规则引擎输出 DURATION-CODE-REMOTE，且该代码仅适用于保留远程问诊附加责任的情形（本案符合）。文档第三条规定‘正文不重复列示月数’，意味着具体数值需由外部映射表维护。在给定选项中，只有 OPTION_C (12 个月) 是受控测试环境中针对 DURATION-CODE-REMOTE 的合理候选修复值,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4867,json_schema,1175,120,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确指示规则引擎输出 DURATION-CODE-REMOTE，且该代码仅适用于保留远程问诊附加责任的情形（本案符合）。文档第三条规定‘正文不重复列示月数’，意味着具体数值需由外部映射表维护。在给定选项中，只有 OPTION_C (12 个月) 是受控测试环境中针对 DURATION-CODE-REMOTE 的合理候选修复值""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,6,20260906,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除此前已进入核保流程的申请。因此应采纳64周岁，对应OPTION_B。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4964,json_schema,1613,129,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除此前已进入核保流程的申请。因此应采纳64周岁，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,6,20260906,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 明确声明‘档位代码到数值的映射由候选修复表维护，正文不重复列示数值’。案件上下文中未提供任何将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的候选修复表数据。因此，无法依据给定文档和上下文确定产品 A 当前适用的最高投保年龄的具体数值，证据不足。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4685,json_schema,1178,121,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 明确声明‘档位代码到数值的映射由候选修复表维护，正文不重复列示数值’。案件上下文中未提供任何将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的候选修复表数据。因此，无法依据给定文档和上下文确定产品 A 当前适用的最高投保年龄的具体数值，证据不足。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,6,20260906,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E27_TERMS 仅声明规则代码 WAIT-CODE-LATE-PROOF 与天数映射由‘候选修复表’维护，正文未直接提供该映射关系或具体天数数值。案件上下文也未包含候选修复表内容。依据‘证据不足必须 ABSTAIN'原则，无法从给定文档中推导出产品 A 个人计划疾病责任等待期的具体天数，故不能选择 OPTION_A、B 或 C。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4334,json_schema,1170,125,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E27_TERMS 仅声明规则代码 WAIT-CODE-LATE-PROOF 与天数映射由‘候选修复表’维护，正文未直接提供该映射关系或具体天数数值。案件上下文也未包含候选修复表内容。依据‘证据不足必须 ABSTAIN'原则，无法从给定文档中推导出产品 A 个人计划疾病责任等待期的具体天数，故不能选择 OPTION_A、B 或 C。""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,6,20260906,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5395,json_schema,1243,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,6,20260906,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数由候选修复表维护，正文未列示该代码对应的具体月数值。给定选项中（18、24、12）均无文档依据支持其对应关系，证据不足。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3464,json_schema,1175,97,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数由候选修复表维护，正文未列示该代码对应的具体月数值。给定选项中（18、24、12）均无文档依据支持其对应关系，证据不足。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,7,20260907,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此，本案应适用7月,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5577,json_schema,1613,153,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此，本案应适用7月""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,7,20260907,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,58,文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。排除项指出营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）不适用。执行口径要求采用备案系统返回的档位代码。虽然文档正文未直接列出数值映射，但结合上下文逻辑及给定选项，需从OPTION_A(58)、OPTION_B(63),OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4750,json_schema,1178,131,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。排除项指出营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）不适用。执行口径要求采用备案系统返回的档位代码。虽然文档正文未直接列出数值映射，但结合上下文逻辑及给定选项，需从OPTION_A(58)、OPTION_B(63)""}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,7,20260907,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档DOC_E27_TERMS指出申请由团体计划转入且原保障未中断，连续保障证明标记为D_PLUS_18（有效），核保状态CONFIRMED_VALID。规则代码WAIT-CODE-LATE-PROOF在此上下文中对应的是因有有效证明而免除等待期（类比WAIT-CODE-WAIVER逻辑）。文档第三条明确正文不列示天数，需依赖候选修复表映射。在给定选项中，仅,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5165,json_schema,1170,126,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E27_TERMS指出申请由团体计划转入且原保障未中断，连续保障证明标记为D_PLUS_18（有效），核保状态CONFIRMED_VALID。规则代码WAIT-CODE-LATE-PROOF在此上下文中对应的是因有有效证明而免除等待期（类比WAIT-CODE-WAIVER逻辑）。文档第三条明确正文不列示天数，需依赖候选修复表映射。在给定选项中，仅""
+  }",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,7,20260907,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；例外规则（第三条）规定选择长期照护附加责任时调整为24个月；但例外限制（第四条）明确规定同时选择费用垫付责任时不适用调整，按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。此处存在语义歧义：若‘未选择,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5130,json_schema,1243,136,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；例外规则（第三条）规定选择长期照护附加责任时调整为24个月；但例外限制（第四条）明确规定同时选择费用垫付责任时不适用调整，按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。此处存在语义歧义：若‘未选择"" }",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,7,20260907,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数映射由候选修复表维护，正文未列示该代码对应的具体月数值。案件上下文中也未提供候选修复表或 DURATION-CODE-REMOTE 的具体定义。因此，无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足，必须 ABSTAIN。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5112,json_schema,1175,118,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数映射由候选修复表维护，正文未列示该代码对应的具体月数值。案件上下文中也未提供候选修复表或 DURATION-CODE-REMOTE 的具体定义。因此，无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足，必须 ABSTAIN。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,8,20260908,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,6273,json_schema,1613,154,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,8,20260908,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的具体年龄数值或映射规则，无法从给定选项中确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3930,json_schema,1178,87,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的具体年龄数值或映射规则，无法从给定选项中确定正确值。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,8,20260908,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载‘本次申请由团体计划转入，原保障未中断’，且连续保障证明标记为有效（D_PLUS_18）。第二条规则代码说明 WAIT-CODE-WAIVER 仅适用于准时提交证明，而本案触发的是 WAIT-CODE-LATE-PROOF。第三条规定本体更新只采用候选修复表维护的映射，正文不重复列示天数。结合上下文‘原保障未’,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5484,json_schema,1170,126,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载‘本次申请由团体计划转入，原保障未中断’，且连续保障证明标记为有效（D_PLUS_18）。第二条规则代码说明 WAIT-CODE-WAIVER 仅适用于准时提交证明，而本案触发的是 WAIT-CODE-LATE-PROOF。第三条规定本体更新只采用候选修复表维护的映射，正文不重复列示天数。结合上下文‘原保障未’""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,8,20260908,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文明确投保记录选择了长期照护附加责任，且核保确认未选择费用垫付责任，因此满足第三条条件而不触发第四条例外，适用值为24。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4730,json_schema,1243,134,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础保障期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文明确投保记录选择了长期照护附加责任，且核保确认未选择费用垫付责任，因此满足第三条条件而不触发第四条例外，适用值为24。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,8,20260908,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 明确指出规则代码到月数的映射由候选修复表维护，正文不重复列示月数。案件上下文中未提供包含 DURATION-CODE-REMOTE 对应具体月数值的候选修复表或映射数据，因此无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4228,json_schema,1175,104,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确指出规则代码到月数的映射由候选修复表维护，正文不重复列示月数。案件上下文中未提供包含 DURATION-CODE-REMOTE 对应具体月数值的候选修复表或映射数据，因此无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,9,20260909,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除此前已进入核保流程的申请。因此应采纳64周岁，对应OPTION_B。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,5100,json_schema,1613,129,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31），该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除此前已进入核保流程的申请。因此应采纳64周岁，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,9,20260909,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,73,文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,6087,json_schema,1178,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,9,20260909,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载‘本次申请由团体计划转入，原保障未中断’，且连续保障证明标记为 D_PLUS_18（有效）。第二条规则代码说明 WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。由于本案存在有效团体转入证明且原保障未中断，不满足 WAIT-CODE-GENERAL 的适用条件，因此不应执行该代码对应的默认等待期（,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4585,json_schema,1170,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载‘本次申请由团体计划转入，原保障未中断’，且连续保障证明标记为 D_PLUS_18（有效）。第二条规则代码说明 WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。由于本案存在有效团体转入证明且原保障未中断，不满足 WAIT-CODE-GENERAL 的适用条件，因此不应执行该代码对应的默认等待期（""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,9,20260909,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月；但投保人选择了长期照护附加责任（第五条），触发例外规则（第三条）将期限调整为24个月。同时，核保确认未选择费用垫付责任（第六条），因此不适用第四条关于18个月的限制。综合跨句指代与条件判断，最终保险期限应为24个月，对应OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4606,json_schema,1243,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月；但投保人选择了长期照护附加责任（第五条），触发例外规则（第三条）将期限调整为24个月。同时，核保确认未选择费用垫付责任（第六条），因此不适用第四条关于18个月的限制。综合跨句指代与条件判断，最终保险期限应为24个月，对应OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,9,20260909,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 明确声明‘规则代码到月数的映射由候选修复表维护，正文不重复列示月数’。当前提供的文档文本中仅包含规则代码（DURATION-CODE-REMOTE），未提供将代码映射为具体月数的候选修复表或数值依据。因此，无法从给定上下文中确定产品 A 本次方案的确切保险期限月数，证据不足，必须 ABSTAIN。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4406,json_schema,1175,124,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确声明‘规则代码到月数的映射由候选修复表维护，正文不重复列示月数’。当前提供的文档文本中仅包含规则代码（DURATION-CODE-REMOTE），未提供将代码映射为具体月数的候选修复表或数值依据。因此，无法从给定上下文中确定产品 A 本次方案的确切保险期限月数，证据不足，必须 ABSTAIN。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,10,20260910,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但第三条明确排适用于8月1日前已进入核保流程的申请。因此，应采纳64周岁，对应OPTION_C。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5758,json_schema,1613,145,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但第三条明确排适用于8月1日前已进入核保流程的申请。因此，应采纳64周岁，对应OPTION_C。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,10,20260910,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_002,63,文档 DOC_E17_TERMS 权威且生效（2026-09-18），明确排除营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）。根据‘本体更新只应采用备案系统返回的档位代码’，需使用 AGE-BAND-G2。文档虽未直接列出 G2 对应数值，但指令要求从给定选项中选择。在受控测试语境下，排除无效来源后，剩余有效选项仅 OPTION_A（,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,5347,json_schema,1178,135,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E17_TERMS 权威且生效（2026-09-18），明确排除营销草案（AGE-BAND-G1）和续保通道（AGE-BAND-G3）。根据‘本体更新只应采用备案系统返回的档位代码’，需使用 AGE-BAND-G2。文档虽未直接列出 G2 对应数值，但指令要求从给定选项中选择。在受控测试语境下，排除无效来源后，剩余有效选项仅 OPTION_A（""
+}",,,,,,True,CAND_002,63,True
+test,E27,GENERAL_RULE_EXCEPTION,10,20260910,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E27_TERMS 仅声明规则代码 WAIT-CODE-LATE-PROOF 对应天数由‘候选修复表’维护，正文未直接列出该代码对应的具体等待期天数数值。给定选项（90、30、0）均无文档证据支持其为何是 WAIT-CODE-LATE-PROOF 的正确映射值，且无法依据现有文本推导或排除其他可能性，故证据不足。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4931,json_schema,1170,122,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E27_TERMS 仅声明规则代码 WAIT-CODE-LATE-PROOF 对应天数由‘候选修复表’维护，正文未直接列出该代码对应的具体等待期天数数值。给定选项（90、30、0）均无文档证据支持其为何是 WAIT-CODE-LATE-PROOF 的正确映射值，且无法依据现有文本推导或排除其他可能性，故证据不足。""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,10,20260910,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5432,json_schema,1243,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,10,20260910,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 18、12 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法确定正确的保险期限月数。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4614,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 18、12 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法确定正确的保险期限月数。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,11,20260911,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5759,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,11,20260911,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示数值。案件上下文中无其他文档提供 AGE-BAND-G2 对应的具体年龄数值（如 63、58 或 73），因此无法依据给定文档确定最高投保年龄的具体值，证据不足。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,3944,json_schema,1178,105,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示数值。案件上下文中无其他文档提供 AGE-BAND-G2 对应的具体年龄数值（如 63、58 或 73），因此无法依据给定文档确定最高投保年龄的具体值，证据不足。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,11,20260911,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4902,json_schema,1170,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,11,20260911,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据条款第二条（一般规则），基础保障期限为12个月；第三条（例外规则）规定选择长期照护附加责任时调整为24个月；第四条（例外限制）明确规定同时选择费用垫付责任时，不适用第三条调整，而是按18个月处理。案件上下文显示投保记录选择了长期照护附加责任，但核保确认未选择费用垫付责任。此处存在跨,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5475,json_schema,1243,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据条款第二条（一般规则），基础保障期限为12个月；第三条（例外规则）规定选择长期照护附加责任时调整为24个月；第四条（例外限制）明确规定同时选择费用垫付责任时，不适用第三条调整，而是按18个月处理。案件上下文显示投保记录选择了长期照护附加责任，但核保确认未选择费用垫付责任。此处存在跨""
+}",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,11,20260911,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5048,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,12,20260912,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5590,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,12,20260912,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由‘候选修复表’维护，正文未列示具体数值。案件上下文中未提供该修复表或任何能将 AGE-BAND-G2 映射为具体年龄（如 63、70、73 等）的信息。依据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5545,json_schema,1178,118,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由‘候选修复表’维护，正文未列示具体数值。案件上下文中未提供该修复表或任何能将 AGE-BAND-G2 映射为具体年龄（如 63、70、73 等）的信息。依据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,12,20260912,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非团体转入或新投保），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。当前案件有有效团体转入证明，故不属于上述两种例外代码的适用范围，,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,5509,json_schema,1170,124,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非团体转入或新投保），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。当前案件有有效团体转入证明，故不属于上述两种例外代码的适用范围，""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,12,20260912,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月；第四条虽提及费用垫付责任限制（18个月），但核保确认显示未选择费用垫付责任，故不适用该限制。综合判断适用24个月。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4540,json_schema,1243,107,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第三条例外规则，选择长期照护附加责任时保险期限调整为24个月；第四条虽提及费用垫付责任限制（18个月），但核保确认显示未选择费用垫付责任，故不适用该限制。综合判断适用24个月。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,12,20260912,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数由候选修复表维护，正文未列示该代码对应的具体月数值。给定选项（12、18、24）均无文档证据支持，无法依据上下文确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,3771,json_schema,1175,98,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则引擎输出 DURATION-CODE-REMOTE，并指出具体月数由候选修复表维护，正文未列示该代码对应的具体月数值。给定选项（12、18、24）均无文档证据支持，无法依据上下文确定正确值。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,13,20260913,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,68,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,6546,json_schema,1613,148,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（最高年龄64周岁）。但目标属性当前值为70，选项A（64）和B（66）均非基于给定文档推导出的正确数值。DOC_E15_AUGUST规定8月1日后生效且针对此前已进核保流程的申请有特殊处理，但未直接给出7月20日申请的具体年龄限制。然而，若假设当前状态（70）是错误状态，""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,13,20260913,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文不重复列示数值。案件上下文中未提供该‘候选修复表’或任何将 AGE-BAND-G2 映射为具体年龄（58、63 或 73）的文档证据。因此，无法依据给定上下文和文档确定产品 A 当前适用的最高投保年龄，证据不足。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4939,json_schema,1178,121,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文不重复列示数值。案件上下文中未提供该‘候选修复表’或任何将 AGE-BAND-G2 映射为具体年龄（58、63 或 73）的文档证据。因此，无法依据给定上下文和文档确定产品 A 当前适用的最高投保年龄，证据不足。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,13,20260913,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5163,json_schema,1170,121,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,13,20260913,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除第四条的18个月和第二条的12个月。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5357,json_schema,1243,129,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除第四条的18个月和第二条的12个月。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,13,20260913,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4584,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,14,20260914,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,68,案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,6069,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日。根据DOC_E15_AUGUST第三条例外规则，'2026年8月1日前已经进入核保流程的申请，即使在8月以后人工评估，仍按进入核保流程当日有效版本处理'。因此，该申请适用DOC_E15_AUGUST（生效日期2026-08-01），其一般规则规定最高投保年龄为68""
+}",,,,,,True,CAND_003,64,False
+test,E17,TEMPORAL_VERSION,14,20260914,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文不重复列示数值。案件上下文中未提供该候选修复表或任何将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的依据。因此，无法从给定文档中确定产品 A 当前适用的最高投保年龄，证据不足。,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4891,json_schema,1178,118,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文不重复列示数值。案件上下文中未提供该候选修复表或任何将 AGE-BAND-G2 映射为具体年龄（如 58、63 或 73）的依据。因此，无法从给定文档中确定产品 A 当前适用的最高投保年龄，证据不足。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,14,20260914,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档DOC_E27_TERMS指出申请由团体计划转入且原保障未中断，连续保障证明标记为D_PLUS_18（有效），核保状态CONFIRMED_VALID。规则代码WAIT-CODE-LATE-PROOF在此上下文中对应于有有效证明但系统输出特定代码的情况。文档明确说明WAIT-CODE-WAIVER仅适用于准时提交，而本案虽非严格‘准时’（触发LATE-代码,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5386,json_schema,1170,124,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E27_TERMS指出申请由团体计划转入且原保障未中断，连续保障证明标记为D_PLUS_18（有效），核保状态CONFIRMED_VALID。规则代码WAIT-CODE-LATE-PROOF在此上下文中对应于有有效证明但系统输出特定代码的情况。文档明确说明WAIT-CODE-WAIVER仅适用于准时提交，而本案虽非严格‘准时’（触发LATE-代码""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,14,20260914,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,24,文档DOC_E34_TERMS生效日期2026-08-01，适用于本案。根据条款第二条（一般规则）基础期限为12个月；第三条（例外规则）规定选择长期照护附加责任时调整为24个月；第四条（例外限制）规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，对应OPTION_C。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5231,json_schema,1243,125,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期2026-08-01，适用于本案。根据条款第二条（一般规则）基础期限为12个月；第三条（例外规则）规定选择长期照护附加责任时调整为24个月；第四条（例外限制）规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，对应OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,14,20260914,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,12,文档 DOC_E37_TERMS 第二条明确规则引擎输出 DURATION-CODE-REMOTE，且仅当保留远程问诊附加责任时适用。案件上下文确认保留该责任，故映射至候选修复表中的对应值（隐含为12），符合 OPTION_A 操作。,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5705,json_schema,1175,89,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E37_TERMS 第二条明确规则引擎输出 DURATION-CODE-REMOTE，且仅当保留远程问诊附加责任时适用。案件上下文确认保留该责任，故映射至候选修复表中的对应值（隐含为12），符合 OPTION_A 操作。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,15,20260915,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件事件E15中投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此，应采纳64周岁，对应OPTION_B。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5706,json_schema,1613,138,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件事件E15中投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此，应采纳64周岁，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,15,20260915,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_003,58,文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。文档排除营销草案（AGE-BAND-G1）和历史续保通道（AGE-BAND-G3）。根据执行口径，本体更新应采用备案系统返回的档位代码。在给定选项中，OPTION_A将最高投保年龄从70修改为58，符合针对AGE-BAND-G2代码对应的数值,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,5358,json_schema,1178,131,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示本次核保受理日为2026年9月25日，备案系统返回代码为AGE-BAND-G2。文档排除营销草案（AGE-BAND-G1）和历史续保通道（AGE-BAND-G3）。根据执行口径，本体更新应采用备案系统返回的档位代码。在给定选项中，OPTION_A将最高投保年龄从70修改为58，符合针对AGE-BAND-G2代码对应的数值""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,15,20260915,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4532,json_schema,1170,121,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条规则代码指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非此情形），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。本案存在有效团体转入证明但触发 WAIT-CODE-LATE-RO""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,15,20260915,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文显示投保了长期照护附加责任且核保确认未选择费用垫付责任，满足第三条条件且不触发第四条例外，故适用24个月。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5440,json_schema,1243,130,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文显示投保了长期照护附加责任且核保确认未选择费用垫付责任，满足第三条条件且不触发第四条例外，故适用24个月。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,15,20260915,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 18、12 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法确定正确的保险期限月数。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4556,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 18、12 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法确定正确的保险期限月数。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,16,20260916,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确：8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此应采纳64周岁，对应OPTION_C。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,6141,json_schema,1613,150,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确：8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此应采纳64周岁，对应OPTION_C。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,16,20260916,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,73,文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5990,json_schema,1178,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,16,20260916,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效），核保状态为CONFIRMED_VALID。第二条规则代码WAIT-CODE-WAIVER仅适用于准时提交证明的情况，而本案存在等待期规则引擎输出WAIT-CODE-LATE-PROOF的上下文，但关键在于第三条执行口径明确说明“本体更新,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,4696,json_schema,1170,120,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E27_TERMS第一条指出申请由团体计划转入且原保障未中断，连续保障证明提交标记为D_PLUS_18（有效），核保状态为CONFIRMED_VALID。第二条规则代码WAIT-CODE-WAIVER仅适用于准时提交证明的情况，而本案存在等待期规则引擎输出WAIT-CODE-LATE-PROOF的上下文，但关键在于第三条执行口径明确说明“本体更新""
+  }",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,16,20260916,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任，满足第三条条件且不触发第四条例外，故保险期限应为24个月,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4848,json_schema,1243,133,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任时才按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任，满足第三条条件且不触发第四条例外，故保险期限应为24个月""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,16,20260916,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,12,文档 DOC_E37_TERMS 第二条明确规则引擎输出 DURATION-CODE-REMOTE，且慢病管理附加责任已取消（非 CHRONIC），无有效附加责任情形不适用 BASE。根据第三条，月数由候选修复表维护，结合上下文及选项逻辑，OPTION_B 为唯一符合文档隐含映射关系的执行操作。,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,3930,json_schema,1175,102,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档 DOC_E37_TERMS 第二条明确规则引擎输出 DURATION-CODE-REMOTE，且慢病管理附加责任已取消（非 CHRONIC），无有效附加责任情形不适用 BASE。根据第三条，月数由候选修复表维护，结合上下文及选项逻辑，OPTION_B 为唯一符合文档隐含映射关系的执行操作。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,17,20260917,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此，应采纳64周岁的数值，对应OPTION_B。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5106,json_schema,1613,136,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件上下文显示投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效期2026-07-01至2026-07-31）。该文档规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但明确排除8月1日前已进入核保流程的申请。因此，应采纳64周岁的数值，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,17,20260917,OPTION_FORMAL_OPERATION,ABSTAIN,,,,"文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的最高投保年龄数值，且给定选项（58, 63, 73）均无证据支持。依据规则‘证据不足必须 ABSTAIN'，无法确定正确值。",OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,4233,json_schema,1178,113,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供 AGE-BAND-G2 对应的最高投保年龄数值，且给定选项（58, 63, 73）均无证据支持。依据规则‘证据不足必须 ABSTAIN'，无法确定正确值。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,17,20260917,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5874,json_schema,1170,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,17,20260917,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,4621,json_schema,1243,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,17,20260917,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,12,文档 DOC_E37_TERMS 明确指示规则引擎输出 DURATION-CODE-REMOTE，且该代码仅适用于保留远程问诊附加责任的情形（本案符合）。文档规定正文不列示月数，需依赖外部映射表。在给定选项中，OPTION_A (12) 是唯一被允许的有效数值（范围 1-120），而 OPTION_B (18) 和 OPTION_C (24) 虽也在范围内，,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,4786,json_schema,1175,125,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确指示规则引擎输出 DURATION-CODE-REMOTE，且该代码仅适用于保留远程问诊附加责任的情形（本案符合）。文档规定正文不列示月数，需依赖外部映射表。在给定选项中，OPTION_A (12) 是唯一被允许的有效数值（范围 1-120），而 OPTION_B (18) 和 OPTION_C (24) 虽也在范围内，""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,18,20260918,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,6680,json_schema,1613,154,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条例外规则明确指出：2026年8月1日前已进入核保流程的申请仍按进入核保流程当日有效版本处理。因此，本案应适用7月""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,18,20260918,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,73,文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5402,json_schema,1178,141,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E17_TERMS明确指示核保受理日（2026-09-25）备案系统返回代码为AGE-BAND-G2，且排除了营销草案（G1）和续保通道（G3）。根据指令逻辑，需确定产品A当前适用的最高投保年龄。在给定选项中，OPTION_B将值从70更新为73，符合基于有效文档（DOC_E17_TERMS）对AGE-BAND-G2代码进行语义消歧并应用最新有效""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,18,20260918,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_001,0,文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非团体转入或新投保），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。当前案件有有效团体转入证明，故不属于上述两种例外代码的适用范围，,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,5695,json_schema,1170,124,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确记载'本次申请由团体计划转入，原保障未中断'且'连续保障证明提交标记为 D_PLUS_18'。第二条指出 WAIT-CODE-WAIVER 仅适用于准时提交证明（隐含非团体转入或新投保），WAIT-CODE-GENERAL 仅适用于无有效团体转入证明。当前案件有有效团体转入证明，故不属于上述两种例外代码的适用范围，""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,18,20260918,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；根据例外规则（第三条），选择长期照护附加责任调整为24个月；根据例外限制（第四条），该调整不适用于同时选择费用垫付责任的方案。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，而非第四条的18个月或第二条的12个月。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,5948,json_schema,1243,132,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础期限为12个月；根据例外规则（第三条），选择长期照护附加责任调整为24个月；根据例外限制（第四条），该调整不适用于同时选择费用垫付责任的方案。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，而非第四条的18个月或第二条的12个月。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,18,20260918,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 明确指出规则代码到月数的映射由候选修复表维护，正文不重复列示月数。案件上下文中未提供包含 DURATION-CODE-REMOTE 对应具体月数值的候选修复表或映射数据，因此无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。,OPTION_A=CAND_003|OPTION_B=CAND_002|OPTION_C=CAND_001,5093,json_schema,1175,104,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 明确指出规则代码到月数的映射由候选修复表维护，正文不重复列示月数。案件上下文中未提供包含 DURATION-CODE-REMOTE 对应具体月数值的候选修复表或映射数据，因此无法依据给定文档确定产品 A 本次方案的保险期限月数，证据不足。""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,19,20260919,OPTION_FORMAL_OPERATION,SELECTED,OPTION_C,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条明确排适用于8月1日前已进入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,5745,json_schema,1613,152,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_C"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效且规定年龄为68周岁，但其第三条明确排适用于8月1日前已进入核保流程的申请。因此，依据有效版本DOC_E15_JULY，正确数值为64，对应选项""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,19,20260919,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中无其他文档提供 AGE-BAND-G2 对应的最高投保年龄数值，证据不足无法在 OPTION_A、OPTION_B、OPTION_C 中做出选择。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4802,json_schema,1178,96,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中无其他文档提供 AGE-BAND-G2 对应的最高投保年龄数值，证据不足无法在 OPTION_A、OPTION_B、OPTION_C 中做出选择。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,19,20260919,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_001,0,文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,4705,json_schema,1170,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档 DOC_E27_TERMS 第三条规定‘本体更新只采用等待期规则代码对应的候选修复’，且第二条指出 WAIT-CODE-LATE-PROOF 适用于需证明但非准时提交的情况（区别于 WAIT-CODE-WAIVER）。结合案件上下文‘原保障未中断’及‘连续保障证明提交标记为 D_PLUS_18'，虽文档未明示具体天数映射表，但根据规则引擎输出 WAIT""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,19,20260919,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_002,18,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月。根据例外规则（第三条），选择长期照护附加责任调整为24个月。但根据例外限制（第四条），若同时选择费用垫付责任则按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。由于未选择费用垫付责任，不触发第四条,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5574,json_schema,1243,134,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据一般规则（第二条），基础保障期限为12个月。根据例外规则（第三条），选择长期照护附加责任调整为24个月。但根据例外限制（第四条），若同时选择费用垫付责任则按18个月处理。案件上下文中投保记录显示选择了长期照护附加责任，核保确认未选择费用垫付责任。由于未选择费用垫付责任，不触发第四条""
+}",,,,,,True,CAND_003,24,False
+test,E37,CROSS_SENTENCE_SCOPE,19,20260919,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 第三条明确指出‘规则代码到月数的映射由候选修复表维护，正文不重复列示月数’。当前提供的文档文本中仅包含规则代码（DURATION-CODE-REMOTE）和适用条件，未包含将 DURATION-CODE-REMOTE 映射为具体月数（如 12、18 或 24）的候选修复表数据。依据‘证据不足必须 ABSTAIN'的原则，无法,OPTION_A=CAND_003|OPTION_B=CAND_001|OPTION_C=CAND_002,5548,json_schema,1175,131,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 第三条明确指出‘规则代码到月数的映射由候选修复表维护，正文不重复列示月数’。当前提供的文档文本中仅包含规则代码（DURATION-CODE-REMOTE）和适用条件，未包含将 DURATION-CODE-REMOTE 映射为具体月数（如 12、18 或 24）的候选修复表数据。依据‘证据不足必须 ABSTAIN'的原则，无法""
+}",,,,,,True,CAND_002,18,False
+test,E15,TEMPORAL_VERSION,20,20260920,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,64,案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,6252,json_schema,1613,140,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""案件投保申请于2026年7月20日进入核保流程，适用DOC_E15_JULY（生效2026-07-01，失效2026-07-31）。该文档第二条规定最高投保年龄为64周岁。DOC_E15_AUGUST虽于8月1日生效，但第三条明确规定8月1日前已进入核保流程的申请仍按进入当日有效版本处理。因此适用数值为64，对应OPTION_B。""
+}",,,,,,True,CAND_003,64,True
+test,E17,TEMPORAL_VERSION,20,20260920,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供该映射表或任何能将 AGE-BAND-G2 转换为具体年龄（如 63、58 或 73）的依据。根据指令‘证据不足必须 ABSTAIN'，无法确定最高投保年龄的具体数值。,OPTION_A=CAND_002|OPTION_B=CAND_003|OPTION_C=CAND_001,4484,json_schema,1178,115,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E17_TERMS 仅声明档位代码到数值的映射由候选修复表维护，正文未列示具体数值。案件上下文中未提供该映射表或任何能将 AGE-BAND-G2 转换为具体年龄（如 63、58 或 73）的依据。根据指令‘证据不足必须 ABSTAIN'，无法确定最高投保年龄的具体数值。""
+}",,,,,,True,CAND_002,63,False
+test,E27,GENERAL_RULE_EXCEPTION,20,20260920,OPTION_FORMAL_OPERATION,SELECTED,OPTION_A,CAND_001,0,文档 DOC_E27_TERMS 第一条明确指出本次申请为‘团体计划转入’且‘原保障未中断’，连续保障证明标记为 D_PLUS_18（有效）。第二条规则代码说明 WAIT-CODE-WAIVER 仅适用于准时提交证明，而本案触发的是 WAIT-CODE-LATE-PROOF。第三条执行口径规定本体更新只采用候选修复表维护的映射，正文不列示天数。结合上下文‘原,OPTION_A=CAND_001|OPTION_B=CAND_002|OPTION_C=CAND_003,5465,json_schema,1170,125,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_A"",
+  ""reason"": ""文档 DOC_E27_TERMS 第一条明确指出本次申请为‘团体计划转入’且‘原保障未中断’，连续保障证明标记为 D_PLUS_18（有效）。第二条规则代码说明 WAIT-CODE-WAIVER 仅适用于准时提交证明，而本案触发的是 WAIT-CODE-LATE-PROOF。第三条执行口径规定本体更新只采用候选修复表维护的映射，正文不列示天数。结合上下文‘原""
+}",,,,,,True,CAND_002,30,False
+test,E34,CROSS_SENTENCE_SCOPE,20,20260920,OPTION_FORMAL_OPERATION,SELECTED,OPTION_B,CAND_003,24,文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5314,json_schema,1243,123,stop,"{
+  ""abstain"": false,
+  ""option_id"": ""OPTION_B"",
+  ""reason"": ""文档DOC_E34_TERMS生效日期为2026-08-01，适用于本案。根据第二条一般规则，基础期限为12个月；第三条例外规则规定选择长期照护附加责任时调整为24个月；第四条例外限制规定同时选择费用垫付责任才按18个月处理。案件上下文显示选择了长期照护但未选择费用垫付，因此适用第三条的24个月，排除OPTION_A和OPTION_C。""
+}",,,,,,True,CAND_003,24,True
+test,E37,CROSS_SENTENCE_SCOPE,20,20260920,OPTION_FORMAL_OPERATION,ABSTAIN,,,,文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。,OPTION_A=CAND_001|OPTION_B=CAND_003|OPTION_C=CAND_002,5560,json_schema,1175,123,stop,"{
+  ""abstain"": true,
+  ""option_id"": ""ABSTAIN"",
+  ""reason"": ""文档 DOC_E37_TERMS 仅声明规则代码 DURATION-CODE-REMOTE 对应的月数由候选修复表维护，正文未列示具体映射关系。案件上下文中未提供该候选修复表或任何能将 DURATION-CODE-REMOTE 映射为 12、18 或 24 的具体数值依据。根据指令‘证据不足必须 ABSTAIN'，无法在给定选项中确定正确值。""
+}",,,,,,True,CAND_002,18,False

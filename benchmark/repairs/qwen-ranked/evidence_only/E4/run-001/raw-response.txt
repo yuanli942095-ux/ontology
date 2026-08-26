@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "失败的问题 CQ002 明确指出产品 A 错误地属于财产保险，且实际值中包含该类别。候选 CAND_001 直接删除了'产品 A rdf:type 财产保险'的断言，这完全解决了互斥类别冲突问题，符合业务语义要求。"
+}

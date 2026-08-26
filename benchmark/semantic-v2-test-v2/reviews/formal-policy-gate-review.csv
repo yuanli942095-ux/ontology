@@ -1,0 +1,7 @@
+﻿event_id,applicable_rules,selected_rule,selected_priority,allowed_values,survivor_count,survivor_candidate_id,survivor_value,oracle_value,oracle_candidate_id,oracle_match,problem_owner,reviewer
+E14,E14_CURRENT_EFFECTIVE_VERSION,E14_CURRENT_EFFECTIVE_VERSION,300,62,1,CAND_002,62,62,CAND_002,True,rules,Codex independent rule review
+E15,E15_JULY_VERSION_SCOPE,E15_JULY_VERSION_SCOPE,300,64,1,CAND_003,64,64,CAND_003,True,rules,Codex independent rule review
+E24,E24_CONTINUOUS_TRANSFER_EXCEPTION|E24_GENERAL_WAITING_PERIOD,E24_CONTINUOUS_TRANSFER_EXCEPTION,300,0,1,CAND_002,0,0,CAND_002,True,rules,Codex independent rule review
+E25,E25_DELAYED_CHILD_EXCEPTION|E25_GENERAL_WAITING_PERIOD,E25_DELAYED_CHILD_EXCEPTION,250,15,1,CAND_001,15,15,CAND_001,True,rules,Codex independent rule review
+E34,E34_LONG_TERM_CARE_EXTENSION,E34_LONG_TERM_CARE_EXTENSION,250,24,1,CAND_003,24,24,CAND_003,True,rules,Codex independent rule review
+E35,E35_CANCER_OUTPATIENT_EXTENSION,E35_CANCER_OUTPATIENT_EXTENSION,250,18,1,CAND_001,18,18,CAND_001,True,rules,Codex independent rule review

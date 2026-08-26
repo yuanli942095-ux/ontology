@@ -1,0 +1,61 @@
+Qwen符号候选排序日志
+模型：qwen3.5:9b
+提示模式：evidence_only
+运行次数：5
+temperature：0.2
+首个seed：20260820
+互斥策略：abstain=true时禁止选择候选，不进行兼容归一化。
+
+[rank-E1-run-001]
+  结果=SELECTED | CAND_002 | ADD_PROPERTY_VALUE | confidence=0.95 | 4357ms
+[rank-E1-run-002]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 4481ms
+[rank-E1-run-003]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 4899ms
+[rank-E1-run-004]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 4313ms
+[rank-E1-run-005]
+  结果=SELECTED | CAND_002 | ADD_PROPERTY_VALUE | confidence=0.95 | 3829ms
+[rank-E2-run-001]
+  结果=SELECTED | CAND_001 | ADD_PROPERTY_VALUE | confidence=1.0 | 3003ms
+[rank-E2-run-002]
+  结果=SELECTED | CAND_001 | ADD_PROPERTY_VALUE | confidence=1.0 | 2539ms
+[rank-E2-run-003]
+  结果=SELECTED | CAND_001 | ADD_PROPERTY_VALUE | confidence=1.0 | 2553ms
+[rank-E2-run-004]
+  结果=SELECTED | CAND_001 | ADD_PROPERTY_VALUE | confidence=1.0 | 2500ms
+[rank-E2-run-005]
+  结果=SELECTED | CAND_001 | ADD_PROPERTY_VALUE | confidence=1.0 | 2598ms
+[rank-E3-run-001]
+  结果=SELECTED | CAND_001 | REPLACE_PROPERTY_VALUE | confidence=0.95 | 3266ms
+[rank-E3-run-002]
+  结果=SELECTED | CAND_001 | REPLACE_PROPERTY_VALUE | confidence=0.95 | 3175ms
+[rank-E3-run-003]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3367ms
+[rank-E3-run-004]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3153ms
+[rank-E3-run-005]
+  结果=SELECTED | CAND_002 | ADD_PROPERTY_VALUE | confidence=0.95 | 4030ms
+[rank-E4-run-001]
+  结果=SELECTED | CAND_001 | REMOVE_CLASS_ASSERTION | confidence=1.0 | 2601ms
+[rank-E4-run-002]
+  结果=SELECTED | CAND_001 | REMOVE_CLASS_ASSERTION | confidence=1.0 | 2548ms
+[rank-E4-run-003]
+  结果=SELECTED | CAND_001 | REMOVE_CLASS_ASSERTION | confidence=1.0 | 2996ms
+[rank-E4-run-004]
+  结果=SELECTED | CAND_001 | REMOVE_CLASS_ASSERTION | confidence=1.0 | 2739ms
+[rank-E4-run-005]
+  结果=SELECTED | CAND_001 | REMOVE_CLASS_ASSERTION | confidence=1.0 | 2525ms
+[rank-E5-run-001]
+  结果=SELECTED | CAND_001 | REPLACE_PROPERTY_VALUE | confidence=0.95 | 4417ms
+[rank-E5-run-002]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=1.0 | 3609ms
+[rank-E5-run-003]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3866ms
+[rank-E5-run-004]
+  结果=SELECTED | CAND_001 | REPLACE_PROPERTY_VALUE | confidence=0.95 | 3110ms
+[rank-E5-run-005]
+  结果=SELECTED | CAND_003 | REMOVE_PROPERTY_VALUE | confidence=0.95 | 3651ms
+
+排序汇总：总尝试=25，选择候选=25，主动放弃=0，严格拒绝=0
+候选清单：G:\LearnAI\ontology-evolution\benchmark\repairs\qwen-ranked-candidates.csv

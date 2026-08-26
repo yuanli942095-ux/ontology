@@ -1,0 +1,10 @@
+﻿error_id,error_type,candidate_id,operator,description,reasoner_result,reasoner_gate,evidence_result,evidence_gate,cq_result,cq_gate,failed_cqs,minimal_edit_gate,hard_gate_pass,oracle_match,triples_removed,triples_added,candidate_owl,error_message
+E6,类层级链路缺失,CAND_001,ADD_SUBCLASS_AXIOM,新增父类：医疗保险 → 健康保险,CONSISTENT,True,PASS,True,PASS,True,,True,True,True,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E6\CAND_001.owl,
+E6,类层级链路缺失,CAND_002,ADD_SUBCLASS_AXIOM,新增父类：医疗保险 → 人身保险,CONSISTENT,True,PASS,True,FAIL,False,CQ013,True,False,False,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E6\CAND_002.owl,
+E6,类层级链路缺失,CAND_003,ADD_SUBCLASS_AXIOM,新增父类：医疗保险 → 保险产品,CONSISTENT,True,PASS,True,FAIL,False,CQ013,True,False,False,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E6\CAND_003.owl,
+E7,错误直接父类,CAND_001,REPLACE_SUPERCLASS,替换父类：疾病保险，人身保险 → 健康保险,CONSISTENT,True,PASS,True,PASS,True,,True,True,True,1,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E7\CAND_001.owl,
+E7,错误直接父类,CAND_002,REMOVE_SUBCLASS_AXIOM,删除父类：疾病保险 → 人身保险,CONSISTENT,True,PASS,True,FAIL,False,CQ014,True,False,False,1,0,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E7\CAND_002.owl,
+E7,错误直接父类,CAND_003,REPLACE_SUPERCLASS,替换父类：疾病保险，人身保险 → 保险产品,CONSISTENT,True,PASS,True,FAIL,False,CQ014,True,False,False,1,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E7\CAND_003.owl,
+E8,对象属性值域缺失,CAND_001,ADD_PROPERTY_RANGE,新增值域：保障疾病 → 疾病,CONSISTENT,True,PASS,True,PASS,True,,True,True,True,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E8\CAND_001.owl,
+E8,对象属性值域缺失,CAND_002,ADD_PROPERTY_RANGE,新增值域：保障疾病 → 重大疾病,CONSISTENT,True,PASS,True,FAIL,False,CQ015,True,False,False,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E8\CAND_002.owl,
+E8,对象属性值域缺失,CAND_003,ADD_PROPERTY_RANGE,新增值域：保障疾病 → owl:Thing,CONSISTENT,True,PASS,True,FAIL,False,CQ015,True,False,False,0,1,G:\LearnAI\ontology-evolution\benchmark\repairs\tbox-candidate-effects\E8\CAND_003.owl,

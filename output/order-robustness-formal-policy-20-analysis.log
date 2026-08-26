@@ -1,0 +1,7 @@
+source=G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-details.csv
+rows=80
+by_event=G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-analysis-by-event.csv
+summary=G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-analysis-summary.csv
+json=G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-analysis.json
+[OPTION_FORMAL_POLICY] strict=0/2 | stable=0/2 | order_sensitive=2/2 | accuracy=72.50% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] strict=2/2 | stable=2/2 | order_sensitive=0/2 | accuracy=100.00% | abstain=0.00%

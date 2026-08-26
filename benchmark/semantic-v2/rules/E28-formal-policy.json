@@ -1,0 +1,79 @@
+{
+  "event_id": "E28",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "group_transfer": true,
+    "coverage_interrupted": false,
+    "proof_submission_day": 12,
+    "proof_confirmed_valid": true
+  },
+  "rules": [
+    {
+      "rule_id": "E28_PROOF_WITHIN_15",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "group_transfer",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "coverage_interrupted",
+          "operator": "equals",
+          "value": false
+        },
+        {
+          "fact": "proof_submission_day",
+          "operator": "less_or_equal",
+          "value": 15
+        },
+        {
+          "fact": "proof_confirmed_valid",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "0"
+      ]
+    },
+    {
+      "rule_id": "E28_PROOF_LATE_30",
+      "priority": 250,
+      "conditions": [
+        {
+          "fact": "proof_submission_day",
+          "operator": "greater_or_equal",
+          "value": 16
+        },
+        {
+          "fact": "proof_submission_day",
+          "operator": "less_or_equal",
+          "value": 30
+        },
+        {
+          "fact": "proof_confirmed_valid",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "30"
+      ]
+    },
+    {
+      "rule_id": "E28_GENERAL",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "90"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E28_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

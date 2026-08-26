@@ -1,0 +1,38 @@
+{
+  "event_id": "E36",
+  "semantics": "cross_sentence_scope_with_cancelled_addon",
+  "facts": {
+    "telemedicine_addon_selected": true,
+    "chronic_management_preselected": true,
+    "chronic_management_cancelled_before_underwriting": true
+  },
+  "rules": [
+    {
+      "rule_id": "E36_CHRONIC_MANAGEMENT_ACTIVE",
+      "priority": 300,
+      "when": {
+        "chronic_management_preselected": true,
+        "chronic_management_cancelled_before_underwriting": false
+      },
+      "allowed_values": ["24"]
+    },
+    {
+      "rule_id": "E36_TELEMEDICINE_ACTIVE",
+      "priority": 200,
+      "when": {
+        "telemedicine_addon_selected": true
+      },
+      "allowed_values": ["18"]
+    },
+    {
+      "rule_id": "E36_BASE_ONLY",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["12"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E36_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

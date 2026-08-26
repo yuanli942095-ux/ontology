@@ -1,0 +1,7 @@
+﻿event_id,semantic_type,candidate_id,proposed_value,reasoner_result,formal_gate_pass,candidate_owl
+E9,TEMPORAL_VERSION,CAND_001,60,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E9\CAND_001.owl
+E9,TEMPORAL_VERSION,CAND_002,65,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E9\CAND_002.owl
+E10,GENERAL_RULE_EXCEPTION,CAND_001,0,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E10\CAND_001.owl
+E10,GENERAL_RULE_EXCEPTION,CAND_002,60,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E10\CAND_002.owl
+E11,CROSS_SENTENCE_SCOPE,CAND_001,12,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E11\CAND_001.owl
+E11,CROSS_SENTENCE_SCOPE,CAND_002,24,CONSISTENT,True,G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\candidate-owls\E11\CAND_002.owl

@@ -1,0 +1,5 @@
+﻿method,event_id,semantic_type,attempts,distinct_candidate_orders,oracle_successes,accuracy,wrong,abstains,invalid,selected_candidate_ids,selected_values,selected_option_ids,stable_selected_candidate,strict_order_robust,outcome_consistent,order_sensitive
+OPTION_FORMAL_POLICY,E17,TEMPORAL_VERSION,20,6,15,0.75,5,0,0,CAND_001|CAND_002,63|73,OPTION_A|OPTION_B|OPTION_C,False,False,False,True
+OPTION_FORMAL_POLICY,E27,GENERAL_RULE_EXCEPTION,20,6,14,0.7,6,0,0,CAND_001|CAND_002,0|30,OPTION_B|OPTION_C,False,False,False,True
+OPTION_FORMAL_POLICY_HARD_GATE,E17,TEMPORAL_VERSION,20,6,20,1.0,0,0,0,CAND_002,63,OPTION_A|OPTION_B|OPTION_C,True,True,True,False
+OPTION_FORMAL_POLICY_HARD_GATE,E27,GENERAL_RULE_EXCEPTION,20,6,20,1.0,0,0,0,CAND_002,30,OPTION_A|OPTION_B|OPTION_C,True,True,True,False

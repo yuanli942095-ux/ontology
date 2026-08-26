@@ -1,0 +1,80 @@
+[
+  {
+    "error_id": "BASELINE",
+    "file_name": "insurance-validation-baseline.owl",
+    "error_type": "无错误基线",
+    "expected_cq_result": "PASS",
+    "actual_cq_result": "PASS",
+    "expected_failed_cqs": "",
+    "actual_failed_cqs": "",
+    "passed_cq_count": "12",
+    "failed_cq_count": "0",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  },
+  {
+    "error_id": "E1",
+    "file_name": "E1_numeric_drift.owl",
+    "error_type": "数值漂移",
+    "expected_cq_result": "FAIL",
+    "actual_cq_result": "FAIL",
+    "expected_failed_cqs": "CQ004",
+    "actual_failed_cqs": "CQ004",
+    "passed_cq_count": "11",
+    "failed_cq_count": "1",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  },
+  {
+    "error_id": "E2",
+    "file_name": "E2_missing_axiom.owl",
+    "error_type": "公理缺失",
+    "expected_cq_result": "FAIL",
+    "actual_cq_result": "FAIL",
+    "expected_failed_cqs": "CQ006",
+    "actual_failed_cqs": "CQ006",
+    "passed_cq_count": "11",
+    "failed_cq_count": "1",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  },
+  {
+    "error_id": "E3",
+    "file_name": "E3_wrong_relation_target.owl",
+    "error_type": "关系对象错误",
+    "expected_cq_result": "FAIL",
+    "actual_cq_result": "FAIL",
+    "expected_failed_cqs": "CQ003",
+    "actual_failed_cqs": "CQ003",
+    "passed_cq_count": "11",
+    "failed_cq_count": "1",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  },
+  {
+    "error_id": "E4",
+    "file_name": "E4_disjoint_class_conflict.owl",
+    "error_type": "互斥类别冲突",
+    "expected_cq_result": "FAIL",
+    "actual_cq_result": "FAIL",
+    "expected_failed_cqs": "CQ002",
+    "actual_failed_cqs": "CQ002",
+    "passed_cq_count": "11",
+    "failed_cq_count": "1",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  },
+  {
+    "error_id": "E5",
+    "file_name": "E5_conflicting_functional_value.owl",
+    "error_type": "功能属性值冲突",
+    "expected_cq_result": "FAIL",
+    "actual_cq_result": "FAIL",
+    "expected_failed_cqs": "CQ004 | CQ005",
+    "actual_failed_cqs": "CQ004 | CQ005",
+    "passed_cq_count": "10",
+    "failed_cq_count": "2",
+    "mapping_match": "true",
+    "pass_or_fail": "PASS"
+  }
+]

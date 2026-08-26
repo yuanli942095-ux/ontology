@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_003",
+  "confidence": 0.95,
+  "rationale": "证据EVID_014明确限定最高投保年龄为65周岁，当前实际值包含冲突的70。CAND_003移除70以消除冲突并保留有效证据支持的65；CAND_002移除65将导致与唯一有效证据矛盾。"
+}

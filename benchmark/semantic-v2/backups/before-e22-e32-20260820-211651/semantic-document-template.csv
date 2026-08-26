@@ -1,0 +1,4 @@
+﻿document_id,file_name,authority,effective_from,effective_to,issuer,document_type,source_url,source_type,sha256,status,notes
+DOC_TEMPLATE_001,待填写.txt,100,2026-01-01,,待填写,正式条款,,REAL_OR_CONTROLLED,,DRAFT,复制本行并为每份文档分配唯一ID
+DOC_E12_OLD,E12_2025版保险条款.txt,100,2025-01-01,2026-06-30,受控示例保险公司,正式保险条款,,CONTROLLED_DEV,9500a0559d8f5e9cbc49fd9abac91b7f88b10d29c0b95a57fe34a065f83c93ed,READY,受控开发用例，仅用于流程调试，不计入论文测试集
+DOC_E12_NEW,E12_2026修订版保险条款.txt,100,2026-07-01,,受控示例保险公司,正式保险条款,,CONTROLLED_DEV,c4943a7c368ecd01d88ce0afec6c2e34ae64984b1f258f183a8917f6be8e8917,READY,受控开发用例，仅用于流程调试，不计入论文测试集

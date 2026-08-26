@@ -1,0 +1,11 @@
+﻿axiom_family,subject,predicate,v1_owl_value,v2_owl_value,v1_document_value,v2_document_value,change_detected,v1_matches_evidence,v2_matches_evidence,result
+AF_PA_AMOUNT,产品A,保额,500000,500000,500000,500000,false,true,true,UNCHANGED
+AF_PA_AUDIENCE,产品A,适用于人群,成人投保群体,成人投保群体,成人投保群体,成人投保群体,false,true,true,UNCHANGED
+AF_PA_DISEASE,产品A,保障疾病,癌症,癌症,癌症,癌症,false,true,true,UNCHANGED
+AF_PA_EXCLUSION,产品A,具有免责条款,标准免责条款A,标准免责条款A,标准免责条款A,标准免责条款A,false,true,true,UNCHANGED
+AF_PA_MAX_AGE,产品A,最高投保年龄,60,65,60,65,true,true,true,CHANGED
+AF_PA_MIN_AGE,产品A,最低投保年龄,18,18,18,18,false,true,true,UNCHANGED
+AF_PA_TERM_MONTHS,产品A,保险期限月数,12,12,12,12,false,true,true,UNCHANGED
+AF_PA_TYPE,产品A,类型,医疗保险,医疗保险,医疗保险,医疗保险,false,true,true,UNCHANGED
+AF_PA_UNDERWRITER,产品A,由公司承保,保险公司甲,保险公司甲,保险公司甲,保险公司甲,false,true,true,UNCHANGED
+AF_PA_WAITING_DAYS,产品A,等待期天数,90,60,90,60,true,true,true,CHANGED

@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ003"
+      ],
+      "rationale": "根据证据 EVID_012，'产品A' 的承保公司是 '保险公司甲'。在之前的上下文中（未在此片段显示但隐含），可能存在一个错误的属性值关联（例如关联到了错误的公司或无关联）。此操作旨在移除可能存在的错误属性值关联，以符合最新的证据 EVID_012 所描述的'产品A由保险公司甲承保'这一事实。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "保险公司乙",
+        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    }
+  ]
+}

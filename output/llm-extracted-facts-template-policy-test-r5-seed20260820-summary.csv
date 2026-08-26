@@ -1,0 +1,5 @@
+﻿method,semantic_type,attempts,selected,oracle_accuracy,oracle_ci95_low,oracle_ci95_high,wrong_selection_rate,abstain_rate,extraction_error_rate,manual_fact_accuracy,qwen_calls,prompt_tokens,completion_tokens,total_tokens,mean_runtime_ms,manual_schema_used,manual_rule_template_used,manual_fact_values_used_in_prompt,candidate_descriptions_used_in_prompt,allowed_values_used_in_prompt
+LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,ALL,150,149,0.86,0.7954479122405028,0.9065735118144821,0.13333333333333333,0.006666666666666667,0.0,0.9411764705882353,150,112025,18516,130541,4026.21,True,True,False,False,False
+LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,TEMPORAL_VERSION,50,49,0.88,0.7619518261679701,0.9438239984906773,0.1,0.02,0.0,0.9310344827586207,50,40610,7671,48281,4850.08,True,True,False,False,False
+LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,GENERAL_RULE_EXCEPTION,50,50,0.9,0.7863976856252035,0.9565242350681096,0.1,0.0,0.0,0.9666666666666667,50,35955,5660,41615,3739.84,True,True,False,False,False
+LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,CROSS_SENTENCE_SCOPE,50,50,0.8,0.6696289406777459,0.887562499842239,0.2,0.0,0.0,0.9230769230769231,50,35460,5185,40645,3488.72,True,True,False,False,False

@@ -1,0 +1,4 @@
+﻿event_id,oracle_candidate_id,oracle_value,oracle_reason
+E9,CAND_002,65,评估日期晚于2026修订版生效日，应采用现行正式条款。
+E10,CAND_001,0,连续续保且保障未中断，适用优先于一般规定的例外条款。
+E11,CAND_002,24,投保确认记录表明方案已包含长期医疗附加责任。

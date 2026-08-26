@@ -1,0 +1,12 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[VALUE_ENUM] Oracle=25.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=75.00%
+
+[VALUE_ENUM] 严格事件成功=0/1 (0.00%) | 事件宏平均=25.00% | 选择稳定事件=0/1
+
+明细：G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20.json

@@ -1,0 +1,40 @@
+{
+  "event_id": "E34",
+  "semantics": "cross_sentence_scope_with_negative_condition",
+  "facts": {
+    "long_term_care_addon_selected": true,
+    "expense_advance_selected": false
+  },
+  "rules": [
+    {
+      "rule_id": "E34_EXPENSE_ADVANCE_LIMIT",
+      "priority": 300,
+      "conditions": [
+        {"fact": "long_term_care_addon_selected", "operator": "equals", "value": true},
+        {"fact": "expense_advance_selected", "operator": "equals", "value": true}
+      ],
+      "allowed_values": ["18"]
+    },
+    {
+      "rule_id": "E34_LONG_TERM_CARE_EXTENSION",
+      "priority": 250,
+      "conditions": [
+        {"fact": "long_term_care_addon_selected", "operator": "equals", "value": true},
+        {"fact": "expense_advance_selected", "operator": "equals", "value": false}
+      ],
+      "allowed_values": ["24"]
+    },
+    {
+      "rule_id": "E34_BASIC_TERM",
+      "priority": 100,
+      "conditions": [
+        {"fact": "long_term_care_addon_selected", "operator": "equals", "value": false}
+      ],
+      "allowed_values": ["12"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E34_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

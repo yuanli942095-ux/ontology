@@ -1,0 +1,2 @@
+﻿method,event_id,semantic_type,attempts,distinct_candidate_orders,oracle_successes,accuracy,wrong,abstains,invalid,selected_candidate_ids,selected_values,selected_option_ids,stable_selected_candidate,strict_order_robust,outcome_consistent,order_sensitive
+VALUE_ENUM,E14,TEMPORAL_VERSION,20,6,5,0.25,0,15,0,CAND_002,62,OPTION_A|OPTION_B|OPTION_C,True,False,False,True

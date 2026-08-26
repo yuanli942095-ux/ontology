@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ004"
+      ],
+      "rationale": "根据证据 EVID_014，产品A的'最高投保年龄'属性被明确定义为整数 65。在 CQ004 中，该属性的值被表示为字符串 '65'。由于本体定义要求数值属性必须使用 `xsd:integer` 类型，而当前数据源中的字符串表示不符合此约束，因此需要移除该不合规的属性值声明，以确保数据与本体模式的一致性。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "65",
+        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    }
+  ]
+}

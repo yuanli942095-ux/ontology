@@ -1,0 +1,49 @@
+{
+  "event_id": "E26",
+  "semantics": "general_rule_exception_with_late_proof_window",
+  "facts": {
+    "group_transfer": true,
+    "prior_coverage_uninterrupted": true,
+    "proof_confirmed_valid": true,
+    "proof_submitted_days": 18
+  },
+  "rules": [
+    {
+      "rule_id": "E26_ON_TIME_PROOF_WAIVER",
+      "priority": 300,
+      "when": {
+        "group_transfer": true,
+        "prior_coverage_uninterrupted": true,
+        "proof_confirmed_valid": true,
+        "proof_submitted_days": {
+          "less_or_equal": 15
+        }
+      },
+      "allowed_values": ["0"]
+    },
+    {
+      "rule_id": "E26_LATE_PROOF_PARTIAL_EXCEPTION",
+      "priority": 250,
+      "when": {
+        "group_transfer": true,
+        "prior_coverage_uninterrupted": true,
+        "proof_confirmed_valid": true,
+        "proof_submitted_days": {
+          "greater_than": 15,
+          "less_or_equal": 30
+        }
+      },
+      "allowed_values": ["30"]
+    },
+    {
+      "rule_id": "E26_GENERAL_WAITING_PERIOD",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["90"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E26_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

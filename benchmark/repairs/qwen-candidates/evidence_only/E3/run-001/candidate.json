@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ003"
+      ],
+      "rationale": "根据证据 EVID_012，'产品A' 的承保公司是 '保险公司甲'。在知识图谱中，'产品A' 与 '保险公司甲' 之间已存在 '由公司承保' 的关系断言。因此，无需额外添加或修改属性值，只需确认现有关系即可。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "保险公司甲",
+        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    }
+  ]
+}

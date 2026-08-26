@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_002",
+  "confidence": 0.95,
+  "rationale": "当前有效证据 EVID_014 明确定义产品 A 的最高投保年龄为 65，且状态为'当前有效'。候选 CAND_002 (ADD_PROPERTY_VALUE) 直接引入该正确值以修复 CQ004 的失败（期望值为 70），同时保留原有数据结构的完整性，是最安全且符合语义恢复的操作。"
+}

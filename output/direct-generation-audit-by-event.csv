@@ -1,0 +1,4 @@
+﻿event_id,semantic_type,attempts,strict_oracle_success_rate,normalized_oracle_success_rate,weak_extraction_oracle_match_rate,format_error_rate,normalizable_violation_rate,out_of_candidate_value_rate,normalized_semantic_wrong_rate,category_counts_json
+E10,GENERAL_RULE_EXCEPTION,5,0.0,0.0,0.2,0.0,0.0,0.0,0.0,"{""ALPHANUMERIC_TOKEN"": 2, ""NON_NUMERIC_VALUE"": 2, ""WEAK_TEXT_EXTRACTION_CANDIDATE"": 1}"
+E11,CROSS_SENTENCE_SCOPE,5,0.2,0.2,0.0,0.2,0.0,0.0,0.0,"{""AMBIGUOUS_MULTIPLE_NUMBERS"": 2, ""NON_NUMERIC_VALUE"": 1, ""SCHEMA_ERROR"": 1, ""STRICT_VALID_SELECTED"": 1}"
+E9,TEMPORAL_VERSION,5,0.0,0.0,0.2,0.6,0.0,0.0,0.0,"{""JSON_FORMAT_ERROR"": 1, ""NON_NUMERIC_VALUE"": 1, ""SCHEMA_ERROR"": 2, ""WEAK_TEXT_EXTRACTION_CANDIDATE"": 1}"

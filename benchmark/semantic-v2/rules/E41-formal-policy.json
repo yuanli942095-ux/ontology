@@ -1,0 +1,57 @@
+{
+  "event_id": "E41",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "remote_consultation_selected": true,
+    "overseas_extension_selected": false
+  },
+  "rules": [
+    {
+      "rule_id": "E41_OVERSEAS_EXTENSION",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "overseas_extension_selected",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    },
+    {
+      "rule_id": "E41_REMOTE",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "remote_consultation_selected",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "overseas_extension_selected",
+          "operator": "equals",
+          "value": false
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E41_BASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "12"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E41_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

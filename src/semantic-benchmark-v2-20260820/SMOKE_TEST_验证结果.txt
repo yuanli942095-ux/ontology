@@ -1,0 +1,28 @@
+语义歧义本体修复基准 V2：交付前验证记录
+
+验证日期：2026-08-20
+
+1. Python静态检查
+   命令：python -m py_compile src\*.py
+   结果：通过。共享模块、校验器、构建器、实验运行器和哈希回填脚本均无语法错误。
+
+2. 模板宽松校验
+   命令：python src\validate_semantic_benchmark_v2.py
+   结果：事件总数30，READY=0，错误0，警告30。
+   解释：模板结构正确；30条警告对应尚未人工填写的DRAFT事件，符合预期。
+
+3. 正式严格校验的拒绝测试
+   命令：python src\validate_semantic_benchmark_v2.py --require-ready
+   结果：退出码2，严格拒绝未填写数据。
+   解释：在真实文档、候选、双人标注和Oracle未完成前，脚本不会误将模板当作正式基准。
+
+4. Excel视觉检查
+   工作表：Events、Documents、Candidates、Oracle_PRIVATE、DataDictionary。
+   结果：五个工作表均已渲染检查；表头、冻结窗格、状态下拉和私有Oracle红色提示正常。
+
+5. 未执行项目依赖型端到端构建
+   当前容器未安装rdflib/项目内validate_benchmark.py；构建器的Reasoner端到端测试应在
+   G:\LearnAI\ontology-evolution的现有.venv中执行。用户环境此前已成功运行rdflib、
+   HermiT和有限修复算子，因此包内脚本按同一接口编写。
+
+边界声明：本交付物没有伪造30个真实事件、文档证据或Oracle答案。

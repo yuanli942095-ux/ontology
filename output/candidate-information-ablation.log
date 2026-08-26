@@ -1,0 +1,24 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[DIRECT_FREE] Oracle=75.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=25.00%
+[OPTION_DESCRIPTION] Oracle=100.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_FORMAL_OPERATION] Oracle=68.33% | 错误选择=18.33% | 无效=0.00% | ABSTAIN=13.33%
+[OPTION_FORMAL_POLICY] Oracle=96.67% | 错误选择=3.33% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] Oracle=100.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_VALUE_ONLY] Oracle=76.67% | 错误选择=15.00% | 无效=0.00% | ABSTAIN=8.33%
+[VALUE_ENUM] Oracle=73.33% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=26.67%
+
+[DIRECT_FREE] 严格事件成功=9/12 (75.00%) | 事件宏平均=75.00% | 选择稳定事件=12/12
+[OPTION_DESCRIPTION] 严格事件成功=12/12 (100.00%) | 事件宏平均=100.00% | 选择稳定事件=12/12
+[OPTION_FORMAL_OPERATION] 严格事件成功=7/12 (58.33%) | 事件宏平均=68.33% | 选择稳定事件=7/12
+[OPTION_FORMAL_POLICY] 严格事件成功=10/12 (83.33%) | 事件宏平均=96.67% | 选择稳定事件=10/12
+[OPTION_FORMAL_POLICY_HARD_GATE] 严格事件成功=12/12 (100.00%) | 事件宏平均=100.00% | 选择稳定事件=12/12
+[OPTION_VALUE_ONLY] 严格事件成功=9/12 (75.00%) | 事件宏平均=76.67% | 选择稳定事件=10/12
+[VALUE_ENUM] 严格事件成功=8/12 (66.67%) | 事件宏平均=73.33% | 选择稳定事件=11/12
+
+明细：G:\LearnAI\ontology-evolution\output\candidate-information-ablation-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\candidate-information-ablation-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\candidate-information-ablation-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\candidate-information-ablation-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\candidate-information-ablation.json

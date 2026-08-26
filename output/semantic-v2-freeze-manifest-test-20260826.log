@@ -1,0 +1,13 @@
+semantic-v2 freeze manifest
+generated_at_utc=2026-08-26T07:26:25.495587+00:00
+split=test
+events=30
+semantic_type_counts={'CROSS_SENTENCE_SCOPE': 10, 'GENERAL_RULE_EXCEPTION': 10, 'TEMPORAL_VERSION': 10}
+public_files=113
+private_oracle_rows=31
+git_available=False
+limitation=manifest records current file state; use git/archive timestamps for pre-experiment freeze proof
+
+json=G:\LearnAI\ontology-evolution\output\semantic-v2-freeze-manifest-test-20260826.json
+public_csv=G:\LearnAI\ontology-evolution\output\semantic-v2-freeze-manifest-test-20260826-files.csv
+private_oracle_csv=G:\LearnAI\ontology-evolution\output\semantic-v2-freeze-manifest-test-20260826-private-oracle.csv

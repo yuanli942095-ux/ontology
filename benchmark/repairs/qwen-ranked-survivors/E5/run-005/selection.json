@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_003",
+  "confidence": 0.95,
+  "rationale": "CAND_003 (REMOVE_PROPERTY_VALUE) is semantically more precise than CAND_001 (REPLACE_PROPERTY_VALUE). The evidence explicitly states the age limit is 'not exceeding 65', implying that a value of '70' is an erroneous addition rather than a valid alternative to be replaced. Removing the conflicting triple directly aligns with the textual constraint without altering the existing correct value, making it the minimal and most accurate edit."
+}

@@ -1,0 +1,954 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-20T09:32:48.849814+00:00",
+  "generator": "annotate_candidate_effects.py",
+  "source_catalog": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\feasible-candidates.json",
+  "candidate_semantics": "counterfactually_executed_and_hard_gate_annotated",
+  "hard_gate_definition": [
+    "execution_pass",
+    "reasoner_gate",
+    "evidence_gate",
+    "affected_cq_gate",
+    "all_cq_gate",
+    "minimal_edit_gate"
+  ],
+  "errors": [
+    {
+      "error_id": "E1",
+      "error_type": "数值漂移",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E1_numeric_drift.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ004",
+          "question": "产品A的最高投保年龄是多少？",
+          "query_type": "PROPERTY_EXACT_SET",
+          "subject_label": "产品A",
+          "predicate_label": "最高投保年龄",
+          "expected_answer": "65",
+          "expected_count": "",
+          "actual_values": [
+            "70"
+          ],
+          "rationale": "验证当前有效年龄上限"
+        }
+      ],
+      "evidence_context": [
+        {
+          "record_id": "EVID_014",
+          "subject_label": "产品A",
+          "predicate_label": "最高投保年龄",
+          "object_or_value": "65",
+          "value_datatype": "xsd:integer",
+          "evidence_text": "产品A接受年龄满18周岁且不超过65周岁的人员投保。",
+          "authority_level": "A",
+          "review_status": "manual_verified",
+          "effective_from": "2026-01-01",
+          "effective_to": "",
+          "document_status": "当前有效"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "替换属性：产品A—最高投保年龄，70 → 65",
+          "operator": "REPLACE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004允许用当前有效证据值替换现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 601,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [
+                  "65"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 1,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 1,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E1\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E1/CAND_001",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "新增属性：产品A—最高投保年龄—65",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004缺少当前有效证据支持的目标值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "INCONSISTENT",
+            "reasoner_runtime_ms": 569,
+            "reasoner_gate": false,
+            "evidence_result": "FAIL",
+            "evidence_gate": false,
+            "evidence_differences": [
+              "产品A—最高投保年龄：期望=['65']，实际=['65', '70']"
+            ],
+            "affected_cq_result": "FAIL",
+            "affected_failed_cqs": [
+              "CQ004"
+            ],
+            "affected_cq_gate": false,
+            "all_cq_result": "FAIL",
+            "all_failed_cqs": [
+              "CQ004",
+              "CQ005"
+            ],
+            "all_cq_gate": false,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [
+                  "65",
+                  "70"
+                ],
+                "passed": false
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E1\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E1/CAND_002",
+            "error_message": "",
+            "reasoner_message": "HermiT�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "删除属性：产品A—最高投保年龄—70",
+          "operator": "REMOVE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REMOVE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004的当前属性集合与要求不一致，尝试删除现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 589,
+            "reasoner_gate": true,
+            "evidence_result": "FAIL",
+            "evidence_gate": false,
+            "evidence_differences": [
+              "产品A—最高投保年龄：期望=['65']，实际=[]"
+            ],
+            "affected_cq_result": "FAIL",
+            "affected_failed_cqs": [
+              "CQ004"
+            ],
+            "affected_cq_gate": false,
+            "all_cq_result": "FAIL",
+            "all_failed_cqs": [
+              "CQ004",
+              "CQ005"
+            ],
+            "all_cq_gate": false,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [],
+                "passed": false
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E1\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E1/CAND_003",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E2",
+      "error_type": "公理缺失",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E2_missing_axiom.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ006",
+          "question": "产品A的等待期是多少天？",
+          "query_type": "PROPERTY_EXACT_SET",
+          "subject_label": "产品A",
+          "predicate_label": "等待期天数",
+          "expected_answer": "60",
+          "expected_count": "",
+          "actual_values": [],
+          "rationale": "等待期是核保和理赔的重要条件"
+        }
+      ],
+      "evidence_context": [
+        {
+          "record_id": "EVID_015",
+          "subject_label": "产品A",
+          "predicate_label": "等待期天数",
+          "object_or_value": "60",
+          "value_datatype": "xsd:integer",
+          "evidence_text": "产品A的等待期为60天。",
+          "authority_level": "A",
+          "review_status": "manual_verified",
+          "effective_from": "2026-01-01",
+          "effective_to": "",
+          "document_status": "当前有效"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "新增属性：产品A—等待期天数—60",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ006"
+          ],
+          "source_evidence_ids": [
+            "EVID_015"
+          ],
+          "rationales": [
+            "CQ006缺少当前有效证据支持的目标值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 580,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ006",
+                "question": "产品A的等待期是多少天？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['60']",
+                "actual_values": [
+                  "60"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E2\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E2/CAND_001",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E3",
+      "error_type": "关系对象错误",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E3_wrong_relation_target.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ003",
+          "question": "产品A由哪家公司承保？",
+          "query_type": "PROPERTY_EXACT_SET",
+          "subject_label": "产品A",
+          "predicate_label": "由公司承保",
+          "expected_answer": "保险公司甲",
+          "expected_count": "",
+          "actual_values": [
+            "癌症"
+          ],
+          "rationale": "承保主体必须与业务合同一致"
+        }
+      ],
+      "evidence_context": [
+        {
+          "record_id": "EVID_012",
+          "subject_label": "产品A",
+          "predicate_label": "由公司承保",
+          "object_or_value": "保险公司甲",
+          "value_datatype": "",
+          "evidence_text": "产品A由保险公司甲承保。",
+          "authority_level": "A",
+          "review_status": "manual_verified",
+          "effective_from": "2026-01-01",
+          "effective_to": "",
+          "document_status": "当前有效"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "替换属性：产品A—由公司承保，癌症 → 保险公司甲",
+          "operator": "REPLACE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+            "old_value": {
+              "kind": "iri",
+              "iri": "file:///G:/LearnAI/ontology-1#癌症"
+            },
+            "new_value": {
+              "kind": "iri",
+              "iri": "file:///G:/LearnAI/ontology-1#保险公司甲"
+            }
+          },
+          "source_cq_ids": [
+            "CQ003"
+          ],
+          "source_evidence_ids": [
+            "EVID_012"
+          ],
+          "rationales": [
+            "CQ003允许用当前有效证据值替换现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 600,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ003",
+                "question": "产品A由哪家公司承保？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['保险公司甲']",
+                "actual_values": [
+                  "保险公司甲"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 1,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 1,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E3\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E3/CAND_001",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "新增属性：产品A—由公司承保—保险公司甲",
+          "operator": "ADD_PROPERTY_VALUE",
+          "operation": {
+            "operator": "ADD_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+            "new_value": {
+              "kind": "iri",
+              "iri": "file:///G:/LearnAI/ontology-1#保险公司甲"
+            }
+          },
+          "source_cq_ids": [
+            "CQ003"
+          ],
+          "source_evidence_ids": [
+            "EVID_012"
+          ],
+          "rationales": [
+            "CQ003缺少当前有效证据支持的目标值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "INCONSISTENT",
+            "reasoner_runtime_ms": 580,
+            "reasoner_gate": false,
+            "evidence_result": "FAIL",
+            "evidence_gate": false,
+            "evidence_differences": [
+              "产品A—由公司承保：期望=['保险公司甲']，实际=['保险公司甲', '癌症']"
+            ],
+            "affected_cq_result": "FAIL",
+            "affected_failed_cqs": [
+              "CQ003"
+            ],
+            "affected_cq_gate": false,
+            "all_cq_result": "FAIL",
+            "all_failed_cqs": [
+              "CQ003"
+            ],
+            "all_cq_gate": false,
+            "post_state": [
+              {
+                "cq_id": "CQ003",
+                "question": "产品A由哪家公司承保？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['保险公司甲']",
+                "actual_values": [
+                  "保险公司甲",
+                  "癌症"
+                ],
+                "passed": false
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E3\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E3/CAND_002",
+            "error_message": "",
+            "reasoner_message": "HermiT�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "删除属性：产品A—由公司承保—癌症",
+          "operator": "REMOVE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REMOVE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+            "old_value": {
+              "kind": "iri",
+              "iri": "file:///G:/LearnAI/ontology-1#癌症"
+            }
+          },
+          "source_cq_ids": [
+            "CQ003"
+          ],
+          "source_evidence_ids": [
+            "EVID_012"
+          ],
+          "rationales": [
+            "CQ003的当前属性集合与要求不一致，尝试删除现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 589,
+            "reasoner_gate": true,
+            "evidence_result": "FAIL",
+            "evidence_gate": false,
+            "evidence_differences": [
+              "产品A—由公司承保：期望=['保险公司甲']，实际=[]"
+            ],
+            "affected_cq_result": "FAIL",
+            "affected_failed_cqs": [
+              "CQ003"
+            ],
+            "affected_cq_gate": false,
+            "all_cq_result": "FAIL",
+            "all_failed_cqs": [
+              "CQ003"
+            ],
+            "all_cq_gate": false,
+            "post_state": [
+              {
+                "cq_id": "CQ003",
+                "question": "产品A由哪家公司承保？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['保险公司甲']",
+                "actual_values": [],
+                "passed": false
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E3\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E3/CAND_003",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E4",
+      "error_type": "互斥类别冲突",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E4_disjoint_class_conflict.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ002",
+          "question": "产品A是否错误地属于财产保险？",
+          "query_type": "CLASS_ABSENT",
+          "subject_label": "产品A",
+          "predicate_label": "rdf:type",
+          "expected_answer": "财产保险",
+          "expected_count": "",
+          "actual_values": [
+            "NamedIndividual",
+            "医疗保险",
+            "财产保险"
+          ],
+          "rationale": "禁止产品同时落入互斥的财产保险分类"
+        }
+      ],
+      "evidence_context": [],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "删除类别：产品A rdf:type 财产保险",
+          "operator": "REMOVE_CLASS_ASSERTION",
+          "operation": {
+            "operator": "REMOVE_CLASS_ASSERTION",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "class_iri": "file:///G:/LearnAI/ontology-1#财产保险"
+          },
+          "source_cq_ids": [
+            "CQ002"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "CQ002禁止目标类别存在"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 597,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ002",
+                "question": "产品A是否错误地属于财产保险？",
+                "query_type": "CLASS_ABSENT",
+                "expected": "不包含财产保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "医疗保险"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E4\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E4/CAND_001",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E5",
+      "error_type": "功能属性值冲突",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E5_conflicting_functional_value.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ004",
+          "question": "产品A的最高投保年龄是多少？",
+          "query_type": "PROPERTY_EXACT_SET",
+          "subject_label": "产品A",
+          "predicate_label": "最高投保年龄",
+          "expected_answer": "65",
+          "expected_count": "",
+          "actual_values": [
+            "65",
+            "70"
+          ],
+          "rationale": "验证当前有效年龄上限"
+        },
+        {
+          "cq_id": "CQ005",
+          "question": "产品A是否只有一个最高投保年龄？",
+          "query_type": "PROPERTY_CARDINALITY",
+          "subject_label": "产品A",
+          "predicate_label": "最高投保年龄",
+          "expected_answer": "",
+          "expected_count": "1",
+          "actual_values": [
+            "65",
+            "70"
+          ],
+          "rationale": "防止功能字段出现多个冲突值"
+        }
+      ],
+      "evidence_context": [
+        {
+          "record_id": "EVID_014",
+          "subject_label": "产品A",
+          "predicate_label": "最高投保年龄",
+          "object_or_value": "65",
+          "value_datatype": "xsd:integer",
+          "evidence_text": "产品A接受年龄满18周岁且不超过65周岁的人员投保。",
+          "authority_level": "A",
+          "review_status": "manual_verified",
+          "effective_from": "2026-01-01",
+          "effective_to": "",
+          "document_status": "当前有效"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "替换属性：产品A—最高投保年龄，70 → 65",
+          "operator": "REPLACE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004允许用当前有效证据值替换现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 618,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [
+                  "65"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ005",
+                "question": "产品A是否只有一个最高投保年龄？",
+                "query_type": "PROPERTY_CARDINALITY",
+                "expected": "数量=1",
+                "actual_values": [
+                  "65"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E5\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E5/CAND_001",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "删除属性：产品A—最高投保年龄—65",
+          "operator": "REMOVE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REMOVE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004",
+            "CQ005"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004的当前属性集合与要求不一致，尝试删除现有值",
+            "CQ005要求基数为1，尝试删除一个现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 601,
+            "reasoner_gate": true,
+            "evidence_result": "FAIL",
+            "evidence_gate": false,
+            "evidence_differences": [
+              "产品A—最高投保年龄：期望=['65']，实际=['70']"
+            ],
+            "affected_cq_result": "FAIL",
+            "affected_failed_cqs": [
+              "CQ004"
+            ],
+            "affected_cq_gate": false,
+            "all_cq_result": "FAIL",
+            "all_failed_cqs": [
+              "CQ004"
+            ],
+            "all_cq_gate": false,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [
+                  "70"
+                ],
+                "passed": false
+              },
+              {
+                "cq_id": "CQ005",
+                "question": "产品A是否只有一个最高投保年龄？",
+                "query_type": "PROPERTY_CARDINALITY",
+                "expected": "数量=1",
+                "actual_values": [
+                  "70"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E5\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E5/CAND_002",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "删除属性：产品A—最高投保年龄—70",
+          "operator": "REMOVE_PROPERTY_VALUE",
+          "operation": {
+            "operator": "REMOVE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "source_cq_ids": [
+            "CQ004",
+            "CQ005"
+          ],
+          "source_evidence_ids": [
+            "EVID_014"
+          ],
+          "rationales": [
+            "CQ004的当前属性集合与要求不一致，尝试删除现有值",
+            "CQ005要求基数为1，尝试删除一个现有值"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 616,
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "evidence_differences": [],
+            "affected_cq_result": "PASS",
+            "affected_failed_cqs": [],
+            "affected_cq_gate": true,
+            "all_cq_result": "PASS",
+            "all_failed_cqs": [],
+            "all_cq_gate": true,
+            "post_state": [
+              {
+                "cq_id": "CQ004",
+                "question": "产品A的最高投保年龄是多少？",
+                "query_type": "PROPERTY_EXACT_SET",
+                "expected": "['65']",
+                "actual_values": [
+                  "65"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ005",
+                "question": "产品A是否只有一个最高投保年龄？",
+                "query_type": "PROPERTY_CARDINALITY",
+                "expected": "数量=1",
+                "actual_values": [
+                  "65"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "minimal_edit_gate": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidate-effects\\E5\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/candidate-effect/E5/CAND_003",
+            "error_message": "",
+            "reasoner_message": "HermiTδ�����߼���һ��"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+semantic-v2-test-v2 formal policy gate review
+Qwen not run or used
+
+E14 rule=E14_CURRENT_EFFECTIVE_VERSION allowed=62 survivor=CAND_002 oracle_match=True
+E15 rule=E15_JULY_VERSION_SCOPE allowed=64 survivor=CAND_003 oracle_match=True
+E24 rule=E24_CONTINUOUS_TRANSFER_EXCEPTION allowed=0 survivor=CAND_002 oracle_match=True
+E25 rule=E25_DELAYED_CHILD_EXCEPTION allowed=15 survivor=CAND_001 oracle_match=True
+E34 rule=E34_LONG_TERM_CARE_EXTENSION allowed=24 survivor=CAND_003 oracle_match=True
+E35 rule=E35_CANCER_OUTPATIENT_EXTENSION allowed=18 survivor=CAND_001 oracle_match=True
+
+oracle_matches=6/6

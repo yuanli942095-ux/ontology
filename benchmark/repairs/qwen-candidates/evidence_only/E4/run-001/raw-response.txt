@@ -1,0 +1,18 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": ["CQ002"],
+      "rationale": "根据证据 EVID_011，'产品A' 的 '类型' 属性被声明为 '医疗保险'。在保险本体中，'财产保险'、'责任保险'、'车辆保险' 与 '疾病保险'（包含 '医疗保险'）通常是互斥的类别。因此，需要移除任何可能暗示 '产品A' 属于非医疗类保险的旧有属性值或断言，以确保知识图谱的一致性。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#承保类型",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "财产保险",
+        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    }
+  ]
+}

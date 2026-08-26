@@ -1,0 +1,16 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[OPTION_DESCRIPTION] Oracle=97.33% | 错误选择=0.67% | 无效=0.00% | ABSTAIN=2.00%
+[OPTION_DESCRIPTION_MASKED] Oracle=79.33% | 错误选择=9.33% | 无效=0.00% | ABSTAIN=11.33%
+[OPTION_DESCRIPTION_SHUFFLED] Oracle=10.00% | 错误选择=86.00% | 无效=0.00% | ABSTAIN=4.00%
+
+[OPTION_DESCRIPTION] 严格事件成功=27/30 (90.00%) | 事件宏平均=97.33% | 选择稳定事件=27/30
+[OPTION_DESCRIPTION_MASKED] 严格事件成功=22/30 (73.33%) | 事件宏平均=79.33% | 选择稳定事件=25/30
+[OPTION_DESCRIPTION_SHUFFLED] 严格事件成功=0/30 (0.00%) | 事件宏平均=10.00% | 选择稳定事件=0/30
+
+明细：G:\LearnAI\ontology-evolution\output\description-contrast-test-r5-seed20260820-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\description-contrast-test-r5-seed20260820-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\description-contrast-test-r5-seed20260820-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\description-contrast-test-r5-seed20260820-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\description-contrast-test-r5-seed20260820.json

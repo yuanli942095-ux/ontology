@@ -1,0 +1,7 @@
+﻿error_id,file_name,error_type,expected_cq_result,actual_cq_result,expected_failed_cqs,actual_failed_cqs,passed_cq_count,failed_cq_count,mapping_match,pass_or_fail
+BASELINE,insurance-validation-baseline.owl,无错误基线,PASS,PASS,,,12,0,true,PASS
+E1,E1_numeric_drift.owl,数值漂移,FAIL,FAIL,CQ004,CQ004,11,1,true,PASS
+E2,E2_missing_axiom.owl,公理缺失,FAIL,FAIL,CQ006,CQ006,11,1,true,PASS
+E3,E3_wrong_relation_target.owl,关系对象错误,FAIL,FAIL,CQ003,CQ003,11,1,true,PASS
+E4,E4_disjoint_class_conflict.owl,互斥类别冲突,FAIL,FAIL,CQ002,CQ002,11,1,true,PASS
+E5,E5_conflicting_functional_value.owl,功能属性值冲突,FAIL,FAIL,CQ004 | CQ005,CQ004 | CQ005,10,2,true,PASS

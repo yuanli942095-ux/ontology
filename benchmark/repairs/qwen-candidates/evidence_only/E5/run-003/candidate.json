@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ004"
+      ],
+      "rationale": "根据证据 EVID_014，'最高投保年龄' 属性被更新为 '65'。由于该属性具有 FunctionalProperty（函数属性）特性，即一个主体只能有一个值，因此必须移除旧值 '70' 以避免冲突。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "70",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

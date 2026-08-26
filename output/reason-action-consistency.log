@@ -1,0 +1,27 @@
+推理—动作一致性审计
+输入：G:\LearnAI\ontology-evolution\output\candidate-information-ablation-details.csv
+记录数：210
+
+SUCCESS：204 (97.14%)
+ACTION_MAPPING_ERROR：5 (2.38%)
+SEMANTIC_ERROR：0 (0.00%)
+OUTPUT_CONTRADICTION：1 (0.48%)
+ABSTAIN_VALID：0 (0.00%)
+ABSTAIN_UNNECESSARY：0 (0.00%)
+INVALID_OUTPUT：0 (0.00%)
+MANUAL_REVIEW：0 (0.00%)
+
+按方法：
+[DIRECT_FREE] 尝试=30 | 成功=30 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[OPTION_DESCRIPTION] 尝试=30 | 成功=30 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[OPTION_FORMAL_OPERATION] 尝试=30 | 成功=25 | 动作映射错误=5 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[OPTION_FORMAL_POLICY] 尝试=30 | 成功=30 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[OPTION_FORMAL_POLICY_HARD_GATE] 尝试=30 | 成功=30 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[OPTION_VALUE_ONLY] 尝试=30 | 成功=30 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=0 | 人工复核=0
+[VALUE_ENUM] 尝试=30 | 成功=29 | 动作映射错误=0 | 语义错误=0 | 输出矛盾=1 | 人工复核=0
+
+明细：G:\LearnAI\ontology-evolution\output\reason-action-consistency-details.csv
+按方法：G:\LearnAI\ontology-evolution\output\reason-action-consistency-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\reason-action-consistency-by-event.csv
+JSON：G:\LearnAI\ontology-evolution\output\reason-action-consistency.json
+[边界] 自动分类为诊断性启发式；MANUAL_REVIEW必须人工复核。

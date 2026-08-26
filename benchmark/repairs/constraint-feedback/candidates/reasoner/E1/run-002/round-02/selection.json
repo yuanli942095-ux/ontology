@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_014明确将最高投保年龄定义为65，而失败问题CQ004的current_actual_values显示为70。候选CAND_001执行替换操作（70→65），直接对齐了最新的有效证据和文本描述；候选CAND_003仅删除旧值但未提供新值，可能导致属性缺失或语义不完整。因此CAND_001是恢复正确业务语义的最佳选择。"
+}

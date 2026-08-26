@@ -1,0 +1,6 @@
+﻿error_id,file_name,error_type,affected_subject,affected_predicate,old_value,new_value,injected_change,expected_reasoner_result,expected_evidence_result,expected_shacl_result,expected_cq_result,primary_detector,ontology_iri
+E1,E1_numeric_drift.owl,数值漂移,产品A,最高投保年龄,65,70,将文档支持的65替换为70,CONSISTENT,FAIL,DEPENDS_ON_SHAPE,FAIL,证据校验/CQ,https://w3id.org/ontology-evolution/insurance-benchmark/E1-numeric-drift
+E2,E2_missing_axiom.owl,公理缺失,产品A,等待期天数,60,,删除等待期天数断言,CONSISTENT,FAIL,FAIL,FAIL,证据校验/SHACL/CQ,https://w3id.org/ontology-evolution/insurance-benchmark/E2-missing-axiom
+E3,E3_wrong_relation_target.owl,关系对象错误,产品A,由公司承保,保险公司甲,癌症,承保对象错误指向癌症,INCONSISTENT,FAIL,FAIL,FAIL,Reasoner/SHACL,https://w3id.org/ontology-evolution/insurance-benchmark/E3-wrong-relation-target
+E4,E4_disjoint_class_conflict.owl,互斥类别冲突,产品A,rdf:type,医疗保险,额外增加财产保险,产品A同时落入人身保险体系与财产保险,INCONSISTENT,FAIL,DEPENDS_ON_SHAPE,FAIL,Reasoner,https://w3id.org/ontology-evolution/insurance-benchmark/E4-disjoint-class-conflict
+E5,E5_conflicting_functional_value.owl,功能属性值冲突,产品A,最高投保年龄,65,同时存在65和70,为功能数据属性增加第二个冲突值,INCONSISTENT,FAIL,FAIL,FAIL,Reasoner/SHACL,https://w3id.org/ontology-evolution/insurance-benchmark/E5-conflicting-functional-value

@@ -1,0 +1,39 @@
+{
+  "event_id": "E37",
+  "semantics": "candidate_code_mapping_required",
+  "facts": {
+    "duration_code": "DURATION-CODE-REMOTE",
+    "remote_consultation_active": true,
+    "chronic_management_cancelled": true
+  },
+  "rules": [
+    {
+      "rule_id": "E37_DURATION_CHRONIC",
+      "priority": 300,
+      "when": {
+        "duration_code": "DURATION-CODE-CHRONIC",
+        "chronic_management_cancelled": false
+      },
+      "allowed_values": ["24"]
+    },
+    {
+      "rule_id": "E37_DURATION_REMOTE",
+      "priority": 200,
+      "when": {
+        "duration_code": "DURATION-CODE-REMOTE",
+        "remote_consultation_active": true
+      },
+      "allowed_values": ["18"]
+    },
+    {
+      "rule_id": "E37_DURATION_BASE",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["12"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E37_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

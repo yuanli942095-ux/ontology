@@ -1,0 +1,7 @@
+source=G:\LearnAI\ontology-evolution\output\description-perturbation-ablation-details.csv
+rows=120
+by_event=G:\LearnAI\ontology-evolution\output\description-perturbation-robustness-by-event.csv
+summary=G:\LearnAI\ontology-evolution\output\description-perturbation-robustness-summary.csv
+json=G:\LearnAI\ontology-evolution\output\description-perturbation-robustness.json
+[OPTION_DESCRIPTION_MASKED] strict=8/12 | stable=9/12 | order_sensitive=4/12 | accuracy=75.00% | abstain=1.67%
+[OPTION_DESCRIPTION_SHUFFLED] strict=0/12 | stable=0/12 | order_sensitive=12/12 | accuracy=8.33% | abstain=0.00%

@@ -1,0 +1,83 @@
+﻿run_id,seed,event_id,semantic_type,strict_status,audit_category,json_parse_pass,schema_pass,candidate_whitelist_pass,strict_accepted,strict_abstain,strict_selected_candidate_id,strict_selected_value,raw_value,normalized_value,weak_extracted_value,normalization_kind,normalization_strength,normalizable,weak_extractable,normalized_candidate_id,normalized_candidate_value,weak_extracted_candidate_id,weak_extracted_candidate_value,format_error,normalizable_violation,weak_text_candidate_match,out_of_candidate_value,parse_error,schema_error,abstain_raw,confidence,rationale,raw_content,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,oracle_value,oracle_candidate_id,strict_oracle_success,normalized_oracle_success,weak_extraction_oracle_match,strict_semantic_wrong,normalized_semantic_wrong,weak_extraction_semantic_wrong
+1,20260820,E9,TEMPORAL_VERSION,REJECTED_WEAK_EXTRACTION,WEAK_TEXT_EXTRACTION_CANDIDATE,True,True,False,False,False,,,People A's maximum insurable age is 65 years old.,,65,FREE_TEXT_SINGLE_NUMBER,WEAK,False,True,,,OPTION_B,65,False,False,True,False,,,False,0.95,"The case context specifies an evaluation date of August 20, 2026. DOC_E9_CURRENT (effective from July 1, 2026) applies to this date and states the maximum insurable age is 65 years old. DOC_E9_OLD expired on June 30, 2026, so it does not apply. The current document explicitly overrides previous versions.","{
+  ""abstain"": false,
+  ""value"": ""People A's maximum insurable age is 65 years old."",
+  ""confidence"": 0.95,
+  ""rationale"": ""The case context specifies an evaluation date of August 20, 2026. DOC_E9_CURRENT (effective from July 1, 2026) applies to this date and states the maximum insurable age is 65 years old. DOC_E9_OLD expired on June 30, 2026, so it does not apply. The current document explicitly overrides previous versions.""
+}",3804,json_schema,528,137,stop,65,CAND_002,False,False,True,False,False,False
+1,20260820,E10,GENERAL_RULE_EXCEPTION,REJECTED_NON_NUMERIC,NON_NUMERIC_VALUE,True,True,False,False,False,,,And,,,NON_NUMERIC_VALUE,NONE,False,False,,,,,False,False,False,False,,,False,1.0,"The document DOC_E10_TERMS explicitly states that for continuous renewal without interruption of coverage (matching the case context), the waiting period is treated as 0 days, and this exception overrides the general rule.","{
+  ""abstain"": false,
+  ""value"": ""And"",""confidence"": 1.0,""rationale"": ""The document DOC_E10_TERMS explicitly states that for continuous renewal without interruption of coverage (matching the case context), the waiting period is treated as 0 days, and this exception overrides the general rule.""
+}",2191,json_schema,408,75,stop,0,CAND_001,False,False,False,False,False,False
+1,20260820,E11,CROSS_SENTENCE_SCOPE,REJECTED_NON_NUMERIC,AMBIGUOUS_MULTIPLE_NUMBERS,True,True,False,False,False,,,"When the product A policy includes long-term medical supplementary liability, the insurance term is adjusted to 24 months. The case context confirms that the selected plan for Product A includes long-term medical supplementary liability. Therefore, the insurance term is 24 months.",,,AMBIGUOUS_MULTIPLE_NUMBERS,NONE,False,False,,,,,False,False,False,False,,,False,0.95,"The document DOC_E11_TERMS explicitly states that if the plan includes long-term medical supplementary liability, the insurance term becomes 24 months. The case context confirms this condition is met for Product A. The document authority (100) and effective date (2026-07-01) are appropriate.","{
+  ""abstain"": false,
+  ""value"": ""When the product A policy includes long-term medical supplementary liability, the insurance term is adjusted to 24 months. The case context confirms that the selected plan for Product A includes long-term medical supplementary liability. Therefore, the insurance term is 24 months."",
+  ""confidence"": 0.95,
+  ""rationale"": ""The document DOC_E11_TERMS explicitly states that if the plan includes long-term medical supplementary liability, the insurance term becomes 24 months. The case context confirms this condition is met for Product A. The document authority (100) and effective date (2026-07-01) are appropriate.""
+}",4062,json_schema,378,158,stop,24,CAND_002,False,False,False,False,False,False
+2,20260821,E9,TEMPORAL_VERSION,REJECTED_NON_NUMERIC,NON_NUMERIC_VALUE,True,True,False,False,False,,,People A,,,NON_NUMERIC_VALUE,NONE,False,False,,,,,False,False,False,False,,,False,0.95,评估日期为2026年8月20日，落在DOC_E9_CURRENT的生效期间内（2026-07-01至今）。该文档明确规定最高投保年龄调整为65周岁，且声明与旧版不一致时以新版为准。因此目标值为65。,"{
+  ""abstain"": false,
+  ""value"": ""People A"",
+  ""confidence"": 0.95,
+  ""rationale"": ""评估日期为2026年8月20日，落在DOC_E9_CURRENT的生效期间内（2026-07-01至今）。该文档明确规定最高投保年龄调整为65周岁，且声明与旧版不一致时以新版为准。因此目标值为65。""
+}",2795,json_schema,528,105,stop,65,CAND_002,False,False,False,False,False,False
+2,20260821,E10,GENERAL_RULE_EXCEPTION,REJECTED_NON_NUMERIC,NON_NUMERIC_VALUE,True,True,False,False,False,,,And,,,NON_NUMERIC_VALUE,NONE,False,False,,,,,False,False,False,False,,,False,1.0,文档 DOC_E10_TERMS 第四条明确规定，对于保障未中断的连续续保情况，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于保障从未中断的连续续保，满足例外条款条件。,"{
+  ""abstain"": false,
+  ""value"": ""And"",""confidence"": 1.0,""rationale"": ""文档 DOC_E10_TERMS 第四条明确规定，对于保障未中断的连续续保情况，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于保障从未中断的连续续保，满足例外条款条件。""
+}",2562,json_schema,408,93,stop,0,CAND_001,False,False,False,False,False,False
+2,20260821,E11,CROSS_SENTENCE_SCOPE,SELECTED,STRICT_VALID_SELECTED,True,True,True,True,False,OPTION_A,24,24,24,,EXACT_INTEGER_STRING,STRONG,True,False,OPTION_A,24,,,False,False,False,False,,,False,0.95,文档DOC_E11_TERMS具有最高权威性（authority=100）且生效时间覆盖当前。条款明确规定基础方案为12个月，但投保确认记录显示已选择长期医疗附加责任，触发例外规则将期限调整为24个月。,"{
+  ""abstain"": false,
+  ""value"": ""24"",
+  ""confidence"": 0.95,
+  ""rationale"": ""文档DOC_E11_TERMS具有最高权威性（authority=100）且生效时间覆盖当前。条款明确规定基础方案为12个月，但投保确认记录显示已选择长期医疗附加责任，触发例外规则将期限调整为24个月。""
+}",2635,json_schema,378,97,stop,24,CAND_002,True,True,False,False,False,False
+3,20260822,E9,TEMPORAL_VERSION,REJECTED_SCHEMA,SCHEMA_ERROR,True,False,False,False,False,,,,,,EMPTY_VALUE,NONE,False,False,,,,,True,False,False,False,,ValueError: abstain=false时value不能为空,False,0.95,评估日期为2026年8月20日，该日期晚于DOC_E9_OLD的生效截止期（2026-06-30）且早于DOC_E9_CURRENT的生效起始期（2026-07-01）之后。根据文件有效性判断，DOC_E9_CURRENT（现行条款）在评估时点有效。该文档明确规定最高投保年龄调整为65周岁。因此应返回65而非空值。,"{
+  ""abstain"": false,
+  ""value"": """",
+  ""confidence"": 0.95,
+  ""rationale"": ""评估日期为2026年8月20日，该日期晚于DOC_E9_OLD的生效截止期（2026-06-30）且早于DOC_E9_CURRENT的生效起始期（2026-07-01）之后。根据文件有效性判断，DOC_E9_CURRENT（现行条款）在评估时点有效。该文档明确规定最高投保年龄调整为65周岁。因此应返回65而非空值。""
+}",3600,json_schema,528,141,stop,65,CAND_002,False,False,False,False,False,False
+3,20260822,E10,GENERAL_RULE_EXCEPTION,REJECTED_NON_NUMERIC,ALPHANUMERIC_TOKEN,True,True,False,False,False,,,d0,,,ALPHANUMERIC_TOKEN,NONE,False,False,,,,,False,False,False,False,,,False,1.0,文档 DOC_E10_TERMS 第四条明确规定，对于保障未发生中断的连续续保情形，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于‘保障从未中断的连续续保’，完全满足例外条款条件。,"{
+  ""abstain"": false,
+  ""value"": ""d0"",
+  ""confidence"": 1.0,
+  ""rationale"": ""文档 DOC_E10_TERMS 第四条明确规定，对于保障未发生中断的连续续保情形，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于‘保障从未中断的连续续保’，完全满足例外条款条件。""
+}",2805,json_schema,408,104,stop,0,CAND_001,False,False,False,False,False,False
+3,20260822,E11,CROSS_SENTENCE_SCOPE,REJECTED_NON_NUMERIC,NON_NUMERIC_VALUE,True,True,False,False,False,,,They are not numbers.,,,NON_NUMERIC_VALUE,NONE,False,False,,,,,False,False,False,False,,,False,0.95,"The document explicitly states that the base term is 12 months and when 'Long-term Medical Additional Liability' (长期医疗附加责任) is selected, the term adjusts to 24 months. The case context confirms the selection of this additional liability. Therefore, the value is 24.","{
+  ""abstain"": false,
+  ""value"": ""They are not numbers."",
+  ""confidence"": 0.95,
+  ""rationale"": ""The document explicitly states that the base term is 12 months and when 'Long-term Medical Additional Liability' (长期医疗附加责任) is selected, the term adjusts to 24 months. The case context confirms the selection of this additional liability. Therefore, the value is 24.""
+}",2784,json_schema,378,103,stop,24,CAND_002,False,False,False,False,False,False
+4,20260823,E9,TEMPORAL_VERSION,REJECTED_JSON,JSON_FORMAT_ERROR,False,False,False,False,False,,,,,,EMPTY_VALUE,NONE,False,False,,,,,True,False,False,False,JSONDecodeError: Unterminated string starting at: line 5 column 16 (char 74),,,,,"{
+  ""abstain"": false,
+  ""value"": """",
+  ""confidence"": 0.95,
+  ""rationale"": ""评估日期为2026年8月20日，该日期晚于DOC_E9_OLD的生效截止期（2026-06-30）且早于DOC_E9_CURRENT的生效起始期（2026-07-01）。根据文档内容，DOC_E9_CURRENT明确规定自2026年7月1日起最高投保年龄调整为65周岁，并规定此前版本不一致的以本修订版为准。因此，尽管评估日期在两个文件的明确时间窗口之外，但现行有效规则（DOC_E9_CURRENT）已覆盖该时间点，应适用65周岁的数值。然而，根据指令要求‘只能依据提供的案件上下文和文档判断’且‘禁止使用外部常识’，若严格解读‘生效期间’字面含义，DOC_E9_OLD在2026-08-20已失效，而DOC_E9_CURRENT的text中未明确提及对2026-07-01之前签署合同的追溯力或过渡期安排。但在保险实务逻辑（及文档中的‘以本修订版为准’条款）下，新条款通常覆盖旧条款。鉴于指令要求直接给出整数值且证据充分（DOC_E9_CURRENT的权威性、明确例外",7149,json_schema,528,300,length,65,CAND_002,False,False,False,False,False,False
+4,20260823,E10,GENERAL_RULE_EXCEPTION,REJECTED_NON_NUMERIC,ALPHANUMERIC_TOKEN,True,True,False,False,False,,,d0,,,ALPHANUMERIC_TOKEN,NONE,False,False,,,,,False,False,False,False,,,False,1.0,文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理，且该例外优先于第三条的一般规定。案件上下文确认产品A属于‘保障从未中断的连续续保’，满足例外条款条件。,"{
+  ""abstain"": false,
+  ""value"": ""d0"",
+  ""confidence"": 1.0,
+  ""rationale"": ""文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理，且该例外优先于第三条的一般规定。案件上下文确认产品A属于‘保障从未中断的连续续保’，满足例外条款条件。""
+}",2731,json_schema,408,99,stop,0,CAND_001,False,False,False,False,False,False
+4,20260823,E11,CROSS_SENTENCE_SCOPE,REJECTED_SCHEMA,SCHEMA_ERROR,True,False,False,False,False,,,,,,EMPTY_VALUE,NONE,False,False,,,,,True,False,False,False,,ValueError: abstain=false时value不能为空,False,0.95,文档 DOC_E11_TERMS 明确定义产品 A 基础方案期限为 12 个月，若包含长期医疗附加责任则调整为 24 个月。案件上下文确认本次投保已选择‘长期医疗附加责任’，因此适用例外规则，保险期限应为 24 个月。但根据指令要求‘不要读取候选列表，直接根据文档给出 target 的整数值’且未提供候选列表供选择，若严格解读为仅输出文档中出现的原始数值（12 或 24），此处存在歧义：是输出计算后的 24 还是仅输出文档中的基础值？鉴于指令强调‘禁止使用外部常识’且需‘直接给出文档支持的整数值’，而文档同时支持 12 和 24 两种状态，当前案件满足调整条件，故应输出 24。但考虑到若系统期望的是从候选列表中匹配而非计算，则可能 abstain。然而指令明确说‘不要读取候选列表’，意味着无需外部输入，直接基于文档逻辑推导。因此 value=24。但再次检查指令：‘证据不足时 abstain=true'。此处证据充分（文档 + 上下文），故 abstain=false。value=24。,"{
+  ""abstain"": false,
+  ""value"": """",
+  ""confidence"": 0.95,
+  ""rationale"": ""文档 DOC_E11_TERMS 明确定义产品 A 基础方案期限为 12 个月，若包含长期医疗附加责任则调整为 24 个月。案件上下文确认本次投保已选择‘长期医疗附加责任’，因此适用例外规则，保险期限应为 24 个月。但根据指令要求‘不要读取候选列表，直接根据文档给出 target 的整数值’且未提供候选列表供选择，若严格解读为仅输出文档中出现的原始数值（12 或 24），此处存在歧义：是输出计算后的 24 还是仅输出文档中的基础值？鉴于指令强调‘禁止使用外部常识’且需‘直接给出文档支持的整数值’，而文档同时支持 12 和 24 两种状态，当前案件满足调整条件，故应输出 24。但考虑到若系统期望的是从候选列表中匹配而非计算，则可能 abstain。然而指令明确说‘不要读取候选列表’，意味着无需外部输入，直接基于文档逻辑推导。因此 value=24。但再次检查指令：‘证据不足时 abstain=true'。此处证据充分（文档 + 上下文），故 abstain=false。value=24。""
+}",7138,json_schema,378,300,stop,24,CAND_002,False,False,False,False,False,False
+5,20260824,E9,TEMPORAL_VERSION,REJECTED_SCHEMA,SCHEMA_ERROR,True,False,False,False,False,,,,,,EMPTY_VALUE,NONE,False,False,,,,,True,False,False,False,,ValueError: abstain=false时value不能为空,False,0.95,评估日期为2026年8月20日，落在DOC_E9_CURRENT（生效时间：2026-07-01）的有效期内。根据明确例外规则（DOC_E9_CURRENT中规定‘此前版本与本条不一致的，以本修订版为准’），产品A的最高投保年龄应取DOC_E9_CURRENT中的值65周岁。,"{
+  ""abstain"": false,
+  ""value"": """",""confidence"": 0.95,""rationale"": ""评估日期为2026年8月20日，落在DOC_E9_CURRENT（生效时间：2026-07-01）的有效期内。根据明确例外规则（DOC_E9_CURRENT中规定‘此前版本与本条不一致的，以本修订版为准’），产品A的最高投保年龄应取DOC_E9_CURRENT中的值65周岁。""}",2984,json_schema,528,112,stop,65,CAND_002,False,False,False,False,False,False
+5,20260824,E10,GENERAL_RULE_EXCEPTION,REJECTED_WEAK_EXTRACTION,WEAK_TEXT_EXTRACTION_CANDIDATE,True,True,False,False,False,,,"{""days"": 0}",,0,FREE_TEXT_SINGLE_NUMBER,WEAK,False,True,,,OPTION_A,0,False,False,True,False,,,False,1.0,文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理。该例外条款（authority=100）优先于第三条的一般规定（首次投保或中断后重新投保为60天）。案件上下文确认产品A属于‘保障从未中断的连续续保’，完全满足第四条的适用条件，因此排除一般规则，采用例外规则，等待期天数为0。,"{
+  ""abstain"": false,
+  ""value"": ""{\""days\"": 0}"",
+  ""confidence"": 1.0,
+  ""rationale"": ""文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理。该例外条款（authority=100）优先于第三条的一般规定（首次投保或中断后重新投保为60天）。案件上下文确认产品A属于‘保障从未中断的连续续保’，完全满足第四条的适用条件，因此排除一般规则，采用例外规则，等待期天数为0。""
+}",3616,json_schema,408,139,stop,0,CAND_001,False,False,True,False,False,False
+5,20260824,E11,CROSS_SENTENCE_SCOPE,REJECTED_NON_NUMERIC,AMBIGUOUS_MULTIPLE_NUMBERS,True,True,False,False,False,,,"{""product_A_basic"": 12, ""product_A_with_long_term_medical"": 24}",,,AMBIGUOUS_MULTIPLE_NUMBERS,NONE,False,False,,,,,False,False,False,False,,,False,0.95,文档DOC_E11_TERMS明确区分了基础方案（12个月）和包含长期医疗附加责任的方案（24个月）。案件上下文确认产品A选择了长期医疗附加责任，因此适用24个月的条款。,"{
+  ""abstain"": false,
+  ""value"": ""{\""product_A_basic\"": 12, \""product_A_with_long_term_medical\"": 24}"",
+  ""confidence"": 0.95,
+  ""rationale"": ""文档DOC_E11_TERMS明确区分了基础方案（12个月）和包含长期医疗附加责任的方案（24个月）。案件上下文确认产品A选择了长期医疗附加责任，因此适用24个月的条款。""
+}",2913,json_schema,378,109,stop,24,CAND_002,False,False,False,False,False,False

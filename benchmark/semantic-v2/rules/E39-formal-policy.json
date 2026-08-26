@@ -1,0 +1,58 @@
+{
+  "event_id": "E39",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "renewal": true,
+    "outpatient_extension_selected": true,
+    "health_management_selected": false
+  },
+  "rules": [
+    {
+      "rule_id": "E39_FIRST_HEALTH",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "renewal",
+          "operator": "equals",
+          "value": false
+        },
+        {
+          "fact": "health_management_selected",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    },
+    {
+      "rule_id": "E39_OUTPATIENT_RENEWAL",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "outpatient_extension_selected",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E39_BASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "12"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E39_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

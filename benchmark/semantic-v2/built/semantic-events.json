@@ -1,0 +1,4599 @@
+{
+  "schema_version": "2.0",
+  "built_at_utc": "2026-08-26T02:02:10.488096+00:00",
+  "oracle_used_for_candidate_filtering": false,
+  "events": [
+    {
+      "event_id": "E12",
+      "split": "dev",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "产品A最高投保年龄版本消歧",
+      "case_context": "评估日期为2026年8月20日，需要修复产品A当前有效的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E12.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E12_OLD",
+          "file_name": "E12_2025版保险条款.txt",
+          "authority": 100,
+          "effective_from": "2025-01-01",
+          "effective_to": "2026-06-30",
+          "issuer": "受控示例保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "9500a0559d8f5e9cbc49fd9abac91b7f88b10d29c0b95a57fe34a065f83c93ed"
+        },
+        {
+          "document_id": "DOC_E12_NEW",
+          "file_name": "E12_2026修订版保险条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "c4943a7c368ecd01d88ce0afec6c2e34ae64984b1f258f183a8917f6be8e8917"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "把产品A最高投保年龄从错误值70修复为60",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E12",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E12\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E12/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 524,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "把产品A最高投保年龄从错误值70修复为65",
+          "display_value": "65",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E12",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E12\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E12/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 506,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E13",
+      "split": "dev",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "已发布但未生效版本的投保年龄消歧",
+      "case_context": "评估日期为2026年8月20日。9月修订版虽然已经发布，但尚未生效，需要确定产品A当日有效的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E13.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E13_CURRENT",
+          "file_name": "E13_当前生效条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "2026-08-31",
+          "issuer": "受控示例保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "d7a1f4b0c2fa7572fc82afdebd6de6c9f3a87c9575db0439eb77a2db2f34a71b"
+        },
+        {
+          "document_id": "DOC_E13_FUTURE",
+          "file_name": "E13_已发布未生效条款.txt",
+          "authority": 100,
+          "effective_from": "2026-09-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "f509a86db1e8eb6a63616f9bb0f593b7d0685bd8caeb6a84e0e6808e710465bd"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按评估日当前生效版本修复为65周岁",
+          "display_value": "65",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "68",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E13",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E13\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E13/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 517,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按已发布但尚未生效版本修复为70周岁",
+          "display_value": "70",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "68",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E13",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E13\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E13/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 556,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E14",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "已发布未生效修订版的最高投保年龄消歧",
+      "case_context": "核保受理日为2026年8月20日，评估日期为2026年8月21日；9月修订版已经发布但尚未生效，需要确定产品A成人医疗计划当前适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E14_CURRENT",
+          "file_name": "E14_2026夏季现行投保年龄条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-01",
+          "effective_to": "2026-08-31",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "9f02da21df84d6001a689b15a6634035c758e2301e1aa6ffbbe35fbb267e5649"
+        },
+        {
+          "document_id": "DOC_E14_FUTURE",
+          "file_name": "E14_2026九月修订投保年龄条款.txt",
+          "authority": 100,
+          "effective_from": "2026-09-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "08823a07b4a57a1cb7e62e27e637ec21edc6f2b7b2a107ab14fb4ca7f50bf173"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按九月修订版本数值设为66周岁",
+          "display_value": "66",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "66",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E14",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E14\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E14/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 511,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按夏季现行版本数值设为62周岁",
+          "display_value": "62",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "62",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E14",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E14\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E14/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 500,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按团体转入旧方案数值设为60周岁",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E14",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E14\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E14/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 534,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E15",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "申请进入核保日期与后续评估日期的版本消歧",
+      "case_context": "投保申请于2026年7月20日进入核保流程，人工评估日期为2026年8月21日；8月版本在7月15日发布但8月1日才生效，需要确定产品A精选版适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E15.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E15_JULY",
+          "file_name": "E15_2026七月承保投保年龄条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "2026-07-31",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "62f95c71c8be3d76bb3de0ddb0632a26e201b834db8532ba5d12b42f01f5dacb"
+        },
+        {
+          "document_id": "DOC_E15_AUGUST",
+          "file_name": "E15_2026八月承保投保年龄条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "df0fc8bb05fbdd6c42ca15fa6839f6cc414720af965b4bbd2c386adbd83d406e"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按八月承保版本数值设为68周岁",
+          "display_value": "68",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "68",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E15",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E15\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E15/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 519,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按前序产品限额数值设为66周岁",
+          "display_value": "66",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "66",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E15",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E15\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E15/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 527,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按七月承保版本数值设为64周岁",
+          "display_value": "64",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "64",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E15",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E15\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E15/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 507,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E16",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "批单待备案与宣传摘要的投保年龄消歧",
+      "case_context": "核保受理日为2026年9月20日；批单宣传材料已经发布但备案尚未完成，客户也未提交连续续保证明，需要确定产品A成人医疗计划当前适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E16_TERMS",
+          "file_name": "E16_批单待备案投保年龄条款.txt",
+          "authority": 100,
+          "effective_from": "2026-09-05",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "949b4a609aece35b5f16ee839452b0db5057bf5fbdb730e44422535cd7bb2bfc"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按待备案批单宣传值设为72周岁",
+          "display_value": "72",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "72",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E16",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E16\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E16/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 499,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按当前备案版本数值设为67周岁",
+          "display_value": "67",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "67",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E16",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E16\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E16/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 526,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按连续续保历史方案设为64周岁",
+          "display_value": "64",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "64",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E16",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E16\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E16/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 488,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E17",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "年龄档位代码到最高投保年龄的候选映射消歧",
+      "case_context": "核保受理日为2026年9月25日；备案系统只返回年龄档位代码 AGE-BAND-G2，营销草案和续保通道均不适用，需要确定产品A当前适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E17_TERMS",
+          "file_name": "E17_年龄档位代码条款.txt",
+          "authority": 100,
+          "effective_from": "2026-09-18",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "d801da03348ee0a42691b8049ffcb1efdd2457acace35d75db91002536233a5a"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按营销草案 AGE-BAND-G1 映射为73周岁",
+          "display_value": "73",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "73",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E17",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E17\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E17/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 506,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按备案系统 AGE-BAND-G2 映射为63周岁",
+          "display_value": "63",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "63",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E17",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E17\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E17/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 517,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按历史续保 AGE-BAND-G3 映射为58周岁",
+          "display_value": "58",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "58",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E17",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E17\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E17/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 498,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E18",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "新版生效但旧版宽限期仍适用的投保年龄消歧",
+      "case_context": "核保受理日为2026年10月5日；新版已在10月1日生效，但申请在9月29日已进入旧版宽限队列，需要确定产品A当前适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E18_TERMS",
+          "file_name": "E18_新版生效但旧版宽限期仍适用的投保年龄消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-10-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "正式保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "a453fed5a41922285e8353dfd22bb07c6d9f2c6c5ac8f4eff660385b7a24bfbb"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按10月新版数值设为69周岁",
+          "display_value": "69",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "69",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E18",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E18\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E18/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 500,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按旧版宽限期规则设为61周岁",
+          "display_value": "61",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "61",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E18",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E18\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E18/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按历史标准版数值设为65周岁",
+          "display_value": "65",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E18",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E18\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E18/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 507,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E19",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "续保按原合同生效日锁定版本的投保年龄消歧",
+      "case_context": "本次为连续续保，当前续保处理日为2026年11月12日；条款要求续保沿用原合同生效日版本，需要确定产品A续保适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E19_TERMS",
+          "file_name": "E19_续保按原合同生效日锁定版本的投保年龄消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-11-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "续保版本适用条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "6b613bdb227fd375d1ad87fd29b0413c1538ac975ff64cac460cfc835d3c1eeb"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按当前11月新单版本设为72周岁",
+          "display_value": "72",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "72",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E19",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E19\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E19/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 491,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按原合同生效日版本设为64周岁",
+          "display_value": "64",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "64",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E19",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E19\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E19/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 496,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按中断后复效旧规则设为62周岁",
+          "display_value": "62",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "62",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E19",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E19\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E19/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 504,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E20",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "地区版本优先于全国通用版本的投保年龄消歧",
+      "case_context": "核保受理机构地区为华东分中心；全国通用版本和华北地区版本同时存在，需要确定产品A华东案件适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E20_TERMS",
+          "file_name": "E20_地区版本优先于全国通用版本的投保年龄消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "地区版本保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "89b9c3b01ca1342dc448de05219ecd31a82cb001df20c35cfac379b5e942d762"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按华北地区版本设为72周岁",
+          "display_value": "72",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "72",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E20",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E20\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E20/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 487,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按华东地区版本设为66周岁",
+          "display_value": "66",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "66",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E20",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E20\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E20/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 522,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按全国通用版本设为68周岁",
+          "display_value": "68",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "68",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E20",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E20\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E20/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 499,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E21",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "签发日晚于受理日但备案未完成的投保年龄消歧",
+      "case_context": "核保受理日为2026年12月12日；批单签发日早于受理日，但监管备案完成日在受理日之后，需要确定产品A适用的最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E21_TERMS",
+          "file_name": "E21_签发日晚于受理日但备案未完成的投保年龄消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-12-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "备案版本保险条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "e22d1a265d9e00dfadaf8002b13e662979ca85eecba9891e75dfb24b070de249"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按待备案批单签发值设为74周岁",
+          "display_value": "74",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "74",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E21",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E21\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E21/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 492,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按当前已备案版本设为67周岁",
+          "display_value": "67",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "67",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E21",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E21\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E21/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 490,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按上一年度备案版本设为65周岁",
+          "display_value": "65",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "65",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E21",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E21\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E21/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 481,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E22",
+      "split": "dev",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "连续续保等待期例外消歧",
+      "case_context": "本次投保属于连续续保，上一保险期间与本次保险期间没有中断，需要确定产品A适用的等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E22.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E22_TERMS",
+          "file_name": "E22_等待期及续保例外条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "等待期及续保特别约定",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "c4fce82f55e0168cac0c5f2cdd48b6aa631279b6c74dfd790bb4adbad12ab8ed"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "把错误等待期30修复为一般规则60天",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E22",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E22\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E22/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 504,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "把错误等待期30修复为连续续保例外0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E22",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E22\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E22/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 495,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E23",
+      "split": "dev",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "中断续保复效的嵌套例外消歧",
+      "case_context": "该客户不是首次投保；其续保资格曾中断，之后经保险公司批准恢复保障。需要确定产品A本次适用的等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E23.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E23_TERMS",
+          "file_name": "E23_等待期续保与复效条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "等待期与复效特别约定",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "fda0ad0219f9c975ebd7c9ae77dcd35706f802abcba52a0e0a82149ed9415657"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按一般首次投保规则修复为60天",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E23",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E23\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E23/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 492,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按连续且未中断续保规则修复为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E23",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E23\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E23/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 491,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按中断后复效规则修复为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E23",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E23\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E23/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 495,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E24",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "团体连续转入等待期例外消歧",
+      "case_context": "本次申请由合作单位团体计划转入，原保障未中断，连续保障证明在第20日提交；需要确定产品A个人计划适用的等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E24_TERMS",
+          "file_name": "E24_团体转入等待期特别约定.txt",
+          "authority": 100,
+          "effective_from": "2026-07-10",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "等待期特别约定",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "343864821c6d72bad03b320043d9e43eb7e5e363f6d681fc7cf72c9a30aca16d"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按首次投保一般规则设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E24",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E24\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E24/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 494,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按连续转入证明规则设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E24",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E24\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E24/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 496,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按延迟提交证明规则设为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E24",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E24\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E24/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 489,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E25",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "少儿延迟投保等待期例外消歧",
+      "case_context": "本次申请在被保险人出生后第46日提交，健康告知无异常且无既往重大疾病记录；需要确定产品A少儿计划适用的疾病责任等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E25_TERMS",
+          "file_name": "E25_少儿投保等待期特别约定.txt",
+          "authority": 100,
+          "effective_from": "2026-07-15",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "等待期特别约定",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "89d50d047927515f28ad3d65bb2e6a3e2eda70a560eb8fd3a233a8dc65b07bf3"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按少儿延迟投保规则设为15天",
+          "display_value": "15",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "15",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E25",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E25\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E25/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 488,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按出生后30日内规则设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E25",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E25\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E25/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 508,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按少儿计划一般规则设为60天",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E25",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E25\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E25/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 497,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E26",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "团体转入证明逾期补交等待期消歧",
+      "case_context": "本次申请由合作单位团体计划转入，原保障未中断；连续保障证明在申请后第18日提交且核保确认有效，需要确定产品A个人计划疾病责任等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E26_TERMS",
+          "file_name": "E26_团转证明逾期等待期条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-10",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "等待期特别约定",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "bc15bb45fa9c8aef8a455b7ecc7315dde8a0c7cb31277233a83150d0014f1a9e"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按15日内提交证明规则设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E26",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E26\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E26/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 526,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按逾期补交证明规则设为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E26",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E26\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E26/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 502,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按首次投保一般规则设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E26",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E26\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E26/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 502,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E27",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "等待期规则代码到候选天数的映射消歧",
+      "case_context": "本次申请由团体计划转入，原保障未中断；规则引擎返回 WAIT-CODE-LATE-PROOF，需要确定产品A个人计划疾病责任等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E27_TERMS",
+          "file_name": "E27_等待期代码条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-18",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "296dd4d62fd8cb92d22663afcc64bca7d29adef63fc8e3b718872553d3f2aaa2"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按 WAIT-CODE-WAIVER 映射为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E27",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E27\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E27/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 493,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按 WAIT-CODE-LATE-PROOF 映射为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E27",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E27\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E27/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 505,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按 WAIT-CODE-GENERAL 映射为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E27",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E27\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E27/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 494,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E28",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "连续保障证明提前提交的等待期例外消歧",
+      "case_context": "本次申请由团体计划连续转入，原保障未中断；连续保障证明在申请后第12日提交并核保确认有效，需要确定等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E28_TERMS",
+          "file_name": "E28_连续保障证明提前提交的等待期例外消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-08-20",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "等待期特别约定",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "494fc90189cd1ef3bcaea4dde698d7418386d8fc385feef4ad88fe3e8496554d"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按首次投保一般规则设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E28",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E28\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E28/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 533,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按15日内提交证明例外设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E28",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E28\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E28/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 497,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按逾期补交证明规则设为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E28",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E28\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E28/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 490,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E29",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "特定疾病类别覆盖一般等待期的消歧",
+      "case_context": "本次申请属于特定恶性肿瘤责任，非意外伤害责任；需要确定产品A疾病责任等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E29_TERMS",
+          "file_name": "E29_特定疾病类别覆盖一般等待期的消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-08-20",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "疾病类别等待期条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "e41fe85ffc2af26524501c586c658619ed14a1b9b00e16a1648ee6cc30a6d532"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按意外伤害责任设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E29",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E29\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E29/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 497,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按特定恶性肿瘤责任设为45天",
+          "display_value": "45",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E29",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E29\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E29/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 499,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按普通疾病责任设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E29",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E29\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E29/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 509,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E30",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "VIP团体低赔付率例外等待期消歧",
+      "case_context": "本次申请来自VIP合作团体，上一年度赔付率低于阈值且名单已确认，需要确定产品A个人计划等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E30_TERMS",
+          "file_name": "E30_VIP团体低赔付率例外等待期消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-08-25",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "团体客户等待期条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "9ee1c904fe2f305255724df95d98f59ed9ec312d2828307d5d9f5fa8eeefb478"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按普通个人新单规则设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E30",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E30\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E30/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 493,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按标准合作团体规则设为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E30",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E30\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E30/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 500,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按VIP低赔付率例外设为15天",
+          "display_value": "15",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "15",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E30",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E30\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E30/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 525,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E31",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "既有核保批注豁免等待期的例外消歧",
+      "case_context": "客户不是首次投保，存在仍有效的既有核保批注；批注明确本次同责任续保豁免等待期，需要确定等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E31_TERMS",
+          "file_name": "E31_既有核保批注豁免等待期的例外消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保批注等待期条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "7f2f1f88914c1a840eed7b356866c7aabd1603d226c13d3efdf0668e95bda20b"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按无批注新申请规则设为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E31",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E31\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E31/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 502,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按责任范围变化续保规则设为60天",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E31",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E31\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E31/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 489,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按既有核保批注豁免设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E31",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E31\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E31/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 498,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E32",
+      "split": "dev",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "附加责任条件下保险期限消歧",
+      "case_context": "需要根据条款和投保确认记录，确定本次产品A投保方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E32.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E32_TERMS",
+          "file_name": "E32_保险期限与附加责任条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "保险期限与附加责任说明",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "21bd1034b4cd1cfadaa85492a9ed315715a04f55a7f3d143d3034dfdf7e27852"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "把错误期限18修复为基础方案12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E32",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E32\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E32/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 492,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "把错误期限18修复为附加责任方案24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E32",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E32\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E32/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 510,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E33",
+      "split": "dev",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "附加责任与海外扩展的跨句范围消歧",
+      "case_context": "需要结合条款、投保申请记录和核保确认记录，确定本次产品A方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E33.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E33_TERMS",
+          "file_name": "E33_多方案保险期限条款.txt",
+          "authority": 100,
+          "effective_from": "2026-07-01",
+          "effective_to": "",
+          "issuer": "受控示例保险公司",
+          "document_type": "多方案保险期限说明",
+          "source_type": "CONTROLLED_DEV",
+          "sha256": "97bc0ede47c6b42099c3d240ce2806d6cc973bc5327b08890ce8e036736107e5"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障修复为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E33",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E33\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E33/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 506,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按长期医疗附加责任修复为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E33",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E33\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E33/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 505,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按同时选择海外扩展责任修复为36个月",
+          "display_value": "36",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "36",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E33",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E33\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E33/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 496,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E34",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "长期照护附加责任与否定确认的期限消歧",
+      "case_context": "投保记录显示选择长期照护附加责任，核保确认显示未选择费用垫付责任；需要跨条款确定产品A本次方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E34_TERMS",
+          "file_name": "E34_长期照护责任期限条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "保险期限与附加责任说明",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "2a987c87ef99b11da69970d747c7a1bf28c00ccacefa68db7adc4b887e207df5"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E34",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E34\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E34/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按费用垫付组合期限设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E34",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E34\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E34/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按长期照护附加责任期限设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E34",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E34\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E34/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 517,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E35",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "门诊扩展责任指代范围的期限消歧",
+      "case_context": "本次申请勾选癌症门诊扩展责任，补充确认说明被保险人58周岁且未选择前款所称境外就医责任；需要确定产品A本次方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E35.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E35_TERMS",
+          "file_name": "E35_门诊扩展责任期限条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "保险期限与附加责任说明",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "8b9f880f94d030ef5611742083fd3e8bc06ed6229d52409368be5491f9bf5ad6"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按癌症门诊扩展责任期限设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E35",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E35\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E35/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 528,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E35",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E35\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E35/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 520,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按境外就医组合期限设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E35",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E35\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E35/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 496,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E36",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "远程问诊与取消慢病管理责任的期限消歧",
+      "case_context": "投保申请勾选远程问诊附加责任，并曾预选慢病管理附加责任；核保确认显示慢病管理已在承保前取消，需要确定产品A本次方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E36_TERMS",
+          "file_name": "E36_远程问诊附加责任期限条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-15",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "保险期限与附加责任说明",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "5b857f485ccdfcd35d458a0996fd7fdf72116b94adf14a0d9a81fafce87c16bf"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E36",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E36\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E36/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 492,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按远程问诊附加责任期限设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E36",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E36\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E36/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 505,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按慢病管理附加责任期限设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E36",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E36\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E36/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 498,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E37",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "期限规则代码到候选月数的映射消歧",
+      "case_context": "投保申请保留远程问诊附加责任，慢病管理附加责任已取消；规则引擎返回 DURATION-CODE-REMOTE，需要确定产品A本次方案的保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E37_TERMS",
+          "file_name": "E37_保险期限代码条款.txt",
+          "authority": 100,
+          "effective_from": "2026-08-20",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "9a4067debb9b97618e08b37577560db89146db1aab3d6937597c3835ade793f5"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按 DURATION-CODE-BASE 映射为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E37",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E37\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E37/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 495,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按 DURATION-CODE-REMOTE 映射为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E37",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E37\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E37/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 506,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按 DURATION-CODE-CHRONIC 映射为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E37",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E37\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E37/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 494,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E38",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "附加责任限定句排除牙科责任的期限消歧",
+      "case_context": "投保申请勾选远程问诊附加责任，未选择牙科附加责任；条款后句限定24个月仅适用于牙科责任，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E38_TERMS",
+          "file_name": "E38_附加责任限定句排除牙科责任的期限消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-01",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "保险期限与附加责任说明",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "9f928dba8f7aacb902990531df5fc65c9ad236375db4b31334723e95aa374b80"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E38",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E38\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E38/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 504,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按远程问诊附加责任期限设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E38",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E38\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E38/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 504,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按牙科附加责任限定期限设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E38",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E38\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E38/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 492,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E39",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "首次投保限定句排除续保方案的期限消歧",
+      "case_context": "本案为连续续保，勾选门诊扩展责任；条款中24个月仅限首次投保客户，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E39_TERMS",
+          "file_name": "E39_首次投保限定句排除续保方案的期限消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-03",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "续保附加责任期限条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "6163d581ab67793ba730f9b7974db77d1f255954065470a18d10b1f6b31de10d"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础续保方案设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E39",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E39\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E39/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 494,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按门诊扩展责任设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E39",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E39\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E39/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 483,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按首次投保健康管理组合设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E39",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E39\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E39/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 486,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E40",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "段落标题限定适用范围的期限消歧",
+      "case_context": "文档同页出现高龄照护段落和普通成人段落；本案为普通成人计划并选择远程问诊，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E40_TERMS",
+          "file_name": "E40_段落标题限定适用范围的期限消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-05",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "分段责任期限条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "3efe8911e887e9d6ea36ab2b568055c926450f94a2436662278e33dbc74cfaec"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按普通成人基础保障设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E40",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E40\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E40/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 498,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按普通成人远程问诊责任设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E40",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E40\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E40/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 494,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按高龄照护计划长期照护责任设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E40",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E40\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E40/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 502,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E41",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "上述情形除外限定海外责任的期限消歧",
+      "case_context": "本案选择远程问诊责任，未选择海外医疗扩展；后句写明上述24个月情形仅限海外医疗扩展，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E41_TERMS",
+          "file_name": "E41_上述情形除外限定海外责任的期限消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-08",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "跨句除外期限条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "78480ddd17bcffb8766e3717a4ad4d448557ccf7a6834523a1a2d5fc45b97ad2"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E41",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E41\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E41/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 488,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按远程问诊责任期限设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E41",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E41\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E41/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 490,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按海外医疗扩展除外情形设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E41",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E41\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E41/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 499,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E42",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "版本代码到最高投保年龄的候选映射消歧",
+      "case_context": "核保系统只返回版本代码 VER-AGE-2026Q4-B；人工界面未展示数值，需要根据候选修复表确定产品A最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E42_TERMS",
+          "file_name": "E42_版本代码到最高投保年龄的候选映射消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-10-15",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "ab0ccc422e475801877dc34af421c8933ddd7cc959a62060a7fbcd365ae1d050"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按 VER-AGE-2026Q4-A 映射为71周岁",
+          "display_value": "71",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "71",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E42",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E42\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E42/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 500,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按 VER-AGE-2026Q4-B 映射为59周岁",
+          "display_value": "59",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "59",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E42",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E42\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E42/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 514,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按 VER-AGE-2026Q3-C 映射为63周岁",
+          "display_value": "63",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "63",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E42",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E42\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E42/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 516,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E43",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "domain": "insurance",
+      "title": "批单不追溯适用的最高投保年龄消歧",
+      "case_context": "批单发布日为2026年9月10日，但规定仅适用于2026年9月15日及以后签发的合同；本案合同签发日为2026年9月12日，需要确定最高投保年龄。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "最高投保年龄",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "100"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E43_TERMS",
+          "file_name": "E43_批单不追溯适用的最高投保年龄消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-10",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "批单适用范围条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "146e37d05be2d1178f610ba5af73afdef61db42ccb0d23c7069db3cced8dd3a9"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按批单调整值设为66周岁",
+          "display_value": "66",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "66",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E43",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E43\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E43/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按不追溯上一版本设为62周岁",
+          "display_value": "62",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "62",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E43",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E43\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E43/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 496,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按更早历史版本设为60周岁",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "70",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E43",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E43\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E43/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 505,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E44",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "少儿多例外冲突时高优先级等待期消歧",
+      "case_context": "少儿计划在出生后第20日提交，但新生儿住院观察记录触发特殊观察期；需要确定疾病责任等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E44_TERMS",
+          "file_name": "E44_少儿多例外冲突时高优先级等待期消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-05",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "少儿多例外等待期条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "846ec20cd1f46446ba2cd69780b3e9295d484bf75e8eb0ae5b5cf8467fb05674"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按出生后30日内规则设为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E44",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E44\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E44/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 536,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按新生儿住院观察优先规则设为30天",
+          "display_value": "30",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E44",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E44\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E44/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 516,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按少儿计划一般规则设为60天",
+          "display_value": "60",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "60",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E44",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E44\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E44/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 502,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E45",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "domain": "insurance",
+      "title": "等待期复效代码到候选天数的映射消歧",
+      "case_context": "复效审核系统返回 WAIT-CODE-REINSTATE；文档不直接给出数值，需要通过候选映射确定等待期。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "等待期天数",
+        "value_kind": "literal_integer",
+        "allowed_min": "0",
+        "allowed_max": "365"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E45_TERMS",
+          "file_name": "E45_等待期复效代码到候选天数的映射消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-10",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "核保代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "37679da304f486ce14913e4590c613bdf60ef0aa5eb41cefa30a1e19ab4b7ef8"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按 WAIT-CODE-WAIVER 映射为0天",
+          "display_value": "0",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "0",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E45",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E45\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E45/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 511,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按 WAIT-CODE-REINSTATE 映射为45天",
+          "display_value": "45",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "45",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E45",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E45\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E45/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 495,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按 WAIT-CODE-GENERAL 映射为90天",
+          "display_value": "90",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "30",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "90",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E45",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E45\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E45/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E46",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "表格脚注限定尊享计划的期限消歧",
+      "case_context": "条款表格中24个月带脚注，仅限尊享计划；本案为标准计划并选择康复指导责任，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E46_TERMS",
+          "file_name": "E46_表格脚注限定尊享计划的期限消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-12",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "表格脚注期限条款",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "275fd1e9253ed1321d2f931c32088ebc9ef801afb18710b8b90a5a723cf6a5b7"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按基础保障期限设为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E46",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E46\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E46/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 511,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按康复指导责任设为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E46",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E46\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E46/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 488,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按尊享计划脚注期限设为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E46",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E46\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E46/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 485,
+            "formally_safe": true
+          }
+        }
+      ]
+    },
+    {
+      "event_id": "E47",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "domain": "insurance",
+      "title": "期限脚注代码到候选月数的映射消歧",
+      "case_context": "规则引擎返回 DURATION-CODE-FOOTNOTE-STD；文档说明代码到月数由候选修复表维护，需要确定保险期限。",
+      "target": {
+        "subject_label": "产品A",
+        "predicate_label": "保险期限月数",
+        "value_kind": "literal_integer",
+        "allowed_min": "1",
+        "allowed_max": "120"
+      },
+      "source_owl": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "documents": [
+        {
+          "document_id": "DOC_E47_TERMS",
+          "file_name": "E47_期限脚注代码到候选月数的映射消歧.txt",
+          "authority": 100,
+          "effective_from": "2026-09-15",
+          "effective_to": "",
+          "issuer": "受控测试保险公司",
+          "document_type": "期限代码记录",
+          "source_type": "CONTROLLED_TEST",
+          "sha256": "3790846f7be440374d8025cd08f91648d99262bb90bc610b4394ab860cea98f2"
+        }
+      ],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "按 DURATION-CODE-BASE 映射为12个月",
+          "display_value": "12",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "12",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E47",
+            "candidate_id": "CAND_001",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E47\\CAND_001.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E47/CAND_001",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 493,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "按 DURATION-CODE-FOOTNOTE-STD 映射为18个月",
+          "display_value": "18",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "18",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E47",
+            "candidate_id": "CAND_002",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E47\\CAND_002.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E47/CAND_002",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 503,
+            "formally_safe": true
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "按 DURATION-CODE-PREMIUM 映射为24个月",
+          "display_value": "24",
+          "operation": {
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+            "predicate_iri": "file:///G:/LearnAI/ontology-1#保险期限月数",
+            "old_value": {
+              "kind": "literal",
+              "lexical": "20",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            },
+            "new_value": {
+              "kind": "literal",
+              "lexical": "24",
+              "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          },
+          "formal_effect": {
+            "event_id": "E47",
+            "candidate_id": "CAND_003",
+            "operator": "REPLACE_PROPERTY_VALUE",
+            "candidate_owl": "benchmark\\semantic-v2\\built\\candidate-owls\\E47\\CAND_003.owl",
+            "ontology_iri": "https://w3id.org/ontology-evolution/semantic-v2/E47/CAND_003",
+            "triples_removed": 1,
+            "triples_added": 1,
+            "minimal_edit": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_runtime_ms": 506,
+            "formally_safe": true
+          }
+        }
+      ]
+    }
+  ]
+}

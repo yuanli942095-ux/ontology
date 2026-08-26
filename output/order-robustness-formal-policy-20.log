@@ -1,0 +1,14 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[OPTION_FORMAL_POLICY] Oracle=72.50% | 错误选择=27.50% | 无效=0.00% | ABSTAIN=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] Oracle=100.00% | 错误选择=0.00% | 无效=0.00% | ABSTAIN=0.00%
+
+[OPTION_FORMAL_POLICY] 严格事件成功=0/2 (0.00%) | 事件宏平均=72.50% | 选择稳定事件=0/2
+[OPTION_FORMAL_POLICY_HARD_GATE] 严格事件成功=2/2 (100.00%) | 事件宏平均=100.00% | 选择稳定事件=2/2
+
+明细：G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20.json

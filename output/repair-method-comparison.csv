@@ -1,0 +1,3 @@
+﻿method,attempts,errors_covered,accepted_candidates,repair_successes,json_parse_rate,schema_pass_rate,iri_guard_pass_rate,literal_guard_pass_rate,apply_pass_rate,abstention_rate,accepted_candidate_rate,reasoner_gate_rate,evidence_gate_rate,cq_gate_rate,minimal_edit_gate_rate,synthetic_oracle_gate_rate,repair_success_rate,repair_success_ci95_low,repair_success_ci95_high,conditional_success_given_accepted,macro_error_success_rate,mean_operation_count,mean_generation_runtime_ms,mean_confidence,mean_operation_consensus
+deterministic_finite_operator,5,5,5,5,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.565518,1.0,1.0,1.0,1.0,,,1.0
+qwen_constrained,25,5,10,4,1.0,1.0,0.92,0.88,0.4,0.0,0.4,0.28,0.16,0.16,0.4,0.16,0.16,0.064035,0.346536,0.4,0.16,1.0,7248.4,0.855,0.75

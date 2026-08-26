@@ -1,0 +1,52 @@
+{
+  "event_id": "E29",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "liability_category": "SPECIFIC_CANCER",
+    "accident_liability": false
+  },
+  "rules": [
+    {
+      "rule_id": "E29_ACCIDENT",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "accident_liability",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "0"
+      ]
+    },
+    {
+      "rule_id": "E29_SPECIFIC_CANCER",
+      "priority": 250,
+      "conditions": [
+        {
+          "fact": "liability_category",
+          "operator": "equals",
+          "value": "SPECIFIC_CANCER"
+        }
+      ],
+      "allowed_values": [
+        "45"
+      ]
+    },
+    {
+      "rule_id": "E29_GENERAL_DISEASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "90"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E29_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

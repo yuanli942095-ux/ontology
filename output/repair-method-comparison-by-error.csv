@@ -1,0 +1,6 @@
+﻿error_id,error_type,deterministic_attempts,deterministic_successes,deterministic_success_rate,qwen_attempts,qwen_accepted,qwen_successes,qwen_success_rate,qwen_conditional_success,qwen_operation_consensus,success_rate_delta_qwen_minus_baseline
+E1,数值漂移,1,1,1.0,5,2,0,0.0,0.0,1.0,-1.0
+E2,公理缺失,1,1,1.0,5,0,0,0.0,0.0,0.0,-1.0
+E3,关系对象错误,1,1,1.0,5,2,0,0.0,0.0,0.5,-1.0
+E4,互斥类别冲突,1,1,1.0,5,2,0,0.0,0.0,0.5,-1.0
+E5,功能属性值冲突,1,1,1.0,5,4,4,0.8,1.0,1.0,-0.2

@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "候选 CAND_001 直接利用当前有效证据 EVID_015（产品 A 等待期为 60 天）来修复失败的问题 CQ006，该证据的文档状态为“当前有效”且经过人工验证，完全满足业务语义恢复需求。"
+}

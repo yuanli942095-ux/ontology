@@ -1,0 +1,15 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_CLASS_ASSERTION",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ006"
+      ],
+      "rationale": "根据证据 EVID_015，'产品A'的等待期天数为 60。原始 CQ006 中关于'产品A'的断言与当前有效证据冲突，需移除该断言以保持一致性。",
+      "class_iri": "file:///G:/LearnAI/ontology-1#等待期天数"
+    }
+  ]
+}

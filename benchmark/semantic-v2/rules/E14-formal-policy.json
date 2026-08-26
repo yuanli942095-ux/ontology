@@ -1,0 +1,49 @@
+{
+  "event_id": "E14",
+  "semantics": "temporal_effective_version_with_future_publication",
+  "facts": {
+    "underwriting_acceptance_date": "2026-08-20",
+    "assessment_date": "2026-08-21",
+    "group_transfer_confirmed": false
+  },
+  "rules": [
+    {
+      "rule_id": "E14_CURRENT_EFFECTIVE_VERSION",
+      "priority": 300,
+      "when": {
+        "underwriting_acceptance_date": {
+          "on_or_after": "2026-08-01",
+          "on_or_before": "2026-08-31"
+        },
+        "group_transfer_confirmed": {
+          "equals": false
+        }
+      },
+      "allowed_values": ["62"]
+    },
+    {
+      "rule_id": "E14_GROUP_TRANSFER_EXCEPTION",
+      "priority": 200,
+      "when": {
+        "group_transfer_confirmed": {
+          "equals": true
+        }
+      },
+      "allowed_values": ["60"]
+    },
+    {
+      "rule_id": "E14_FUTURE_VERSION_SCOPE",
+      "priority": 100,
+      "when": {
+        "underwriting_acceptance_date": {
+          "on_or_after": "2026-09-01"
+        }
+      },
+      "allowed_values": ["66"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E14_CURRENT", "DOC_E14_FUTURE"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

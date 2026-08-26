@@ -1,0 +1,58 @@
+{
+  "event_id": "E44",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "days_after_birth": 20,
+    "health_declaration_clean": true,
+    "neonatal_observation_record": true
+  },
+  "rules": [
+    {
+      "rule_id": "E44_NEONATAL_OBSERVATION",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "neonatal_observation_record",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "30"
+      ]
+    },
+    {
+      "rule_id": "E44_WITHIN_30_DAYS",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "days_after_birth",
+          "operator": "less_or_equal",
+          "value": 30
+        },
+        {
+          "fact": "health_declaration_clean",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "0"
+      ]
+    },
+    {
+      "rule_id": "E44_CHILD_GENERAL",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "60"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E44_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

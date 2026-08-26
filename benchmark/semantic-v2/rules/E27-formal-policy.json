@@ -1,0 +1,38 @@
+{
+  "event_id": "E27",
+  "semantics": "candidate_code_mapping_required",
+  "facts": {
+    "waiting_code": "WAIT-CODE-LATE-PROOF",
+    "proof_submission_marker": "D_PLUS_18",
+    "proof_confirmed_valid": true
+  },
+  "rules": [
+    {
+      "rule_id": "E27_WAIT_WAIVER",
+      "priority": 300,
+      "when": {
+        "waiting_code": "WAIT-CODE-WAIVER"
+      },
+      "allowed_values": ["0"]
+    },
+    {
+      "rule_id": "E27_WAIT_LATE_PROOF",
+      "priority": 250,
+      "when": {
+        "waiting_code": "WAIT-CODE-LATE-PROOF",
+        "proof_confirmed_valid": true
+      },
+      "allowed_values": ["30"]
+    },
+    {
+      "rule_id": "E27_WAIT_GENERAL",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["90"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E27_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

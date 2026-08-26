@@ -1,0 +1,33 @@
+候选顺序与编号随机化鲁棒性实验日志
+独立错误事件：8
+每个场景的随机排列次数：1000
+注意：排列重复用于测试鲁棒性，不等于增加独立错误样本。
+
+[ORDER_AND_ID_RELABEL/FIRST_POSITION] 覆盖=100.00% | 安全接受=54.95% | 错误接受=45.05% | Oracle=54.95% | 选择稳定性=51.35%
+[ORDER_AND_ID_RELABEL/FULL_GATE_CONTENT_HASH] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=93.81%
+[ORDER_AND_ID_RELABEL/FULL_GATE_FIRST_SURVIVOR] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=94.27%
+[ORDER_AND_ID_RELABEL/FULL_GATE_RANDOM_SURVIVOR] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=93.91%
+[ORDER_AND_ID_RELABEL/FULL_GATE_UNIQUE_ONLY] 覆盖=87.50% | 安全接受=87.50% | 错误接受=0.00% | Oracle=87.50% | 选择稳定性=100.00%
+[ORDER_AND_ID_RELABEL/LOWEST_CURRENT_CANDIDATE_ID] 覆盖=100.00% | 安全接受=54.95% | 错误接受=45.05% | Oracle=54.95% | 选择稳定性=51.35%
+[ORDER_AND_ID_RELABEL/RANDOM_ALL] 覆盖=100.00% | 安全接受=53.61% | 错误接受=46.39% | Oracle=53.61% | 选择稳定性=51.64%
+[ORDER_AND_ID_RELABEL/REASONER_UNIQUE_ONLY] 覆盖=25.00% | 安全接受=25.00% | 错误接受=0.00% | Oracle=25.00% | 选择稳定性=100.00%
+[ORDER_AND_ID_RELABEL/UNIQUE_MIN_EDIT] 覆盖=37.50% | 安全接受=25.00% | 错误接受=12.50% | Oracle=25.00% | 选择稳定性=100.00%
+[ORDER_ONLY/FIRST_POSITION] 覆盖=100.00% | 安全接受=54.19% | 错误接受=45.81% | Oracle=54.19% | 选择稳定性=51.12%
+[ORDER_ONLY/FULL_GATE_CONTENT_HASH] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=93.80%
+[ORDER_ONLY/FULL_GATE_FIRST_SURVIVOR] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=93.92%
+[ORDER_ONLY/FULL_GATE_RANDOM_SURVIVOR] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=93.81%
+[ORDER_ONLY/FULL_GATE_UNIQUE_ONLY] 覆盖=87.50% | 安全接受=87.50% | 错误接受=0.00% | Oracle=87.50% | 选择稳定性=100.00%
+[ORDER_ONLY/LOWEST_CURRENT_CANDIDATE_ID] 覆盖=100.00% | 安全接受=100.00% | 错误接受=0.00% | Oracle=100.00% | 选择稳定性=100.00%
+[ORDER_ONLY/RANDOM_ALL] 覆盖=100.00% | 安全接受=54.37% | 错误接受=45.62% | Oracle=54.37% | 选择稳定性=50.98%
+[ORDER_ONLY/REASONER_UNIQUE_ONLY] 覆盖=25.00% | 安全接受=25.00% | 错误接受=0.00% | Oracle=25.00% | 选择稳定性=100.00%
+[ORDER_ONLY/UNIQUE_MIN_EDIT] 覆盖=37.50% | 安全接受=25.00% | 错误接受=12.50% | Oracle=25.00% | 选择稳定性=100.00%
+
+ORDER_AND_ID_RELABEL：FIRST_POSITION降至54.95%，原先100%存在明显顺序泄漏。
+ORDER_AND_ID_RELABEL：完整门禁在顺序/编号扰动后仍为100%安全接受，当前基准尚不能证明LLM是必要组件。
+ORDER_ONLY：FIRST_POSITION降至54.19%，原先100%存在明显顺序泄漏。
+ORDER_ONLY：完整门禁在顺序/编号扰动后仍为100%安全接受，当前基准尚不能证明LLM是必要组件。
+
+汇总：G:\LearnAI\ontology-evolution\output\candidate-order-robustness-summary.csv
+明细：G:\LearnAI\ontology-evolution\output\candidate-order-robustness-details.csv
+按错误：G:\LearnAI\ontology-evolution\output\candidate-order-robustness-by-error.csv
+JSON：G:\LearnAI\ontology-evolution\output\candidate-order-robustness.json

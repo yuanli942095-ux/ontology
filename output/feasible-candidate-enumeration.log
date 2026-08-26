@@ -1,0 +1,15 @@
+符号可执行修复候选枚举日志
+CQ文件：G:\LearnAI\ontology-evolution\benchmark\cq\cq-tests.csv
+证据文件：G:\LearnAI\ontology-evolution\data\axiom-evidence.csv
+边界：只保证候选可执行，不保证语义正确。
+
+[E1] 失败CQ=['CQ004'] | 候选数=3 | REPLACE_PROPERTY_VALUE, ADD_PROPERTY_VALUE, REMOVE_PROPERTY_VALUE
+[E2] 失败CQ=['CQ006'] | 候选数=1 | ADD_PROPERTY_VALUE
+[E3] 失败CQ=['CQ003'] | 候选数=3 | REPLACE_PROPERTY_VALUE, ADD_PROPERTY_VALUE, REMOVE_PROPERTY_VALUE
+[E4] 失败CQ=['CQ002'] | 候选数=1 | REMOVE_CLASS_ASSERTION
+[E5] 失败CQ=['CQ004', 'CQ005'] | 候选数=3 | REPLACE_PROPERTY_VALUE, REMOVE_PROPERTY_VALUE, REMOVE_PROPERTY_VALUE
+
+错误类型数：5
+候选总数：11
+JSON：G:\LearnAI\ontology-evolution\benchmark\repairs\feasible-candidates.json
+CSV：G:\LearnAI\ontology-evolution\benchmark\repairs\feasible-candidates.csv

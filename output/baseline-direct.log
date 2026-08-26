@@ -1,0 +1,12 @@
+semantic-v2 Direct Value baseline
+Oracle loaded after all predictions=True
+Candidate information in model prompt=False
+
+[DIRECT_FREE] attempts=60 | Oracle=75.00% | invalid=0.00% | ABSTAIN=25.00%
+event-level strict=9/12 (75.00%) | macro=75.00%
+
+detail=G:\LearnAI\ontology-evolution\output\baseline-direct-details.csv
+summary=G:\LearnAI\ontology-evolution\output\baseline-direct-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\baseline-direct-by-event.csv
+event_level=G:\LearnAI\ontology-evolution\output\baseline-direct-event-level.csv
+json=G:\LearnAI\ontology-evolution\output\baseline-direct.json

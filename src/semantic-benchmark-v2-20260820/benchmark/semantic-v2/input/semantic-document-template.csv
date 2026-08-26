@@ -1,0 +1,2 @@
+document_id,file_name,authority,effective_from,effective_to,issuer,document_type,source_url,source_type,sha256,status,notes
+DOC_TEMPLATE_001,待填写.txt,100,2026-01-01,,待填写,正式条款,,REAL_OR_CONTROLLED,,DRAFT,复制本行并为每份文档分配唯一ID

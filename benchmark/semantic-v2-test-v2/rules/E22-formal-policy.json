@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "event_id": "E22",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "continuous_renewal": true,
+    "coverage_interrupted": false
+  },
+  "rules": [
+    {
+      "rule_id": "E22_CONTINUOUS_RENEWAL_EXCEPTION",
+      "priority": 200,
+      "when": {"continuous_renewal": true, "coverage_interrupted": false},
+      "allowed_values": ["0"]
+    },
+    {
+      "rule_id": "E22_GENERAL_WAITING_PERIOD",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["60"]
+    }
+  ],
+  "provenance": {
+    "source": "DOC_E22_TERMS第三至第四条与案件上下文",
+    "annotation_status": "CONTROLLED_DEV_MANUAL_FORMALIZATION"
+  }
+}

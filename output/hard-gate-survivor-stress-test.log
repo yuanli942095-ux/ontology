@@ -1,0 +1,18 @@
+hard gate survivor stress test
+split=test
+events=30
+variants=5
+attempts=150
+expected_behavior_passes=150/150
+qwen_calls=0
+oracle_loaded_after_decisions=True
+
+[CONTROL_UNIQUE] pass=100.00% safe=30 abstain=0 zero=0 multi=0
+[MULTI_SURVIVOR_BROAD_ALLOWED_VALUES] pass=100.00% safe=0 abstain=30 zero=0 multi=30
+[MULTI_SURVIVOR_DUPLICATE_VALUE] pass=100.00% safe=0 abstain=30 zero=0 multi=30
+[NO_APPLICABLE_RULE] pass=100.00% safe=0 abstain=30 zero=30 multi=0
+[ZERO_SURVIVOR_CANDIDATE_MISMATCH] pass=100.00% safe=0 abstain=30 zero=30 multi=0
+
+details=G:\LearnAI\ontology-evolution\output\hard-gate-survivor-stress-test-details.csv
+summary=G:\LearnAI\ontology-evolution\output\hard-gate-survivor-stress-test-summary.csv
+json=G:\LearnAI\ontology-evolution\output\hard-gate-survivor-stress-test.json

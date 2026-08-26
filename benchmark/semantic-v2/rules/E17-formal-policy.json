@@ -1,0 +1,39 @@
+{
+  "event_id": "E17",
+  "semantics": "candidate_code_mapping_required",
+  "facts": {
+    "age_band_code": "AGE-BAND-G2",
+    "marketing_draft_applicable": false,
+    "renewal_channel_confirmed": false
+  },
+  "rules": [
+    {
+      "rule_id": "E17_MARKETING_DRAFT_BAND",
+      "priority": 300,
+      "when": {
+        "marketing_draft_applicable": true
+      },
+      "allowed_values": ["73"]
+    },
+    {
+      "rule_id": "E17_FILED_AGE_BAND_G2",
+      "priority": 200,
+      "when": {
+        "age_band_code": "AGE-BAND-G2"
+      },
+      "allowed_values": ["63"]
+    },
+    {
+      "rule_id": "E17_RENEWAL_BAND_G3",
+      "priority": 100,
+      "when": {
+        "renewal_channel_confirmed": true
+      },
+      "allowed_values": ["58"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E17_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_003",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_014明确将最高投保年龄定义为65，而失败查询CQ004的current_actual_values显示为70，表明本体中错误地保留了旧值70。候选CAND_003（REMOVE_PROPERTY_VALUE）直接移除错误的70，使属性集合仅保留正确的65，符合数值漂移修复逻辑；CAND_001和CAND_002虽语义相近，但REMOVE操作更精准对应‘纠正错误值’而非泛化替换或新增。"
+}

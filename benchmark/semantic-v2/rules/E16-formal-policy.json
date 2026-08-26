@@ -1,0 +1,42 @@
+{
+  "event_id": "E16",
+  "semantics": "temporal_version_with_unfiled_endorsement",
+  "facts": {
+    "underwriting_acceptance_date": "2026-09-20",
+    "endorsement_filing_completed": false,
+    "renewal_exception_confirmed": false
+  },
+  "rules": [
+    {
+      "rule_id": "E16_RENEWAL_EXCEPTION",
+      "priority": 300,
+      "when": {
+        "renewal_exception_confirmed": true
+      },
+      "allowed_values": ["64"]
+    },
+    {
+      "rule_id": "E16_FILED_CURRENT_VERSION",
+      "priority": 200,
+      "when": {
+        "endorsement_filing_completed": false
+      },
+      "allowed_values": ["67"]
+    },
+    {
+      "rule_id": "E16_FILED_ENDORSEMENT_VERSION",
+      "priority": 100,
+      "when": {
+        "endorsement_filing_completed": true,
+        "underwriting_acceptance_date": {
+          "on_or_after": "2026-10-01"
+        }
+      },
+      "allowed_values": ["72"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E16_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

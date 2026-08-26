@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_014明确将产品A的最高投保年龄定义为65，而错误记录显示为70。候选CAND_001执行REPLACE_PROPERTY_VALUE操作，直接将属性值从70修正为65，这与证据完全匹配且解决了数值漂移问题。候选CAND_002的ADD操作在已有断言存在的情况下会导致语义冗余或冲突，不符合最小变更原则。"
+}

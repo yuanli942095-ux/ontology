@@ -1,0 +1,58 @@
+{
+  "event_id": "E46",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "plan_tier": "STANDARD",
+    "rehabilitation_guidance_selected": true,
+    "premium_plan": false
+  },
+  "rules": [
+    {
+      "rule_id": "E46_PREMIUM",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "premium_plan",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "24"
+      ]
+    },
+    {
+      "rule_id": "E46_REHAB_STANDARD",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "rehabilitation_guidance_selected",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "plan_tier",
+          "operator": "equals",
+          "value": "STANDARD"
+        }
+      ],
+      "allowed_values": [
+        "18"
+      ]
+    },
+    {
+      "rule_id": "E46_BASE",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "12"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E46_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

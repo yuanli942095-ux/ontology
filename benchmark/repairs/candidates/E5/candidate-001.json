@@ -1,0 +1,31 @@
+{
+  "candidate_id": "candidate-001",
+  "error_id": "E5",
+  "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E5_conflicting_functional_value.owl",
+  "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidates\\E5\\candidate-001.owl",
+  "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/repair/E5/candidate-001",
+  "generator": "finite_operator_cq_baseline",
+  "violated_cq_ids": [
+    "CQ004",
+    "CQ005"
+  ],
+  "unresolved_notes": [
+    "CQ005仅提供基数约束，不能单独决定保留值"
+  ],
+  "operations": [
+    {
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄",
+      "source_cq_ids": [
+        "CQ004"
+      ],
+      "rationale": "验证当前有效年龄上限",
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "70",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

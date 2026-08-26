@@ -1,0 +1,20 @@
+{
+  "abstain": true,
+  "confidence": 0.5,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": [
+        "CQ002"
+      ],
+      "rationale": "根据证据 EVID_011，'产品A' 的类型被断言为 '医疗保险'。在保险本体中，'疾病保险'（通常指重疾险等给付型）与'医疗保险'（报销型）通常是互斥的类别。如果存在一个属性值（例如来自 CQ002）将'产品A'标记为'疾病保险'或其他非'医疗保险'的子类，这将导致逻辑冲突或分类错误。因此，需要移除该错误的属性值，以确保本体的一致性，即确保'产品A'只被归类为其当前有效证据所支持的'医疗保险'类型。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#疾病保险",
+      "old_value": {
+        "kind": "literal",
+        "lexical": "true",
+        "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    }
+  ]
+}

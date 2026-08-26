@@ -1,0 +1,10 @@
+source=G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-details.csv
+rows=6000
+by_event=G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-robustness-by-event.csv
+summary=G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-robustness-summary.csv
+json=G:\LearnAI\ontology-evolution\output\final-no-model-baselines-test-r100-seed20260820-robustness.json
+[FIRST_POSITION] strict=0/12 | stable=0/12 | order_sensitive=12/12 | accuracy=34.83% | abstain=0.00%
+[HASH_FIRST] strict=5/12 | stable=12/12 | order_sensitive=0/12 | accuracy=41.67% | abstain=0.00%
+[LATEST_AUTHORITY_UNIQUE] strict=0/12 | stable=2/12 | order_sensitive=0/12 | accuracy=0.00% | abstain=83.33%
+[LOWEST_ORIGINAL_ID] strict=2/12 | stable=12/12 | order_sensitive=0/12 | accuracy=16.67% | abstain=0.00%
+[RANDOM] strict=0/12 | stable=0/12 | order_sensitive=12/12 | accuracy=35.08% | abstain=0.00%

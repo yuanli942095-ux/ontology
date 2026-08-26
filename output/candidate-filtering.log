@@ -1,0 +1,15 @@
+反事实硬门禁候选过滤日志
+输入：G:\LearnAI\ontology-evolution\benchmark\repairs\candidate-effects.json
+
+[E1] 原候选=3 | 存活=1 | 策略=DETERMINISTIC_SELECT
+[E2] 原候选=1 | 存活=1 | 策略=DETERMINISTIC_SELECT
+[E3] 原候选=3 | 存活=1 | 策略=DETERMINISTIC_SELECT
+[E4] 原候选=1 | 存活=1 | 策略=DETERMINISTIC_SELECT
+[E5] 原候选=3 | 存活=2 | 策略=LLM_RANK
+
+候选压缩：11 -> 6（减少45.45%）
+确定性选择错误数：4
+需要LLM排序错误数：1
+必须ABSTAIN错误数：0
+JSON：G:\LearnAI\ontology-evolution\benchmark\repairs\surviving-candidates.json
+CSV：G:\LearnAI\ontology-evolution\benchmark\repairs\surviving-candidates.csv

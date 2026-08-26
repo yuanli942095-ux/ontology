@@ -1,0 +1,17 @@
+语义歧义修复候选排序对比日志
+事件：E9, E10, E11
+runs：5
+Oracle在所有预测结束后加载。
+
+[FIRST_POSITION] 覆盖=100.00% | Oracle=40.00% | 错误选择=60.00% | 无效/幻觉=0.00% | ABSTAIN=0.00%
+[LATEST_AUTHORITY_UNIQUE] 覆盖=33.33% | Oracle=33.33% | 错误选择=0.00% | 无效/幻觉=0.00% | ABSTAIN=66.67%
+[QWEN_CONSTRAINED_CANDIDATE] 覆盖=100.00% | Oracle=100.00% | 错误选择=0.00% | 无效/幻觉=0.00% | ABSTAIN=0.00%
+[QWEN_DIRECT_VALUE] 覆盖=6.67% | Oracle=6.67% | 错误选择=0.00% | 无效/幻觉=93.33% | ABSTAIN=0.00%
+[RANDOM] 覆盖=100.00% | Oracle=26.67% | 错误选择=73.33% | 无效/幻觉=0.00% | ABSTAIN=0.00%
+[VALUE_FREQUENCY] 覆盖=0.00% | Oracle=0.00% | 错误选择=0.00% | 无效/幻觉=0.00% | ABSTAIN=100.00%
+
+重复runs衡量输出稳定性，不增加独立语义事件数量。
+汇总：G:\LearnAI\ontology-evolution\output\semantic-ranking-comparison.csv
+明细：G:\LearnAI\ontology-evolution\output\semantic-ranking-details.csv
+按事件：G:\LearnAI\ontology-evolution\output\semantic-ranking-by-event.csv
+JSON：G:\LearnAI\ontology-evolution\output\semantic-ranking-comparison.json

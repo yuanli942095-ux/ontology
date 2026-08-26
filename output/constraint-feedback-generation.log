@@ -1,0 +1,211 @@
+反例驱动LLM本体修复闭环日志
+模型：qwen3.5:9b
+层级：['candidate_only', 'reasoner', 'reasoner_evidence', 'reasoner_evidence_cq']
+每个事件重复：5
+最大反馈轮数：3
+反馈隐私：不向模型返回expected值、干净本体或Oracle结果。
+
+[feedback-candidate_only-E1-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E1-run-002]
+  ACCEPT CAND_002 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E1-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E1-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E1-run-005]
+  ACCEPT CAND_002 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E2-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E2-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E2-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E2-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E2-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E3-run-001]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E3-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E3-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E3-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E3-run-005]
+  ACCEPT CAND_002 | rounds=1 | LLM=1 | full_safe=false
+[feedback-candidate_only-E4-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E4-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E4-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E4-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E4-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-candidate_only-E5-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E5-run-002]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E5-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E5-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-candidate_only-E5-run-005]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E1-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E1-run-002]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner-E1-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-reasoner-E1-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-reasoner-E1-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner-E2-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E2-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E2-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E2-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E2-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E3-run-001]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-reasoner-E3-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E3-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-reasoner-E3-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=false
+[feedback-reasoner-E3-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner-E4-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E4-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E4-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E4-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E4-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner-E5-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E5-run-002]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E5-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E5-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner-E5-run-005]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E1-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E1-run-002]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E1-run-003]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E1-run-004]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E1-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E2-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E2-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E2-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E2-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E2-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E3-run-001]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E3-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E3-run-003]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E3-run-004]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E3-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence-E4-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E4-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E4-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E4-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E4-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence-E5-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E5-run-002]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E5-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E5-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence-E5-run-005]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E1-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E1-run-002]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E1-run-003]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E1-run-004]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E1-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E2-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E2-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E2-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E2-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E2-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E3-run-001]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E3-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E3-run-003]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E3-run-004]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E3-run-005]
+  ACCEPT CAND_001 | rounds=2 | LLM=2 | full_safe=true
+[feedback-reasoner_evidence_cq-E4-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E4-run-002]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E4-run-003]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E4-run-004]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E4-run-005]
+  ACCEPT CAND_001 | rounds=1 | LLM=0 | full_safe=true
+[feedback-reasoner_evidence_cq-E5-run-001]
+  ACCEPT CAND_001 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E5-run-002]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E5-run-003]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E5-run-004]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+[feedback-reasoner_evidence_cq-E5-run-005]
+  ACCEPT CAND_003 | rounds=1 | LLM=1 | full_safe=true
+
+闭环汇总：尝试=100，层级接受=100，分析用完整安全通过=87，LLM调用=79
+JSON：G:\LearnAI\ontology-evolution\output\constraint-feedback-generation.json
+CSV：G:\LearnAI\ontology-evolution\output\constraint-feedback-generation.csv

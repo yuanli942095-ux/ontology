@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "event_id": "E33",
+  "semantics": "closed_world_explicit_facts",
+  "facts": {
+    "long_term_medical_addon_selected": true,
+    "overseas_medical_extension_selected": false
+  },
+  "rules": [
+    {
+      "rule_id": "E33_R3",
+      "priority": 300,
+      "when": {
+        "long_term_medical_addon_selected": true,
+        "overseas_medical_extension_selected": true
+      },
+      "allowed_values": ["36"],
+      "explanation": "同时选择长期医疗附加责任和海外医疗扩展责任时为36个月"
+    },
+    {
+      "rule_id": "E33_R2",
+      "priority": 200,
+      "when": {
+        "long_term_medical_addon_selected": true,
+        "overseas_medical_extension_selected": false
+      },
+      "allowed_values": ["24"],
+      "explanation": "选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月"
+    },
+    {
+      "rule_id": "E33_R1",
+      "priority": 100,
+      "when": {
+        "long_term_medical_addon_selected": false
+      },
+      "allowed_values": ["12"],
+      "explanation": "未选择长期医疗附加责任时适用基础期限12个月"
+    }
+  ],
+  "provenance": {
+    "fact_source": "DOC_E33_TERMS中的投保申请记录与核保确认记录",
+    "rule_source": "DOC_E33_TERMS第六至第八条",
+    "annotation_status": "CONTROLLED_DEV_MANUAL_FORMALIZATION"
+  }
+}

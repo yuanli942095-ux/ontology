@@ -1,0 +1,12 @@
+语义歧义本体修复基准构建日志
+基线：G:\LearnAI\ontology-evolution\benchmark\clean\insurance-validation-baseline.owl
+安全门禁不包含语义Oracle；Oracle单独保存。
+
+[E9] TEMPORAL_VERSION | 候选=2 | 形式门禁=2/2通过 | Oracle已隔离
+[E10] GENERAL_RULE_EXCEPTION | 候选=2 | 形式门禁=2/2通过 | Oracle已隔离
+[E11] CROSS_SENTENCE_SCOPE | 候选=2 | 形式门禁=2/2通过 | Oracle已隔离
+
+所有6个候选均通过形式安全门禁。
+盲化事件：G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\semantic-events.json
+候选目录：G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\semantic-candidates.json
+Oracle：G:\LearnAI\ontology-evolution\benchmark\semantic-ambiguity\semantic-oracle.csv

@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "唯一候选已通过全部反事实硬门禁，执行确定性选择。"
+}

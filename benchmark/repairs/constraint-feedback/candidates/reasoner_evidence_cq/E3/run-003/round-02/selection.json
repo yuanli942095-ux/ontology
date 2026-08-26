@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_012明确指出产品A由保险公司甲承保，而现有值错误地标记为癌症。候选CAND_001执行REPLACE_PROPERTY_VALUE操作，将对象从癌症替换为保险公司甲，直接修正了与证据不匹配的问题并满足CQ003的查询要求。候选CAND_002虽然也包含正确信息，但ADD_PROPERTY_VALUE在属性已存在且值错误的情况下可能导致多重断言或冗余，不如直接替换精确。"
+}

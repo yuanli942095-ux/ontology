@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_002",
+  "confidence": 0.95,
+  "rationale": "当前证据EVID_014明确记录产品A的最高投保年龄为65，而失败问题CQ004的current_actual_values显示为70，表明本体中缺失了正确的65值。候选CAND_002执行ADD_PROPERTY_VALUE操作，将65加入属性集，直接修正数值漂移并恢复语义一致性；CAND_001替换操作虽结果正确但假设原70值无效且需整体替换，而CAND_003删除操作会导致属性集为空或仅保留错误值（若存在其他未列出值），均不如添加新值安全。"
+}

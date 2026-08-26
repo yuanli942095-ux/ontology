@@ -1,0 +1,6 @@
+﻿candidate_id,error_id,error_type,candidate_owl,operators,operation_count,triples_removed,triples_added,reasoner_result,reasoner_runtime_ms,evidence_result,cq_result,failed_cqs,evidence_differences,minimal_edit,equals_clean_baseline,reasoner_gate,evidence_gate,cq_gate,minimal_edit_gate,synthetic_oracle_gate,pass_or_fail
+candidate-001,E1,数值漂移,G:\LearnAI\ontology-evolution\benchmark\repairs\candidates\E1\candidate-001.owl,REPLACE_PROPERTY_VALUE,1,1,1,CONSISTENT,1117,PASS,PASS,,,True,True,True,True,True,True,True,PASS
+candidate-001,E2,公理缺失,G:\LearnAI\ontology-evolution\benchmark\repairs\candidates\E2\candidate-001.owl,ADD_PROPERTY_VALUE,1,0,1,CONSISTENT,999,PASS,PASS,,,True,True,True,True,True,True,True,PASS
+candidate-001,E3,关系对象错误,G:\LearnAI\ontology-evolution\benchmark\repairs\candidates\E3\candidate-001.owl,REPLACE_PROPERTY_VALUE,1,1,1,CONSISTENT,984,PASS,PASS,,,True,True,True,True,True,True,True,PASS
+candidate-001,E4,互斥类别冲突,G:\LearnAI\ontology-evolution\benchmark\repairs\candidates\E4\candidate-001.owl,REMOVE_CLASS_ASSERTION,1,1,0,CONSISTENT,979,PASS,PASS,,,True,True,True,True,True,True,True,PASS
+candidate-001,E5,功能属性值冲突,G:\LearnAI\ontology-evolution\benchmark\repairs\candidates\E5\candidate-001.owl,REMOVE_PROPERTY_VALUE,1,1,0,CONSISTENT,963,PASS,PASS,,,True,True,True,True,True,True,True,PASS

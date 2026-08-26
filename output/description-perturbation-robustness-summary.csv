@@ -1,0 +1,3 @@
+﻿method,events,attempts,oracle_successes,accuracy,wrong_rate,abstain_rate,invalid_rate,strict_order_robust_events,stable_selected_candidate_events,outcome_consistent_events,order_sensitive_events
+OPTION_DESCRIPTION_MASKED,12,60,45,0.75,0.23333333333333334,0.016666666666666666,0.0,8,9,10,4
+OPTION_DESCRIPTION_SHUFFLED,12,60,5,0.08333333333333333,0.9166666666666666,0.0,0.0,0,0,9,12

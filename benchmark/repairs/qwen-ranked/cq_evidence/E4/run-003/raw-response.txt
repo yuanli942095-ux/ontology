@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_001",
+  "confidence": 1.0,
+  "rationale": "候选 CAND_001 直接移除导致互斥冲突的断言（产品 A 属于财产保险），完全符合失败 CQ 中禁止产品落入互斥类别的预期答案，且无其他证据表明该操作会破坏其他有效语义。"
+}

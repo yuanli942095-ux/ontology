@@ -1,0 +1,31 @@
+{
+  "candidate_id": "candidate-001",
+  "error_id": "E3",
+  "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E3_wrong_relation_target.owl",
+  "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidates\\E3\\candidate-001.owl",
+  "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/repair/E3/candidate-001",
+  "generator": "finite_operator_cq_baseline",
+  "violated_cq_ids": [
+    "CQ003"
+  ],
+  "unresolved_notes": [],
+  "operations": [
+    {
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+      "source_cq_ids": [
+        "CQ003"
+      ],
+      "rationale": "承保主体必须与业务合同一致",
+      "operator": "REPLACE_PROPERTY_VALUE",
+      "old_value": {
+        "kind": "iri",
+        "iri": "file:///G:/LearnAI/ontology-1#癌症"
+      },
+      "new_value": {
+        "kind": "iri",
+        "iri": "file:///G:/LearnAI/ontology-1#保险公司甲"
+      }
+    }
+  ]
+}

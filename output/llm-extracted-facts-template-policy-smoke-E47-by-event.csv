@@ -1,0 +1,2 @@
+﻿event_id,semantic_type,attempts,oracle_accuracy,strict_event_success,selected_values,selection_stable,manual_fact_accuracy,extraction_errors,abstains
+E47,CROSS_SENTENCE_SCOPE,1,1.0,True,18,True,1.0,0,0

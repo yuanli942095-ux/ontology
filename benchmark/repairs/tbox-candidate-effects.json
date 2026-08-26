@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-20T11:45:04.863353+00:00",
+  "generator": "enumerate_tbox_candidates.py",
+  "source_manifest": "G:\\LearnAI\\ontology-evolution\\benchmark\\ground-truth\\cq-specific-error-manifest.csv",
+  "cq_file": "G:\\LearnAI\\ontology-evolution\\benchmark\\cq\\cq-tbox-tests.csv",
+  "evidence_path": "G:\\LearnAI\\ontology-evolution\\data\\axiom-evidence.csv",
+  "candidate_semantics": "tbox_feasible_counterfactually_annotated",
+  "hard_gate_definition": [
+    "reasoner_gate",
+    "evidence_gate",
+    "cq_gate",
+    "minimal_edit_gate"
+  ],
+  "errors": [
+    {
+      "error_id": "E6",
+      "error_type": "类层级链路缺失",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E6_missing_subclass_link.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ013",
+          "question": "产品A的预期继承分类是否仍可完整推导？",
+          "query_type": "INSTANCE_TYPE_ENTAILED",
+          "expected": "包含健康保险",
+          "actual_values": [
+            "NamedIndividual",
+            "医疗保险"
+          ],
+          "passed": false
+        }
+      ],
+      "evidence_context": [],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "新增父类：医疗保险 → 健康保险",
+          "operator": "ADD_SUBCLASS_AXIOM",
+          "operation": {
+            "operator": "ADD_SUBCLASS_AXIOM",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#医疗保险",
+            "superclass_iri": "file:///G:/LearnAI/ontology-1#健康保险"
+          },
+          "source_cq_ids": [
+            "CQ013"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "PASS",
+            "cq_gate": true,
+            "minimal_edit_gate": true,
+            "oracle_match": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E6\\CAND_001.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 600,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "PASS",
+            "all_cq_gate": true,
+            "failed_cqs": [],
+            "all_failed_cqs": [],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E6/CAND_001"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "新增父类：医疗保险 → 人身保险",
+          "operator": "ADD_SUBCLASS_AXIOM",
+          "operation": {
+            "operator": "ADD_SUBCLASS_AXIOM",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#医疗保险",
+            "superclass_iri": "file:///G:/LearnAI/ontology-1#人身保险"
+          },
+          "source_cq_ids": [
+            "CQ013"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E6\\CAND_002.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 593,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ013"
+            ],
+            "all_failed_cqs": [
+              "CQ013"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "医疗保险"
+                ],
+                "passed": false
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E6/CAND_002"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "新增父类：医疗保险 → 保险产品",
+          "operator": "ADD_SUBCLASS_AXIOM",
+          "operation": {
+            "operator": "ADD_SUBCLASS_AXIOM",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#医疗保险",
+            "superclass_iri": "file:///G:/LearnAI/ontology-1#保险产品"
+          },
+          "source_cq_ids": [
+            "CQ013"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E6\\CAND_003.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 594,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ013"
+            ],
+            "all_failed_cqs": [
+              "CQ013"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "保险产品",
+                  "医疗保险"
+                ],
+                "passed": false
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E6/CAND_003"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E7",
+      "error_type": "错误直接父类",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E7_wrong_superclass.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ014",
+          "question": "产品B的预期中间业务分类是否仍可推导？",
+          "query_type": "INSTANCE_TYPE_ENTAILED",
+          "expected": "包含健康保险",
+          "actual_values": [
+            "NamedIndividual",
+            "Thing",
+            "人身保险",
+            "保险产品",
+            "疾病保险"
+          ],
+          "passed": false
+        }
+      ],
+      "evidence_context": [],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "替换父类：疾病保险，人身保险 → 健康保险",
+          "operator": "REPLACE_SUPERCLASS",
+          "operation": {
+            "operator": "REPLACE_SUPERCLASS",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#疾病保险",
+            "old_superclass_iri": "file:///G:/LearnAI/ontology-1#人身保险",
+            "new_superclass_iri": "file:///G:/LearnAI/ontology-1#健康保险"
+          },
+          "source_cq_ids": [
+            "CQ014"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "PASS",
+            "cq_gate": true,
+            "minimal_edit_gate": true,
+            "oracle_match": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E7\\CAND_001.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 598,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "PASS",
+            "all_cq_gate": true,
+            "failed_cqs": [],
+            "all_failed_cqs": [],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 1,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E7/CAND_001"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "删除父类：疾病保险 → 人身保险",
+          "operator": "REMOVE_SUBCLASS_AXIOM",
+          "operation": {
+            "operator": "REMOVE_SUBCLASS_AXIOM",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#疾病保险",
+            "superclass_iri": "file:///G:/LearnAI/ontology-1#人身保险"
+          },
+          "source_cq_ids": [
+            "CQ014"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E7\\CAND_002.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 591,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ014"
+            ],
+            "all_failed_cqs": [
+              "CQ014"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "疾病保险"
+                ],
+                "passed": false
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 0,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 0,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E7/CAND_002"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "替换父类：疾病保险，人身保险 → 保险产品",
+          "operator": "REPLACE_SUPERCLASS",
+          "operation": {
+            "operator": "REPLACE_SUPERCLASS",
+            "subclass_iri": "file:///G:/LearnAI/ontology-1#疾病保险",
+            "old_superclass_iri": "file:///G:/LearnAI/ontology-1#人身保险",
+            "new_superclass_iri": "file:///G:/LearnAI/ontology-1#保险产品"
+          },
+          "source_cq_ids": [
+            "CQ014"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E7\\CAND_003.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 580,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ014"
+            ],
+            "all_failed_cqs": [
+              "CQ014"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "保险产品",
+                  "疾病保险"
+                ],
+                "passed": false
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 1,
+            "triples_added": 1,
+            "expected_triples_removed": 1,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E7/CAND_003"
+          }
+        }
+      ]
+    },
+    {
+      "error_id": "E8",
+      "error_type": "对象属性值域缺失",
+      "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E8_missing_property_range.owl",
+      "failed_cqs": [
+        {
+          "cq_id": "CQ015",
+          "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+          "query_type": "PROPERTY_RANGE_EXACT_SET",
+          "expected": "精确等于{疾病}",
+          "actual_values": [],
+          "passed": false
+        }
+      ],
+      "evidence_context": [],
+      "candidates": [
+        {
+          "candidate_id": "CAND_001",
+          "description": "新增值域：保障疾病 → 疾病",
+          "operator": "ADD_PROPERTY_RANGE",
+          "operation": {
+            "operator": "ADD_PROPERTY_RANGE",
+            "property_iri": "file:///G:/LearnAI/ontology-1#保障疾病",
+            "range_iri": "file:///G:/LearnAI/ontology-1#疾病"
+          },
+          "source_cq_ids": [
+            "CQ015"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "PASS",
+            "cq_gate": true,
+            "minimal_edit_gate": true,
+            "oracle_match": true,
+            "hard_gate_pass": true,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E8\\CAND_001.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 578,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "PASS",
+            "all_cq_gate": true,
+            "failed_cqs": [],
+            "all_failed_cqs": [],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "疾病"
+                ],
+                "passed": true
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E8/CAND_001"
+          }
+        },
+        {
+          "candidate_id": "CAND_002",
+          "description": "新增值域：保障疾病 → 重大疾病",
+          "operator": "ADD_PROPERTY_RANGE",
+          "operation": {
+            "operator": "ADD_PROPERTY_RANGE",
+            "property_iri": "file:///G:/LearnAI/ontology-1#保障疾病",
+            "range_iri": "file:///G:/LearnAI/ontology-1#重大疾病"
+          },
+          "source_cq_ids": [
+            "CQ015"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E8\\CAND_002.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 586,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ015"
+            ],
+            "all_failed_cqs": [
+              "CQ015"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "重大疾病"
+                ],
+                "passed": false
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E8/CAND_002"
+          }
+        },
+        {
+          "candidate_id": "CAND_003",
+          "description": "新增值域：保障疾病 → owl:Thing",
+          "operator": "ADD_PROPERTY_RANGE",
+          "operation": {
+            "operator": "ADD_PROPERTY_RANGE",
+            "property_iri": "file:///G:/LearnAI/ontology-1#保障疾病",
+            "range_iri": "http://www.w3.org/2002/07/owl#Thing"
+          },
+          "source_cq_ids": [
+            "CQ015"
+          ],
+          "source_evidence_ids": [],
+          "rationales": [
+            "由本体模式与能力问题生成；ABox证据故意不覆盖该TBox公理"
+          ],
+          "feasible": true,
+          "effect": {
+            "execution_pass": true,
+            "reasoner_result": "CONSISTENT",
+            "reasoner_gate": true,
+            "evidence_result": "PASS",
+            "evidence_gate": true,
+            "cq_result": "FAIL",
+            "cq_gate": false,
+            "minimal_edit_gate": true,
+            "oracle_match": false,
+            "hard_gate_pass": false,
+            "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\tbox-candidate-effects\\E8\\CAND_003.owl",
+            "error_message": "",
+            "reasoner_runtime_ms": 591,
+            "reasoner_message": "HermiTδ�����߼���һ��",
+            "evidence_differences": [],
+            "all_cq_result": "FAIL",
+            "all_cq_gate": false,
+            "failed_cqs": [
+              "CQ015"
+            ],
+            "all_failed_cqs": [
+              "CQ015"
+            ],
+            "cq_states": [
+              {
+                "cq_id": "CQ013",
+                "question": "产品A的预期继承分类是否仍可完整推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "医疗保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ014",
+                "question": "产品B的预期中间业务分类是否仍可推导？",
+                "query_type": "INSTANCE_TYPE_ENTAILED",
+                "expected": "包含健康保险",
+                "actual_values": [
+                  "NamedIndividual",
+                  "Thing",
+                  "人身保险",
+                  "保险产品",
+                  "健康保险",
+                  "疾病保险"
+                ],
+                "passed": true
+              },
+              {
+                "cq_id": "CQ015",
+                "question": "保障疾病关系是否仍满足预期的直接值域约束？",
+                "query_type": "PROPERTY_RANGE_EXACT_SET",
+                "expected": "精确等于{疾病}",
+                "actual_values": [
+                  "Thing"
+                ],
+                "passed": false
+              }
+            ],
+            "triples_removed": 0,
+            "triples_added": 1,
+            "expected_triples_removed": 0,
+            "expected_triples_added": 1,
+            "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/tbox-candidate/E8/CAND_003"
+          }
+        }
+      ]
+    }
+  ]
+}

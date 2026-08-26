@@ -1,0 +1,10 @@
+source=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv
+rows=750
+summary=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-runtime-costs-summary.csv
+json=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-runtime-costs.json
+
+[DIRECT_FREE] Qwen=150/150 (100.00%) | direct=0/150 (0.00%) | mean_ms_all=3542.23 | mean_ms_qwen=3542.23 | tokens=107277
+[OPTION_FORMAL_OPERATION] Qwen=150/150 (100.00%) | direct=0/150 (0.00%) | mean_ms_all=4419.14 | mean_ms_qwen=4419.14 | tokens=195646
+[OPTION_FORMAL_POLICY] Qwen=150/150 (100.00%) | direct=0/150 (0.00%) | mean_ms_all=4174.25 | mean_ms_qwen=4174.25 | tokens=252997
+[OPTION_FORMAL_POLICY_HARD_GATE] Qwen=0/150 (0.00%) | direct=150/150 (100.00%) | mean_ms_all=0.00 | mean_ms_qwen=0.00 | tokens=0
+[OPTION_VALUE_ONLY] Qwen=150/150 (100.00%) | direct=0/150 (0.00%) | mean_ms_all=4126.02 | mean_ms_qwen=4126.02 | tokens=124400

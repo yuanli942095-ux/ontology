@@ -1,0 +1,10 @@
+source=G:\LearnAI\ontology-evolution\output\order-robustness-formal-policy-20-details.csv,G:\LearnAI\ontology-evolution\output\order-robustness-formal-operation-20-details.csv,G:\LearnAI\ontology-evolution\output\order-robustness-option-value-only-20-details.csv,G:\LearnAI\ontology-evolution\output\order-robustness-value-enum-20-details.csv
+rows=240
+by_event=G:\LearnAI\ontology-evolution\output\order-robustness-targeted-20-by-event.csv
+summary=G:\LearnAI\ontology-evolution\output\order-robustness-targeted-20-summary.csv
+json=G:\LearnAI\ontology-evolution\output\order-robustness-targeted-20.json
+[OPTION_FORMAL_OPERATION] strict=0/5 | stable=2/5 | order_sensitive=5/5 | accuracy=28.00% | abstain=31.00%
+[OPTION_FORMAL_POLICY] strict=0/2 | stable=0/2 | order_sensitive=2/2 | accuracy=72.50% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] strict=2/2 | stable=2/2 | order_sensitive=0/2 | accuracy=100.00% | abstain=0.00%
+[OPTION_VALUE_ONLY] strict=0/2 | stable=0/2 | order_sensitive=2/2 | accuracy=30.00% | abstain=0.00%
+[VALUE_ENUM] strict=0/1 | stable=1/1 | order_sensitive=1/1 | accuracy=25.00% | abstain=75.00%

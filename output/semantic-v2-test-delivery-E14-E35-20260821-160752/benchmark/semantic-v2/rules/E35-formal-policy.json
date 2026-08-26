@@ -1,0 +1,67 @@
+{
+  "event_id": "E35",
+  "semantics": "cross_sentence_scope_with_reference_and_combined_condition",
+  "facts": {
+    "cancer_outpatient_extension_selected": true,
+    "overseas_medical_selected": false,
+    "insured_age": 58
+  },
+  "rules": [
+    {
+      "rule_id": "E35_AGE_SCOPE_LIMIT",
+      "priority": 400,
+      "when": {
+        "insured_age": {
+          "greater_than": 60
+        }
+      },
+      "allowed_values": ["12"]
+    },
+    {
+      "rule_id": "E35_COMBINED_EXTENSION",
+      "priority": 300,
+      "when": {
+        "cancer_outpatient_extension_selected": {
+          "equals": true
+        },
+        "overseas_medical_selected": {
+          "equals": true
+        },
+        "insured_age": {
+          "less_or_equal": 60
+        }
+      },
+      "allowed_values": ["24"]
+    },
+    {
+      "rule_id": "E35_CANCER_OUTPATIENT_EXTENSION",
+      "priority": 250,
+      "when": {
+        "cancer_outpatient_extension_selected": {
+          "equals": true
+        },
+        "overseas_medical_selected": {
+          "equals": false
+        },
+        "insured_age": {
+          "less_or_equal": 60
+        }
+      },
+      "allowed_values": ["18"]
+    },
+    {
+      "rule_id": "E35_BASIC_TERM",
+      "priority": 100,
+      "when": {
+        "cancer_outpatient_extension_selected": {
+          "equals": false
+        }
+      },
+      "allowed_values": ["12"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E35_TERMS"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

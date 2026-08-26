@@ -1,0 +1,4 @@
+﻿event_id,candidate_id,display_value,applicable_rule_id,rule_priority,formal_condition_pass,decision,reason,oracle_loaded_after_gate,oracle_candidate_id,oracle_match
+E33,CAND_001,12,E33_R2,200,False,FILTER_OUT,选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月,True,CAND_002,False
+E33,CAND_002,24,E33_R2,200,True,SURVIVE,选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月,True,CAND_002,True
+E33,CAND_003,36,E33_R2,200,False,FILTER_OUT,选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月,True,CAND_002,False

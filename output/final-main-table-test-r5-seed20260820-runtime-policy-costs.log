@@ -1,0 +1,12 @@
+source_details=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv
+source_policy_costs=G:\LearnAI\ontology-evolution\output\formal-policy-source-cost-test-details.csv
+rows=750
+summary=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-runtime-policy-costs-summary.csv
+by_type=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-runtime-policy-costs-by-type.csv
+json=G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-runtime-policy-costs.json
+
+[DIRECT_FREE] acc=77.33% | qwen=150/150 | tokens=107277 | runtime_min=8.86 | policy_complexity_points=0
+[OPTION_FORMAL_OPERATION] acc=76.00% | qwen=150/150 | tokens=195646 | runtime_min=11.05 | policy_complexity_points=0
+[OPTION_FORMAL_POLICY] acc=97.33% | qwen=150/150 | tokens=252997 | runtime_min=10.44 | policy_complexity_points=1312
+[OPTION_FORMAL_POLICY_HARD_GATE] acc=100.00% | qwen=0/150 | tokens=0 | runtime_min=0.00 | policy_complexity_points=1312
+[OPTION_VALUE_ONLY] acc=81.33% | qwen=150/150 | tokens=124400 | runtime_min=10.32 | policy_complexity_points=0

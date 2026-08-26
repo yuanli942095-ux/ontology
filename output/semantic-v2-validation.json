@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0",
+  "generated_at_utc": "2026-08-26T02:00:51.543181+00:00",
+  "require_ready": true,
+  "require_all_ready": false,
+  "events_total": 36,
+  "events_ready": 36,
+  "type_counts": {
+    "TEMPORAL_VERSION": 12,
+    "GENERAL_RULE_EXCEPTION": 12,
+    "CROSS_SENTENCE_SCOPE": 12
+  },
+  "split_counts": {
+    "dev": 6,
+    "test": 30
+  },
+  "errors": 0,
+  "warnings": 0,
+  "issues": [
+    {
+      "level": "INFO",
+      "code": "VALIDATION_PASS",
+      "entity": "benchmark",
+      "message": "未发现结构或泄漏问题"
+    }
+  ]
+}

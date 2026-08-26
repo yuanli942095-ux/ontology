@@ -1,0 +1,13 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "REMOVE_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": ["CQ004"],
+      "rationale": "根据证据 EVID_014，'最高投保年龄' 属性被明确定义为 '65'。在 CQ004 中，该属性被错误地关联为 '70'。由于存在明确的、当前有效的权威证据（EVID_014）支持 '65' 这一值，且该证据的效力等级为 A，因此必须移除 CQ004 中对 '产品A' 的 '最高投保年龄' 属性的错误关联，以消除冲突并维护本体的一致性。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#最高投保年龄","old_value": {"kind": "literal", "lexical": "70", "datatype": "http://www.w3.org/2001/XMLSchema#integer"}
+    }
+  ]
+}

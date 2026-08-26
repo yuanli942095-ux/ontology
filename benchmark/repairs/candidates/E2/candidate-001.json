@@ -1,0 +1,28 @@
+{
+  "candidate_id": "candidate-001",
+  "error_id": "E2",
+  "source_mutant": "G:\\LearnAI\\ontology-evolution\\benchmark\\mutants\\E2_missing_axiom.owl",
+  "candidate_owl": "G:\\LearnAI\\ontology-evolution\\benchmark\\repairs\\candidates\\E2\\candidate-001.owl",
+  "ontology_iri": "https://w3id.org/ontology-evolution/insurance-benchmark/repair/E2/candidate-001",
+  "generator": "finite_operator_cq_baseline",
+  "violated_cq_ids": [
+    "CQ006"
+  ],
+  "unresolved_notes": [],
+  "operations": [
+    {
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#等待期天数",
+      "source_cq_ids": [
+        "CQ006"
+      ],
+      "rationale": "等待期是核保和理赔的重要条件",
+      "operator": "ADD_PROPERTY_VALUE",
+      "new_value": {
+        "kind": "literal",
+        "lexical": "60",
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    }
+  ]
+}

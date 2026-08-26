@@ -1,0 +1,4 @@
+﻿cq_id,question,query_type,subject_label,predicate_label,expected_answer,expected_count,hard_constraint,requirement_origin,rationale,expected_fail_on
+CQ013,产品A的预期继承分类是否仍可完整推导？,INSTANCE_TYPE_ENTAILED,产品A,rdf:type/rdfs:subClassOf*,健康保险,,true,stakeholder_requirement,保护产品分类的继承语义，而不只检查直接rdf:type,E6
+CQ014,产品B的预期中间业务分类是否仍可推导？,INSTANCE_TYPE_ENTAILED,产品B,rdf:type/rdfs:subClassOf*,健康保险,,true,stakeholder_requirement,防止错误直接父类造成关键中间分类丢失,E7
+CQ015,保障疾病关系是否仍满足预期的直接值域约束？,PROPERTY_RANGE_EXACT_SET,,保障疾病,疾病,,true,ontology_schema_requirement,防止值域被无依据地收窄或放宽，保护数据质量约束,E8

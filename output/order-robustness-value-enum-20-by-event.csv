@@ -1,0 +1,2 @@
+﻿method,event_id,semantic_type,attempts,oracle_successes,oracle_accuracy,all_runs_correct,selection_stable,invalid_outputs,abstains
+VALUE_ENUM,E14,TEMPORAL_VERSION,20,5,0.25,False,False,0,15

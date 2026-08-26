@@ -1,0 +1,59 @@
+{
+  "event_id": "E42",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "version_code": "VER-AGE-2026Q4-B",
+    "regional_override": false,
+    "renewal_lock": false
+  },
+  "rules": [
+    {
+      "rule_id": "E42_CODE_A",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "version_code",
+          "operator": "equals",
+          "value": "VER-AGE-2026Q4-A"
+        }
+      ],
+      "allowed_values": [
+        "71"
+      ]
+    },
+    {
+      "rule_id": "E42_CODE_B",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "version_code",
+          "operator": "equals",
+          "value": "VER-AGE-2026Q4-B"
+        }
+      ],
+      "allowed_values": [
+        "59"
+      ]
+    },
+    {
+      "rule_id": "E42_CODE_C",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "version_code",
+          "operator": "equals",
+          "value": "VER-AGE-2026Q3-C"
+        }
+      ],
+      "allowed_values": [
+        "63"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E42_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

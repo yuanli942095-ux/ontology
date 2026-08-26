@@ -1,0 +1,2 @@
+﻿method,events,attempts,oracle_successes,accuracy,wrong_rate,abstain_rate,invalid_rate,strict_order_robust_events,stable_selected_candidate_events,outcome_consistent_events,order_sensitive_events
+OPTION_VALUE_ONLY,2,40,12,0.3,0.7,0.0,0.0,0,0,0,2

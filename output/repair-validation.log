@@ -1,0 +1,10 @@
+有限算子修复候选：三重门禁验证
+[E1] Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 操作数=1 | 基线同构=True | PASS
+[E2] Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 操作数=1 | 基线同构=True | PASS
+[E3] Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 操作数=1 | 基线同构=True | PASS
+[E4] Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 操作数=1 | 基线同构=True | PASS
+[E5] Reasoner=CONSISTENT | 证据=PASS | CQ=PASS | 操作数=1 | 基线同构=True | PASS
+
+修复验证汇总：5/5 通过
+CSV：G:\LearnAI\ontology-evolution\output\repair-validation.csv
+JSON：G:\LearnAI\ontology-evolution\output\repair-validation.json

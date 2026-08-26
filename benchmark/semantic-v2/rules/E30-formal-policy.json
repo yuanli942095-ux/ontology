@@ -1,0 +1,63 @@
+{
+  "event_id": "E30",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {
+    "group_level": "VIP",
+    "loss_ratio_percent": 32,
+    "group_list_confirmed": true
+  },
+  "rules": [
+    {
+      "rule_id": "E30_VIP_LOW_LOSS",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "group_level",
+          "operator": "equals",
+          "value": "VIP"
+        },
+        {
+          "fact": "loss_ratio_percent",
+          "operator": "less_than",
+          "value": 40
+        },
+        {
+          "fact": "group_list_confirmed",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "15"
+      ]
+    },
+    {
+      "rule_id": "E30_STANDARD_GROUP",
+      "priority": 200,
+      "conditions": [
+        {
+          "fact": "group_list_confirmed",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "30"
+      ]
+    },
+    {
+      "rule_id": "E30_GENERAL",
+      "priority": 100,
+      "conditions": [],
+      "allowed_values": [
+        "90"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "DOC_E30_TERMS"
+    ],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

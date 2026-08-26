@@ -1,0 +1,7 @@
+﻿event_id,attempts,success,action_mapping_error,semantic_error,output_contradiction,abstain_valid,abstain_unnecessary,invalid_output,manual_review,action_mapping_error_rate,semantic_error_rate,manual_review_rate
+E14,35,34,0,0,1,0,0,0,0,0.00%,0.00%,0.00%
+E15,35,33,2,0,0,0,0,0,0,5.71%,0.00%,0.00%
+E24,35,35,0,0,0,0,0,0,0,0.00%,0.00%,0.00%
+E25,35,35,0,0,0,0,0,0,0,0.00%,0.00%,0.00%
+E34,35,32,3,0,0,0,0,0,0,8.57%,0.00%,0.00%
+E35,35,35,0,0,0,0,0,0,0,0.00%,0.00%,0.00%

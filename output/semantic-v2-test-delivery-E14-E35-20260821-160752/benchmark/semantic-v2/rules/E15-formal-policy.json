@@ -1,0 +1,49 @@
+{
+  "event_id": "E15",
+  "semantics": "temporal_case_date_over_later_assessment_date",
+  "facts": {
+    "underwriting_entry_date": "2026-07-20",
+    "manual_assessment_date": "2026-08-21",
+    "entered_after_expiry": false
+  },
+  "rules": [
+    {
+      "rule_id": "E15_JULY_VERSION_SCOPE",
+      "priority": 300,
+      "when": {
+        "underwriting_entry_date": {
+          "on_or_after": "2026-07-01",
+          "on_or_before": "2026-07-31"
+        },
+        "entered_after_expiry": {
+          "equals": false
+        }
+      },
+      "allowed_values": ["64"]
+    },
+    {
+      "rule_id": "E15_AUGUST_VERSION_SCOPE",
+      "priority": 200,
+      "when": {
+        "underwriting_entry_date": {
+          "on_or_after": "2026-08-01"
+        }
+      },
+      "allowed_values": ["68"]
+    },
+    {
+      "rule_id": "E15_PRIOR_PRODUCT_LIMIT",
+      "priority": 100,
+      "when": {
+        "underwriting_entry_date": {
+          "on_or_before": "2026-06-30"
+        }
+      },
+      "allowed_values": ["66"]
+    }
+  ],
+  "provenance": {
+    "source_documents": ["DOC_E15_JULY", "DOC_E15_AUGUST"],
+    "annotation_status": "CONTROLLED_TEST_MANUAL_FORMALIZATION"
+  }
+}

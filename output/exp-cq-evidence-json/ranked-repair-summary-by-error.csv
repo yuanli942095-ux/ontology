@@ -1,0 +1,6 @@
+﻿error_id,error_type,attempts,selected,abstained,safe_accepts,benchmark_successes,selection_rate,safe_accept_rate,benchmark_success_rate
+E1,数值漂移,5,5,0,0,0,1.0,0.0,0.0
+E2,公理缺失,5,5,0,5,5,1.0,1.0,1.0
+E3,关系对象错误,5,5,0,1,1,1.0,0.2,0.2
+E4,互斥类别冲突,5,5,0,5,5,1.0,1.0,1.0
+E5,功能属性值冲突,5,5,0,5,5,1.0,1.0,1.0

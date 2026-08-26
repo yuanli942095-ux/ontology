@@ -1,0 +1,17 @@
+{
+  "abstain": true,
+  "confidence": 0.95,
+  "operations": [
+    {
+      "operator": "ADD_PROPERTY_VALUE",
+      "subject_iri": "file:///G:/LearnAI/ontology-1#产品A",
+      "source_cq_ids": ["CQ003"],
+      "rationale": "根据证据 EVID_012，产品A 由保险公司甲承保。需将'保险公司甲'作为对象添加到'由公司承保'属性的断言中。",
+      "predicate_iri": "file:///G:/LearnAI/ontology-1#由公司承保",
+      "new_value": {
+        "kind": "iri",
+        "iri": "file:///G:/LearnAI/ontology-1#保险公司甲"
+      }
+    }
+  ]
+}

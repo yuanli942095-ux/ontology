@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "event_id": "E32",
+  "semantics": "explicit_facts_prioritized_rules",
+  "facts": {"long_term_medical_addon_selected": true},
+  "rules": [
+    {
+      "rule_id": "E32_LONG_TERM_ADDON",
+      "priority": 200,
+      "when": {"long_term_medical_addon_selected": true},
+      "allowed_values": ["24"]
+    },
+    {
+      "rule_id": "E32_BASE_PLAN",
+      "priority": 100,
+      "when": {},
+      "allowed_values": ["12"]
+    }
+  ],
+  "provenance": {
+    "source": "DOC_E32_TERMS第六条与投保确认记录",
+    "annotation_status": "CONTROLLED_DEV_MANUAL_FORMALIZATION"
+  }
+}

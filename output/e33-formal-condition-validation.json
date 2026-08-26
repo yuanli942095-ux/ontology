@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-21T01:49:49.824872+00:00",
+  "event_id": "E33",
+  "semantics": "closed_world_explicit_facts",
+  "facts": {
+    "long_term_medical_addon_selected": true,
+    "overseas_medical_extension_selected": false
+  },
+  "applicable_rule": {
+    "rule_id": "E33_R2",
+    "priority": 200,
+    "when": {
+      "long_term_medical_addon_selected": true,
+      "overseas_medical_extension_selected": false
+    },
+    "allowed_values": [
+      "24"
+    ],
+    "explanation": "选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月"
+  },
+  "survivor_candidate_id": "CAND_002",
+  "survivor_value": "24",
+  "oracle_loaded_after_gate": true,
+  "oracle_match": true,
+  "rows": [
+    {
+      "event_id": "E33",
+      "candidate_id": "CAND_001",
+      "display_value": "12",
+      "applicable_rule_id": "E33_R2",
+      "rule_priority": 200,
+      "formal_condition_pass": false,
+      "decision": "FILTER_OUT",
+      "reason": "选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月",
+      "oracle_loaded_after_gate": true,
+      "oracle_candidate_id": "CAND_002",
+      "oracle_match": false
+    },
+    {
+      "event_id": "E33",
+      "candidate_id": "CAND_002",
+      "display_value": "24",
+      "applicable_rule_id": "E33_R2",
+      "rule_priority": 200,
+      "formal_condition_pass": true,
+      "decision": "SURVIVE",
+      "reason": "选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月",
+      "oracle_loaded_after_gate": true,
+      "oracle_candidate_id": "CAND_002",
+      "oracle_match": true
+    },
+    {
+      "event_id": "E33",
+      "candidate_id": "CAND_003",
+      "display_value": "36",
+      "applicable_rule_id": "E33_R2",
+      "rule_priority": 200,
+      "formal_condition_pass": false,
+      "decision": "FILTER_OUT",
+      "reason": "选择长期医疗附加责任且明确未选择海外医疗扩展责任时为24个月",
+      "oracle_loaded_after_gate": true,
+      "oracle_candidate_id": "CAND_002",
+      "oracle_match": false
+    }
+  ]
+}

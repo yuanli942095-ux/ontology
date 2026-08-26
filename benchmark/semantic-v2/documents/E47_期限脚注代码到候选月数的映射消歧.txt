@@ -1,0 +1,6 @@
+E47 产品A期限脚注代码记录
+文件性质：期限代码记录。
+第一条 规则引擎返回 DURATION-CODE-FOOTNOTE-STD。
+第二条 DURATION-CODE-BASE、DURATION-CODE-FOOTNOTE-STD、DURATION-CODE-PREMIUM 分别代表不同候选修复映射。
+第三条 代码到期限月数的映射由候选修复表维护，文档不直接展开数值。
+投保记录：本案为标准计划，尊享计划脚注不适用。

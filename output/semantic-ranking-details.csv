@@ -1,0 +1,91 @@
+﻿method,run_id,seed,event_id,semantic_type,status,selected,abstained,invalid_or_hallucinated,selected_candidate_id,selected_original_candidate_id,selected_value,confidence,rationale,runtime_ms,response_mode,error_message,oracle_value,oracle_candidate_id,oracle_success
+FIRST_POSITION,1,20260820,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,打乱后的首个候选,0,,,65,CAND_002,False
+RANDOM,1,20260820,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,均匀随机选择,0,,,65,CAND_002,True
+VALUE_FREQUENCY,1,20260820,E9,TEMPORAL_VERSION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,65,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,1,20260820,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,选择最高权威、最新生效文档中的唯一候选值,0,,,65,CAND_002,True
+QWEN_DIRECT_VALUE,1,20260820,E9,TEMPORAL_VERSION,REJECTED_INVALID,False,False,True,,,,0.95,"The case context specifies an evaluation date of August 20, 2026. DOC_E9_CURRENT (effective from July 1, 2026) applies to this date and states the maximum insurable age is 65 years old. DOC_E9_OLD expired on June 30, 2026, so it does not apply. The current document explicitly overrides previous versions.",3878,json_schema,,65,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,1,20260820,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,0.95,案件评估日期为2026年8月20日。DOC_E9_OLD（最高投保年龄60）生效至2026-06-30，已过期。DOC_E9_CURRENT（最高投保年龄65）自2026-07-01生效且无终止日期，当前案件时间落在其有效期内。根据文件权威性相同、明确例外优先及跨句指代规则，现行有效文档DOC_E9_CURRENT的条款适用，故选择OPTION_B。,3835,json_schema,,65,CAND_002,True
+FIRST_POSITION,1,20260820,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,打乱后的首个候选,0,,,0,CAND_001,False
+RANDOM,1,20260820,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,均匀随机选择,0,,,0,CAND_001,False
+VALUE_FREQUENCY,1,20260820,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,0,CAND_001,False
+LATEST_AUTHORITY_UNIQUE,1,20260820,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,0,CAND_001,False
+QWEN_DIRECT_VALUE,1,20260820,E10,GENERAL_RULE_EXCEPTION,REJECTED_INVALID,False,False,True,,,,1.0,"The document DOC_E10_TERMS explicitly states that for continuous renewal without interruption of coverage (matching the case context), the waiting period is treated as 0 days, and this exception overrides the general rule.",2430,json_schema,,0,CAND_001,False
+QWEN_CONSTRAINED_CANDIDATE,1,20260820,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_B,CAND_001,0,0.95,案件上下文明确指出产品A属于'保障从未中断的连续续保'。文档DOC_E10_TERMS第四条规定此类情况'不重新计算等待期，等待期按0天处理'，且该例外条款明确'优先于第三条的一般规定'（即60天）。因此，尽管OPTION_A(60)符合一般规则，但OPTION_B(0)符合针对本案事实的明确例外规则。,3795,json_schema,,0,CAND_001,True
+FIRST_POSITION,1,20260820,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,,打乱后的首个候选,0,,,24,CAND_002,True
+RANDOM,1,20260820,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_B,CAND_001,12,,均匀随机选择,0,,,24,CAND_002,False
+VALUE_FREQUENCY,1,20260820,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,24,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,1,20260820,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,24,CAND_002,False
+QWEN_DIRECT_VALUE,1,20260820,E11,CROSS_SENTENCE_SCOPE,REJECTED_INVALID,False,False,True,,,,0.95,"The document DOC_E11_TERMS explicitly states that if the plan includes long-term medical supplementary liability, the insurance term becomes 24 months. The case context confirms this condition is met for Product A. The document authority (100) and effective date (2026-07-01) are appropriate.",4362,json_schema,,24,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,1,20260820,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,0.95,文档 DOC_E11_TERMS 具有最高权威性 (authority=100) 且当前案件上下文确认产品 A 投保方案包含‘长期医疗附加责任’。根据文档第六条明确规则：基础方案为 12 个月，但‘投保方案包含长期医疗附加责任时，整个方案的保险期限调整为 24 个月’。由于条件已满足，必须应用例外规则选择 24 个月 (OPTION_A)，而非一般规则的 12 个月 (OPTION_B)。,4238,json_schema,,24,CAND_002,True
+FIRST_POSITION,2,20260821,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,打乱后的首个候选,0,,,65,CAND_002,False
+RANDOM,2,20260821,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,均匀随机选择,0,,,65,CAND_002,True
+VALUE_FREQUENCY,2,20260821,E9,TEMPORAL_VERSION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,65,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,2,20260821,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,选择最高权威、最新生效文档中的唯一候选值,0,,,65,CAND_002,True
+QWEN_DIRECT_VALUE,2,20260821,E9,TEMPORAL_VERSION,REJECTED_INVALID,False,False,True,,,,0.95,评估日期为2026年8月20日，落在DOC_E9_CURRENT的生效期间内（2026-07-01至今）。该文档明确规定最高投保年龄调整为65周岁，且声明与旧版不一致时以新版为准。因此目标值为65。,2829,json_schema,,65,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,2,20260821,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,0.95,评估日期为2026年8月20日。DOC_E9_OLD（最高投保年龄60）生效至2026-06-30，已过期。DOC_E9_CURRENT（最高投保年龄65）自2026-07-01生效且无终止日期，覆盖评估日期。根据时间有效性优先原则及明确例外条款，应适用现行版本OPTION_B。,3487,json_schema,,65,CAND_002,True
+FIRST_POSITION,2,20260821,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,打乱后的首个候选,0,,,0,CAND_001,False
+RANDOM,2,20260821,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,均匀随机选择,0,,,0,CAND_001,False
+VALUE_FREQUENCY,2,20260821,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,0,CAND_001,False
+LATEST_AUTHORITY_UNIQUE,2,20260821,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,0,CAND_001,False
+QWEN_DIRECT_VALUE,2,20260821,E10,GENERAL_RULE_EXCEPTION,REJECTED_INVALID,False,False,True,,,,1.0,文档 DOC_E10_TERMS 第四条明确规定，对于保障未中断的连续续保情况，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于保障从未中断的连续续保，满足例外条款条件。,2806,json_schema,,0,CAND_001,False
+QWEN_CONSTRAINED_CANDIDATE,2,20260821,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_B,CAND_001,0,0.95,案件上下文明确指出产品A属于'保障从未中断的连续续保'。文档DOC_E10_TERMS第四条规定此类情况'不重新计算等待期，等待期按0天处理'，且该例外条款明确'优先于第三条的一般规定'（即60天）。因此，尽管OPTION_A（60天）是首次投保或中断后的规则，但本案满足OPTION_B（0天）的例外条件。,3502,json_schema,,0,CAND_001,True
+FIRST_POSITION,2,20260821,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,,打乱后的首个候选,0,,,24,CAND_002,True
+RANDOM,2,20260821,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,,均匀随机选择,0,,,24,CAND_002,True
+VALUE_FREQUENCY,2,20260821,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,24,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,2,20260821,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,24,CAND_002,False
+QWEN_DIRECT_VALUE,2,20260821,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,0.95,文档DOC_E11_TERMS具有最高权威性（authority=100）且生效时间覆盖当前。条款明确规定基础方案为12个月，但投保确认记录显示已选择长期医疗附加责任，触发例外规则将期限调整为24个月。,2725,json_schema,,24,CAND_002,True
+QWEN_CONSTRAINED_CANDIDATE,2,20260821,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,0.95,文档 DOC_E11_TERMS 具有最高权威性 (authority=100) 且当前案件上下文确认产品 A 投保方案包含‘长期医疗附加责任’。根据文档第六条明确规则，基础方案为 12 个月，但选择该附加责任时保险期限调整为 24 个月。因此 OPTION_A (24) 是语义上正确的选项，OPTION_B (12) 仅适用于未选附加责任的情况。,3579,json_schema,,24,CAND_002,True
+FIRST_POSITION,3,20260822,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,打乱后的首个候选,0,,,65,CAND_002,False
+RANDOM,3,20260822,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,均匀随机选择,0,,,65,CAND_002,False
+VALUE_FREQUENCY,3,20260822,E9,TEMPORAL_VERSION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,65,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,3,20260822,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,选择最高权威、最新生效文档中的唯一候选值,0,,,65,CAND_002,True
+QWEN_DIRECT_VALUE,3,20260822,E9,TEMPORAL_VERSION,REJECTED_ERROR,False,False,True,,,,,,0,,ValueError: abstain=false时value不能为空,65,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,3,20260822,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,0.95,评估日期为2026年8月20日，DOC_E9_CURRENT（生效至当前）规定最高投保年龄为65周岁，且明确优于旧版；DOC_E9_OLD已于2026年6月30日失效。因此适用值为65。,2850,json_schema,,65,CAND_002,True
+FIRST_POSITION,3,20260822,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,打乱后的首个候选,0,,,0,CAND_001,False
+RANDOM,3,20260822,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_002,60,,均匀随机选择,0,,,0,CAND_001,False
+VALUE_FREQUENCY,3,20260822,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,0,CAND_001,False
+LATEST_AUTHORITY_UNIQUE,3,20260822,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,0,CAND_001,False
+QWEN_DIRECT_VALUE,3,20260822,E10,GENERAL_RULE_EXCEPTION,REJECTED_INVALID,False,False,True,,,,1.0,文档 DOC_E10_TERMS 第四条明确规定，对于保障未发生中断的连续续保情形，等待期按 0 天处理，且该例外优先于第三条的一般规定。案件上下文确认产品 A 属于‘保障从未中断的连续续保’，完全满足例外条款条件。,2834,json_schema,,0,CAND_001,False
+QWEN_CONSTRAINED_CANDIDATE,3,20260822,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_B,CAND_001,0,0.95,案件上下文明确描述产品A为'从未中断的连续续保'。文档DOC_E10_TERMS第四条规定此类情况'不重新计算等待期，等待期按0天处理'，且该例外条款优先于第三条（60天）。因此，OPTION_B (0) 是语义上正确的选择。,2986,json_schema,,0,CAND_001,True
+FIRST_POSITION,3,20260822,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_001,12,,打乱后的首个候选,0,,,24,CAND_002,False
+RANDOM,3,20260822,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_001,12,,均匀随机选择,0,,,24,CAND_002,False
+VALUE_FREQUENCY,3,20260822,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,24,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,3,20260822,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,24,CAND_002,False
+QWEN_DIRECT_VALUE,3,20260822,E11,CROSS_SENTENCE_SCOPE,REJECTED_INVALID,False,False,True,,,,0.95,"The document explicitly states that the base term is 12 months and when 'Long-term Medical Additional Liability' (长期医疗附加责任) is selected, the term adjusts to 24 months. The case context confirms the selection of this additional liability. Therefore, the value is 24.",2845,json_schema,,24,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,3,20260822,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_B,CAND_002,24,0.95,文档 DOC_E11_TERMS (权威性 100) 明确规定：基础方案为 12 个月，若包含长期医疗附加责任则调整为 24 个月。案件上下文确认产品 A 投保方案已选择长期医疗附加责任，满足明确例外条件，因此适用 24 个月而非一般规则下的 12 个月。,3491,json_schema,,24,CAND_002,True
+FIRST_POSITION,4,20260823,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,打乱后的首个候选,0,,,65,CAND_002,False
+RANDOM,4,20260823,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_001,60,,均匀随机选择,0,,,65,CAND_002,False
+VALUE_FREQUENCY,4,20260823,E9,TEMPORAL_VERSION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,65,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,4,20260823,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,,选择最高权威、最新生效文档中的唯一候选值,0,,,65,CAND_002,True
+QWEN_DIRECT_VALUE,4,20260823,E9,TEMPORAL_VERSION,REJECTED_ERROR,False,False,True,,,,,,0,,JSONDecodeError: Unterminated string starting at: line 5 column 16 (char 74),65,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,4,20260823,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_002,65,0.95,案件评估日期为2026年8月20日。DOC_E9_OLD（最高投保年龄60）生效至2026-06-30，已过期。DOC_E9_CURRENT（最高投保年龄65）自2026-07-01生效且无终止日期，当前案件满足其生效条件。根据文件权威性相同、明确例外优先及时间有效性原则，应适用现行条款OPTION_B。,3596,json_schema,,65,CAND_002,True
+FIRST_POSITION,4,20260823,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_001,0,,打乱后的首个候选,0,,,0,CAND_001,True
+RANDOM,4,20260823,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_B,CAND_002,60,,均匀随机选择,0,,,0,CAND_001,False
+VALUE_FREQUENCY,4,20260823,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,0,CAND_001,False
+LATEST_AUTHORITY_UNIQUE,4,20260823,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,0,CAND_001,False
+QWEN_DIRECT_VALUE,4,20260823,E10,GENERAL_RULE_EXCEPTION,REJECTED_INVALID,False,False,True,,,,1.0,文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理，且该例外优先于第三条的一般规定。案件上下文确认产品A属于‘保障从未中断的连续续保’，满足例外条款条件。,2729,json_schema,,0,CAND_001,False
+QWEN_CONSTRAINED_CANDIDATE,4,20260823,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_001,0,0.95,案件上下文明确描述产品A为'保障从未中断的连续续保'，满足文档DOC_E10_TERMS中第四条'连续续保例外'的条件（上一期间届满后连续续保且未中断）。该例外条款明确规定'等待期按0天处理'并'优先于第三条的一般规定'。因此，尽管一般规则（OPTION_B）规定60天，但本案应适用例外规则，选择OPTION_A (0天)。,3900,json_schema,,0,CAND_001,True
+FIRST_POSITION,4,20260823,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_001,12,,打乱后的首个候选,0,,,24,CAND_002,False
+RANDOM,4,20260823,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_001,12,,均匀随机选择,0,,,24,CAND_002,False
+VALUE_FREQUENCY,4,20260823,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,24,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,4,20260823,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,24,CAND_002,False
+QWEN_DIRECT_VALUE,4,20260823,E11,CROSS_SENTENCE_SCOPE,REJECTED_ERROR,False,False,True,,,,,,0,,ValueError: abstain=false时value不能为空,24,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,4,20260823,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_B,CAND_002,24,0.95,文档 DOC_E11_TERMS (权威性 100) 明确规定：基础方案为 12 个月，若包含长期医疗附加责任则调整为 24 个月。案件上下文确认产品 A 投保方案已选择‘长期医疗附加责任’，因此适用明确例外规则，保险期限应为 24 个月。OPTION_B (24) 符合文档语义，OPTION_A (12) 仅适用于基础方案而不满足当前条件。,3612,json_schema,,24,CAND_002,True
+FIRST_POSITION,5,20260824,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_002,65,,打乱后的首个候选,0,,,65,CAND_002,True
+RANDOM,5,20260824,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_B,CAND_001,60,,均匀随机选择,0,,,65,CAND_002,False
+VALUE_FREQUENCY,5,20260824,E9,TEMPORAL_VERSION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,65,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,5,20260824,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_002,65,,选择最高权威、最新生效文档中的唯一候选值,0,,,65,CAND_002,True
+QWEN_DIRECT_VALUE,5,20260824,E9,TEMPORAL_VERSION,REJECTED_ERROR,False,False,True,,,,,,0,,ValueError: abstain=false时value不能为空,65,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,5,20260824,E9,TEMPORAL_VERSION,SELECTED,True,False,False,OPTION_A,CAND_002,65,0.95,评估日期为2026年8月20日。DOC_E9_OLD（最高投保年龄60）生效至2026-06-30，已过期。DOC_E9_CURRENT（最高投保年龄65）自2026-07-01生效且无终止日期，当前案件时间落在其有效期内。根据明确例外优先于一般规则的原则，应适用现行有效条款DOC_E9_CURRENT，故选择OPTION_A（65）。,4154,json_schema,,65,CAND_002,True
+FIRST_POSITION,5,20260824,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_001,0,,打乱后的首个候选,0,,,0,CAND_001,True
+RANDOM,5,20260824,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_B,CAND_002,60,,均匀随机选择,0,,,0,CAND_001,False
+VALUE_FREQUENCY,5,20260824,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,0,CAND_001,False
+LATEST_AUTHORITY_UNIQUE,5,20260824,E10,GENERAL_RULE_EXCEPTION,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,0,CAND_001,False
+QWEN_DIRECT_VALUE,5,20260824,E10,GENERAL_RULE_EXCEPTION,REJECTED_INVALID,False,False,True,,,,1.0,文档DOC_E10_TERMS第四条明确规定，对于保障未发生中断的连续续保情形，等待期按0天处理。该例外条款（authority=100）优先于第三条的一般规定（首次投保或中断后重新投保为60天）。案件上下文确认产品A属于‘保障从未中断的连续续保’，完全满足第四条的适用条件，因此排除一般规则，采用例外规则，等待期天数为0。,3603,json_schema,,0,CAND_001,False
+QWEN_CONSTRAINED_CANDIDATE,5,20260824,E10,GENERAL_RULE_EXCEPTION,SELECTED,True,False,False,OPTION_A,CAND_001,0,0.95,案件上下文明确指出产品A属于'保障从未中断的连续续保'。文档 DOC_E10_TERMS 第四条规定此类情况'等待期按 0 天处理'，且该例外条款明确'优先于第三条的一般规定'（一般规定为 60 天）。因此，OPTION_A (0) 是语义上正确的选择，OPTION_B (60) 仅适用于首次投保或中断后重新投保的情况。,3522,json_schema,,0,CAND_001,True
+FIRST_POSITION,5,20260824,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,,打乱后的首个候选,0,,,24,CAND_002,True
+RANDOM,5,20260824,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,,均匀随机选择,0,,,24,CAND_002,True
+VALUE_FREQUENCY,5,20260824,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,"词面频次并列，主动放弃：{'OPTION_A': 1, 'OPTION_B': 1}",0,,,24,CAND_002,False
+LATEST_AUTHORITY_UNIQUE,5,20260824,E11,CROSS_SENTENCE_SCOPE,ABSTAIN,False,True,False,,,,,最高权威且最新的文档仍包含多个候选值，主动放弃,0,,,24,CAND_002,False
+QWEN_DIRECT_VALUE,5,20260824,E11,CROSS_SENTENCE_SCOPE,REJECTED_INVALID,False,False,True,,,,0.95,文档DOC_E11_TERMS明确区分了基础方案（12个月）和包含长期医疗附加责任的方案（24个月）。案件上下文确认产品A选择了长期医疗附加责任，因此适用24个月的条款。,2924,json_schema,,24,CAND_002,False
+QWEN_CONSTRAINED_CANDIDATE,5,20260824,E11,CROSS_SENTENCE_SCOPE,SELECTED,True,False,False,OPTION_A,CAND_002,24,0.95,文档 DOC_E11_TERMS 具有最高权威性 (authority=100) 且当前案件上下文确认产品 A 投保方案已选择'长期医疗附加责任'。根据该文档第六条明确规则：基础方案为 12 个月，但包含长期医疗附加责任时调整为 24 个月。由于条件满足，应优先适用例外规则 (24 个月)，而非一般规则 (12 个月)。因此 OPTION_A 语义上正确。,3999,json_schema,,24,CAND_002,True

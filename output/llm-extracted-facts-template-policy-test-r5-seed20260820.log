@@ -1,0 +1,20 @@
+LLM-extracted facts + template policy
+split=test
+runs=5
+seed=20260820
+manual_schema_used=True
+manual_rule_template_used=True
+manual_fact_values_used_in_prompt=False
+candidate_descriptions_used_in_prompt=False
+allowed_values_used_in_prompt=False
+oracle_loaded_after_decisions=True
+
+[ALL] Oracle=86.00% wrong=13.33% abstain=0.67% extract_err=0.00% fact_acc=94.12% qwen_calls=150 tokens=130541
+[TEMPORAL_VERSION] Oracle=88.00% wrong=10.00% abstain=2.00% extract_err=0.00% fact_acc=93.10% qwen_calls=50 tokens=48281
+[GENERAL_RULE_EXCEPTION] Oracle=90.00% wrong=10.00% abstain=0.00% extract_err=0.00% fact_acc=96.67% qwen_calls=50 tokens=41615
+[CROSS_SENTENCE_SCOPE] Oracle=80.00% wrong=20.00% abstain=0.00% extract_err=0.00% fact_acc=92.31% qwen_calls=50 tokens=40645
+
+details=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-test-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-test-r5-seed20260820-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-test-r5-seed20260820-by-event.csv
+json=G:\LearnAI\ontology-evolution\output\llm-extracted-facts-template-policy-test-r5-seed20260820.json

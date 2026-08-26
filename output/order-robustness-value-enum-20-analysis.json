@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-08-25T14:04:51.608023+00:00",
+  "source_details": [
+    "G:\\LearnAI\\ontology-evolution\\output\\order-robustness-value-enum-20-details.csv"
+  ],
+  "rows": 20,
+  "summary": [
+    {
+      "method": "VALUE_ENUM",
+      "events": 1,
+      "attempts": 20,
+      "oracle_successes": 5,
+      "accuracy": 0.25,
+      "wrong_rate": 0.0,
+      "abstain_rate": 0.75,
+      "invalid_rate": 0.0,
+      "strict_order_robust_events": 0,
+      "stable_selected_candidate_events": 1,
+      "outcome_consistent_events": 0,
+      "order_sensitive_events": 1
+    }
+  ],
+  "by_event": [
+    {
+      "method": "VALUE_ENUM",
+      "event_id": "E14",
+      "semantic_type": "TEMPORAL_VERSION",
+      "attempts": 20,
+      "distinct_candidate_orders": 6,
+      "oracle_successes": 5,
+      "accuracy": 0.25,
+      "wrong": 0,
+      "abstains": 15,
+      "invalid": 0,
+      "selected_candidate_ids": "CAND_002",
+      "selected_values": "62",
+      "selected_option_ids": "OPTION_A|OPTION_B|OPTION_C",
+      "stable_selected_candidate": true,
+      "strict_order_robust": false,
+      "outcome_consistent": false,
+      "order_sensitive": true
+    }
+  ]
+}

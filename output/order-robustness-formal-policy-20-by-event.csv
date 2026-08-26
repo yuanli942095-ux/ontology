@@ -1,0 +1,5 @@
+﻿method,event_id,semantic_type,attempts,oracle_successes,oracle_accuracy,all_runs_correct,selection_stable,invalid_outputs,abstains
+OPTION_FORMAL_POLICY,E17,TEMPORAL_VERSION,20,15,0.75,False,False,0,0
+OPTION_FORMAL_POLICY,E27,GENERAL_RULE_EXCEPTION,20,14,0.7,False,False,0,0
+OPTION_FORMAL_POLICY_HARD_GATE,E17,TEMPORAL_VERSION,20,20,1.0,True,True,0,0
+OPTION_FORMAL_POLICY_HARD_GATE,E27,GENERAL_RULE_EXCEPTION,20,20,1.0,True,True,0,0

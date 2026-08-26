@@ -1,0 +1,2 @@
+﻿method,independent_events,all_runs_correct_events,strict_event_accuracy,macro_event_accuracy,stable_events
+DIRECT_FREE,12,9,0.75,0.75,12

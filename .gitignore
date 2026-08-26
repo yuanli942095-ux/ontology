@@ -1,0 +1,14 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+
+# Large intermediate result dumps; summaries and reports remain tracked.
+output/candidate-order-robustness.json
+output/candidate-order-robustness-details.csv
+output/archive/
+output/snapshots/
+
+# Local OS/editor noise.
+.DS_Store
+Thumbs.db

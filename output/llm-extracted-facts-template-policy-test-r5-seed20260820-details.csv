@@ -1,0 +1,1319 @@
+﻿run_index,event_id,split,semantic_type,method,status,selected_candidate_id,selected_value,template_id,source_policy_file,fact_names,fact_schema,extracted_facts,manual_fact_match_count,manual_fact_total,manual_fact_accuracy,manual_fact_mismatches,missing_facts_reported,coerced_facts,applicable_rule_slot,allowed_values,survivor_count,decision_error,extraction_error,evidence_notes,manual_schema_used,manual_rule_template_used,manual_fact_values_used_in_prompt,candidate_descriptions_used_in_prompt,allowed_values_used_in_prompt,oracle_loaded_in_decision_phase,qwen_called,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,oracle_candidate_id,oracle_value,oracle_correct
+1,E14,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E14-formal-policy.json,assessment_date|group_transfer_confirmed|underwriting_acceptance_date,"{""assessment_date"": ""string"", ""group_transfer_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""assessment_date"": ""2026-08-21"", ""group_transfer_confirmed"": false, ""underwriting_acceptance_date"": ""2026-08-20""}",3,3,1.0,,,,RULE_SLOT_01,62,1,,,所有facts均直接从case_context中抽取。assessment_date和underwriting_acceptance_date分别对应上下文中的'评估日期为2026年8月21日'和'核保受理日为2026年8月20日'。group_transfer_confirmed设为false，因上下文未提及任何团体转入情形且无相关确认书证据。,True,True,False,False,False,False,True,4495,json_schema,1177,155,stop,"{
+  ""facts"": {
+    ""assessment_date"": ""2026-08-21"",
+    ""group_transfer_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-08-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从case_context中抽取。assessment_date和underwriting_acceptance_date分别对应上下文中的'评估日期为2026年8月21日'和'核保受理日为2026年8月20日'。group_transfer_confirmed设为false，因上下文未提及任何团体转入情形且无相关确认书证据。""
+}",CAND_002,62,True
+1,E15,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,ABSTAIN,,,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E15-formal-policy.json,entered_after_expiry|manual_assessment_date|underwriting_entry_date,"{""entered_after_expiry"": ""boolean"", ""manual_assessment_date"": ""string"", ""underwriting_entry_date"": ""string""}","{""entered_after_expiry"": true, ""manual_assessment_date"": ""2026-08-21"", ""underwriting_entry_date"": ""2026-07-20""}",2,3,0.6666666666666666,"entered_after_expiry: expected=False, actual=True",,,,,0,没有适用规则,,依据DOC_E15_JULY（生效至2026-07-31）和DOC_E15_AUGUST（自2026-08-01起生效），投保申请进入核保流程日期为2026-07-20，属于DOC_E15_JULY版本适用期间。人工评估日期为2026-08-21，符合DOC_E15_AUGUST第三条关于‘即使后续人工评估仍按进入核保流程当日有效版本处理’的规则。entered_after_expiry为true是因为申请在DOC_E15_JULY失效后（即2026-07-31之后）才由DOC_E15_AUGUST覆盖，但根据DOC_E15_JULY第三条‘若投保申请在本版本失效后才首次进入核保流程’，本案申请是在失效前进入的，故entered_after_expiry应为false。然而，题目要求只抽取fact_schema中列出的facts，且必须依据文档原文。重新审视：DOC_E15_JULY第三条规定‘若投保申请在本版本失效后才首次进入核保流程，则不再适用本版本’，本案申请在2026-07-20进入，早于失效日2026-07-31，故entered_after_expiry应为false。但原,True,True,False,False,False,False,True,9816,json_schema,1173,372,stop,"{
+  ""facts"": {
+    ""entered_after_expiry"": true,
+    ""manual_assessment_date"": ""2026-08-21"",
+    ""underwriting_entry_date"": ""2026-07-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据DOC_E15_JULY（生效至2026-07-31）和DOC_E15_AUGUST（自2026-08-01起生效），投保申请进入核保流程日期为2026-07-20，属于DOC_E15_JULY版本适用期间。人工评估日期为2026-08-21，符合DOC_E15_AUGUST第三条关于‘即使后续人工评估仍按进入核保流程当日有效版本处理’的规则。entered_after_expiry为true是因为申请在DOC_E15_JULY失效后（即2026-07-31之后）才由DOC_E15_AUGUST覆盖，但根据DOC_E15_JULY第三条‘若投保申请在本版本失效后才首次进入核保流程’，本案申请是在失效前进入的，故entered_after_expiry应为false。然而，题目要求只抽取fact_schema中列出的facts，且必须依据文档原文。重新审视：DOC_E15_JULY第三条规定‘若投保申请在本版本失效后才首次进入核保流程，则不再适用本版本’，本案申请在2026-07-20进入，早于失效日2026-07-31，故entered_after_expiry应为false。但原""
+  }",CAND_003,64,False
+1,E16,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E16-formal-policy.json,endorsement_filing_completed|renewal_exception_confirmed|underwriting_acceptance_date,"{""endorsement_filing_completed"": ""boolean"", ""renewal_exception_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""endorsement_filing_completed"": false, ""renewal_exception_confirmed"": false, ""underwriting_acceptance_date"": ""2026-09-20""}",3,3,1.0,,,,RULE_SLOT_02,67,1,,,文档DOC_E16_TERMS明确记载‘备案完成日：2026-10-01'，而核保受理日为2026-09-20，故endorsement_filing_completed为false；文档第三条指出仅当提交连续续保证明并通过人工确认时方可沿用历史方案，上下文未提及客户已提交该证明或获得确认，故renewal_exception_confirmed为false；文档开头明确核保受理日为2026年9月20日。,True,True,False,False,False,False,True,5028,json_schema,774,186,stop,"{
+  ""facts"": {
+    ""endorsement_filing_completed"": false,
+    ""renewal_exception_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-09-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E16_TERMS明确记载‘备案完成日：2026-10-01'，而核保受理日为2026-09-20，故endorsement_filing_completed为false；文档第三条指出仅当提交连续续保证明并通过人工确认时方可沿用历史方案，上下文未提及客户已提交该证明或获得确认，故renewal_exception_confirmed为false；文档开头明确核保受理日为2026年9月20日。""
+}",CAND_002,67,True
+1,E17,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,63,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E17-formal-policy.json,age_band_code|marketing_draft_applicable|renewal_channel_confirmed,"{""age_band_code"": ""string"", ""marketing_draft_applicable"": ""boolean"", ""renewal_channel_confirmed"": ""boolean""}","{""age_band_code"": ""AGE-BAND-G2"", ""marketing_draft_applicable"": false, ""renewal_channel_confirmed"": false}",3,3,1.0,,,,RULE_SLOT_02,63,1,,,依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。,True,True,False,False,False,False,True,3232,json_schema,740,111,stop,"{
+  ""facts"": {
+    ""age_band_code"": ""AGE-BAND-G2"",
+    ""marketing_draft_applicable"": false,
+    ""renewal_channel_confirmed"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。""
+}",CAND_002,63,True
+1,E18,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,61,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E18-formal-policy.json,acceptance_date|application_queue_date|new_version_effective|old_version_grace_until,"{""acceptance_date"": ""string"", ""application_queue_date"": ""string"", ""new_version_effective"": ""boolean"", ""old_version_grace_until"": ""string""}","{""acceptance_date"": ""2026-10-05"", ""application_queue_date"": ""2026-09-29"", ""new_version_effective"": true, ""old_version_grace_until"": ""2026-10-10""}",4,4,1.0,,,,RULE_SLOT_01,61,1,,,所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。,True,True,False,False,False,False,True,4709,json_schema,779,170,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-10-05"",
+    ""application_queue_date"": ""2026-09-29"",
+    ""new_version_effective"": true,
+    ""old_version_grace_until"": ""2026-10-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。""
+}",CAND_002,61,True
+1,E19,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E19-formal-policy.json,coverage_interrupted|original_contract_effective_date|renewal,"{""coverage_interrupted"": ""boolean"", ""original_contract_effective_date"": ""string"", ""renewal"": ""boolean""}","{""coverage_interrupted"": false, ""original_contract_effective_date"": ""2026-06-15"", ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据文档 DOC_E19_TERMS 第二条及核保记录，本案为连续续保且保障未中断，原合同生效日为2026年6月15日。,True,True,False,False,False,False,True,3332,json_schema,726,108,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""original_contract_effective_date"": ""2026-06-15"",
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E19_TERMS 第二条及核保记录，本案为连续续保且保障未中断，原合同生效日为2026年6月15日。""
+}",CAND_002,64,True
+1,E20,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,68,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E20-formal-policy.json,regional_version_available|service_region,"{""regional_version_available"": ""boolean"", ""service_region"": ""string""}","{""regional_version_available"": true, ""service_region"": ""华东分中心""}",1,2,0.5,"service_region: expected='EAST', actual='华东分中心'",,,RULE_SLOT_03,68,1,,,文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。,True,True,False,False,False,False,True,3474,json_schema,645,115,stop,"{
+  ""facts"": {
+    ""regional_version_available"": true,
+    ""service_region"": ""华东分中心""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。""
+}",CAND_002,66,False
+1,E21,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E21-formal-policy.json,acceptance_date|endorsement_filing_completed_date|endorsement_signed_date,"{""acceptance_date"": ""string"", ""endorsement_filing_completed_date"": ""string"", ""endorsement_signed_date"": ""string""}","{""acceptance_date"": ""2026-12-12"", ""endorsement_filing_completed_date"": ""2026-12-20"", ""endorsement_signed_date"": ""2026-12-10""}",3,3,1.0,,,,RULE_SLOT_01,67,1,,,所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。,True,True,False,False,False,False,True,3453,json_schema,716,113,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-12-12"",
+    ""endorsement_filing_completed_date"": ""2026-12-20"",
+    ""endorsement_signed_date"": ""2026-12-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。""
+}",CAND_002,67,True
+1,E24,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E24-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_submitted_days"": 20}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。,True,True,False,False,False,False,True,3876,json_schema,815,123,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_submitted_days"": 20
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。""
+}",CAND_002,0,True
+1,E25,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E25-formal-policy.json,days_after_birth|health_disclosure_abnormal|prior_major_disease_record,"{""days_after_birth"": ""integer"", ""health_disclosure_abnormal"": ""boolean"", ""prior_major_disease_record"": ""boolean""}","{""days_after_birth"": 46, ""health_disclosure_abnormal"": false, ""prior_major_disease_record"": false}",3,3,1.0,,,,RULE_SLOT_02,15,1,,,依据文档 DOC_E25_TERMS 第五条及上下文，被保险人出生后第46日投保（days_after_birth=46），健康告知无异常（health_disclosure_abnormal=false），且无既往重大疾病记录（prior_major_disease_record=false）。,True,True,False,False,False,False,True,3619,json_schema,806,115,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 46,
+    ""health_disclosure_abnormal"": false,
+    ""prior_major_disease_record"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E25_TERMS 第五条及上下文，被保险人出生后第46日投保（days_after_birth=46），健康告知无异常（health_disclosure_abnormal=false），且无既往重大疾病记录（prior_major_disease_record=false）。""
+}",CAND_001,15,True
+1,E26,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E26-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_confirmed_valid|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_confirmed_valid"": true, ""proof_submitted_days"": 18}",4,4,1.0,,,,RULE_SLOT_02,30,1,,,所有事实均直接从文档 DOC_E26_TERMS 的第四条（申请记录）和第二条、第三条规则中抽取。第四条明确记录了 group_transfer、prior_coverage_uninterrupted、proof_confirmed_valid 为真，且 proof_submitted_days 为 18。,True,True,False,False,False,False,True,3923,json_schema,830,127,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submitted_days"": 18
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E26_TERMS 的第四条（申请记录）和第二条、第三条规则中抽取。第四条明确记录了 group_transfer、prior_coverage_uninterrupted、proof_confirmed_valid 为真，且 proof_submitted_days 为 18。""
+}",CAND_002,30,True
+1,E27,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E27-formal-policy.json,proof_confirmed_valid|proof_submission_marker|waiting_code,"{""proof_confirmed_valid"": ""boolean"", ""proof_submission_marker"": ""string"", ""waiting_code"": ""string""}","{""proof_confirmed_valid"": true, ""proof_submission_marker"": ""D_PLUS_18"", ""waiting_code"": ""WAIT-CODE-LATE-PROOF""}",3,3,1.0,,,,RULE_SLOT_02,30,1,,,所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：'核保状态为 CONFIRMED_VALID' 对应 proof_confirmed_valid，'连续保障证明提交标记为 D_PLUS_18' 对应 proof_submission_marker，'规则引擎输出 WAIT-CODE-LATE-PROOF' 对应 waiting_code。,True,True,False,False,False,False,True,4204,json_schema,729,140,stop,"{
+  ""facts"": {
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_marker"": ""D_PLUS_18"",
+    ""waiting_code"": ""WAIT-CODE-LATE-PROOF""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：'核保状态为 CONFIRMED_VALID' 对应 proof_confirmed_valid，'连续保障证明提交标记为 D_PLUS_18' 对应 proof_submission_marker，'规则引擎输出 WAIT-CODE-LATE-PROOF' 对应 waiting_code。""
+}",CAND_002,30,True
+1,E28,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E28-formal-policy.json,coverage_interrupted|group_transfer|proof_confirmed_valid|proof_submission_day,"{""coverage_interrupted"": ""boolean"", ""group_transfer"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submission_day"": ""integer""}","{""coverage_interrupted"": false, ""group_transfer"": true, ""proof_confirmed_valid"": true, ""proof_submission_day"": 12}",4,4,1.0,,,,RULE_SLOT_01,0,1,,,"依据文档 DOC_E28_TERMS 第二条及核保记录，本案属于团体计划连续转入且保障未中断（coverage_interrupted: false），证明在申请后第12日提交并核保确认有效（proof_submission_day: 12, proof_confirmed_valid: true）。",True,True,False,False,False,False,True,3980,json_schema,721,128,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""group_transfer"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_day"": 12
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E28_TERMS 第二条及核保记录，本案属于团体计划连续转入且保障未中断（coverage_interrupted: false），证明在申请后第12日提交并核保确认有效（proof_submission_day: 12, proof_confirmed_valid: true）。""
+}",CAND_002,0,True
+1,E29,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,90,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E29-formal-policy.json,accident_liability|liability_category,"{""accident_liability"": ""boolean"", ""liability_category"": ""string""}","{""accident_liability"": false, ""liability_category"": ""特定恶性肿瘤责任""}",1,2,0.5,"liability_category: expected='SPECIFIC_CANCER', actual='特定恶性肿瘤责任'",,,RULE_SLOT_03,90,1,,,文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。,True,True,False,False,False,False,True,3157,json_schema,616,100,stop,"{
+  ""facts"": {
+    ""accident_liability"": false,
+    ""liability_category"": ""特定恶性肿瘤责任""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。""
+}",CAND_002,45,False
+1,E30,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E30-formal-policy.json,group_level|group_list_confirmed|loss_ratio_percent,"{""group_level"": ""string"", ""group_list_confirmed"": ""boolean"", ""loss_ratio_percent"": ""integer""}","{""group_level"": ""VIP"", ""group_list_confirmed"": true, ""loss_ratio_percent"": 32}",3,3,1.0,,,,RULE_SLOT_01,15,1,,,所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。,True,True,False,False,False,False,True,2819,json_schema,668,86,stop,"{
+  ""facts"": {
+    ""group_level"": ""VIP"",
+    ""group_list_confirmed"": true,
+    ""loss_ratio_percent"": 32
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。""
+}",CAND_003,15,True
+1,E31,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E31-formal-policy.json,liability_scope_changed|prior_underwriting_note_valid|same_liability_renewal,"{""liability_scope_changed"": ""boolean"", ""prior_underwriting_note_valid"": ""boolean"", ""same_liability_renewal"": ""boolean""}","{""liability_scope_changed"": false, ""prior_underwriting_note_valid"": true, ""same_liability_renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,DOC_E31_TERMS 第三条明确‘仍有效的既有核保批注明确豁免同责任续保等待期的’，且核保记录确认本案为同责任续保、既有批注有效；第一条和第二条分别定义了无批注及责任变化情形，本案不适用。,True,True,False,False,False,False,True,3799,json_schema,683,122,stop,"{
+  ""facts"": {
+    ""liability_scope_changed"": false,
+    ""prior_underwriting_note_valid"": true,
+    ""same_liability_renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""DOC_E31_TERMS 第三条明确‘仍有效的既有核保批注明确豁免同责任续保等待期的’，且核保记录确认本案为同责任续保、既有批注有效；第一条和第二条分别定义了无批注及责任变化情形，本案不适用。""
+}",CAND_003,0,True
+1,E34,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,24,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E34-formal-policy.json,expense_advance_selected|long_term_care_addon_selected,"{""expense_advance_selected"": ""boolean"", ""long_term_care_addon_selected"": ""boolean""}","{""expense_advance_selected"": false, ""long_term_care_addon_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,24,1,,,依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。,True,True,False,False,False,False,True,3580,json_schema,777,109,stop,"{
+  ""facts"": {
+    ""expense_advance_selected"": false,
+    ""long_term_care_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。""
+}",CAND_003,24,True
+1,E35,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E35-formal-policy.json,cancer_outpatient_extension_selected|insured_age|overseas_medical_selected,"{""cancer_outpatient_extension_selected"": ""boolean"", ""insured_age"": ""integer"", ""overseas_medical_selected"": ""boolean""}","{""cancer_outpatient_extension_selected"": true, ""insured_age"": 58, ""overseas_medical_selected"": false}",3,3,1.0,,,,RULE_SLOT_03,18,1,,,所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。,True,True,False,False,False,False,True,3113,json_schema,836,86,stop,"{
+  ""facts"": {
+    ""cancer_outpatient_extension_selected"": true,
+    ""insured_age"": 58,
+    ""overseas_medical_selected"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。""
+}",CAND_001,18,True
+1,E36,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E36-formal-policy.json,chronic_management_cancelled_before_underwriting|chronic_management_preselected|telemedicine_addon_selected,"{""chronic_management_cancelled_before_underwriting"": ""boolean"", ""chronic_management_preselected"": ""boolean"", ""telemedicine_addon_selected"": ""boolean""}","{""chronic_management_cancelled_before_underwriting"": true, ""chronic_management_preselected"": true, ""telemedicine_addon_selected"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取。,True,True,False,False,False,False,True,3448,json_schema,799,99,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled_before_underwriting"": true,
+    ""chronic_management_preselected"": true,
+    ""telemedicine_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取。""
+}",CAND_002,18,True
+1,E37,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E37-formal-policy.json,chronic_management_cancelled|duration_code|remote_consultation_active,"{""chronic_management_cancelled"": ""boolean"", ""duration_code"": ""string"", ""remote_consultation_active"": ""boolean""}","{""chronic_management_cancelled"": true, ""duration_code"": ""DURATION-CODE-REMOTE"", ""remote_consultation_active"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E37_TERMS明确记载：'本次申请保留远程问诊附加责任'（支持remote_consultation_active为true），'慢病管理附加责任在核保确认前已取消'（支持chronic_management_cancelled为true），以及'期限规则引擎输出 DURATION-CODE-REMOTE'（支持duration_code为'DURATION-CODE-REMOTE'）。所有facts均直接从文档文本中提取，未使用外部常识或生成候选。,True,True,False,False,False,False,True,5267,json_schema,733,160,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled"": true,
+    ""duration_code"": ""DURATION-CODE-REMOTE"",
+    ""remote_consultation_active"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E37_TERMS明确记载：'本次申请保留远程问诊附加责任'（支持remote_consultation_active为true），'慢病管理附加责任在核保确认前已取消'（支持chronic_management_cancelled为true），以及'期限规则引擎输出 DURATION-CODE-REMOTE'（支持duration_code为'DURATION-CODE-REMOTE'）。所有facts均直接从文档文本中提取，未使用外部常识或生成候选。""
+}",CAND_002,18,True
+1,E38,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E38-formal-policy.json,dental_addon_selected|remote_consultation_selected,"{""dental_addon_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""dental_addon_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,DOC_E38_TERMS 明确记载投保记录为选择远程问诊附加责任且未选择牙科附加责任。,True,True,False,False,False,False,True,2342,json_schema,650,60,stop,"{""facts"": {""dental_addon_selected"": false, ""remote_consultation_selected"": true}, ""missing_facts"": [], ""evidence_notes"": ""DOC_E38_TERMS 明确记载投保记录为选择远程问诊附加责任且未选择牙科附加责任。""}",CAND_002,18,True
+1,E39,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E39-formal-policy.json,health_management_selected|outpatient_extension_selected|renewal,"{""health_management_selected"": ""boolean"", ""outpatient_extension_selected"": ""boolean"", ""renewal"": ""boolean""}","{""health_management_selected"": false, ""outpatient_extension_selected"": true, ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,依据文档 DOC_E39_TERMS 投保记录部分：'本案为连续续保，选择门诊扩展责任，未选择健康管理责任。' 直接提取了 renewal、outpatient_extension_selected 和 health_management_selected 的值。,True,True,False,False,False,False,True,3623,json_schema,675,106,stop,"{
+  ""facts"": {
+    ""health_management_selected"": false,
+    ""outpatient_extension_selected"": true,
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E39_TERMS 投保记录部分：'本案为连续续保，选择门诊扩展责任，未选择健康管理责任。' 直接提取了 renewal、outpatient_extension_selected 和 health_management_selected 的值。""
+}",CAND_002,18,True
+1,E40,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E40-formal-policy.json,elder_care_plan|plan_type|remote_consultation_selected,"{""elder_care_plan"": ""boolean"", ""plan_type"": ""string"", ""remote_consultation_selected"": ""boolean""}","{""elder_care_plan"": false, ""plan_type"": ""普通成人计划"", ""remote_consultation_selected"": true}",2,3,0.6666666666666666,"plan_type: expected='ADULT_STANDARD', actual='普通成人计划'",,,RULE_SLOT_03,12,1,,,文档DOC_E40_TERMS明确记载本案投保记录为‘普通成人计划’且选择了‘远程问诊附加责任’，因此elder_care_plan为false，plan_type为‘普通成人计划’，remote_consultation_selected为true。,True,True,False,False,False,False,True,3761,json_schema,666,113,stop,"{
+  ""facts"": {
+    ""elder_care_plan"": false,
+    ""plan_type"": ""普通成人计划"",
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E40_TERMS明确记载本案投保记录为‘普通成人计划’且选择了‘远程问诊附加责任’，因此elder_care_plan为false，plan_type为‘普通成人计划’，remote_consultation_selected为true。""
+}",CAND_002,18,False
+1,E41,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E41-formal-policy.json,overseas_extension_selected|remote_consultation_selected,"{""overseas_extension_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""overseas_extension_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。,True,True,False,False,False,False,True,2894,json_schema,644,84,stop,"{
+  ""facts"": {
+    ""overseas_extension_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。""
+}",CAND_002,18,True
+1,E42,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,59,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E42-formal-policy.json,regional_override|renewal_lock|version_code,"{""regional_override"": ""boolean"", ""renewal_lock"": ""boolean"", ""version_code"": ""string""}","{""regional_override"": true, ""renewal_lock"": false, ""version_code"": ""VER-AGE-2026Q4-B""}",2,3,0.6666666666666666,"regional_override: expected=False, actual=True",,,RULE_SLOT_02,59,1,,,"文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。",True,True,False,False,False,False,True,6991,json_schema,701,231,stop,"{
+  ""facts"": {
+    ""regional_override"": true,
+    ""renewal_lock"": false,
+    ""version_code"": ""VER-AGE-2026Q4-B""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。""
+}",CAND_002,59,True
+1,E43,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E43-formal-policy.json,contract_issue_date|endorsement_effective_for_issue_from,"{""contract_issue_date"": ""string"", ""endorsement_effective_for_issue_from"": ""string""}","{""contract_issue_date"": ""2026-09-12"", ""endorsement_effective_for_issue_from"": ""2026-09-15""}",2,2,1.0,,,,RULE_SLOT_02,62,1,,,合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。,True,True,False,False,False,False,True,4259,json_schema,691,133,stop,"{
+  ""facts"": {
+    ""contract_issue_date"": ""2026-09-12"",
+    ""endorsement_effective_for_issue_from"": ""2026-09-15""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。""
+}",CAND_002,62,True
+1,E44,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E44-formal-policy.json,days_after_birth|health_declaration_clean|neonatal_observation_record,"{""days_after_birth"": ""integer"", ""health_declaration_clean"": ""boolean"", ""neonatal_observation_record"": ""boolean""}","{""days_after_birth"": 20, ""health_declaration_clean"": true, ""neonatal_observation_record"": true}",3,3,1.0,,,,RULE_SLOT_01,30,1,,,依据文档 DOC_E44_TERMS 第三条及核保记录，本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。,True,True,False,False,False,False,True,3793,json_schema,679,116,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 20,
+    ""health_declaration_clean"": true,
+    ""neonatal_observation_record"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E44_TERMS 第三条及核保记录，本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。""
+}",CAND_002,30,True
+1,E45,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,45,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E45-formal-policy.json,waiting_code|waiver_condition_met,"{""waiting_code"": ""string"", ""waiver_condition_met"": ""boolean""}","{""waiting_code"": ""WAIT-CODE-REINSTATE"", ""waiver_condition_met"": false}",2,2,1.0,,,,RULE_SLOT_02,45,1,,,文档 DOC_E45_TERMS 明确记录复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。,True,True,False,False,False,False,True,3039,json_schema,644,85,stop,"{
+  ""facts"": {
+    ""waiting_code"": ""WAIT-CODE-REINSTATE"",
+    ""waiver_condition_met"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E45_TERMS 明确记录复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。""
+}",CAND_002,45,True
+1,E46,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E46-formal-policy.json,plan_tier|premium_plan|rehabilitation_guidance_selected,"{""plan_tier"": ""string"", ""premium_plan"": ""boolean"", ""rehabilitation_guidance_selected"": ""boolean""}","{""plan_tier"": ""标准计划"", ""premium_plan"": false, ""rehabilitation_guidance_selected"": true}",2,3,0.6666666666666666,"plan_tier: expected='STANDARD', actual='标准计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E46_TERMS 中‘投保记录：本案为标准计划，选择康复指导责任’及‘期限表：基础保障为12个月...尊享计划长期服务为24个月（脚注a）...24个月仅适用于尊享计划，不适用于标准计划’进行抽取。,True,True,False,False,False,False,True,4075,json_schema,662,125,stop,"{
+  ""facts"": {
+    ""plan_tier"": ""标准计划"",
+    ""premium_plan"": false,
+    ""rehabilitation_guidance_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E46_TERMS 中‘投保记录：本案为标准计划，选择康复指导责任’及‘期限表：基础保障为12个月...尊享计划长期服务为24个月（脚注a）...24个月仅适用于尊享计划，不适用于标准计划’进行抽取。""
+}",CAND_002,18,False
+1,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。,True,True,False,False,False,False,True,2711,json_schema,650,90,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。""
+}",CAND_002,18,True
+2,E14,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E14-formal-policy.json,assessment_date|group_transfer_confirmed|underwriting_acceptance_date,"{""assessment_date"": ""string"", ""group_transfer_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""assessment_date"": ""2026-08-21"", ""group_transfer_confirmed"": false, ""underwriting_acceptance_date"": ""2026-08-20""}",3,3,1.0,,,,RULE_SLOT_01,62,1,,,所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。,True,True,False,False,False,False,True,4033,json_schema,1177,143,stop,"{
+  ""facts"": {
+    ""assessment_date"": ""2026-08-21"",
+    ""group_transfer_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-08-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。""
+}",CAND_002,62,True
+2,E15,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E15-formal-policy.json,entered_after_expiry|manual_assessment_date|underwriting_entry_date,"{""entered_after_expiry"": ""boolean"", ""manual_assessment_date"": ""string"", ""underwriting_entry_date"": ""string""}","{""entered_after_expiry"": false, ""manual_assessment_date"": ""2026-08-21"", ""underwriting_entry_date"": ""2026-07-20""}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。,True,True,False,False,False,False,True,6782,json_schema,1173,237,stop,"{
+  ""facts"": {
+    ""entered_after_expiry"": false,
+    ""manual_assessment_date"": ""2026-08-21"",
+    ""underwriting_entry_date"": ""2026-07-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。""
+}",CAND_003,64,True
+2,E16,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E16-formal-policy.json,endorsement_filing_completed|renewal_exception_confirmed|underwriting_acceptance_date,"{""endorsement_filing_completed"": ""boolean"", ""renewal_exception_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""endorsement_filing_completed"": false, ""renewal_exception_confirmed"": false, ""underwriting_acceptance_date"": ""2026-09-20""}",3,3,1.0,,,,RULE_SLOT_02,67,1,,,文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于该日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档首部明确核保受理日为2026年9月20日。,True,True,False,False,False,False,True,4757,json_schema,774,165,stop,"{
+  ""facts"": {
+    ""endorsement_filing_completed"": false,
+    ""renewal_exception_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-09-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于该日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档首部明确核保受理日为2026年9月20日。""
+}",CAND_002,67,True
+2,E17,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,63,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E17-formal-policy.json,age_band_code|marketing_draft_applicable|renewal_channel_confirmed,"{""age_band_code"": ""string"", ""marketing_draft_applicable"": ""boolean"", ""renewal_channel_confirmed"": ""boolean""}","{""age_band_code"": ""AGE-BAND-G2"", ""marketing_draft_applicable"": false, ""renewal_channel_confirmed"": false}",3,3,1.0,,,,RULE_SLOT_02,63,1,,,依据 DOC_E17_TERMS 文档：备案系统返回代码为 AGE-BAND-G2；营销草案未进入备案系统故不适用；客户未提交续保证明故续保通道未确认。,True,True,False,False,False,False,True,3174,json_schema,740,108,stop,"{
+  ""facts"": {
+    ""age_band_code"": ""AGE-BAND-G2"",
+    ""marketing_draft_applicable"": false,
+    ""renewal_channel_confirmed"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据 DOC_E17_TERMS 文档：备案系统返回代码为 AGE-BAND-G2；营销草案未进入备案系统故不适用；客户未提交续保证明故续保通道未确认。""
+}",CAND_002,63,True
+2,E18,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,61,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E18-formal-policy.json,acceptance_date|application_queue_date|new_version_effective|old_version_grace_until,"{""acceptance_date"": ""string"", ""application_queue_date"": ""string"", ""new_version_effective"": ""boolean"", ""old_version_grace_until"": ""string""}","{""acceptance_date"": ""2026-10-05"", ""application_queue_date"": ""2026-09-29"", ""new_version_effective"": true, ""old_version_grace_until"": ""2026-10-10""}",4,4,1.0,,,,RULE_SLOT_01,61,1,,,所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。,True,True,False,False,False,False,True,4941,json_schema,779,170,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-10-05"",
+    ""application_queue_date"": ""2026-09-29"",
+    ""new_version_effective"": true,
+    ""old_version_grace_until"": ""2026-10-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。""
+}",CAND_002,61,True
+2,E19,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E19-formal-policy.json,coverage_interrupted|original_contract_effective_date|renewal,"{""coverage_interrupted"": ""boolean"", ""original_contract_effective_date"": ""string"", ""renewal"": ""boolean""}","{""coverage_interrupted"": false, ""original_contract_effective_date"": ""2026-06-15"", ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。,True,True,False,False,False,False,True,3470,json_schema,726,117,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""original_contract_effective_date"": ""2026-06-15"",
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。""
+}",CAND_002,64,True
+2,E20,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,68,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E20-formal-policy.json,regional_version_available|service_region,"{""regional_version_available"": ""boolean"", ""service_region"": ""string""}","{""regional_version_available"": true, ""service_region"": ""华东分中心""}",1,2,0.5,"service_region: expected='EAST', actual='华东分中心'",,,RULE_SLOT_03,68,1,,,文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。,True,True,False,False,False,False,True,3402,json_schema,645,115,stop,"{
+  ""facts"": {
+    ""regional_version_available"": true,
+    ""service_region"": ""华东分中心""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。""
+}",CAND_002,66,False
+2,E21,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E21-formal-policy.json,acceptance_date|endorsement_filing_completed_date|endorsement_signed_date,"{""acceptance_date"": ""string"", ""endorsement_filing_completed_date"": ""string"", ""endorsement_signed_date"": ""string""}","{""acceptance_date"": ""2026-12-12"", ""endorsement_filing_completed_date"": ""2026-12-20"", ""endorsement_signed_date"": ""2026-12-10""}",3,3,1.0,,,,RULE_SLOT_01,67,1,,,所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。,True,True,False,False,False,False,True,3284,json_schema,716,113,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-12-12"",
+    ""endorsement_filing_completed_date"": ""2026-12-20"",
+    ""endorsement_signed_date"": ""2026-12-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。""
+}",CAND_002,67,True
+2,E24,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E24-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_submitted_days"": 20}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。,True,True,False,False,False,False,True,3684,json_schema,815,123,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_submitted_days"": 20
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。""
+}",CAND_002,0,True
+2,E25,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E25-formal-policy.json,days_after_birth|health_disclosure_abnormal|prior_major_disease_record,"{""days_after_birth"": ""integer"", ""health_disclosure_abnormal"": ""boolean"", ""prior_major_disease_record"": ""boolean""}","{""days_after_birth"": 46, ""health_disclosure_abnormal"": false, ""prior_major_disease_record"": false}",3,3,1.0,,,,RULE_SLOT_02,15,1,,,所有事实均直接从文档DOC_E25_TERMS第五条及上下文提取。,True,True,False,False,False,False,True,2360,json_schema,806,78,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 46,
+    ""health_disclosure_abnormal"": false,
+    ""prior_major_disease_record"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档DOC_E25_TERMS第五条及上下文提取。""
+}",CAND_001,15,True
+2,E26,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E26-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_confirmed_valid|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_confirmed_valid"": true, ""proof_submitted_days"": 18}",4,4,1.0,,,,RULE_SLOT_02,30,1,,,"依据文档DOC_E26_TERMS第四条及上下文，确认本次申请为团体转入且原保障未中断（group_transfer=true, prior_coverage_uninterrupted=true）；连续保障证明在第18日提交且核保确认有效（proof_confirmed_valid=true, proof_submitted_days=18）。",True,True,False,False,False,False,True,3981,json_schema,830,134,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submitted_days"": 18
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E26_TERMS第四条及上下文，确认本次申请为团体转入且原保障未中断（group_transfer=true, prior_coverage_uninterrupted=true）；连续保障证明在第18日提交且核保确认有效（proof_confirmed_valid=true, proof_submitted_days=18）。""
+}",CAND_002,30,True
+2,E27,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E27-formal-policy.json,proof_confirmed_valid|proof_submission_marker|waiting_code,"{""proof_confirmed_valid"": ""boolean"", ""proof_submission_marker"": ""string"", ""waiting_code"": ""string""}","{""proof_confirmed_valid"": true, ""proof_submission_marker"": ""D_PLUS_18"", ""waiting_code"": ""WAIT-CODE-LATE-PROOF""}",3,3,1.0,,,,RULE_SLOT_02,30,1,,,所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条确认核保状态为 CONFIRMED_VALID（对应 proof_confirmed_valid=true）及连续保障证明提交标记为 D_PLUS_18（对应 proof_submission_marker）；第二条明确规则引擎输出 WAIT-CODE-LATE-PROOF（对应 waiting_code）。,True,True,False,False,False,False,True,4207,json_schema,729,141,stop,"{
+  ""facts"": {
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_marker"": ""D_PLUS_18"",
+    ""waiting_code"": ""WAIT-CODE-LATE-PROOF""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条确认核保状态为 CONFIRMED_VALID（对应 proof_confirmed_valid=true）及连续保障证明提交标记为 D_PLUS_18（对应 proof_submission_marker）；第二条明确规则引擎输出 WAIT-CODE-LATE-PROOF（对应 waiting_code）。""
+}",CAND_002,30,True
+2,E28,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E28-formal-policy.json,coverage_interrupted|group_transfer|proof_confirmed_valid|proof_submission_day,"{""coverage_interrupted"": ""boolean"", ""group_transfer"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submission_day"": ""integer""}","{""coverage_interrupted"": false, ""group_transfer"": true, ""proof_confirmed_valid"": true, ""proof_submission_day"": 12}",4,4,1.0,,,,RULE_SLOT_01,0,1,,,所有facts均依据文档DOC_E28_TERMS中的核保记录及条款第二条、第三条、第四条得出。coverage_interrupted为false基于'保障未中断'；group_transfer为true基于'团体计划连续转入'；proof_confirmed_valid为true基于'核保确认有效'；proof_submission_day为12基于'申请后第12日提交'。,True,True,False,False,False,False,True,4309,json_schema,721,146,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""group_transfer"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_day"": 12
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均依据文档DOC_E28_TERMS中的核保记录及条款第二条、第三条、第四条得出。coverage_interrupted为false基于'保障未中断'；group_transfer为true基于'团体计划连续转入'；proof_confirmed_valid为true基于'核保确认有效'；proof_submission_day为12基于'申请后第12日提交'。""
+}",CAND_002,0,True
+2,E29,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,90,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E29-formal-policy.json,accident_liability|liability_category,"{""accident_liability"": ""boolean"", ""liability_category"": ""string""}","{""accident_liability"": false, ""liability_category"": ""特定恶性肿瘤责任""}",1,2,0.5,"liability_category: expected='SPECIFIC_CANCER', actual='特定恶性肿瘤责任'",,,RULE_SLOT_03,90,1,,,文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。,True,True,False,False,False,False,True,3181,json_schema,616,100,stop,"{
+  ""facts"": {
+    ""accident_liability"": false,
+    ""liability_category"": ""特定恶性肿瘤责任""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。""
+}",CAND_002,45,False
+2,E30,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E30-formal-policy.json,group_level|group_list_confirmed|loss_ratio_percent,"{""group_level"": ""string"", ""group_list_confirmed"": ""boolean"", ""loss_ratio_percent"": ""integer""}","{""group_level"": ""VIP"", ""group_list_confirmed"": true, ""loss_ratio_percent"": 32}",3,3,1.0,,,,RULE_SLOT_01,15,1,,,所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。,True,True,False,False,False,False,True,2860,json_schema,668,86,stop,"{
+  ""facts"": {
+    ""group_level"": ""VIP"",
+    ""group_list_confirmed"": true,
+    ""loss_ratio_percent"": 32
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。""
+}",CAND_003,15,True
+2,E31,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E31-formal-policy.json,liability_scope_changed|prior_underwriting_note_valid|same_liability_renewal,"{""liability_scope_changed"": ""boolean"", ""prior_underwriting_note_valid"": ""boolean"", ""same_liability_renewal"": ""boolean""}","{""liability_scope_changed"": false, ""prior_underwriting_note_valid"": true, ""same_liability_renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。,True,True,False,False,False,False,True,3505,json_schema,683,115,stop,"{
+  ""facts"": {
+    ""liability_scope_changed"": false,
+    ""prior_underwriting_note_valid"": true,
+    ""same_liability_renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。""
+}",CAND_003,0,True
+2,E34,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,24,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E34-formal-policy.json,expense_advance_selected|long_term_care_addon_selected,"{""expense_advance_selected"": ""boolean"", ""long_term_care_addon_selected"": ""boolean""}","{""expense_advance_selected"": false, ""long_term_care_addon_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,24,1,,,依据文档 DOC_E34_TERMS 第五条（投保记录勾选长期照护）和第六条（核保确认未选择费用垫付），直接抽取了 long_term_care_addon_selected 为 true 及 expense_advance_selected 为 false。,True,True,False,False,False,False,True,3100,json_schema,777,101,stop,"{
+  ""facts"": {
+    ""expense_advance_selected"": false,
+    ""long_term_care_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E34_TERMS 第五条（投保记录勾选长期照护）和第六条（核保确认未选择费用垫付），直接抽取了 long_term_care_addon_selected 为 true 及 expense_advance_selected 为 false。""
+}",CAND_003,24,True
+2,E35,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E35-formal-policy.json,cancer_outpatient_extension_selected|insured_age|overseas_medical_selected,"{""cancer_outpatient_extension_selected"": ""boolean"", ""insured_age"": ""integer"", ""overseas_medical_selected"": ""boolean""}","{""cancer_outpatient_extension_selected"": true, ""insured_age"": 58, ""overseas_medical_selected"": false}",3,3,1.0,,,,RULE_SLOT_03,18,1,,,所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。,True,True,False,False,False,False,True,2676,json_schema,836,86,stop,"{
+  ""facts"": {
+    ""cancer_outpatient_extension_selected"": true,
+    ""insured_age"": 58,
+    ""overseas_medical_selected"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。""
+}",CAND_001,18,True
+2,E36,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E36-formal-policy.json,chronic_management_cancelled_before_underwriting|chronic_management_preselected|telemedicine_addon_selected,"{""chronic_management_cancelled_before_underwriting"": ""boolean"", ""chronic_management_preselected"": ""boolean"", ""telemedicine_addon_selected"": ""boolean""}","{""chronic_management_cancelled_before_underwriting"": true, ""chronic_management_preselected"": true, ""telemedicine_addon_selected"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取，无需外部常识或推断。,True,True,False,False,False,False,True,3172,json_schema,799,105,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled_before_underwriting"": true,
+    ""chronic_management_preselected"": true,
+    ""telemedicine_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取，无需外部常识或推断。""
+}",CAND_002,18,True
+2,E37,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E37-formal-policy.json,chronic_management_cancelled|duration_code|remote_consultation_active,"{""chronic_management_cancelled"": ""boolean"", ""duration_code"": ""string"", ""remote_consultation_active"": ""boolean""}","{""chronic_management_cancelled"": true, ""duration_code"": ""DURATION-CODE-REMOTE"", ""remote_consultation_active"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E37_TERMS第一条明确记载“本次申请保留远程问诊附加责任”及“慢病管理附加责任在核保确认前已取消”，据此直接抽取chronic_management_cancelled和remote_consultation_active为true。第二条明确记载“期限规则引擎输出 DURATION-CODE-REMOTE,True,True,False,False,False,False,True,4330,json_schema,733,131,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled"": true,
+    ""duration_code"": ""DURATION-CODE-REMOTE"",
+    ""remote_consultation_active"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E37_TERMS第一条明确记载“本次申请保留远程问诊附加责任”及“慢病管理附加责任在核保确认前已取消”，据此直接抽取chronic_management_cancelled和remote_consultation_active为true。第二条明确记载“期限规则引擎输出 DURATION-CODE-REMOTE""
+  }",CAND_002,18,True
+2,E38,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E38-formal-policy.json,dental_addon_selected|remote_consultation_selected,"{""dental_addon_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""dental_addon_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。,True,True,False,False,False,False,True,2785,json_schema,650,85,stop,"{
+  ""facts"": {
+    ""dental_addon_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。""
+}",CAND_002,18,True
+2,E39,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E39-formal-policy.json,health_management_selected|outpatient_extension_selected|renewal,"{""health_management_selected"": ""boolean"", ""outpatient_extension_selected"": ""boolean"", ""renewal"": ""boolean""}","{""health_management_selected"": false, ""outpatient_extension_selected"": true, ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,依据文档 DOC_E39_TERMS 中'投保记录：本案为连续续保，选择门诊扩展责任，未选择健康管理责任。'直接抽取事实值。,True,True,False,False,False,False,True,3164,json_schema,675,93,stop,"{
+  ""facts"": {
+    ""health_management_selected"": false,
+    ""outpatient_extension_selected"": true,
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E39_TERMS 中'投保记录：本案为连续续保，选择门诊扩展责任，未选择健康管理责任。'直接抽取事实值。""
+}",CAND_002,18,True
+2,E40,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E40-formal-policy.json,elder_care_plan|plan_type|remote_consultation_selected,"{""elder_care_plan"": ""boolean"", ""plan_type"": ""string"", ""remote_consultation_selected"": ""boolean""}","{""elder_care_plan"": false, ""plan_type"": ""普通成人计划"", ""remote_consultation_selected"": true}",2,3,0.6666666666666666,"plan_type: expected='ADULT_STANDARD', actual='普通成人计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E40_TERMS 中'投保记录：本案计划类型为普通成人计划，选择远程问诊附加责任'及分段条款定义提取。,True,True,False,False,False,False,True,2955,json_schema,666,94,stop,"{
+  ""facts"": {
+    ""elder_care_plan"": false,
+    ""plan_type"": ""普通成人计划"",
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E40_TERMS 中'投保记录：本案计划类型为普通成人计划，选择远程问诊附加责任'及分段条款定义提取。""
+}",CAND_002,18,False
+2,E41,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E41-formal-policy.json,overseas_extension_selected|remote_consultation_selected,"{""overseas_extension_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""overseas_extension_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。,True,True,False,False,False,False,True,2578,json_schema,644,84,stop,"{
+  ""facts"": {
+    ""overseas_extension_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。""
+}",CAND_002,18,True
+2,E42,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,59,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E42-formal-policy.json,regional_override|renewal_lock|version_code,"{""regional_override"": ""boolean"", ""renewal_lock"": ""boolean"", ""version_code"": ""string""}","{""regional_override"": true, ""renewal_lock"": false, ""version_code"": ""VER-AGE-2026Q4-B""}",2,3,0.6666666666666666,"regional_override: expected=False, actual=True",,,RULE_SLOT_02,59,1,,,"文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。",True,True,False,False,False,False,True,6968,json_schema,701,231,stop,"{
+  ""facts"": {
+    ""regional_override"": true,
+    ""renewal_lock"": false,
+    ""version_code"": ""VER-AGE-2026Q4-B""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。""
+}",CAND_002,59,True
+2,E43,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E43-formal-policy.json,contract_issue_date|endorsement_effective_for_issue_from,"{""contract_issue_date"": ""string"", ""endorsement_effective_for_issue_from"": ""string""}","{""contract_issue_date"": ""2026-09-12"", ""endorsement_effective_for_issue_from"": ""2026-09-15""}",2,2,1.0,,,,RULE_SLOT_02,62,1,,,合同签发日期依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。,True,True,False,False,False,False,True,4084,json_schema,691,133,stop,"{
+  ""facts"": {
+    ""contract_issue_date"": ""2026-09-12"",
+    ""endorsement_effective_for_issue_from"": ""2026-09-15""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""合同签发日期依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。""
+}",CAND_002,62,True
+2,E44,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E44-formal-policy.json,days_after_birth|health_declaration_clean|neonatal_observation_record,"{""days_after_birth"": ""integer"", ""health_declaration_clean"": ""boolean"", ""neonatal_observation_record"": ""boolean""}","{""days_after_birth"": 20, ""health_declaration_clean"": true, ""neonatal_observation_record"": true}",3,3,1.0,,,,RULE_SLOT_01,30,1,,,依据文档DOC_E44_TERMS第三条：本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），但存在新生儿住院观察记录（neonatal_observation_record=true）。,True,True,False,False,False,False,True,3422,json_schema,679,111,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 20,
+    ""health_declaration_clean"": true,
+    ""neonatal_observation_record"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E44_TERMS第三条：本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），但存在新生儿住院观察记录（neonatal_observation_record=true）。""
+}",CAND_002,30,True
+2,E45,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,45,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E45-formal-policy.json,waiting_code|waiver_condition_met,"{""waiting_code"": ""string"", ""waiver_condition_met"": ""boolean""}","{""waiting_code"": ""WAIT-CODE-REINSTATE"", ""waiver_condition_met"": false}",2,2,1.0,,,,RULE_SLOT_02,45,1,,,文档 DOC_E45_TERMS 明确记录了复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。,True,True,False,False,False,False,True,2713,json_schema,644,85,stop,"{
+  ""facts"": {
+    ""waiting_code"": ""WAIT-CODE-REINSTATE"",
+    ""waiver_condition_met"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E45_TERMS 明确记录了复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。""
+}",CAND_002,45,True
+2,E46,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E46-formal-policy.json,plan_tier|premium_plan|rehabilitation_guidance_selected,"{""plan_tier"": ""string"", ""premium_plan"": ""boolean"", ""rehabilitation_guidance_selected"": ""boolean""}","{""plan_tier"": ""标准计划"", ""premium_plan"": false, ""rehabilitation_guidance_selected"": true}",2,3,0.6666666666666666,"plan_tier: expected='STANDARD', actual='标准计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E46_TERMS 中‘本案为标准计划，选择康复指导责任’及‘尊享计划长期服务为24个月（脚注a）；24个月仅适用于尊享计划，不适用于标准计划’的记载，推断 plan_tier 为‘标准计划’，premium_plan 为 false，rehabilitation_guidance_selected 为 true。,True,True,False,False,False,False,True,4155,json_schema,662,139,stop,"{
+  ""facts"": {
+    ""plan_tier"": ""标准计划"",
+    ""premium_plan"": false,
+    ""rehabilitation_guidance_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E46_TERMS 中‘本案为标准计划，选择康复指导责任’及‘尊享计划长期服务为24个月（脚注a）；24个月仅适用于尊享计划，不适用于标准计划’的记载，推断 plan_tier 为‘标准计划’，premium_plan 为 false，rehabilitation_guidance_selected 为 true。""
+}",CAND_002,18,False
+2,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档 DOC_E47_TERMS 明确记载规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划，故 premium_plan 为 false。文档未直接展开月数数值，但指令要求仅抽取 fact_schema 列出的 facts，故 duration_code 和 premium_plan 已完整提取。,True,True,False,False,False,False,True,3820,json_schema,650,123,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E47_TERMS 明确记载规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划，故 premium_plan 为 false。文档未直接展开月数数值，但指令要求仅抽取 fact_schema 列出的 facts，故 duration_code 和 premium_plan 已完整提取。""
+}",CAND_002,18,True
+3,E14,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E14-formal-policy.json,assessment_date|group_transfer_confirmed|underwriting_acceptance_date,"{""assessment_date"": ""string"", ""group_transfer_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""assessment_date"": ""2026-08-21"", ""group_transfer_confirmed"": false, ""underwriting_acceptance_date"": ""2026-08-20""}",3,3,1.0,,,,RULE_SLOT_01,62,1,,,所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。,True,True,False,False,False,False,True,4405,json_schema,1177,143,stop,"{
+  ""facts"": {
+    ""assessment_date"": ""2026-08-21"",
+    ""group_transfer_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-08-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。""
+}",CAND_002,62,True
+3,E15,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E15-formal-policy.json,entered_after_expiry|manual_assessment_date|underwriting_entry_date,"{""entered_after_expiry"": ""boolean"", ""manual_assessment_date"": ""string"", ""underwriting_entry_date"": ""string""}","{""entered_after_expiry"": false, ""manual_assessment_date"": ""2026-08-21"", ""underwriting_entry_date"": ""2026-07-20""}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。,True,True,False,False,False,False,True,7218,json_schema,1173,237,stop,"{
+  ""facts"": {
+    ""entered_after_expiry"": false,
+    ""manual_assessment_date"": ""2026-08-21"",
+    ""underwriting_entry_date"": ""2026-07-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。""
+}",CAND_003,64,True
+3,E16,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E16-formal-policy.json,endorsement_filing_completed|renewal_exception_confirmed|underwriting_acceptance_date,"{""endorsement_filing_completed"": ""boolean"", ""renewal_exception_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""endorsement_filing_completed"": false, ""renewal_exception_confirmed"": false, ""underwriting_acceptance_date"": ""2026-09-20""}",3,3,1.0,,,,RULE_SLOT_02,67,1,,,文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于此日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档提及核保受理日为2026年9月20日。,True,True,False,False,False,False,True,4934,json_schema,774,163,stop,"{
+  ""facts"": {
+    ""endorsement_filing_completed"": false,
+    ""renewal_exception_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-09-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于此日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档提及核保受理日为2026年9月20日。""
+}",CAND_002,67,True
+3,E17,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,63,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E17-formal-policy.json,age_band_code|marketing_draft_applicable|renewal_channel_confirmed,"{""age_band_code"": ""string"", ""marketing_draft_applicable"": ""boolean"", ""renewal_channel_confirmed"": ""boolean""}","{""age_band_code"": ""AGE-BAND-G2"", ""marketing_draft_applicable"": false, ""renewal_channel_confirmed"": false}",3,3,1.0,,,,RULE_SLOT_02,63,1,,,依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。,True,True,False,False,False,False,True,3436,json_schema,740,111,stop,"{
+  ""facts"": {
+    ""age_band_code"": ""AGE-BAND-G2"",
+    ""marketing_draft_applicable"": false,
+    ""renewal_channel_confirmed"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。""
+}",CAND_002,63,True
+3,E18,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,61,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E18-formal-policy.json,acceptance_date|application_queue_date|new_version_effective|old_version_grace_until,"{""acceptance_date"": ""string"", ""application_queue_date"": ""string"", ""new_version_effective"": ""boolean"", ""old_version_grace_until"": ""string""}","{""acceptance_date"": ""2026-10-05"", ""application_queue_date"": ""2026-09-29"", ""new_version_effective"": true, ""old_version_grace_until"": ""2026-10-10""}",4,4,1.0,,,,RULE_SLOT_01,61,1,,,所有facts均直接从文档DOC_E18_TERMS的文本中提取：acceptance_date来自'核保受理日为2026年10月5日'；application_queue_date来自'本案申请进入核保队列日期为2026年9月29日'；new_version_effective基于生效日期2026-10-01与当前时间关系推断为true（文档明确提及新版已生效）；old_version_grace_until来自'宽限至2026年10月10日'。,True,True,False,False,False,False,True,6775,json_schema,779,216,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-10-05"",
+    ""application_queue_date"": ""2026-09-29"",
+    ""new_version_effective"": true,
+    ""old_version_grace_until"": ""2026-10-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从文档DOC_E18_TERMS的文本中提取：acceptance_date来自'核保受理日为2026年10月5日'；application_queue_date来自'本案申请进入核保队列日期为2026年9月29日'；new_version_effective基于生效日期2026-10-01与当前时间关系推断为true（文档明确提及新版已生效）；old_version_grace_until来自'宽限至2026年10月10日'。""
+}",CAND_002,61,True
+3,E19,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E19-formal-policy.json,coverage_interrupted|original_contract_effective_date|renewal,"{""coverage_interrupted"": ""boolean"", ""original_contract_effective_date"": ""string"", ""renewal"": ""boolean""}","{""coverage_interrupted"": false, ""original_contract_effective_date"": ""2026-06-15"", ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据文档 DOC_E19_TERMS 第二条及核保记录，本案为连续续保且保障未中断，原合同生效日为2026年6月15日。,True,True,False,False,False,False,True,3469,json_schema,726,108,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""original_contract_effective_date"": ""2026-06-15"",
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E19_TERMS 第二条及核保记录，本案为连续续保且保障未中断，原合同生效日为2026年6月15日。""
+}",CAND_002,64,True
+3,E20,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,68,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E20-formal-policy.json,regional_version_available|service_region,"{""regional_version_available"": ""boolean"", ""service_region"": ""string""}","{""regional_version_available"": true, ""service_region"": ""华东分中心""}",1,2,0.5,"service_region: expected='EAST', actual='华东分中心'",,,RULE_SLOT_03,68,1,,,文档DOC_E20_TERMS明确提及‘华东分中心受理案件适用华东地区版本’，因此regional_version_available为true；服务区域直接提取自文档中的‘华东分中心’。,True,True,False,False,False,False,True,3111,json_schema,645,90,stop,"{
+  ""facts"": {
+    ""regional_version_available"": true,
+    ""service_region"": ""华东分中心""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E20_TERMS明确提及‘华东分中心受理案件适用华东地区版本’，因此regional_version_available为true；服务区域直接提取自文档中的‘华东分中心’。""
+}",CAND_002,66,False
+3,E21,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E21-formal-policy.json,acceptance_date|endorsement_filing_completed_date|endorsement_signed_date,"{""acceptance_date"": ""string"", ""endorsement_filing_completed_date"": ""string"", ""endorsement_signed_date"": ""string""}","{""acceptance_date"": ""2026-12-12"", ""endorsement_filing_completed_date"": ""2026-12-20"", ""endorsement_signed_date"": ""2026-12-10""}",3,3,1.0,,,,RULE_SLOT_01,67,1,,,所有目标字段均直接从文档DOC_E21_TERMS的第四条和核保记录中提取。,True,True,False,False,False,False,True,3838,json_schema,716,113,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-12-12"",
+    ""endorsement_filing_completed_date"": ""2026-12-20"",
+    ""endorsement_signed_date"": ""2026-12-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均直接从文档DOC_E21_TERMS的第四条和核保记录中提取。""
+}",CAND_002,67,True
+3,E24,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E24-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_submitted_days"": 20}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,文档DOC_E24_TERMS第五条明确记载：'本次申请属于合作单位团体计划转入，原保障截至新合同生效日前一日仍有效，连续保障证明在第20日提交。' 据此直接抽取group_transfer为true，prior_coverage_uninterrupted为true，proof_submitted_days为20。,True,True,False,False,False,False,True,4406,json_schema,815,127,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_submitted_days"": 20
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E24_TERMS第五条明确记载：'本次申请属于合作单位团体计划转入，原保障截至新合同生效日前一日仍有效，连续保障证明在第20日提交。' 据此直接抽取group_transfer为true，prior_coverage_uninterrupted为true，proof_submitted_days为20。""
+}",CAND_002,0,True
+3,E25,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E25-formal-policy.json,days_after_birth|health_disclosure_abnormal|prior_major_disease_record,"{""days_after_birth"": ""integer"", ""health_disclosure_abnormal"": ""boolean"", ""prior_major_disease_record"": ""boolean""}","{""days_after_birth"": 46, ""health_disclosure_abnormal"": false, ""prior_major_disease_record"": false}",3,3,1.0,,,,RULE_SLOT_02,15,1,,,所有事实均直接从文档DOC_E25_TERMS第五条及上下文提取。,True,True,False,False,False,False,True,2783,json_schema,806,78,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 46,
+    ""health_disclosure_abnormal"": false,
+    ""prior_major_disease_record"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档DOC_E25_TERMS第五条及上下文提取。""
+}",CAND_001,15,True
+3,E26,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E26-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_confirmed_valid|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_confirmed_valid"": true, ""proof_submitted_days"": 18}",4,4,1.0,,,,RULE_SLOT_02,30,1,,,依据文档DOC_E26_TERMS第四条，本次申请为团体转入且原保障未中断（支持group_transfer和prior_coverage_uninterrupted）；连续保障证明在第18日提交并经核保确认有效（支持proof_confirmed_valid和proof_submitted_days=18）。,True,True,False,False,False,False,True,4316,json_schema,830,130,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submitted_days"": 18
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E26_TERMS第四条，本次申请为团体转入且原保障未中断（支持group_transfer和prior_coverage_uninterrupted）；连续保障证明在第18日提交并经核保确认有效（支持proof_confirmed_valid和proof_submitted_days=18）。""
+}",CAND_002,30,True
+3,E27,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E27-formal-policy.json,proof_confirmed_valid|proof_submission_marker|waiting_code,"{""proof_confirmed_valid"": ""boolean"", ""proof_submission_marker"": ""string"", ""waiting_code"": ""string""}","{""proof_confirmed_valid"": true, ""proof_submission_marker"": ""D_PLUS_18"", ""waiting_code"": ""WAIT-CODE-LATE-PROOF""}",3,3,1.0,,,,RULE_SLOT_02,30,1,,,所有目标字段均能从文档 DOC_E27_TERMS 的文本中直接提取：proof_confirmed_valid 对应‘核保状态为 CONFIRMED_VALID’；proof_submission_marker 对应‘连续保障证明提交标记为 D_PLUS_18'；waiting_code 对应‘等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。,True,True,False,False,False,False,True,4844,json_schema,729,145,stop,"{
+  ""facts"": {
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_marker"": ""D_PLUS_18"",
+    ""waiting_code"": ""WAIT-CODE-LATE-PROOF""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档 DOC_E27_TERMS 的文本中直接提取：proof_confirmed_valid 对应‘核保状态为 CONFIRMED_VALID’；proof_submission_marker 对应‘连续保障证明提交标记为 D_PLUS_18'；waiting_code 对应‘等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。""
+}",CAND_002,30,True
+3,E28,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E28-formal-policy.json,coverage_interrupted|group_transfer|proof_confirmed_valid|proof_submission_day,"{""coverage_interrupted"": ""boolean"", ""group_transfer"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submission_day"": ""integer""}","{""coverage_interrupted"": false, ""group_transfer"": true, ""proof_confirmed_valid"": true, ""proof_submission_day"": 12}",4,4,1.0,,,,RULE_SLOT_01,0,1,,,"依据文档 DOC_E28_TERMS 第二条及核保记录，本案属于团体计划连续转入且保障未中断（coverage_interrupted=false），证明在申请后第12日提交并核保确认有效（proof_confirmed_valid=true, proof_submission_day=12），符合等待期按0天处理的例外规则条件。",True,True,False,False,False,False,True,4533,json_schema,721,136,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""group_transfer"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_day"": 12
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E28_TERMS 第二条及核保记录，本案属于团体计划连续转入且保障未中断（coverage_interrupted=false），证明在申请后第12日提交并核保确认有效（proof_confirmed_valid=true, proof_submission_day=12），符合等待期按0天处理的例外规则条件。""
+}",CAND_002,0,True
+3,E29,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,90,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E29-formal-policy.json,accident_liability|liability_category,"{""accident_liability"": ""boolean"", ""liability_category"": ""string""}","{""accident_liability"": false, ""liability_category"": ""特定恶性肿瘤责任""}",1,2,0.5,"liability_category: expected='SPECIFIC_CANCER', actual='特定恶性肿瘤责任'",,,RULE_SLOT_03,90,1,,,文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。,True,True,False,False,False,False,True,3285,json_schema,616,100,stop,"{
+  ""facts"": {
+    ""accident_liability"": false,
+    ""liability_category"": ""特定恶性肿瘤责任""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。""
+}",CAND_002,45,False
+3,E30,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E30-formal-policy.json,group_level|group_list_confirmed|loss_ratio_percent,"{""group_level"": ""string"", ""group_list_confirmed"": ""boolean"", ""loss_ratio_percent"": ""integer""}","{""group_level"": ""VIP"", ""group_list_confirmed"": true, ""loss_ratio_percent"": 32}",3,3,1.0,,,,RULE_SLOT_01,15,1,,,所有事实均直接从文档 DOC_E30_TERMS 的文本中提取：'本案团体等级为VIP'、'名单已确认'、'上一年度赔付率为32%'。,True,True,False,False,False,False,True,3393,json_schema,668,99,stop,"{
+  ""facts"": {
+    ""group_level"": ""VIP"",
+    ""group_list_confirmed"": true,
+    ""loss_ratio_percent"": 32
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E30_TERMS 的文本中提取：'本案团体等级为VIP'、'名单已确认'、'上一年度赔付率为32%'。""
+}",CAND_003,15,True
+3,E31,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E31-formal-policy.json,liability_scope_changed|prior_underwriting_note_valid|same_liability_renewal,"{""liability_scope_changed"": ""boolean"", ""prior_underwriting_note_valid"": ""boolean"", ""same_liability_renewal"": ""boolean""}","{""liability_scope_changed"": false, ""prior_underwriting_note_valid"": true, ""same_liability_renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。,True,True,False,False,False,False,True,4066,json_schema,683,115,stop,"{
+  ""facts"": {
+    ""liability_scope_changed"": false,
+    ""prior_underwriting_note_valid"": true,
+    ""same_liability_renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。""
+}",CAND_003,0,True
+3,E34,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,24,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E34-formal-policy.json,expense_advance_selected|long_term_care_addon_selected,"{""expense_advance_selected"": ""boolean"", ""long_term_care_addon_selected"": ""boolean""}","{""expense_advance_selected"": false, ""long_term_care_addon_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,24,1,,,依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。,True,True,False,False,False,False,True,3670,json_schema,777,109,stop,"{
+  ""facts"": {
+    ""expense_advance_selected"": false,
+    ""long_term_care_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。""
+}",CAND_003,24,True
+3,E35,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E35-formal-policy.json,cancer_outpatient_extension_selected|insured_age|overseas_medical_selected,"{""cancer_outpatient_extension_selected"": ""boolean"", ""insured_age"": ""integer"", ""overseas_medical_selected"": ""boolean""}","{""cancer_outpatient_extension_selected"": true, ""insured_age"": 58, ""overseas_medical_selected"": false}",3,3,1.0,,,,RULE_SLOT_03,18,1,,,依据文档DOC_E35_TERMS第六条确认癌症门诊扩展责任已勾选（true）；第七条明确被保险人年龄为58周岁（integer）且未选择境外就医责任（false）。,True,True,False,False,False,False,True,3481,json_schema,836,104,stop,"{
+  ""facts"": {
+    ""cancer_outpatient_extension_selected"": true,
+    ""insured_age"": 58,
+    ""overseas_medical_selected"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E35_TERMS第六条确认癌症门诊扩展责任已勾选（true）；第七条明确被保险人年龄为58周岁（integer）且未选择境外就医责任（false）。""
+}",CAND_001,18,True
+3,E36,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E36-formal-policy.json,chronic_management_cancelled_before_underwriting|chronic_management_preselected|telemedicine_addon_selected,"{""chronic_management_cancelled_before_underwriting"": ""boolean"", ""chronic_management_preselected"": ""boolean"", ""telemedicine_addon_selected"": ""boolean""}","{""chronic_management_cancelled_before_underwriting"": true, ""chronic_management_preselected"": true, ""telemedicine_addon_selected"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取，无需外部常识或推断。,True,True,False,False,False,False,True,3460,json_schema,799,105,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled_before_underwriting"": true,
+    ""chronic_management_preselected"": true,
+    ""telemedicine_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E36_TERMS 的第四条（投保记录）、第五条（核保确认）及第三条（慢病管理责任）中提取，无需外部常识或推断。""
+}",CAND_002,18,True
+3,E37,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E37-formal-policy.json,chronic_management_cancelled|duration_code|remote_consultation_active,"{""chronic_management_cancelled"": ""boolean"", ""duration_code"": ""string"", ""remote_consultation_active"": ""boolean""}","{""chronic_management_cancelled"": true, ""duration_code"": ""DURATION-CODE-REMOTE"", ""remote_consultation_active"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,事实抽取严格基于文档 DOC_E37_TERMS。第一条明确‘慢病管理附加责任在核保确认前已取消’，故 chronic_management_cancelled 为 true；第二条明确‘期限规则引擎输出 DURATION-CODE-REMOTE'，故 duration_code 为该值；第一条明确‘本次申请保留远程问诊附加责任’，故 remote_consultation_active 为 true。文档未直接提供保险期限月数（target 字段），但 fact_schema 中无此字段，故仅抽取 schema 定义的 facts。,True,True,False,False,False,False,True,6006,json_schema,733,177,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled"": true,
+    ""duration_code"": ""DURATION-CODE-REMOTE"",
+    ""remote_consultation_active"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""事实抽取严格基于文档 DOC_E37_TERMS。第一条明确‘慢病管理附加责任在核保确认前已取消’，故 chronic_management_cancelled 为 true；第二条明确‘期限规则引擎输出 DURATION-CODE-REMOTE'，故 duration_code 为该值；第一条明确‘本次申请保留远程问诊附加责任’，故 remote_consultation_active 为 true。文档未直接提供保险期限月数（target 字段），但 fact_schema 中无此字段，故仅抽取 schema 定义的 facts。""
+}",CAND_002,18,True
+3,E38,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E38-formal-policy.json,dental_addon_selected|remote_consultation_selected,"{""dental_addon_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""dental_addon_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。,True,True,False,False,False,False,True,2760,json_schema,650,85,stop,"{
+  ""facts"": {
+    ""dental_addon_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。""
+}",CAND_002,18,True
+3,E39,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E39-formal-policy.json,health_management_selected|outpatient_extension_selected|renewal,"{""health_management_selected"": ""boolean"", ""outpatient_extension_selected"": ""boolean"", ""renewal"": ""boolean""}","{""health_management_selected"": false, ""outpatient_extension_selected"": true, ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,依据文档 DOC_E39_TERMS 中'投保记录：本案为连续续保，选择门诊扩展责任，未选择健康管理责任'直接抽取。,True,True,False,False,False,False,True,2989,json_schema,675,90,stop,"{
+  ""facts"": {
+    ""health_management_selected"": false,
+    ""outpatient_extension_selected"": true,
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E39_TERMS 中'投保记录：本案为连续续保，选择门诊扩展责任，未选择健康管理责任'直接抽取。""
+}",CAND_002,18,True
+3,E40,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E40-formal-policy.json,elder_care_plan|plan_type|remote_consultation_selected,"{""elder_care_plan"": ""boolean"", ""plan_type"": ""string"", ""remote_consultation_selected"": ""boolean""}","{""elder_care_plan"": false, ""plan_type"": ""普通成人计划"", ""remote_consultation_selected"": true}",2,3,0.6666666666666666,"plan_type: expected='ADULT_STANDARD', actual='普通成人计划'",,,RULE_SLOT_03,12,1,,,文档DOC_E40_TERMS明确记载本案投保记录为‘普通成人计划’且选择了‘远程问诊附加责任’，故elder_care_plan为false，plan_type为‘普通成人计划’，remote_consultation_selected为true。,True,True,False,False,False,False,True,3734,json_schema,666,113,stop,"{
+  ""facts"": {
+    ""elder_care_plan"": false,
+    ""plan_type"": ""普通成人计划"",
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E40_TERMS明确记载本案投保记录为‘普通成人计划’且选择了‘远程问诊附加责任’，故elder_care_plan为false，plan_type为‘普通成人计划’，remote_consultation_selected为true。""
+}",CAND_002,18,False
+3,E41,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E41-formal-policy.json,overseas_extension_selected|remote_consultation_selected,"{""overseas_extension_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""overseas_extension_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。,True,True,False,False,False,False,True,2912,json_schema,644,84,stop,"{
+  ""facts"": {
+    ""overseas_extension_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。""
+}",CAND_002,18,True
+3,E42,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,59,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E42-formal-policy.json,regional_override|renewal_lock|version_code,"{""regional_override"": ""boolean"", ""renewal_lock"": ""boolean"", ""version_code"": ""string""}","{""regional_override"": true, ""renewal_lock"": false, ""version_code"": ""VER-AGE-2026Q4-B""}",2,3,0.6666666666666666,"regional_override: expected=False, actual=True",,,RULE_SLOT_02,59,1,,,"文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。",True,True,False,False,False,False,True,7430,json_schema,701,231,stop,"{
+  ""facts"": {
+    ""regional_override"": true,
+    ""renewal_lock"": false,
+    ""version_code"": ""VER-AGE-2026Q4-B""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E42_TERMS 第三条明确禁止从相邻版本代码猜测数值，并规定映射由候选修复表维护；文档中未提供具体的候选修复表或数值映射数据。根据指令要求，在证据不完整时仍输出最受文档支持的 fact 值（即文档中明确提及的版本代码 VER-AGE-2026Q4-B），并将缺失的数值映射信息记录在 evidence_notes 中。regional_override 设为 true 是因为文档提到‘无地区覆盖’通常意味着未应用地区覆盖，但此处需严格依据文档字面意思，文档仅说‘无地区覆盖’，故 regional_override 应为 false？重新审视：文档说‘本案无续保锁定、无地区覆盖’。因此 renewal_lock=false, regional_override=false。""
+}",CAND_002,59,True
+3,E43,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E43-formal-policy.json,contract_issue_date|endorsement_effective_for_issue_from,"{""contract_issue_date"": ""string"", ""endorsement_effective_for_issue_from"": ""string""}","{""contract_issue_date"": ""2026-09-12"", ""endorsement_effective_for_issue_from"": ""2026-09-15""}",2,2,1.0,,,,RULE_SLOT_02,62,1,,,合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。,True,True,False,False,False,False,True,4624,json_schema,691,133,stop,"{
+  ""facts"": {
+    ""contract_issue_date"": ""2026-09-12"",
+    ""endorsement_effective_for_issue_from"": ""2026-09-15""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。""
+}",CAND_002,62,True
+3,E44,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E44-formal-policy.json,days_after_birth|health_declaration_clean|neonatal_observation_record,"{""days_after_birth"": ""integer"", ""health_declaration_clean"": ""boolean"", ""neonatal_observation_record"": ""boolean""}","{""days_after_birth"": 20, ""health_declaration_clean"": true, ""neonatal_observation_record"": true}",3,3,1.0,,,,RULE_SLOT_01,30,1,,,依据文档 DOC_E44_TERMS 第三条：存在新生儿住院观察记录的，即使在出生后30日内提交，也按30天观察等待期处理；该条优先于第二条。核保记录确认本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。,True,True,False,False,False,False,True,4661,json_schema,679,145,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 20,
+    ""health_declaration_clean"": true,
+    ""neonatal_observation_record"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E44_TERMS 第三条：存在新生儿住院观察记录的，即使在出生后30日内提交，也按30天观察等待期处理；该条优先于第二条。核保记录确认本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。""
+}",CAND_002,30,True
+3,E45,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,45,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E45-formal-policy.json,waiting_code|waiver_condition_met,"{""waiting_code"": ""string"", ""waiver_condition_met"": ""boolean""}","{""waiting_code"": ""WAIT-CODE-REINSTATE"", ""waiver_condition_met"": false}",2,2,1.0,,,,RULE_SLOT_02,45,1,,,文档明确记录系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。,True,True,False,False,False,False,True,2641,json_schema,644,75,stop,"{
+  ""facts"": {
+    ""waiting_code"": ""WAIT-CODE-REINSTATE"",
+    ""waiver_condition_met"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确记录系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。""
+}",CAND_002,45,True
+3,E46,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E46-formal-policy.json,plan_tier|premium_plan|rehabilitation_guidance_selected,"{""plan_tier"": ""string"", ""premium_plan"": ""boolean"", ""rehabilitation_guidance_selected"": ""boolean""}","{""plan_tier"": ""标准计划"", ""premium_plan"": false, ""rehabilitation_guidance_selected"": true}",2,3,0.6666666666666666,"plan_tier: expected='STANDARD', actual='标准计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E46_TERMS 中'投保记录：本案为标准计划，选择康复指导责任。'及'脚注a：24个月仅适用于尊享计划，不适用于标准计划。'推断 plan_tier 为'标准计划'（故 premium_plan 为 false），rehabilitation_guidance_selected 为 true。,True,True,False,False,False,False,True,4174,json_schema,662,132,stop,"{
+  ""facts"": {
+    ""plan_tier"": ""标准计划"",
+    ""premium_plan"": false,
+    ""rehabilitation_guidance_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E46_TERMS 中'投保记录：本案为标准计划，选择康复指导责任。'及'脚注a：24个月仅适用于尊享计划，不适用于标准计划。'推断 plan_tier 为'标准计划'（故 premium_plan 为 false），rehabilitation_guidance_selected 为 true。""
+}",CAND_002,18,False
+3,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。,True,True,False,False,False,False,True,3059,json_schema,650,90,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。""
+}",CAND_002,18,True
+4,E14,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E14-formal-policy.json,assessment_date|group_transfer_confirmed|underwriting_acceptance_date,"{""assessment_date"": ""string"", ""group_transfer_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""assessment_date"": ""2026-08-21"", ""group_transfer_confirmed"": false, ""underwriting_acceptance_date"": ""2026-08-20""}",3,3,1.0,,,,RULE_SLOT_01,62,1,,,所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。,True,True,False,False,False,False,True,4677,json_schema,1177,143,stop,"{
+  ""facts"": {
+    ""assessment_date"": ""2026-08-21"",
+    ""group_transfer_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-08-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。""
+}",CAND_002,62,True
+4,E15,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E15-formal-policy.json,entered_after_expiry|manual_assessment_date|underwriting_entry_date,"{""entered_after_expiry"": ""boolean"", ""manual_assessment_date"": ""string"", ""underwriting_entry_date"": ""string""}","{""entered_after_expiry"": false, ""manual_assessment_date"": ""2026-08-21"", ""underwriting_entry_date"": ""2026-07-20""}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据DOC_E15_JULY（生效日期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效日期2026-08-01），投保申请进入核保流程的日期为2026-07-20，该日期在DOC_E15_JULY有效期内，故entered_after_expiry为false。人工评估日期明确记载为2026年8月21日。,True,True,False,False,False,False,True,5902,json_schema,1173,190,stop,"{
+  ""facts"": {
+    ""entered_after_expiry"": false,
+    ""manual_assessment_date"": ""2026-08-21"",
+    ""underwriting_entry_date"": ""2026-07-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据DOC_E15_JULY（生效日期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效日期2026-08-01），投保申请进入核保流程的日期为2026-07-20，该日期在DOC_E15_JULY有效期内，故entered_after_expiry为false。人工评估日期明确记载为2026年8月21日。""
+}",CAND_003,64,True
+4,E16,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E16-formal-policy.json,endorsement_filing_completed|renewal_exception_confirmed|underwriting_acceptance_date,"{""endorsement_filing_completed"": ""boolean"", ""renewal_exception_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""endorsement_filing_completed"": false, ""renewal_exception_confirmed"": false, ""underwriting_acceptance_date"": ""2026-09-20""}",3,3,1.0,,,,RULE_SLOT_02,67,1,,,文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于该日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档首部明确核保受理日为2026年9月20日。,True,True,False,False,False,False,True,5701,json_schema,774,165,stop,"{
+  ""facts"": {
+    ""endorsement_filing_completed"": false,
+    ""renewal_exception_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-09-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E16_TERMS明确记载备案完成日为2026-10-01，核保受理日（2026-09-20）早于该日期，故endorsement_filing_completed为false；客户未提交连续续保证明，故renewal_exception_confirmed为false；文档首部明确核保受理日为2026年9月20日。""
+}",CAND_002,67,True
+4,E17,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,63,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E17-formal-policy.json,age_band_code|marketing_draft_applicable|renewal_channel_confirmed,"{""age_band_code"": ""string"", ""marketing_draft_applicable"": ""boolean"", ""renewal_channel_confirmed"": ""boolean""}","{""age_band_code"": ""AGE-BAND-G2"", ""marketing_draft_applicable"": false, ""renewal_channel_confirmed"": false}",3,3,1.0,,,,RULE_SLOT_02,63,1,,,依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。,True,True,False,False,False,False,True,3736,json_schema,740,111,stop,"{
+  ""facts"": {
+    ""age_band_code"": ""AGE-BAND-G2"",
+    ""marketing_draft_applicable"": false,
+    ""renewal_channel_confirmed"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E17_TERMS 第一条确认备案系统返回代码为 AGE-BAND-G2；第二条明确营销草案未进入备案系统且历史续保通道本次客户未提交证明，故两者均不适用。""
+}",CAND_002,63,True
+4,E18,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,61,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E18-formal-policy.json,acceptance_date|application_queue_date|new_version_effective|old_version_grace_until,"{""acceptance_date"": ""string"", ""application_queue_date"": ""string"", ""new_version_effective"": ""boolean"", ""old_version_grace_until"": ""string""}","{""acceptance_date"": ""2026-10-05"", ""application_queue_date"": ""2026-09-29"", ""new_version_effective"": true, ""old_version_grace_until"": ""2026-10-10""}",4,4,1.0,,,,RULE_SLOT_01,61,1,,,所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。,True,True,False,False,False,False,True,5778,json_schema,779,170,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-10-05"",
+    ""application_queue_date"": ""2026-09-29"",
+    ""new_version_effective"": true,
+    ""old_version_grace_until"": ""2026-10-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。""
+}",CAND_002,61,True
+4,E19,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E19-formal-policy.json,coverage_interrupted|original_contract_effective_date|renewal,"{""coverage_interrupted"": ""boolean"", ""original_contract_effective_date"": ""string"", ""renewal"": ""boolean""}","{""coverage_interrupted"": false, ""original_contract_effective_date"": ""2026-06-15"", ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。,True,True,False,False,False,False,True,3787,json_schema,726,117,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""original_contract_effective_date"": ""2026-06-15"",
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。""
+}",CAND_002,64,True
+4,E20,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,68,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E20-formal-policy.json,regional_version_available|service_region,"{""regional_version_available"": ""boolean"", ""service_region"": ""string""}","{""regional_version_available"": true, ""service_region"": ""华东分中心""}",1,2,0.5,"service_region: expected='EAST', actual='华东分中心'",,,RULE_SLOT_03,68,1,,,DOC_E20_TERMS 文档第四条明确地区版本与全国通用版本不一致时以地区版本为准，且核保记录确认受理机构为华东分中心；文档第二条明确华东分中心适用华东地区版本。,True,True,False,False,False,False,True,3016,json_schema,645,94,stop,"{
+  ""facts"": {
+    ""regional_version_available"": true,
+    ""service_region"": ""华东分中心""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""DOC_E20_TERMS 文档第四条明确地区版本与全国通用版本不一致时以地区版本为准，且核保记录确认受理机构为华东分中心；文档第二条明确华东分中心适用华东地区版本。""
+}",CAND_002,66,False
+4,E21,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E21-formal-policy.json,acceptance_date|endorsement_filing_completed_date|endorsement_signed_date,"{""acceptance_date"": ""string"", ""endorsement_filing_completed_date"": ""string"", ""endorsement_signed_date"": ""string""}","{""acceptance_date"": ""2026-12-12"", ""endorsement_filing_completed_date"": ""2026-12-20"", ""endorsement_signed_date"": ""2026-12-10""}",3,3,1.0,,,,RULE_SLOT_01,67,1,,,所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。,True,True,False,False,False,False,True,3813,json_schema,716,113,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-12-12"",
+    ""endorsement_filing_completed_date"": ""2026-12-20"",
+    ""endorsement_signed_date"": ""2026-12-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E21_TERMS 的第四条和核保记录中提取。""
+}",CAND_002,67,True
+4,E24,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E24-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_submitted_days"": 20}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。,True,True,False,False,False,False,True,4129,json_schema,815,123,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_submitted_days"": 20
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。""
+}",CAND_002,0,True
+4,E25,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E25-formal-policy.json,days_after_birth|health_disclosure_abnormal|prior_major_disease_record,"{""days_after_birth"": ""integer"", ""health_disclosure_abnormal"": ""boolean"", ""prior_major_disease_record"": ""boolean""}","{""days_after_birth"": 46, ""health_disclosure_abnormal"": false, ""prior_major_disease_record"": false}",3,3,1.0,,,,RULE_SLOT_02,15,1,,,依据文档 DOC_E25_TERMS 第五条及上下文，被保险人出生后第46日投保，健康告知无异常且无既往重大疾病记录。,True,True,False,False,False,False,True,3104,json_schema,806,93,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 46,
+    ""health_disclosure_abnormal"": false,
+    ""prior_major_disease_record"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E25_TERMS 第五条及上下文，被保险人出生后第46日投保，健康告知无异常且无既往重大疾病记录。""
+}",CAND_001,15,True
+4,E26,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E26-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_confirmed_valid|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_confirmed_valid"": true, ""proof_submitted_days"": 18}",4,4,1.0,,,,RULE_SLOT_02,30,1,,,依据文档 DOC_E26_TERMS 第四条，本次申请为团体转入且原保障未中断（支持 group_transfer 和 prior_coverage_uninterrupted），连续保障证明在第 18 日提交并经核保确认有效（支持 proof_confirmed_valid 和 proof_submitted_days）。,True,True,False,False,False,False,True,4457,json_schema,830,131,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submitted_days"": 18
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E26_TERMS 第四条，本次申请为团体转入且原保障未中断（支持 group_transfer 和 prior_coverage_uninterrupted），连续保障证明在第 18 日提交并经核保确认有效（支持 proof_confirmed_valid 和 proof_submitted_days）。""
+}",CAND_002,30,True
+4,E27,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E27-formal-policy.json,proof_confirmed_valid|proof_submission_marker|waiting_code,"{""proof_confirmed_valid"": ""boolean"", ""proof_submission_marker"": ""string"", ""waiting_code"": ""string""}","{""proof_confirmed_valid"": true, ""proof_submission_marker"": ""D_PLUS_18"", ""waiting_code"": ""WAIT-CODE-LATE-PROOF""}",3,3,1.0,,,,RULE_SLOT_02,30,1,,,所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条明确提及'连续保障证明提交标记为 D_PLUS_18'和'核保状态为 CONFIRMED_VALID'；第二条明确提及'等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。,True,True,False,False,False,False,True,4571,json_schema,729,133,stop,"{
+  ""facts"": {
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_marker"": ""D_PLUS_18"",
+    ""waiting_code"": ""WAIT-CODE-LATE-PROOF""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条明确提及'连续保障证明提交标记为 D_PLUS_18'和'核保状态为 CONFIRMED_VALID'；第二条明确提及'等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。""
+}",CAND_002,30,True
+4,E28,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E28-formal-policy.json,coverage_interrupted|group_transfer|proof_confirmed_valid|proof_submission_day,"{""coverage_interrupted"": ""boolean"", ""group_transfer"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submission_day"": ""integer""}","{""coverage_interrupted"": false, ""group_transfer"": true, ""proof_confirmed_valid"": true, ""proof_submission_day"": 12}",4,4,1.0,,,,RULE_SLOT_01,0,1,,,"依据文档 DOC_E28_TERMS 第二条及核保记录，本案符合团体计划连续转入且保障未中断（coverage_interrupted=false, group_transfer=true），连续保障证明在申请后第12日提交并核保确认有效（proof_submission_day=12, proof_confirmed_valid=true）。",True,True,False,False,False,False,True,4339,json_schema,721,131,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""group_transfer"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_day"": 12
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E28_TERMS 第二条及核保记录，本案符合团体计划连续转入且保障未中断（coverage_interrupted=false, group_transfer=true），连续保障证明在申请后第12日提交并核保确认有效（proof_submission_day=12, proof_confirmed_valid=true）。""
+}",CAND_002,0,True
+4,E29,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,90,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E29-formal-policy.json,accident_liability|liability_category,"{""accident_liability"": ""boolean"", ""liability_category"": ""string""}","{""accident_liability"": false, ""liability_category"": ""特定恶性肿瘤责任""}",1,2,0.5,"liability_category: expected='SPECIFIC_CANCER', actual='特定恶性肿瘤责任'",,,RULE_SLOT_03,90,1,,,文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。,True,True,False,False,False,False,True,3367,json_schema,616,100,stop,"{
+  ""facts"": {
+    ""accident_liability"": false,
+    ""liability_category"": ""特定恶性肿瘤责任""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。""
+}",CAND_002,45,False
+4,E30,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E30-formal-policy.json,group_level|group_list_confirmed|loss_ratio_percent,"{""group_level"": ""string"", ""group_list_confirmed"": ""boolean"", ""loss_ratio_percent"": ""integer""}","{""group_level"": ""VIP"", ""group_list_confirmed"": true, ""loss_ratio_percent"": 32}",3,3,1.0,,,,RULE_SLOT_01,15,1,,,所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中抽取。,True,True,False,False,False,False,True,2796,json_schema,668,81,stop,"{
+  ""facts"": {
+    ""group_level"": ""VIP"",
+    ""group_list_confirmed"": true,
+    ""loss_ratio_percent"": 32
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中抽取。""
+}",CAND_003,15,True
+4,E31,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E31-formal-policy.json,liability_scope_changed|prior_underwriting_note_valid|same_liability_renewal,"{""liability_scope_changed"": ""boolean"", ""prior_underwriting_note_valid"": ""boolean"", ""same_liability_renewal"": ""boolean""}","{""liability_scope_changed"": false, ""prior_underwriting_note_valid"": true, ""same_liability_renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。,True,True,False,False,False,False,True,3692,json_schema,683,115,stop,"{
+  ""facts"": {
+    ""liability_scope_changed"": false,
+    ""prior_underwriting_note_valid"": true,
+    ""same_liability_renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。""
+}",CAND_003,0,True
+4,E34,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,24,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E34-formal-policy.json,expense_advance_selected|long_term_care_addon_selected,"{""expense_advance_selected"": ""boolean"", ""long_term_care_addon_selected"": ""boolean""}","{""expense_advance_selected"": false, ""long_term_care_addon_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,24,1,,,DOC_E34_TERMS第五条确认勾选长期照护附加责任，第六条确认未选择费用垫付责任。,True,True,False,False,False,False,True,2443,json_schema,777,73,stop,"{
+  ""facts"": {
+    ""expense_advance_selected"": false,
+    ""long_term_care_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""DOC_E34_TERMS第五条确认勾选长期照护附加责任，第六条确认未选择费用垫付责任。""
+}",CAND_003,24,True
+4,E35,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E35-formal-policy.json,cancer_outpatient_extension_selected|insured_age|overseas_medical_selected,"{""cancer_outpatient_extension_selected"": ""boolean"", ""insured_age"": ""integer"", ""overseas_medical_selected"": ""boolean""}","{""cancer_outpatient_extension_selected"": true, ""insured_age"": 58, ""overseas_medical_selected"": false}",3,3,1.0,,,,RULE_SLOT_03,18,1,,,所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。,True,True,False,False,False,False,True,2829,json_schema,836,86,stop,"{
+  ""facts"": {
+    ""cancer_outpatient_extension_selected"": true,
+    ""insured_age"": 58,
+    ""overseas_medical_selected"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。""
+}",CAND_001,18,True
+4,E36,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E36-formal-policy.json,chronic_management_cancelled_before_underwriting|chronic_management_preselected|telemedicine_addon_selected,"{""chronic_management_cancelled_before_underwriting"": ""boolean"", ""chronic_management_preselected"": ""boolean"", ""telemedicine_addon_selected"": ""boolean""}","{""chronic_management_cancelled_before_underwriting"": true, ""chronic_management_preselected"": true, ""telemedicine_addon_selected"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E36_TERMS 的第四条、第五条及投保申请上下文（case_context）中提取。,True,True,False,False,False,False,True,3065,json_schema,799,91,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled_before_underwriting"": true,
+    ""chronic_management_preselected"": true,
+    ""telemedicine_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E36_TERMS 的第四条、第五条及投保申请上下文（case_context）中提取。""
+}",CAND_002,18,True
+4,E37,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E37-formal-policy.json,chronic_management_cancelled|duration_code|remote_consultation_active,"{""chronic_management_cancelled"": ""boolean"", ""duration_code"": ""string"", ""remote_consultation_active"": ""boolean""}","{""chronic_management_cancelled"": true, ""duration_code"": ""DURATION-CODE-REMOTE"", ""remote_consultation_active"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E37_TERMS 的文本中提取：第一条确认慢病管理附加责任取消及远程问诊保留；第二条明确规则引擎输出 DURATION-CODE-REMOTE。,True,True,False,False,False,False,True,3620,json_schema,733,106,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled"": true,
+    ""duration_code"": ""DURATION-CODE-REMOTE"",
+    ""remote_consultation_active"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E37_TERMS 的文本中提取：第一条确认慢病管理附加责任取消及远程问诊保留；第二条明确规则引擎输出 DURATION-CODE-REMOTE。""
+}",CAND_002,18,True
+4,E38,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E38-formal-policy.json,dental_addon_selected|remote_consultation_selected,"{""dental_addon_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""dental_addon_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。,True,True,False,False,False,False,True,2987,json_schema,650,85,stop,"{
+  ""facts"": {
+    ""dental_addon_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E38_TERMS明确记载投保记录为'本案选择远程问诊附加责任，未选择牙科附加责任'，直接支持上述布尔值事实。""
+}",CAND_002,18,True
+4,E39,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E39-formal-policy.json,health_management_selected|outpatient_extension_selected|renewal,"{""health_management_selected"": ""boolean"", ""outpatient_extension_selected"": ""boolean"", ""renewal"": ""boolean""}","{""health_management_selected"": false, ""outpatient_extension_selected"": true, ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,依据文档 DOC_E39_TERMS 投保记录部分：'本案为连续续保，选择门诊扩展责任，未选择健康管理责任。' 直接提取了 renewal、outpatient_extension_selected 和 health_management_selected 的值。,True,True,False,False,False,False,True,3718,json_schema,675,106,stop,"{
+  ""facts"": {
+    ""health_management_selected"": false,
+    ""outpatient_extension_selected"": true,
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E39_TERMS 投保记录部分：'本案为连续续保，选择门诊扩展责任，未选择健康管理责任。' 直接提取了 renewal、outpatient_extension_selected 和 health_management_selected 的值。""
+}",CAND_002,18,True
+4,E40,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E40-formal-policy.json,elder_care_plan|plan_type|remote_consultation_selected,"{""elder_care_plan"": ""boolean"", ""plan_type"": ""string"", ""remote_consultation_selected"": ""boolean""}","{""elder_care_plan"": false, ""plan_type"": ""普通成人计划"", ""remote_consultation_selected"": true}",2,3,0.6666666666666666,"plan_type: expected='ADULT_STANDARD', actual='普通成人计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E40_TERMS 中‘投保记录’段落，本案计划类型为‘普通成人计划’且选择了‘远程问诊附加责任’，故 elder_care_plan 为 false，plan_type 为‘普通成人计划’，remote_consultation_selected 为 true。,True,True,False,False,False,False,True,4143,json_schema,666,122,stop,"{
+  ""facts"": {
+    ""elder_care_plan"": false,
+    ""plan_type"": ""普通成人计划"",
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E40_TERMS 中‘投保记录’段落，本案计划类型为‘普通成人计划’且选择了‘远程问诊附加责任’，故 elder_care_plan 为 false，plan_type 为‘普通成人计划’，remote_consultation_selected 为 true。""
+}",CAND_002,18,False
+4,E41,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E41-formal-policy.json,overseas_extension_selected|remote_consultation_selected,"{""overseas_extension_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""overseas_extension_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。,True,True,False,False,False,False,True,2658,json_schema,644,84,stop,"{
+  ""facts"": {
+    ""overseas_extension_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。""
+}",CAND_002,18,True
+4,E42,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,59,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E42-formal-policy.json,regional_override|renewal_lock|version_code,"{""regional_override"": ""boolean"", ""renewal_lock"": ""boolean"", ""version_code"": ""string""}","{""regional_override"": false, ""renewal_lock"": false, ""version_code"": ""VER-AGE-2026Q4-B""}",3,3,1.0,,,,RULE_SLOT_02,59,1,,,文档 DOC_E42_TERMS 明确记载本案采用返回的版本代码 VER-AGE-2026Q4-B，且无续保锁定、无地区覆盖。目标字段'最高投保年龄'未在 fact_schema 中定义，故未抽取；该字段所需数值需外部候选修复表确定，当前文档未提供具体数值，但根据指令仅抽取 schema 列出的 facts。,True,True,False,False,False,False,True,5166,json_schema,701,152,stop,"{
+  ""facts"": {
+    ""regional_override"": false,
+    ""renewal_lock"": false,
+    ""version_code"": ""VER-AGE-2026Q4-B""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E42_TERMS 明确记载本案采用返回的版本代码 VER-AGE-2026Q4-B，且无续保锁定、无地区覆盖。目标字段'最高投保年龄'未在 fact_schema 中定义，故未抽取；该字段所需数值需外部候选修复表确定，当前文档未提供具体数值，但根据指令仅抽取 schema 列出的 facts。""
+}",CAND_002,59,True
+4,E43,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E43-formal-policy.json,contract_issue_date|endorsement_effective_for_issue_from,"{""contract_issue_date"": ""string"", ""endorsement_effective_for_issue_from"": ""string""}","{""contract_issue_date"": ""2026-09-12"", ""endorsement_effective_for_issue_from"": ""2026-09-15""}",2,2,1.0,,,,RULE_SLOT_02,62,1,,,合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。,True,True,False,False,False,False,True,4501,json_schema,691,133,stop,"{
+  ""facts"": {
+    ""contract_issue_date"": ""2026-09-12"",
+    ""endorsement_effective_for_issue_from"": ""2026-09-15""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。""
+}",CAND_002,62,True
+4,E44,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E44-formal-policy.json,days_after_birth|health_declaration_clean|neonatal_observation_record,"{""days_after_birth"": ""integer"", ""health_declaration_clean"": ""boolean"", ""neonatal_observation_record"": ""boolean""}","{""days_after_birth"": 20, ""health_declaration_clean"": true, ""neonatal_observation_record"": true}",3,3,1.0,,,,RULE_SLOT_01,30,1,,,依据DOC_E44_TERMS文档：核保记录明确记载'本案出生后第20日提交'（对应days_after_birth=20），'健康告知无异常'（对应health_declaration_clean=true），且'存在新生儿住院观察记录'（对应neonatal_observation_record=true）。,True,True,False,False,False,False,True,4255,json_schema,679,124,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 20,
+    ""health_declaration_clean"": true,
+    ""neonatal_observation_record"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据DOC_E44_TERMS文档：核保记录明确记载'本案出生后第20日提交'（对应days_after_birth=20），'健康告知无异常'（对应health_declaration_clean=true），且'存在新生儿住院观察记录'（对应neonatal_observation_record=true）。""
+}",CAND_002,30,True
+4,E45,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,45,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E45-formal-policy.json,waiting_code|waiver_condition_met,"{""waiting_code"": ""string"", ""waiver_condition_met"": ""boolean""}","{""waiting_code"": ""WAIT-CODE-REINSTATE"", ""waiver_condition_met"": false}",2,2,1.0,,,,RULE_SLOT_02,45,1,,,文档 DOC_E45_TERMS 明确记录本案复效审核系统返回 WAIT-CODE-REINSTATE，且指出未满足豁免条件。,True,True,False,False,False,False,True,3042,json_schema,644,85,stop,"{
+  ""facts"": {
+    ""waiting_code"": ""WAIT-CODE-REINSTATE"",
+    ""waiver_condition_met"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E45_TERMS 明确记录本案复效审核系统返回 WAIT-CODE-REINSTATE，且指出未满足豁免条件。""
+}",CAND_002,45,True
+4,E46,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E46-formal-policy.json,plan_tier|premium_plan|rehabilitation_guidance_selected,"{""plan_tier"": ""string"", ""premium_plan"": ""boolean"", ""rehabilitation_guidance_selected"": ""boolean""}","{""plan_tier"": ""标准计划"", ""premium_plan"": false, ""rehabilitation_guidance_selected"": true}",2,3,0.6666666666666666,"plan_tier: expected='STANDARD', actual='标准计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E46_TERMS 中'投保记录：本案为标准计划，选择康复指导责任'及'脚注a：24个月仅适用于尊享计划，不适用于标准计划'进行抽取。,True,True,False,False,False,False,True,3593,json_schema,662,105,stop,"{
+  ""facts"": {
+    ""plan_tier"": ""标准计划"",
+    ""premium_plan"": false,
+    ""rehabilitation_guidance_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E46_TERMS 中'投保记录：本案为标准计划，选择康复指导责任'及'脚注a：24个月仅适用于尊享计划，不适用于标准计划'进行抽取。""
+}",CAND_002,18,False
+4,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档明确记载规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划，故 premium_plan 为 false。文档未直接展开月数数值，但指令禁止输出候选或推断值，仅抽取 schema 定义的 facts。,True,True,False,False,False,False,True,3933,json_schema,650,108,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确记载规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划，故 premium_plan 为 false。文档未直接展开月数数值，但指令禁止输出候选或推断值，仅抽取 schema 定义的 facts。""
+}",CAND_002,18,True
+5,E14,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E14-formal-policy.json,assessment_date|group_transfer_confirmed|underwriting_acceptance_date,"{""assessment_date"": ""string"", ""group_transfer_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""assessment_date"": ""2026-08-21"", ""group_transfer_confirmed"": false, ""underwriting_acceptance_date"": ""2026-08-20""}",3,3,1.0,,,,RULE_SLOT_01,62,1,,,所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。,True,True,False,False,False,False,True,4880,json_schema,1177,143,stop,"{
+  ""facts"": {
+    ""assessment_date"": ""2026-08-21"",
+    ""group_transfer_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-08-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从case_context中抽取：评估日期为2026年8月21日，核保受理日为2026年8月20日。group_transfer_confirmed设为false，因case_context未提及任何团体转入情形且无相关证据支持该例外规则适用。""
+}",CAND_002,62,True
+5,E15,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E15-formal-policy.json,entered_after_expiry|manual_assessment_date|underwriting_entry_date,"{""entered_after_expiry"": ""boolean"", ""manual_assessment_date"": ""string"", ""underwriting_entry_date"": ""string""}","{""entered_after_expiry"": false, ""manual_assessment_date"": ""2026-08-21"", ""underwriting_entry_date"": ""2026-07-20""}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。,True,True,False,False,False,False,True,8507,json_schema,1173,237,stop,"{
+  ""facts"": {
+    ""entered_after_expiry"": false,
+    ""manual_assessment_date"": ""2026-08-21"",
+    ""underwriting_entry_date"": ""2026-07-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""根据DOC_E15_JULY（生效期2026-07-01至2026-07-31）和DOC_E15_AUGUST（生效期2026-08-01起），投保申请进入核保流程日期为2026-07-20，处于七月版本有效期内。人工评估日期2026-08-21晚于七月版本失效日，但DOC_E15_JULY第四条规定后续评估不改变判断日期，且DOC_E15_AUGUST第三条规定进入核保流程在生效前的申请仍按当日有效版本处理，故entered_after_expiry为false。所有facts均从文档原文直接抽取。""
+}",CAND_003,64,True
+5,E16,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E16-formal-policy.json,endorsement_filing_completed|renewal_exception_confirmed|underwriting_acceptance_date,"{""endorsement_filing_completed"": ""boolean"", ""renewal_exception_confirmed"": ""boolean"", ""underwriting_acceptance_date"": ""string""}","{""endorsement_filing_completed"": false, ""renewal_exception_confirmed"": false, ""underwriting_acceptance_date"": ""2026-09-20""}",3,3,1.0,,,,RULE_SLOT_02,67,1,,,文档DOC_E16_TERMS明确记载‘备案完成日：2026-10-01'，当前核保受理日为2026-09-20，故endorsement_filing_completed为false。文档第三条指出仅当客户提交连续续保证明并通过人工确认时方可适用例外，上下文未提及该动作已完成，故renewal_exception_confirmed为false。文档case_context明确给出核保受理日为2026年9月20日，故underwriting_acceptance_date为'2026-09-20'。,True,True,False,False,False,False,True,7369,json_schema,774,203,stop,"{
+  ""facts"": {
+    ""endorsement_filing_completed"": false,
+    ""renewal_exception_confirmed"": false,
+    ""underwriting_acceptance_date"": ""2026-09-20""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E16_TERMS明确记载‘备案完成日：2026-10-01'，当前核保受理日为2026-09-20，故endorsement_filing_completed为false。文档第三条指出仅当客户提交连续续保证明并通过人工确认时方可适用例外，上下文未提及该动作已完成，故renewal_exception_confirmed为false。文档case_context明确给出核保受理日为2026年9月20日，故underwriting_acceptance_date为'2026-09-20'。""
+}",CAND_002,67,True
+5,E17,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,63,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E17-formal-policy.json,age_band_code|marketing_draft_applicable|renewal_channel_confirmed,"{""age_band_code"": ""string"", ""marketing_draft_applicable"": ""boolean"", ""renewal_channel_confirmed"": ""boolean""}","{""age_band_code"": ""AGE-BAND-G2"", ""marketing_draft_applicable"": false, ""renewal_channel_confirmed"": false}",3,3,1.0,,,,RULE_SLOT_02,63,1,,,依据 DOC_E17_TERMS 文档：备案系统返回代码为 AGE-BAND-G2；营销草案未进入备案系统故不适用；客户未提交续保证明故续保通道未确认。,True,True,False,False,False,False,True,3749,json_schema,740,108,stop,"{
+  ""facts"": {
+    ""age_band_code"": ""AGE-BAND-G2"",
+    ""marketing_draft_applicable"": false,
+    ""renewal_channel_confirmed"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据 DOC_E17_TERMS 文档：备案系统返回代码为 AGE-BAND-G2；营销草案未进入备案系统故不适用；客户未提交续保证明故续保通道未确认。""
+}",CAND_002,63,True
+5,E18,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,61,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E18-formal-policy.json,acceptance_date|application_queue_date|new_version_effective|old_version_grace_until,"{""acceptance_date"": ""string"", ""application_queue_date"": ""string"", ""new_version_effective"": ""boolean"", ""old_version_grace_until"": ""string""}","{""acceptance_date"": ""2026-10-05"", ""application_queue_date"": ""2026-09-29"", ""new_version_effective"": true, ""old_version_grace_until"": ""2026-10-10""}",4,4,1.0,,,,RULE_SLOT_01,61,1,,,所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。,True,True,False,False,False,False,True,5875,json_schema,779,170,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-10-05"",
+    ""application_queue_date"": ""2026-09-29"",
+    ""new_version_effective"": true,
+    ""old_version_grace_until"": ""2026-10-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有facts均直接从文档DOC_E18_TERMS的文本中抽取：acceptance_date和application_queue_date来自核保记录部分；new_version_effective基于生效日期2026年10月1日及当前时间推断为true（符合上下文逻辑）；old_version_grace_until来自第二条关于宽限期的描述。""
+}",CAND_002,61,True
+5,E19,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,64,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E19-formal-policy.json,coverage_interrupted|original_contract_effective_date|renewal,"{""coverage_interrupted"": ""boolean"", ""original_contract_effective_date"": ""string"", ""renewal"": ""boolean""}","{""coverage_interrupted"": false, ""original_contract_effective_date"": ""2026-06-15"", ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,64,1,,,依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。,True,True,False,False,False,False,True,4108,json_schema,726,117,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""original_contract_effective_date"": ""2026-06-15"",
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E19_TERMS 第三条及核保记录，确认原合同生效日为 2026-06-15；依据第二条及核保记录，确认为连续续保且保障未中断。""
+}",CAND_002,64,True
+5,E20,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,68,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E20-formal-policy.json,regional_version_available|service_region,"{""regional_version_available"": ""boolean"", ""service_region"": ""string""}","{""regional_version_available"": true, ""service_region"": ""华东分中心""}",1,2,0.5,"service_region: expected='EAST', actual='华东分中心'",,,RULE_SLOT_03,68,1,,,文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。,True,True,False,False,False,False,True,4054,json_schema,645,115,stop,"{
+  ""facts"": {
+    ""regional_version_available"": true,
+    ""service_region"": ""华东分中心""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E20_TERMS明确声明‘地区版本与全国通用版本不一致时，以受理机构地区版本为准’且核保记录显示本案受理机构为华东分中心，故regional_version_available为true；文档第二条明确指出华东分中心适用华东地区版本，故service_region为‘华东分中心’。""
+}",CAND_002,66,False
+5,E21,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,67,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E21-formal-policy.json,acceptance_date|endorsement_filing_completed_date|endorsement_signed_date,"{""acceptance_date"": ""string"", ""endorsement_filing_completed_date"": ""string"", ""endorsement_signed_date"": ""string""}","{""acceptance_date"": ""2026-12-12"", ""endorsement_filing_completed_date"": ""2026-12-20"", ""endorsement_signed_date"": ""2026-12-10""}",3,3,1.0,,,,RULE_SLOT_01,67,1,,,所有目标字段均能从文档DOC_E21_TERMS的第四条和核保记录中直接提取。,True,True,False,False,False,False,True,3988,json_schema,716,115,stop,"{
+  ""facts"": {
+    ""acceptance_date"": ""2026-12-12"",
+    ""endorsement_filing_completed_date"": ""2026-12-20"",
+    ""endorsement_signed_date"": ""2026-12-10""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档DOC_E21_TERMS的第四条和核保记录中直接提取。""
+}",CAND_002,67,True
+5,E24,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E24-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_submitted_days"": 20}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。,True,True,False,False,False,False,True,4042,json_schema,815,123,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_submitted_days"": 20
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E24_TERMS 第五条，案件事实明确记载本次申请属于合作单位团体计划转入（group_transfer=true），原保障截至新合同生效日前一日仍有效（prior_coverage_uninterrupted=true），连续保障证明在第20日提交（proof_submitted_days=20）。""
+}",CAND_002,0,True
+5,E25,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E25-formal-policy.json,days_after_birth|health_disclosure_abnormal|prior_major_disease_record,"{""days_after_birth"": ""integer"", ""health_disclosure_abnormal"": ""boolean"", ""prior_major_disease_record"": ""boolean""}","{""days_after_birth"": 46, ""health_disclosure_abnormal"": false, ""prior_major_disease_record"": false}",3,3,1.0,,,,RULE_SLOT_02,15,1,,,所有事实均直接从文档 DOC_E25_TERMS 第五条（案件事实）及上下文描述中提取：出生第46日、健康告知无异常、无既往重大疾病记录。,True,True,False,False,False,False,True,3456,json_schema,806,100,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 46,
+    ""health_disclosure_abnormal"": false,
+    ""prior_major_disease_record"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E25_TERMS 第五条（案件事实）及上下文描述中提取：出生第46日、健康告知无异常、无既往重大疾病记录。""
+}",CAND_001,15,True
+5,E26,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E26-formal-policy.json,group_transfer|prior_coverage_uninterrupted|proof_confirmed_valid|proof_submitted_days,"{""group_transfer"": ""boolean"", ""prior_coverage_uninterrupted"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submitted_days"": ""integer""}","{""group_transfer"": true, ""prior_coverage_uninterrupted"": true, ""proof_confirmed_valid"": true, ""proof_submitted_days"": 18}",4,4,1.0,,,,RULE_SLOT_02,30,1,,,"依据文档DOC_E26_TERMS第四条及上下文，确认本次申请为团体转入且原保障未中断（group_transfer=true, prior_coverage_uninterrupted=true）；连续保障证明在第18日提交且核保确认有效（proof_confirmed_valid=true, proof_submitted_days=18）。",True,True,False,False,False,False,True,4783,json_schema,830,134,stop,"{
+  ""facts"": {
+    ""group_transfer"": true,
+    ""prior_coverage_uninterrupted"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submitted_days"": 18
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E26_TERMS第四条及上下文，确认本次申请为团体转入且原保障未中断（group_transfer=true, prior_coverage_uninterrupted=true）；连续保障证明在第18日提交且核保确认有效（proof_confirmed_valid=true, proof_submitted_days=18）。""
+}",CAND_002,30,True
+5,E27,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E27-formal-policy.json,proof_confirmed_valid|proof_submission_marker|waiting_code,"{""proof_confirmed_valid"": ""boolean"", ""proof_submission_marker"": ""string"", ""waiting_code"": ""string""}","{""proof_confirmed_valid"": true, ""proof_submission_marker"": ""D_PLUS_18"", ""waiting_code"": ""WAIT-CODE-LATE-PROOF""}",3,3,1.0,,,,RULE_SLOT_02,30,1,,,所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条明确提及'连续保障证明提交标记为 D_PLUS_18，核保状态为 CONFIRMED_VALID'；第二条明确提及'等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。,True,True,False,False,False,False,True,4672,json_schema,729,131,stop,"{
+  ""facts"": {
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_marker"": ""D_PLUS_18"",
+    ""waiting_code"": ""WAIT-CODE-LATE-PROOF""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E27_TERMS 的文本中提取：第一条明确提及'连续保障证明提交标记为 D_PLUS_18，核保状态为 CONFIRMED_VALID'；第二条明确提及'等待期规则引擎输出 WAIT-CODE-LATE-PROOF'。""
+}",CAND_002,30,True
+5,E28,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E28-formal-policy.json,coverage_interrupted|group_transfer|proof_confirmed_valid|proof_submission_day,"{""coverage_interrupted"": ""boolean"", ""group_transfer"": ""boolean"", ""proof_confirmed_valid"": ""boolean"", ""proof_submission_day"": ""integer""}","{""coverage_interrupted"": false, ""group_transfer"": true, ""proof_confirmed_valid"": true, ""proof_submission_day"": 12}",4,4,1.0,,,,RULE_SLOT_01,0,1,,,"依据DOC_E28_TERMS文档：核保记录明确记载'本案保障未中断'（coverage_interrupted=false），'团体计划连续转入'（group_transfer=true），'连续保障证明在申请后第12日提交，核保确认有效'（proof_confirmed_valid=true, proof_submission_day=12）。所有facts均直接从文档文本提取。",True,True,False,False,False,False,True,5038,json_schema,721,143,stop,"{
+  ""facts"": {
+    ""coverage_interrupted"": false,
+    ""group_transfer"": true,
+    ""proof_confirmed_valid"": true,
+    ""proof_submission_day"": 12
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据DOC_E28_TERMS文档：核保记录明确记载'本案保障未中断'（coverage_interrupted=false），'团体计划连续转入'（group_transfer=true），'连续保障证明在申请后第12日提交，核保确认有效'（proof_confirmed_valid=true, proof_submission_day=12）。所有facts均直接从文档文本提取。""
+}",CAND_002,0,True
+5,E29,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,90,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E29-formal-policy.json,accident_liability|liability_category,"{""accident_liability"": ""boolean"", ""liability_category"": ""string""}","{""accident_liability"": false, ""liability_category"": ""特定恶性肿瘤责任""}",1,2,0.5,"liability_category: expected='SPECIFIC_CANCER', actual='特定恶性肿瘤责任'",,,RULE_SLOT_03,90,1,,,文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。,True,True,False,False,False,False,True,3578,json_schema,616,100,stop,"{
+  ""facts"": {
+    ""accident_liability"": false,
+    ""liability_category"": ""特定恶性肿瘤责任""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E29_TERMS第三条明确记载‘核保记录：本案责任类别为特定恶性肿瘤责任，非意外伤害责任’，据此直接抽取accident_liability为false，liability_category为‘特定恶性肿瘤责任’。""
+}",CAND_002,45,False
+5,E30,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,15,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E30-formal-policy.json,group_level|group_list_confirmed|loss_ratio_percent,"{""group_level"": ""string"", ""group_list_confirmed"": ""boolean"", ""loss_ratio_percent"": ""integer""}","{""group_level"": ""VIP"", ""group_list_confirmed"": true, ""loss_ratio_percent"": 32}",3,3,1.0,,,,RULE_SLOT_01,15,1,,,所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。,True,True,False,False,False,False,True,3106,json_schema,668,86,stop,"{
+  ""facts"": {
+    ""group_level"": ""VIP"",
+    ""group_list_confirmed"": true,
+    ""loss_ratio_percent"": 32
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E30_TERMS 的核保记录及条款文本中提取，无需外部常识或推断。""
+}",CAND_003,15,True
+5,E31,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,0,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E31-formal-policy.json,liability_scope_changed|prior_underwriting_note_valid|same_liability_renewal,"{""liability_scope_changed"": ""boolean"", ""prior_underwriting_note_valid"": ""boolean"", ""same_liability_renewal"": ""boolean""}","{""liability_scope_changed"": false, ""prior_underwriting_note_valid"": true, ""same_liability_renewal"": true}",3,3,1.0,,,,RULE_SLOT_01,0,1,,,所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。,True,True,False,False,False,False,True,3862,json_schema,683,115,stop,"{
+  ""facts"": {
+    ""liability_scope_changed"": false,
+    ""prior_underwriting_note_valid"": true,
+    ""same_liability_renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标字段均能从文档 DOC_E31_TERMS 的第三条（既有批注豁免等待期）、核保记录（同责任续保、批注有效）及第二条（责任范围变化情况）中直接推导得出，无缺失事实。""
+}",CAND_003,0,True
+5,E34,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_003,24,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E34-formal-policy.json,expense_advance_selected|long_term_care_addon_selected,"{""expense_advance_selected"": ""boolean"", ""long_term_care_addon_selected"": ""boolean""}","{""expense_advance_selected"": false, ""long_term_care_addon_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,24,1,,,依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。,True,True,False,False,False,False,True,3727,json_schema,777,109,stop,"{
+  ""facts"": {
+    ""expense_advance_selected"": false,
+    ""long_term_care_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档DOC_E34_TERMS第五条（投保记录勾选长期照护）及第六条（核保确认未选择费用垫付），结合第七条关于需综合读取附加责任选择和否定确认的指示，确定expense_advance_selected为false，long_term_care_addon_selected为true。""
+}",CAND_003,24,True
+5,E35,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E35-formal-policy.json,cancer_outpatient_extension_selected|insured_age|overseas_medical_selected,"{""cancer_outpatient_extension_selected"": ""boolean"", ""insured_age"": ""integer"", ""overseas_medical_selected"": ""boolean""}","{""cancer_outpatient_extension_selected"": true, ""insured_age"": 58, ""overseas_medical_selected"": false}",3,3,1.0,,,,RULE_SLOT_03,18,1,,,所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。,True,True,False,False,False,False,True,3033,json_schema,836,86,stop,"{
+  ""facts"": {
+    ""cancer_outpatient_extension_selected"": true,
+    ""insured_age"": 58,
+    ""overseas_medical_selected"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有目标事实均直接从文档DOC_E35_TERMS的第六条、第七条及case_context中抽取。""
+}",CAND_001,18,True
+5,E36,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E36-formal-policy.json,chronic_management_cancelled_before_underwriting|chronic_management_preselected|telemedicine_addon_selected,"{""chronic_management_cancelled_before_underwriting"": ""boolean"", ""chronic_management_preselected"": ""boolean"", ""telemedicine_addon_selected"": ""boolean""}","{""chronic_management_cancelled_before_underwriting"": true, ""chronic_management_preselected"": true, ""telemedicine_addon_selected"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,所有事实均直接从文档 DOC_E36_TERMS 的第四条、第五条及投保申请上下文（case_context）中提取。,True,True,False,False,False,False,True,3269,json_schema,799,91,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled_before_underwriting"": true,
+    ""chronic_management_preselected"": true,
+    ""telemedicine_addon_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""所有事实均直接从文档 DOC_E36_TERMS 的第四条、第五条及投保申请上下文（case_context）中提取。""
+}",CAND_002,18,True
+5,E37,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E37-formal-policy.json,chronic_management_cancelled|duration_code|remote_consultation_active,"{""chronic_management_cancelled"": ""boolean"", ""duration_code"": ""string"", ""remote_consultation_active"": ""boolean""}","{""chronic_management_cancelled"": true, ""duration_code"": ""DURATION-CODE-REMOTE"", ""remote_consultation_active"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,事实抽取完全依据文档 DOC_E37_TERMS 文本：第一条确认慢病管理附加责任已取消（chronic_management_cancelled=true）及保留远程问诊附加责任（remote_consultation_active=true）；第二条明确规则引擎输出 DURATION-CODE-REMOTE（duration_code='DURATION-CODE-REMOTE'）。文档未直接提供月数映射，但指令禁止生成候选或推断，故仅输出 schema 定义的 facts。,True,True,False,False,False,False,True,5715,json_schema,733,158,stop,"{
+  ""facts"": {
+    ""chronic_management_cancelled"": true,
+    ""duration_code"": ""DURATION-CODE-REMOTE"",
+    ""remote_consultation_active"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""事实抽取完全依据文档 DOC_E37_TERMS 文本：第一条确认慢病管理附加责任已取消（chronic_management_cancelled=true）及保留远程问诊附加责任（remote_consultation_active=true）；第二条明确规则引擎输出 DURATION-CODE-REMOTE（duration_code='DURATION-CODE-REMOTE'）。文档未直接提供月数映射，但指令禁止生成候选或推断，故仅输出 schema 定义的 facts。""
+}",CAND_002,18,True
+5,E38,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E38-formal-policy.json,dental_addon_selected|remote_consultation_selected,"{""dental_addon_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""dental_addon_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E38_TERMS第四条明确记载'未选择牙科附加责任时，不得引用24个月期限'且投保记录确认'本案选择远程问诊附加责任，未选择牙科附加责任'。因此dental_addon_selected为false，remote_consultation_selected为true。,True,True,False,False,False,False,True,3986,json_schema,650,112,stop,"{
+  ""facts"": {
+    ""dental_addon_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E38_TERMS第四条明确记载'未选择牙科附加责任时，不得引用24个月期限'且投保记录确认'本案选择远程问诊附加责任，未选择牙科附加责任'。因此dental_addon_selected为false，remote_consultation_selected为true。""
+}",CAND_002,18,True
+5,E39,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E39-formal-policy.json,health_management_selected|outpatient_extension_selected|renewal,"{""health_management_selected"": ""boolean"", ""outpatient_extension_selected"": ""boolean"", ""renewal"": ""boolean""}","{""health_management_selected"": false, ""outpatient_extension_selected"": true, ""renewal"": true}",3,3,1.0,,,,RULE_SLOT_02,18,1,,,依据文档 DOC_E39_TERMS 中‘投保记录’部分明确记载：本案为连续续保（renewal=true），勾选门诊扩展责任（outpatient_extension_selected=true），未选择健康管理责任（health_management_selected=false）。,True,True,False,False,False,False,True,3805,json_schema,675,107,stop,"{
+  ""facts"": {
+    ""health_management_selected"": false,
+    ""outpatient_extension_selected"": true,
+    ""renewal"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E39_TERMS 中‘投保记录’部分明确记载：本案为连续续保（renewal=true），勾选门诊扩展责任（outpatient_extension_selected=true），未选择健康管理责任（health_management_selected=false）。""
+}",CAND_002,18,True
+5,E40,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E40-formal-policy.json,elder_care_plan|plan_type|remote_consultation_selected,"{""elder_care_plan"": ""boolean"", ""plan_type"": ""string"", ""remote_consultation_selected"": ""boolean""}","{""elder_care_plan"": false, ""plan_type"": ""普通成人计划"", ""remote_consultation_selected"": true}",2,3,0.6666666666666666,"plan_type: expected='ADULT_STANDARD', actual='普通成人计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E40_TERMS 中'投保记录：本案计划类型为普通成人计划，选择远程问诊附加责任'及分段条款定义提取。,True,True,False,False,False,False,True,3354,json_schema,666,94,stop,"{
+  ""facts"": {
+    ""elder_care_plan"": false,
+    ""plan_type"": ""普通成人计划"",
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E40_TERMS 中'投保记录：本案计划类型为普通成人计划，选择远程问诊附加责任'及分段条款定义提取。""
+}",CAND_002,18,False
+5,E41,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E41-formal-policy.json,overseas_extension_selected|remote_consultation_selected,"{""overseas_extension_selected"": ""boolean"", ""remote_consultation_selected"": ""boolean""}","{""overseas_extension_selected"": false, ""remote_consultation_selected"": true}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。,True,True,False,False,False,False,True,3050,json_schema,644,84,stop,"{
+  ""facts"": {
+    ""overseas_extension_selected"": false,
+    ""remote_consultation_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档DOC_E41_TERMS第四条规定未选择海外医疗扩展时回到对应责任期限，投保记录明确本案选择远程问诊且未选海外扩展。""
+}",CAND_002,18,True
+5,E42,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,59,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION__CODE_MAPPING,rules\E42-formal-policy.json,regional_override|renewal_lock|version_code,"{""regional_override"": ""boolean"", ""renewal_lock"": ""boolean"", ""version_code"": ""string""}","{""regional_override"": true, ""renewal_lock"": false, ""version_code"": ""VER-AGE-2026Q4-B""}",2,3,0.6666666666666666,"regional_override: expected=False, actual=True",,,RULE_SLOT_02,59,1,,,文档 DOC_E42_TERMS 第三条明确说明‘本体更新不得从相邻版本代码猜测数值’，且核保记录确认本案无续保锁定、无地区覆盖。因此 regional_override 设为 true（因存在版本代码映射消歧），renewal_lock 设为 false。最高投保年龄字段未在 fact_schema 中列出，故不抽取；文档未提供该数值，依据指令禁止推断或生成候选 ID/规则，故该事实无法从给定文档中提取。,True,True,False,False,False,False,True,5970,json_schema,701,170,stop,"{
+  ""facts"": {
+    ""regional_override"": true,
+    ""renewal_lock"": false,
+    ""version_code"": ""VER-AGE-2026Q4-B""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E42_TERMS 第三条明确说明‘本体更新不得从相邻版本代码猜测数值’，且核保记录确认本案无续保锁定、无地区覆盖。因此 regional_override 设为 true（因存在版本代码映射消歧），renewal_lock 设为 false。最高投保年龄字段未在 fact_schema 中列出，故不抽取；文档未提供该数值，依据指令禁止推断或生成候选 ID/规则，故该事实无法从给定文档中提取。""
+}",CAND_002,59,True
+5,E43,test,TEMPORAL_VERSION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,62,TEMPLATE_PRIORITIZED_TEMPORAL_VERSION,rules\E43-formal-policy.json,contract_issue_date|endorsement_effective_for_issue_from,"{""contract_issue_date"": ""string"", ""endorsement_effective_for_issue_from"": ""string""}","{""contract_issue_date"": ""2026-09-12"", ""endorsement_effective_for_issue_from"": ""2026-09-15""}",2,2,1.0,,,,RULE_SLOT_02,62,1,,,合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。,True,True,False,False,False,False,True,5003,json_schema,691,134,stop,"{
+  ""facts"": {
+    ""contract_issue_date"": ""2026-09-12"",
+    ""endorsement_effective_for_issue_from"": ""2026-09-15""
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""合同签发日依据文档中'核保记录：本案合同签发日为2026年9月12日'提取；批单生效起始日期依据文档中'本批单仅适用于2026年9月15日及以后签发的合同'提取。""
+}",CAND_002,62,True
+5,E44,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,30,TEMPLATE_PRIORITIZED_RULE_EXCEPTION,rules\E44-formal-policy.json,days_after_birth|health_declaration_clean|neonatal_observation_record,"{""days_after_birth"": ""integer"", ""health_declaration_clean"": ""boolean"", ""neonatal_observation_record"": ""boolean""}","{""days_after_birth"": 20, ""health_declaration_clean"": true, ""neonatal_observation_record"": true}",3,3,1.0,,,,RULE_SLOT_01,30,1,,,依据文档 DOC_E44_TERMS 第三条及核保记录，本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。,True,True,False,False,False,False,True,4175,json_schema,679,116,stop,"{
+  ""facts"": {
+    ""days_after_birth"": 20,
+    ""health_declaration_clean"": true,
+    ""neonatal_observation_record"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E44_TERMS 第三条及核保记录，本案出生后第20日提交（days_after_birth=20），健康告知无异常（health_declaration_clean=true），且存在新生儿住院观察记录（neonatal_observation_record=true）。""
+}",CAND_002,30,True
+5,E45,test,GENERAL_RULE_EXCEPTION,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,45,TEMPLATE_PRIORITIZED_RULE_EXCEPTION__CODE_MAPPING,rules\E45-formal-policy.json,waiting_code|waiver_condition_met,"{""waiting_code"": ""string"", ""waiver_condition_met"": ""boolean""}","{""waiting_code"": ""WAIT-CODE-REINSTATE"", ""waiver_condition_met"": false}",2,2,1.0,,,,RULE_SLOT_02,45,1,,,文档 DOC_E45_TERMS 明确记录复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。,True,True,False,False,False,False,True,3169,json_schema,644,85,stop,"{
+  ""facts"": {
+    ""waiting_code"": ""WAIT-CODE-REINSTATE"",
+    ""waiver_condition_met"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档 DOC_E45_TERMS 明确记录复效审核系统返回 WAIT-CODE-REINSTATE，且指出本案未满足豁免条件。""
+}",CAND_002,45,True
+5,E46,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_001,12,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE,rules\E46-formal-policy.json,plan_tier|premium_plan|rehabilitation_guidance_selected,"{""plan_tier"": ""string"", ""premium_plan"": ""boolean"", ""rehabilitation_guidance_selected"": ""boolean""}","{""plan_tier"": ""标准计划"", ""premium_plan"": false, ""rehabilitation_guidance_selected"": true}",2,3,0.6666666666666666,"plan_tier: expected='STANDARD', actual='标准计划'",,,RULE_SLOT_03,12,1,,,依据文档 DOC_E46_TERMS 中'本案为标准计划，选择康复指导责任'及'24个月仅适用于尊享计划，不适用于标准计划'的记载，确定 plan_tier 为'标准计划'（故 premium_plan 为 false），rehabilitation_guidance_selected 为 true。,True,True,False,False,False,False,True,4460,json_schema,662,126,stop,"{
+  ""facts"": {
+    ""plan_tier"": ""标准计划"",
+    ""premium_plan"": false,
+    ""rehabilitation_guidance_selected"": true
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""依据文档 DOC_E46_TERMS 中'本案为标准计划，选择康复指导责任'及'24个月仅适用于尊享计划，不适用于标准计划'的记载，确定 plan_tier 为'标准计划'（故 premium_plan 为 false），rehabilitation_guidance_selected 为 true。""
+}",CAND_002,18,False
+5,E47,test,CROSS_SENTENCE_SCOPE,LLM_EXTRACTED_FACTS_TEMPLATE_POLICY,SELECTED,CAND_002,18,TEMPLATE_PRIORITIZED_CROSS_SENTENCE_SCOPE__CODE_MAPPING,rules\E47-formal-policy.json,duration_code|premium_plan,"{""duration_code"": ""string"", ""premium_plan"": ""boolean""}","{""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"", ""premium_plan"": false}",2,2,1.0,,,,RULE_SLOT_02,18,1,,,文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。,True,True,False,False,False,False,True,3254,json_schema,650,90,stop,"{
+  ""facts"": {
+    ""duration_code"": ""DURATION-CODE-FOOTNOTE-STD"",
+    ""premium_plan"": false
+  },
+  ""missing_facts"": [],
+  ""evidence_notes"": ""文档明确提及规则引擎返回 DURATION-CODE-FOOTNOTE-STD，且本案为标准计划（尊享计划脚注不适用），故 premium_plan 为 false。""
+}",CAND_002,18,True

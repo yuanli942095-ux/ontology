@@ -1,0 +1,6 @@
+{
+  "abstain": false,
+  "candidate_id": "CAND_002",
+  "confidence": 0.95,
+  "rationale": "当前有效证据EVID_014明确定义产品A的最高投保年龄为65，而CQ004的失败原因显示系统当前实际值为70。CAND_002通过ADD_PROPERTY_VALUE操作将65加入属性集，直接修正了数值漂移错误，使本体状态与最新有效证据一致。"
+}
