@@ -290,6 +290,14 @@ External-real-v1 symbolic smoke validation:
 - Closure details: every selected candidate removed one old triple, added one new triple, passed the Reasoner gate, triggered the source repair CQ, and satisfied the candidate repair CQ.
 - Boundary: this is a small external smoke validation. It proves the external-real workflow is executable on real public revision material across the three semantic types, but it is not yet a statistically meaningful external benchmark. The next evidence-bearing step is to expand `external-real-v1` to at least 10-20 READY events and then run the same post-freeze reproduction.
 
+Final-smoke reproduction:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\validate_external_real_v1.py --prefix external-real-v1-validation-final-smoke-e001-e003`
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\generate_external_real_v1_freeze_manifest.py --prefix external-real-v1-freeze-manifest-final-smoke-e001-e003 --include-built`
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_symbolic_closure.py --only EXT_E001,EXT_E002,EXT_E003 --prefix external-real-v1-symbolic-closure-final-smoke-e001-e003`
+- Validation result: `events_ready=3`, `errors=0`, `warnings=0`, `status=PASS`.
+- Symbolic closure result: selected repairs `3/3`, Oracle correct `3/3`, full OWL repair closure `3/3`.
+
 External-real-v1 evidence files:
 
 - `benchmark/external-real-v1/protocol.md`
@@ -360,6 +368,15 @@ External-real-v1 evidence files:
 - `output/external-real-v1-symbolic-closure-ext-e001-e003-details.csv`
 - `output/external-real-v1-symbolic-closure-ext-e001-e003-summary.csv`
 - `output/external-real-v1-symbolic-closure-ext-e001-e003.json`
+- `output/external-real-v1-validation-final-smoke-e001-e003-details.csv`
+- `output/external-real-v1-validation-final-smoke-e001-e003-summary.csv`
+- `output/external-real-v1-validation-final-smoke-e001-e003.json`
+- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003-files.csv`
+- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003-private-oracle.csv`
+- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003.json`
+- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003-details.csv`
+- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003-summary.csv`
+- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003.json`
 
 ## 7. Template-Policy Hard Gate
 

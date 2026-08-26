@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T12:58:42.853379+00:00",
+  "oracle_contents_loaded": false,
+  "summary": [
+    {
+      "benchmark": "external-real-v1",
+      "events_total": 3,
+      "events_ready": 3,
+      "documents_total": 6,
+      "candidates_total": 9,
+      "private_oracle_rows": 3,
+      "ready_temporal_version": 1,
+      "ready_general_rule_exception": 1,
+      "ready_cross_sentence_scope": 1,
+      "errors": 0,
+      "warnings": 0,
+      "status": "PASS"
+    }
+  ],
+  "details": [
+    {
+      "level": "INFO",
+      "code": "OK",
+      "entity": "external-real-v1",
+      "message": "validation passed"
+    }
+  ]
+}
