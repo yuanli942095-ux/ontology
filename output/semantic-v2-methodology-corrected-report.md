@@ -273,6 +273,24 @@ Pilot evidence files:
 - `output/annotation-time-pilot-completed-summary.csv`
 - `output/annotation-time-pilot-completed.json`
 
+External-real-v1 preparation:
+
+An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark and currently contains no READY events. The scaffold includes public event/document/candidate templates, a private Oracle template, a collection protocol, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
+
+Current validation status is `PASS` for the empty scaffold: `events_ready=0`, `errors=0`, and `warnings=0`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to add real public document revisions and freeze them before running any model.
+
+External-real-v1 evidence files:
+
+- `benchmark/external-real-v1/protocol.md`
+- `benchmark/external-real-v1/input/external-real-event-template.csv`
+- `benchmark/external-real-v1/input/external-real-document-template.csv`
+- `benchmark/external-real-v1/input/external-real-candidate-template.csv`
+- `benchmark/external-real-v1/private/external-real-oracle-template.csv`
+- `src/validate_external_real_v1.py`
+- `output/external-real-v1-validation-scaffold-details.csv`
+- `output/external-real-v1-validation-scaffold-summary.csv`
+- `output/external-real-v1-validation-scaffold.json`
+
 ## 7. Template-Policy Hard Gate
 
 Command:
@@ -590,7 +608,7 @@ The largest remaining gaps are now narrower:
 
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
-3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
+3. Populate `external-real-v1` with real public revision events, because the current 30-test set is still controlled and partly synthetic and the new external scaffold has 0 READY events.
 4. A larger multi-annotator cost study, because the completed annotation-time pilot is still small and single-benchmark.
 5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
