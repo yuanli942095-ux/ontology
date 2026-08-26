@@ -1,0 +1,2 @@
+﻿benchmark,events_total,events_ready,documents_total,candidates_total,private_oracle_rows,ready_temporal_version,ready_general_rule_exception,ready_cross_sentence_scope,errors,warnings,status
+external-real-v1,1,1,2,3,0,1,0,0,0,1,PASS

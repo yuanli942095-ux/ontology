@@ -1,0 +1,63 @@
+{
+  "event_id": "EXT_E001",
+  "semantics": "temporal_effective_policy_revision",
+  "facts": {
+    "assessment_year": "2026",
+    "source_revision_year": "2026",
+    "target_category": "vegetable_rotation",
+    "requires_seasonal_split": true
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E001_2026_SEASONAL_SPLIT",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "source_revision_year",
+          "operator": "equals",
+          "value": "2026"
+        },
+        {
+          "fact": "target_category",
+          "operator": "equals",
+          "value": "vegetable_rotation"
+        },
+        {
+          "fact": "requires_seasonal_split",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "allowed_values": [
+        "spring=1100;summer_autumn=900;total=2000"
+      ]
+    },
+    {
+      "rule_id": "EXT_E001_2025_TOTAL_ONLY",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "source_revision_year",
+          "operator": "equals",
+          "value": "2025"
+        },
+        {
+          "fact": "target_category",
+          "operator": "equals",
+          "value": "vegetable_rotation"
+        }
+      ],
+      "allowed_values": [
+        "total_only=2000"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_001_2025",
+      "EXT_DOC_001_2026"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_MANUAL_FORMALIZATION",
+    "oracle_used": false
+  }
+}

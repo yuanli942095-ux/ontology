@@ -24,10 +24,10 @@ Evidence summary:
 
 Public candidate values:
 
-- `CAND_001`: `total=2000`
+- `CAND_001`: `total_only=2000`
 - `CAND_002`: `spring=1100;summer_autumn=900;total=2000`
 - `CAND_003`: `spring=1000;summer_autumn=1000;total=2000`
 
 Status:
 
-- This is a public DRAFT event. It must not be counted as an external validation result until candidate OWL files, a private Oracle row, and a freeze manifest are produced after the public inputs are fixed.
+- This public event fixes source documents, candidate values, candidate operations, mutant OWL, and candidate OWL artifacts before private Oracle adjudication.

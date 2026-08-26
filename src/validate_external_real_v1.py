@@ -13,6 +13,7 @@ import csv
 import hashlib
 import json
 import re
+import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +26,9 @@ BENCHMARK_DIR = PROJECT_DIR / "benchmark" / "external-real-v1"
 INPUT_DIR = BENCHMARK_DIR / "input"
 PRIVATE_DIR = BENCHMARK_DIR / "private"
 DOCUMENT_DIR = BENCHMARK_DIR / "documents"
+MUTANT_DIR = BENCHMARK_DIR / "mutants"
+RULE_DIR = BENCHMARK_DIR / "rules"
+BUILT_DIR = BENCHMARK_DIR / "built"
 EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
 DOCUMENT_CSV = INPUT_DIR / "external-real-document-template.csv"
 CANDIDATE_CSV = INPUT_DIR / "external-real-candidate-template.csv"
@@ -199,6 +203,16 @@ def validate_operation(audit: Audit, event_id: str, candidate_id: str, value: st
         audit.error("MISSING_OPERATOR", f"{event_id}/{candidate_id}", "operator missing")
 
 
+def validate_xml_file(audit: Audit, code: str, entity: str, path: Path) -> None:
+    if not path.is_file():
+        audit.error(code, entity, str(path))
+        return
+    try:
+        ET.parse(path)
+    except ET.ParseError as exc:
+        audit.error("INVALID_XML", entity, f"{path}: {exc}")
+
+
 def main() -> int:
     args = parse_args()
     audit = Audit()
@@ -272,6 +286,27 @@ def main() -> int:
             audit.error("INVALID_VALUE_KIND", event_id, value_kind)
         if not str(row.get("source_url", "")).strip():
             audit.error("MISSING_SOURCE_URL", event_id, "source_url")
+        source_owl = str(row.get("source_owl", "")).strip()
+        if not source_owl:
+            audit.error("MISSING_SOURCE_OWL", event_id, "source_owl")
+        else:
+            validate_xml_file(
+                audit,
+                "MISSING_SOURCE_OWL_FILE",
+                event_id,
+                PROJECT_DIR / source_owl,
+            )
+        policy_path = RULE_DIR / f"{event_id}-formal-policy.json"
+        if not policy_path.is_file():
+            audit.error("MISSING_FORMAL_POLICY", event_id, str(policy_path))
+        else:
+            try:
+                policy = json.loads(policy_path.read_text(encoding="utf-8-sig"))
+            except json.JSONDecodeError as exc:
+                audit.error("INVALID_FORMAL_POLICY_JSON", event_id, str(exc))
+            else:
+                if policy.get("event_id") != event_id:
+                    audit.error("FORMAL_POLICY_EVENT_MISMATCH", event_id, str(policy.get("event_id")))
         doc_ids = split_ids(row.get("document_ids", ""))
         if not doc_ids:
             audit.error("NO_DOCUMENTS", event_id, "document_ids")
@@ -287,6 +322,15 @@ def main() -> int:
         ]
         if len(ready_candidates) < 2:
             audit.error("TOO_FEW_CANDIDATES", event_id, str(len(ready_candidates)))
+        for candidate in ready_candidates:
+            candidate_id = str(candidate.get("candidate_id", "")).strip()
+            candidate_path = BUILT_DIR / "candidate-owls" / event_id / f"{candidate_id}.owl"
+            validate_xml_file(
+                audit,
+                "MISSING_CANDIDATE_OWL",
+                f"{event_id}/{candidate_id}",
+                candidate_path,
+            )
         if event_id not in oracles:
             audit.warn("MISSING_PRIVATE_ORACLE", event_id, "private oracle pending")
 
