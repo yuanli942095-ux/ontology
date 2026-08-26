@@ -1,0 +1,5 @@
+﻿group,rows,measured_rows,mean_minutes,median_minutes,min_minutes,max_minutes,total_minutes,mean_policy_complexity_points,minutes_per_complexity_point,unique_gate_decision_rate,oracle_correct_after_blind_check_rate,mean_revision_count
+ALL,12,0,,,,,,,,,,
+CROSS_SENTENCE_SCOPE,4,0,,,,,,,,,,
+GENERAL_RULE_EXCEPTION,4,0,,,,,,,,,,
+TEMPORAL_VERSION,4,0,,,,,,,,,,

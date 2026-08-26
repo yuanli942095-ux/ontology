@@ -1,0 +1,11 @@
+annotation time pilot
+source_pilot_csv=G:\LearnAI\ontology-evolution\benchmark\semantic-v2\annotation-time-pilot\annotation-time-pilot-template.csv
+measurement_status=PENDING_MEASUREMENT
+rows=12
+measured_rows=0
+leakage_flag_rows=0
+pearson_complexity_minutes=None
+
+details=G:\LearnAI\ontology-evolution\output\annotation-time-pilot-template-check-details.csv
+summary=G:\LearnAI\ontology-evolution\output\annotation-time-pilot-template-check-summary.csv
+json=G:\LearnAI\ontology-evolution\output\annotation-time-pilot-template-check.json

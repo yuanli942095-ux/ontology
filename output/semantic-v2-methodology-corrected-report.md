@@ -249,6 +249,21 @@ Evidence files:
 - `output/formal-policy-source-cost-test-summary.csv`
 - `output/formal-policy-source-cost-test.json`
 
+Annotation-time pilot preparation:
+
+A 12-event annotation-time pilot has been prepared to measure formal-policy construction effort directly. The selected events are balanced across semantic types, four per type: E14/E17/E21/E42 for `TEMPORAL_VERSION`, E27/E30/E31/E45 for `GENERAL_RULE_EXCEPTION`, and E34/E37/E41/E47 for `CROSS_SENTENCE_SCOPE`. The pilot protocol requires annotators to use only public event materials and candidate formal operations during annotation. Oracle checking is explicitly separated and may be filled only after annotation stops.
+
+The current pilot template is intentionally unmeasured: `measurement_status=PENDING_MEASUREMENT`, `rows=12`, `measured_rows=0`, and `leakage_flag_rows=0`. It is a ready-to-run measurement instrument, not yet a measured annotation-time result.
+
+Pilot evidence files:
+
+- `benchmark/semantic-v2/annotation-time-pilot/annotation-time-pilot-protocol.md`
+- `benchmark/semantic-v2/annotation-time-pilot/annotation-time-pilot-template.csv`
+- `src/analyze_annotation_time_pilot.py`
+- `output/annotation-time-pilot-template-check-details.csv`
+- `output/annotation-time-pilot-template-check-summary.csv`
+- `output/annotation-time-pilot-template-check.json`
+
 ## 7. Template-Policy Hard Gate
 
 Command:
@@ -567,7 +582,7 @@ The largest remaining gaps are now narrower:
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
 3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
-4. Measured annotation-time pilot study for formal-policy construction, because the current 1312 score is a complexity proxy only.
+4. Annotation-time pilot data collection: the protocol, template, and analyzer are prepared, but real annotator minutes have not yet been collected.
 5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
 
