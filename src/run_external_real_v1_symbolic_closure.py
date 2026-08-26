@@ -360,7 +360,7 @@ def main() -> int:
         f"oracle_correct={summary[0]['oracle_correct']}/{len(rows)}",
         f"full_closure_success={summary[0]['full_closure_success']}/{len(rows)}",
         "oracle_loaded_after_selection=True",
-        "boundary=one-event external smoke validation; not a full external benchmark result",
+        "boundary=small external smoke validation; not a full external benchmark result",
         "",
         f"details={details_csv}",
         f"summary={summary_csv}",
