@@ -48,6 +48,7 @@ REPRODUCTION_SCRIPTS = [
     "src/validate_external_real_v1.py",
     "src/update_external_real_v1_document_hashes.py",
     "src/generate_external_real_v1_freeze_manifest.py",
+    "src/generate_external_real_v1_repair_artifacts.py",
     "src/semantic_v2_common.py",
 ]
 

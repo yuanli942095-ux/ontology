@@ -1,0 +1,530 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T12:55:15.947886+00:00",
+  "benchmark": "external-real-v1",
+  "benchmark_dir": "benchmark\\external-real-v1",
+  "events_total": 3,
+  "events_ready": 3,
+  "event_ids_ready": [
+    "EXT_E001",
+    "EXT_E002",
+    "EXT_E003"
+  ],
+  "semantic_type_counts_ready": {
+    "CROSS_SENTENCE_SCOPE": 1,
+    "GENERAL_RULE_EXCEPTION": 1,
+    "TEMPORAL_VERSION": 1
+  },
+  "documents_total": 6,
+  "candidates_total": 9,
+  "private_oracle_rows": 1,
+  "public_file_count": 50,
+  "private_integrity_rows": 2,
+  "oracle_used_for_candidate_filtering": false,
+  "git": {
+    "available": true,
+    "commit": "97e52fc2df1153baa2ebcc844b19f292f64298ad",
+    "dirty": true,
+    "status_short": [
+      " M benchmark/external-real-v1/input/external-real-candidate-template.csv",
+      " M benchmark/external-real-v1/input/external-real-document-template.csv",
+      " M benchmark/external-real-v1/input/external-real-event-template.csv",
+      " M output/formal-policy-gate-validation.csv",
+      " M output/formal-policy-gate-validation.json",
+      " M output/formal-policy-gate-validation.log",
+      " M src/generate_external_real_v1_freeze_manifest.py",
+      "?? benchmark/external-real-v1/built/candidate-owls/EXT_E002/",
+      "?? benchmark/external-real-v1/built/candidate-owls/EXT_E003/",
+      "?? benchmark/external-real-v1/documents/excerpts/EXT_E002-evidence.md",
+      "?? benchmark/external-real-v1/documents/excerpts/EXT_E003-evidence.md",
+      "?? benchmark/external-real-v1/mutants/EXT_E002.owl",
+      "?? benchmark/external-real-v1/mutants/EXT_E003.owl",
+      "?? benchmark/external-real-v1/rules/EXT_E002-formal-policy.json",
+      "?? benchmark/external-real-v1/rules/EXT_E003-formal-policy.json",
+      "?? output/annotation-time-pilot-completed-check-details.csv",
+      "?? output/annotation-time-pilot-completed-check-summary.csv",
+      "?? output/annotation-time-pilot-completed-check.json",
+      "?? output/annotation-time-pilot-completed-check.log",
+      "?? output/external-real-v1-validation-ext-e001-e003-public-ready-details.csv",
+      "?? output/external-real-v1-validation-ext-e001-e003-public-ready-summary.csv",
+      "?? output/external-real-v1-validation-ext-e001-e003-public-ready.json",
+      "?? output/external-real-v1-validation-ext-e001-e003-public-ready.log",
+      "?? src/generate_external_real_v1_repair_artifacts.py"
+    ]
+  },
+  "limitations": [
+    "An empty scaffold manifest proves only structure, not external validation.",
+    "Private Oracle integrity rows are for local audit only and must not be published if filled.",
+    "A freeze manifest proves file state at generation time; use Git or external archives for timestamped evidence."
+  ],
+  "public_files": [
+    {
+      "role": "benchmark_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\README.md",
+      "sha256": "83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754",
+      "bytes": 382,
+      "mtime_utc": "2026-08-26T12:18:57.168207+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E001\\CAND_001.owl",
+      "sha256": "d997b03149af588974709830bd373db3a37e5686400532e229c9f44584be6504",
+      "bytes": 1795,
+      "mtime_utc": "2026-08-26T12:44:56.171714+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E001\\CAND_002.owl",
+      "sha256": "a127580b977e06b8be912320ee5a2ecf6f2ec8623fa036b204fa5c37d340b02a",
+      "bytes": 1820,
+      "mtime_utc": "2026-08-26T12:44:56.171714+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E001\\CAND_003.owl",
+      "sha256": "0d5bb3f016383132f3a29c1271ecfccca918927b30dabd58b0bab18c666284ad",
+      "bytes": 1821,
+      "mtime_utc": "2026-08-26T12:44:56.171714+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E002\\CAND_001.owl",
+      "sha256": "317ccdd9f0b4fd87ba268d255e9aee67556fb1553bf5ec8a8e87144a873bd6f3",
+      "bytes": 1838,
+      "mtime_utc": "2026-08-26T12:55:06.764707+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E002\\CAND_002.owl",
+      "sha256": "19a5a16e76e511a57ba91a4aa1a78a7b086a7b9c42e2fa1db921e4fc9db40f8a",
+      "bytes": 1881,
+      "mtime_utc": "2026-08-26T12:55:06.764707+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E002\\CAND_003.owl",
+      "sha256": "dc19998ea4fbebfb5108ed5d665f4f612537c4c055bd11325005b3ee1a86227d",
+      "bytes": 1836,
+      "mtime_utc": "2026-08-26T12:55:06.764707+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E003\\CAND_001.owl",
+      "sha256": "1033b20a4e2aa92d9c54dbcf332f3507130ba913a5a619e7c0529889c19d88d0",
+      "bytes": 1838,
+      "mtime_utc": "2026-08-26T12:55:06.766163+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E003\\CAND_002.owl",
+      "sha256": "4337cd1e18b8a2c19427a466ab60259c2685cb187004447e629df54e955fb381",
+      "bytes": 1829,
+      "mtime_utc": "2026-08-26T12:55:06.766163+00:00"
+    },
+    {
+      "role": "built_artifact",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\built\\candidate-owls\\EXT_E003\\CAND_003.owl",
+      "sha256": "3ba32044b3564377228103eae6d18a85072a4f37619c8ae5b55f94d36536aa75",
+      "bytes": 1826,
+      "mtime_utc": "2026-08-26T12:55:06.766163+00:00"
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "0562517a3cdaba09386a278f0c8df07695d34c04719eee8f1fd19947c4a84012",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "30144be3f0b1eaf0e47043bc5c89579801fc7f104104118fba9ea56efb858833",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 3
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "095e97c36cedc0b8218b670c6ed7215e0317de72b869b82d1e6454e0f660245d",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 4
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "0ddea432928c3d0a8865d10dd71f3f1aac2461603a4f114d783ef903cf263f9a",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 5
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "b6d78b61114abd499ebbe85894630c74a73a6b8c0a689765ee2e762637169b1c",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 6
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "12bf07b5b50e7eb351dc9d196baea682f6da6604b951aa31a7f6e9f217e54d1a",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 7
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "700dea4b32db4e440827219a5bb63b28a8c7531a91576a478a51c33371bc286e",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 10
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "9d2d2319025aa4493fb9c35678213fcfa55bffeed365da79175ac65e6419e001",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 8
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "186ae2adacdb85ab2e082f73405185337ae2ed93bcc39561898b012eb15ed3de",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 9
+    },
+    {
+      "role": "collection_protocol",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\protocol.md",
+      "sha256": "287a946cc94e9d97f707e989f3e3e314b205bd41acc4b1dde01e9b1f1b8a31cb",
+      "bytes": 2135,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "b0f8d248d007852b4c2232385cb59b0c970b3f2651cd8805ceb7138dacd3518c",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "69f217f0a3798893218ac18efa12ed8700ef9e5d47ffa3159a63efde508507ef",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 3
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "b414f36db77f6eb65e80891f77ccf2afa871721f14c732f216f7185b14a49faa",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 4
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "acbfc10dab1bcedb6877e1147cc37fbc9d41e488d2e571f565d8e6584cd21335",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 5
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "bcd490e0061194cd3bd7b29257c8dcfe08ebfa81cc13187c23750f1ff0a13142",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 6
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "eda53241daef982cdca21fe1fc8c0e145cc47cbd6a9788c563e113f4c36e50eb",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 7
+    },
+    {
+      "role": "event_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "1eb0d7d34e2de80df2498b58549fd1bc4fa40cb6ea4672fcf05bb3da01f3823e",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "event_row",
+      "event_id": "EXT_E002",
+      "privacy": "public",
+      "path": "",
+      "sha256": "d21a11ea010a19d58b542dfebb4ae5f44cf3746a2f69494a2a66cf3a6b707ba8",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 3
+    },
+    {
+      "role": "event_row",
+      "event_id": "EXT_E003",
+      "privacy": "public",
+      "path": "",
+      "sha256": "fd6ffd1778d558fe9dc61ede85f0911b07ad7fd8b8d47b37c917e313309f89ef",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 4
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\rules\\EXT_E001-formal-policy.json",
+      "sha256": "fa01a4fa480f5abeac09398f97c5076d7dd5a33d94c6f3d0ff8ae3be6c3d310b",
+      "bytes": 1457,
+      "mtime_utc": "2026-08-26T12:44:56.170317+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\rules\\EXT_E002-formal-policy.json",
+      "sha256": "6a88bf4a2b569a525989c9909cf280f22249eee4345761617d321cfd6c85403d",
+      "bytes": 1432,
+      "mtime_utc": "2026-08-26T12:54:58.102659+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\rules\\EXT_E003-formal-policy.json",
+      "sha256": "faae2243279902a52e23f46cf401714f63314dda0460ae802351f53b0f1e92c7",
+      "bytes": 1551,
+      "mtime_utc": "2026-08-26T12:54:58.102659+00:00"
+    },
+    {
+      "role": "input_candidates_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-candidate-template.csv",
+      "sha256": "6cac05c1b2aa495850a19d7e85c88824e3eb89b60a464cac2fdf4d6fd0aaa2a9",
+      "bytes": 6023,
+      "mtime_utc": "2026-08-26T12:54:58.100327+00:00"
+    },
+    {
+      "role": "input_documents_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-document-template.csv",
+      "sha256": "3d304361ad5d16c4a76627e50847413eb8ef5df6730a9e609f446994e85ad61f",
+      "bytes": 3059,
+      "mtime_utc": "2026-08-26T12:54:58.100327+00:00"
+    },
+    {
+      "role": "input_events_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-event-template.csv",
+      "sha256": "9f78f9d33ea3b7c7fb1ac93201e9ae845fb58cc577ac2230879e575054abe731",
+      "bytes": 1952,
+      "mtime_utc": "2026-08-26T12:54:58.099322+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\mutants\\EXT_E001.owl",
+      "sha256": "78a7eeb9b27959a94ea72586fb0f205bd0472aa05c8f5d90ba84757b754569a0",
+      "bytes": 1786,
+      "mtime_utc": "2026-08-26T12:44:56.170317+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\mutants\\EXT_E002.owl",
+      "sha256": "d9fccda740a71baecd19d0ee7af7838f31d6fb976cae0460b5354536a9d930c1",
+      "bytes": 1834,
+      "mtime_utc": "2026-08-26T12:55:06.764707+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\mutants\\EXT_E003.owl",
+      "sha256": "ef3438dc23eac26befcc3a0a9fd79de361c98e9c99b5887f6975b84107030b28",
+      "bytes": 1834,
+      "mtime_utc": "2026-08-26T12:55:06.764707+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\generate_external_real_v1_freeze_manifest.py",
+      "sha256": "f86e86fb3000c7279d0a34ef15a76d227b6decadb0c8cc1e62c3169373c2b2e2",
+      "bytes": 9419,
+      "mtime_utc": "2026-08-26T12:53:18.161925+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\generate_external_real_v1_repair_artifacts.py",
+      "sha256": "0e0c47d34188518288b34eac7672c410b50891e4b7e3e5c958367444383b0f36",
+      "bytes": 6952,
+      "mtime_utc": "2026-08-26T12:53:18.160861+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623,
+      "mtime_utc": "2026-08-21T08:45:50.829498+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\update_external_real_v1_document_hashes.py",
+      "sha256": "a35c31f0a99a3d5b8403d80acf135c19970a91be83c7287bbbc8a73363ac4248",
+      "bytes": 2351,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_external_real_v1.py",
+      "sha256": "7ae48c3aa8f268ceb0e7ea6fd7373153066afd20cb585f4d68593b28eabbe3ed",
+      "bytes": 15922,
+      "mtime_utc": "2026-08-26T12:46:25.443933+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf",
+      "sha256": "65bdc05bca93d34781800f213960b4c25f673bd8d347d7592b24d946cce725e1",
+      "bytes": 1600994,
+      "mtime_utc": "2026-08-26T12:31:54.641365+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf",
+      "sha256": "62931dcd4c9a4d74745df72d0d9124e2a51c4a1c1c5756e8b4d046fbd9e8ddc9",
+      "bytes": 12055453,
+      "mtime_utc": "2026-08-26T12:32:01.284162+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "excerpts",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E001-evidence.md",
+      "sha256": "600d494651d1c8be844b5381b1788bc4dde0e48b7c919d999f17bb39af674be8",
+      "bytes": 1541,
+      "mtime_utc": "2026-08-26T12:44:56.168319+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "excerpts",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E002-evidence.md",
+      "sha256": "38789fb6d40aa4e4a0284dababa91bf2b452a0b7ba307f4c39129940d16978f5",
+      "bytes": 1410,
+      "mtime_utc": "2026-08-26T12:54:58.101660+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "excerpts",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E003-evidence.md",
+      "sha256": "da080a3737ac908c270c7e1e4b96c86c0e517baa2cbd46f3b868af370d561f40",
+      "bytes": 1168,
+      "mtime_utc": "2026-08-26T12:54:58.101660+00:00"
+    },
+    {
+      "role": "source_intake_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\external-real-source-intake.csv",
+      "sha256": "be027e3e21f3872385c91d09dcdf20fa7ef49ad0d699f9e96b306d01df5b63cd",
+      "bytes": 861,
+      "mtime_utc": "2026-08-26T12:37:54.024995+00:00"
+    },
+    {
+      "role": "source_intake_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\README.md",
+      "sha256": "525549ec89e0ec7342ba05c47b0ae567736617ee27f9693ad39352fbe9e26684",
+      "bytes": 710,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    }
+  ]
+}

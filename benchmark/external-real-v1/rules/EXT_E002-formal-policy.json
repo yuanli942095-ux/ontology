@@ -1,0 +1,58 @@
+{
+  "event_id": "EXT_E002",
+  "semantics": "cross_sentence_definition_scope",
+  "facts": {
+    "source_revision_year": "2026",
+    "target_clause": "lodging_hazard",
+    "definition_added_in_interpretation": true,
+    "lodging_level_count": 5
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E002_FIVE_LEVEL_INTERPRETATION_SCOPE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "source_revision_year",
+          "operator": "equals",
+          "value": "2026"
+        },
+        {
+          "fact": "definition_added_in_interpretation",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "lodging_level_count",
+          "operator": "equals",
+          "value": 5
+        }
+      ],
+      "allowed_values": [
+        "five_level_definition=level1_no_lodging;level2_lt30;level3_30_45;level4_45_60;level5_gt60"
+      ]
+    },
+    {
+      "rule_id": "EXT_E002_ARTICLE_ONLY_SCOPE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "definition_added_in_interpretation",
+          "operator": "equals",
+          "value": false
+        }
+      ],
+      "allowed_values": [
+        "hazard_only=strong_rain_or_wind_causes_lodging"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_002_2025",
+      "EXT_DOC_002_2026"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_MANUAL_FORMALIZATION",
+    "oracle_used": false
+  }
+}
