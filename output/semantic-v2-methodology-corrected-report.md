@@ -249,11 +249,13 @@ Evidence files:
 - `output/formal-policy-source-cost-test-summary.csv`
 - `output/formal-policy-source-cost-test.json`
 
-Annotation-time pilot preparation:
+Annotation-time pilot measurement:
 
 A 12-event annotation-time pilot has been prepared to measure formal-policy construction effort directly. The selected events are balanced across semantic types, four per type: E14/E17/E21/E42 for `TEMPORAL_VERSION`, E27/E30/E31/E45 for `GENERAL_RULE_EXCEPTION`, and E34/E37/E41/E47 for `CROSS_SENTENCE_SCOPE`. The pilot protocol requires annotators to use only public event materials and candidate formal operations during annotation. Oracle checking is explicitly separated and may be filled only after annotation stops.
 
-The current pilot template is intentionally unmeasured: `measurement_status=PENDING_MEASUREMENT`, `rows=12`, `measured_rows=0`, and `leakage_flag_rows=0`. It is a ready-to-run measurement instrument, not yet a measured annotation-time result.
+The current pilot CSV now contains measured annotation minutes for all 12 rows: `measurement_status=MEASURED`, `rows=12`, `measured_rows=12`, and `leakage_flag_rows=0`. The pilot records 361.0 total minutes, 30.08 mean minutes/event, and 30.5 median minutes/event. By semantic type, mean time is 23.5 minutes for `TEMPORAL_VERSION`, 31.25 minutes for `GENERAL_RULE_EXCEPTION`, and 35.5 minutes for `CROSS_SENTENCE_SCOPE`.
+
+The pilot remains a small single-benchmark measurement. The current CSV still lacks per-row `annotator_id`, `session_id`, `unique_gate_decision`, `selected_candidate_id_after_gate`, `oracle_correct_after_blind_check`, and `notes`, so the measured time result should be reported as a timing pilot only until gate and blind-check fields are completed.
 
 Pilot evidence files:
 
@@ -263,6 +265,9 @@ Pilot evidence files:
 - `output/annotation-time-pilot-template-check-details.csv`
 - `output/annotation-time-pilot-template-check-summary.csv`
 - `output/annotation-time-pilot-template-check.json`
+- `output/annotation-time-pilot-measured-details.csv`
+- `output/annotation-time-pilot-measured-summary.csv`
+- `output/annotation-time-pilot-measured.json`
 
 ## 7. Template-Policy Hard Gate
 
@@ -582,7 +587,7 @@ The largest remaining gaps are now narrower:
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
 3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
-4. Annotation-time pilot data collection: the protocol, template, and analyzer are prepared, but real annotator minutes have not yet been collected.
+4. Annotation-time pilot completion: measured minutes are now available, but per-row annotator/session IDs, gate uniqueness, selected candidate, notes, and post-annotation Oracle blind-check fields still need to be completed.
 5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
 
