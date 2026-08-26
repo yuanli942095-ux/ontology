@@ -275,9 +275,11 @@ Pilot evidence files:
 
 External-real-v1 preparation:
 
-An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark and currently contains no READY events. The scaffold includes source-intake templates, public event/document/candidate templates, a private Oracle template, a collection protocol, a document SHA-256 backfill script, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
+An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark. The scaffold includes source-intake templates, public event/document/candidate templates, a private Oracle template, a collection protocol, a document SHA-256 backfill script, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
 
-Current validation status is `PASS` for the empty scaffold: `events_ready=0`, `errors=0`, and `warnings=0`. A scaffold-v2 freeze manifest was also generated: `events_ready=0`, `public_file_count=11`, and `private_integrity_rows=1`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to add real public document revisions and freeze them before running any model.
+The first public source pair has now been landed locally from the Beijing Municipal Agriculture and Rural Affairs Bureau: the 2025 and 2026 policy agricultural insurance terms PDFs. Their SHA-256 hashes are recorded in the public document template. One draft external event, `EXT_E001`, has been extracted from those PDFs for a temporal version change in vegetable-rotation insured-amount allocation. The public event and candidate rows are DRAFT only; no private Oracle row, mutant OWL, candidate OWL, or external model run has been produced for it yet.
+
+Current validation status for the source-landed draft state is `PASS`: `events_ready=0`, `errors=0`, and `warnings=0`. The latest source-landed freeze manifest records `events_ready=0`, `public_file_count=20`, and `private_integrity_rows=1`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to complete READY external events by adding OWL mutants, candidate OWLs, private Oracle adjudication, and a post-freeze model reproduction run.
 
 External-real-v1 evidence files:
 
@@ -287,6 +289,9 @@ External-real-v1 evidence files:
 - `benchmark/external-real-v1/input/external-real-event-template.csv`
 - `benchmark/external-real-v1/input/external-real-document-template.csv`
 - `benchmark/external-real-v1/input/external-real-candidate-template.csv`
+- `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf`
+- `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf`
+- `benchmark/external-real-v1/documents/excerpts/EXT_E001-evidence.md`
 - `benchmark/external-real-v1/private/external-real-oracle-template.csv`
 - `src/validate_external_real_v1.py`
 - `src/update_external_real_v1_document_hashes.py`
@@ -297,6 +302,12 @@ External-real-v1 evidence files:
 - `output/external-real-v1-freeze-manifest-scaffold-v2-files.csv`
 - `output/external-real-v1-freeze-manifest-scaffold-v2-private-oracle.csv`
 - `output/external-real-v1-freeze-manifest-scaffold-v2.json`
+- `output/external-real-v1-validation-src001-draft-event-details.csv`
+- `output/external-real-v1-validation-src001-draft-event-summary.csv`
+- `output/external-real-v1-validation-src001-draft-event.json`
+- `output/external-real-v1-freeze-manifest-src001-draft-event-files.csv`
+- `output/external-real-v1-freeze-manifest-src001-draft-event-private-oracle.csv`
+- `output/external-real-v1-freeze-manifest-src001-draft-event.json`
 
 ## 7. Template-Policy Hard Gate
 

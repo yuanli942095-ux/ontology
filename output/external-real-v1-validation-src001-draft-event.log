@@ -1,0 +1,9 @@
+external-real-v1 validation
+events_ready=0
+errors=0
+warnings=0
+status=PASS
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-src001-draft-event-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-src001-draft-event-summary.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-src001-draft-event.json

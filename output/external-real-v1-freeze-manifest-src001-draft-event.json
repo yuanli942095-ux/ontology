@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T12:38:35.958136+00:00",
+  "benchmark": "external-real-v1",
+  "benchmark_dir": "benchmark\\external-real-v1",
+  "events_total": 1,
+  "events_ready": 0,
+  "event_ids_ready": [],
+  "semantic_type_counts_ready": {},
+  "documents_total": 2,
+  "candidates_total": 3,
+  "private_oracle_rows": 0,
+  "public_file_count": 20,
+  "private_integrity_rows": 1,
+  "oracle_used_for_candidate_filtering": false,
+  "git": {
+    "available": true,
+    "commit": "40299f93af41abb90ed08fb9a2d20e249bc13961",
+    "dirty": true,
+    "status_short": [
+      " M benchmark/external-real-v1/input/external-real-candidate-template.csv",
+      " M benchmark/external-real-v1/input/external-real-document-template.csv",
+      " M benchmark/external-real-v1/input/external-real-event-template.csv",
+      " M benchmark/external-real-v1/source-intake/external-real-source-intake.csv",
+      " M output/formal-policy-gate-validation.csv",
+      " M output/formal-policy-gate-validation.json",
+      " M output/formal-policy-gate-validation.log",
+      "?? benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf",
+      "?? benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf",
+      "?? benchmark/external-real-v1/documents/excerpts/",
+      "?? output/annotation-time-pilot-completed-check-details.csv",
+      "?? output/annotation-time-pilot-completed-check-summary.csv",
+      "?? output/annotation-time-pilot-completed-check.json",
+      "?? output/annotation-time-pilot-completed-check.log",
+      "?? output/external-real-v1-freeze-manifest-src001-draft-event-files.csv",
+      "?? output/external-real-v1-freeze-manifest-src001-draft-event-private-oracle.csv",
+      "?? output/external-real-v1-freeze-manifest-src001-draft-event.json",
+      "?? output/external-real-v1-freeze-manifest-src001-draft-event.log",
+      "?? output/external-real-v1-freeze-manifest-src001-files.csv",
+      "?? output/external-real-v1-freeze-manifest-src001-private-oracle.csv",
+      "?? output/external-real-v1-freeze-manifest-src001.json",
+      "?? output/external-real-v1-freeze-manifest-src001.log",
+      "?? output/external-real-v1-validation-src001-details.csv",
+      "?? output/external-real-v1-validation-src001-draft-event-details.csv",
+      "?? output/external-real-v1-validation-src001-draft-event-summary.csv",
+      "?? output/external-real-v1-validation-src001-draft-event.json",
+      "?? output/external-real-v1-validation-src001-draft-event.log",
+      "?? output/external-real-v1-validation-src001-summary.csv",
+      "?? output/external-real-v1-validation-src001.json",
+      "?? output/external-real-v1-validation-src001.log"
+    ]
+  },
+  "limitations": [
+    "An empty scaffold manifest proves only structure, not external validation.",
+    "Private Oracle integrity rows are for local audit only and must not be published if filled.",
+    "A freeze manifest proves file state at generation time; use Git or external archives for timestamped evidence."
+  ],
+  "public_files": [
+    {
+      "role": "benchmark_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\README.md",
+      "sha256": "83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754",
+      "bytes": 382,
+      "mtime_utc": "2026-08-26T12:18:57.168207+00:00"
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "1e47b3a76d04d31f130321ac1ca15938ac0c06f50b943fa52551a2f195402e59",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "01c8e2adf03b1fe3d4a8c53675ec7f91793898e0375d34f6ab5433fe16c437d2",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 3
+    },
+    {
+      "role": "candidate_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "8dca930d7ec0b5b9914c6d593a63144a898dc9ba5a17b6f71075ea9aa34c1ea8",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 4
+    },
+    {
+      "role": "collection_protocol",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\protocol.md",
+      "sha256": "287a946cc94e9d97f707e989f3e3e314b205bd41acc4b1dde01e9b1f1b8a31cb",
+      "bytes": 2135,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "aa1c6bfdb00cfda33b8f217f358c3361a1fedea6633dc825c69828735d80903f",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "document_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "14a8243b8f9cd0d0283559565baf9f3f70b192a63cfb0edc91899e26d6abf5de",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 3
+    },
+    {
+      "role": "event_row",
+      "event_id": "EXT_E001",
+      "privacy": "public",
+      "path": "",
+      "sha256": "d8d7889220120d72afa366821be0bc67bda92416984d5ee3b5ba4ebd00cd5ee9",
+      "bytes": "",
+      "mtime_utc": "",
+      "row_index": 2
+    },
+    {
+      "role": "input_candidates_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-candidate-template.csv",
+      "sha256": "292b35456d807f4a978c10c75d5691ef5aeffbbbc852d618209240a8977032c4",
+      "bytes": 1337,
+      "mtime_utc": "2026-08-26T12:37:54.024995+00:00"
+    },
+    {
+      "role": "input_documents_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-document-template.csv",
+      "sha256": "c550c4fa4d4b40783783ccf5d37f5cad683c4e01ec0873c6fa3b20488d6ebdc4",
+      "bytes": 1159,
+      "mtime_utc": "2026-08-26T12:37:54.024995+00:00"
+    },
+    {
+      "role": "input_events_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-event-template.csv",
+      "sha256": "0c56af89d095d8ac421afa3d7d13f985ffc36c01d912c048546366b801131fb4",
+      "bytes": 776,
+      "mtime_utc": "2026-08-26T12:37:54.024995+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\generate_external_real_v1_freeze_manifest.py",
+      "sha256": "d06dcc7ba42c48bd206f93038d28937e7273c0c5c421f956ec718b2fccd3caa8",
+      "bytes": 9362,
+      "mtime_utc": "2026-08-26T12:27:09.481818+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623,
+      "mtime_utc": "2026-08-21T08:45:50.829498+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\update_external_real_v1_document_hashes.py",
+      "sha256": "a35c31f0a99a3d5b8403d80acf135c19970a91be83c7287bbbc8a73363ac4248",
+      "bytes": 2351,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_external_real_v1.py",
+      "sha256": "4e88f001aba32fcd0ae1c947ae59fb90c973f8fa9f8a66facce607e7b176831e",
+      "bytes": 13425,
+      "mtime_utc": "2026-08-26T12:18:57.174051+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf",
+      "sha256": "65bdc05bca93d34781800f213960b4c25f673bd8d347d7592b24d946cce725e1",
+      "bytes": 1600994,
+      "mtime_utc": "2026-08-26T12:31:54.641365+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf",
+      "sha256": "62931dcd4c9a4d74745df72d0d9124e2a51c4a1c1c5756e8b4d046fbd9e8ddc9",
+      "bytes": 12055453,
+      "mtime_utc": "2026-08-26T12:32:01.284162+00:00"
+    },
+    {
+      "role": "source_document",
+      "event_id": "excerpts",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E001-evidence.md",
+      "sha256": "76b48fa65233718376c8823114d0c4d94944dd488c4a7cc66d9be61266101b27",
+      "bytes": 1583,
+      "mtime_utc": "2026-08-26T12:37:54.027522+00:00"
+    },
+    {
+      "role": "source_intake_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\external-real-source-intake.csv",
+      "sha256": "be027e3e21f3872385c91d09dcdf20fa7ef49ad0d699f9e96b306d01df5b63cd",
+      "bytes": 861,
+      "mtime_utc": "2026-08-26T12:37:54.024995+00:00"
+    },
+    {
+      "role": "source_intake_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\source-intake\\README.md",
+      "sha256": "525549ec89e0ec7342ba05c47b0ae567736617ee27f9693ad39352fbe9e26684",
+      "bytes": 710,
+      "mtime_utc": "2026-08-26T12:26:48.062418+00:00"
+    }
+  ]
+}
