@@ -1,0 +1,12 @@
+候选信息层级消融实验
+Oracle在全部预测结束后加载=True
+
+[DIRECT_FREE] Oracle=0.00% | 错误选择=0.00% | 无效=100.00% | ABSTAIN=0.00%
+
+[DIRECT_FREE] 严格事件成功=0/1 (0.00%) | 事件宏平均=0.00% | 选择稳定事件=1/1
+
+明细：G:\LearnAI\ontology-evolution\output\post-freeze-qwen-error-probe-e14-direct-free-details.csv
+调用级：G:\LearnAI\ontology-evolution\output\post-freeze-qwen-error-probe-e14-direct-free-summary.csv
+按事件：G:\LearnAI\ontology-evolution\output\post-freeze-qwen-error-probe-e14-direct-free-by-event.csv
+事件级：G:\LearnAI\ontology-evolution\output\post-freeze-qwen-error-probe-e14-direct-free-event-level.csv
+JSON：G:\LearnAI\ontology-evolution\output\post-freeze-qwen-error-probe-e14-direct-free.json

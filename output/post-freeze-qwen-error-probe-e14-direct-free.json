@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T08:12:30.664005+00:00",
+  "oracle_loaded_after_predictions": true,
+  "method_specs": {
+    "DIRECT_FREE": "自由生成值，不提供候选集合",
+    "VALUE_ENUM": "只通过输出Schema限定可选值",
+    "OPTION_VALUE_ONLY": "提供随机化选项编号和值",
+    "OPTION_FORMAL_OPERATION": "提供随机化选项编号和真实有限修复算子，不提供人工描述",
+    "OPTION_FORMAL_POLICY": "提供真实有限修复算子及结构化事实和优先级规则",
+    "OPTION_FORMAL_POLICY_HARD_GATE": "程序执行形式策略硬门禁；唯一候选直接选择，多候选才调用Qwen",
+    "OPTION_DESCRIPTION": "提供随机化选项编号、值和人工候选描述",
+    "OPTION_DESCRIPTION_MASKED": "保留带描述选项格式，但将人工候选描述替换为中性占位文本",
+    "OPTION_DESCRIPTION_SHUFFLED": "保留带描述选项格式，但在同一事件内错配人工候选描述"
+  },
+  "formal_operation_leakage_guard": [
+    "description",
+    "oracle",
+    "evidence",
+    "reason",
+    "condition",
+    "applicable",
+    "document",
+    "formal_effect"
+  ],
+  "formal_policy_leakage_guard": [
+    "oracle",
+    "candidate_id",
+    "correct",
+    "answer",
+    "formal_effect"
+  ],
+  "split": "test",
+  "only": "E14",
+  "methods": [
+    "DIRECT_FREE"
+  ],
+  "runs": 1,
+  "attempt_summary": [
+    {
+      "method": "DIRECT_FREE",
+      "semantic_type": "ALL",
+      "attempts": 1,
+      "coverage": 0.0,
+      "oracle_accuracy": 0.0,
+      "oracle_ci95_low": 0.0,
+      "oracle_ci95_high": 0.7934506856227626,
+      "wrong_selection_rate": 0.0,
+      "invalid_output_rate": 1.0,
+      "abstain_rate": 0.0,
+      "mean_runtime_ms": 0
+    },
+    {
+      "method": "DIRECT_FREE",
+      "semantic_type": "TEMPORAL_VERSION",
+      "attempts": 1,
+      "coverage": 0.0,
+      "oracle_accuracy": 0.0,
+      "oracle_ci95_low": 0.0,
+      "oracle_ci95_high": 0.7934506856227626,
+      "wrong_selection_rate": 0.0,
+      "invalid_output_rate": 1.0,
+      "abstain_rate": 0.0,
+      "mean_runtime_ms": 0
+    }
+  ],
+  "event_level_summary": [
+    {
+      "method": "DIRECT_FREE",
+      "independent_events": 1,
+      "all_runs_correct_events": 0,
+      "strict_event_accuracy": 0.0,
+      "macro_event_accuracy": 0.0,
+      "stable_events": 1
+    }
+  ],
+  "by_event": [
+    {
+      "method": "DIRECT_FREE",
+      "event_id": "E14",
+      "semantic_type": "TEMPORAL_VERSION",
+      "attempts": 1,
+      "oracle_successes": 0,
+      "oracle_accuracy": 0.0,
+      "all_runs_correct": false,
+      "selection_stable": true,
+      "invalid_outputs": 1,
+      "abstains": 0
+    }
+  ],
+  "details": [
+    {
+      "split": "test",
+      "event_id": "E14",
+      "semantic_type": "TEMPORAL_VERSION",
+      "run": 1,
+      "seed": 20260820,
+      "method": "DIRECT_FREE",
+      "status": "REJECTED_ERROR",
+      "selected_option_id": "",
+      "selected_candidate_id": "",
+      "selected_value": "",
+      "reason": "TimeoutError: timed out",
+      "candidate_order": "OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003",
+      "runtime_ms": 0,
+      "response_mode": "",
+      "prompt_eval_count": 0,
+      "eval_count": 0,
+      "done_reason": "",
+      "raw_content": "",
+      "policy_loaded": "",
+      "applicable_rule": "",
+      "allowed_values": "",
+      "survivor_count": "",
+      "decision_path": "",
+      "description_variant": "",
+      "qwen_called": true,
+      "oracle_candidate_id": "CAND_002",
+      "oracle_value": "62",
+      "oracle_correct": false
+    }
+  ]
+}

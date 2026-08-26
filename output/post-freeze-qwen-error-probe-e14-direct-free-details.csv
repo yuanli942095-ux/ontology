@@ -1,0 +1,2 @@
+﻿split,event_id,semantic_type,run,seed,method,status,selected_option_id,selected_candidate_id,selected_value,reason,candidate_order,runtime_ms,response_mode,prompt_eval_count,eval_count,done_reason,raw_content,policy_loaded,applicable_rule,allowed_values,survivor_count,decision_path,description_variant,qwen_called,oracle_candidate_id,oracle_value,oracle_correct
+test,E14,TEMPORAL_VERSION,1,20260820,DIRECT_FREE,REJECTED_ERROR,,,,TimeoutError: timed out,OPTION_A=CAND_002|OPTION_B=CAND_001|OPTION_C=CAND_003,0,,0,0,,,,,,,,,True,CAND_002,62,False

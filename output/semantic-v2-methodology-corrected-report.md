@@ -79,7 +79,9 @@ Post-freeze deterministic validation:
 
 Post-freeze Qwen headline rerun status:
 
-The post-freeze main-table Qwen rerun was started but stopped after repeated `REJECTED_ERROR` outputs and very slow local Qwen inference. A minimal `/api/chat` JSON request took 34.66 seconds, indicating degraded inference service state. Therefore no post-freeze Qwen headline result is reported yet. The existing Qwen results remain development-run evidence until rerun from the freeze commit.
+The post-freeze main-table Qwen rerun was retried from HEAD `c69833693297555e0691b28f87b1e574845bdbed`. A minimal `/api/chat` JSON request succeeded but took 34.12 seconds, indicating degraded local inference service state. The full post-freeze main-table command was then started, but the first two official Qwen calls returned `REJECTED_ERROR` after waiting near the per-call timeout boundary, so the run was interrupted before any main-table output files were written. A one-call diagnostic probe on E14 with `--timeout 60` also returned `REJECTED_ERROR` with `reason=TimeoutError: timed out`.
+
+Therefore no post-freeze Qwen headline result is reported yet. The existing Qwen results remain development-run evidence until rerun from a healthy inference service at the frozen benchmark state.
 
 Evidence files:
 
@@ -91,6 +93,8 @@ Evidence files:
 - `output/semantic-v2-freeze-manifest-test-20260826-post-git-freeze.json`
 - `output/post-freeze-template-policy-hard-gate-test-summary.csv`
 - `output/post-freeze-repair-closure-hardgate-test-summary.csv`
+- `output/post-freeze-qwen-error-probe-e14-direct-free-details.csv`
+- `output/post-freeze-qwen-error-probe-e14-direct-free.json`
 
 ## 4. Main 30-Test Reproduction
 
@@ -546,7 +550,7 @@ The largest remaining gaps are now narrower:
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
 3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
-4. Post-freeze headline Qwen rerun from commit `688e6cdd8a78327e89358846dbfbe61eac2271d3`; the deterministic post-freeze checks are complete, but the Qwen rerun is still pending because the local inference service was degraded.
+4. Post-freeze headline Qwen rerun from the frozen benchmark state; the deterministic post-freeze checks are complete, but the Qwen rerun is still pending because the local inference service timed out during official calls.
 5. Measured annotation-time pilot study for formal-policy construction, because the current 1312 score is a complexity proxy only.
 6. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 7. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
@@ -566,7 +570,7 @@ Safe:
 - Replacing manual fact values with Qwen-extracted facts drops template-policy accuracy to 86.00%, showing that automatic fact normalization is the current bottleneck.
 - In zero-survivor and multi-survivor stress tests, the deterministic gate fails closed with `ABSTAIN` rather than forcing an unsafe selection.
 - The upper bound has zero Qwen runtime calls but non-zero manual construction effort; in the current heuristic audit this is 1312 policy-complexity points for 30 test policies, not measured minutes.
-- A local freeze commit is available for future reruns, but the current Qwen headline results should be treated as development-run evidence until rerun from that commit.
+- A local freeze commit is available for future reruns, but the current Qwen headline results should be treated as development-run evidence until rerun from the frozen benchmark state with a healthy inference service.
 
 Unsafe:
 

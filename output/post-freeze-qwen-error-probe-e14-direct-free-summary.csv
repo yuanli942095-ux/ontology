@@ -1,0 +1,3 @@
+﻿method,semantic_type,attempts,coverage,oracle_accuracy,oracle_ci95_low,oracle_ci95_high,wrong_selection_rate,invalid_output_rate,abstain_rate,mean_runtime_ms
+DIRECT_FREE,ALL,1,0.0,0.0,0.0,0.7934506856227626,0.0,1.0,0.0,0
+DIRECT_FREE,TEMPORAL_VERSION,1,0.0,0.0,0.0,0.7934506856227626,0.0,1.0,0.0,0
