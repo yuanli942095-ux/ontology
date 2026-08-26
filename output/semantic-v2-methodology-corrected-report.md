@@ -277,9 +277,18 @@ External-real-v1 preparation:
 
 An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark. The scaffold includes source-intake templates, public event/document/candidate templates, a private Oracle template, a collection protocol, a document SHA-256 backfill script, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
 
-The first public source pair has now been landed locally from the Beijing Municipal Agriculture and Rural Affairs Bureau: the 2025 and 2026 policy agricultural insurance terms PDFs. Their SHA-256 hashes are recorded in the public document template. One draft external event, `EXT_E001`, has been extracted from those PDFs for a temporal version change in vegetable-rotation insured-amount allocation. The public event and candidate rows are DRAFT only; no private Oracle row, mutant OWL, candidate OWL, or external model run has been produced for it yet.
+The first public source pair has now been landed locally from the Beijing Municipal Agriculture and Rural Affairs Bureau: the 2025 and 2026 policy agricultural insurance terms PDFs. Their SHA-256 hashes are recorded in the public document template. One external event, `EXT_E001`, has been extracted from those PDFs for a temporal version change in vegetable-rotation insured-amount allocation.
 
-Current validation status for the source-landed draft state is `PASS`: `events_ready=0`, `errors=0`, and `warnings=0`. The latest source-landed freeze manifest records `events_ready=0`, `public_file_count=20`, and `private_integrity_rows=1`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to complete READY external events by adding OWL mutants, candidate OWLs, private Oracle adjudication, and a post-freeze model reproduction run.
+`EXT_E001` now has public event metadata, source documents, a short evidence note, three candidate operations, mutant OWL, candidate OWL artifacts, a formal-policy JSON file, and a private Oracle row. The public READY event was committed first (`8c82fc8`) with the private Oracle still pending; the private Oracle was filled only after that public freeze point.
+
+Current validation status after private Oracle adjudication is `PASS`: `events_ready=1`, `errors=0`, `warnings=0`, and `private_oracle_rows=1`. The private-Oracle manifest records `events_ready=1`, `public_file_count=25`, and `private_integrity_rows=2`.
+
+External-real-v1 symbolic smoke validation:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_symbolic_closure.py --only EXT_E001 --prefix external-real-v1-symbolic-closure-ext-e001`
+- Result: selected `CAND_002`, Oracle correct `1/1`, full OWL repair closure `1/1`.
+- Closure details: triples removed `1`, triples added `1`, Reasoner `CONSISTENT`, source repair CQ triggered, candidate repair CQ satisfied.
+- Boundary: this is a one-event external smoke validation. It proves the external-real workflow is executable on a real public revision pair, but it is not yet a statistically meaningful external benchmark. The next evidence-bearing step is to expand `external-real-v1` to multiple READY events across semantic types and then run the same post-freeze reproduction.
 
 External-real-v1 evidence files:
 
@@ -292,10 +301,16 @@ External-real-v1 evidence files:
 - `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf`
 - `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf`
 - `benchmark/external-real-v1/documents/excerpts/EXT_E001-evidence.md`
+- `benchmark/external-real-v1/mutants/EXT_E001.owl`
+- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_001.owl`
+- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_002.owl`
+- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_003.owl`
+- `benchmark/external-real-v1/rules/EXT_E001-formal-policy.json`
 - `benchmark/external-real-v1/private/external-real-oracle-template.csv`
 - `src/validate_external_real_v1.py`
 - `src/update_external_real_v1_document_hashes.py`
 - `src/generate_external_real_v1_freeze_manifest.py`
+- `src/run_external_real_v1_symbolic_closure.py`
 - `output/external-real-v1-validation-scaffold-v2-details.csv`
 - `output/external-real-v1-validation-scaffold-v2-summary.csv`
 - `output/external-real-v1-validation-scaffold-v2.json`
@@ -308,6 +323,21 @@ External-real-v1 evidence files:
 - `output/external-real-v1-freeze-manifest-src001-draft-event-files.csv`
 - `output/external-real-v1-freeze-manifest-src001-draft-event-private-oracle.csv`
 - `output/external-real-v1-freeze-manifest-src001-draft-event.json`
+- `output/external-real-v1-validation-ext-e001-public-ready-details.csv`
+- `output/external-real-v1-validation-ext-e001-public-ready-summary.csv`
+- `output/external-real-v1-validation-ext-e001-public-ready.json`
+- `output/external-real-v1-freeze-manifest-ext-e001-public-ready-files.csv`
+- `output/external-real-v1-freeze-manifest-ext-e001-public-ready-private-oracle.csv`
+- `output/external-real-v1-freeze-manifest-ext-e001-public-ready.json`
+- `output/external-real-v1-validation-ext-e001-private-oracle-details.csv`
+- `output/external-real-v1-validation-ext-e001-private-oracle-summary.csv`
+- `output/external-real-v1-validation-ext-e001-private-oracle.json`
+- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle-files.csv`
+- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle-private-oracle.csv`
+- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle.json`
+- `output/external-real-v1-symbolic-closure-ext-e001-details.csv`
+- `output/external-real-v1-symbolic-closure-ext-e001-summary.csv`
+- `output/external-real-v1-symbolic-closure-ext-e001.json`
 
 ## 7. Template-Policy Hard Gate
 

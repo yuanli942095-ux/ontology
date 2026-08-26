@@ -333,6 +333,17 @@ def main() -> int:
             )
         if event_id not in oracles:
             audit.warn("MISSING_PRIVATE_ORACLE", event_id, "private oracle pending")
+        else:
+            oracle = oracles[event_id]
+            oracle_status = str(oracle.get("status", "")).strip().upper()
+            if oracle_status != "READY":
+                audit.error("PRIVATE_ORACLE_NOT_READY", event_id, oracle_status)
+            oracle_candidate_id = str(oracle.get("oracle_candidate_id", "")).strip()
+            if (event_id, oracle_candidate_id) not in candidate_keys:
+                audit.error("UNKNOWN_ORACLE_CANDIDATE", event_id, oracle_candidate_id)
+            for document_id in split_ids(oracle.get("evidence_document_ids", "")):
+                if document_id not in documents:
+                    audit.error("UNKNOWN_ORACLE_EVIDENCE_DOCUMENT", event_id, document_id)
 
     for document_id, row in documents.items():
         status = str(row.get("status", "")).strip().upper()
