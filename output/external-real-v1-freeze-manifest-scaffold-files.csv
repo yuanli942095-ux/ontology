@@ -1,0 +1,9 @@
+﻿role,event_id,privacy,path,sha256,bytes,mtime_utc
+benchmark_readme,,public,benchmark\external-real-v1\README.md,83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754,382,2026-08-26T12:18:57.168207+00:00
+collection_protocol,,public,benchmark\external-real-v1\protocol.md,8218867bce7a4f93cf403f66b59b57c0eee86e96efe16f7ee46e17ff29e1ab7a,2012,2026-08-26T12:18:57.169472+00:00
+input_candidates_csv,,public,benchmark\external-real-v1\input\external-real-candidate-template.csv,4a740bfa392ed344f591d4748780d0a48031d8c67f9281d8ffc33690355131ce,64,2026-08-26T12:18:57.170985+00:00
+input_documents_csv,,public,benchmark\external-real-v1\input\external-real-document-template.csv,d717a7d1876934ea1cbb43035b22865f594f2e29b4ecdab52991d5c8d3aa5bd4,169,2026-08-26T12:18:57.170985+00:00
+input_events_csv,,public,benchmark\external-real-v1\input\external-real-event-template.csv,ad0cea87c0a2bef2fa53ddfa9e0b8bc3c378377e47e997a6ad42fe306d3302c6,181,2026-08-26T12:18:57.169979+00:00
+reproduction_script,,public,src\generate_external_real_v1_freeze_manifest.py,698bd534cf342770d269c61a5b2ac1fbdba023aaa52a90f76249ff38e3561c97,9111,2026-08-26T12:24:26.043401+00:00
+reproduction_script,,public,src\semantic_v2_common.py,d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de,6623,2026-08-21T08:45:50.829498+00:00
+reproduction_script,,public,src\validate_external_real_v1.py,4e88f001aba32fcd0ae1c947ae59fb90c973f8fa9f8a66facce607e7b176831e,13425,2026-08-26T12:18:57.174051+00:00

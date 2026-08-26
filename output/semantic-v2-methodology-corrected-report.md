@@ -277,7 +277,7 @@ External-real-v1 preparation:
 
 An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark and currently contains no READY events. The scaffold includes public event/document/candidate templates, a private Oracle template, a collection protocol, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
 
-Current validation status is `PASS` for the empty scaffold: `events_ready=0`, `errors=0`, and `warnings=0`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to add real public document revisions and freeze them before running any model.
+Current validation status is `PASS` for the empty scaffold: `events_ready=0`, `errors=0`, and `warnings=0`. A scaffold freeze manifest was also generated: `events_ready=0`, `public_file_count=8`, and `private_integrity_rows=1`. This is preparation for external validation, not an external validation result. The next evidence-bearing step is to add real public document revisions and freeze them before running any model.
 
 External-real-v1 evidence files:
 
@@ -287,9 +287,13 @@ External-real-v1 evidence files:
 - `benchmark/external-real-v1/input/external-real-candidate-template.csv`
 - `benchmark/external-real-v1/private/external-real-oracle-template.csv`
 - `src/validate_external_real_v1.py`
+- `src/generate_external_real_v1_freeze_manifest.py`
 - `output/external-real-v1-validation-scaffold-details.csv`
 - `output/external-real-v1-validation-scaffold-summary.csv`
 - `output/external-real-v1-validation-scaffold.json`
+- `output/external-real-v1-freeze-manifest-scaffold-files.csv`
+- `output/external-real-v1-freeze-manifest-scaffold-private-oracle.csv`
+- `output/external-real-v1-freeze-manifest-scaffold.json`
 
 ## 7. Template-Policy Hard Gate
 

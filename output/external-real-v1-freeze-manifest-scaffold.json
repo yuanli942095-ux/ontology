@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T12:24:32.184696+00:00",
+  "benchmark": "external-real-v1",
+  "benchmark_dir": "benchmark\\external-real-v1",
+  "events_total": 0,
+  "events_ready": 0,
+  "event_ids_ready": [],
+  "semantic_type_counts_ready": {},
+  "documents_total": 0,
+  "candidates_total": 0,
+  "private_oracle_rows": 0,
+  "public_file_count": 8,
+  "private_integrity_rows": 1,
+  "oracle_used_for_candidate_filtering": false,
+  "git": {
+    "available": true,
+    "commit": "229525b00c6134644d393ee473e2e4e4bbeda993",
+    "dirty": true,
+    "status_short": [
+      " M output/formal-policy-gate-validation.csv",
+      " M output/formal-policy-gate-validation.json",
+      " M output/formal-policy-gate-validation.log",
+      "?? output/annotation-time-pilot-completed-check-details.csv",
+      "?? output/annotation-time-pilot-completed-check-summary.csv",
+      "?? output/annotation-time-pilot-completed-check.json",
+      "?? output/annotation-time-pilot-completed-check.log",
+      "?? src/generate_external_real_v1_freeze_manifest.py"
+    ]
+  },
+  "limitations": [
+    "An empty scaffold manifest proves only structure, not external validation.",
+    "Private Oracle integrity rows are for local audit only and must not be published if filled.",
+    "A freeze manifest proves file state at generation time; use Git or external archives for timestamped evidence."
+  ],
+  "public_files": [
+    {
+      "role": "benchmark_readme",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\README.md",
+      "sha256": "83f7dc55fae404821a73a0cb540e289c810d6d8aed570f13e75649c093c87754",
+      "bytes": 382,
+      "mtime_utc": "2026-08-26T12:18:57.168207+00:00"
+    },
+    {
+      "role": "collection_protocol",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\protocol.md",
+      "sha256": "8218867bce7a4f93cf403f66b59b57c0eee86e96efe16f7ee46e17ff29e1ab7a",
+      "bytes": 2012,
+      "mtime_utc": "2026-08-26T12:18:57.169472+00:00"
+    },
+    {
+      "role": "input_candidates_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-candidate-template.csv",
+      "sha256": "4a740bfa392ed344f591d4748780d0a48031d8c67f9281d8ffc33690355131ce",
+      "bytes": 64,
+      "mtime_utc": "2026-08-26T12:18:57.170985+00:00"
+    },
+    {
+      "role": "input_documents_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-document-template.csv",
+      "sha256": "d717a7d1876934ea1cbb43035b22865f594f2e29b4ecdab52991d5c8d3aa5bd4",
+      "bytes": 169,
+      "mtime_utc": "2026-08-26T12:18:57.170985+00:00"
+    },
+    {
+      "role": "input_events_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\external-real-v1\\input\\external-real-event-template.csv",
+      "sha256": "ad0cea87c0a2bef2fa53ddfa9e0b8bc3c378377e47e997a6ad42fe306d3302c6",
+      "bytes": 181,
+      "mtime_utc": "2026-08-26T12:18:57.169979+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\generate_external_real_v1_freeze_manifest.py",
+      "sha256": "698bd534cf342770d269c61a5b2ac1fbdba023aaa52a90f76249ff38e3561c97",
+      "bytes": 9111,
+      "mtime_utc": "2026-08-26T12:24:26.043401+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623,
+      "mtime_utc": "2026-08-21T08:45:50.829498+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_external_real_v1.py",
+      "sha256": "4e88f001aba32fcd0ae1c947ae59fb90c973f8fa9f8a66facce607e7b176831e",
+      "bytes": 13425,
+      "mtime_utc": "2026-08-26T12:18:57.174051+00:00"
+    }
+  ]
+}
