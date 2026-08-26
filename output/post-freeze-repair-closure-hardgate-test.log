@@ -1,0 +1,13 @@
+semantic-v2 repair closure
+split=test
+methods=OPTION_FORMAL_POLICY_HARD_GATE
+rows=150
+unique_reasoner_runs=30
+oracle_loaded_after_selection_rows=True
+
+[OPTION_FORMAL_POLICY_HARD_GATE] full_repair=100.00% | coverage=100.00% | reasoner_selected=100.00% | selected_cq=100.00% | oracle_cq_selected=100.00%
+
+details=G:\LearnAI\ontology-evolution\output\post-freeze-repair-closure-hardgate-test-details.csv
+summary=G:\LearnAI\ontology-evolution\output\post-freeze-repair-closure-hardgate-test-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\post-freeze-repair-closure-hardgate-test-by-event.csv
+json=G:\LearnAI\ontology-evolution\output\post-freeze-repair-closure-hardgate-test.json

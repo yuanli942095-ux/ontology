@@ -1,0 +1,1567 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-26T07:29:30.457238+00:00",
+  "benchmark_dir": "benchmark\\semantic-v2",
+  "split": "test",
+  "event_count": 30,
+  "event_ids": [
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E20",
+    "E21",
+    "E24",
+    "E25",
+    "E26",
+    "E27",
+    "E28",
+    "E29",
+    "E30",
+    "E31",
+    "E34",
+    "E35",
+    "E36",
+    "E37",
+    "E38",
+    "E39",
+    "E40",
+    "E41",
+    "E42",
+    "E43",
+    "E44",
+    "E45",
+    "E46",
+    "E47"
+  ],
+  "semantic_type_counts": {
+    "CROSS_SENTENCE_SCOPE": 10,
+    "GENERAL_RULE_EXCEPTION": 10,
+    "TEMPORAL_VERSION": 10
+  },
+  "public_file_count": 113,
+  "private_oracle_integrity_manifest_generated": true,
+  "oracle_used_for_candidate_filtering": false,
+  "git": {
+    "available": true,
+    "commit": "688e6cdd8a78327e89358846dbfbe61eac2271d3",
+    "dirty": true,
+    "status_short": [
+      "?? output/post-freeze-template-policy-hard-gate-test-details.csv",
+      "?? output/post-freeze-template-policy-hard-gate-test-summary.csv",
+      "?? output/post-freeze-template-policy-hard-gate-test.json",
+      "?? output/post-freeze-template-policy-hard-gate-test.log"
+    ]
+  },
+  "limitations": [
+    "This manifest records the file state at generation time; it cannot prove that files were frozen before earlier experiments unless paired with external VCS or archive timestamps.",
+    "The private Oracle manifest is for local audit only and should not be published with the paper artifact."
+  ],
+  "per_event": [
+    {
+      "event_id": "E14",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "b38a4361f80473d58d824517aecc9d7174139904af2ed0e3d3d0cf70f4b7192c",
+      "input_candidate_rows_hash": "758a7c2ea226e3645c9a03648d09f9b9d201a832872d768210a603ee1d154a38",
+      "formal_policy_rule_hash": "0488f1cb572e45dc1d1712b8940463d3a3b7cb3154651b853e862f989486f0f1",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E14_CURRENT": "9f02da21df84d6001a689b15a6634035c758e2301e1aa6ffbbe35fbb267e5649",
+        "DOC_E14_FUTURE": "08823a07b4a57a1cb7e62e27e637ec21edc6f2b7b2a107ab14fb4ca7f50bf173"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E14_2026夏季现行投保年龄条款.txt",
+        "benchmark\\semantic-v2\\documents\\E14_2026九月修订投保年龄条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E15",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "0d7954bb65a4f37e1f4bb1ec463025038da12df02ce43c2c19cb873d7bea5614",
+      "input_candidate_rows_hash": "c85258a66eae07763516def08d5e3b0cf557b44b033841a682faf102600318b0",
+      "formal_policy_rule_hash": "f39dc47c5765f8f084e2f85528619604a364ba7e27b796fc41d62030d3f6bacc",
+      "mutant_owl_hash": "59ecf054206336f44e3cd2c2ca0d5d534d9426ad9afbaa8d1e24e61cad33ddec",
+      "document_hashes": {
+        "DOC_E15_JULY": "62f95c71c8be3d76bb3de0ddb0632a26e201b834db8532ba5d12b42f01f5dacb",
+        "DOC_E15_AUGUST": "df0fc8bb05fbdd6c42ca15fa6839f6cc414720af965b4bbd2c386adbd83d406e"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E15_2026七月承保投保年龄条款.txt",
+        "benchmark\\semantic-v2\\documents\\E15_2026八月承保投保年龄条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E16",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "05981683f9ee0fd33fff3e07c2471bb96a357b6fe8ba72e09b5584325fc057bd",
+      "input_candidate_rows_hash": "e2c0612097918d6d3becafbad8573e6dafb9eedc3a9d1c5f24aeba547ab8ed47",
+      "formal_policy_rule_hash": "7d0331a269aa78a1af10ebeb0c72e5c4b85151d372375150925403b7f796e0d0",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E16_TERMS": "949b4a609aece35b5f16ee839452b0db5057bf5fbdb730e44422535cd7bb2bfc"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E16_批单待备案投保年龄条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E17",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "b946305fcb31ee184a0e82d3cb3f2316ab7ececdf2c4f90d9e016a268c1a4c02",
+      "input_candidate_rows_hash": "3f986fb7db87eec746738e6b22a052370939313a4f5698e98b13599a211bf61a",
+      "formal_policy_rule_hash": "2a8032ca5562d114e95422bed9aec1bc7b1bc3963b0ecabbf6f13eb101ffc27f",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E17_TERMS": "d801da03348ee0a42691b8049ffcb1efdd2457acace35d75db91002536233a5a"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E17_年龄档位代码条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E18",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "0133f22159daf63e2063beaf97804d9dafac588ed7ce80205a64f87e4138add8",
+      "input_candidate_rows_hash": "c6472fa7934c1276903466d54f96be30e6f50f997ea493eba9f74f9c092f80b9",
+      "formal_policy_rule_hash": "34c714b425a85d74132d03a6da81c2708546bb984058b3228a165e9029cdcc10",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E18_TERMS": "a453fed5a41922285e8353dfd22bb07c6d9f2c6c5ac8f4eff660385b7a24bfbb"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E18_新版生效但旧版宽限期仍适用的投保年龄消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E19",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "19e78d4816715664404b975c276c41ef0b8f6418932fca4077dbb84ef34f720b",
+      "input_candidate_rows_hash": "46bc0b0528c3d4b593f28e5ea151ad622790b127b6ef4d9bfd23557cec0e474c",
+      "formal_policy_rule_hash": "b8743b0678cfa1679e0093ff3305e380e146038310854718255ac00cd2d6e18c",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E19_TERMS": "6b613bdb227fd375d1ad87fd29b0413c1538ac975ff64cac460cfc835d3c1eeb"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E19_续保按原合同生效日锁定版本的投保年龄消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E20",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "c76f21685d45f101e51bfedfbdff86ef7f6322862e666ef0957f5ed720025537",
+      "input_candidate_rows_hash": "dafa72ef014d515d4ee67d1b13e06c486fe2c9aace0d0afe81a3441c99ecdbf4",
+      "formal_policy_rule_hash": "52520c1fa6f1413ba28e499f6ffd5d6a757a1414c79b4ac551fce70b91576305",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E20_TERMS": "89b9c3b01ca1342dc448de05219ecd31a82cb001df20c35cfac379b5e942d762"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E20_地区版本优先于全国通用版本的投保年龄消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E21",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "e73d59244661f3a69d60f027a922bbef996f406e22c451d970dec0eb2a2795bf",
+      "input_candidate_rows_hash": "d5228ab037aa90e409c58f096ed1cc94ee009497e38e337c99c914a9768e39db",
+      "formal_policy_rule_hash": "ae77037667abe069ef314f1d0354f7680c2404f712bd7c8bf55f40cb3e65d411",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E21_TERMS": "e22d1a265d9e00dfadaf8002b13e662979ca85eecba9891e75dfb24b070de249"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E21_签发日晚于受理日但备案未完成的投保年龄消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E24",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "c611bff4dc13154b62cf41058627e5f15f79ce1dfae97442c972b6c096d88c61",
+      "input_candidate_rows_hash": "46ebb50d304ef15798c11b7263e8d1c5f28b782a530e1785f719b9176966fc55",
+      "formal_policy_rule_hash": "ba83e89321d209bab29aba0c985848f1ce9530b066c07d63e45af4a7c7580332",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E24_TERMS": "343864821c6d72bad03b320043d9e43eb7e5e363f6d681fc7cf72c9a30aca16d"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E24_团体转入等待期特别约定.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E25",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "de2ac73f0b61903dc99fc9d1e34075485b24644b2f44ed1f2a45c70fab8a66a7",
+      "input_candidate_rows_hash": "53bbd8f24b52cf36fa2389904a9c09e7cec769f252160cc4c6c43d5670b47bff",
+      "formal_policy_rule_hash": "223736776cfb5e76c7a05782e9eee421b218ff757e06c898e3d6028721d1edd9",
+      "mutant_owl_hash": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "document_hashes": {
+        "DOC_E25_TERMS": "89d50d047927515f28ad3d65bb2e6a3e2eda70a560eb8fd3a233a8dc65b07bf3"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E25_少儿投保等待期特别约定.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E26",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "bf2999bdaca9afbd317efddf3655121482a573bf7d2392140b5a91572a981de0",
+      "input_candidate_rows_hash": "33007076f4e2349726b57581cf3e2d70de2574e4a62b77ecece0e6beed56e9d1",
+      "formal_policy_rule_hash": "71ef53b9547bf7f9ea944a97804ae5bde225996ac8b16a28e3ff10d3b9b4fa5f",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E26_TERMS": "bc15bb45fa9c8aef8a455b7ecc7315dde8a0c7cb31277233a83150d0014f1a9e"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E26_团转证明逾期等待期条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E27",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "5fae3da01e0293867b84e7dcf00fc2d59882f6511a67cba135e5ed798f7f2f60",
+      "input_candidate_rows_hash": "415ddbba784ff85bf7bc8553d4eca3c1ac9cd4e6033072931a644484c689b1c8",
+      "formal_policy_rule_hash": "103c9c602abcb29e083969aea1b55995f856b90a1909f1dc4886666fa6cddfaf",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E27_TERMS": "296dd4d62fd8cb92d22663afcc64bca7d29adef63fc8e3b718872553d3f2aaa2"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E27_等待期代码条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E28",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "b07157efa2510322ee352083cb500f90e498933d2e844491e2b32c1d1c9bbf80",
+      "input_candidate_rows_hash": "56aeab84e8addd1603dcbaf23a4f48ff29a627bebed2554e1d7ab0e3413b4c32",
+      "formal_policy_rule_hash": "124f41a89d5991be7af89bdf275399ff9e7cf30812c74d4e617b26c7b0359c64",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E28_TERMS": "494fc90189cd1ef3bcaea4dde698d7418386d8fc385feef4ad88fe3e8496554d"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E28_连续保障证明提前提交的等待期例外消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E29",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "b30b009a0d4f623e4d7def3a80406171a8bd447ec9c8ea4eadf0efc5998ac344",
+      "input_candidate_rows_hash": "8f9382754d83d356aa93b17b948b2eac0bc673f19f122ebd7d14f813b6280546",
+      "formal_policy_rule_hash": "1bb3616bbfc139eda19efb418719e08de98425b2883bf5d9de66437a56640e32",
+      "mutant_owl_hash": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "document_hashes": {
+        "DOC_E29_TERMS": "e41fe85ffc2af26524501c586c658619ed14a1b9b00e16a1648ee6cc30a6d532"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E29_特定疾病类别覆盖一般等待期的消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E30",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "a2dc582d5f08ae50183f72ede204e9293a3fb883a4d8e43fc9bb74805665abac",
+      "input_candidate_rows_hash": "3510c4040c478fc7eb4f5dd81601db966494b31d0cd3b7d4421d7bebbc91b59f",
+      "formal_policy_rule_hash": "e3143bfa9eddc9b3f2aa221174804790011d8bb6cf6ec48967e2e4e7b19499db",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E30_TERMS": "9ee1c904fe2f305255724df95d98f59ed9ec312d2828307d5d9f5fa8eeefb478"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E30_VIP团体低赔付率例外等待期消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E31",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "759b75851a44f0e41d26639f83adc2dad84500aed5bf6bf0f87082888294250f",
+      "input_candidate_rows_hash": "0de2c31ef4bb944a4487f9adaf39b46b3a5fbeffa4ee0a83928372c6163699bd",
+      "formal_policy_rule_hash": "12a9750ee911a5ec640d70c9616514ed6082e06a48a5746fcff68d0b56811c38",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E31_TERMS": "7f2f1f88914c1a840eed7b356866c7aabd1603d226c13d3efdf0668e95bda20b"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E31_既有核保批注豁免等待期的例外消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E34",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "dfc80a5211902e05d047e66741e0090f4af9d7b074cc2a9342fc70ab82dd9f21",
+      "input_candidate_rows_hash": "8d201eb3ab3a3986adabfa81d83c75fdde214a3d34815adbf8b3e7d1c65dfaea",
+      "formal_policy_rule_hash": "937e3d38affd8a455d0057e5d1c934b5de4e2ab0af38961b4e87290ca7b171e5",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E34_TERMS": "2a987c87ef99b11da69970d747c7a1bf28c00ccacefa68db7adc4b887e207df5"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E34_长期照护责任期限条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E35",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "18491e4e5ae029d67efd2ff3e635ff53e2aa60977b764a72d4199dc5cbdc9259",
+      "input_candidate_rows_hash": "cec9cacb3029f3af0266122c5942e1533810e1f188e0c72826c80d0a05f13c81",
+      "formal_policy_rule_hash": "ad53d078edf6755f235faf4cf59e6310eefa15f2f15d5bd8813ea486cae60a42",
+      "mutant_owl_hash": "e16d7fce3a07d5d60074259a2b3926f82805995687ee926795a90e73d6c187e2",
+      "document_hashes": {
+        "DOC_E35_TERMS": "8b9f880f94d030ef5611742083fd3e8bc06ed6229d52409368be5491f9bf5ad6"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E35_门诊扩展责任期限条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E36",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "a4b283c2635eddb68951b0ed47a121e4e7e5442fa09da6dd6a62b49eac9abdcd",
+      "input_candidate_rows_hash": "60de8c1475eb964b473dcd12276f10c95d756c526660ec1001c6678ddcb1a1a1",
+      "formal_policy_rule_hash": "dce4affae792760feb710eb8559019ae6e0be850dd54ae1980d4fba7c33468b2",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E36_TERMS": "5b857f485ccdfcd35d458a0996fd7fdf72116b94adf14a0d9a81fafce87c16bf"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E36_远程问诊附加责任期限条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E37",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "98eeb0996ff2b6808a76df8c9d611bda3573c591c5e8965361800975c11b199e",
+      "input_candidate_rows_hash": "c1a959cc44165e4c6a2c6e55a7edc0a06b0d3f135006b96315091c52a65da00f",
+      "formal_policy_rule_hash": "7b9d5a129d3105af0bf04e443b01459e60b6aa0441d97e47d87d27465d176f0d",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E37_TERMS": "9a4067debb9b97618e08b37577560db89146db1aab3d6937597c3835ade793f5"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E37_保险期限代码条款.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E38",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "1a639be2d53672bdf964f1d72140441193df2ddd3c4c1793000a540a9b9099bd",
+      "input_candidate_rows_hash": "9296665a8717b9b0d77ed9fabd01cdbefd83ec29ad79cb89833d413a1edd8046",
+      "formal_policy_rule_hash": "f3c840428b5b591c1a685e95eb9f3ed3ee46633b35a7a19acfc10b5aabf5b5af",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E38_TERMS": "9f928dba8f7aacb902990531df5fc65c9ad236375db4b31334723e95aa374b80"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E38_附加责任限定句排除牙科责任的期限消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E39",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "03b6760df95b84e1430fd086c4502484333fcaffe3f46767c748b5eff7a34846",
+      "input_candidate_rows_hash": "37498066dfa651eb84e61afb0aeefe6c7087c825dd4bab6b41cf3614cf608555",
+      "formal_policy_rule_hash": "43d8512280ad7f3729db2cd358ac1820f47a5beda8ccd703a037347a2c30f262",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E39_TERMS": "6163d581ab67793ba730f9b7974db77d1f255954065470a18d10b1f6b31de10d"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E39_首次投保限定句排除续保方案的期限消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E40",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "0c9e3368b638956f5c49a2f73dbe8d349cbbf40496b7c6a25aefa16e036837b9",
+      "input_candidate_rows_hash": "8d09a6fe4adce7f21479697fcedda37a44828b484b9931f9427e3d1dbacebe2e",
+      "formal_policy_rule_hash": "d4f5d50c528c3a6f2cf94d7ffb3e1226937900e64f98b6605aef3330090581fd",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E40_TERMS": "3efe8911e887e9d6ea36ab2b568055c926450f94a2436662278e33dbc74cfaec"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E40_段落标题限定适用范围的期限消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E41",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "55ce027883c803b52550e1842f5a1ab92244da35b708c5466b0cd7c74492918a",
+      "input_candidate_rows_hash": "6b74bfd814fb718ee00022567e9b9b5f161540ab4f74c482e6b999817d03b0a2",
+      "formal_policy_rule_hash": "5d0d9448667709af310d7093f7fc56ecb46c9687c07a448563a1293669c231bc",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E41_TERMS": "78480ddd17bcffb8766e3717a4ad4d448557ccf7a6834523a1a2d5fc45b97ad2"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E41_上述情形除外限定海外责任的期限消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E42",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "bb48f11075d8163faaef304953bffb79348c57660a38b898dd2f811fba3f6822",
+      "input_candidate_rows_hash": "8c09f71dd789340ab158d703a412878348d3869bf88fffa4f97ba835f2999525",
+      "formal_policy_rule_hash": "4cf58840233ca8f63f98924a9f54ecbc289f49f72e4cce4c46bb79a10eee26dd",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E42_TERMS": "ab0ccc422e475801877dc34af421c8933ddd7cc959a62060a7fbcd365ae1d050"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E42_版本代码到最高投保年龄的候选映射消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E43",
+      "split": "test",
+      "semantic_type": "TEMPORAL_VERSION",
+      "public_event_payload_hash": "8c11423fe839e3486d11bd2a4a8a8ef0d8be17e0adfc6a1446e7f05f8d426cd0",
+      "input_candidate_rows_hash": "66d1dc4d0712a5cb084bec868fbf78bddbf9e8cb14945f73a61651fb5d58791b",
+      "formal_policy_rule_hash": "f9559b949609b13138cdb894c32e4f4ed03c9df232c89033c6a9de528fa72623",
+      "mutant_owl_hash": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "document_hashes": {
+        "DOC_E43_TERMS": "146e37d05be2d1178f610ba5af73afdef61db42ccb0d23c7069db3cced8dd3a9"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E43_批单不追溯适用的最高投保年龄消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E44",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "dce8a671a4bd9d3443345374529eace714f5a5f459473ca5023c5fde0f76edca",
+      "input_candidate_rows_hash": "af322f66ead59bd7c87fec800e3f4c3fee244b113eb07852b5096d84f2c40cfe",
+      "formal_policy_rule_hash": "a4f1c7f07075478034d70165bbfc50cebbb441465700ac74bbb03b5ee4325050",
+      "mutant_owl_hash": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "document_hashes": {
+        "DOC_E44_TERMS": "846ec20cd1f46446ba2cd69780b3e9295d484bf75e8eb0ae5b5cf8467fb05674"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E44_少儿多例外冲突时高优先级等待期消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E45",
+      "split": "test",
+      "semantic_type": "GENERAL_RULE_EXCEPTION",
+      "public_event_payload_hash": "9b2e5b4fe22f69d2c54cf8b4818355b3bc55b13e507a219c9cddc4b149bc4f3d",
+      "input_candidate_rows_hash": "5ebac058ce8d10cc988c50d85ef3c3462500d71aa7b25c69d9c4fe3511f74ef5",
+      "formal_policy_rule_hash": "5fd8b0feaaead7441996aeec782d38263503cb63c8d6ecd26e3e840f0ec82567",
+      "mutant_owl_hash": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "document_hashes": {
+        "DOC_E45_TERMS": "37679da304f486ce14913e4590c613bdf60ef0aa5eb41cefa30a1e19ab4b7ef8"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E45_等待期复效代码到候选天数的映射消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E46",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "fe48f7b3832fea08ba0fd29e2d0ab62353efc58862236fc8b2e3020e45c54011",
+      "input_candidate_rows_hash": "01ff572ff0ee16586256e2c71dee7766df9c6a69224828285773ad145a0a2041",
+      "formal_policy_rule_hash": "30251c1a8820031e6b7073592a28403a61e91962a756682aca80c8099bdfccf5",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E46_TERMS": "275fd1e9253ed1321d2f931c32088ebc9ef801afb18710b8b90a5a723cf6a5b7"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E46_表格脚注限定尊享计划的期限消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    },
+    {
+      "event_id": "E47",
+      "split": "test",
+      "semantic_type": "CROSS_SENTENCE_SCOPE",
+      "public_event_payload_hash": "bb5e79662616e3cf7ed1e3d0c2c1687fc514c3ba328f9d958665ce26581ccd3e",
+      "input_candidate_rows_hash": "a74529cb7bdfa94a1ee775d6f198c95512093c5d8f15010ddaed19e7c4c803e7",
+      "formal_policy_rule_hash": "dbc95c9139b12f8e328938a4eb85be801b887fc7738c9a4c53be904755b39c69",
+      "mutant_owl_hash": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "document_hashes": {
+        "DOC_E47_TERMS": "3790846f7be440374d8025cd08f91648d99262bb90bc610b4394ab860cea98f2"
+      },
+      "document_paths": [
+        "benchmark\\semantic-v2\\documents\\E47_期限脚注代码到候选月数的映射消歧.txt"
+      ],
+      "private_oracle_row_hash_available": true
+    }
+  ],
+  "public_files": [
+    {
+      "role": "built_candidate_effects_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\built\\candidate-effects.csv",
+      "sha256": "6861ced46e9fed2aa31eb91f3fee13f1a3d96ace6ebdb7779c71f869a7d9fd16",
+      "bytes": 19603,
+      "mtime_utc": "2026-08-26T02:02:10.495602+00:00"
+    },
+    {
+      "role": "built_candidate_effects_json",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\built\\candidate-effects.json",
+      "sha256": "93b3cfca1e0b68f274f72296b33369db41a14e4cda17f12f57b0cc4020db6e34",
+      "bytes": 48155,
+      "mtime_utc": "2026-08-26T02:02:10.498112+00:00"
+    },
+    {
+      "role": "built_public_events_json",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\built\\semantic-events.json",
+      "sha256": "bd3574d5ea0ada863ae1d047e1dd449d3e5fca04e298e3c076e4e7ef9651a15d",
+      "bytes": 186174,
+      "mtime_utc": "2026-08-26T02:02:10.495097+00:00"
+    },
+    {
+      "role": "built_public_manifest_json",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\built\\benchmark-manifest.json",
+      "sha256": "811252dd4b873475a3a8c323f6a344e996606a0da6331abde4a3ff702387875a",
+      "bytes": 8524,
+      "mtime_utc": "2026-08-26T02:02:10.536664+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E14",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E14_2026九月修订投保年龄条款.txt",
+      "sha256": "08823a07b4a57a1cb7e62e27e637ec21edc6f2b7b2a107ab14fb4ca7f50bf173",
+      "bytes": 758,
+      "mtime_utc": "2026-08-21T07:52:37.722931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E14",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E14_2026夏季现行投保年龄条款.txt",
+      "sha256": "9f02da21df84d6001a689b15a6634035c758e2301e1aa6ffbbe35fbb267e5649",
+      "bytes": 828,
+      "mtime_utc": "2026-08-21T07:52:37.721468+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E15",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E15_2026七月承保投保年龄条款.txt",
+      "sha256": "62f95c71c8be3d76bb3de0ddb0632a26e201b834db8532ba5d12b42f01f5dacb",
+      "bytes": 754,
+      "mtime_utc": "2026-08-21T07:52:37.722931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E15",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E15_2026八月承保投保年龄条款.txt",
+      "sha256": "df0fc8bb05fbdd6c42ca15fa6839f6cc414720af965b4bbd2c386adbd83d406e",
+      "bytes": 741,
+      "mtime_utc": "2026-08-21T07:52:37.723931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E16",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E16_批单待备案投保年龄条款.txt",
+      "sha256": "949b4a609aece35b5f16ee839452b0db5057bf5fbdb730e44422535cd7bb2bfc",
+      "bytes": 779,
+      "mtime_utc": "2026-08-25T08:52:29.322468+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E17",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E17_年龄档位代码条款.txt",
+      "sha256": "d801da03348ee0a42691b8049ffcb1efdd2457acace35d75db91002536233a5a",
+      "bytes": 640,
+      "mtime_utc": "2026-08-25T12:54:30.491042+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E18",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E18_新版生效但旧版宽限期仍适用的投保年龄消歧.txt",
+      "sha256": "a453fed5a41922285e8353dfd22bb07c6d9f2c6c5ac8f4eff660385b7a24bfbb",
+      "bytes": 548,
+      "mtime_utc": "2026-08-26T02:00:40.797010+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E19",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E19_续保按原合同生效日锁定版本的投保年龄消歧.txt",
+      "sha256": "6b613bdb227fd375d1ad87fd29b0413c1538ac975ff64cac460cfc835d3c1eeb",
+      "bytes": 518,
+      "mtime_utc": "2026-08-26T02:00:40.798014+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E20",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E20_地区版本优先于全国通用版本的投保年龄消歧.txt",
+      "sha256": "89b9c3b01ca1342dc448de05219ecd31a82cb001df20c35cfac379b5e942d762",
+      "bytes": 491,
+      "mtime_utc": "2026-08-26T02:00:40.798014+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E21",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E21_签发日晚于受理日但备案未完成的投保年龄消歧.txt",
+      "sha256": "e22d1a265d9e00dfadaf8002b13e662979ca85eecba9891e75dfb24b070de249",
+      "bytes": 471,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E24",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E24_团体转入等待期特别约定.txt",
+      "sha256": "343864821c6d72bad03b320043d9e43eb7e5e363f6d681fc7cf72c9a30aca16d",
+      "bytes": 1076,
+      "mtime_utc": "2026-08-21T07:52:37.723931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E25",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E25_少儿投保等待期特别约定.txt",
+      "sha256": "89d50d047927515f28ad3d65bb2e6a3e2eda70a560eb8fd3a233a8dc65b07bf3",
+      "bytes": 1044,
+      "mtime_utc": "2026-08-21T07:52:37.723931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E26",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E26_团转证明逾期等待期条款.txt",
+      "sha256": "bc15bb45fa9c8aef8a455b7ecc7315dde8a0c7cb31277233a83150d0014f1a9e",
+      "bytes": 927,
+      "mtime_utc": "2026-08-25T08:52:29.322468+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E27",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E27_等待期代码条款.txt",
+      "sha256": "296dd4d62fd8cb92d22663afcc64bca7d29adef63fc8e3b718872553d3f2aaa2",
+      "bytes": 691,
+      "mtime_utc": "2026-08-25T12:54:30.492550+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E28",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E28_连续保障证明提前提交的等待期例外消歧.txt",
+      "sha256": "494fc90189cd1ef3bcaea4dde698d7418386d8fc385feef4ad88fe3e8496554d",
+      "bytes": 544,
+      "mtime_utc": "2026-08-26T02:00:40.800059+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E29",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E29_特定疾病类别覆盖一般等待期的消歧.txt",
+      "sha256": "e41fe85ffc2af26524501c586c658619ed14a1b9b00e16a1648ee6cc30a6d532",
+      "bytes": 382,
+      "mtime_utc": "2026-08-26T02:00:40.800059+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E30",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E30_VIP团体低赔付率例外等待期消歧.txt",
+      "sha256": "9ee1c904fe2f305255724df95d98f59ed9ec312d2828307d5d9f5fa8eeefb478",
+      "bytes": 425,
+      "mtime_utc": "2026-08-26T02:00:40.801061+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E31",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E31_既有核保批注豁免等待期的例外消歧.txt",
+      "sha256": "7f2f1f88914c1a840eed7b356866c7aabd1603d226c13d3efdf0668e95bda20b",
+      "bytes": 415,
+      "mtime_utc": "2026-08-26T02:00:40.801061+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E34",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E34_长期照护责任期限条款.txt",
+      "sha256": "2a987c87ef99b11da69970d747c7a1bf28c00ccacefa68db7adc4b887e207df5",
+      "bytes": 1010,
+      "mtime_utc": "2026-08-21T07:52:37.723931+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E35",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E35_门诊扩展责任期限条款.txt",
+      "sha256": "8b9f880f94d030ef5611742083fd3e8bc06ed6229d52409368be5491f9bf5ad6",
+      "bytes": 1115,
+      "mtime_utc": "2026-08-21T07:52:37.725445+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E36",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E36_远程问诊附加责任期限条款.txt",
+      "sha256": "5b857f485ccdfcd35d458a0996fd7fdf72116b94adf14a0d9a81fafce87c16bf",
+      "bytes": 941,
+      "mtime_utc": "2026-08-25T08:52:29.323982+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E37",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E37_保险期限代码条款.txt",
+      "sha256": "9a4067debb9b97618e08b37577560db89146db1aab3d6937597c3835ade793f5",
+      "bytes": 689,
+      "mtime_utc": "2026-08-25T12:54:30.492550+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E38",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E38_附加责任限定句排除牙科责任的期限消歧.txt",
+      "sha256": "9f928dba8f7aacb902990531df5fc65c9ad236375db4b31334723e95aa374b80",
+      "bytes": 469,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E39",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E39_首次投保限定句排除续保方案的期限消歧.txt",
+      "sha256": "6163d581ab67793ba730f9b7974db77d1f255954065470a18d10b1f6b31de10d",
+      "bytes": 482,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E40",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E40_段落标题限定适用范围的期限消歧.txt",
+      "sha256": "3efe8911e887e9d6ea36ab2b568055c926450f94a2436662278e33dbc74cfaec",
+      "bytes": 472,
+      "mtime_utc": "2026-08-26T02:00:40.803060+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E41",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E41_上述情形除外限定海外责任的期限消歧.txt",
+      "sha256": "78480ddd17bcffb8766e3717a4ad4d448557ccf7a6834523a1a2d5fc45b97ad2",
+      "bytes": 446,
+      "mtime_utc": "2026-08-26T02:00:40.803060+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E42",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E42_版本代码到最高投保年龄的候选映射消歧.txt",
+      "sha256": "ab0ccc422e475801877dc34af421c8933ddd7cc959a62060a7fbcd365ae1d050",
+      "bytes": 464,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E43",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E43_批单不追溯适用的最高投保年龄消歧.txt",
+      "sha256": "146e37d05be2d1178f610ba5af73afdef61db42ccb0d23c7069db3cced8dd3a9",
+      "bytes": 439,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E44",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E44_少儿多例外冲突时高优先级等待期消歧.txt",
+      "sha256": "846ec20cd1f46446ba2cd69780b3e9295d484bf75e8eb0ae5b5cf8467fb05674",
+      "bytes": 499,
+      "mtime_utc": "2026-08-26T02:00:40.801061+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E45",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E45_等待期复效代码到候选天数的映射消歧.txt",
+      "sha256": "37679da304f486ce14913e4590c613bdf60ef0aa5eb41cefa30a1e19ab4b7ef8",
+      "bytes": 432,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E46",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E46_表格脚注限定尊享计划的期限消歧.txt",
+      "sha256": "275fd1e9253ed1321d2f931c32088ebc9ef801afb18710b8b90a5a723cf6a5b7",
+      "bytes": 374,
+      "mtime_utc": "2026-08-26T02:00:40.804059+00:00"
+    },
+    {
+      "role": "event_document",
+      "event_id": "E47",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\documents\\E47_期限脚注代码到候选月数的映射消歧.txt",
+      "sha256": "3790846f7be440374d8025cd08f91648d99262bb90bc610b4394ab860cea98f2",
+      "bytes": 428,
+      "mtime_utc": "2026-08-26T02:00:40.804059+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E14",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E14-formal-policy.json",
+      "sha256": "0488f1cb572e45dc1d1712b8940463d3a3b7cb3154651b853e862f989486f0f1",
+      "bytes": 1191,
+      "mtime_utc": "2026-08-21T07:54:03.363770+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E15",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E15-formal-policy.json",
+      "sha256": "f39dc47c5765f8f084e2f85528619604a364ba7e27b796fc41d62030d3f6bacc",
+      "bytes": 1168,
+      "mtime_utc": "2026-08-21T07:54:03.365194+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E16",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E16-formal-policy.json",
+      "sha256": "7d0331a269aa78a1af10ebeb0c72e5c4b85151d372375150925403b7f796e0d0",
+      "bytes": 1023,
+      "mtime_utc": "2026-08-25T08:52:29.325005+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E17",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E17-formal-policy.json",
+      "sha256": "2a8032ca5562d114e95422bed9aec1bc7b1bc3963b0ecabbf6f13eb101ffc27f",
+      "bytes": 882,
+      "mtime_utc": "2026-08-25T12:54:30.492550+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E18",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E18-formal-policy.json",
+      "sha256": "34c714b425a85d74132d03a6da81c2708546bb984058b3228a165e9029cdcc10",
+      "bytes": 1307,
+      "mtime_utc": "2026-08-26T02:00:40.798014+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E19",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E19-formal-policy.json",
+      "sha256": "b8743b0678cfa1679e0093ff3305e380e146038310854718255ac00cd2d6e18c",
+      "bytes": 1348,
+      "mtime_utc": "2026-08-26T02:00:40.798014+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E20",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E20-formal-policy.json",
+      "sha256": "52520c1fa6f1413ba28e499f6ffd5d6a757a1414c79b4ac551fce70b91576305",
+      "bytes": 1043,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E21",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E21-formal-policy.json",
+      "sha256": "ae77037667abe069ef314f1d0354f7680c2404f712bd7c8bf55f40cb3e65d411",
+      "bytes": 1159,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E24",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E24-formal-policy.json",
+      "sha256": "ba83e89321d209bab29aba0c985848f1ce9530b066c07d63e45af4a7c7580332",
+      "bytes": 1088,
+      "mtime_utc": "2026-08-21T07:54:03.365194+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E25",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E25-formal-policy.json",
+      "sha256": "223736776cfb5e76c7a05782e9eee421b218ff757e06c898e3d6028721d1edd9",
+      "bytes": 1169,
+      "mtime_utc": "2026-08-21T07:54:03.366250+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E26",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E26-formal-policy.json",
+      "sha256": "71ef53b9547bf7f9ea944a97804ae5bde225996ac8b16a28e3ff10d3b9b4fa5f",
+      "bytes": 1214,
+      "mtime_utc": "2026-08-25T08:52:29.325005+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E27",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E27-formal-policy.json",
+      "sha256": "103c9c602abcb29e083969aea1b55995f856b90a1909f1dc4886666fa6cddfaf",
+      "bytes": 871,
+      "mtime_utc": "2026-08-25T12:54:30.493552+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E28",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E28-formal-policy.json",
+      "sha256": "124f41a89d5991be7af89bdf275399ff9e7cf30812c74d4e617b26c7b0359c64",
+      "bytes": 1750,
+      "mtime_utc": "2026-08-26T02:00:40.800059+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E29",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E29-formal-policy.json",
+      "sha256": "1bb3616bbfc139eda19efb418719e08de98425b2883bf5d9de66437a56640e32",
+      "bytes": 1073,
+      "mtime_utc": "2026-08-26T02:00:40.800059+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E30",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E30-formal-policy.json",
+      "sha256": "e3143bfa9eddc9b3f2aa221174804790011d8bb6cf6ec48967e2e4e7b19499db",
+      "bytes": 1312,
+      "mtime_utc": "2026-08-26T02:00:40.801061+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E31",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E31-formal-policy.json",
+      "sha256": "12a9750ee911a5ec640d70c9616514ed6082e06a48a5746fcff68d0b56811c38",
+      "bytes": 1245,
+      "mtime_utc": "2026-08-26T02:00:40.801061+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E34",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E34-formal-policy.json",
+      "sha256": "937e3d38affd8a455d0057e5d1c934b5de4e2ab0af38961b4e87290ca7b171e5",
+      "bytes": 1123,
+      "mtime_utc": "2026-08-21T07:54:03.366250+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E35",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E35-formal-policy.json",
+      "sha256": "ad53d078edf6755f235faf4cf59e6310eefa15f2f15d5bd8813ea486cae60a42",
+      "bytes": 1519,
+      "mtime_utc": "2026-08-21T07:54:03.367249+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E36",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E36-formal-policy.json",
+      "sha256": "dce4affae792760feb710eb8559019ae6e0be850dd54ae1980d4fba7c33468b2",
+      "bytes": 950,
+      "mtime_utc": "2026-08-25T08:52:29.326021+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E37",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E37-formal-policy.json",
+      "sha256": "7b9d5a129d3105af0bf04e443b01459e60b6aa0441d97e47d87d27465d176f0d",
+      "bytes": 941,
+      "mtime_utc": "2026-08-25T12:54:30.494219+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E38",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E38-formal-policy.json",
+      "sha256": "f3c840428b5b591c1a685e95eb9f3ed3ee46633b35a7a19acfc10b5aabf5b5af",
+      "bytes": 1189,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E39",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E39-formal-policy.json",
+      "sha256": "43d8512280ad7f3729db2cd358ac1820f47a5beda8ccd703a037347a2c30f262",
+      "bytes": 1216,
+      "mtime_utc": "2026-08-26T02:00:40.803060+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E40",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E40-formal-policy.json",
+      "sha256": "d4f5d50c528c3a6f2cf94d7ffb3e1226937900e64f98b6605aef3330090581fd",
+      "bytes": 1217,
+      "mtime_utc": "2026-08-26T02:00:40.803060+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E41",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E41-formal-policy.json",
+      "sha256": "5d0d9448667709af310d7093f7fc56ecb46c9687c07a448563a1293669c231bc",
+      "bytes": 1208,
+      "mtime_utc": "2026-08-26T02:00:40.803060+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E42",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E42-formal-policy.json",
+      "sha256": "4cf58840233ca8f63f98924a9f54ecbc289f49f72e4cce4c46bb79a10eee26dd",
+      "bytes": 1216,
+      "mtime_utc": "2026-08-26T02:00:40.799017+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E43",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E43-formal-policy.json",
+      "sha256": "f9559b949609b13138cdb894c32e4f4ed03c9df232c89033c6a9de528fa72623",
+      "bytes": 1129,
+      "mtime_utc": "2026-08-26T02:00:40.800059+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E44",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E44-formal-policy.json",
+      "sha256": "a4f1c7f07075478034d70165bbfc50cebbb441465700ac74bbb03b5ee4325050",
+      "bytes": 1239,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E45",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E45-formal-policy.json",
+      "sha256": "5fd8b0feaaead7441996aeec782d38263503cb63c8d6ecd26e3e840f0ec82567",
+      "bytes": 1202,
+      "mtime_utc": "2026-08-26T02:00:40.802063+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E46",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E46-formal-policy.json",
+      "sha256": "30251c1a8820031e6b7073592a28403a61e91962a756682aca80c8099bdfccf5",
+      "bytes": 1200,
+      "mtime_utc": "2026-08-26T02:00:40.804059+00:00"
+    },
+    {
+      "role": "formal_policy_rule",
+      "event_id": "E47",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\rules\\E47-formal-policy.json",
+      "sha256": "dbc95c9139b12f8e328938a4eb85be801b887fc7738c9a4c53be904755b39c69",
+      "bytes": 1336,
+      "mtime_utc": "2026-08-26T02:00:40.804059+00:00"
+    },
+    {
+      "role": "input_candidates_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\input\\semantic-candidate-template.csv",
+      "sha256": "6634f3fb3b6c9723a4d5b5102618072d1331f2494a1f89396520c38b9886ca3c",
+      "bytes": 48355,
+      "mtime_utc": "2026-08-26T02:00:40.807301+00:00"
+    },
+    {
+      "role": "input_documents_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\input\\semantic-document-template.csv",
+      "sha256": "db25f1192db7ce3cf9b5ba38b0c63c7952fa28dabd6b9e2817788d80bc369eab",
+      "bytes": 11248,
+      "mtime_utc": "2026-08-26T02:00:45.741979+00:00"
+    },
+    {
+      "role": "input_events_csv",
+      "event_id": "",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\input\\semantic-event-template.csv",
+      "sha256": "dd8f6d3b10ea54c29e52da0e3234149d410a9896c858bd8e9c782422331e6394",
+      "bytes": 15450,
+      "mtime_utc": "2026-08-26T02:00:40.805059+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E14",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E15",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E15.owl",
+      "sha256": "59ecf054206336f44e3cd2c2ca0d5d534d9426ad9afbaa8d1e24e61cad33ddec",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.580228+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E16",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E17",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E18",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E19",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E20",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E21",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E24",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E25",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "sha256": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.599151+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E26",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E27",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E28",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E29",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "sha256": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.599151+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E30",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E31",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E34",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E35",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E35.owl",
+      "sha256": "e16d7fce3a07d5d60074259a2b3926f82805995687ee926795a90e73d6c187e2",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.617535+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E36",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E37",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E38",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E39",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E40",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E41",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E42",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E43",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E14.owl",
+      "sha256": "f1a26044883a3c8e74cea4095290d0765afe2a19ce1f7b4411192f0f18f93c2b",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.570703+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E44",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E24.owl",
+      "sha256": "e644cc955f91cf359cd7be41279c6a0be9577cf927b838e802ce0a72fb48e92f",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.589873+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E45",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E25.owl",
+      "sha256": "bde0f8714593f9125aab16d7b35f8f8c344698373e99f38ee537c0672e64a163",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.599151+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E46",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "mutant_owl",
+      "event_id": "E47",
+      "privacy": "public",
+      "path": "benchmark\\semantic-v2\\mutants\\E34.owl",
+      "sha256": "1291012ced2ad2058cd017149a3d383f752589f352c2674bf4768d891cf51d4e",
+      "bytes": 19961,
+      "mtime_utc": "2026-08-21T08:05:11.607489+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\analyze_failure_cases.py",
+      "sha256": "f5fe30edda6d791d89ca8c41acb2458ad13b0a3e01ccaf7ca3b844bad322ea47",
+      "bytes": 12314,
+      "mtime_utc": "2026-08-26T03:07:02.322212+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\analyze_runtime_and_policy_costs.py",
+      "sha256": "351ccb62bacba06e0c867f18000892d724a003a9163c4fb2434aac14758b1f51",
+      "bytes": 13461,
+      "mtime_utc": "2026-08-26T04:14:20.725483+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\analyze_semantic_type_groups.py",
+      "sha256": "fd8537fa58d6effdd421fcbb4a4f996f752b892b5527caf5ed95bfd4ccfa7091",
+      "bytes": 6160,
+      "mtime_utc": "2026-08-25T14:56:19.822577+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\audit_formal_policy_source_costs.py",
+      "sha256": "69ba46a6868d5432b08f56009bc00775cdc8851797c79bafc0f3729fdd686e36",
+      "bytes": 9676,
+      "mtime_utc": "2026-08-26T04:13:59.981403+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\build_semantic_benchmark_v2.py",
+      "sha256": "a63875705d4803e8a6b8d7d213a3d78ce22dfae04d275d2328a99239f12dd0a1",
+      "bytes": 14082,
+      "mtime_utc": "2026-08-20T12:55:15.674107+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_candidate_information_ablation.py",
+      "sha256": "527b5cc25cf49480808666e546d838e8ed84c301efb5f524e083334c2c110118",
+      "bytes": 37468,
+      "mtime_utc": "2026-08-25T14:06:42.741442+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_hard_gate_survivor_stress.py",
+      "sha256": "3d78a4cc888c1c6d02e6836544169327b0e0be684749de69bdfc66b8a6f27641",
+      "bytes": 12950,
+      "mtime_utc": "2026-08-26T02:58:02.493731+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_llm_extracted_facts_template_policy.py",
+      "sha256": "99d7a1f63ad4393c0775ac45416c521c532e333d55f25e36bb77387428503c65",
+      "bytes": 20974,
+      "mtime_utc": "2026-08-26T03:13:23.246790+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_no_model_baselines_semantic_v2.py",
+      "sha256": "584d2c8470535118d8f5c86350c7b1c5e5d947c439e5c8eb23a45c0b2f48fe3a",
+      "bytes": 10517,
+      "mtime_utc": "2026-08-25T14:52:30.253359+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_semantic_v2_repair_closure.py",
+      "sha256": "8c555949b332dd6588691f360cec6dfdf5e859e3bca7c6f36063f4ea2e23f586",
+      "bytes": 19029,
+      "mtime_utc": "2026-08-26T07:24:36.863315+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\run_template_policy_hard_gate.py",
+      "sha256": "dca0558822099af6c673430641083cbe7765389390db360cb1f5e14d01a8e4f3",
+      "bytes": 10785,
+      "mtime_utc": "2026-08-26T02:52:45.410538+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623,
+      "mtime_utc": "2026-08-21T08:45:50.829498+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_formal_policy_gate.py",
+      "sha256": "ae89c8052575a701acd08158a95f81eb5caabba2cdbc3c27551bf353347e5675",
+      "bytes": 12491,
+      "mtime_utc": "2026-08-25T08:34:32.202996+00:00"
+    },
+    {
+      "role": "reproduction_script",
+      "event_id": "",
+      "privacy": "public",
+      "path": "src\\validate_semantic_benchmark_v2.py",
+      "sha256": "7236823522fcc4dd092ea0e1d91be1dfb4eb88ca1b3c0d5cdef97c2d8bae0638",
+      "bytes": 16130,
+      "mtime_utc": "2026-08-20T13:04:07.013207+00:00"
+    }
+  ]
+}

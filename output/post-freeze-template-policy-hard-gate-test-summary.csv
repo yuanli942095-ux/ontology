@@ -1,0 +1,5 @@
+﻿method,semantic_type,attempts,oracle_accuracy,wrong_selection_rate,abstain_rate,zero_survivor_events,multi_survivor_events,event_id_branch_used,manual_slots_used,qwen_calls
+TEMPLATE_POLICY_HARD_GATE,ALL,30,1.0,0.0,0.0,0,0,False,True,0
+TEMPLATE_POLICY_HARD_GATE,TEMPORAL_VERSION,10,1.0,0.0,0.0,0,0,False,True,0
+TEMPLATE_POLICY_HARD_GATE,GENERAL_RULE_EXCEPTION,10,1.0,0.0,0.0,0,0,False,True,0
+TEMPLATE_POLICY_HARD_GATE,CROSS_SENTENCE_SCOPE,10,1.0,0.0,0.0,0,0,False,True,0

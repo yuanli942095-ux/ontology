@@ -1,0 +1,14 @@
+template policy hard gate
+split=test
+event_id_branch_used=False
+manual_slots_used=True
+qwen_calls=0
+
+[ALL] accuracy=100.00% wrong=0.00% abstain=0.00% zero=0 multi=0
+[TEMPORAL_VERSION] accuracy=100.00% wrong=0.00% abstain=0.00% zero=0 multi=0
+[GENERAL_RULE_EXCEPTION] accuracy=100.00% wrong=0.00% abstain=0.00% zero=0 multi=0
+[CROSS_SENTENCE_SCOPE] accuracy=100.00% wrong=0.00% abstain=0.00% zero=0 multi=0
+
+details=G:\LearnAI\ontology-evolution\output\post-freeze-template-policy-hard-gate-test-details.csv
+summary=G:\LearnAI\ontology-evolution\output\post-freeze-template-policy-hard-gate-test-summary.csv
+json=G:\LearnAI\ontology-evolution\output\post-freeze-template-policy-hard-gate-test.json

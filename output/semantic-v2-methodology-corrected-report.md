@@ -61,13 +61,25 @@ Result:
 | `CROSS_SENTENCE_SCOPE` | 10 |
 | Public hashed files | 113 |
 | Private Oracle integrity rows | 31 |
-| Git repository available | False |
+| Git repository available | True |
+| Freeze commit | `688e6cdd8a78327e89358846dbfbe61eac2271d3` |
 
-The manifest records the current frozen file state for the 30-test split. It hashes public benchmark inputs, documents, formal-policy rules, mutants, built public event files, and reproduction scripts. It also writes a separate private Oracle integrity file for local audit only.
+The manifest records the current frozen file state for the 30-test split. It hashes public benchmark inputs, documents, formal-policy rules, mutants, built public event files, and reproduction scripts. It also writes a separate private Oracle integrity file for local audit only. A local Git repository was initialized and the current benchmark state was committed as the freeze point above.
 
 Important limitation:
 
-Because `G:\LearnAI\ontology-evolution` is not currently a git repository, this manifest cannot prove that the benchmark was frozen before earlier experiments. It should be treated as a current-state reproducibility manifest. For a paper artifact, pair this with a future git commit, release archive, or external timestamp before running any new headline experiment.
+The freeze commit was created after the development experiments in this report, so it cannot retroactively prove that earlier experiments were run after a freeze. It does provide a concrete fixed state for future headline reruns. For a paper artifact, rerun the headline Qwen experiments from this commit and, ideally, archive the benchmark with an external timestamp or DOI.
+
+Post-freeze deterministic validation:
+
+| Check | Result |
+|---|---:|
+| Template-policy hard gate | 30/30 events, 150/150 calls, 100.00% |
+| Hard-gate OWL repair closure | 30/30 events, 150/150 calls, 100.00% |
+
+Post-freeze Qwen headline rerun status:
+
+The post-freeze main-table Qwen rerun was started but stopped after repeated `REJECTED_ERROR` outputs and very slow local Qwen inference. A minimal `/api/chat` JSON request took 34.66 seconds, indicating degraded inference service state. Therefore no post-freeze Qwen headline result is reported yet. The existing Qwen results remain development-run evidence until rerun from the freeze commit.
 
 Evidence files:
 
@@ -76,6 +88,9 @@ Evidence files:
 - `output/semantic-v2-freeze-manifest-test-20260826-files.csv`
 - `output/semantic-v2-freeze-manifest-test-20260826-private-oracle.csv` local audit only
 - `output/semantic-v2-freeze-manifest-test-20260826.log`
+- `output/semantic-v2-freeze-manifest-test-20260826-post-git-freeze.json`
+- `output/post-freeze-template-policy-hard-gate-test-summary.csv`
+- `output/post-freeze-repair-closure-hardgate-test-summary.csv`
 
 ## 4. Main 30-Test Reproduction
 
@@ -510,7 +525,7 @@ The 30-test benchmark is a controlled diagnostic challenge set. It is useful for
 
 Freeze validity:
 
-The current freeze manifest records file hashes for the current 30-test state, but the project directory has no git metadata. Therefore the manifest cannot prove that the benchmark was frozen before earlier experiments. For final submission, the benchmark should be committed to version control or archived with an external timestamp before rerunning headline experiments.
+The current benchmark now has a local freeze commit, `688e6cdd8a78327e89358846dbfbe61eac2271d3`. This improves reproducibility for future reruns, but it was created after the development experiments already reported here. Therefore it does not retroactively prove that earlier Qwen results were produced after a freeze. For final submission, rerun headline Qwen experiments from this commit and archive the benchmark with an external timestamp or DOI.
 
 Automation validity:
 
@@ -531,7 +546,7 @@ The largest remaining gaps are now narrower:
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
 3. A larger externally sourced benchmark, because the current 30-test set is still controlled and partly synthetic.
-4. Harder freeze evidence for future headline experiments, preferably a git commit, release archive, or external timestamp created before running the experiment.
+4. Post-freeze headline Qwen rerun from commit `688e6cdd8a78327e89358846dbfbe61eac2271d3`; the deterministic post-freeze checks are complete, but the Qwen rerun is still pending because the local inference service was degraded.
 5. Measured annotation-time pilot study for formal-policy construction, because the current 1312 score is a complexity proxy only.
 6. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 7. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
@@ -551,14 +566,14 @@ Safe:
 - Replacing manual fact values with Qwen-extracted facts drops template-policy accuracy to 86.00%, showing that automatic fact normalization is the current bottleneck.
 - In zero-survivor and multi-survivor stress tests, the deterministic gate fails closed with `ABSTAIN` rather than forcing an unsafe selection.
 - The upper bound has zero Qwen runtime calls but non-zero manual construction effort; in the current heuristic audit this is 1312 policy-complexity points for 30 test policies, not measured minutes.
-- A current-state freeze manifest is available for the 30-test benchmark, but it is not a substitute for pre-experiment git/archive timestamp evidence.
+- A local freeze commit is available for future reruns, but the current Qwen headline results should be treated as development-run evidence until rerun from that commit.
 
 Unsafe:
 
 - Claiming hard gate is a fully automatic method.
 - Claiming hard gate has zero total cost.
 - Claiming the current benchmark proves generalization to unseen real-world policies.
-- Claiming the current freeze manifest proves the benchmark was frozen before earlier experiments; the working directory has no git metadata.
+- Claiming the freeze commit proves the benchmark was frozen before earlier development experiments; it only fixes the state for future reruns.
 - Claiming template policy solves automatic rule construction; it only removes event-id branching from executor code.
 - Claiming automatic fact extraction is solved; the 30-test extraction experiment shows normalization failures on E20, E29, E40, and E46.
 - Claiming `policy_complexity_points` are measured annotation minutes or validated human labor estimates.
