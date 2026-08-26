@@ -319,9 +319,8 @@ Command:
 ```powershell
 & 'G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe' `
   'G:\LearnAI\ontology-evolution\src\analyze_semantic_type_groups.py' `
-  --details 'G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv' `
-  --output-dir 'G:\LearnAI\ontology-evolution\output' `
-  --prefix final-main-table-test-r5-seed20260820-semantic-type
+  --details 'G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-details.csv' `
+  --prefix post-freeze-final-main-table-test-r5-seed20260820-semantic-type
 ```
 
 The 30-test split contains 10 events per semantic type and 50 attempts per method/type pair.
@@ -340,9 +339,9 @@ The LLM-assisted `OPTION_FORMAL_POLICY` method improves all three semantic categ
 
 Evidence files:
 
-- `output/final-main-table-test-r5-seed20260820-semantic-type-summary.csv`
-- `output/final-main-table-test-r5-seed20260820-semantic-type-pivot.csv`
-- `output/final-main-table-test-r5-seed20260820-semantic-type.json`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-semantic-type-summary.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-semantic-type-pivot.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-semantic-type.json`
 
 ## 10. Runtime and Policy Construction Complexity
 
@@ -350,27 +349,20 @@ Commands:
 
 ```powershell
 & 'G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe' `
-  'G:\LearnAI\ontology-evolution\src\analyze_runtime_costs.py' `
-  --details 'G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv' `
-  --output-dir 'G:\LearnAI\ontology-evolution\output' `
-  --prefix final-main-table-test-r5-seed20260820-runtime-costs
-
-& 'G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe' `
   'G:\LearnAI\ontology-evolution\src\analyze_runtime_and_policy_costs.py' `
-  --details 'G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv' `
+  --details 'G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-details.csv' `
   --policy-costs 'G:\LearnAI\ontology-evolution\output\formal-policy-source-cost-test-details.csv' `
-  --output-dir 'G:\LearnAI\ontology-evolution\output' `
-  --prefix final-main-table-test-r5-seed20260820-runtime-policy-costs
+  --prefix post-freeze-final-main-table-test-r5-seed20260820-runtime-policy-costs
 ```
 
 The table separates Qwen inference cost from formal-policy construction complexity. Runtime minutes and policy complexity points are reported separately because their units are different. The policy column is a heuristic proxy from the source/complexity audit, not measured annotation wall time.
 
 | Method | Accuracy | Qwen Calls | Qwen Tokens | Qwen Runtime Min | Policy Complexity Points |
 |---|---:|---:|---:|---:|---:|
-| `DIRECT_FREE` | 77.33% | 150/150 | 107277 | 8.86 | 0 |
-| `OPTION_VALUE_ONLY` | 81.33% | 150/150 | 124400 | 10.32 | 0 |
-| `OPTION_FORMAL_OPERATION` | 76.00% | 150/150 | 195646 | 11.05 | 0 |
-| `OPTION_FORMAL_POLICY` | 97.33% | 150/150 | 252997 | 10.44 | 1312 |
+| `DIRECT_FREE` | 77.33% | 150/150 | 107277 | 8.47 | 0 |
+| `OPTION_VALUE_ONLY` | 81.33% | 150/150 | 124400 | 10.16 | 0 |
+| `OPTION_FORMAL_OPERATION` | 76.00% | 150/150 | 195646 | 10.80 | 0 |
+| `OPTION_FORMAL_POLICY` | 97.33% | 150/150 | 252997 | 10.25 | 1312 |
 | `OPTION_FORMAL_POLICY_HARD_GATE` | 100.00% | 0/150 | 0 | 0.00 | 1312 |
 
 Interpretation:
@@ -379,11 +371,9 @@ The hard gate has zero Qwen runtime and zero tokens in the decision phase, but i
 
 Evidence files:
 
-- `output/final-main-table-test-r5-seed20260820-runtime-costs-summary.csv`
-- `output/final-main-table-test-r5-seed20260820-runtime-costs.json`
-- `output/final-main-table-test-r5-seed20260820-runtime-policy-costs-summary.csv`
-- `output/final-main-table-test-r5-seed20260820-runtime-policy-costs-by-type.csv`
-- `output/final-main-table-test-r5-seed20260820-runtime-policy-costs.json`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-runtime-policy-costs-summary.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-runtime-policy-costs-by-type.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-runtime-policy-costs.json`
 
 ## 11. Failure Case Analysis
 
@@ -392,9 +382,8 @@ Command:
 ```powershell
 & 'G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe' `
   'G:\LearnAI\ontology-evolution\src\analyze_failure_cases.py' `
-  --details 'G:\LearnAI\ontology-evolution\output\final-main-table-test-r5-seed20260820-details.csv' `
-  --output-dir 'G:\LearnAI\ontology-evolution\output' `
-  --prefix final-main-table-test-r5-seed20260820-failure-cases `
+  --details 'G:\LearnAI\ontology-evolution\output\post-freeze-final-main-table-test-r5-seed20260820-details.csv' `
+  --prefix post-freeze-final-main-table-test-r5-seed20260820-failure-cases `
   --methods DIRECT_FREE,OPTION_VALUE_ONLY,OPTION_FORMAL_OPERATION,OPTION_FORMAL_POLICY
 ```
 
@@ -426,11 +415,11 @@ The residual `OPTION_FORMAL_POLICY` failures show that merely presenting a struc
 
 Evidence files:
 
-- `output/final-main-table-test-r5-seed20260820-failure-cases-by-method.csv`
-- `output/final-main-table-test-r5-seed20260820-failure-cases-summary.csv`
-- `output/final-main-table-test-r5-seed20260820-failure-cases-failed-runs.csv`
-- `output/final-main-table-test-r5-seed20260820-failure-cases.md`
-- `output/final-main-table-test-r5-seed20260820-failure-cases.json`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-failure-cases-by-method.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-failure-cases-summary.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-failure-cases-failed-runs.csv`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-failure-cases.md`
+- `output/post-freeze-final-main-table-test-r5-seed20260820-failure-cases.json`
 
 ## 12. OWL Repair Closure: Reasoner and CQ Regression
 

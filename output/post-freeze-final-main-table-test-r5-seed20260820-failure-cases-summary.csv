@@ -1,0 +1,29 @@
+﻿method,event_id,semantic_type,focus_event,focus_family,attempts,oracle_successes,failures,failure_rate,wrong_selections,abstains,invalid_outputs,status_counts,failed_selected_candidate_counts,failed_selected_value_counts,oracle_candidate_id,oracle_value,failure_pattern
+DIRECT_FREE,E17,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,63,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E21,TEMPORAL_VERSION,False,,5,2,3,0.6,0,3,0,ABSTAIN:3,,,CAND_002,67,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E27,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,30,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E37,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,18,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E42,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,59,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E43,TEMPORAL_VERSION,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_002,62,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E45,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,45,free generation lacks candidate-level mapping; model abstains
+DIRECT_FREE,E47,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,18,free generation lacks candidate-level mapping; model abstains
+OPTION_FORMAL_OPERATION,E15,TEMPORAL_VERSION,False,,5,3,2,0.4,2,0,0,SELECTED:2,CAND_001:2,68:2,CAND_003,64,formal operation is insufficient; stable wrong rule/value
+OPTION_FORMAL_OPERATION,E17,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,1,4,0.8,1,3,0,ABSTAIN:3|SELECTED:1,CAND_001:1,73:1,CAND_002,63,formal operation is insufficient; mixed wrong choices and abstains
+OPTION_FORMAL_OPERATION,E27,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,4,1,0,ABSTAIN:1|SELECTED:4,CAND_001:4,0:4,CAND_002,30,formal operation is insufficient; mixed wrong choices and abstains
+OPTION_FORMAL_OPERATION,E30,GENERAL_RULE_EXCEPTION,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_003,15,formal operation is insufficient; model abstains
+OPTION_FORMAL_OPERATION,E34,CROSS_SENTENCE_SCOPE,False,,5,2,3,0.6,3,0,0,SELECTED:3,CAND_002:3,18:3,CAND_003,24,formal operation is insufficient; stable wrong rule/value
+OPTION_FORMAL_OPERATION,E37,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,1,4,0,ABSTAIN:4|SELECTED:1,CAND_001:1,12:1,CAND_002,18,formal operation is insufficient; mixed wrong choices and abstains
+OPTION_FORMAL_OPERATION,E39,CROSS_SENTENCE_SCOPE,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_002,18,formal operation is insufficient; model abstains
+OPTION_FORMAL_OPERATION,E42,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,59,formal operation is insufficient; model abstains
+OPTION_FORMAL_OPERATION,E45,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,45,formal operation is insufficient; model abstains
+OPTION_FORMAL_OPERATION,E47,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,18,formal operation is insufficient; model abstains
+OPTION_FORMAL_POLICY,E27,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,4,1,0.2,1,0,0,SELECTED:1,CAND_001:1,0:1,CAND_002,30,LLM policy interpretation is not fully stable; hard execution is needed
+OPTION_FORMAL_POLICY,E47,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,2,3,0.6,3,0,0,SELECTED:3,CAND_001:3,12:3,CAND_002,18,LLM policy interpretation is not fully stable; hard execution is needed
+OPTION_VALUE_ONLY,E17,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,1,4,0.8,4,0,0,SELECTED:4,CAND_001:3|CAND_003:1,58:1|73:3,CAND_002,63,value-only options cause unstable numeric choice
+OPTION_VALUE_ONLY,E21,TEMPORAL_VERSION,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_002,67,candidate values alone do not identify applicable rule
+OPTION_VALUE_ONLY,E27,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,2,3,0,ABSTAIN:3|SELECTED:2,CAND_001:2,0:2,CAND_002,30,candidate values alone do not identify applicable rule
+OPTION_VALUE_ONLY,E34,CROSS_SENTENCE_SCOPE,False,,5,4,1,0.2,1,0,0,SELECTED:1,CAND_002:1,18:1,CAND_003,24,candidate values alone point to a wrong value
+OPTION_VALUE_ONLY,E37,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,5,0,0,SELECTED:5,CAND_001:3|CAND_003:2,12:3|24:2,CAND_002,18,value-only options cause unstable numeric choice
+OPTION_VALUE_ONLY,E42,TEMPORAL_VERSION,True,TEMPORAL_CODE_MAPPING,5,3,2,0.4,0,2,0,ABSTAIN:2,,,CAND_002,59,candidate values alone do not identify applicable rule
+OPTION_VALUE_ONLY,E45,GENERAL_RULE_EXCEPTION,True,GENERAL_RULE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,45,candidate values alone do not identify applicable rule
+OPTION_VALUE_ONLY,E47,CROSS_SENTENCE_SCOPE,True,CROSS_SENTENCE_CODE_MAPPING,5,0,5,1.0,0,5,0,ABSTAIN:5,,,CAND_002,18,candidate values alone do not identify applicable rule
