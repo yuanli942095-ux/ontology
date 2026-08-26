@@ -1,0 +1,10 @@
+external-real-v1 freeze manifest
+events_ready=30
+public_file_count=381
+private_integrity_rows=4
+git_commit=8973e82fc450c00f9547ded6b5ff0c2236b4da09
+git_dirty=True
+
+files=G:\LearnAI\ontology-evolution\output\external-real-v1-freeze-manifest-30-public-ready-files.csv
+private_oracle=G:\LearnAI\ontology-evolution\output\external-real-v1-freeze-manifest-30-public-ready-private-oracle.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-freeze-manifest-30-public-ready.json

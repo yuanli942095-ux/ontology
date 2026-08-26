@@ -1,0 +1,53 @@
+{
+  "event_id": "EXT_E028",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "source_family": "NIST SP 800-63-4",
+    "target_subject": "NIST_SP_800_63_4_identity_proofing_roles_types",
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E028_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "identity_proofing_controls=restructured_roles_and_types"
+      ]
+    },
+    {
+      "rule_id": "EXT_E028_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "nist63_3_status=not_integrated"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_028_OLD",
+      "EXT_DOC_028_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION",
+    "oracle_used": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "event_id": "EXT_E005",
+  "semantics": "temporal_version",
+  "facts": {
+    "source_family": "WCAG 2.2",
+    "target_subject": "WCAG_success_criterion_2_4_12",
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E005_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "wcag22_added=2.4.12;level=AAA"
+      ]
+    },
+    {
+      "rule_id": "EXT_E005_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "wcag21_status=not_present"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_005_OLD",
+      "EXT_DOC_005_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION",
+    "oracle_used": false
+  }
+}

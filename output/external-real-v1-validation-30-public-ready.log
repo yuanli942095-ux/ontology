@@ -1,0 +1,9 @@
+external-real-v1 validation
+events_ready=30
+errors=0
+warnings=27
+status=PASS
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-public-ready-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-public-ready-summary.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-public-ready.json

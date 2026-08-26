@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ext="file:///G:/LearnAI/ontology-evolution/external-real-v1#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="https://w3id.org/ontology-evolution/external-real-v1/EXT_E009/CAND_001">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/ontology-evolution/external-real-v1/EXT_E009/CAND_001/1.0.0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v1#外部真实本体对象">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v1#versioned_requirement_status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-evolution/external-real-v1#外部真实本体对象"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v1#WCAG_success_criterion_3_2_6">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-evolution/external-real-v1#外部真实本体对象"/>
+    <ext:versioned_requirement_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wcag21_status=not_present</ext:versioned_requirement_status>
+  </rdf:Description>
+</rdf:RDF>
