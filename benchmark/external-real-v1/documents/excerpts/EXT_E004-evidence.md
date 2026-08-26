@@ -14,7 +14,7 @@ Public candidate values:
 
 - `CAND_001`: `wcag21_status=not_present`
 - `CAND_002`: `wcag22_added=2.4.11;level=AA`
-- `CAND_003`: `wcag22_added=2.4.11;level=A`
+- `CAND_003`: `wcag22_added=2.4.11;level=AAA`
 
 Status:
 

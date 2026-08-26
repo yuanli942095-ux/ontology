@@ -275,108 +275,58 @@ Pilot evidence files:
 
 External-real-v1 preparation:
 
-An `external-real-v1` scaffold has been created for real-world validation events. It is intentionally separate from the controlled `semantic-v2` benchmark. The scaffold includes source-intake templates, public event/document/candidate templates, a private Oracle template, a collection protocol, a document SHA-256 backfill script, and a validator that checks public/private separation, source-document files, SHA-256 consistency, candidate JSON structure, semantic-type distribution, and answer-leakage patterns in public templates.
+An `external-real-v1` validation benchmark has been expanded to 30 READY events and kept separate from the controlled `semantic-v2` diagnostic benchmark. It now uses three public source families: Beijing Municipal Agriculture and Rural Affairs Bureau agricultural-insurance policy PDFs, W3C WCAG 2.1/2.2 public standard/change-summary pages, and NIST SP 800-63-3/800-63-4 public guideline pages. Each event has public event metadata, public source documents with SHA-256 hashes, three public candidate operations, a mutant OWL, candidate OWL artifacts, an executable formal-policy JSON file, and a private Oracle row.
 
-The first public source pair has now been landed locally from the Beijing Municipal Agriculture and Rural Affairs Bureau: the 2025 and 2026 policy agricultural insurance terms PDFs. Their SHA-256 hashes are recorded in the public document template. Three external events, `EXT_E001` through `EXT_E003`, have been extracted from those PDFs. They cover one `TEMPORAL_VERSION` case, one `CROSS_SENTENCE_SCOPE` case, and one `GENERAL_RULE_EXCEPTION` case.
+External-real-v1 30-event distribution:
 
-Each external event now has public event metadata, source documents, a short evidence note, three candidate operations, mutant OWL, candidate OWL artifacts, a formal-policy JSON file, and a private Oracle row. The public READY event for `EXT_E001` was committed first (`8c82fc8`) with the private Oracle still pending. The public READY events for `EXT_E002` and `EXT_E003` were then committed (`83a7e96`) before their private Oracle rows were filled.
+| Semantic Type | Events |
+|---|---:|
+| `TEMPORAL_VERSION` | 10 |
+| `GENERAL_RULE_EXCEPTION` | 10 |
+| `CROSS_SENTENCE_SCOPE` | 10 |
+| total | 30 |
 
-Current validation status after private Oracle adjudication is `PASS`: `events_ready=3`, `errors=0`, `warnings=0`, and `private_oracle_rows=3`. The private-Oracle manifest records `events_ready=3`, `public_file_count=50`, and `private_integrity_rows=4`.
+Public/private timeline:
 
-External-real-v1 symbolic smoke validation:
+- Existing Beijing PDF events `EXT_E001` through `EXT_E003` were public-frozen first and then adjudicated with private Oracle rows.
+- The 27 added public events `EXT_E004` through `EXT_E030` were generated from public W3C/NIST source pages and frozen in Git commit `0635ef5` before their new private Oracle rows were appended.
+- During the first 30-event closure run, `EXT_E009`, `EXT_E010`, and `EXT_E015` abstained because the generated distractor `CAND_003` duplicated the correct value of `CAND_002`. This was a benchmark-construction defect, not a model failure. The generator was corrected to make distractor levels non-duplicate, public artifacts were regenerated, and the correction is retained as an auditable post-freeze construction correction.
 
-- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_symbolic_closure.py --only EXT_E001,EXT_E002,EXT_E003 --prefix external-real-v1-symbolic-closure-ext-e001-e003`
-- Result: selected repairs `3/3`, Oracle correct `3/3`, full OWL repair closure `3/3`.
+External-real-v1 30-event validation:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\validate_external_real_v1.py --prefix external-real-v1-validation-30-private-oracle-fixed`
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\generate_external_real_v1_freeze_manifest.py --prefix external-real-v1-freeze-manifest-30-private-oracle-fixed --include-built`
+- Validation result: `events_ready=30`, `private_oracle_rows=30`, `errors=0`, `warnings=0`, `status=PASS`.
+- Manifest result: `events_ready=30`, `public_file_count=381`, `private_integrity_rows=31`, public freeze base commit `0635ef58a8cb675fd268083add1569dfe3a893b7`, `git_dirty=True` because private Oracle/results/report files were intentionally generated after the public freeze.
+
+External-real-v1 symbolic closure:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_symbolic_closure.py --only EXT_E001,EXT_E002,EXT_E003,EXT_E004,EXT_E005,EXT_E006,EXT_E007,EXT_E008,EXT_E009,EXT_E010,EXT_E011,EXT_E012,EXT_E013,EXT_E014,EXT_E015,EXT_E016,EXT_E017,EXT_E018,EXT_E019,EXT_E020,EXT_E021,EXT_E022,EXT_E023,EXT_E024,EXT_E025,EXT_E026,EXT_E027,EXT_E028,EXT_E029,EXT_E030 --prefix external-real-v1-symbolic-closure-30-fixed`
+- Result: selected repairs `30/30`, Oracle correct `30/30`, full OWL repair closure `30/30`.
 - Closure details: every selected candidate removed one old triple, added one new triple, passed the Reasoner gate, triggered the source repair CQ, and satisfied the candidate repair CQ.
-- Boundary: this is a small external smoke validation. It proves the external-real workflow is executable on real public revision material across the three semantic types, but it is not yet a statistically meaningful external benchmark. The next evidence-bearing step is to expand `external-real-v1` to at least 10-20 READY events and then run the same post-freeze reproduction.
-
-Final-smoke reproduction:
-
-- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\validate_external_real_v1.py --prefix external-real-v1-validation-final-smoke-e001-e003`
-- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\generate_external_real_v1_freeze_manifest.py --prefix external-real-v1-freeze-manifest-final-smoke-e001-e003 --include-built`
-- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_symbolic_closure.py --only EXT_E001,EXT_E002,EXT_E003 --prefix external-real-v1-symbolic-closure-final-smoke-e001-e003`
-- Validation result: `events_ready=3`, `errors=0`, `warnings=0`, `status=PASS`.
-- Symbolic closure result: selected repairs `3/3`, Oracle correct `3/3`, full OWL repair closure `3/3`.
+- Boundary: this is an external-real smoke validation with public source documents and balanced semantic types. It is stronger than the earlier 3-event smoke check, but it is still not a large independently annotated external benchmark. The W3C/NIST events are script-formalized from official public change-summary material, so the paper should describe this as public-source external validation, not as a fully independent real-world corpus.
 
 External-real-v1 evidence files:
 
-- `benchmark/external-real-v1/protocol.md`
-- `benchmark/external-real-v1/source-intake/README.md`
+- `src/extend_external_real_v1_to_30.py`
+- `src/validate_external_real_v1.py`
+- `src/generate_external_real_v1_freeze_manifest.py`
+- `src/generate_external_real_v1_repair_artifacts.py`
+- `src/run_external_real_v1_symbolic_closure.py`
 - `benchmark/external-real-v1/source-intake/external-real-source-intake.csv`
 - `benchmark/external-real-v1/input/external-real-event-template.csv`
 - `benchmark/external-real-v1/input/external-real-document-template.csv`
 - `benchmark/external-real-v1/input/external-real-candidate-template.csv`
-- `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf`
-- `benchmark/external-real-v1/documents/EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf`
-- `benchmark/external-real-v1/documents/excerpts/EXT_E001-evidence.md`
-- `benchmark/external-real-v1/documents/excerpts/EXT_E002-evidence.md`
-- `benchmark/external-real-v1/documents/excerpts/EXT_E003-evidence.md`
-- `benchmark/external-real-v1/mutants/EXT_E001.owl`
-- `benchmark/external-real-v1/mutants/EXT_E002.owl`
-- `benchmark/external-real-v1/mutants/EXT_E003.owl`
-- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_001.owl`
-- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_002.owl`
-- `benchmark/external-real-v1/built/candidate-owls/EXT_E001/CAND_003.owl`
-- `benchmark/external-real-v1/rules/EXT_E001-formal-policy.json`
-- `benchmark/external-real-v1/rules/EXT_E002-formal-policy.json`
-- `benchmark/external-real-v1/rules/EXT_E003-formal-policy.json`
 - `benchmark/external-real-v1/private/external-real-oracle-template.csv`
-- `src/validate_external_real_v1.py`
-- `src/update_external_real_v1_document_hashes.py`
-- `src/generate_external_real_v1_freeze_manifest.py`
-- `src/generate_external_real_v1_repair_artifacts.py`
-- `src/run_external_real_v1_symbolic_closure.py`
-- `output/external-real-v1-validation-scaffold-v2-details.csv`
-- `output/external-real-v1-validation-scaffold-v2-summary.csv`
-- `output/external-real-v1-validation-scaffold-v2.json`
-- `output/external-real-v1-freeze-manifest-scaffold-v2-files.csv`
-- `output/external-real-v1-freeze-manifest-scaffold-v2-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-scaffold-v2.json`
-- `output/external-real-v1-validation-src001-draft-event-details.csv`
-- `output/external-real-v1-validation-src001-draft-event-summary.csv`
-- `output/external-real-v1-validation-src001-draft-event.json`
-- `output/external-real-v1-freeze-manifest-src001-draft-event-files.csv`
-- `output/external-real-v1-freeze-manifest-src001-draft-event-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-src001-draft-event.json`
-- `output/external-real-v1-validation-ext-e001-public-ready-details.csv`
-- `output/external-real-v1-validation-ext-e001-public-ready-summary.csv`
-- `output/external-real-v1-validation-ext-e001-public-ready.json`
-- `output/external-real-v1-freeze-manifest-ext-e001-public-ready-files.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-public-ready-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-public-ready.json`
-- `output/external-real-v1-validation-ext-e001-private-oracle-details.csv`
-- `output/external-real-v1-validation-ext-e001-private-oracle-summary.csv`
-- `output/external-real-v1-validation-ext-e001-private-oracle.json`
-- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle-files.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-private-oracle.json`
-- `output/external-real-v1-symbolic-closure-ext-e001-details.csv`
-- `output/external-real-v1-symbolic-closure-ext-e001-summary.csv`
-- `output/external-real-v1-symbolic-closure-ext-e001.json`
-- `output/external-real-v1-validation-ext-e001-e003-public-ready-details.csv`
-- `output/external-real-v1-validation-ext-e001-e003-public-ready-summary.csv`
-- `output/external-real-v1-validation-ext-e001-e003-public-ready.json`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-public-ready-files.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-public-ready-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-public-ready.json`
-- `output/external-real-v1-validation-ext-e001-e003-private-oracle-details.csv`
-- `output/external-real-v1-validation-ext-e001-e003-private-oracle-summary.csv`
-- `output/external-real-v1-validation-ext-e001-e003-private-oracle.json`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-private-oracle-files.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-private-oracle-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-ext-e001-e003-private-oracle.json`
-- `output/external-real-v1-symbolic-closure-ext-e001-e003-details.csv`
-- `output/external-real-v1-symbolic-closure-ext-e001-e003-summary.csv`
-- `output/external-real-v1-symbolic-closure-ext-e001-e003.json`
-- `output/external-real-v1-validation-final-smoke-e001-e003-details.csv`
-- `output/external-real-v1-validation-final-smoke-e001-e003-summary.csv`
-- `output/external-real-v1-validation-final-smoke-e001-e003.json`
-- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003-files.csv`
-- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003-private-oracle.csv`
-- `output/external-real-v1-freeze-manifest-final-smoke-e001-e003.json`
-- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003-details.csv`
-- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003-summary.csv`
-- `output/external-real-v1-symbolic-closure-final-smoke-e001-e003.json`
+- `output/external-real-v1-validation-30-public-ready-summary.csv`
+- `output/external-real-v1-freeze-manifest-30-public-ready.json`
+- `output/external-real-v1-symbolic-closure-30-summary.csv` construction-correction audit, first run `27/30`
+- `output/external-real-v1-symbolic-closure-30-details.csv` construction-correction audit, duplicate distractor rows
+- `output/external-real-v1-validation-30-private-oracle-fixed-summary.csv`
+- `output/external-real-v1-freeze-manifest-30-private-oracle-fixed.json`
+- `output/external-real-v1-symbolic-closure-30-fixed-summary.csv`
+- `output/external-real-v1-symbolic-closure-30-fixed-details.csv`
+- `output/external-real-v1-symbolic-closure-30-fixed.json`
 
 ## 7. Template-Policy Hard Gate
 
@@ -667,11 +617,11 @@ Evidence files:
 
 Construction-cost validity:
 
-The policy construction score is a complexity proxy, not measured human annotation time. The formula is transparent and reproducible, but it has not been calibrated with annotation logs. It may underestimate non-linear effects such as domain expertise, cross-sentence evidence search, conflict resolution, and semantic-type-specific difficulty. A stronger future study should collect wall-clock annotation time on a pilot subset and report inter-annotator variation.
+The policy construction score is a complexity proxy, not measured human annotation time. The completed annotation-time pilot adds measured single-annotator wall-clock time for 12 semantic-v2 rows, but it is still too small to calibrate a general linear cost model. The proxy may underestimate non-linear effects such as domain expertise, cross-sentence evidence search, conflict resolution, and semantic-type-specific difficulty. A stronger future study should collect multi-annotator wall-clock annotation time on a larger subset and report inter-annotator variation.
 
 External validity:
 
-The 30-test benchmark is a controlled diagnostic challenge set. It is useful for isolating semantic-drift failure modes, but it is not evidence that the method generalizes to arbitrary real insurance policies or unseen product revisions. A stronger paper artifact should add an externally sourced validation set from real policy documents, product clauses, or historical revisions, even if the additional set is smaller.
+The semantic-v2 30-test benchmark is a controlled diagnostic challenge set. It is useful for isolating semantic-drift failure modes, but it is not evidence by itself that the method generalizes to arbitrary real policies or unseen product revisions. The separate `external-real-v1` benchmark now adds 30 READY public-source validation events and reaches full symbolic closure, but the added W3C/NIST rows are script-formalized from official public change summaries rather than independently collected by multiple annotators. A stronger paper artifact should add more independently annotated external events from real policy documents, product clauses, or historical revisions.
 
 Freeze validity:
 
@@ -695,8 +645,8 @@ The largest remaining gaps are now narrower:
 
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
 2. Automatic or semi-automatic construction of template rules from policy documents.
-3. Populate `external-real-v1` with real public revision events, because the current 30-test set is still controlled and partly synthetic and the new external scaffold has 0 READY events.
-4. A larger multi-annotator cost study, because the completed annotation-time pilot is still small and single-benchmark.
+3. Expand `external-real-v1` beyond the current 30 public-source smoke-validation events with independently annotated real revision events.
+4. A larger multi-annotator cost study, because the completed annotation-time pilot is still small, single-annotator, and single-benchmark.
 5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
 6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
 
@@ -716,6 +666,8 @@ Safe:
 - In zero-survivor and multi-survivor stress tests, the deterministic gate fails closed with `ABSTAIN` rather than forcing an unsafe selection.
 - The upper bound has zero Qwen runtime calls but non-zero manual construction effort; in the current heuristic audit this is 1312 policy-complexity points for 30 test policies, not measured minutes.
 - The frozen benchmark state now has a completed post-freeze Qwen headline rerun and a post-freeze repair-closure rerun.
+- The external-real-v1 public-source validation set now contains 30 READY events balanced across the three semantic types.
+- On external-real-v1, the symbolic closure workflow selects 30/30 repairs correctly and validates 30/30 selected OWL repair artifacts with Reasoner and CQ checks.
 
 Unsafe:
 
@@ -727,3 +679,4 @@ Unsafe:
 - Claiming automatic fact extraction is solved; the 30-test extraction experiment shows normalization failures on E20, E29, E40, and E46.
 - Claiming `policy_complexity_points` are measured annotation minutes or validated human labor estimates.
 - Claiming the current closure proves fully automatic OWL repair from raw documents; it validates selected finite repair candidates, not automatic candidate generation.
+- Claiming external-real-v1 is a large independently annotated real-world benchmark; the current 30-event set is a public-source smoke validation, and the W3C/NIST rows are script-formalized from official change summaries.

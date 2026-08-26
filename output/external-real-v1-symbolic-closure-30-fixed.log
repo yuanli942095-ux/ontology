@@ -1,0 +1,11 @@
+external-real-v1 symbolic closure
+events=30
+selected=30
+oracle_correct=30/30
+full_closure_success=30/30
+oracle_loaded_after_selection=True
+boundary=small external smoke validation; not a full external benchmark result
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-symbolic-closure-30-fixed-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-symbolic-closure-30-fixed-summary.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-symbolic-closure-30-fixed.json

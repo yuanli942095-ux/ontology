@@ -1,0 +1,9 @@
+external-real-v1 validation
+events_ready=30
+errors=0
+warnings=0
+status=PASS
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-private-oracle-fixed-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-private-oracle-fixed-summary.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-validation-30-private-oracle-fixed.json

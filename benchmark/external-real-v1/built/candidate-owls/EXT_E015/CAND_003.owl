@@ -22,6 +22,6 @@
   <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v1#WCAG_success_criterion_1_3_6">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="file:///G:/LearnAI/ontology-evolution/external-real-v1#外部真实本体对象"/>
-    <ext:cross_reference_requirement_scope rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wcag21_cross_scope=1.3.6;level=AAA</ext:cross_reference_requirement_scope>
+    <ext:cross_reference_requirement_scope rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wcag21_cross_scope=1.3.6;level=AA</ext:cross_reference_requirement_scope>
   </rdf:Description>
 </rdf:RDF>

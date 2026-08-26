@@ -42,6 +42,14 @@ XSD_STRING = "http://www.w3.org/2001/XMLSchema#string"
 BASE_IRI = "file:///G:/LearnAI/ontology-evolution/external-real-v1#"
 
 
+def alternate_level(level: str) -> str:
+    if level == "A":
+        return "AA"
+    if level == "AA":
+        return "AAA"
+    return "AA"
+
+
 @dataclass(frozen=True)
 class SourceFile:
     file_name: str
@@ -179,7 +187,7 @@ def wcag22_events() -> list[EventSpec]:
                 source_url=SOURCES["WCAG22_NEW"].url,
                 correct_value=value,
                 old_value="wcag21_status=not_present",
-                alternate_value=f"wcag22_added={code};level=A",
+                alternate_value=f"wcag22_added={code};level={alternate_level(level)}",
                 source_family="WCAG 2.2",
                 evidence_summary=[
                     "The W3C WCAG 2.2 change page lists the new success criteria in WCAG 2.2.",
@@ -222,7 +230,7 @@ def wcag21_cross_scope_events() -> list[EventSpec]:
                 source_url=SOURCES["WCAG21_NEW"].url,
                 correct_value=value,
                 old_value="wcag20_status=not_present",
-                alternate_value=f"wcag21_cross_scope={code};level=AAA",
+                alternate_value=f"wcag21_cross_scope={code};level={alternate_level(level)}",
                 source_family="WCAG 2.1",
                 evidence_summary=[
                     "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
@@ -259,7 +267,7 @@ def wcag21_general_rule_events() -> list[EventSpec]:
                 source_url=SOURCES["WCAG21_NEW"].url,
                 correct_value=value,
                 old_value="wcag20_status=not_present",
-                alternate_value=f"wcag21_input_rule={code};level=AA",
+                alternate_value=f"wcag21_input_rule={code};level={alternate_level(level)}",
                 source_family="WCAG 2.1",
                 evidence_summary=[
                     "The W3C WCAG 2.1 change page lists new input modality related success criteria.",
