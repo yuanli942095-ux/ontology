@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E058",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E058_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "eurlex_annex=regulation_1013_2006_modified"
+      ]
+    },
+    {
+      "rule_id": "EXT_E058_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "eurlex_status=pre_amendment"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_058_OLD",
+      "EXT_DOC_058_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

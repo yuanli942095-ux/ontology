@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Risk_Management__Strategy__Governance__and_Incident_Disclosure_rules____SEC_Regulation_S_K_Item_106_process_disclosure",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#process_disclosure",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "sec_reg_sk_item_106_process=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "requirement=risk_process_description",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

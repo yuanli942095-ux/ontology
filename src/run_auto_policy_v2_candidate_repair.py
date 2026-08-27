@@ -9,6 +9,7 @@ values. Private Oracle is loaded only after all selections are fixed.
 import argparse
 import csv
 import json
+import re
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,6 +17,7 @@ from typing import Any
 
 import validate_benchmark as benchmark_validator
 from evaluate_auto_formal_policy_v2_semantic import auto_semantic_result, evaluate_semantic
+from external_real_v8_layout import candidate_selection_paths, evaluation_paths, is_staged_layout
 from run_external_real_v1_symbolic_closure import graph_delta, load_graph, repair_checks
 from semantic_v2_common import OUTPUT_DIR, PROJECT_DIR, write_csv
 
@@ -33,12 +35,41 @@ ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="auto-policy-v2 candidate repair selection")
-    parser.add_argument("--raw-dir", type=Path, default=RAW_DIR)
+    parser.add_argument("--benchmark-dir", type=Path, default=BENCHMARK_DIR)
+    parser.add_argument("--raw-dir", type=Path)
     parser.add_argument("--prefix", default="auto-policy-v2-candidate-repair-r5-seed20260820")
     parser.add_argument("--runs", type=int, default=5)
     parser.add_argument("--seed", type=int, default=20260820)
     parser.add_argument("--timeout", type=int, default=120)
     return parser.parse_args()
+
+
+def configure_benchmark(benchmark_dir: Path) -> None:
+    global BENCHMARK_DIR, INPUT_DIR, PRIVATE_DIR, BUILT_DIR
+    global EVENT_CSV, CANDIDATE_CSV, ORACLE_CSV, RAW_DIR
+
+    BENCHMARK_DIR = benchmark_dir.resolve()
+    if is_staged_layout(BENCHMARK_DIR):
+        selection = candidate_selection_paths(BENCHMARK_DIR)
+        evaluation = evaluation_paths(BENCHMARK_DIR)
+        INPUT_DIR = selection["event_csv"].parent
+        PRIVATE_DIR = evaluation["oracle_csv"].parent
+        BUILT_DIR = BENCHMARK_DIR / "repair-stage" / "mutants"
+        EVENT_CSV = selection["event_csv"]
+        CANDIDATE_CSV = selection["candidate_csv"]
+        ORACLE_CSV = evaluation["oracle_csv"]
+    else:
+        INPUT_DIR = BENCHMARK_DIR / "input"
+        PRIVATE_DIR = BENCHMARK_DIR / "private"
+        BUILT_DIR = BENCHMARK_DIR / "built"
+        EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
+        CANDIDATE_CSV = INPUT_DIR / "external-real-candidate-template.csv"
+        ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
+    RAW_DIR = PROJECT_DIR / "output" / BENCHMARK_DIR.name / "auto-policy-v3" / "raw"
+
+
+def experiment_name(prefix: str) -> str:
+    return re.sub(r"[^A-Z0-9]+", "_", prefix.upper()).strip("_")
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -53,7 +84,7 @@ def ready(value: str) -> bool:
 def load_ready_events() -> list[dict[str, str]]:
     rows = [row for row in read_csv(EVENT_CSV) if ready(row.get("status", ""))]
     if not rows:
-        raise RuntimeError("no READY external-real-v1 events")
+        raise RuntimeError(f"no READY events in {EVENT_CSV}")
     return rows
 
 
@@ -95,7 +126,10 @@ def select_candidate(
     return None, "ABSTAIN", f"multiple candidate values matched: {[item['candidate_id'] for item in matches]}", evidence_rows
 
 
-def summarize(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+def summarize(
+    details: list[dict[str, Any]],
+    experiment: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     by_type_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_event_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in details:
@@ -152,7 +186,7 @@ def summarize(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list
         )
     summary = [
         {
-            "experiment": "AUTO_POLICY_V2_CANDIDATE_REPAIR",
+            "experiment": experiment,
             "events": by_type[0]["events"],
             "attempts": by_type[0]["attempts"],
             "selected": by_type[0]["selected"],
@@ -170,6 +204,9 @@ def summarize(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list
 
 def main() -> int:
     args = parse_args()
+    configure_benchmark(args.benchmark_dir)
+    args.raw_dir = args.raw_dir or RAW_DIR
+    experiment = experiment_name(args.prefix)
     events = load_ready_events()
     candidates_by_event = load_candidates()
     graph_cache: dict[Path, Any] = {}
@@ -253,7 +290,7 @@ def main() -> int:
             )
         )
 
-    by_event, by_type, summary = summarize(details)
+    by_event, by_type, summary = summarize(details, experiment)
     details_csv = OUTPUT_DIR / f"{args.prefix}-details.csv"
     by_event_csv = OUTPUT_DIR / f"{args.prefix}-by-event.csv"
     by_type_csv = OUTPUT_DIR / f"{args.prefix}-by-type.csv"
@@ -281,7 +318,7 @@ def main() -> int:
         encoding="utf-8",
     )
     lines = [
-        "AUTO_POLICY_V2 candidate repair",
+        f"{experiment} candidate repair",
         f"details={details_csv}",
         f"by_event={by_event_csv}",
         f"by_type={by_type_csv}",

@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E199",
+  "semantics": "cross_sentence_scope",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_IFRS_S1"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E199_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_IFRS_S1"
+        }
+      ],
+      "allowed_values": [
+        "topic=governance"
+      ]
+    },
+    {
+      "rule_id": "EXT_E199_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "ifrs_s1_governance=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_199_OLD",
+      "EXT3_DOC_199_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

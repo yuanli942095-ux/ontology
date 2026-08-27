@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_in_Medical_Devices_guidance_update____FDA_postmarket_management_reference",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#postmarket_rule",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "fda_postmarket_management=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "requirement=postmarket_management;near_miss=wrong_scope",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

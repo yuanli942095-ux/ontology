@@ -1,0 +1,123 @@
+# EXT_E147 Evidence
+
+- Source title: NIST Privacy Framework 1.1 Initial Public Draft
+- Source URL: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf
+- Prior source title: NIST Privacy Framework 1.0
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.01162020
+
+Raw source excerpt windows:
+
+- 49 management; tiers. i CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 50 Note to Reviewers
+- 51 This NIST Privacy Framework 1.1 Initial Public Draft (IPD) has been developed in response to stakeholder
+- 52 desire for a Privacy Framework update that: 53 • Addresses current privacy risk management needs 54 • Realigns with the NIST Cybersecurity Framework (CSF) 2.0
+- 596 • Informing Buying Decisions. A Privacy Framework 1.1 Profile can be used to generate a
+- 597 prioritized list of privacy requirements 16 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 598 For more details on how to use Privacy Framework 1.1, please visit the “Using Privacy
+- 599 Framework 1.1” webpage. Informative References, informational videos, and the Privacy
+- PR.DS-P8: The authenticity and integrity of hardware and software are assessed prior to acquisition and use. PR.DS-P9: The confidentiality, integrity, and availability of data-in
+- use are protected. 31 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 Function Category Subcategory PR.DS-P10: Backups of data are created, protected, maintained,
+- Platform Security (PR.PS-P): The PR.PS-P1: Configuration management practices are established and
+- address impacts of problematic data actions. PROTECT-P Data Protection Policies, Processes, and PR.PO-P1: Moved to PR.PS-P1 (PR-P): Develop Procedures (PR.PO-P): Security and PR.PO-P2: Moved to PR.PS-P1
+- and implement privacy policies (e.g., purpose, scope, roles PR.PO-P3: Moved to PR.DS-P10 appropriate and responsibilities in the data processing PR.PO-P4: Moved to PR.IR-P2
+- data processing ecosystem, and management PR.PO-P5: Improvements to data protection policies, processes,
+- 1 NIST Cybersecurity White Paper 2 CSWP 40 ipd (Initial Public Draft) 3 NIST Privacy Framework 1.1 4 Initial Public Draft 5 6 National Institute of Standards and Technology
+- 8 This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.40.ipd
+- 9 April 14, 2025 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 10 Certain equipment, instruments, software, or materials, commercial or non-commercial, are identified in this
+- 37 related content, potential updates, and document history. 38 All comments are subject to release under the Freedom of Information Act (FOIA).
+- CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 39 Abstract 40 The NIST Privacy Framework 1.1 is a voluntary tool developed in collaboration with
+- 41 stakeholders intended to help organizations identify and manage privacy risk to build
+- 48 framework; privacy; privacy framework; privacy risk; privacy risk management; profiles; risk
+- 80 from the PDF (e.g., Appendices) and relocating it? 81  If so, what content should be relocated? 82  What format or type of materials would best convey the relocated content (e.g.,
+- 83 Quick Start Guide, interactive online resources, etc.)? ii CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 84 Table of Contents
+- 87 88 92 94 95 96 104 List of Tables 108 List of Figures iii CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 116 Acknowledgments
+- 117 This publication is the result of a collaborative effort between NIST and organizational and
+- 1 More information on Privacy Framework 1.1 development can be found at https://www.nist.gov/privacy-framework/new
+- projects/privacy-framework-version-11. iv CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 121 Executive Summary
+- 122 For more than two decades, the Internet and associated information technologies have driven
+- Philosophy of Technology, eds Pitt J, Shew A (Taylor & Francis, New York, NY), Chapter 12, 1st Ed. Available at
+- https://doi.org/10.4324/9780203735657. 3 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 200 1.1. Overview of the Privacy Framework
+- 201 As shown in Figure 1, the The Core provides an increasingly granular set of activities and outcomes that enable an 202 Privacy Framework is composed
+- 238 management practices, the degree of integration of privacy risk into its enterprise risk
+- 239 management portfolio, its data processing ecosystem relationships, and its workforce 240 composition and training program. 4 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1
+- April 14, 2025 241 1.2. Privacy Risk Management
+- 10 See NIST SP 800-221, Enterprise Impact of Information and Communications Technology Risk, Governing and Managing ICT Risk Programs
+- Within an Enterprise Risk Portfolio at [5] for more information on enterprise risk. 6 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1
+- April 14, 2025 304 Figure 3: Relationship Between Privacy Risk and Enterprise Risk 305 306 1.2.2. Artificial Intelligence and Privacy Risk Management
+- ERM, see NIST Special Publication 800-221, Enterprise Impact of Information and Communications Technology Risk: Governing and
+- Managing ICT Risk Programs Within an Enterprise Risk Portfolio at [5] p. 35–37. 9 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1
+- 395 See Appendix D for more information on the operational aspects of privacy risk assessment.
+- 405 • Appendix C lists acronyms used in this document. 406 • Appendix D considers key practices that contribute to successful privacy risk 407 management.
+- 10 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 408 2. Privacy Framework Basics 409 The Privacy Framework provides a common language for understanding, managing, and
+- 410 communicating privacy risk with internal and external stakeholders. It is adaptable to any
+- 472 The Protect-P Function covers data protection to prevent cybersecurity-related privacy
+- 473 events, the overlap between privacy and cybersecurity risk management. 12 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 475 Profiles are a selection of specific Functions, Categories, and Subcategories from the Core that
+- workforce capable of managing privacy risk. More information is available at https://www.nist.gov/privacy-framework/workforce
+- advancement/privacy-workforce-taxonomy. 13 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 509 organizational risks. An organization determines these needs by considering its mission or
+- 20 More information on CSF Community Profiles can be found at https://www.nist.gov/cyberframework/profiles.
+- 14 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 543 When selecting Tiers, an organization should consider:
+- 544 • Its Target Profile(s) and how achievement may be supported or hampered by its current
+- 559 implementation of the Privacy Framework is based upon achieving the outcomes described in
+- 560 an organization’s Target Profile(s) and not upon Tier determination. 15 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 561 3. How to Use the Privacy Framework
+
+Prior source excerpt windows:
+
+- activities to enable data processing practices (e.g., purpose, communicating data processing purposes, practices, and associated
+- organizations and scope, roles and responsibilities in the data privacy risks are established.
+- individuals to have processing ecosystem, and management a reliable commitment) and associated privacy risks.
+- (PR-P): Develop Procedures (PR.PO-P): Security and created and maintained incorporating security principles (e.g.,
+- and implement privacy policies (e.g., purpose, scope, roles concept of least functionality).
+- 25 NIST Privacy Framework January 16, 2020 Function Category Subcategory
+- Once an organization can identify the likelihood of any given problem arising from the data processing,
+- which the Privacy Framework refers to as a problematic data action, it can assess the impact should the
+- problematic data action occur. This impact assessment is where privacy risk and organizational risk
+- implemented the processes to identify, objectives of an organization’s privacy program.
+- assess, and manage privacy risks within ID.DE-P4: Interoperability frameworks or similar multi-party
+- the data processing ecosystem. approaches are used to manage data processing ecosystem privacy
+- authority, the integrity, confidentiality, or availability of information or an information system; or (2) constitutes a violation or imminent threat of
+- violation of law, security policies, security procedures, or acceptable use policies. Data A representation of information, including digital and non-digital formats.
+- 28 NIST Privacy Framework January 16, 2020
+- NIST has developed a Privacy Risk Assessment Methodology (PRAM) that can help organizations identify,
+- assess, and respond to privacy risks. It is comprised of a set of worksheets available at [3].
+- 20 See NIST SP 800-30, Rev. 1, Guide for Conducting Risk Assessments [12] at p. 8. 21
+- The collective set of provide insight into people’s behavior inside their homes. 8 The meters were
+- NIST has created an illustrative catalog of problems for use in privacy risk assessment. See NIST Privacy Risk
+- Assessment Methodology [3]. Other organizations may have created other categories of problems, or may
+- confusion with Cybersecurity Framework Functions. 6 NIST Privacy Framework January 16, 2020 leveraged to further support the management of risks associated with
+- cybersecurity-related privacy events by using the Detect, Respond, and Privacy Cybersecurity Recover Functions. Alternatively, Cybersecurity- Risks
+- Risks related privacy organizations may use all five of the Cybersecurity Framework Functions in IDENTIFY events IDENTIFY-P conjunction with Identify-P, Govern-P, PROTECT PROTECT-P GOVERN-P
+- Control-P, and Communicate-P to DETECT DETECT CONTROL-P collectively address privacy and RESPOND RESPOND COMMUNICATE-P cybersecurity risks. Figure 5 uses the RECOVER RECOVER
+- • Identify-P – Develop the organizational understanding to manage privacy risk for individuals
+- The activities in the Identify-P Function are foundational for effective use of the Privacy
+- Framework. Inventorying the circumstances under which data are processed, understanding the
+- upon achieving the outcomes described in an organization’s Target Profile(s) and not upon Tier
+- determination. 3.0 How to Use the Privacy Framework
+- When used as a risk management tool, the Privacy Framework can assist an organization in its efforts to
+- development operations. The decision about how to apply it is left to the implementing organization.
+- For example, an organization may already have robust privacy risk management processes, but may use
+- the Core’s five Functions as a streamlined way to analyze and articulate any gaps. Alternatively, an
+- organization seeking to establish a privacy program can use the Core’s Categories and Subcategories as a
+- reference. Other organizations may compare Profiles or Tiers to align privacy risk management priorities
+- Framework” as a uniform or externally referenceable concept. The following subsections present a few
+- options for use of the Privacy Framework. Mapping to Informative References
+- Informative references are mappings to Subcategories to provide implementation support, including
+- based standards, guidelines, and practices, the tools and methods available to achieve positive privacy
+- outcomes can scale across borders and accommodate the global nature of privacy risks. The use of
+- existing and emerging standards will enable economies of scale and drive the development of systems,
+- A repository of informative references can be found at https://www.nist.gov/privacy-framework. These
+- resources can support organizations’ use of the Privacy Framework and achievement of better privacy
+- practices. Strengthening Accountability
+- how elements of the Privacy Framework can be incorporated to facilitate the process. In this way,
+- organizations can use the Privacy Framework as a tool to support accountability. They can also use the
+- Privacy Framework in conjunction with other frameworks and guidance that provide additional practices
+- to achieve accountability within and between organizations. 14 Establishing or Improving a Privacy Program
+- Using a simple model of “ready, set, go” phases, the Privacy Framework can support the creation of a
+- new privacy program or improvement of an existing program. As an organization goes through these
+- understand its mission or business environment; its legal a Privacy Program
+- environment; its risk tolerance; the privacy risks engendered by its Ready: use the Identify-P
+- systems, products, or services; and its role(s) in the data processing and Govern-P Functions
+- system to verify that all privacy capabilities and requirements are implemented. The privacy outcomes
+- determined by using the Privacy Framework should then serve as a basis for ongoing operation of the
+- system. This includes occasional reassessment, capturing results in a Current Profile, to verify that

@@ -1,0 +1,11 @@
+external-real-v8-grounded freeze manifest
+events_ready=200
+public_file_count=1428
+candidates_total=600
+private_oracle_rows=200
+manifest_sha256=6e379d0db83d9762a4aaef8b592361d6193977aa5f8d42d1e63b0797c37e4c77
+git_commit=20997f98134cedb5503a2cccf853357cddfcc6d8
+git_dirty=True
+files=G:\LearnAI\ontology-evolution\output\external-real-v8-grounded-freeze-manifest-files.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v8-grounded-freeze-manifest.json
+payload_meta_sha256=98691eb5d5621f1200aae765b7962bd1f6021b25a4ef6a99c186737b93c42dd5

@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#eCFR_EXT_E063",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#regulatory_text_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "ecfr_status=unmodeled",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "ecfr_effective_date_rule=not_less_than_30_days",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

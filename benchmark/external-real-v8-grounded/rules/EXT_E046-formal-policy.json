@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E046",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E046_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "nist63_scope=identity_proofing_authentication_federation"
+      ]
+    },
+    {
+      "rule_id": "EXT_E046_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "nist63_3_status=old_revision"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_046_OLD",
+      "EXT_DOC_046_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

@@ -1,0 +1,60 @@
+Source title: NIST Cybersecurity Framework 2.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.29
+
+Raw source excerpt window:
+
+- those charged with operationalizing risk management within an organization. Fig. 1. CSF Core structure
+- The CSF Core Functions — GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER — organize
+- cybersecurity outcomes at their highest level. • GOVERN (GV) — The organization’s cybersecurity risk management strategy, expectations, and policy are established, communicated, and monitored. The GOVERN
+- This appendix describes the Functions, Categories, and Subcategories of the CSF Core. Table 1
+- lists the CSF 2.0 Core Function and Category names and unique alphabetic identifiers. Each
+- Function name in the table is linked to its portion of the appendix. The order of Functions,
+- numbering of the Subcategories is intentionally not sequential; gaps in numbering indicate CSF
+- 1.1 Subcategories that were relocated in CSF 2.0. Table 1. CSF 2.0 Core Function and Category names and identifiers Function Category Category Identifier
+- Govern (GV) Organizational Context GV.OC Risk Management Strategy GV.RM Roles, Responsibilities, and Authorities GV.RR Policy GV.PO Oversight GV.OV
+- organization to prioritize its efforts consistent with its risk management strategy and the
+- mission needs identified under GOVERN. This Function also includes the identification of 3 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 improvement opportunities for the organization’s policies, plans, processes, procedures, and practices that support cybersecurity risk management to inform efforts under all six
+- management programs. • Appendix A is the CSF Core. • Appendix B contains a notional illustration of the CSF Tiers. • Appendix C is a glossary of CSF terminology.
+- 2 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 2. Introduction to the CSF Core Appendix A is the CSF Core — a set of cybersecurity outcomes arranged by Function, then
+- Category, and finally Subcategory, as depicted in Fig. 1. These outcomes are not a checklist of
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- export them in human- and machine-readable formats. The CSF 2.0 Core is also available in a
+- legacy format similar to that of CSF 1.1. 15 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 GOVERN (GV): The organization’s cybersecurity risk management strategy, expectations, and
+- policy are established, communicated, and monitored • Organizational Context (GV.OC): The circumstances — mission, stakeholder expectations,
+- changes to business/mission objectives in how risk is approached and communicated. 25 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Appendix C. Glossary CSF Category A group of related cybersecurity outcomes that collectively comprise a CSF Function. CSF Community Profile
+- A baseline of CSF outcomes that is created and published to address shared interests and goals among a number of
+- attempting to achieve) and characterizes how or to what extent each outcome is being achieved.
+- The highest level of organization for cybersecurity outcomes. There are six CSF Functions: Govern, Identify,
+- Protect, Detect, Respond, and Recover. CSF Implementation Example
+- iv NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Cybersecurity Framework (CSF) Overview This document is version 2.0 of the NIST Cybersecurity Framework (Framework or CSF). It
+- includes the following components: • CSF Core, the nucleus of the CSF, which is a taxonomy of high-level cybersecurity outcomes that can help any organization manage its cybersecurity risks. The CSF Core
+- components are a hierarchy of Functions, Categories, and Subcategories that detail each outcome. These outcomes can be understood by a broad audience, including
+- organization with the flexibility needed to address its unique risks, technologies, and mission considerations. • CSF Organizational Profiles, which are a mechanism for describing an organization’s
+- current and/or target cybersecurity posture in terms of the CSF Core’s outcomes.
+- • CSF Tiers, which can be applied to CSF Organizational Profiles to characterize the rigor of
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- deployment, evaluation, and use of AI systems. The AI RMF Core uses Functions, Categories, and Subcategories to describe AI outcomes and help manage risks related to
+- AI. 14 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Appendix A. CSF Core
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- An organization can use the CSF Core, Profiles, and Tiers with the supplementary resources to
+- Function provides outcomes to inform what an organization may do to achieve and prioritize the outcomes of the other five Functions in the context of its mission and
+- stakeholder expectations. Governance activities are critical for incorporating cybersecurity into an organization’s broader enterprise risk management (ERM)
+- strategy. GOVERN addresses an understanding of organizational context; the establishment of cybersecurity strategy and cybersecurity supply chain risk
+- management; roles, responsibilities, and authorities; policy; and the oversight of cybersecurity strategy. • IDENTIFY (ID) — The organization’s current cybersecurity risks are understood.
+- • DETECT (DE) — Possible cybersecurity attacks and compromises are found and analyzed. DETECT enables the timely discovery and analysis of anomalies, indicators of
+- compromise, and other potentially adverse events that may indicate that cybersecurity attacks and incidents are occurring. This Function supports successful incident response
+- and recovery activities. • RESPOND (RS) — Actions regarding a detected cybersecurity incident are taken. RESPOND supports the ability to contain the effects of cybersecurity incidents. Outcomes within

@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Commission_Delegated_Regulation__EU__2020_2174____hazard_statement_mapping",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#hazard_statement",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "hazard_statement_mapping=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "hazard_statement_mapping=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

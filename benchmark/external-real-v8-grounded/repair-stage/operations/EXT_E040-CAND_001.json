@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#WCAG2Mobile_EXT_E040",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#mobile_application_guidance_scope",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "mobile_guidance=not_integrated",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "mobile_guidance=not_integrated",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

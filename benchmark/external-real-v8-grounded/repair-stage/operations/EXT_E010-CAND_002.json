@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#WCAG_success_criterion_3_3_7",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#versioned_requirement_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "wcag21_status=not_present",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "wcag22_added=3.3.7;level=A",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

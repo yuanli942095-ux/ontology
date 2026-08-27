@@ -1,0 +1,104 @@
+# EXT_E174 Evidence
+
+- Source title: FDA 2025 premarket cybersecurity guidance notice raw text
+- Source URL: https://www.federalregister.gov/documents/full_text/html/2025/06/27/2025-11669.html
+- Prior source title: FDA 2023 premarket cybersecurity guidance notice raw text
+- Prior source URL: https://www.federalregister.gov/documents/full_text/html/2023/09/29/2023-21450.html
+
+Raw source excerpt windows:
+
+- <p id="p-2" data-page="27634">Notice of availability.</p> </div> <div id="summary"> <h1 id="h-3">SUMMARY:</h1>
+- <p id="p-3" data-page="27634">The Food and Drug Administration (FDA or Agency) is announcing the availability of a final guidance entitled &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions.&rdquo; This guidance updates the previous version of the guidance, of the same title, issued on September 27, 2023, and finalizes the draft guidance entitled &ldquo;Select Updates for the Premarket Cybersecurity Guidance: Section 524B of the FD&amp;C Act&rdquo; issued on March 13, 2024. This guidance provides FDA's recommendations to industry regarding cybersecurity device design, labeling, and the documentation that FDA recommends be included in premarket submissions for devices with cybersecurity risk. Additionally, this guidance has been updated to identify the information FDA generally considers to be necessary for cyber devices to support obligations under the new amendments to the Federal Food, Drug, and Cosmetic Act (FD&amp;C Act) for ensuring cybersecurity of devices.</p>
+- </div> <div id="dates"> <h1 id="h-4">DATES:</h1> <p id="p-4" data-page="27634"> The announcement of the guidance is published in the <strong>Federal Register</strong>
+- (<a href="https://www.govinfo.gov/link/uscode/21/360n-2" class="usc external" target="_blank" rel="noopener noreferrer">21 U.S.C. 360n-2(a)</a>), a person who submits a 510(k), premarket approval application (PMA), product development protocol (PDP), De Novo, or humanitarian device exemption (HDE) for a device that meets the definition of a cyber device, as defined under section 524B(c) of the FD&amp;C Act, is required to submit information to ensure that cyber devices meet the cybersecurity requirements under section 524B(b) of the FD&amp;C Act.
+- <p id="p-19" data-page="27635">FDA has updated the final guidance &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions&rdquo; to identify the cybersecurity information FDA considers to generally be necessary to support obligations under section 524B of the FD&amp;C Act for cyber devices.
+- Specifically, the new section in this guidance discusses who is required to comply with section 524B, the devices subject to section 524B, and the documentation recommendations for applicable premarket submissions.
+- The new section of the guidance provides recommendations specifically for cyber devices, however, the recommendations throughout the guidance may help manufacturers of cyber devices meet their obligations under section 524B of the FD&amp;C Act.</p>
+- <p id="p-20" data-page="27635">This guidance updates the final guidance &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions.&rdquo; This guidance also finalizes the draft guidance entitled &ldquo;Select Updates for the Premarket Cybersecurity Guidance: Section 524B of the FD&amp;C Act.&rdquo; FDA considered the applicability of <a href="/executive-order/14192" class="eo">Executive Order 14192</a>, per OMB guidance in M-25-20, and finds this action to be deregulatory in nature.</p>
+- <p id="p-21" data-page="27635"> A notice of availability of the draft guidance appeared in the <strong>Federal Register</strong>
+- of March 13, 2024 (<a href="/citation/89-FR-18421" class="fr-reference" data-reference="89 FR 18421">89 FR 18421</a>). FDA considered comments received and revised the draft guidance as appropriate in response to the comments, including providing additional examples to help clarify new terminology used as a result of the requirements in section 524B of the FD&amp;C Act. Additionally, FDA has provided additional clarity regarding the recommended documentation manufacturers should submit when submitting a premarket submission for a device modification that is unlikely to impact the cybersecurity of the device.
+- <p id="p-22" data-page="27635">This guidance is being issued consistent with FDA's good guidance practices regulation (<a href="https://www.ecfr.gov/current/title-21/section-10.115" class="cfr external" target="_blank" rel="noopener noreferrer">21 CFR 10.115</a>). The guidance represents the current thinking of FDA on Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions. It does not establish any rights for any person and is not binding on FDA or the public. You can use an alternative approach if it satisfies the requirements of the applicable statutes and regulations.</p>
+- <h2 id="h-11">II. Electronic Access</h2> <p id="p-23" data-page="27635">
+- <strong class="minor-caps">SUPPLEMENTARY INFORMATION</strong>
+- section for information on electronic access to the guidance. Submit written requests for a single hard copy of the guidance document entitled &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions&rdquo; to the Office of Policy, Center for Devices and Radiological Health, Food and Drug Administration, 10903 New Hampshire Ave., Bldg. 66, Rm. 5441, Silver Spring, MD 20993-0002. Send one self-addressed adhesive label to assist that office in processing your request.
+- </p> </div> <div id="for-further-information-contact"> <h1 id="h-8">FOR FURTHER INFORMATION CONTACT:</h1>
+- </ul> <p id="p-12" data-page="27634"> <em>Instructions:</em>
+- All submissions received must include the Docket No. FDA-2021-D-1158 for &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions.&rdquo; Received comments will be placed in the docket and, except for those submitted as &ldquo;Confidential Submissions,&rdquo; publicly viewable at
+- or at the Dockets Management Staff between 9 a.m. and 4 p.m., Monday through Friday, 240-402-7500.
+- Persons interested in obtaining a copy of the guidance may do so by downloading an electronic copy from the internet. A search capability for all Center for Devices and Radiological Health guidance documents is available at
+- <em><a href="https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/guidance-documents-medical-devices-and-radiation-emitting-products" class="external" target="_blank" rel="noopener noreferrer">https://www.fda.gov/&#8203;medical-devices/&#8203;device-advice-comprehensive-regulatory-assistance/&#8203;guidance-documents-medical-devices-and-radiation-emitting-products</a>.</em>
+- This guidance document is also available at
+- <em><a href="https://www.fda.gov/vaccines-blood-biologics/guidance-compliance-regulatory-information-biologics" class="external" target="_blank" rel="noopener noreferrer">https://www.fda.gov/&#8203;vaccines-blood-biologics/&#8203;guidance-compliance-regulatory-information-biologics</a>.</em>
+- Persons unable to download an electronic copy of &ldquo;Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions&rdquo; may send an email request to
+- <em><a href="mailto:CDRH-Guidance@fda.hhs.gov" class="email">CDRH-Guidance@fda.hhs.gov</a></em>
+- </div> </div> <div class="supplemental-info"> <h1 id="h-9">SUPPLEMENTARY INFORMATION:</h1> <h2 id="h-10">I. Background</h2> <p id="p-18" data-page="27634">
+- Section 3305 of the Food and Drug Omnibus Reform Act of 2022, enacted on December 29, 2022, added section 524B &ldquo;Ensuring Cybersecurity of Medical Devices&rdquo; to the FD&amp;C Act. Under section 524B(a) of the FD&amp;C Act
+- <span class="printed-page-inline unprinted-element document-markup" data-page="27635">
+- </span><span class="printed-page-details unprinted-element document-markup" id="page-27635" data-page="27635"><svg class="svg-icon svg-icon-doc-generic"><use xlink:href="/assets/fr-icons.svg#doc-generic"></use></svg></span>
+- Additionally, FDA provides recommendations regarding premarket submissions for changes to cyber devices that had been previously authorized by FDA through 510(k), PMA, PDP, De Novo, and HDE submission pathways, and that require premarket submission.
+- The new section also discusses FDA's review of whether there is a reasonable assurance that the device and related systems are cybersecure for marketing authorizations submitted for cyber devices.
+- </p> <h2 id="h-12">III. Paperwork Reduction Act of 1995</h2>
+- <p id="p-24" data-page="27635">While this guidance contains no new collection of information, it does refer to previously approved FDA collections of information. The previously approved collections of information are subject to review by the Office of Management and Budget (OMB) under the Paperwork Reduction Act of 1995 (PRA) (<a href="https://www.govinfo.gov/link/uscode/44/3501" class="usc external" target="_blank" rel="noopener noreferrer">44 U.S.C. 3501-3521</a>). The collections of information in the following table have been approved by OMB:</p>
+- <html><body><div class="table-wrapper"><table class="wide" data-point-width="275"> <thead><tr>
+- <td class="right">0910-0231</td> </tr> <tr> <td class="left border-right-single">814, subpart H</td>
+- <td class="left border-right-single">Humanitarian Use Devices; Humanitarian Device Exemption</td>
+- <td class="right">0910-0332</td> </tr> <tr> <td class="left border-right-single">812</td> <td class="left border-right-single">Investigational Device Exemption</td>
+- <td class="right">0910-0844</td> </tr> <tr>
+- <td class="left border-right-single">&ldquo;Requests for Feedback and Meetings for Medical Device Submissions: The Q-Submission Program&rdquo;</td>
+- <td class="left border-right-single">Q-submissions and Early Payor Feedback Request Programs for Medical Devices</td>
+- <td class="right">0910-0756</td> </tr> <tr> <td class="left border-right-single">800, 801, 809, and 830</td>
+- <td class="left border-right-single">Medical Device Labeling Regulations; Unique Device Identification</td>
+- <td class="right">0910-0485</td> </tr> <tr> <td class="left border-bottom-single border-right-single">820</td>
+
+Prior source excerpt windows:
+
+- </div> </div> <div class="supplemental-info"> <h1 id="h-5">SUPPLEMENTARY INFORMATION:</h1> <p id="p-5" data-page="67242"></p> <h2 id="h-6">Background</h2>
+- On July 21, 2023, Commerce published the preliminary results of this administrative review in the
+- .<sup>[<a class="footnote-reference" href="#footnote-1-p67242" id="citation-1-p67242">1</a>] </sup>
+- </p> <a class="back" href="#citation-2-p67242"> Back to Citation </a> </div> <div class="footnote" id="footnote-3-p67242"> <p id="p-10" data-page="67242">3.
+- &thinsp; See Petitioner's Letter, &ldquo;Letter in Lieu of a Case Brief,&rdquo; dated August 21, 2023. </p> <a class="back" href="#citation-3-p67242">
+- Back to Citation </a> </div> <div class="footnote" id="footnote-4-p67242"> <p id="p-11" data-page="67242">4. &thinsp; See
+- <p id="p-2" data-page="67242">The U.S. Department of Commerce (Commerce) determines that the company subject to this countervailing duty administrative review of passenger vehicle and light truck tires (PVLT tires) from the Socialist Republic of Vietnam (Vietnam) received countervailable subsidies during the period of review (POR), November 10, 2020, through December 31, 2021.</p>
+- </div> <div id="dates"> <h1 id="h-3">DATES:</h1> <p id="p-3" data-page="67242">Applicable September 29, 2023.</p> </div> <div id="for-further-information-contact">
+- <h1 id="h-4">FOR FURTHER INFORMATION CONTACT:</h1>
+- <em>Preliminary Results.</em><sup>[<a class="footnote-reference" href="#footnote-2-p67242" id="citation-2-p67242">2</a>] </sup>
+- On August 21, 2023, we received a timely case brief from the United Steel, Paper and Forestry, Rubber, Manufacturing, Energy, Allied Industrial and Service Workers International Union, AFL-CIO, CLC (the petitioner).<sup>[<a class="footnote-reference" href="#footnote-3-p67242" id="citation-3-p67242">3</a>] </sup>
+- No party submitted a rebuttal brief or requested a hearing. For a complete description of the events that occurred since the
+- <p id="p-24" data-page="67243">Commerce is issuing and publishing the final results of review in accordance with sections 751(a)(1) and 777(i)(1) of the Act and <a href="https://www.ecfr.gov/current/title-19/section-351.221#p-351.221(b)(5)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.221(b)(5)</a>.</p>
+- <div class="signature"> <p class="signature-date">Dated: September 25, 2023.</p> <p class="signature-name">Lisa W. Wang,</p> <p class="signature-title">Assistant Secretary for Enforcement and Compliance.</p>
+- </div> <h2 id="h-16">Appendix</h2> <h2 id="h-17">List of Topics Discussed in the Issues and Decision Memorandum</h2> <p class="flush-paragraph flush-paragraph-2" id="p-25" data-page="67243">I. Summary</p>
+- </div> <h1 id="footnotes">Footnotes</h1><div class="footnotes"> <div class="footnote" id="footnote-1-p67242"> <p id="p-7" data-page="67242">1.
+- <em>See Passenger Vehicle and Light Truck Tires from the Socialist Republic of Vietnam: Preliminary Results of Countervailing Duty Administrative Review and Partial Rescission of Administrative Review; 2020-2021,</em><a href="/citation/88-FR-47107" class="fr-reference" data-reference="88 FR 47107">88 FR 47107</a> (July 21, 2023) (
+- <em>Preliminary Results</em>), and accompanying Preliminary Decision Memorandum. </p> <a class="back" href="#citation-1-p67242"> Back to Citation
+- </p> <a class="back" href="#citation-6-p67243"> Back to Citation </a> </div> </div><div class="end-matter">
+- <p class="frdoc">[<a href="/d/2023-21450">FR Doc. 2023-21450</a> Filed 9-28-23; 8:45 am]</p>
+- <p class="billing-code">BILLING CODE 3510-DS-P</p> </div>
+- </p> <h2 id="h-14">Assessment Rates</h2> <p id="p-21" data-page="67243">
+- Pursuant to section 751(a)(2)(C) of the Act and <a href="https://www.ecfr.gov/current/title-19/section-351.212#p-351.212(b)(2)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.212(b)(2)</a>, Commerce will determine, and U.S. Customs and Border Protection (CBP) shall assess, countervailing duties on all appropriate entries of subject merchandise covered by this review. We intend to issue assessment instructions to CBP no earlier than 35 days after the date of publication of these final results of review. If a timely summons is filed at the U.S. Court of International Trade, the assessment instructions will direct CBP not to liquidate relevant entries until the time for parties to file a request for a statutory injunction has expired (
+- <em>i.e.,</em> within 90 days of publication). </p> <h2 id="h-15">Administrative Protective Order</h2>
+- </li> <li> the number of the CFR title and the number of each part the document amends, proposes to amend, or is directly related to </li> <li>
+- the agency docket number / agency internal file number </li> <li> the RIN which identifies each regulatory action listed in the Unified Agenda of Federal Regulatory and Deregulatory
+- Actions </li> </ol> <p> See the <a href="https://www.archives.gov/files/federal-register/write/handbook/ddh.pdf#page=9"> Document Drafting Handbook
+- </h2> <p id="p-13" data-page="67242"> The products covered by the <em>Order</em> are PVLT tires from Vietnam. A full description of the scope of the
+- <em>Order</em> is contained in the Issues and Decision Memorandum. </p> <h2 id="h-8">Analysis of Comments Received</h2> <p id="p-14" data-page="67242">
+- All issues raised by interested parties in briefs are addressed in the Issues and Decision Memorandum accompanying this notice. A list of the issues addressed in the Issues and Decision Memorandum is provided in the appendix to this notice. The Issues and Decision Memorandum is a public document and is on file electronically via Enforcement and Compliance's Antidumping and Countervailing Duty Centralized Electronic Service System (ACCESS). ACCESS is available to registered users at
+- <em><a href="https://access.trade.gov" class="external" target="_blank" rel="noopener noreferrer">https://access.trade.gov</a>.</em>
+- In addition, a complete version of the Issues and Decision Memorandum can be accessed directly at
+- <em><a href="https://access.trade.gov/public/FRNoticesListLayout.aspx" class="external" target="_blank" rel="noopener noreferrer">https://access.trade.gov/&#8203;public/&#8203;FRNoticesListLayout.aspx</a>.</em><span class="printed-page-inline unprinted-element document-markup" data-page="67243">
+- </p> <h2 id="h-9">Changes Since the Preliminary Results</h2>
+- <p id="p-15" data-page="67243">In response to arguments from the petitioner, Commerce corrected an error with respect to the currency exchange program. As a result of this change, we updated the final rates for Bridgestone. These changes are explained in the Issues and Decision Memorandum.</p>
+- <h2 id="h-10">Methodology</h2> <p id="p-16" data-page="67243">
+- Commerce conducted this administrative review in accordance with section 751(a)(1)(A) of the Tariff Act of 1930, as amended (the Act). For each subsidy program found to be countervailable, Commerce finds that there is a subsidy,
+- a financial contribution from a government or public entity that gives rise to a benefit to the recipient, and that the subsidy is specific.<sup>[<a class="footnote-reference" href="#footnote-6-p67243" id="citation-6-p67243">6</a>] </sup>
+- <em>see</em> the Issues and Decision Memorandum. </p> <h2 id="h-11">Final Results of Administrative Review</h2>
+- <p id="p-18" data-page="67243">In accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.221#p-351.221(b)(5)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.221(b)(5)</a>, Commerce calculated the following net countervailable subsidy rates for the period November 10, 2020, through December 31, 2021:</p>
+- <html><body><div class="table-wrapper"><table class="" data-point-width="136"> <thead><tr>
+- <h2 id="h-12">Disclosure</h2> <p id="p-19" data-page="67243">
+- We intend to disclose the calculations performed in connection with the final results of review to parties in this proceeding within five days after public announcement of the final results or, if there is no public announcement, within five days of the date of publication of the notice of final results in the
+- <strong>Federal Register</strong> <em>,</em>
+- in accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.224#p-351.224(b)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.224(b)</a>.
+- </p> <h2 id="h-13">Cash Deposit Instructions</h2> <p id="p-20" data-page="67243">
+- In accordance with section 751(a)(1) of the Act, Commerce intends to instruct CBP to collect cash deposits of estimated countervailing duties in the amount shown for the company listed above for 2021 (
+- 0.00 percent) on shipments of subject merchandise entered, or withdrawn from warehouse, for consumption on or after the date of publication of the final results of this administrative review. This cash deposit requirement, effective upon publication of the final results of this review, shall remain in effect until further notice.
+- <p id="p-22" data-page="67243">This notice also serves as a reminder to parties subject to an administrative protective order (APO) of their responsibility concerning the destruction of proprietary information disclosed under APO in accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.305#p-351.305(a)(3)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.305(a)(3)</a>. Timely written notification of the return or destruction of APO materials or conversion to judicial protective order is hereby requested. Failure to comply with the regulations and terms of an APO is a sanctionable violation.</p>
+- <p id="p-23" data-page="67243">Notification to Interested Parties</p>

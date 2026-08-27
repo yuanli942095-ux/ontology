@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#EUR_Lex_amendment_EXT_E060",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#regulatory_amendment_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "eurlex_status=pre_amendment",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "eurlex_status=pre_amendment",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#小麦种植及小麦完全成本保险",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#倒伏程度定义",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "hazard_only=strong_rain_or_wind_causes_lodging",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "five_level_definition=level1_no_lodging;level2_lt30;level3_30_45;level4_45_60;level5_gt60",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

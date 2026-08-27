@@ -1,0 +1,121 @@
+# EXT_E132 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk governance; cybersecurity risk
+- management; enterprise risk management; Profiles; Tiers. Audience Individuals responsible for developing and leading cybersecurity programs are the primary
+- audience for the CSF. The CSF can also be used by others involved in managing risk — including
+- executives, boards of directors, acquisition professionals, technology professionals, risk
+- enterprise, including those that are financial, privacy, supply chain, reputational, technological,
+- The CSF describes desired outcomes that are intended to be understood by a broad audience,
+- including executives, managers, and practitioners, regardless of their cybersecurity expertise.
+- Privacy Risk Assessment Methodology (PRAM) has a catalog of example problems for use in privacy risk assessments.
+- • Supply chain risks: An organization can use the CSF to foster cybersecurity risk oversight
+- and communications with stakeholders across supply chains. All types of technology rely on a complex, globally distributed, extensive, and interconnected supply chain
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- includes the following components: • CSF Core, the nucleus of the CSF, which is a taxonomy of high-level cybersecurity outcomes that can help any organization manage its cybersecurity risks. The CSF Core
+- components are a hierarchy of Functions, Categories, and Subcategories that detail each outcome. These outcomes can be understood by a broad audience, including
+- executives, managers, and practitioners, regardless of their cybersecurity expertise. Because the outcomes are sector-, country-, and technology-neutral, they provide an
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- stakeholder expectations. Governance activities are critical for incorporating cybersecurity into an organization’s broader enterprise risk management (ERM)
+- strategy. GOVERN addresses an understanding of organizational context; the establishment of cybersecurity strategy and cybersecurity supply chain risk
+- management; roles, responsibilities, and authorities; policy; and the oversight of cybersecurity strategy. • IDENTIFY (ID) — The organization’s current cybersecurity risks are understood.
+- the achievement of organizational objectives. These governance discussions support dialogue
+- and agreement about risk management strategies (including cybersecurity supply chain risk);
+- roles, responsibilities, and authorities; policies; and oversight. As executives establish
+- connection between outcomes that focus purely on cybersecurity and those that focus 13 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 on C-SCRM. SP 800-161r1 (Revision 1), Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations, provides in-depth information on C-SCRM.
+- • Risks from emerging technologies: As new technologies and new applications of technology become available, new risks become clear. A contemporary example is
+- Govern (GV) Organizational Context GV.OC Risk Management Strategy GV.RM Roles, Responsibilities, and Authorities GV.RR Policy GV.PO Oversight GV.OV
+- Cybersecurity Supply Chain Risk Management GV.SC Identify (ID) Asset Management ID.AM Risk Assessment ID.RA Improvement ID.IM Protect (PR) Identity Management, Authentication, and Access Control PR.AA
+- Awareness and Training PR.AT Data Security PR.DS Platform Security PR.PS Technology Infrastructure Resilience PR.IR Detect (DE) Continuous Monitoring DE.CM
+- and adjust strategy and direction o GV.OV-02: The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks
+- o GV.OV-03: Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed • Cybersecurity Supply Chain Risk Management (GV.SC): Cyber supply chain risk
+- management processes are identified, established, managed, monitored, and improved by organizational stakeholders o GV.SC-01: A cybersecurity supply chain risk management program, strategy, objectives,
+- policies, and processes are established and agreed to by organizational stakeholders
+- o GV.SC-02: Cybersecurity roles and responsibilities for suppliers, customers, and partners
+- are established, communicated, and coordinated internally and externally o GV.SC-03: Cybersecurity supply chain risk management is integrated into cybersecurity
+- and enterprise risk management, risk assessment, and improvement processes o GV.SC-04: Suppliers are known and prioritized by criticality 17
+- NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 o GV.SC-05: Requirements to address cybersecurity risks in supply chains are established,
+- prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties o GV.SC-06: Planning and due diligence are performed to reduce risks before entering into
+- over the course of the relationship o GV.SC-08: Relevant suppliers and other third parties are included in incident planning, response, and recovery activities
+- o GV.SC-09: Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout
+- the technology product and service life cycle o GV.SC-10: Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement
+- IDENTIFY (ID): The organization’s current cybersecurity risks are understood • Asset Management (ID.AM): Assets (e.g., data, hardware, software, systems, facilities,
+- Quick-Start Guides (QSGs) are brief documents on specific CSF-related topics and are often
+- tailored to specific audiences. QSGs can help an organization implement the CSF because they
+- distill specific portions of the CSF into actionable “first steps” that an organization can consider
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+
+Prior source excerpt windows:
+
+- environment, legal and regulatory requirements, information sharing practices, business/mission
+- objectives, supply chain cybersecurity requirements, and organizational constraints.
+- Organizations should determine the desired Tier, ensuring that the selected level meets the
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 16
+- April 16, 2018 Cybersecurity Framework Version 1.1 Figure 3: Cyber Supply Chain Relationships
+- The parties described in Figure 3 comprise an organization’s cybersecurity ecosystem. These
+- appropriate measures designed to meet the ISA 62443-2-1:2009 4.3.2.6.4, 4.3.2.6.7 objectives of an organization’s ISO/IEC 27001:2013 A.15.1.1, A.15.1.2, A.15.1.3
+- cybersecurity program and Cyber Supply NIST SP 800-53 Rev. 4 SA-9, SA-11, SA-12, PM Chain Risk Management Plan. 9 ID.SC-4: Suppliers and third-party partners COBIT 5 APO10.01, APO10.03, APO10.04,
+- are routinely assessed using audits, test APO10.05, MEA01.01, MEA01.02, MEA01.03, results, or other forms of evaluations to MEA01.04, MEA01.05
+- collaborators. The organization uses real-time or near real-time information to understand
+- and consistently act upon cyber supply chain risks associated with the products and services it provides and that it uses. Additionally, it communicates proactively, using
+- formal (e.g. agreements) and informal mechanisms to develop and maintain strong supply chain relationships. 2.3 Framework Profile The Framework Profile (“Profile”) is the alignment of the Functions, Categories, and
+- manage supply chain risks. of information systems, components, and APO10.05, APO12.01, APO12.02, APO12.03,
+- services are identified, prioritized, and APO12.04, APO12.05, APO12.06, APO13.02, assessed using a cyber supply chain risk BAI02.03 assessment process ISA 62443-2-1:2009 4.2.3.1, 4.2.3.2, 4.2.3.3,
+- 4.2.3.4, 4.2.3.6, 4.2.3.8, 4.2.3.9, 4.2.3.10, 4.2.3.12, 4.2.3.13, 4.2.3.14 ISO/IEC 27001:2013 A.15.2.1, A.15.2.2 NIST SP 800-53 Rev. 4 RA-2, RA-3, SA-12, SA
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- that may contain potentially malicious functionality, are counterfeit, or are vulnerable due to
+- poor manufacturing and development practices within the cyber supply chain12.” Cyber SCRM activities may include:  Determining cybersecurity requirements for suppliers,
+-  Enacting cybersecurity requirements through formal agreement (e.g., contracts),  Communicating to suppliers how those cybersecurity requirements will be verified
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- Framework for Cyber Cyber Supply Chain Risk Management (SCRM), while a new Supply Chain Risk Section 3.4 Buying Decisions highlights use of the Framework
+- been renamed to Identity Management and Access Control (PR.AC) to better represent the scope of the Category and corresponding Subcategories.
+- Better explanation of the Added language to Section 3.2 Establishing or Improving a relationship between Cybersecurity Program on using Framework Tiers in
+- Implementation Tiers and Framework implementation. Added language to Framework Profiles Tiers to reflect integration of Framework considerations within
+- on business and organizational needs without placing additional regulatory requirements on
+- businesses. The Framework focuses on using business drivers to guide cybersecurity activities and
+- considering cybersecurity risks as part of the organization’s risk management processes. The
+- processes; an organization can use its current process and overlay it onto the Framework to
+- determine gaps in its current cybersecurity risk approach and develop a roadmap to improvement. Using the Framework as a cybersecurity risk management tool, an organization
+- can determine activities that are most important to critical service delivery and prioritize
+- list of system cybersecurity features that should be assessed when deploying the system to verify
+- all features are implemented. The cybersecurity outcomes determined by using the Framework
+- then should serve as a basis for ongoing operation of the system. This includes occasional
+- management and are appropriately trained.  Process is in place to support compliance of cybersecurity activities with applicable privacy laws, regulations, and Constitutional requirements.
+-  Process is in place to assess implementation of the above organizational measures and controls. Approaches to identifying, authenticating, and authorizing individuals to access
+- organizational assets and systems  Steps are taken to identify and address the privacy implications of identity management
+- April 16, 2018 Cybersecurity Framework Version 1.1 4.0 Self-Assessing Cybersecurity Risk with the Framework The Cybersecurity Framework is designed to reduce risk by improving the management of
+- cybersecurity risk to organizational objectives. Ideally, organizations using the Framework will
+- be able to measure and assign values to their risk along with the cost and benefits of steps taken
+- Management purposes in understanding risk associated with commercial off-the-shelf products and services. Additional Cyber SCRM criteria were

@@ -1,0 +1,130 @@
+# EXT_E112 Evidence
+
+- Source title: Lead and Copper Rule final rule 2007
+- Source URL: https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf
+- Prior source title: Lead and Copper Rule final rule 2000
+- Prior source URL: https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf
+
+Raw source excerpt windows:
+
+- deadlines for completing corrosion sample for lead and copper under concerns. Two commenters agreed that § 141.86(d)(4). For example, a system
+- control studies, lead service line four months is reasonable for replacement and public education (e.g., that takes lead and copper tap samples
+- monitoring activities, including between June and September and end of December or the end of distribution, collection, and initiation of September for systems monitoring June exceeds the action level, would only
+- Drinking Water (MC 4607M), LSL: Lead Service Line
+- [EPA–HQ–OW–2005–0034; FRL–8476–5] Environmental Protection Agency, 1200 LSLR: Lead Service Line Replacement
+- Pennsylvania Ave., NW., Washington, LT2: Long Term 2 Enhanced Surface Water RIN 2040–AE83 DC 20460; telephone number: (202) Treatment Rule 564–4880; e-mail address: MCLG: Maximum Contaminant Level Goal
+- implementation of the LCR in the areas apply to those treatment changes that reduced monitoring schedules must of monitoring, customer awareness, and would have long-term impacts on water
+- monitor during four consecutive lead service line replacement in the quality. EPA has provided examples of months, and systems on triennial short-term. The short-term changes long-term treatment changes in
+- monitoring must monitor once every 3 finalized in this action are expected to § 141.90(a)(3) of this final rule. EPA calendar years, with a similar
+- education, corrosion control treatment States discretion to allow the alternative State in § 141.83(a), lead service line
+- installation, and/or lead service line of sampling 100 percent of taps. EPA replacement in § 141.84(b)(1), public
+- replacement. EPA believes that agrees with the State and has made education for community water systems
+- compliance and tracking multiple as ‘‘replaced through testing’’ if they Response to These Issues?
+- different lead statements in CCRs, EPA resume lead service line replacement Commenters generally agreed that all
+- concluded that all systems should have programs. This will only apply to a existing lead service lines should be
+- that a system could complete a 15-year meeting the action levels for two copper tap sampling. Due to the
+- lead service line replacement program consecutive six-month monitoring complexity of the issue, EPA has
+- and then meet the action level only to periods. In the preamble to the proposed determined that rule changes on site
+- expect that overall benefits from the the Agency agrees with this comment, of monitoring, customer awareness, and
+- LCR will increase as a result of the EPA has narrowed the scope of this lead service line replacement. The rule
+- indirect effects of the revisions on the provision in the final rule to only long- revisions described in section III of this
+- education, customer awareness, and classified as either community water UMRA: Unfunded Mandates Reform Act
+- lead service line replacement. These systems (CWSs) or non-transient non changes provide more effective C. Table of Contents community water systems (NTNCWSs).
+- protection of public health by reducing Regulated categories and entities I. Background exposure to lead in drinking water. A. What Is the Statutory Authority for the
+- maximum contaminant level goal or comments. public education, corrosion control MCLG, lead action level, and definitions treatment, and lead service line
+- of each from § 141.153(c)(1). G. Reevaluation of Lead Service Lines replacement). EPA is adding regulatory
+- Deemed Replaced Through Testing text to § 141.80 to describe this new 2. Final Revision 1. Proposed Revision compliance determination. The EPA is maintaining the revision as alternate sampling schedule may also be
+- comments, see section III.E of this EPA is maintaining the revision as below the minimum of one sample per
+- notice. proposed for reevaluation of lead tap that can be used for human service line replacement, but is adding consumption. F. Public Education Requirements
+- a provision to allow an alternative time 1. Proposed Revision schedule for systems that have 2. What Is EPA’s Rationale for the completed a 15-year replacement Minimum Number of Samples Required
+- actions to reduce exposure (e.g., to require the start of the 6-month timeframe on a case-by-case basis to period in which the system must take
+- corrosion control, public education, and complete public education activities lead service line replacement) as soon as water quality parameters to correspond
+- after an action level exceedance. with the start of the 4-month monitoring possible. The deadlines for completing However, systems must start these
+- education, corrosion control treatment, own unique citation, because citing it some of the topics of the public
+- lead service line replacement). This rule under § 141.85 implied that it only education message, as mentioned above,
+- includes a requirement to include the applied to the public education to fit their community and situation. For
+- a simple informational statement about system that had (1) initiated a lead considered when resuming a lead
+- lead in their CCR, which would be service line replacement program, then service line replacement program.
+- educational in nature. (2) discontinued the program, and then However, there were some commenters
+- CCR is a good way to educate the public system will have to reconsider for be reset when resuming a replacement about lead in drinking water. On the
+- replacement any lead service lines program. In 1991, EPA established the other hand, some viewed the proposed previously deemed replaced through the maximum replacement schedule of 15
+- CCR requirement as redundant with the testing provisions in § 141.84(c) during years for all systems in order to ensure other public education requirements
+- to include provisions for systems to believe that systems that are
+- Consistent with the NDWAC resuming lead service line replacement exceeding the action level should have
+- recommendations, EPA believes that the programs. Systems will have to update no more than 15 years to replace all of
+- elevated levels of lead in their tap water. Revisions? line replacement. Systems that have
+- Lead is unlike many other contaminants Lead service line replacement is installed optimal corrosion control and
+- in that it is primarily introduced into intended as an additional step to reduce that subsequently exceed the lead action
+- manner to avoid as much lead exposure less than or equal to 0.015 mg/L, is necessary for the system to perform lead
+- for those populations as possible, EPA intended to maximize the exposure service line replacement. If a system
+- VerDate Aug<31>2005 17:37 Oct 09, 2007 Jkt 214001 PO 00000 Frm 00015 Fmt 4701 Sfmt 4700 E:\FR\FM\10OCR3.SGM 10OCR3
+- those systems that have completed a 15- EPA, 2006a). The fixture replacement or community water system with
+- year lead service line replacement POU installation would need to be insufficient tier 1, tier 2, and tier 3
+- program, the State will determine a completed within 12 months of sampling sites shall complete its
+- However, once a system has been in a Additionally, systems will still need to plumbing materials used at that site
+- lead service line replacement program recommend optimal corrosion control would be commonly found at other sites
+- for more than five years, the system may treatment to the State within six months served by the water system.’’ EPA
+- tion. recommending optimum corrosion treatment. State requiring corrosion control studies. State specifying optimum corrosion control treatment.
+- timing for recommending source water treatment to the State. replacement. lead lines when resuming lead service line replace ment program. ones that exist in the current rule. New requirement
+- for PWS to provide a notice to consumers who are part of the utility’s lead testing program with sampling results. New content and delivery requirements for
+
+Prior source excerpt windows:
+
+- water system. definition of ‘‘control’’ as it applies to detailed justification of this exclusion.1
+- UMRA: Unfunded Mandates Reform lead service line (LSL) replacement, In the April 1996 Proposal, EPA
+- Act. commenters generally supported the indicated that the Agency was collecting
+- demonstrate compliance with partial (EPA, 1992b). the proposed revisions, others took
+- lead service line replacement In the April 1996 Proposal, EPA issue with some, or all, of the
+- requirements. requested comment on several revisions milestones that EPA proposed to retain.
+- applicable source water treatment C.9.c. and C.4.b.(i), respectively of this required to submit the system name, as requirements under § 141.83; and any
+- well as the system identification preamble. The Agency has no plans to applicable lead service line implement the other five suggestions. A number. EPA deleted the requirement replacement requirements under
+- for the system name as a part of LCR summary of the comments received on § 141.84. States also are required to these suggestions and EPA’s rationale
+- U.S. Environmental Protection Agency. Sep. B. Kempic. Analysis of Partial Lead Service 300j–2, 300j–3, 300j–4, 300j–9, 1857 et seq.,
+- 1992. Lead and Copper Rule Guidance Line Replacement Data. [EPA, 1998c] 6901–6992k, 7401–7671q, 7542, 9601–9657,
+- Manual; Volume II: Corrosion Control U.S. Environmental Protection Agency. June 11023, 11048.
+- demonstrate compliance with partial where none exist, and to delete system is only required to replace the
+- lead service line replacement references to building permit records portion of the lead service line that it
+- requirements. Section 142.14(d)(10)(ii) where the records are unavailable. owns and to reflect the notification and
+- subject to reduced monitoring. permissible source water levels; and proposed in 1996; and
+- • Section § 142.14(d)(8)(xiv) has been • Lead service line replacement • A new ‘‘done’’ milestone, indicating
+- added to require States to maintain required, accelerated replacement the system had optimized corrosion
+- records of any determinations made report 90th percentile lead and copper would be reported for all systems. The
+- regarding representative entry point values in conjunction with lead action lead service line replacement required
+- monitoring locations at ground water level exceedance and copper action milestone would continue to be
+- specified optimal water quality control believes that most systems not triggered information system and that it would
+- parameters, State-specified maximum into lead service line replacement not be possible to incorporate the
+- permissible source water levels, and requirements should be ‘‘done’’ at the proposed revisions until some time after
+- State to State and, EPA projects that the comment, EPA again provided national, number of implementation issues,
+- increased burden will not be significant local, and tribal organizations with brief including lead service line replacement.
+- (see discussion of State impacts in articles for inclusion in their newsletters
+- (g), and by revising paragraphs (b) and system will, at the system’s expense, § 141.85 Public education and (d) to read as follows: collect a sample from each partially
+- supplemental monitoring requirements. replaced lead service line that is § 141.84 Lead service line replacement representative of the water in the service
+- requirements. (a) Content of written public line for analysis of lead content, as education materials. (1) Community prescribed under § 141.86(b)(3), within
+- (b) A water system shall replace water systems. A community water 72 hours after the completion of the annually at least 7 percent of the initial system shall include the following text
+- partial replacement of the service line. number of lead service lines in its in all of the printed materials it The system shall collect the sample and
+- distribution system. The initial number distributes through its lead public report the results of the analysis to the of lead service lines is the number of education program. Systems may delete
+- water system subject to reduced service line samples following partial the end of the applicable monitoring
+- monitoring pursuant to § 141.86(d)(4), lead service line replacement required period by which the system must
+- or a water system subject to a by § 141.84 shall report the results to the provide the results of lead and copper
+- newly designated paragraphs (d)(8)(vi) demonstrate compliance with partial (ii) For any reports provided after May
+- and (d)(8)(vii) and paragraphs lead service line replacement 14, 2000 and before January 14, 2002,
+- (d)(8)(viii), (d)(9), (d)(10), and (d)(11) to requirements; and States may report in accordance with
+- determinations establishing shorter lead § 141.84(d) of this chapter and an exceedance occurred;
+- service line service line replacement compliance with lead service line (C) For each public water system
+- schedules under § 141.84; replacement schedules under (regardless of size), the 90th percentile
+- water treatment requirements pursuant replacement or becomes eligible to cease than the one specified in § 141.82(g)(1)
+- to § 141.83 of this chapter and/or lead service line replacement pursuant of this chapter.
+- completed lead service line replacement to § 141.84(f) of this chapter. requirements pursuant to § 141.84 of
+- this chapter, and the date of the State’s 17. Section 142.16 is amended by (3) Section 141.90(e)—Verifying
+- have been met. The date reported shall revising paragraphs (d)(1) and (d)(3) to replacement schedules and completion
+- be the latest of the following events: read as follows: of all partial lead service line replacement activities. (1) The date the State designates § 142.16 Special primacy requirements.
+- optimal water quality parameters under (4) Section 141.86(d)(4)(iv)(A)— Designating an alternative period for § 141.82(f) of this chapter or deems the (d)
+- because a larger volume of water will will incur increased exposure because therefore does not believe that a large
+- have elevated lead levels. As previously of partial line replacement, EPA is number of samples is required.
+- explained in detail in the 1991 LCR, including the requirement that water EPA is including the requirement that
+- language pertaining to plastic pipes and systems with in-line devices containing these additional data are needed to
+- service lines which contain lead lead or copper components may apply make the waiver decision. EPA agrees
+- plasticizers has been added to the final for a waiver, if they meet the other that this is appropriate and has
+- trigger a system [back] into lead service requirements noted that States would Agency has made the following
+- line replacement requirements at some need a long lead time to implement the revisions. changes. One commenter, for example, • EPA has made two substantive
+- 15 Under the 1991 requirements, States only mentioned that his State was in the changes to the introductory text of

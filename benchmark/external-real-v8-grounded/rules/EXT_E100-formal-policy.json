@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E100",
+  "semantics": "temporal_version",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_US_SEC_CYBER_2023"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E100_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_US_SEC_CYBER_2023"
+        }
+      ],
+      "allowed_values": [
+        "deadline=four_business_days_after_materiality"
+      ]
+    },
+    {
+      "rule_id": "EXT_E100_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "sec_item_105_form_8k=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_100_OLD",
+      "EXT3_DOC_100_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

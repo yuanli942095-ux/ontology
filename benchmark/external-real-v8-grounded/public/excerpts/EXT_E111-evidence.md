@@ -1,0 +1,124 @@
+# EXT_E111 Evidence
+
+- Source title: Lead and Copper Rule final rule 2007
+- Source URL: https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf
+- Prior source title: Lead and Copper Rule final rule 2000
+- Prior source URL: https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf
+
+Raw source excerpt windows:
+
+- deadlines for completing corrosion sample for lead and copper under concerns. Two commenters agreed that § 141.86(d)(4). For example, a system
+- control studies, lead service line four months is reasonable for replacement and public education (e.g., that takes lead and copper tap samples
+- monitoring activities, including between June and September and end of December or the end of distribution, collection, and initiation of September for systems monitoring June exceeds the action level, would only
+- must put these ‘‘tested out’’ LSLs back their State has been involved in a lead overestimates the number of affected
+- into their inventory of lead service lines service line replacement program. Six systems, because it assumes that all
+- that could be considered for States provided sufficient information to systems in a lead service line
+- completion in early 2009, is expected to the development of EPA regulatory simultaneous compliance, sampling
+- better enable EPA to assess the impacts proposals with significant Federal protocols, public education, lead service
+- VerDate Aug<31>2005 17:37 Oct 09, 2007 Jkt 214001 PO 00000 Frm 00032 Fmt 4701 Sfmt 4700 E:\FR\FM\10OCR3.SGM 10OCR3
+- Drinking Water (MC 4607M), LSL: Lead Service Line
+- [EPA–HQ–OW–2005–0034; FRL–8476–5] Environmental Protection Agency, 1200 LSLR: Lead Service Line Replacement
+- Pennsylvania Ave., NW., Washington, LT2: Long Term 2 Enhanced Surface Water RIN 2040–AE83 DC 20460; telephone number: (202) Treatment Rule 564–4880; e-mail address: MCLG: Maximum Contaminant Level Goal
+- implementation of the LCR in the areas apply to those treatment changes that reduced monitoring schedules must of monitoring, customer awareness, and would have long-term impacts on water
+- monitor during four consecutive lead service line replacement in the quality. EPA has provided examples of months, and systems on triennial short-term. The short-term changes long-term treatment changes in
+- monitoring must monitor once every 3 finalized in this action are expected to § 141.90(a)(3) of this final rule. EPA calendar years, with a similar
+- education, corrosion control treatment States discretion to allow the alternative State in § 141.83(a), lead service line
+- installation, and/or lead service line of sampling 100 percent of taps. EPA replacement in § 141.84(b)(1), public
+- replacement. EPA believes that agrees with the State and has made education for community water systems
+- compliance and tracking multiple as ‘‘replaced through testing’’ if they Response to These Issues?
+- different lead statements in CCRs, EPA resume lead service line replacement Commenters generally agreed that all
+- concluded that all systems should have programs. This will only apply to a existing lead service lines should be
+- that a system could complete a 15-year meeting the action levels for two copper tap sampling. Due to the
+- lead service line replacement program consecutive six-month monitoring complexity of the issue, EPA has
+- and then meet the action level only to periods. In the preamble to the proposed determined that rule changes on site
+- expect that overall benefits from the the Agency agrees with this comment, of monitoring, customer awareness, and
+- LCR will increase as a result of the EPA has narrowed the scope of this lead service line replacement. The rule
+- indirect effects of the revisions on the provision in the final rule to only long- revisions described in section III of this
+- service line replacement program after understood by the general public. Water in homes/buildings in this area.
+- the cessation of its lead service line systems must submit all written public (vi) For more information, call us at
+- replacement program as allowed by education materials to the State prior to [INSERT YOUR NUMBER] [(IF
+- recommendations, EPA believes that the programs. Systems will have to update no more than 15 years to replace all of
+- combination of methods for delivering the inventory of lead service lines to their lead service lines, as intended by
+- this urgent message (through public include those that were classified as the original rule. Sites that met the test
+- period during which such system inventory by 13). For those systems that much enters your body from drinking
+- exceeds the lead or copper action level. have completed a 15-year lead service water or other sources. It can cause
+- line replacement program, the State will damage to the brain and kidneys, and determine a schedule for replacing or can interfere with the production of red
+- paragraph (f) of this section shall update delivery. The State may require the APPLICABLE), or visit our Web site at
+- its inventory of lead service lines to system to obtain approval of the content [INSERT YOUR WEB SITE HERE]]. For
+- include those sites that were previously of written public materials prior to more information on reducing lead
+- system which exceeds the lead or paragraph (a)(1) introductory text; required in § 141.86(a), identify the
+- copper action level at the tap shall ■ c. In paragraph (a)(2) introductory text initial number of lead service lines in its
+- collect one source water sample from remove the citation ‘‘§§ 141.85(c)(7)(i) distribution system at the time the
+- end of the monitoring period during ■ d. Revising paragraph (a)(3); annually replacing at least 7 percent of
+- ■ e. Revising paragraph (e)(1); the initial number of lead service lines which the lead or copper action level ■ f. Revising paragraph (e)(2)
+- was exceeded. For monitoring periods in its distribution system. introductory text; (2) No later than 12 months after the that are annual or less frequent, the end ■ g. Revising the last sentence of
+- AGENCY technical inquiries, contact Jeffrey LCR: Lead and Copper Rule Kempic, Office of Ground Water and LCRMR: Lead and Copper Rule Minor 40 CFR Parts 141 and 142 Revisions
+- education, customer awareness, and classified as either community water UMRA: Unfunded Mandates Reform Act
+- lead service line replacement. These systems (CWSs) or non-transient non changes provide more effective C. Table of Contents community water systems (NTNCWSs).
+- protection of public health by reducing Regulated categories and entities I. Background exposure to lead in drinking water. A. What Is the Statutory Authority for the
+- 1. How Is EPA Revising This Rule? 2. What Is EPA’s Rationale for the Advancement Act
+- 2. What Is EPA’s Rationale for the Reduced Reevaluation of Lead Service Lines J. Congressional Review Act
+- Monitoring Revisions? Revisions? VI. References 3. What Were the Key Issues Raised By 3. What Were the Key Issues Raised By Commenters on the Reduced Monitoring Commenters on the Reevaluation of Lead I. Background
+- 1. How Is EPA Revising This Rule? 3. How Are Tribes Affected? NPDWRs, which included lead and
+- 2. What Is EPA’s Rationale for the IV. Economic Analysis copper. The 1991 NPDWR for Lead and
+- Consumer Notice of Lead Tap Water A. Direct Costs Copper (56 FR 26460, U.S. EPA, 1991a)
+- Monitoring Results Revisions? B. Overall Cost Methodologies and fulfilled the requirements of the 1986
+
+Prior source excerpt windows:
+
+- language pertaining to plastic pipes and systems with in-line devices containing these additional data are needed to
+- service lines which contain lead lead or copper components may apply make the waiver decision. EPA agrees
+- plasticizers has been added to the final for a waiver, if they meet the other that this is appropriate and has
+- § 142.15(c)(4)(iii)(B); and PWS demonstrations of limited control biweekly to monthly.
+- —90th percentile copper values for each over lead service lines. b. Comments and analysis. EPA
+- system for each monitoring period in • A new § 142.16(d)(4) has been received a number of comments on this
+- water system. definition of ‘‘control’’ as it applies to detailed justification of this exclusion.1
+- UMRA: Unfunded Mandates Reform lead service line (LSL) replacement, In the April 1996 Proposal, EPA
+- Act. commenters generally supported the indicated that the Agency was collecting
+- systems conducting reduced monitoring where the system had the authority to authority to replace the privately-owned
+- for lead and copper at the tap that are replace, repair, or maintain the line, or portions of LSLs. In addition, EPA
+- triggered into WQP monitoring pursuant had other forms of authority over the solicited comments regarding the option
+- Agency in the preamble to the 1991 taken later that day without running any and all were at or below 10 µ/L. The
+- LCR. EPA stated in the preamble that water to waste before sampling. average service line lead level almost
+- the Agency thought partial LSL The elevated lead levels produced by doubled at one site and exceeded the
+- maintain records of any system-specific revisions, some offered additional paragraph (a)(1) with the phrase ‘‘the
+- determinations regarding the suggestions for consideration by EPA. portion of each lead service line that we
+- submission of information, including For example, suggestions were made to own.’’ Section 141.85(a)(1)(iv)(B)(5) also
+- for use of non-tier 1 sample sites and refuses access are no longer available for was done.
+- insufficient lead service line sample inclusion in the sampling pool and the EPA proposed this provision to
+- sites. water system should document the address the problem many NTNCWSs
+- demonstrate compliance with partial (EPA, 1992b). the proposed revisions, others took
+- lead service line replacement In the April 1996 Proposal, EPA issue with some, or all, of the
+- requirements. requested comment on several revisions milestones that EPA proposed to retain.
+- applicable source water treatment C.9.c. and C.4.b.(i), respectively of this required to submit the system name, as requirements under § 141.83; and any
+- well as the system identification preamble. The Agency has no plans to applicable lead service line implement the other five suggestions. A number. EPA deleted the requirement replacement requirements under
+- for the system name as a part of LCR summary of the comments received on § 141.84. States also are required to these suggestions and EPA’s rationale
+- U.S. Environmental Protection Agency. Sep. B. Kempic. Analysis of Partial Lead Service 300j–2, 300j–3, 300j–4, 300j–9, 1857 et seq.,
+- 1992. Lead and Copper Rule Guidance Line Replacement Data. [EPA, 1998c] 6901–6992k, 7401–7671q, 7542, 9601–9657,
+- Manual; Volume II: Corrosion Control U.S. Environmental Protection Agency. June 11023, 11048.
+- 4. Use of alternatives to tap samples to 32113), June 29, 1992 (57 FR 28786) and people.
+- assess corrosion control effectiveness June 30, 1994 (59 FR 33860). LCR: Lead and Copper Rule.
+- a. Burden reduction suggestion and 90th Percentile Value: The background LCRMR: Lead and Copper Rule Minor concentration of lead or copper in tap Revisions.
+- levels of lead or copper at the tap, and EPA’s Response to Comments on the comments on the appropriateness of the
+- replace lead service lines in the Lead and Copper Rule Minor Revisions continued exclusion in response to the
+- distribution system if the level of lead (EPA, 1999e). April 1996 Proposal. All of the
+- containing. Lead-containing materials endpoint control valves. Today’s action copper subsequent to becoming free of
+- include: Plastic pipes and service lines does not incorporate specific reference materials containing lead and copper.
+- which contain lead plasticizers; lead to the NSF standard, however, in case To qualify for the waiver, the system’s
+- service lines; lead pipes; lead-soldered other standards that meet the 90th percentile lead and copper levels
+- pipe joints; and leaded brass or bronze requirements of SDWA sections 1417(d) could not exceed 0.005 mg/L for lead or
+- § 141.87(d). Such a system may resume (i) The laboratory establishes that must demonstrate that its distribution
+- reduced monitoring for lead and copper improper sample analysis caused system and service lines and all
+- at the tap and for water quality erroneous results. drinking water supply plumbing,
+- TABLE 1.—LCRMR PROVISIONS REQUIRING STATE ADOPTION PRIOR TO IMPLEMENTATION CFR Section Revision
+- • Eliminate justification letters for too few tier 1 sites (formerly under § 141.86(a)(8)) and/or lead service line sample sites
+- • NTNCWSs and special-case CWSs without sufficient first-draw sites under §§ 141.86(b)(1), (2), and (5);
+- (i) Copper action level requirements of non-tier 1 sample sites and (i) Proposed revision and background
+- (A) Proposed revision and background insufficient lead service line sample sites (ii) Comments and analysis
+- (B) Comments and analysis (i) Proposed revision and background (iii) Today’s action (C) Today’s action (ii) Comments and analysis d. Summary of water quality monitoring
+- b. Comments and analysis water exceeded by 10 percent of the 5. Reduced frequency for State reporting of LSL: Lead service line. sites sampled during a monitoring MCLG: Maximum contaminant level
+- 90th percentile and milestone data a. Burden reduction suggestion and period. goal. background Action Level: The 90th percentile MDL: Method Detection Limit.
+- SDWIS: Safe Drinking Water FR 44214, August 18, 1998). as ‘‘transient systems’’) on the grounds Information System. 2. Overview of public comments that persons served by these systems
+- Small System: For purposes of the received. EPA received approximately may be at risk of non-carcinogenic Lead and Copper Rule only, a water
+- 900 comments from 97 commenters in adverse effects. The court granted the system serving 3,300 or fewer people. Agency’s request for a voluntary remand
+- found to contribute significantly to high responses to them are contained in Eighteen commenters submitted

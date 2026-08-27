@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Lead_and_Copper_Rule_Improvements____EPA_2024_LCRI_scope",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#scope_rule",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "epa_lcri_improvement_scope=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "scope=lead_service_line_improvements",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

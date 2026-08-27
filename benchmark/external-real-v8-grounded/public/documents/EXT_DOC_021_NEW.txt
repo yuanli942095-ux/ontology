@@ -1,0 +1,64 @@
+Source title: Guidance on Applying WCAG 2.2 to Mobile Applications
+Source URL: https://www.w3.org/TR/wcag2mobile-22/
+
+Raw source excerpt window:
+
+- For information on related work, see Mobile Accessibility at W3C. 1.1 Guidance in this document
+- This document provides informative guidance (guidance that is not normative and that does not set requirements) with regard to the interpretation and application of Web Content Accessibility Guidelines (WCAG) to mobile applications. Specifically, this document provides informative guidance on applying WCAG 2.2 Level A and AA success criteria to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps.
+- 1.1.1 Interpretation of Web Terminology in a Mobile Context
+- The intention of MATF is to publish WCAG2Mobile as a Group Note, just like WCAG2ICT.
+- WCAG2ICT is organized to mirror the principle, guideline and success criterion structure of WCAG; this model is also used in WCAG2Mobile. WCAG2ICT clarifies when and how WCAG Level A and Level AA success criteria could be applied to non-web documents and software; WCAG2Mobile narrows the scope of this work to mobile applications.
+- Success Criterion 3.2.4 Consistent Identification (Level AA) Success Criterion 3.3.2 Labels or Instructions (Level A) Success Criterion 3.3.5 Help (Level AAA)
+- Supporting documentation in the Mobile Mapping Appendix included WCAG 2.0 Techniques that Apply to Mobile to address mobile web use cases for the rest of the WCAG 2.0 success criteria at Level A, Level AA, and Level AAA, as they were available in 2015 when the webpage was published. However, most listed techniques have limited application to native mobile applications and cross-platform frameworks like Flutter and React Native.
+- This document includes all the relevant WCAG 2.1 Level A and AA success criteria and guidelines:
+- https://www.w3.org/TR/WCAG22/#audio-control WCAG2ICT: Applying SC 1.4.2 Audio Control to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 1.4.2, replacing “on a Web page” with “in a non-web document or software”, “any content” with “any part of a non-web document or software”, “whole page” with “whole document or software”, and “on the Web page” with “in the document or software”; and removing “See Conformance Requirement 5: Non-Interference”.
+- With these substitutions, it would read:
+- progress could confuse users or cause them to think that content was frozen or broken. https://www.w3.org/TR/WCAG22/#pause-stop-hide WCAG2ICT: Applying SC 2.2.2 Pause, Stop, Hide to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 2.2.2, replacing “page” and “Web page” with “non-web documents and software” and removing “See Conformance Requirement 5: Non-Interference” in Note 2 of the success criterion.
+- 2.2.2 Pause, Stop, Hide: For moving, blinking, scrolling, or auto-updating information, all of the following are true:
+- Success Criterion 3.3.4 Error Prevention (Legal, Financial, Data) Success Criterion 3.3.7 Redundant Entry Success Criterion 3.3.8 Accessible Authentication (Minimum)
+- Success Criterion 4.1.1 Parsing Success Criterion 4.1.2 Name, Role, Value Success Criterion 4.1.3 Status Messages A. Acknowledgements A.1 Contributors to the development of this document
+- A.2 Enabling funders B. References B.1 Informative references 1. Background
+- When certain Web-specific terms or phrases like “web page(s)” were used in success criteria, those were replaced with mobile terms or phrases like “screen(s)” or “view(s)”. Additional notes were also provided to explain the terminology replacements.
+- A small number of success criteria are written to apply to “a set of web pages” or “multiple web pages” and depend upon all pages in the set to share some characteristic or behavior. Since the unit of conformance in WCAG 2 is a single web page, the task force agreed that the equivalent unit of conformance for mobile applications is a single screen within the application. It follows that an equivalent unit of evaluation for a “set of web pages” would be a “set of screens”, not — as previously interpreted in WCAG2ICT — as a “set of software”. These terms are defined in the Key Terms section of this document. See “set of screens” to determine when a group of screens in a mobile application are considered a set.
+- The glossary terms were also reviewed and most of them applied to mobile applications, as written. Some applied with additional notes or edits (largely related to phrases like “Web page(s)”), and a small number of terms were only used in Level AAA success criteria, which are not addressed by the WCAG2Mobile Note at this time.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-4-1-2-name-role-value-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #48 on GitHub Success Criterion 4.1.3 Status Messages (Level AA) WCAG: Success Criterion 4.1.3 Status Messages
+- In content implemented using markup languages, status messages can be programmatically determined through role or properties such that they can be presented to the user by assistive technologies without receiving focus.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-1-3-5-identify-input-purpose-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #2 on GitHub Success Criterion 1.4.1 Use of Color (Level A) WCAG: Success Criterion 1.4.1 Use of Color
+- Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-1-4-4-resize-text-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #3 on GitHub Success Criterion 1.4.5 Images of Text (Level AA) WCAG: Success Criterion 1.4.5 Images of Text
+- If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text except for the following:
+- The WCAG2Mobile interpretation aligns with WCAG2ICT, emphasizing that long presses and other accessibility features are not addressed by this success criterion.
+- Success Criterion 2.2.1 Timing Adjustable (Level A) WCAG: Success Criterion 2.2.1 Timing Adjustable For each time limit that is set by the content, at least one of the following is true:
+- Turn off The user is allowed to turn off the time limit before encountering it; or Adjust The user is allowed to adjust the time limit before encountering it over a wide range
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-5-8-target-size-minimum-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #10 on GitHub Success Criterion 3.1.1 Language of Page (Level A) WCAG: Success Criterion 3.1.1 Language of Page
+- The default human language of each web page can be programmatically determined. https://www.w3.org/TR/WCAG22/#language-of-page WCAG2ICT: Applying SC 3.1.1 Language of Page to Non-Web Documents and Software
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-3-1-1-language-of-page-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #14 on GitHub Success Criterion 3.1.2 Language of Parts (Level AA) WCAG: Success Criterion 3.1.2 Language of Parts
+- The human language of each passage or phrase in the content can be programmatically determined except for proper names, technical terms, words of indeterminate language, and words
+- Help mechanisms may be provided directly [in the non-web document or software], or may be provided via a direct link to a [different non-web document, software, or Web page] containing the information.
+- For this success criterion, "the same order relative to other [content]" can be thought of as how the content is ordered when the [non-web document or software content is serialized]. The visual position of a help mechanism is likely to be consistent across [non-web documents or software] for the same [content layout variation] (e.g., CSS break-point). The user can initiate a change, such as changing the [non-web document’s or software's] zoom or orientation, which may trigger a different [content layout variation]. This criterion is concerned with relative order across [non-web documents or software] displayed in the same [content layout variation] (e.g., same zoom level and orientation).
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-3-2-6-consistent-help-to-non-web-documents-and-software
+- WCAG2ICT: Applying SC 4.1.1 Parsing (Obsolete and removed) (WCAG 2.2) to Non-Web Documents and Software
+- WCAG 2.2 has made this success criterion obsolete and removed it as a requirement in the standard. Therefore, the interpretation of this success criterion for non-web documents and software has been removed.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-4-1-1-parsing-obsolete-and-removed-wcag-2-2-to-non-web-documents-and-software
+- WCAG 2.2 has made this success criterion obsolete and removed it as a requirement in the standard. Therefore, the interpretation of this success criterion for mobile applications has been removed.
+- Success Criterion 4.1.2 Name, Role, Value (Level A) WCAG: Success Criterion 4.1.2 Name, Role, Value
+- For all user interface components (including but not limited to: form elements, links and components generated by scripts),
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-3-1-three-flashes-or-below-threshold-to-non-web-documents-and-software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 2.3.1, replacing “Web pages” with “views”, “the whole page” with “the whole view”, and “the Web page” with “the view”; and removing “See Conformance Requirement 5: Non-Interference”.
+- 2.3.1 Three Flashes or Below Threshold: Views do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.
+- When a user interface component receives keyboard focus, the component is not entirely hidden due to author-created content.
+- Where content in a configurable interface can be repositioned by the user, then only the initial positions of user-movable content are considered for testing and conformance of this success criterion.
+- Content opened by the user may obscure the component receiving focus. If the user can reveal the focused component without advancing the keyboard focus, the component with focus is not considered visually hidden due to author-created content.
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 1.4.4.
+- The Intent section refers to the ability to allow users to enlarge the text on screen at least up to 200% without needing to use assistive technologies. This means that the application provides some means for enlarging the text 200% (zoom or otherwise) without loss of content or functionality, or that the application works with the platform accessibility features to meet this success criterion.
+- For non-web software, there may be cases where the platform does not scale all text up to 200%. In such cases, authors are encouraged to meet user needs by scaling text to the extent supported by user settings in the platform.
+- An animation that occurs as part of a preload phase or similar situation can be considered essential if interaction cannot occur during that phase for all users and if not indicating progress could confuse users or cause them to think that content was frozen or broken.
+- While the success criterion uses the term “information”, the WCAG 2 Intent section makes it clear that this is to be applied to all content. Any content, whether informative or decorative, that is updated automatically, blinks, or moves may create an accessibility barrier.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-2-2-pause-stop-hide-to-non-web-documents-and-software

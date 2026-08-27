@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Framework_2_0____CSF_informative_reference_mappings",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#mapping_scope",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "csf2_mappings_overlap=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "scope=overlap_mappings",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

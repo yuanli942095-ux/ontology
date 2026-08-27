@@ -1,0 +1,64 @@
+Source title: Regulation (EC) No 1272/2008 official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- the classification and labelling inventory is a harmonised (hereinafter referred to as ‘safety data sheet’), without prejudice to
+- classification included in Part 3 of Annex VI. Article 17(2) of this Regulation. L 353/16 EN Official Journal of the European Union 31.12.2008
+- 2. The product identifier for a substance shall consist of at least 2. Subject to Article 33, hazard pictograms shall fulfil the
+- differentiations covered by that entry. (a) data generated in accordance with any of the methods However, where the substance also falls within one or more referred to in Article 8(3);
+- hazard classes or differentiations not covered by an entry in Part 3 of Annex VI, classification under Title II shall be carried
+- out for those hazard classes or differentiations. (b) epidemiological data and experience on the effects on
+- Annex VI, that substance shall be classified in accordance with the purposes of determining whether the substance entails a
+- that entry, and a classification of that substance in accordance physical, health or environmental hazard as set out in Annex I,
+- with Title II shall not be performed for the hazard classes or and, in particular, the following:
+- is set out in the tables indicating the label elements required for each hazard class in Annex I. (b) if the substance is not included in Part 3 of Annex VI, but
+- appears in the classification and labelling inventory, a name Article 20 and an identification number as given therein; Signal words (c) if the substance is not included in Part 3 of Annex VI nor in
+- the classification and labelling inventory, the number 1. The label shall include the relevant signal word in
+- substances, the procedures set out in Article 37, paragraphs 1, 4, concerning the inclusion of that substance together with the
+- 5 and 6 shall apply. relevant classification and labelling elements in Table 3.1 of Part 3 of Annex VI and, where appropriate, the specific concentration limits or M-factors.
+- 3. Where a substance fulfils the criteria for other hazard classes or differentiations than those referred to in paragraph 1 and does A corresponding entry shall be included in Table 3.2 of Part 3 of
+- not fall under paragraph 2, a harmonised classification and Annex VI subject to the same conditions, until 31 May 2015. labelling in accordance with Article 37 may also be added to
+- Annex VI on a case-by-case basis, if justification is provided
+- M-factors, or a proposal for a revision thereof. market. The proposal shall follow the format set out in Part 2 of Article 38 Annex VI and contain the relevant information provided for in
+- Part 1 of Annex VI. Content of opinions and decisions for harmonised classification and labelling in Part 3 of Annex VI; accessibility of information
+- 2. A manufacturer, importer or downstream user of a
+- The classification and labelling inventory (a) the identity of the notifier(s) responsible for placing the substance or substances on the market as specified in
+- section 1 of Annex VI to Regulation (EC) No 1907/2006; 1. The Agency shall establish and maintain a classification and
+- labelling inventory in the form of a database. (b) the identity of the substance or substances as specified in
+- — point 8.1 (a) and (b), Directive 1999/45/EC shall be amended as follows: — point 8.2 (a) and (b), 1. in Article 3(2), first indent, the words ‘Annex I to Directive
+- 67/548/EEC’ shall be replaced by ‘Part 3 of Annex VI to — point 9.1 (a) and (b), Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification,
+- — point 9.2 (a) and (b), labelling and packaging of substances and mixtures (*). — point 9.3 (a) and (b), (*) OJ L 353, 31.12.2008, p. 1’; — point 9.4 (a) and (b);
+- (h) Annex III, Part A, section (b) Non-aquatic environ- (ea) for substances classified as hazardous to the
+- ment point 1.1 (a) and (b); aquatic environment, if an M-factor has been set in an agreed entry in the classification and (i) Annex V, section A points 3 and 4; labelling inventory referred to in Article 42 of
+- Regulation (EC) No 1272/2008, the cut-off value in Table 1.1 of Annex I to that Regulation (j) Annex V, section B point 9; adjusted using the calculation set out in
+- ‘Annex I to Directive 67/548/EEC (19th adaptation)’ shall period from its entry into force until 1 December
+- be replaced by ‘Part 3 of Annex VI to Regulation (EC) 2010, that classification may be added in the safety
+- No 1272/2008’. data sheet together with the classification in accor dance with Directive 67/548/EEC. Article 57 From 1 December 2010 until 1 June 2015, the safety
+- ‘(b) the specific concentration limits that have been labelled in accordance with Regulation (EC) No 1272/
+- set in Part 3 of Annex VI to Regula- 2008 that classification shall be provided in the safety
+- tion (EC) No 1272/2008 of the European data sheet, together with the classification in accor
+- (i) for substances where a specific concentration limit is set for the relevant hazard class or
+- differentiation either in Part 3 of Annex VI or in the classification and labelling inventory referred
+- to in Article 42, and where the hazard class or differentiation is mentioned in Table 1.1, the lower
+- to in Article 42, and where the hazard class or differentiation is not mentioned in Table 1.1, the
+- specific concentration limit set either in Part 3 of Annex VI or in the classification and labelling
+- (iii) for substances where no specific concentration limit is set for the relevant hazard class or
+- (i) for substances where an M-factor has been set for the relevant hazard category either in Part 3 of
+- Annex VI, or in the classification and labelling inventory referred to in Article 42, the generic cut
+- off value in Table 1.1 adjusted using the calculation set out in section 4.1 of this Annex; or
+- Section 4.1: Hazardous to the aquatic environment — Chronic hazard categories 3, 4 31.12.2008 EN Official Journal of the European Union L 353/329
+- ANNEX VI Harmonised classification and labelling for certain hazardous substances
+- Part 1 of this Annex provides an introduction to the list of harmonised classification and labelling, including information
+- Community level. In Table 3.1 the classification and labelling are based on the criteria in Annex I to this Regulation. In
+- Table 3.2 classification and labelling are based on the criteria in Annex VI to Directive 67/548/EEC.
+- 1. PART 1: INTRODUCTION TO THE LIST OF HARMONISED CLASSIFICATIONS AND LABELLING 1.1. Information listed for each entry 1.1.1. Numbering of entries and identification of a substance
+- 1.1.2. Information related to the classification and labelling of each entry in Table 3.1 1.1.2.1. Classification codes 1.1.2.1.1. H a z a r d c l a s s a n d c a t e g o r y c o d e s
+- The classification for each entry is based on the criteria set out in Annex I, in accordance with Article 13(a) and
+- is presented in the form of a code representing the hazard class and the category or categories/divisions/types
+- Classification under Directive 67/ substance when rele- Hazard Note 548/EEC Hazard Class-and-Category vant statement R53 Aquatic Chronic 4 H413
+- For these classes it is possible to use the recommended minimum classification as defined in section 1.2.1.1 in Annex VI. Data or other
+- information may be available to indicate that re-classification in a more severe category is appropriate.

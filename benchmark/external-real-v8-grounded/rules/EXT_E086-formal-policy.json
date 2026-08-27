@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E086",
+  "semantics": "temporal_version",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_EU_CLP_ATP_2020_2174"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E086_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_EU_CLP_ATP_2020_2174"
+        }
+      ],
+      "allowed_values": [
+        "annex_vi=updated_entry"
+      ]
+    },
+    {
+      "rule_id": "EXT_E086_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "clp_annex_vi_update=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_086_OLD",
+      "EXT3_DOC_086_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

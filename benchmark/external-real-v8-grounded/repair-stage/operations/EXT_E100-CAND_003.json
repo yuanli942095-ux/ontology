@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Risk_Management__Strategy__Governance__and_Incident_Disclosure_rules____SEC_Form_8_K_Item_1_05_disclosure",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#disclosure_deadline",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "sec_item_105_form_8k=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "deadline=four_business_days_after_materiality;near_miss=wrong_scope",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

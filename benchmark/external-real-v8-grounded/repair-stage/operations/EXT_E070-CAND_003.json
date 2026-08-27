@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Beijing_2026_policy_agricultural_insurance_reference_terms____wheat_lodging_five_level_definition",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#damage_definition",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "wheat_lodging_grade_definition=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "lodging_definition=five_grade;near_miss=wrong_scope",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

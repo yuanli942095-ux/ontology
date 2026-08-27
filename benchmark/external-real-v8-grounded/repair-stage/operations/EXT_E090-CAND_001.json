@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Commission_Delegated_Regulation__EU__2020_2174____labelling_exception",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#exception_rule",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "labelling_exception=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "exception=specified_label_case",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

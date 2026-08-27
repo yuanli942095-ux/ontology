@@ -1,0 +1,62 @@
+Source title: IFRS S1 and S2 project summary
+Source URL: https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf
+
+Raw source excerpt window:
+
+- Companies can voluntarily apply these Standards, and jurisdictional authorities can decide whether to require companies to apply them.
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 2
+- Better information for better decisions Decision-useful information about About the ISSB sustainability-related risks and The Trustees of the IFRS Foundation announced
+- IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information
+- IFRS S2 Climate-related Disclosures At a glance The first two ISSB Standards Effective date The International Sustainability
+- IFRS S1 General Requirements for Disclosure of IFRS S1 and IFRS S2 are effective for annual
+- IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information—specifies the requirements for the disclosure of sustainability
+- IFRS S2 Climate-related Disclosures—specifies the requirements for the disclosure of climate-related financial information.
+- Basis for Conclusions on IFRS S1—summarises the ISSB’s considerations in developing the requirements in IFRS S1.
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 20
+- Metrics and targets continued ... Climate-related targets Disclosure topic—example Industry-based metrics—example IFRS S2 requires a company to disclose the
+- climate‑related targets it has set, as well as those it A company in the automobiles industry might A company is required to disclose information
+- together to assert compliance with IFRS Sustainability relating to providing resources to the company. Disclosure Standards. However, the ISSB has
+- IFRS S2 Climate-related Disclosures sets out the provided reliefs from some requirements in the first
+- requirements for a company to disclose information year a company applies the Standards. For example,
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 14
+- 2 IFRS S2 Climate-related Disclosures
+- A company applying IFRS S1 is required to apply Climate-related risks refers to the potential
+- is required to meet by law or regulation, including any
+- determine that the disclosure topic ‘Fuel Economy about how it plans to achieve any climate‑related
+- GHG emissions targets. A company is required to
+- for conventional vehicles with high fuel efficiency’. topic. These metrics include: climate change, including jurisdictional commitments
+- that arise from that agreement, has informed The disclosure topic identifies: • the fuel economy of the company’s fleet; and the target. • a climate-related transition risk—if the company • sales of zero-emission vehicles.
+- If a company has a GHG emissions target, the
+- IFRS S2 integrates the recommendations of the opportunities in the first year that it applies IFRS S1
+- Task Force on Climate-related Financial Disclosures and IFRS S2. (TCFD) and requires the disclosure of information Although all public and private companies can apply
+- about both cross-industry and industry‑specific IFRS S1 and IFRS S2, the ISSB does not have the climate-related risks and opportunities. right to mandate the application of the Standards.
+- and percentage of assets or business activities Companies are required to refer to and consider
+- IFRS S2 does not specify the inputs a company vulnerable to physical risks; disclosure topics and associated industry-based is required to use to measure its Scope 3 GHG
+- metrics in the Industry-based Guidance on
+- • disclosure requirements applicable to those • shall refer to and consider the applicability of the • shall refer to and consider the applicability of the
+- sustainability-related risks and opportunities. disclosure topics in the SASB Standards; and metrics associated with the disclosure topics in
+- • may refer to and consider the applicability of: the SASB Standards; and
+- IFRS S2 requires a company to disclose information A company is required to disclose information about:
+- that enables investors to understand the governance Integrating disclosures • how responsibilities for climate-related risks and processes, controls and procedures the company uses IFRS S1 emphasises that a company is
+- opportunities are reflected in the terms of reference,
+- target, how it sets and reviews each target, and its
+- its circumstances. The disclosure topic notes that industry has established an emissions reduction
+- ‘more stringent emissions standards and changing target, it could show progress towards that target
+- help achieve this objective. An important priority has including in combination with incremental jurisdictional been to establish interoperability between IFRS S1
+- requirements (commonly referred to as ‘building and IFRS S2 and the European Sustainability blocks’). This ensures that ISSB Standards are Reporting Standards (ESRS), the GRI Standards and
+- compatible with other reporting requirements, other major jurisdictional requirements. For example, including jurisdictional requirements and those aimed
+- company applies the ISSB Standards. In addition, sustainability-related matters beyond what is required reporting period; and a company that elects to provide information only
+- by IFRS S1 and IFRS S2, but only if that additional • the anticipated effects of sustainability-related
+- about climate‑related risks and opportunities in the
+- information does not obscure material information risks and opportunities on the company’s financial
+- first year it applies IFRS S1 is not required to provide required by IFRS S1 and IFRS S2. position, financial performance and cash flows comparative information about sustainability‑related
+- risks and opportunities beyond climate in its second over the short, medium and long term, taking into
+- and establishing a Transition Implementation Group on IFRS S2 CDSB Framework Application Guidance
+- IFRS S1 and IFRS S2 (TIG). • Applying scenario analysis to assess a • Examples of considering and applying the SASB company’s climate resilience Standards
+- • Measuring Scope 1, Scope 2 and Scope 3 IFRS S2
+- monitor, manage and oversee climate-related risks disclosures on governance—rather than providing
+- and opportunities. separate governance disclosures for each sustainability‑related risk and opportunity.
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 16
+- change. As such, a company is required to disclose financial effects quantitative and qualitative information is required,
+- the climate-related risks and opportunities that could IFRS S2 requires a company to identify how and when disclosing only qualitative information is
+- reasonably be expected to affect its prospects. climate‑related risks and opportunities have affected permitted.

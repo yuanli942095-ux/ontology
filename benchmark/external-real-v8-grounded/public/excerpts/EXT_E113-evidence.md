@@ -1,0 +1,128 @@
+# EXT_E113 Evidence
+
+- Source title: Lead and Copper Rule final rule 2007
+- Source URL: https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf
+- Prior source title: Lead and Copper Rule final rule 2000
+- Prior source URL: https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf
+
+Raw source excerpt windows:
+
+- SYSTEMS AFFECTED BY EACH REG- 1. One-Time Activities on the proposed rule. However, two ULATORY CHANGE States did not support the alternative
+- All small systems subject to the Lead sampling. For purposes of estimating Small systems and Copper Rule will be expected to costs, EPA assumed that the States that
+- Regulatory change impacted per incur some costs to read the rule year did not support the alternative and changes and communicate requirements States that did not comment on the rule
+- frequency of monitoring for lead and than nine days in any six-month period (d) Monitoring after State specifies copper from annually to once every
+- specified in § 141.87(d) shall conduct water quality parameter values for three years. Any water system that tap water sampling for lead and copper optimal corrosion control. After the
+- meets the lead action level and at the frequency specified in paragraph State specifies the values for applicable maintains the range of values for the
+- 2. What Is EPA’s Rationale for the IV. Economic Analysis copper. The 1991 NPDWR for Lead and
+- Consumer Notice of Lead Tap Water A. Direct Costs Copper (56 FR 26460, U.S. EPA, 1991a)
+- Monitoring Results Revisions? B. Overall Cost Methodologies and fulfilled the requirements of the 1986
+- Provisions of the Rule? Requirements water if it contributes significantly to
+- b. What Is EPA’s Rationale for Revising the A. Executive Order 12866: Regulatory lead and copper levels at the tap, and
+- Timing Provisions of the Rule? Planning and Review replace lead service lines in the
+- repeat sampling was an unfair B. Definitions for Compliance and modifying the reduced monitoring
+- requirement for small systems since Monitoring Periods provisions for lead and copper sampling
+- large systems are not required to take 1. How Is EPA Revising This Rule? in § 141.86(d)(4)(iii), for water quality
+- Some commenters expressed concern their use, and be deemed optimized by parameter sampling with lead and
+- that a system could complete a 15-year meeting the action levels for two copper tap sampling. Due to the
+- lead service line replacement program consecutive six-month monitoring complexity of the issue, EPA has
+- parameter sampling with lead and than three years after publication of the after promulgation, which coincides
+- copper tap sampling. While many final rule. After reviewing comments, with the date by which States are
+- commenters supported the scientific EPA is adopting a compliance date for required to adopt and submit revised
+- 1. How Is EPA Revising This Rule? 3. How Are Tribes Affected? NPDWRs, which included lead and
+- existing LCR worked to reduce drinking response to all comments on this rule is 1. Proposed Revision
+- water lead levels; and if the regulation found in the Lead and Copper Docket at is currently being effectively www.regulations.gov. EPA proposed to amend several
+- implemented, especially with respect to B. Definitions for Compliance and Regulations (CFR) to require water
+- revisions would modify the mandatory notice. there has been confusion as to whether language in public education to make it ‘‘site’’ refers to taps or physical
+- III. Discussion of the Lead and Copper shorter and easier to understand; require locations. EPA is clarifying that Rule Short-Term Regulatory Revisions
+- water systems to deliver material to new sampling ‘‘sites’’ refer to ‘‘taps that can and Clarifications organizations, engage in new outreach be used for human consumption.’’ The
+- education, corrosion control treatment States discretion to allow the alternative State in § 141.83(a), lead service line
+- installation, and/or lead service line of sampling 100 percent of taps. EPA replacement in § 141.84(b)(1), public
+- replacement. EPA believes that agrees with the State and has made education for community water systems
+- deadlines for completing corrosion sample for lead and copper under concerns. Two commenters agreed that § 141.86(d)(4). For example, a system
+- control studies, lead service line four months is reasonable for replacement and public education (e.g., that takes lead and copper tap samples
+- monitoring activities, including between June and September and end of December or the end of distribution, collection, and initiation of September for systems monitoring June exceeds the action level, would only
+- The clarified timing of actions and would incur a violation for not alter compliance action schedules. In having already completed water quality
+- following a lead or copper action level response to these commenters, EPA is exceedance is also intended to ensure parameter monitoring. Therefore, EPA is
+- modifying § 141.85(b)(3)(iv) to allow revising the requirement in § 141.87(d) that the system and the State begin States flexibility in extending the
+- and the State begin public education public education activities on a case-by- after the end of the 4-month monitoring actions to reduce exposure as soon as
+- case basis. period in which they had to take lead possible, but allows these actions to The timing of samples that should be and copper tap samples. For example, a
+- continue past the 60-day timeframe as taken for systems on reduced system that takes lead and copper tap needed for effective implementation.
+- monitoring schedules ensures that samples between June and September States should still make every effort to States and systems have an accurate and exceeds the action level, would
+- monitoring even if they exceeded the their monitoring requirements. As stated approval by the State to add a new
+- lead or copper action level if they could in the proposal, EPA did consider source of water or make any long-term
+- demonstrate their corrosion control requiring that all systems meet both the change in water treatment process prior
+- comments on the issue about whether that homeowners are the ones who after promulgation, which coincides
+- there is enough flexibility under the collect the lead and copper tap samples with the date by which States are
+- existing rule to use POU or POE without and send them back to the utility. These required to adopt and submit revised
+- 3. What Were the Key Issues Raised by revised the compliance date to 180 days B must revise their programs to adopt
+- Commenters on the Compliance Dates after final rule promulgation. EPA any changes to the Lead and Copper
+- and EPA’s Response to These Issues? believes there are a number of Rule that are more stringent than their
+- regulation, as appropriate 40 CFR enforcement authority allows States to when systems and States use the
+- 142.12(c)(1)(ii). For the final revisions to implement and enforce drinking water the lead and copper rule, EPA believes information generated by directly
+- regulations once State regulations are related rule activities to modify or that requirements in § 142.12(c) will effective and the State has submitted a
+- by the State. Because the rule consists reviewing their primacy revision Short-Term Regulatory Changes to the
+- of changes to an already approved application. Lead and Copper Rule (U.S. EPA, Federal NPDWR in primacy States, EPA 2007a). Table IV.1 summarizes the
+- believes that the State’s existing statutes 3. How Are Tribes Affected? expected direct and indirect cost
+
+Prior source excerpt windows:
+
+- (B) Comments and analysis. EPA that do not require source water provision could require (b)(3) systems to
+- received mixed comments on this monitoring. Since (b)(3) systems are not conduct lead and copper tap sampling
+- proposed change. Several commenters required to monitor their corrosion whenever treatment changes or a new
+- added health protection from lead and the suggestion, pointing out that it commenters favor an alternative to
+- copper. EPA also recognizes that there would greatly increase the burden on residential sampling. Commenters cited
+- are systems which have unique them in designating OCCT and in major problems with the current
+- under this paragraph does not count specified in § 141.87(d) shall conduct that meets the criteria in paragraphs toward determining lead or copper 90th
+- tap water sampling for lead and copper (g)(1) and (2) of this section only for percentile levels under § 141.80(c)(3) or at the frequency specified in paragraph lead, or only for copper, may apply to
+- toward meeting the minimum (d)(3) of this section, collect the number the State for a waiver to reduce the monitoring requirements of paragraph
+- composite; or 12. Section 141.89 is amended by (a) * * * (B) If duplicates of or sufficient (1) A water system that fails to meet revising paragraph (a)(1)(iii) to read as
+- quantities from the original samples follows: the lead or copper action level on the from each sampling point used in the basis of tap samples collected in § 141.89 Analytical methods.
+- composite are available, the system may accordance with § 141.86 shall collect use these instead of resampling. (a) lead and copper source water samples
+- found to contribute significantly to high responses to them are contained in Eighteen commenters submitted
+- levels of lead or copper at the tap, and EPA’s Response to Comments on the comments on the appropriateness of the
+- replace lead service lines in the Lead and Copper Rule Minor Revisions continued exclusion in response to the
+- modifications in some systems. In the mechanism for determining whether the State only after considering the
+- preamble to the proposed rule, EPA levels of lead and copper at the tap impact of the treatment change or
+- acknowledged that a few systems may remain low. For this reason, EPA does addition of a new source on the
+- however, is to minimize the risk from monitoring the first full June through water monitoring instead of, or in
+- both lead and copper. EPA believes that September after publication of the addition to, lead and copper tap
+- this change is appropriate to better LCRMR. This requirement would apply monitoring.
+- determined based on the 90th percentile from a percent-of samples calculation to schedules and contingency plans to
+- lead and copper tap water values. Other a percent-of-time calculation. EPA also minimize possible ‘‘down’’ time. Since
+- commenters supported the use of 90 has revised the compliance- the LCR does not require frequent
+- more stringent than the 1991 § 141.82(f) as representing optimal cannot resume reduced monitoring for
+- requirements. EPA disagrees with this corrosion control. lead and copper at the tap or for WQPs
+- interpretation. Under the 1991 • ‘‘Daily values’’ will be determined within the distribution system until
+- systems conducting reduced monitoring where the system had the authority to authority to replace the privately-owned
+- for lead and copper at the tap that are replace, repair, or maintain the line, or portions of LSLs. In addition, EPA
+- triggered into WQP monitoring pursuant had other forms of authority over the solicited comments regarding the option
+- proposed that systems with very low which allows an adequate margin of of OCCT. It will also be available for
+- levels of lead and copper at the tap safety. EPA must regulate contaminants systems that are triggered into a new set
+- during two consecutive six-month in drinking water to a level as close to of two six-month rounds of full tap
+- agreed while raising one or more of the believes is achievable and sufficiently discovering elevated levels of either
+- issues which EPA is addressing below. protective of public health. However, lead or copper at the tap during
+- (A) Using the PQL as the lead because there are health concerns for subsequent monitoring periods. EPA
+- result in an unanticipated adverse effect have reflected guidance provided in a policy memo under § 141.82(g). Corresponding
+- on tap water lead and copper levels. issued by EPA in 1995 (EPA, 1995a). That memo changes have been made to §§ 141.87(d)
+- States have the authority to impose addressed systems that were free of both lead- and (e)(4). The language of § 141.87(d)
+- collecting first-draw samples. However, should report the results of all tap lead and copper levels must submit the
+- because EPA can only regulate water samples, the 90th percentile values, or results of all lead and copper tap
+- systems, the Rule cannot incorporate both. The commenter maintained that samples to the State by a date
+- requirements pertaining to first-draw water results and 90th percentile percentile calculations to each system
+- lead and copper tap water samples, calculations. EPA cannot impose well in advance of the end of the
+- previously codified at §§ 141.90(a)(1)(ii) reporting requirements on certified labs monitoring period. States will need to
+- or lead public education. If, based on informing the public about the requirements unique to specific
+- the same lead and copper tap results possibility of lead contamination. EPA regulations in § 142.16. These revisions
+- submitted by the system, the State has therefore deleted and reserved are discussed below.
+- will allow ground water systems to limit Register, (b)(3) systems that exceeded of monitoring in the past three years.
+- entry point WQP sampling to those the copper action level during the initial (C) Today’s action. EPA has added
+- entry points that are representative of rounds of monitoring have time to make provisions at § 141.81(b)(3)(ii)
+- sites required for standard monitoring monitoring), if it deems such additional the system has monitored for lead and
+- under § 141.86(c) that demonstrates that conditions are necessary to assess and/ copper at the tap. If, on the other hand,
+- the 90th percentile levels of lead and or address treatment or source water the pre-existing waiver was issued to a
+- 1994 Federal Register / Vol. 65, No. 8 / Wednesday, January 12, 2000 / Rules and Regulations
+- Additional tap monitoring would need reporting requirements imposed on and copper to assess the effectiveness of
+- to be conducted by the systems before these water systems by § 141.90(c)(3) are corrosion control. The Agency noted
+- 4. Use of alternatives to tap samples to 32113), June 29, 1992 (57 FR 28786) and people.
+- assess corrosion control effectiveness June 30, 1994 (59 FR 33860). LCR: Lead and Copper Rule.
+- a. Burden reduction suggestion and 90th Percentile Value: The background LCRMR: Lead and Copper Rule Minor concentration of lead or copper in tap Revisions.

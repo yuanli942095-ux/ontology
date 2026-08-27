@@ -1,0 +1,129 @@
+# EXT_E168 Evidence
+
+- Source title: Regulation (EU) 2024/1689 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: COM(2021) 206 AI Act proposal official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- ‘When adopting detailed measures related to technical specifications and procedures for approval and use of security
+- equipment concerning Artificial Intelligence systems within the meaning of Regulation (EU) 2024/1689 of the European
+- Parliament and of the Council (*), the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into
+- 2024/1689/oj).’. Article 105 Amendment to Directive 2014/90/EU In Article 8 of Directive 2014/90/EU, the following paragraph is added:
+- ‘5. For Artificial Intelligence systems which are safety components within the meaning of Regulation (EU) 2024/1689 of
+- the European Parliament and of the Council (*), when carrying out its activities pursuant to paragraph 1 and when adopting
+- Official Journal EN of the European Union L series 2024/1689 12.7.2024 REGULATION (EU) 2024/1689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008,
+- (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU)
+- 2020/1828 (Artificial Intelligence Act) (OJ L, 2024/1689, 12.7.2024, ELI: http://data.europa.eu/eli/reg/
+- 2024/1689/oj).’. Article 103 Amendment to Regulation (EU) No 167/2013 In Article 17(5) of Regulation (EU) No 167/2013, the following subparagraph is added:
+- (*) Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised
+- rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013,
+- ‘When adopting delegated acts pursuant to the first subparagraph concerning artificial intelligence systems which are safety
+- components within the meaning of Regulation (EU) 2024/1689 of the European Parliament and of the Council (*), the
+- requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account.
+- ‘4. When adopting delegated acts pursuant to paragraphs 1 and 2 concerning Artificial Intelligence systems which
+- are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III,
+- Section 2, of that Regulation shall be taken into account.’; (3) in Article 43, the following paragraph is added:
+- ‘When adopting those implementing acts concerning Artificial Intelligence systems which are safety components within
+- the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2, of that Regulation shall
+- be taken into account.’; 120/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (6) in Article 58, the following paragraph is added:
+- (6) European Parliament resolution of 20 October 2020 with recommendations to the Commission on a framework of ethical aspects
+- of artificial intelligence, robotics and related technologies, 2020/2012(INL). 2/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (9) Harmonised rules applicable to the placing on the market, the putting into service and the use of high-risk AI
+- 3. The Commission shall provide for the exchange of knowledge and best practices between notifying authorities.
+- ELI: http://data.europa.eu/eli/reg/2024/1689/oj 75/144 EN OJ L, 12.7.2024 Article 39 Conformity assessment bodies of third countries
+- Conformity assessment bodies established under the law of a third country with which the Union has concluded an
+- of this Regulation in so far as the cybersecurity certificate or statement of conformity or parts thereof cover those
+- requirements. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 77/144 EN OJ L, 12.7.2024 Article 43 Conformity assessment
+- 1. For high-risk AI systems listed in point 1 of Annex III, where, in demonstrating the compliance of a high-risk AI
+- accordance with Article 72, including the post-market monitoring plan referred to in Article 72(3).
+- ELI: http://data.europa.eu/eli/reg/2024/1689/oj 131/144 EN OJ L, 12.7.2024 ANNEX V EU declaration of conformity
+- The EU declaration of conformity referred to in Article 47, shall contain all of the following information:
+- pseudonymisation of judicial decisions, documents or data, communication between personnel, administrative tasks.
+- (62) Without prejudice to the rules provided for in Regulation (EU) 2024/900 of the European Parliament and of the
+- Council (34), and in order to address the risks of undue external interference with the right to vote enshrined in
+- withdrawing international protection (OJ L 180, 29.6.2013, p. 60).
+- (34) Regulation (EU) 2024/900 of the European parliament and of the Council of 13 March 2024 on the transparency and targeting of
+- political advertising (OJ L, 2024/900, 20.3.2024, ELI: http://data.europa.eu/eli/reg/2024/900/oj).
+- Visa Information System (OJ L 248, 13.7.2021, p. 11). 3. Eurodac
+- Regulation (EU) 2024/1358 of the European Parliament and of the Council of 14 May 2024 on the establishment of
+- ‘Eurodac’ for the comparison of biometric data in order to effectively apply Regulations (EU) 2024/1315 and (EU)
+- to lay down requirements for high-risk AI systems and obligations for the relevant operators, and to lay down
+- transparency obligations for certain AI systems. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 7/144 EN OJ L, 12.7.2024
+- (27) While the risk-based approach is the basis for a proportionate and effective set of binding rules, it is important to
+- for Cybersecurity) and on information and communications technology cybersecurity certification and repealing Regulation
+- (EU) No 526/2013 (Cybersecurity Act) (OJ L 151, 7.6.2019, p. 15). 22/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (79) It is appropriate that a specific natural or legal person, defined as the provider, takes responsibility for the placing on
+- point of contact vis-à-vis the public and other counterparts at Member State and Union levels, each Member State
+- should designate a market surveillance authority to act as a single point of contact. 38/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj
+- (154) The national competent authorities should exercise their powers independently, impartially and without bias, so as
+- (a) harmonised rules for the placing on the market, the putting into service, and the use of AI systems in the Union;
+- 44/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (b) prohibitions of certain AI practices;
+- (c) specific requirements for high-risk AI systems and obligations for operators of such systems;
+- AI model, regardless of whether the AI model is provided by themselves and vertically integrated or provided by
+- another entity based on contractual relations. 50/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 4 AI literacy
+- Providers and deployers of AI systems shall take measures to ensure, to their best extent, a sufficient level of AI literacy of
+
+Prior source excerpt windows:
+
+- persons and the protection of industrial and commercial property, Member States could authorise the placing on the market or putting into service of AI systems which
+- have not undergone a conformity assessment. (69) In order to facilitate the work of the Commission and the Member States in the artificial intelligence field as well as to increase the transparency towards the public,
+- providers of high-risk AI systems other than those related to products falling within the scope of relevant existing Union harmonisation legislation, should be required to
+- 2. The application for notification shall be accompanied by a description of the conformity assessment activities, the conformity assessment module or modules and
+- the artificial intelligence technologies for which the conformity assessment body claims to be competent, as well as by an accreditation certificate, where one exists,
+- issued by a national accreditation body attesting that the conformity assessment body fulfils the requirements laid down in Article 33. Any valid document related to
+- 3. The notification shall include full details of the conformity assessment activities, the
+- conformity assessment module or modules and the artificial intelligence technologies concerned. 4. The conformity assessment body concerned may perform the activities of a notified
+- body only where no objections are raised by the Commission or the other Member States within one month of a notification. 5. Notifying authorities shall notify the Commission and the other Member States of
+- which it has refused, withdrawn, suspended or otherwise restricted, and, upon request, of the certificates and/or supplements thereto which it has issued.
+- 3. Each notified body shall provide the other notified bodies carrying out similar conformity assessment activities covering the same artificial intelligence
+- technologies with relevant information on issues relating to negative and, on request, positive conformity assessment results. Article 47 Derogation from conformity assessment procedure
+- requirements of the regulation and compliance with robust quality and risk management systems and post-market monitoring. After the provider has performed the relevant
+- conformity assessment, it should register those stand-alone high-risk AI systems in an EU database that will be managed by the Commission to increase public transparency and
+- oversight and strengthen ex post supervision by competent authorities. By contrast, for
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- 4.6. The decision shall be notified to the provider or its authorised representative. The notification shall contain the conclusions of the assessment of the technical
+- documentation and the reasoned assessment decision. Where the AI system is in conformity with the requirements set out in Title III, Chapter 2, an EU technical documentation assessment certificate shall be issued by
+- the notified body. The certificate shall indicate the name and address of the provider, the conclusions of the examination, the conditions (if any) for its validity and the
+- developed by many private and public organisations in Europe and beyond, that AI development and use should be guided by certain essential value-oriented principles. The
+- Assessment List for Trustworthy Artificial Intelligence (ALTAI)25 made those requirements operational in a piloting process with over 350 organisations.
+- European Commission, Building Trust in Human-Centric Artificial Intelligence, COM(2019) 168.
+- 24 HLEG, Ethics Guidelines for Trustworthy AI, 2019. 25
+- HLEG, Assessment List for Trustworthy Artificial Intelligence (ALTAI) for self-assessment, 2020.
+- In addition, the AI Alliance26 was formed as a platform for approximately 4000 stakeholders
+- (1) The purpose of this Regulation is to improve the functioning of the internal market by
+- laying down a uniform legal framework in particular for the development, marketing and use of artificial intelligence in conformity with Union values. This Regulation
+- pursues a number of overriding reasons of public interest, such as a high level of protection of health, safety and fundamental rights, and it ensures the free movement
+- EUROPEAN COMMISSION Brussels, 21.4.2021 COM(2021) 206 final 2021/0106 (COD) Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS {SEC(2021) 167 final} - {SWD(2021) 84 final} - {SWD(2021) 85 final}
+- EN EN EXPLANATORY MEMORANDUM 1. CONTEXT OF THE PROPOSAL 1.1. Reasons for and objectives of the proposal This explanatory memorandum accompanies the proposal for a Regulation laying down
+- harmonised rules on artificial intelligence (Artificial Intelligence Act). Artificial Intelligence
+- (AI) is a fast evolving family of technologies that can bring a wide array of economic and
+- European Council, which have repeatedly expressed calls for legislative action to ensure a
+- well-functioning internal market for artificial intelligence systems (‘AI systems’) where both
+- benefits and risks of AI are adequately addressed at Union level. It supports the objective of
+- respect of proportionality, subsidiarity and better law making principles. Against this political context, the Commission puts forward the proposed regulatory
+- framework on Artificial Intelligence with the following specific objectives:  ensure that AI systems placed on the Union market and used are safe and respect
+- existing law on fundamental rights and Union values;  ensure legal certainty to facilitate investment and innovation in AI;  enhance governance and effective enforcement of existing law on fundamental
+- building on already existing structures, and a cooperation mechanism at Union level with the
+- establishment of a European Artificial Intelligence Board. Additional measures are also proposed to support innovation, in particular through AI regulatory sandboxes and other
+- measures to reduce the regulatory burden and to support Small and Medium-Sized Enterprises
+- or fundamental rights of natural persons. In line with a risk-based approach, those high-risk
+- AI systems are permitted on the European market subject to compliance with certain mandatory requirements and an ex-ante conformity assessment. The classification of an AI
+- system as high-risk is based on the intended purpose of the AI system, in line with existing
+- Chapter 1 of Title III sets the classification rules and identifies two main categories of high
+- risk AI systems:  AI systems intended to be used as safety component of products that are subject to third party ex-ante conformity assessment;
+-  other stand-alone AI systems with mainly fundamental rights implications that are explicitly listed in Annex III.
+- flexibility is particularly important, because it allows providers of AI systems to choose the
+- High-Level Expert Group on Artificial Intelligence, Ethics Guidelines for Trustworthy AI, 2019.
+- They were also endorsed by the Commission in its 2019 Communication on human-centric approach to
+- Chapter 4 sets the framework for notified bodies to be involved as independent third parties in
+- conformity assessment procedures, while Chapter 5 explains in detail the conformity assessment procedures to be followed for each type of high-risk AI system. The conformity
+- assessment approach aims to minimise the burden for economic operators as well as for notified bodies, whose capacity needs to be progressively ramped up over time. AI systems
+- pre-determined by the provider in its technical documentation and checked at the moment of
+- the ex-ante conformity assessment). 5.2.4. TRANSPARENCY OBLIGATIONS FOR CERTAIN AI SYSTEMS (TITLE IV)
+- Title IV concerns certain AI systems to take account of the specific risks of manipulation they

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ext="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:about="https://w3id.org/ontology-evolution/external-real-v4-evidence-aligned/EXT_E069/mutant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/ontology-evolution/external-real-v4-evidence-aligned/EXT_E069/mutant/1.0.0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#ExternalRealOntologyObject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#insured_amount_facet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#ExternalRealOntologyObject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Beijing_2026_policy_agricultural_insurance_reference_terms____greenhouse_vegetable_insurance_amount_split">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#ExternalRealOntologyObject"/>
+    <ext:insured_amount_facet rdf:datatype="http://www.w3.org/2001/XMLSchema#string">greenhouse_vegetable_rate_split=previous_or_not_encoded</ext:insured_amount_facet>
+  </rdf:Description>
+</rdf:RDF>

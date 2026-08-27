@@ -1,0 +1,63 @@
+Source title: NIST Cybersecurity Framework 1.1
+Source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt window:
+
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- address gaps – reflecting mission drivers, costs and benefits, and risks – to achieve the outcomes
+- in the Target Profile. The organization then determines resources, including funding and workforce, necessary to address the gaps. Using Profiles in this manner encourages the
+- organization to make informed decisions about cybersecurity activities, supports risk
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- can be characterized as the alignment of standards, guidelines, and practices to the Framework Core in a particular implementation scenario. Profiles can be used to identify
+- opportunities for improving cybersecurity posture by comparing a “Current” Profile (the “as is” state) with a “Target” Profile (the “to be” state). To develop a Profile, an
+- organization can review all of the Categories and Subcategories and, based on business/mission drivers and a risk assessment, determine which are most important; it
+-  Identify – Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities. The activities in the Identify Function are foundational for effective use of the
+- Framework. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enables an organization to focus and
+- prioritize its efforts, consistent with its risk management strategy and business needs. Examples of outcome Categories within this Function include: Asset Management;
+- Level managers, as approved by the Senior Executive Level, will help set the overall tone for
+- how cybersecurity risk will be managed within the organization, and should influence prioritization within a Target Profile and assessments of progress in addressing gaps.
+- The Tier definitions are as follows: Tier 1: Partial  Risk Management Process – Organizational cybersecurity risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
+- Subcategories with the business requirements, risk tolerance, and resources of the organization.
+- A Profile enables organizations to establish a roadmap for reducing cybersecurity risk that is well
+- aligned with organizational and sector goals, considers legal/regulatory requirements and
+- Framework Profiles can be used to describe the current state or the desired target state of specific
+- cybersecurity activities. The Current Profile indicates the cybersecurity outcomes that are
+- currently being achieved. The Target Profile indicates the outcomes needed to achieve the
+- the system cybersecurity specifications match the needs and risk disposition of the organization
+- as captured in a Framework Profile. The desired cybersecurity outcomes prioritized in a Target
+- Profile should be incorporated when a) developing the system during the build phase and b)
+- then should serve as a basis for ongoing operation of the system. This includes occasional
+- reassessment, capturing results in a Current Profile, to verify that cybersecurity requirements are
+- still fulfilled. Typically, a complex web of dependencies (e.g., compensating and common
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- interdependent stakeholders responsible for the delivery of essential critical infrastructure
+- products and services. Examples include:  An organization may use a Target Profile to express cybersecurity risk management requirements to an external service provider (e.g., a cloud provider to which it is
+- exporting data).  An organization may express its cybersecurity state through a Current Profile to report results or to compare with acquisition requirements.
+-  A critical infrastructure owner/operator, having identified an external partner on whom that infrastructure depends, may use a Target Profile to convey required Categories and
+-  A critical infrastructure sector may establish a Target Profile that can be used among its
+- constituents as an initial baseline Profile to build their tailored Target Profiles.  An organization can better manage cybersecurity risk among stakeholders by assessing
+- their position in the critical infrastructure and the broader digital economy using Implementation Tiers.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 17
+- April 16, 2018 Cybersecurity Framework Version 1.1 3.4 Buying Decisions Since a Framework Target Profile is a prioritized list of organizational cybersecurity
+- requirements, Target Profiles can be used to inform decisions about buying products and services. This transaction varies from Communicating Cybersecurity Requirements with
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- are tested COBIT 5 DSS04.04 ISA 62443-2-1:2009 4.3.2.5.7, 4.3.4.5.11 ISA 62443-3-3:2013 SR 3.3 ISO/IEC 27001:2013 A.17.1.3 NIST SP 800-53 Rev. 4 CP-4, IR-3, PM-14
+- PR.IP-11: Cybersecurity is included in CIS CSC 5, 16 human resources practices (e.g., COBIT 5 APO07.01, APO07.02, APO07.03, deprovisioning, personnel screening) APO07.04, APO07.05
+- ISA 62443-2-1:2009 4.3.3.2.1, 4.3.3.2.2, 4.3.3.2.3 ISO/IEC 27001:2013 A.7.1.1, A.7.1.2, A.7.2.1, A.7.2.2, A.7.2.3, A.7.3.1, A.8.1.4 NIST SP 800-53 Rev. 4 PS-1, PS-2, PS-3, PS-4,
+- Incident the organization prompting the need for response and recovery. Detect (function) Develop and implement the appropriate activities to identify the
+- occurrence of a cybersecurity event. Framework A risk-based approach to reducing cybersecurity risk composed of three parts: the Framework Core, the Framework Profile, and the
+- Framework Implementation Tiers. Also known as the “Cybersecurity Framework.” Framework Core A set of cybersecurity activities and references that are common

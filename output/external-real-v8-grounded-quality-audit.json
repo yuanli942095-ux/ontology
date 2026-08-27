@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-27T14:29:56.183489+00:00",
+  "ready_events": 200,
+  "domains": {
+    "insurance": 20,
+    "web_accessibility": 33,
+    "digital_identity": 18,
+    "eu_regulation": 20,
+    "us_regulation": 20,
+    "cybersecurity_controls": 20,
+    "privacy_framework": 14,
+    "ai_regulation": 18,
+    "medical_device_cybersecurity": 19,
+    "sustainability_reporting": 18
+  },
+  "semantic_types": {
+    "TEMPORAL_VERSION": 69,
+    "CROSS_SENTENCE_SCOPE": 68,
+    "GENERAL_RULE_EXCEPTION": 63
+  },
+  "source_families_per_domain": {
+    "ai_regulation": 3,
+    "cybersecurity_controls": 3,
+    "digital_identity": 3,
+    "eu_regulation": 3,
+    "insurance": 3,
+    "medical_device_cybersecurity": 3,
+    "privacy_framework": 3,
+    "sustainability_reporting": 3,
+    "us_regulation": 3,
+    "web_accessibility": 3
+  },
+  "structured_excerpt_rate": 0.0,
+  "fallback_used_count": 0,
+  "isolation_errors": 0,
+  "semantic_support_pass": 200,
+  "public_candidate_csv_present": false,
+  "repair_stage_candidate_csv_present": true,
+  "private_dir_present": true,
+  "candidate_csv_present": false,
+  "curation_not_inference": true
+}

@@ -1,0 +1,55 @@
+Source title: NIST Cybersecurity Framework 2.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.29
+
+Raw source excerpt window:
+
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- which the Profile will be based to define its scope. An organization can have as many Organizational Profiles as desired, each with a different scope. For example, a Profile
+- operational availability of systems and services affected by cybersecurity incidents o RC.RP-01: The recovery portion of the incident response plan is executed once initiated
+- from the incident response process 22 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 o RC.RP-02: Recovery actions are selected, scoped, prioritized, and performed
+- o RC.RP-03: The integrity of backups and other restoration assets is verified before using
+- • IR 8286C, Staging Cybersecurity Risks for Enterprise Risk Management and Governance Oversight • IR 8286D, Using Business Impact Analysis to Inform Risk Prioritization and Response
+- • SP 800-221, Enterprise Impact of Information and Communications Technology Risk: Governing and Managing ICT Risk Programs Within an Enterprise Risk Portfolio
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk governance; cybersecurity risk
+- management; enterprise risk management; Profiles; Tiers. Audience Individuals responsible for developing and leading cybersecurity programs are the primary
+- audience for the CSF. The CSF can also be used by others involved in managing risk — including
+- Function provides outcomes to inform what an organization may do to achieve and prioritize the outcomes of the other five Functions in the context of its mission and
+- stakeholder expectations. Governance activities are critical for incorporating cybersecurity into an organization’s broader enterprise risk management (ERM)
+- strategy. GOVERN addresses an understanding of organizational context; the establishment of cybersecurity strategy and cybersecurity supply chain risk
+- those financial systems. 2. Gather the information needed to prepare the Organizational Profile. Examples of information may include organizational policies, risk management priorities and
+- resources, enterprise risk profiles, business impact analysis (BIA) registers, cybersecurity
+- requirements and standards followed by the organization, practices and tools (e.g., procedures and safeguards), and work roles. 3. Create the Organizational Profile. Determine what types of information the Profile
+- over the course of the relationship o GV.SC-08: Relevant suppliers and other third parties are included in incident planning, response, and recovery activities
+- o GV.SC-09: Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout
+- the technology product and service life cycle o GV.SC-10: Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+- be used to achieve those outcomes. This document describes CSF 2.0, its components, and some of the many ways that it can be used. Keywords
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- continuously improving. Selecting Tiers helps set the overall tone for how an organization will
+- manage its cybersecurity risks. Fig. 4. CSF Tiers for cybersecurity risk governance and management
+- Tiers should complement an organization’s cybersecurity risk management methodology rather
+- additional QSG topics, should be directed to cyberframework@nist.gov. 9 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024
+- 5. Improving Cybersecurity Risk Communication and Integration The CSF’s use will vary based on an organization’s unique mission and risks. With an
+- understanding of stakeholder expectations and risk appetite and tolerance (as outlined in
+- that will manage those risks. The selected outcomes can be used to focus on and implement strategic decisions to improve cybersecurity postures and maintain continuity of mission
+- essential functions while taking priorities and available resources into account. 5.1. Improving Risk Management Communication The CSF provides a basis for improved communication regarding cybersecurity expectations,
+- planning, and resources. The CSF fosters bidirectional information flow (as shown in the top
+- about current and planned risk activities as they integrate governance and risk strategies with
+- results from previous uses of the CSF. The CSF helps organizations to translate their terminology for cybersecurity and cybersecurity risk management into general risk
+- management language that executives will understand.
+- • SP 800-221A, Information and Communications Technology (ICT) Risk Outcomes: Integrating ICT Risk Management Programs with the Enterprise Risk Portfolio
+- An organization may also find the CSF beneficial for integrating cybersecurity risk management
+- with individual ICT risk management programs, such as: • Cybersecurity risk management and assessment: The CSF can be integrated with established cybersecurity risk management and assessment programs, such as SP 800
+- 37, Risk Management Framework for Information Systems and Organizations, and SP 800-30, Guide for Conducting Risk Assessments from the NIST Risk Management

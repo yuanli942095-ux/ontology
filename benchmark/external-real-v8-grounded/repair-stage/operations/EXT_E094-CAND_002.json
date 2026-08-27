@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Commission_Delegated_Regulation__EU__2020_2174____classification_note_update",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#note_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "classification_note_update=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "note=updated",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

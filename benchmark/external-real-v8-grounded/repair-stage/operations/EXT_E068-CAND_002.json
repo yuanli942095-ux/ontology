@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#eCFR_EXT_E068",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#regulatory_text_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "ecfr_status=unmodeled",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "ecfr_editorial_process=separate_from_official_print",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

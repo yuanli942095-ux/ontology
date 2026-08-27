@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Privacy_Framework_1_1_Initial_Public_Draft____Privacy_Framework_stakeholder_response",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#change_basis",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "pf11_stakeholder_response=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "basis=stakeholder_needs",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

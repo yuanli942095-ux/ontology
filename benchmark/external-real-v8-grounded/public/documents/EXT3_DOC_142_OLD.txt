@@ -1,0 +1,58 @@
+Source title: NIST Privacy Framework 1.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.01162020
+
+Raw source excerpt window:
+
+- Once an organization can identify the likelihood of any given problem arising from the data processing,
+- which the Privacy Framework refers to as a problematic data action, it can assess the impact should the
+- problematic data action occur. This impact assessment is where privacy risk and organizational risk
+- Framework” as a uniform or externally referenceable concept. The following subsections present a few
+- options for use of the Privacy Framework. Mapping to Informative References
+- Informative references are mappings to Subcategories to provide implementation support, including
+- • The Core is not a checklist of actions to perform. An organization selects Subcategories
+- consistent with its risk strategy to protect individuals’ privacy, as noted in Category
+- statements. An organization may not need to achieve every outcome or activity reflected in the
+- the Cybersecurity Framework. The following legend can be used to identify this relationship in
+- Table 2. A complete crosswalk between the two frameworks can be found in the resource repository at https://www.nist.gov/privacy-framework. The Function, Category, or Subcategory aligns with the Cybersecurity
+- Framework, but the text has been adapted for the Privacy Framework. The Category or Subcategory is identical to the Cybersecurity Framework.
+- Core Identifiers: For ease of use, each component of the Core is given a unique identifier. Functions and
+- Category have a number added to the alphabetic identifier; the unique identifier for each Subcategory is
+- included in Table 2. 18 NIST Privacy Framework January 16, 2020 Table 1: Privacy Framework Function and Category Unique Identifiers Function Function Category Category
+- Unique Unique Identifier Identifier ID-P Identify-P ID.IM-P Inventory and Mapping ID.BE-P Business Environment ID.RA-P Risk Assessment ID.DE-P Data Processing Ecosystem Risk Management
+- roles, responsibilities, and risk priorities are identified and key requirements communicated.
+- management decisions. 20 NIST Privacy Framework January 16, 2020 Function Category Subcategory
+- Risk Assessment (ID.RA-P): The ID.RA-P1: Contextual factors related to the systems/products/services
+- implemented the processes to identify, objectives of an organization’s privacy program.
+- assess, and manage privacy risks within ID.DE-P4: Interoperability frameworks or similar multi-party
+- the data processing ecosystem. approaches are used to manage data processing ecosystem privacy
+- risks. ID.DE-P5: Data processing ecosystem parties are routinely assessed using audits, test results, or other forms of evaluations to confirm
+- they are meeting their contractual, interoperability framework, or other obligations. 21 NIST Privacy Framework January 16, 2020 Function Category Subcategory
+- GOVERN-P (GV-P): Governance Policies, Processes, and GV.PO-P1: Organizational privacy values and policies (e.g.,
+- sufficient individuals’ privacy. CT.PO-P3: Policies, processes, and procedures for enabling individuals’
+- granularity to data processing preferences and requests are established and in place. 23 NIST Privacy Framework January 16, 2020 Function Category Subcategory
+- manage privacy CT.PO-P4: A data life cycle to manage data is aligned and risks. implemented with the system development life cycle to manage
+- and implement privacy policies (e.g., purpose, scope, roles concept of least functionality).
+- 25 NIST Privacy Framework January 16, 2020 Function Category Subcategory
+- appropriate and responsibilities in the data processing PR.PO-P2: Configuration change control processes are established
+- (NIST SP 800-63-3 [8]) of format. For example, for the attribute “birthday,” a value could be
+- “12/1/1980” or “December 1, 1980.” Availability Ensuring timely and reliable access to and use of information. (44 U.S.C. [13]) Category The subdivision of a Function into groups of privacy outcomes closely tied
+- to programmatic needs and particular activities. Communicate-P Develop and implement appropriate activities to enable organizations (Function) and individuals to have a reliable understanding and engage in a dialogue
+- requirements, conducting privacy risk assessments, creating privacy requirements traceability, and
+- monitoring for changing privacy risks. Category and Subcategory references are included to facilitate use
+- of the Core to support these practices; these references appear in parentheticals. Organizing Preparatory Resources
+- NIST has developed a Privacy Risk Assessment Methodology (PRAM) that can help organizations identify,
+- assess, and respond to privacy risks. It is comprised of a set of worksheets available at [3].
+- 20 See NIST SP 800-30, Rev. 1, Guide for Conducting Risk Assessments [12] at p. 8. 21
+- Cybersecurity (Cybersecurity Framework) [1] to facilitate the use of both frameworks together. Like the
+- Cybersecurity Framework, the Privacy Framework is composed of three parts: Core, Profiles, and
+- Implementation Tiers. Each component reinforces privacy risk management through the connection
+- between business and mission drivers, organizational roles and responsibilities, and privacy protection
+- activities. • The Core enables a dialogue—from the executive level to the implementation/operations level—about important privacy protection activities and desired outcomes.
+- • Profiles enable the prioritization of the outcomes and activities that best meet organizational
+- New York, NY), Chapter 12, 1st Ed., https://doi.org/10.4324/9780203735657. 1 NIST Privacy Framework January 16, 2020 Overview of the Privacy Framework
+- As shown in Figure 1, the Privacy The Core provides an increasingly granular set Framework is composed of three of activities and outcomes that enable an
+- parts: Core, Profiles, and organizational dialogue about managing privacy Implementation Tiers. Each risk component reinforces how organizations manage privacy risk
+- Profiles are a selection of through the connection between specific Functions, business or mission drivers, Categories, and organizational roles and Subcategories from the
+- responsibilities, and privacy CURRENT Core that an organization protection activities. As further TARGET has prioritized to help it explained in section 2: manage privacy risk
+- • The Core is a set of privacy protection activities and Implementation Tiers support communication outcomes that allows for about whether an organization has sufficient
+- communicating prioritized processes and resources in place to manage privacy protection privacy risk and achieve its Target Profile activities and outcomes Figure 1: Core, Profiles, and Implementation Tiers

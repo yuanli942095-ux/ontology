@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#叶类根茎类蔬菜茄果类及其他类蔬菜轮作",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#每亩保险金额分项",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "total=2000",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "spring=1100;summer_autumn=900;total=2000",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

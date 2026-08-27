@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Lead_and_Copper_Rule_Improvements____EPA_copper_action_level",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#action_level",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "epa_lcr_copper_level=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "copper_action_level=1_3_ppm",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

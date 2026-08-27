@@ -1,0 +1,52 @@
+{
+  "event_id": "EXT_E026",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "source_family": "NIST SP 800-63-4",
+    "target_subject": "NIST_SP_800_63_4_continuous_evaluation_metrics",
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E026_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "continuous_evaluation_metrics=recommended_added"
+      ]
+    },
+    {
+      "rule_id": "EXT_E026_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "nist63_3_status=not_integrated"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_026_OLD",
+      "EXT_DOC_026_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION"
+  }
+}

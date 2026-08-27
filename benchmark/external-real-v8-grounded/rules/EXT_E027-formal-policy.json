@@ -1,0 +1,52 @@
+{
+  "event_id": "EXT_E027",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "source_family": "NIST SP 800-63-4",
+    "target_subject": "NIST_SP_800_63_4_fraud_requirements_identity_proofing",
+    "public_change_present": true,
+    "selected_revision": "new"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E027_NEW_PUBLIC_CHANGE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        }
+      ],
+      "allowed_values": [
+        "fraud_requirements=expanded_identity_proofing"
+      ]
+    },
+    {
+      "rule_id": "EXT_E027_OLD_VERSION_STATUS",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "nist63_3_status=not_integrated"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_027_OLD",
+      "EXT_DOC_027_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION"
+  }
+}

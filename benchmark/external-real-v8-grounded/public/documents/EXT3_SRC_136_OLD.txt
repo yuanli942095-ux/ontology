@@ -1,0 +1,59 @@
+Source title: NIST Privacy Framework 1.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.01162020
+
+Raw source excerpt window:
+
+- Once an organization can identify the likelihood of any given problem arising from the data processing,
+- which the Privacy Framework refers to as a problematic data action, it can assess the impact should the
+- problematic data action occur. This impact assessment is where privacy risk and organizational risk
+- Framework” as a uniform or externally referenceable concept. The following subsections present a few
+- options for use of the Privacy Framework. Mapping to Informative References
+- Informative references are mappings to Subcategories to provide implementation support, including
+- NIST has developed a Privacy Risk Assessment Methodology (PRAM) that can help organizations identify,
+- assess, and respond to privacy risks. It is comprised of a set of worksheets available at [3].
+- 20 See NIST SP 800-30, Rev. 1, Guide for Conducting Risk Assessments [12] at p. 8. 21
+- implemented the processes to identify, objectives of an organization’s privacy program.
+- assess, and manage privacy risks within ID.DE-P4: Interoperability frameworks or similar multi-party
+- the data processing ecosystem. approaches are used to manage data processing ecosystem privacy
+- are fueled by data about individuals that flow through a complex ecosystem. As a result, individuals may
+- not be able to understand the potential consequences for their privacy as they interact with systems,
+- products, and services. At the same time, organizations may not realize the full extent of these
+- Privacy Framework: A Tool for Improving Privacy through Enterprise Risk Management (Privacy
+- Framework), to enable better privacy engineering practices that support privacy by design concepts and
+- help organizations protect individuals’ privacy. The Privacy Framework can support organizations in:
+- meet these obligations in a changing technological and policy environment; and • Facilitating communication about privacy practices with individuals, business partners,
+- Deriving benefits from data while simultaneously managing risks to individuals’ privacy is not well-suited
+- to one-size-fits-all solutions. Like building a house, where homeowners make layout and design choices
+- Framework—through a risk- and outcome-based approach—is flexible enough to address diverse
+- privacy needs, enable more innovative and effective solutions that can lead to better outcomes for
+- individuals and organizations, and stay current with technology trends, such as artificial intelligence and
+- between business and mission drivers, organizational roles and responsibilities, and privacy protection
+- activities. • The Core enables a dialogue—from the executive level to the implementation/operations level—about important privacy protection activities and desired outcomes.
+- • Profiles enable the prioritization of the outcomes and activities that best meet organizational
+- expectations in a given society. i NIST Privacy Framework January 16, 2020 • Implementation Tiers support decision-making and communication about the sufficiency of
+- organizational processes and resources to manage privacy risk.
+- In summary, the Privacy Framework is intended to help organizations build better privacy foundations
+- by bringing privacy risk into parity with their broader enterprise risk portfolio. Acknowledgements
+- webinars, and hundreds of direct interactions with stakeholders. 2 NIST acknowledges and thanks all of
+- those who have contributed to this publication. 2 A complete development archive can be found at https://www.nist.gov/privacy-framework. ii NIST Privacy Framework January 16, 2020
+- Table of Contents List of Figures List of Tables iii NIST Privacy Framework January 16, 2020 1.0 Privacy Framework Introduction
+- follow-on effects on organizations’ brands, bottom lines, and future prospects for growth. Finding ways
+- to continue to derive benefits from data processing while simultaneously protecting individuals’ privacy
+- is challenging, and not well-suited to one-size-fits-all solutions.
+- Privacy is challenging because not only is it an all-encompassing concept that helps to safeguard
+- important values such as human autonomy and dignity, but also the means for achieving it can vary. 3
+- fixed, quantifiable constructs; they are filtered through cultural diversity and individual differences. This
+- broad and shifting nature of privacy makes it difficult to communicate clearly about privacy risks within
+- and between organizations and with individuals. What has been missing is a common language and
+- practical tool that is flexible enough to address diverse privacy needs.
+- This voluntary NIST Privacy Framework: A Tool for Improving Privacy through Enterprise Risk
+- Management (Privacy Framework) is intended to be widely usable by organizations of all sizes and
+- agnostic to any particular technology, sector, law, or jurisdiction. Using a common approach—adaptable
+- to any organization’s role(s) in the data processing ecosystem—the Privacy Framework’s purpose is to
+- help organizations manage privacy risks by:
+- Press, Cambridge, MA), https://ssrn.com/abstract=1127888; and Selinger E, Hartzog W (2017) Obscurity and
+- Privacy, Spaces for the Future: A Companion to Philosophy of Technology, eds Pitt J, Shew A (Taylor & Francis,
+- New York, NY), Chapter 12, 1st Ed., https://doi.org/10.4324/9780203735657. 1 NIST Privacy Framework January 16, 2020 Overview of the Privacy Framework
+- Profiles are a selection of through the connection between specific Functions, business or mission drivers, Categories, and organizational roles and Subcategories from the
+- responsibilities, and privacy CURRENT Core that an organization protection activities. As further TARGET has prioritized to help it explained in section 2: manage privacy risk
+- • The Core is a set of privacy protection activities and Implementation Tiers support communication outcomes that allows for about whether an organization has sufficient

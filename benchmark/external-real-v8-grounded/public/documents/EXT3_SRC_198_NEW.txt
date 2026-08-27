@@ -1,0 +1,50 @@
+Source title: Using the SASB Standards to meet IFRS S1 requirements
+Source URL: https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s1/using-sasb-standards-for-ifrs-s1.pdf
+
+Raw source excerpt window:
+
+- February 2024 Educational material Using the SASB Standards to meet the requirements in IFRS S1 How do the SASB Standards fit in IFRS S1?
+- IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information requires a company
+- to disclose material information about all sustainability-related risks and opportunities that could reasonably be
+- data beyond Tier 1 is based on assumptions, estimates or otherwise includes any uncertainty.
+- SUSTAINABILITY ACCOUNTING STANDARD | APPAREL, ACCESSORIES & FOOTWEAR | 7 Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 6
+- 1 Review the list of metrics associated with each relevant disclosure topic. These metrics may help identify
+- metrics in the SASB Standards when determining what information to disclose regarding sustainability-related
+- risks and opportunities. Requirements in IFRS S1 Disclose material information Identify sustainability-related about sustainability-related risks and opportunities
+- risks and opportunities SASB Identify the Identify Develop Standards Identify relevant relevant disclosures relevant industry disclosure using technical
+- SASB Standards are applied by more than 3,200 companies in over 80 jurisdictions including approximately 75%
+- of the companies in the Global S&P 1200. Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 1 What are the SASB Standards?
+- The SASB Standards are organised by industry, enabling a company to identify sustainability-related disclosure
+- This document outlines, in four steps, how companies can meet these requirements in IFRS S1.
+- Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 2 1. Identify the relevant industry Standard(s)
+- Companies can start identifying relevant risks and opportunities by searching for applicable SASB Standards.
+- (Sustainability Disclosure Topics & Metrics). 2 Review the list of topics. These may help identify sustainability-related risks and opportunities that
+- are likely to affect a company’s prospects. Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 4 3 Within the Standard, the topic summary contains
+- more information on each disclosure topic and explains why it is likely to affect the prospects of a company operating in that industry. 4 Consider the applicability of the relevant
+- identify relevant sustainability-related risks and opportunities and material information about
+- those risks and opportunities. Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 5 What questions should you ask when identifying industry Standard(s)
+- and disclosure topics? What are your company’s principal business activities?
+- Does your company employ methodologies for data collection that are similar to those specified in the SASB
+- Standards’ technical protocols? Using SASB Standards to meet the requirements in IFRS S1 | February 2024 | 8
+- metrics Standard(s) topics protocols
+- IFRS S1 requires that companies refer to and consider the applicability of the topics and metrics in the SASB
+- Standards. IFRS S1 does not require companies to apply the SASB Standards. What are the benefits of using the SASB Standards? The SASB Standards can be a useful source of guidance in applying IFRS S1 because they:
+- • are designed to provide investors, creditors and other lenders with information that is decision-useful and
+- company’s circumstances, or that topics not covered by the SASB Standards might also be relevant for disclosure. In such cases, the company may consider
+- the other sources of guidance set out in IFRS S1. USING THE MATERIALITY FINDER The SASB Materiality Finder offers companies a fast way to browse industry descriptions
+- and disclosure topics. It also allows companies to review and compare disclosure topics from
+- circumstances, or that metrics not covered by the SASB Standards might also be relevant for disclosure. In such
+- Management of Chemicals in Products cases, the company may consider the other sources of guidance set out in IFRS S1. Topic Summary 4. Develop disclosures using technical protocols
+- Chemical safety regulations demonstrate regulatory and stakeholder concern surrounding the use of harmful or
+- expected to affect the company’s cash flows, its access to finance or cost of capital over the short, medium or long
+- IFRS S1 references the SASB Standards as a source of guidance that companies are required to consider when
+- identifying sustainability-related risks and opportunities (beyond climate, which is addressed in IFRS S2 Climate
+- related Disclosures) and determining the information to disclose about those risks and opportunities.
+- Standards when identifying sustainability-related risks and opportunities that could reasonably be expected to
+- affect a company’s prospects. Similarly, IFRS S1 requires companies to refer to and consider the applicability of
+- • technical protocols—which accompany metrics to provide detailed guidance on definitions, scope,
+- implementation and presentation of associated metrics. Each SASB Standard contains, on average, six disclosure topics and 13 metrics. How does a company use the SASB Standards to meet the requirements
+- IFRS S1 requires companies to refer to and consider the applicability of disclosure topics in the SASB
+- • are tailored to specific industries, allowing companies to quickly access guidance that is relevant to their
+- • provide guidance on sustainability-related topics beyond climate, including human capital and nature.
+- SASB Standards are used worldwide by companies and investors of varying size. As of December 2023, the

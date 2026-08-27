@@ -1,0 +1,125 @@
+# EXT_E196 Evidence
+
+- Source title: IFRS S1 effects analysis
+- Source URL: https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/effects-analysis.pdf
+- Prior source title: IFRS S1 and S2 project summary
+- Prior source URL: https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf
+
+Raw source excerpt windows:
+
+- June 2023 Effects Analysis IFRS ® Sustainability Disclosure Standards
+- IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information
+- IFRS S2 Climate-related Disclosures
+- This Effects Analysis accompanies, but is not part of, IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and
+- IFRS S2 Climate-related Disclosures. What is the purpose of this Effects Analysis?
+- 1 In this document, the term ‘company’ refers to an entity that provides sustainability-related financial disclosures. In this document, companies and preparers are used interchangeably.
+- Effects Analysis | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 2
+- The International Sustainability Standards Board Why has the ISSB developed The ISSB expects companies that apply IFRS S1 and
+- the market. • enable investors and other stakeholders to make are used by companies internationally.
+- decisions based on improved information about Most preparers that commented on the IFRS S1 sustainability-related risks and opportunities; and
+- and IFRS S2 exposure drafts said the costs of Benefit analysis by the US SEC implementing the Standards would be substantial • enable companies to improve their own
+- Effects Analysis | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 40
+- Improved consistency of sustainability-related The disclosure of Scope 1, Scope 2 and Scope 3 GHG Many investors commenting on the IFRS S1 and
+- financial disclosures emissions will also provide more information about a IFRS S2 exposure drafts agreed that IFRS S1 and
+- initially applying and continuing to apply IFRS S1 and IFRS S1 and IFRS S2 because the preparedness of
+- requirements in IFRS S1 to provide information IFRS S2. companies and jurisdictions is highly variable. about sustainability‑related risks and opportunities,
+- a company applies IFRS S2 to disclose information Assessing the effects of IFRS S1 and IFRS S2 is made Benefits, on the other hand, develop over time and are
+- when making investment decisions and by the ISSB. investors make better investment decisions. comparing companies. IFRS S1 and IFRS S2 IFRS S1 and IFRS S2 are designed
+- to set a global baseline to enable IFRS S1 sets out overall disclosure requirements for sustainability-related financial information. companies to provide information
+- about sustainability-related risks and IFRS S2 sets out disclosure requirements for climate-related financial information. opportunities that is useful for investors’
+- that mitigate the overall costs of disclosing
+- sustainability‑related information applying IFRS S1 The ISSB has worked to improve the interoperability of The ISSB has clarified requirements in IFRS S1
+- and IFRS S2. IFRS S1 and IFRS S2 with the European Sustainability and IFRS S2 to assist companies with applying the
+- acknowledges that companies that are smaller in size
+- taxonomy and digital reporting of sustainability-related begin reporting applying IFRS S1 and IFRS S2.
+- and/or operating in emerging markets are likely to have information. Paper-based and/or manual sustainability fewer resources and/or require more time to prepare to
+- Cost of capital risk of owning the company, and, as a result, lower
+- cost of capital. Some respondents to the IFRS S1 Setting up sustainability-related reporting strategies
+- In addition to improved comparability, the objectives and objectives is likely to improve coordination and
+- and costs for: affected as a result of improved reporting about • voluntary sustainability reporting (Case 2); and
+- • companies applying IFRS S1 and IFRS S2 for sustainability-related risks and opportunities;
+- • mandatory sustainability reporting (Case 3). their disclosures—preparers; and (b) how costs for preparers might be affected, both on Section 5 Analysis of benefits and costs for investors
+- operates. The company’s dependencies and impacts long term. the information provided is focused on that
+- on those resources and relationships give rise to necessary to inform investor decisions. Objective of IFRS S1 sustainability‑related risks and opportunities for
+- The objective of IFRS S1 is to require a company ‘Information is material if omitting, misstating or
+- IFRS S1 and IFRS S2. The Application Guidance for by working on capacity building. The ISSB has
+- IFRS S1 covers guidance on sustainability-related risks established a Partnership Framework for capacity
+- • a relief allowing a company to report on only and opportunities, materiality, connected information, building to support companies, investors and other
+- to produce sustainability-related transformation, loading and validation of sustainability
+- disclosures; • discussing how the company identifies, assesses related data (as per IFRS S1) and climate-related data and manages sustainability-related risks and
+- (as per IFRS S2). • for larger companies with complex opportunities; and operations, and for companies with no • summarising the quantitative metrics and targets
+- Almost all respondents to the IFRS S1 and
+- including whether a company reduces its Scope 1 and highlighting that sustainability-related risks and
+- IFRS S2 exposure drafts supported the ISSB’s aim
+- Effects Analysis | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 3
+- Evolution of corporate sustainability To reduce implementation costs for companies that Requirements in IFRS S1
+- already report information using other frameworks or
+- 2 Primary users are existing and potential investors, lenders and other creditors that use a company’s general purpose financial reports, which include sustainability-related financial disclosures, in making decisions relating
+- • by introducing targeted relief measures for some The framework focuses on supporting the introduction
+- • provided a relief allowing a company to report on requirements; and of IFRS Sustainability Disclosure Standards across only climate-related risks and opportunities in the
+- • by scaling some requirements specifically all economic settings so that all market participants
+- investments in systems and processes that deliver time, climate change and related economic changes efficiency and other benefits. can create opportunities for companies.
+- 5 Under its due process requirements, the ISSB will also assess the implementation of IFRS S1 and IFRS S2 periodically through its post-implementation review process. This review process will address some stakeholder
+- suggestions that the ISSB continuously evaluate and ensure interoperability with jurisdictional initiatives and other sustainability-related standards over time to minimise likely ongoing costs.
+- sustainability information. The ISSB uses insights from improving access to information and reducing the publication of sustainability disclosures, gather
+- these sources to assess likely effects of IFRS S1 and costs of obtaining information. unstructured sustainability data and transform the
+- IFRS S2 on investors. information into measures that can be integrated into capital allocation and stewardship decisions. The main contributing factors to these costs are inconsistency
+
+Prior source excerpt windows:
+
+- June 2023 Project Summary IFRS ® Sustainability Disclosure Standards
+- IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information
+- IFRS S2 Climate-related Disclosures At a glance The first two ISSB Standards Effective date The International Sustainability
+- Companies can voluntarily apply these Standards, and jurisdictional authorities can decide whether to require companies to apply them.
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 2
+- Better information for better decisions Decision-useful information about About the ISSB sustainability-related risks and The Trustees of the IFRS Foundation announced
+- IFRS S1 requires a company to disclose information Many of the conceptual foundations and general
+- about its sustainability-related risks and opportunities requirements of IFRS S1 are adapted from the IASB’s
+- that is useful to investors in making decisions relating Conceptual Framework for Financial Reporting
+- IFRS S1 General Requirements for Disclosure of IFRS S1 and IFRS S2 are effective for annual
+- Standards Board (ISSB) issued its first
+- that used in IFRS Accounting Standards. accurate depiction of—those risks and opportunities. Definition of material information Reporting entity
+- ‘In the context of sustainability-related financial IFRS S1 requires the reporting entity for
+- disclosures, information is material if omitting, sustainability‑related financial disclosures to be
+- about its climate-related risks and opportunities, while a company has the option to limit disclosures
+- building on the requirements described in IFRS S1. to information about climate-related risks and
+- IFRS S2 integrates the recommendations of the opportunities in the first year that it applies IFRS S1
+- Task Force on Climate-related Financial Disclosures and IFRS S2. (TCFD) and requires the disclosure of information Although all public and private companies can apply
+- about both cross-industry and industry‑specific IFRS S1 and IFRS S2, the ISSB does not have the climate-related risks and opportunities. right to mandate the application of the Standards.
+- Project Summary | IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information and IFRS S2 Climate-related Disclosures | June 2023 | 8
+- How is sustainability-related financial information useful to investors? IFRS S1 states that information about IFRS S1 does not require a company to provide
+- sustainability‑related risks and opportunities is useful information about every sustainability-related risk and Connecting the dots … how can
+- company applies the ISSB Standards. In addition, sustainability-related matters beyond what is required reporting period; and a company that elects to provide information only
+- by IFRS S1 and IFRS S2, but only if that additional • the anticipated effects of sustainability-related
+- about climate‑related risks and opportunities in the
+- information does not obscure material information risks and opportunities on the company’s financial
+- first year it applies IFRS S1 is not required to provide required by IFRS S1 and IFRS S2. position, financial performance and cash flows comparative information about sustainability‑related
+- risks and opportunities beyond climate in its second over the short, medium and long term, taking into
+- 2 IFRS S2 Climate-related Disclosures
+- A company applying IFRS S1 is required to apply Climate-related risks refers to the potential
+- IFRS S2 to identify and disclose material information negative effects of climate change on a company.
+- IFRS S2 requires a company to disclose information A company is required to disclose information about:
+- that enables investors to understand the governance Integrating disclosures • how responsibilities for climate-related risks and processes, controls and procedures the company uses IFRS S1 emphasises that a company is
+- opportunities are reflected in the terms of reference,
+- A company’s measurement of Scope 3 GHG categories include: on industry-based metrics that are associated with emissions is expected to include the use of
+- common business models and activities in a particular estimation. The ISSB developed a Scope 3 • climate-related transition risks—the amount
+- industry. As the effects of climate-related risks and
+- opportunities vary significantly by activity or industry, guidance about the relevant information to use in vulnerable to transition risks; such metrics are important for investor understanding.
+- measuring Scope 3 GHG emissions. • climate-related physical risks—the amount
+- and percentage of assets or business activities Companies are required to refer to and consider
+- help achieve this objective. An important priority has including in combination with incremental jurisdictional been to establish interoperability between IFRS S1
+- requirements (commonly referred to as ‘building and IFRS S2 and the European Sustainability blocks’). This ensures that ISSB Standards are Reporting Standards (ESRS), the GRI Standards and
+- compatible with other reporting requirements, other major jurisdictional requirements. For example, including jurisdictional requirements and those aimed
+- IFRS S1 requires disclosure of material information
+- (‘investors’). To comply with the requirements of presents fairly all sustainability-related risks and
+- about sustainability-related risks and opportunities
+- Identifying information to report IFRS S1 requires a company to disclose material
+- information about the sustainability-related risks and Identifying sustainability-related risks Identifying applicable disclosure requirements
+- opportunities that could reasonably be expected to and opportunities affect its prospects. IFRS S1 specifies sources of
+- guidance to help companies identify this information. To identify sustainability-related risks and To identify applicable disclosure requirements,
+- These sources of guidance are provided to help opportunities, a company shall apply the ISSB a company shall apply the ISSB Standards.
+- IFRS S2 does not specify the inputs a company vulnerable to physical risks; disclosure topics and associated industry-based is required to use to measure its Scope 3 GHG
+- metrics in the Industry-based Guidance on
+- Information that enables investors to Information that enables investors to understand a company’s processes to understand a company’s performance in
+- identify, assess, prioritise and monitor relation to its sustainability-related risks and
+- sustainability‑related risks and opportunities. opportunities, including progress towards any

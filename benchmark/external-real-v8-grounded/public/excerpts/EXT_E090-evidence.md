@@ -1,0 +1,116 @@
+# EXT_E090 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- Y48 Plastic waste, including mixtures of such waste, with the exception of the following: — Plastic waste that is hazardous waste (see entry A3210 in part 1 of list A in Annex V)
+- — Plastic waste listed below, provided it is destined for recycling ** in an environmentally sound manner and
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+
+Prior source excerpt windows:
+
+- drawing as appropriate on relevant best practice. HARMONISATION OF CLASSIFICATION AND LABELLING OF SUBSTANCES AND THE CLASSIFICATION AND LABELLING
+- 2. Without prejudice to the labelling rules provided for in this INVENTORY Title, the Commission shall, on the basis of the study referred to
+- in paragraph 1, submit a report to the European Parliament and the Council and, if justified, present a legislative proposal to CHAPTER 1 amend this Regulation.
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- It is a precondition that a decision on the proposed classification its publication in the Official Journal of the European Union.
+- and labelling by the Commission in accordance with the
+- safeguard clause of Directive 67/548/EEC has not yet been Titles II, III and IV shall apply in respect of substances from
+- effects among the substances in a mixture for which the dispensers (1). evaluation was decided on the basis of the information for the substances in the mixture. (1) OJ L 147, 9.6.1975, p. 40.
+- 31.12.2008 EN Official Journal of the European Union L 353/15 Article 15 TITLE III HAZARD COMMUNICATION IN THE FORM OF LABELLING Review of classification for substances and mixtures
+- CHAPTER 1 1. Manufacturers, importers and downstream users shall take all reasonable steps available to them to make themselves aware of new scientific or technical information that may affect the Content of the label
+- …’ or ‘extract of …’ may be used instead of the chemical names of the components of that essential oil or
+- extract as referred to in Article 18(3)(b). L 353/42 EN Official Journal of the European Union 31.12.2008 1.5. Exemptions from labelling and packaging requirements
+- 1.5.1. Exemptions from Article 31 [(Article 29(1))]
+- class in accordance with Table 5.2 Table 5.2 Label elements for Hazardous to the Ozone Layer Symbol/pictogram Signal Word Danger Hazard Statement EUH059: Hazardous to the Ozone Layer
+- Precautionary Statements P273 P501 (1) OJ L 244, 29.9.2000, p. 1. 31.12.2008 EN Official Journal of the European Union L 353/141 ANNEX II SPECIAL RULES FOR LABELLING AND PACKAGING OF CERTAIN SUBSTANCES AND MIXTURES
+- — Part 1 contains special rules for the labelling of certain classified substances and mixtures.
+- Xi; R38-41 R: 25-38-41-42/43 R42/43 S: (2-)22-26-36/37/ 39-45 078-004-00-7 dipotassium tetrachloroplatinate 233-050-9 10025-99-7 T; R25 T Xi; R38-41 R: 25-38-41-42/43
+- R42/43 S: (2-)22-26-36/37/ 39-45 Official Journal of the European Union 078-005-00-2 hexachloroplatinates with the exception of those specified — — T; R25 T A
+- elsewhere in this Annex Xi; R41 R: 25-41-42/43 R42/43 S: (1/2-)22-26-36/37/ 39-45 078-006-00-8 disodium hexachloroplatinate 240-983-5 16923-58-3 T; R25 T
+- EN methylbromide Muta. 2 H331 GHS06 H331 Acute Tox. 3 * H301 GHS08 H301 Acute Tox. 3 * H373 GHS09 H373 STOT RE 2 * ** Dgr H319 Eye Irrit. 2 H319 H335
+- STOT SE 3 H335 H315 Skin Irrit. 2 H315 H400 Aquatic Acute 1 H400 Ozone EU H059 Official Journal of the European Union 602-003-00-8 dibromomethane 200-824-2 74-95-3 Acute Tox. 4 * H332 GHS07 H332
+- Aquatic H412 Wng H412 Chronic 3 602-004-00-3 dichloromethane; 200-838-9 75-09-2 Carc. 2 H351 GHS08 H351 methylene chloride Wng 602-005-00-9 methyl iodide; 200-819-5 74-88-4 Carc. 2 H351 GHS06 H351
+- 602-013-00-2 1,1,1-trichloroethane; 200-756-3 71-55-6 Acute Tox. 4 * H332 GHS07 H332 EUH059 F
+- methyl chloroform Ozone EU- Wng H059 Official Journal of the European Union 602-014-00-8 1,1,2-trichloroethane 201-166-9 79-00-5 Carc. 2 H351 GHS08 H351 EUH066
+- Acute Tox. 4 * H332 GHS07 H332 Acute Tox. 4 * H312 Wng H312 Acute Tox. 4 * H302 H302 602-015-00-3 1,1,2,2-tetrachloroethane 201-197-8 79-34-5 Acute Tox. 2 * H330 GHS06 H330
+- tabromodiphenyl ether Lact. ** GHS09 H362 Aquatic Acute 1 H362 Wng H410 Aquatic H400 Chronic 1 H410 31.12.2008 602-084-00-X 1,1-dichloro-1-fluoroethane 404-080-1 1717-00-6 Aquatic H412 — H412 EUH059
+- Chronic 3 EU Ozone H059 31.12.2008 Specific Conc. Lim Classification Labelling Notes its, M-factors Index No International Chemical Identification EC No CAS No Hazard
+- 602-085-00-5 2-bromopropane 200-855-1 75-26-3 Flam. Liq. 2 H225 GHS02 H225 EUH066 EN Repr. 1A H360F GHS08 H360F STOT RE 2 * *** Dgr H373 H373
+- Baseoil — unspecified; R45 R: 45 [A complex combination by hydrocarbons obtained as the S: 53-45 solvent insoluble fraction from solvent refining of a residuum
+- Official Journal of the European Union using a polar organic solvent such as phenol or furfural. It consists of hydrocarbons having carbon numbers predomi
+- 649-460-00-X Distillates (petroleum), clay-treated paraffinic; 265-137-2 64742-36-5 Carc. Cat. 2; T HL
+- nity, and in particular Article 95 thereof, classification and labelling for supply and use and, on the
+- other hand, those for transport. Having regard to the proposal from the Commission, (5) With a view to facilitating worldwide trade while protecting
+- Having regard to the opinion of the European Economic and human health and the environment, harmonised criteria for
+- liament and of the Council of 27 October 1998 on in vitro European Parliament and of the Council of 31 May 1999
+- diagnostic medical devices (7), Commission Decision 1999/ concerning the approximation of the laws, regulations and
+- 217/EC of 23 February 1999 adopting a register of administrative provisions of the Member States relating to
+- appropriate with the relevant requirements for the protec tion of laboratory animals, set out in Directive 86/609/EEC,
+- (26) The test methods in Commission Regulation (EC) No 440/ and, in the case of ecotoxicological and toxicological tests,
+- 2008 of 30 May 2008 laying down test methods pursuant good laboratory practice, set out in Directive 2004/10/EC
+- view to reducing testing on vertebrate animals and the and the verification of their application for tests on
+- number of animals involved. The European Centre for the chemical substances (3). Validation of Alternative Methods (ECVAM) of the Commission's Joint Research Centre plays an important
+- role in the scientific assessment and validation of alternative (32) The criteria for classification in different hazard classes and
+- opinion on the proposal while interested parties should responsible for the enforcement of the obligations set out
+- have an opportunity to comment. The Commission should in this Regulation. Member States should put in place
+- submit a draft decision on the final classification and effective monitoring and control measures in order to
+- By subjecting all future harmonisations of classifications to cooperation and coordination between the Member States,
+- this Regulation, inconsistencies in harmonised classifica- the Agency and the Commission. tions of the same substance under the existing and the new
+- criteria should be avoided. (62) In order to provide focal points for information on hazardous substances and mixtures, Member States should
+- and mixtures. Regulation should be adopted in accordance with Council Decision 1999/468/EC of 28 June 1999 laying down the procedures for the exercise of implementing powers
+- conferred on the Commission (2). (69) While many of the obligations on enterprises laid down in Regulation (EC) No 1907/2006 are triggered by classifica
+- tion, this Regulation should not alter the scope and impact
+- of that Regulation, except for its provisions on safety data (77) In particular, the Commission should be empowered to
+- sheets. To ensure this, that Regulation should be amended adapt this Regulation to technical and scientific progress,

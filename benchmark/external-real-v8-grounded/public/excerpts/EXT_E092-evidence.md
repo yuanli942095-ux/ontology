@@ -1,0 +1,120 @@
+# EXT_E092 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- (“GREEN” LISTED WASTE)’; (b) in part I, point (a) is replaced by the following:
+- ‘(a) Any reference in Annex IX of the Basel Convention to list A shall be understood as a reference to Annex IV to
+- this Regulation;’; (c) in part I, point (g) is replaced by the following:
+- In relation to “almost free from contamination and other types of wastes”, international and national
+- specifications may offer a point of reference.
+- In relation to “almost exclusively”, international and national specifications may offer a point of reference.
+- Post consumer wastes are excluded’; (d) in part II, the following text is deleted: ‘Solid plastic wastes GH013 391530 ex 390410—40 Polymers of vinyl chloride’;
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- national specifications may offer a point of reference.
+- national specifications may offer a point of reference. Post-consumer wastes are excluded.
+- Recycling/reclamation of organic substances that are not used as solvents (R3 in Annex IV, sect.
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+
+Prior source excerpt windows:
+
+- If a Category 2 carcinogen is present in the mixture as an ingredient at a concentration ≥ 0,1 % a SDS shall be
+- available for the mixture upon request. 31.12.2008 EN Official Journal of the European Union L 353/107 3.6.3.2. Classification of mixtures when data are available for the complete mixture
+- 3.6.3.2.1. Classification of mixtures will be based on the available test data for the individual ingredients of the mixture
+- mechanism may be removed, and the contents are available to be swallowed then the classification of the
+- substance or mixture shall be considered. L 353/128 EN Official Journal of the European Union 31.12.2008 3.10.2. Classification criteria for substances
+- Table 3.10.1 Hazard category for aspiration toxicity Category Criteria Substances known to cause human aspiration toxicity hazards or to be regarded as if they
+- see: Note (a) ATE ≤ 0,05 0,05 < ATE ≤ 0,5 < ATE ≤ 1,0 1,0 < ATE ≤ 5,0 Note (b) 0,5 (1) Gas concentrations are expressed in parts per million per volume (ppmV).
+- (a) The acute toxicity estimate (ATE) for the classification of a substance or ingredient in a mixture is derived using:
+- — the LD50/LC50 where available, L 353/82 EN Official Journal of the European Union 31.12.2008
+- toxicity estimate (ATE) for that mixture may be used, when calculating the classification of the new
+- mixture using the formulas in section 3.1.3.6.1 and paragraph 3.1.3.6.2.3. Figure 3.1.1 Tiered approach to classification of mixtures for acute toxicity
+- 3.1.3.4. Classification of mixtures where acute toxicity data are available for the complete mixture
+- the substance in accordance with Directive 1999/45/EC.
+- reference to the total weight of the mixture. L 353/338 EN Official Journal of the European Union 31.12.2008
+- Where no concentration limits are given, the concentration limits to be used when applying the conventional
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- responsibilities for classification, downstream users should importer or downstream user to arrive at a conclusion as
+- be allowed to use the classification of a substance or to whether or not the substance or mixture should be
+- mixture derived in accordance with this Regulation by an classified as hazardous. actor in the supply chain, provided that they do not change
+- the composition of the substance or mixture. Responsibility for classification of substances not placed on the market
+- that are subject to registration or notification under (21) While the classification of any substance or mixture may be
+- Regulation (EC) No 1907/2006 should mainly lie with carried out on the basis of available information, the
+- or mixture, and distributors should be allowed to use the is possible to determine the hazardous properties of an
+- classification of a substance or mixture derived in untested mixture by applying certain rules known as
+- accordance with this Regulation by an actor in the supply ‘bridging principles’. Those rules allow characterisation of
+- and places on the market a substance, on its own or in a 32. ‘concentration limit’ means a threshold of any classified
+- mixture, for third parties; impurity, additive or individual constituent in a substance or in a mixture that may trigger classification of the
+- substance or the mixture, respectively; 21. ‘intermediate’ means a substance that is manufactured for
+- place. Such equipment includes the reaction vessel, its and is used to derive by the summation method the
+- ancillary equipment, and any equipment through which the classification of a mixture in which the substance is present;
+- substance(s) pass(es) during a continuous flow or batch process as well as the pipework for transfer from one vessel
+- and packaged in accordance with Titles III and IV, before placing section 1 of Annex XI to Regulation (EC) No 1907/2006;
+- it on the market. (d) any new scientific information; 5. In fulfilling their responsibilities under paragraph 4, dis tributors may use the classification for a substance or mixture
+- derived in accordance with Title II by an actor in the supply (e) any other information generated under internationally
+- the relevant sections of Part 2 of Annex I or the generic importers and downstream users shall classify the substance or
+- concentration limits for classification in the relevant sections of mixture in relation to the relevant hazard class or classes or
+- Parts 3, 4 and 5 of Annex I. differentiations by assigning the following: (a) one or more hazard categories for each relevant hazard 7. The Agency shall provide further guidance for the
+- into account for the purposes of classification, if the concentra
+- tion of the identified impurity, additive or individual constituent 1. The classification of a mixture shall not be affected where
+- is equal to, or greater than, the applicable cut-off value in the evaluation of the information indicates any of the following:
+- differ from those shown by tests; (b) in the event of a change in the composition of a mixture,
+- scientific evidence indicates that an evaluation of the information on the mixture will not lead to a change in (b) conclusive scientific experimental data show that the classification;
+- substance or mixture is not biologically available and those data have been ascertained to be adequate and reliable; (c) where a mixture is placed on the market in the form of an
+- effects among the substances in a mixture for which the dispensers (1). evaluation was decided on the basis of the information for the substances in the mixture. (1) OJ L 147, 9.6.1975, p. 40.
+- 31.12.2008 EN Official Journal of the European Union L 353/15 Article 15 TITLE III HAZARD COMMUNICATION IN THE FORM OF LABELLING Review of classification for substances and mixtures
+- CHAPTER 1 1. Manufacturers, importers and downstream users shall take all reasonable steps available to them to make themselves aware of new scientific or technical information that may affect the Content of the label
+- 4. Manufacturers, importers and downstream users shall adapt in accordance with Article 22;
+- the classification of the substance or the mixture in accordance
+- with the results of the new evaluation except where there are (h) where applicable, a section for supplemental information in
+- differently from the classification already included in the 1. The label shall include details permitting the identification of
+- classification and labelling inventory, provided they submit the the substance or mixture (hereinafter referred to as ‘product
+- reasons for the classification to the Agency together with the identifiers’). notification in accordance with Article 40. The term used for identification of the substance or mixture shall
+- be the same as that used in the safety data sheet drawn up in

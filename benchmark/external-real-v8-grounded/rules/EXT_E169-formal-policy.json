@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E169",
+  "semantics": "cross_sentence_scope",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_EU_AI_ACT_2024"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E169_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_EU_AI_ACT_2024"
+        }
+      ],
+      "allowed_values": [
+        "obligation=gpai"
+      ]
+    },
+    {
+      "rule_id": "EXT_E169_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "aiact_gpai_obligations=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_169_OLD",
+      "EXT3_DOC_169_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

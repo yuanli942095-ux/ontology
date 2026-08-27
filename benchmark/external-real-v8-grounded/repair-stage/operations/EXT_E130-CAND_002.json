@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Framework_2_0____CSF_non_critical_infrastructure_applicability",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#scope",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "csf2_noncritical_infrastructure=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "scope=beyond_critical_infrastructure",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

@@ -1,0 +1,59 @@
+Source title: NIST Cybersecurity Framework 1.1
+Source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt window:
+
+- policy implementation and monitoring. Tier 4: Adaptive  Risk Management Process – The organization adapts its cybersecurity practices based on
+- previous and current cybersecurity activities, including lessons learned and predictive indicators. Through a process of continuous improvement incorporating advanced
+- cybersecurity technologies and practices, the organization actively adapts to a changing threat and technology landscape and responds in a timely and effective manner to
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- processes; an organization can use its current process and overlay it onto the Framework to
+- determine gaps in its current cybersecurity risk approach and develop a roadmap to improvement. Using the Framework as a cybersecurity risk management tool, an organization
+- can determine activities that are most important to critical service delivery and prioritize
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- management and are appropriately trained.  Process is in place to support compliance of cybersecurity activities with applicable privacy laws, regulations, and Constitutional requirements.
+-  Process is in place to assess implementation of the above organizational measures and controls. Approaches to identifying, authenticating, and authorizing individuals to access
+- organizational assets and systems  Steps are taken to identify and address the privacy implications of identity management
+- Over time, self-assessment and measurement should improve decision making about investment
+- priorities. For example, measuring – or at least robustly characterizing – aspects of an organization’s cybersecurity state and trends over time can enable that organization to
+- understand and convey meaningful risk information to dependents, suppliers, buyers, and other
+- the stakeholders in these sectors. Building from those standards, guidelines, and practices, the Framework provides a common taxonomy and mechanism for organizations to:
+- desired outcomes. Thus, the Framework gives organizations the ability to dynamically select and
+- direct improvement in cybersecurity risk management for the IT and ICS environments.
+- The Framework is adaptive to provide a flexible and risk-based implementation that can be used
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- 31000:20096, ISO/International Electrotechnical Commission (IEC) 27005:20117, NIST Special
+- Publication (SP) 800-398, and the Electricity Subsector Cybersecurity Risk Management Process
+- (RMP) guideline9. 1.3 Docume nt Overview The remainder of this document contains the following sections and appendices:  Section 2 describes the Framework components: the Framework Core, the Tiers, and the
+- Information System View, NIST Special Publication 800-39, March 2011. https://doi.org/10.6028/NIST.SP.800
+- U.S. Department of Energy, Electricity Subsector Cybersecurity Risk Management Process, DOE/OE-0003, May
+- 2012. https://energy.gov/sites/prod/files/Cybersecurity Risk Management Process Guideline - Final - May
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 5
+- how cybersecurity risk will be managed within the organization, and should influence prioritization within a Target Profile and assessments of progress in addressing gaps.
+- The Tier definitions are as follows: Tier 1: Partial  Risk Management Process – Organizational cybersecurity risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
+- Prioritization of cybersecurity activities may not be directly informed by organizational risk objectives, the threat environment, or business/mission requirements.
+- generally unaware of the cyber supply chain risks of the products and services it provides
+- and that it uses. Tier 2: Risk Informed  Risk Management Process – Risk management practices are approved by management but may not be established as organizational-wide policy. Prioritization of cybersecurity
+- activities and protection needs is directly informed by organizational risk objectives, the
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 9
+- April 16, 2018 Cybersecurity Framework Version 1.1 Tier 3: Repeatable  Risk Management Process – The organization’s risk management practices are formally
+- approved and expressed as policy. Organizational cybersecurity practices are regularly updated based on the application of risk management processes to changes in
+- formally upon those risks, including mechanisms such as written agreements to communicate baseline requirements, governance structures (e.g., risk councils), and
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- updates to the Current Profile, subsequently comparing the Current Profile to the Target Profile.
+- Organizations may also use this process to align their cybersecurity program with their desired
+- Framework Implementation Tier. 3.3 Communicating Cybersecurity Requirements with Stakeholders The Framework provides a common language to communicate requirements among

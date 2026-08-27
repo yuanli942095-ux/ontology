@@ -1,0 +1,115 @@
+# EXT_E093 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+
+Prior source excerpt windows:
+
+- 3.3.2.7.1. Substances that have the potential to induce reversible eye irritation are classified in Category 2 (irritating to
+- eyes). 31.12.2008 EN Official Journal of the European Union L 353/93 Table 3.3.2 Category for reversible eye effects Category Criteria if, when applied to the eye of an animal, a substance
+- produces: — at least in 2 of 3 tested animals, a positive response of: — corneal opacity ≥ 1 and/or Irritating to eyes — iritis ≥ 1, and/or (Category 2) — conjunctival redness ≥ 2 and/or
+- ‘— the relevant generic concentration limit importers and downstream users may amend the classification of
+- specified in Part 3 of Annex I of Regula- the substance or mixture using the conversion table in Annex VII
+- tion (EC) No 1272/2008.’; to this Regulation. 31.12.2008 EN Official Journal of the European Union L 353/35
+- By subjecting all future harmonisations of classifications to cooperation and coordination between the Member States,
+- this Regulation, inconsistencies in harmonised classifica- the Agency and the Commission. tions of the same substance under the existing and the new
+- criteria should be avoided. (62) In order to provide focal points for information on hazardous substances and mixtures, Member States should
+- to form hazardous compounds with the contents; section 3.7). 31.12.2008 EN Official Journal of the European Union L 353/21
+- 2. A substance that is an active substance in the meaning of 5. Where the Commission finds that the harmonisation of the
+- Directive 91/414/EEC or Directive 98/8/EC shall normally be classification and labelling of the substance concerned is
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- that which was tested and which is considered likely to materially alter its performance in a classification test,
+- the substance shall also be tested in the new form. 31.12.2008 EN Official Journal of the European Union L 353/63 2.7.3. Hazard Communication
+- class in accordance with Table 2.7.2. Table 2.7.2 Label elements for flammable solids Classification Category 1 Category 2 GHS Pictograms Signal Word Danger Warning
+- mechanism may be removed, and the contents are available to be swallowed then the classification of the
+- substance or mixture shall be considered. L 353/128 EN Official Journal of the European Union 31.12.2008 3.10.2. Classification criteria for substances
+- Table 3.10.1 Hazard category for aspiration toxicity Category Criteria Substances known to cause human aspiration toxicity hazards or to be regarded as if they
+- This number is indicated in the column entitled ‘Index No’. 1.1.1.2. EC numbers
+- The EC number, i.e. EINECS, ELINCS or NLP, is the official number of the substance within the European Union.
+- The EINECS number can be obtained from the European Inventory of Existing Commercial Chemical Substance
+- 082-010-00-5 Lead chromate molybdate sulfate red; 235-759-9 12656-85-8 Carc. 2 H351 GHS08 H351 1
+- C.I. Pigment Red 104; Repr. 1A H360- GHS09 H360Df Official Journal of the European Union [This substance is identified in the Colour STOT RE 2 * Df Dgr H373
+- Index by Colour Index Constitution Num- Aquatic Acute 1 H373 H410 ber, C.I. 77605.] Aquatic Chronic 1 H400 H410 082-011-00-0 lead hydrogen arsenate 232-064-2 7784-40-9 Carc. 1A H350 GHS06 H350 1
+- 5 and 6 shall apply. relevant classification and labelling elements in Table 3.1 of Part 3 of Annex VI and, where appropriate, the specific concentration limits or M-factors.
+- 3. Where a substance fulfils the criteria for other hazard classes or differentiations than those referred to in paragraph 1 and does A corresponding entry shall be included in Table 3.2 of Part 3 of
+- not fall under paragraph 2, a harmonised classification and Annex VI subject to the same conditions, until 31 May 2015. labelling in accordance with Article 37 may also be added to
+- (m) Annex VIII, Appendix 1, second column of the table; ‘8. A safety data sheet shall be provided free of
+- charge on paper or electronically no later than the date on which the substance or mixture is first (n) Annex VIII, Appendix 2, second column of the table; supplied.’;
+- 3. in Annex VI, Part B, point 1, paragraph 3 first indent and (b) the following paragraph shall be added:
+- and fertility or on development (Table (ii) the second indent shall be replaced by the 3.1) or reproductive toxicant cate following: gory 2 with R60 (May impair fertility)
+- or R61 (May cause harm to the ‘— the identification of CMRs, PBTs, vPvBs, or unborn child) (Table 3.2) listed in a substance of equivalent concern in Appendix 6’;
+- accordance with Article 59,’; (b) in the column ‘Conditions of restriction’, in entry 28,
+- are generally placed on the market in a stabilised Carcinogens: category 1B (Table 3.1)/ category 2
+- form. It is in this form that they are listed in (Table 3.2)’; L 353/30 EN Official Journal of the European Union 31.12.2008
+- (ii) in the entries index Nos 024-017-00-8, 611- or is assessed to be a PBT or vPvB, the chemical safety
+- 2.2.2.1. A flammable gas shall be classified in this class in accordance with Table 2.2.1:
+- 31.12.2008 EN Official Journal of the European Union L 353/53 Table 2.2.1 Criteria for flammable gases Category Criteria o Gases, which at 20 C and a standard pressure of 101,3 kPa:
+- 1 (a) are ignitable when in a mixture of 13 % or less by volume in air; or
+- amended or 10156-2 as amended. 2.4.3. Hazard Communication
+- class in accordance with Table 2.4.2. Table 2.4.2 Label elements for oxidising gases Classification Category 1 GHS Pictogram L 353/58 EN Official Journal of the European Union 31.12.2008
+- Classification Category 1 Signal Word Danger Hazard Statement H270: May cause or intensify fire; oxidiser Precautionary Statement P220 Prevention P244
+- 2.6.2.1. A flammable liquid shall be classified in one of the three categories for this class in accordance with
+- Table 2.6.1: L 353/60 EN Official Journal of the European Union 31.12.2008 Table 2.6.1 Criteria for flammable liquids Category Criteria 1 o Flash point < 23 C and initial boiling point ≤ 35 oC
+- 2 Flash point < 23 oC and initial boiling point > 35 oC 3 Flash point ≥ 23 oC and ≤ 60 oC (1)
+- (1) See UN Recommendations on the Transport of Dangerous Goods, Manual of Tests and Criteria, sub-sections 28.1, 28.2, 28.3 and
+- Table 28.3. L 353/64 EN Official Journal of the European Union 31.12.2008
+- 2.8.2.2. Mixtures of oxidising substances, meeting the criteria for classification as oxidising substances, which contain
+- section 33.3.1.5 of the UN Recommendations on the Transport of Dangerous Goods, Manual of Tests and
+- Criteria according to Table 2.9.1: 31.12.2008 EN Official Journal of the European Union L 353/67 Table 2.9.1 Criteria for pyrophoric liquids
+- 1 The liquid ignites within 5 min when added to an inert carrier and exposed to air, or it
+- section 33.3.1.4 of the UN Recommendations on the Transport of Dangerous Goods, Manual of Tests and
+- Criteria in accordance with Table 2.10.1: L 353/68 EN Official Journal of the European Union 31.12.2008 Table 2.10.1 Criteria for pyrophoric solids
+- Category Criteria 1 The solid ignites within 5 minutes of coming into contact with air. Note

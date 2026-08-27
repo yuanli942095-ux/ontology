@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E107",
+  "semantics": "temporal_version",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_US_EPA_LCRI_2024"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E107_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_US_EPA_LCRI_2024"
+        }
+      ],
+      "allowed_values": [
+        "copper_action_level=1_3_ppm"
+      ]
+    },
+    {
+      "rule_id": "EXT_E107_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "epa_lcr_copper_level=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_107_OLD",
+      "EXT3_DOC_107_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

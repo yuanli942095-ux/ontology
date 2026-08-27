@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E074",
+  "semantics": "temporal_version",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_INSURANCE_BEIJING_AGRI_2026"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E074_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_INSURANCE_BEIJING_AGRI_2026"
+        }
+      ],
+      "allowed_values": [
+        "exception=late_frost_named"
+      ]
+    },
+    {
+      "rule_id": "EXT_E074_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "fruit_tree_freeze_exception=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_074_OLD",
+      "EXT3_DOC_074_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#NIST_SP_800_63A_B_EXT_E052",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#document_scope_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "nist63_ab_status=old_or_absent",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "nist63a_controls=identity_proofing_requirements_mis_scoped",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

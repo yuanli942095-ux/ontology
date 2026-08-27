@@ -1,0 +1,48 @@
+Source title: FDA 2023 premarket cybersecurity guidance notice raw text
+Source URL: https://www.federalregister.gov/documents/full_text/html/2023/09/29/2023-21450.html
+
+Raw source excerpt window:
+
+- </p> <h2 id="h-14">Assessment Rates</h2> <p id="p-21" data-page="67243">
+- Pursuant to section 751(a)(2)(C) of the Act and <a href="https://www.ecfr.gov/current/title-19/section-351.212#p-351.212(b)(2)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.212(b)(2)</a>, Commerce will determine, and U.S. Customs and Border Protection (CBP) shall assess, countervailing duties on all appropriate entries of subject merchandise covered by this review. We intend to issue assessment instructions to CBP no earlier than 35 days after the date of publication of these final results of review. If a timely summons is filed at the U.S. Court of International Trade, the assessment instructions will direct CBP not to liquidate relevant entries until the time for parties to file a request for a statutory injunction has expired (
+- <em>i.e.,</em> within 90 days of publication). </p> <h2 id="h-15">Administrative Protective Order</h2>
+- <h2 id="h-10">Methodology</h2> <p id="p-16" data-page="67243">
+- Commerce conducted this administrative review in accordance with section 751(a)(1)(A) of the Tariff Act of 1930, as amended (the Act). For each subsidy program found to be countervailable, Commerce finds that there is a subsidy,
+- a financial contribution from a government or public entity that gives rise to a benefit to the recipient, and that the subsidy is specific.<sup>[<a class="footnote-reference" href="#footnote-6-p67243" id="citation-6-p67243">6</a>] </sup>
+- <em>see</em> the Issues and Decision Memorandum. </p> <h2 id="h-11">Final Results of Administrative Review</h2>
+- <p id="p-18" data-page="67243">In accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.221#p-351.221(b)(5)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.221(b)(5)</a>, Commerce calculated the following net countervailable subsidy rates for the period November 10, 2020, through December 31, 2021:</p>
+- <html><body><div class="table-wrapper"><table class="" data-point-width="136"> <thead><tr>
+- <strong>Federal Register</strong> <em>,</em>
+- in accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.224#p-351.224(b)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.224(b)</a>.
+- </p> <h2 id="h-13">Cash Deposit Instructions</h2> <p id="p-20" data-page="67243">
+- In accordance with section 751(a)(1) of the Act, Commerce intends to instruct CBP to collect cash deposits of estimated countervailing duties in the amount shown for the company listed above for 2021 (
+- 0.00 percent) on shipments of subject merchandise entered, or withdrawn from warehouse, for consumption on or after the date of publication of the final results of this administrative review. This cash deposit requirement, effective upon publication of the final results of this review, shall remain in effect until further notice.
+- <p id="p-22" data-page="67243">This notice also serves as a reminder to parties subject to an administrative protective order (APO) of their responsibility concerning the destruction of proprietary information disclosed under APO in accordance with <a href="https://www.ecfr.gov/current/title-19/section-351.305#p-351.305(a)(3)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.305(a)(3)</a>. Timely written notification of the return or destruction of APO materials or conversion to judicial protective order is hereby requested. Failure to comply with the regulations and terms of an APO is a sanctionable violation.</p>
+- <p id="p-23" data-page="67243">Notification to Interested Parties</p>
+- <p id="p-24" data-page="67243">Commerce is issuing and publishing the final results of review in accordance with sections 751(a)(1) and 777(i)(1) of the Act and <a href="https://www.ecfr.gov/current/title-19/section-351.221#p-351.221(b)(5)" class="cfr external" target="_blank" rel="noopener noreferrer">19 CFR 351.221(b)(5)</a>.</p>
+- <div class="signature"> <p class="signature-date">Dated: September 25, 2023.</p> <p class="signature-name">Lisa W. Wang,</p> <p class="signature-title">Assistant Secretary for Enforcement and Compliance.</p>
+- For a full description of the methodology underlying all of Commerce's conclusions, including any determination that relied upon the use of adverse facts available pursuant to section 776(a) and (b) of the Act,
+- <em>Order</em>). </p> <a class="back" href="#citation-5-p67242"> Back to Citation </a> </div> <div class="footnote" id="footnote-6-p67243"> <p id="p-17" data-page="67243">6.
+- sections 771(5)(B) and (D) of the Act regarding financial contribution; section 771(5)(E) of the Act regarding benefit; and section 771(5A) of the Act regarding specificity.
+- </p> <a class="back" href="#citation-6-p67243"> Back to Citation </a> </div> </div><div class="end-matter">
+- </li> <li> the number of the CFR title and the number of each part the document amends, proposes to amend, or is directly related to </li> <li>
+- the agency docket number / agency internal file number </li> <li> the RIN which identifies each regulatory action listed in the Unified Agenda of Federal Regulatory and Deregulatory
+- Actions </li> </ol> <p> See the <a href="https://www.archives.gov/files/federal-register/write/handbook/ddh.pdf#page=9"> Document Drafting Handbook
+- </div> </div> <div class="supplemental-info"> <h1 id="h-5">SUPPLEMENTARY INFORMATION:</h1> <p id="p-5" data-page="67242"></p> <h2 id="h-6">Background</h2>
+- On July 21, 2023, Commerce published the preliminary results of this administrative review in the
+- .<sup>[<a class="footnote-reference" href="#footnote-1-p67242" id="citation-1-p67242">1</a>] </sup>
+- </h2> <p id="p-13" data-page="67242"> The products covered by the <em>Order</em> are PVLT tires from Vietnam. A full description of the scope of the
+- <em>Order</em> is contained in the Issues and Decision Memorandum. </p> <h2 id="h-8">Analysis of Comments Received</h2> <p id="p-14" data-page="67242">
+- All issues raised by interested parties in briefs are addressed in the Issues and Decision Memorandum accompanying this notice. A list of the issues addressed in the Issues and Decision Memorandum is provided in the appendix to this notice. The Issues and Decision Memorandum is a public document and is on file electronically via Enforcement and Compliance's Antidumping and Countervailing Duty Centralized Electronic Service System (ACCESS). ACCESS is available to registered users at
+- <em><a href="https://access.trade.gov" class="external" target="_blank" rel="noopener noreferrer">https://access.trade.gov</a>.</em>
+- In addition, a complete version of the Issues and Decision Memorandum can be accessed directly at
+- <em><a href="https://access.trade.gov/public/FRNoticesListLayout.aspx" class="external" target="_blank" rel="noopener noreferrer">https://access.trade.gov/&#8203;public/&#8203;FRNoticesListLayout.aspx</a>.</em><span class="printed-page-inline unprinted-element document-markup" data-page="67243">
+- </p> <h2 id="h-9">Changes Since the Preliminary Results</h2>
+- <p id="p-15" data-page="67243">In response to arguments from the petitioner, Commerce corrected an error with respect to the currency exchange program. As a result of this change, we updated the final rates for Bridgestone. These changes are explained in the Issues and Decision Memorandum.</p>
+- <h2 id="h-12">Disclosure</h2> <p id="p-19" data-page="67243">
+- We intend to disclose the calculations performed in connection with the final results of review to parties in this proceeding within five days after public announcement of the final results or, if there is no public announcement, within five days of the date of publication of the notice of final results in the
+- </div> <h2 id="h-16">Appendix</h2> <h2 id="h-17">List of Topics Discussed in the Issues and Decision Memorandum</h2> <p class="flush-paragraph flush-paragraph-2" id="p-25" data-page="67243">I. Summary</p>
+- <p class="flush-paragraph flush-paragraph-2" id="p-26" data-page="67243">II. Background</p>
+- </p> <a class="back" href="#citation-2-p67242"> Back to Citation </a> </div> <div class="footnote" id="footnote-3-p67242"> <p id="p-10" data-page="67242">3.
+- &thinsp; See Petitioner's Letter, &ldquo;Letter in Lieu of a Case Brief,&rdquo; dated August 21, 2023. </p> <a class="back" href="#citation-3-p67242">
+- Back to Citation </a> </div> <div class="footnote" id="footnote-4-p67242"> <p id="p-11" data-page="67242">4. &thinsp; See

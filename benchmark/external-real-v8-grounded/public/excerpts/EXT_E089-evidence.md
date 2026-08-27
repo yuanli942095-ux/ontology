@@ -1,0 +1,114 @@
+# EXT_E089 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+
+Prior source excerpt windows:
+
+- class in accordance with Table 3.10.2. Table 3.10.2 Aspiration toxicity label elements Classification Category 1 GHS Pictogram Signal Word Danger
+- Hazard Statement H304: May be fatal if swallowed and enters airways 31.12.2008 EN Official Journal of the European Union L 353/129 Classification Category 1
+- Precautionary Statement Prevention Precautionary Statement P301 + P310 Response P331 Precautionary Statement P405 Storage Precautionary Statement P501
+- class in accordance with Table 4.1.4. Table 4.1.4 Label elements for hazardous to the aquatic environment ACUTE Category 1 GHS Pictogram Signal Word Warning
+- Hazard Statement H400: Very toxic to aquatic life 31.12.2008 EN Official Journal of the European Union L 353/139 ACUTE Category 1 Precautionary Statement Prevention P273
+- Precautionary Statement Response P391 Precautionary Statement Storage Precautionary Statement Disposal P501 CHRONIC Category 1 Category 2 Category 3 Category 4
+- exemptions or specific provisions are defined in Part 2 of Location of information on the label
+- Annex II. 1. The hazard pictograms, signal word, hazard statements and precautionary statements shall be located together on the label. 5. The Commission may request the Agency to prepare and
+- submit to it further draft exemptions from labelling and packaging requirements. 2. The supplier may decide the order of the hazard statements
+- substance or the producer or importer of an article submitting a registration for a substance under Regula (b) ‘Warning’ means a signal word indicating the less tion (EC) No 1907/2006;
+- 5. ‘hazard statement’ means a phrase assigned to a hazard 14. ‘manufacturing’ means production or extraction of sub
+- class and category that describes the nature of the hazards stances in the natural state; of a hazardous substance or mixture, including, where
+- (a) the trade name or the designation of the mixture; 3. Where a substance is included in Part 3 of Annex VI, the
+- hazard statement relevant for each specific classification covered by the entry in that Part shall be used on the label, together with
+- (b) the identity of all substances in the mixture that contribute the hazard statements referred to in paragraph 2 for any other
+- substance on the market is required to state on the label the correct name, due account being ‘Note H: taken of Section 1.1.1.4 of Annex VI to
+- Regulation (EC) No 1272/2008. The classification and label shown for this substance applies to the hazard or hazards indicated by the hazard statement or hazard
+- In accordance with Regulation (EC) No 1272/ statements in combination with the hazard
+- 1) Flammable gases of category 2; 2) Reproductive toxicity: effects on or via lactation; 3) Hazardous to the aquatic environment — Chronic of category 3 or 4.
+- 1.5.2.1.3. The pictogram, the hazard statement and the precautionary statement linked to the hazard categories listed
+- below may be omitted from the label elements required by Article 17 where: (a) the contents of the package do not exceed 125 ml; and
+- NOTE to Table 2.1.2: Unpackaged explosives or explosives repacked in packaging other than the original or
+- similar packaging shall include all of the following label elements: (a) the pictogram: exploding bomb; (b) the signal word: ‘Danger’; and (c) the hazard statement: ‘explosive; mass explosion hazard’
+- unless the hazard is shown to correspond to one of the hazard categories in Table 2.1.2, in which case the
+- corresponding symbol, the signal word and/or the hazard statement shall be assigned. Table 2.1.2 L 353/46 Label elements for explosives
+- Classification Unstable Explosive Division 1.1 Division 1.2 Division 1.3 Division 1.4 Division 1.5 Division 1.6
+- GHS Pictograms EN Signal Word Danger Danger Danger Danger Warning Danger No signal word
+- Hazard Statement H200: Unstable Explo- H201: Explosive; mass H202: Explosive; severe H203: Explosive; fire, H204: Fire or projec- H205: May mass No hazard statement
+- sive explosion hazard projection hazard blast or projection tion hazard explode in fire hazard Precautionary Statement P201 P210 P210 P210 P210 P210 No precautionary state
+- class in accordance with Table 2.2.2. Table 2.2.2 Label elements for flammable gases Classification Category 1 Category 2 GHS Pictogram No pictogram
+- Signal Word Danger Warning Hazard Statement H220: Extremely flammable gas H221: Flammable gas Precautionary Statement P210 P210 Prevention Precautionary Statement P377 P377
+- Response P381 P381 Precautionary Statement P403 P403 Storage Precautionary Statement Disposal 2.2.4. Additional Classification Considerations
+- class in accordance with Table 2.3.2. Table 2.3.2 Label elements for flammable aerosols Classification Category 1 Category 2 GHS Pictograms Signal Word Danger Warning
+- Hazard Statement H222: Extremely flammable H223: Flammable aerosol aerosol Precautionary Statement P210 P210 Prevention P211 P211 P251 P251 Precautionary Statement
+- Response Precautionary Statement P410 + P412 P410 + P412 Storage Precautionary Statement Disposal 31.12.2008 EN Official Journal of the European Union L 353/57
+- class in accordance with Table 2.4.2. Table 2.4.2 Label elements for oxidising gases Classification Category 1 GHS Pictogram L 353/58 EN Official Journal of the European Union 31.12.2008
+- Classification Category 1 Signal Word Danger Hazard Statement H270: May cause or intensify fire; oxidiser Precautionary Statement P220 Prevention P244
+- Precautionary Statement P370 + P376 Response Precautionary Statement P403 Storage Precautionary Statement Disposal 2.4.4. Additional Classification Considerations
+- class in accordance with Table 2.5.2. Table 2.5.2 Label elements for gases under pressure Refrigerated lique Classification Compressed gas Liquefied gas Dissolved gas
+- fied gas GHS Pictograms Signal Word Warning Warning Warning Warning Hazard Statement H280: Contains H280: Contains H281: Contains H280: Contains gas
+- gas under pres- gas under pres- refrigerated gas; under pressure; sure; may explode sure; may explode may cause cryo- may explode if if heated if heated genic burns or heated
+- class in accordance with Table 2.6.2. Table 2.6.2 Label elements for flammable liquids Classification Category 1 Category 2 Category 3 GHS Pictograms
+- Signal Word Danger Danger Warning Hazard Statement H224: Extremely flam- H225: Highly flam- H226: Flammable liquid mable liquid and mable liquid and and vapour
+- vapour vapour Precautionary Statement P210 P210 P210 Prevention P233 P233 P233 P240 P240 P240 P241 P241 P241 P242 P242 P242 P243 P243 P243 P280 P280 P280
+- class in accordance with Table 2.7.2. Table 2.7.2 Label elements for flammable solids Classification Category 1 Category 2 GHS Pictograms Signal Word Danger Warning
+- Hazard Statement H228: Flammable Solid H228: Flammable Solid Precautionary Statement P210 P210 Prevention P240 P240 P241 P241 P280 P280 Precautionary Statement P370 + P378 P370 + P378
+- Response Precautionary Statement Storage Precautionary Statement Disposal 2.8. Self-reactive substances and mixtures 2.8.1. Definition
+- class in accordance with Table 2.9.2. Table 2.9.2 Label elements for pyrophoric liquids Classification Category 1 GHS Pictogram Signal Word Danger
+- Hazard Statement H250: Catches fire spontaneously if exposed to air Precautionary Statement P210 Prevention P222 P280 Precautionary Statement P302 + P334
+- Response P370 + P378 Precautionary Statement P422 Storage Precautionary Statement Disposal 2.9.4. Additional Classification Considerations
+- class in accordance with Table 2.11.2. Table 2.11.2 Label elements for self-heating substances and mixtures Classification Category 1 Category 2
+- GHS Pictograms Signal Word Danger Warning Hazard Statement H251: Self-heating; may catch H252: Self-heating in large quan fire tities; may catch fire
+- Precautionary Statement P235 + P410 P235 + P410 Prevention P280 P280 Precautionary Statement Response Precautionary Statement P407 P407 Storage P413 P413
+- Label elements for substances or mixtures which in contact with water emit flammable gases
+- Classification Category 1 Category 2 Category 3 GHS Pictograms Signal Word Danger Danger Warning Hazard Statement H260: In contact with H261: In contact with H261: In contact with
+- water releases flam- water releases flam- water releases flammable mable gases which may mable gases gases ignite spontaneously Precautionary Statement P223 P223 P231 + P232
+- L 353/74 EN Official Journal of the European Union 31.12.2008 Classification Category 1 Category 2 Category 3 Signal Word Danger Danger Warning
+- Hazard Statement H271:May cause fire or H272: May intensify H272: May intensify fire; explosion; strong oxi- fire; oxidiser oxidiser diser Precautionary Statement P210 P210 P210
+- Prevention P220 P220 P220 P221 P221 P221 P280 P280 P280 P283 Precautionary Statement P306 + P360 P370 + P378 P370 + P378 Response P371 + P380 + P375

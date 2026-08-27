@@ -1,0 +1,61 @@
+Source title: Regulation (EC) No 1272/2008 official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- Having regard to the opinion of the European Economic and human health and the environment, harmonised criteria for
+- Social Committee (1), classification and labelling have been carefully developed over a period of 12 years within the United Nations (UN) structure, resulting in the Globally Harmonised System of
+- Acting in accordance with the procedure laid down in Article 251 Classification and Labelling of Chemicals (hereinafter
+- differentiation within a hazard class by including or revising an entry for that purpose in Part 3 of Annex VI to this (22) To facilitate hazard identification for mixtures, manufac
+- Regulation, the manufacturer, importer and downstream turers, importers and downstream users should base this user should apply this harmonised classification, and only
+- identification on the data for the mixture itself, where self-classify for the remaining, non-harmonised hazard available, except for mixtures with carcinogenic, germ cell
+- mixtures may also be supplied to the general public classification for that substance except for hazard classes
+- unpackaged. Where appropriate, relevant labelling infor- and differentiations subject to a harmonised classification
+- mation should be supplied to the general public by other for that substance. means, such as an invoice or bill.
+- accessibility and protection as that afforded by Regula and downstream users to submit proposals to the Agency tion (EC) No 1907/2006, especially with regard to
+- for a harmonised classification and labelling of substances information which, if disclosed, risks jeopardising the classified for carcinogenicity, germ cell mutagenicity or
+- commercial interests of those concerned. reproductive toxicity categories 1A, 1B or 2, for respiratory sensitisation, or in respect of other effects on a case-by-case
+- basis. The competent authorities of Member States should
+- also be able to propose harmonised classification and (59) Member States should appoint the competent authority or
+- labelling for active substances used in plant protection competent authorities responsible for proposals for
+- products and biocidal products. The Agency should give its harmonised classification and labelling and the authorities
+- opinion on the proposal while interested parties should responsible for the enforcement of the obligations set out
+- classifications using the new criteria. Moreover, as the No 1907/2006 may act as the national helpdesks provided
+- applicability of this Regulation is deferred and the for under this Regulation. harmonised classifications in accordance with the criteria of Directive 67/548/EEC are relevant for the classification
+- of substances and mixtures during the ensuing transition (61) In order for the system established by this Regulation to period, all existing harmonised classifications should also
+- By subjecting all future harmonisations of classifications to cooperation and coordination between the Member States,
+- this Regulation, inconsistencies in harmonised classifica- the Agency and the Commission. tions of the same substance under the existing and the new
+- criteria should be avoided. (62) In order to provide focal points for information on hazardous substances and mixtures, Member States should
+- tools for reviewing the Regulation and, where necessary, for formulating proposals for amendments. (72) Since the objectives of this Regulation, namely harmonising
+- the classification, labelling and packaging rules, providing (65) The Forum for the exchange of information on enforce an obligation to classify and establishing a harmonised list
+- ment in the Agency, established by Regulation (EC) of substances classified at Community level as well as a
+- stakeholders, to focus resources on preparing for new account. Furthermore, the Commission should be empow
+- duties at the right times. Therefore, and because the ered to decide on the harmonised classification and
+- classification of mixtures depends on the classification of labelling of specific substances. Since those measures are
+- Article 5 (b) Articles 7(2) or 9 of Regulation (EC) No 1907/2006 provide for notification. Identification and examination of available information on
+- 3. If a substance is subject to harmonised classification and 1. Manufacturers, importers and downstream users of a
+- labelling in accordance with Title V through an entry in Part 3 of substance shall identify the relevant available information for
+- 2. Paragraph 1 shall not apply if the classification included in accordance with Article 31 of Regulation (EC) No 1907/2006
+- the classification and labelling inventory is a harmonised (hereinafter referred to as ‘safety data sheet’), without prejudice to
+- classification included in Part 3 of Annex VI. Article 17(2) of this Regulation. L 353/16 EN Official Journal of the European Union 31.12.2008
+- in paragraph 1, submit a report to the European Parliament and the Council and, if justified, present a legislative proposal to CHAPTER 1 amend this Regulation.
+- Establishing harmonised classification and labelling of substances TITLE IV Article 36 PACKAGING Harmonisation of classification and labelling of substances
+- Article 35 1. A substance that fulfils the criteria set out in Annex I for the following shall normally be subject to harmonised classification
+- Packaging and labelling in accordance with Article 37: 1. Packaging containing hazardous substances or mixtures
+- Directive 91/414/EEC or Directive 98/8/EC shall normally be classification and labelling of the substance concerned is
+- subject to harmonised classification and labelling. For such appropriate, it shall, without undue delay, submit a draft decision
+- substances, the procedures set out in Article 37, paragraphs 1, 4, concerning the inclusion of that substance together with the
+- 3. Where a substance fulfils the criteria for other hazard classes or differentiations than those referred to in paragraph 1 and does A corresponding entry shall be included in Table 3.2 of Part 3 of
+- not fall under paragraph 2, a harmonised classification and Annex VI subject to the same conditions, until 31 May 2015. labelling in accordance with Article 37 may also be added to
+- Annex VI on a case-by-case basis, if justification is provided
+- recourse to the urgency procedure referred to in Article 54(4). Procedure for harmonisation of classification and labelling of substances 6. Manufacturers, importers and downstream users who have
+- new information which may lead to a change of the harmonised classification and labelling elements of a substance in Part 3 of
+- 1. A competent authority may submit to the Agency a Annex VI shall submit a proposal in accordance with the second
+- proposal for harmonised classification and labelling of sub- subparagraph of paragraph 2 to the competent authority in one
+- stances and, where appropriate, specific concentration limits or of the Member States in which the substance is placed on the
+- M-factors, or a proposal for a revision thereof. market. The proposal shall follow the format set out in Part 2 of Article 38 Annex VI and contain the relevant information provided for in
+- Part 1 of Annex VI. Content of opinions and decisions for harmonised classification and labelling in Part 3 of Annex VI; accessibility of information
+- 2. A manufacturer, importer or downstream user of a
+- 3. Where the proposal of the manufacturer, importer or Article 17(1) for the substance, together with any
+- downstream user concerns the harmonised classification and supplemental hazard statements for the substance, deter
+- labelling of a substance in accordance with Article 36(3), it shall mined in accordance with Article 25(1);

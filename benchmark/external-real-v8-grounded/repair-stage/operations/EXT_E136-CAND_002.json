@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Privacy_Framework_1_1_Initial_Public_Draft____PF_1_0_to_PF_1_1_mapping",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#mapping_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "pf11_mapping_resource=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "mapping=core_traceability",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E092",
+  "semantics": "temporal_version",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_EU_CLP_ATP_2020_2174"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E092_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_EU_CLP_ATP_2020_2174"
+        }
+      ],
+      "allowed_values": [
+        "scope=mixture_reference"
+      ]
+    },
+    {
+      "rule_id": "EXT_E092_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "mixture_classification_cross_reference=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_092_OLD",
+      "EXT3_DOC_092_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

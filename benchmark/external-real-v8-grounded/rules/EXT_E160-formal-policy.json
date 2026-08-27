@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E160",
+  "semantics": "general_rule_exception",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_EU_AI_ACT_2024"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E160_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_EU_AI_ACT_2024"
+        }
+      ],
+      "allowed_values": [
+        "requirement=risk_management_system"
+      ]
+    },
+    {
+      "rule_id": "EXT_E160_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "aiact_risk_management_system=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_160_OLD",
+      "EXT3_DOC_160_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

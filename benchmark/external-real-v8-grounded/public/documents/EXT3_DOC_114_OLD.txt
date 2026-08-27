@@ -1,0 +1,61 @@
+Source title: NIST Cybersecurity Framework 1.1
+Source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt window:
+
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 23
+- April 16, 2018 Cybersecurity Framework Version 1.1 Table 2: Framework Core Function Category Subcategory Informative References IDENTIFY Asset Management (ID.AM): ID.AM-1: Physical devices and systems CIS CSC 1
+- (ID) The data, personnel, devices, within the organization are inventoried COBIT 5 BAI09.01, BAI09.02
+- outcomes associated with each Subcategory. The Informative References presented in the Framework Core are illustrative and not exhaustive. They are based upon cross-sector
+- guidance most frequently referenced during the Framework development process. The five Framework Core Functions are defined below. These Functions are not intended to
+- form a serial path or lead to a static desired end state. Rather, the Functions should be performed
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 6
+- April 16, 2018 Cybersecurity Framework Version 1.1  Categories are the subdivisions of a Function into groups of cybersecurity outcomes closely tied to programmatic needs and particular activities. Examples of Categories
+- include “Asset Management,” “Identity Management and Access Control,” and “Detection Processes.”  Subcategories further divide a Category into specific outcomes of technical and/or
+- concurrently and continuously to form an operational culture that addresses the dynamic cybersecurity risk. See Appendix A for the complete Framework Core listing.
+-  Identify – Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities. The activities in the Identify Function are foundational for effective use of the
+- Framework. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enables an organization to focus and
+- Business Environment; Governance; Risk Assessment; and Risk Management Strategy.  Protect – Develop and implement appropriate safeguards to ensure delivery of critical
+- services. The Protect Function supports the ability to limit or contain the impact of a potential cybersecurity event. Examples of outcome Categories within this Function include:
+- Identity Management and Access Control; Awareness and Training; Data Security; Information Protection Processes and Procedures; Maintenance; and Protective
+- Technology.  Detect – Develop and implement appropriate activities to identify the occurrence of a cybersecurity event. The Detect Function enables timely discovery of cybersecurity events. Examples of
+- outcome Categories within this Function include: Anomalies and Events; Security Continuous Monitoring; and Detection Processes.
+- April 16, 2018 Cybersecurity Framework Version 1.1  Respond – Develop and implement appropriate activities to take action regarding a detected cybersecurity incident.
+- The Respond Function supports the ability to contain the impact of a potential cybersecurity incident. Examples of outcome Categories within this Function include:
+- Response Planning; Communications; Analysis; Mitigation; and Improvements.  Recover – Develop and implement appropriate activities to maintain plans for resilience
+- and to restore any capabilities or services that were impaired due to a cybersecurity incident. The Recover Function supports timely recovery to normal operations to reduce the
+- impact from a cybersecurity incident. Examples of outcome Categories within this Function include: Recovery Planning; Improvements; and Communications.
+- 2.2 Framework Implementation Tiers The Framework Implementation Tiers (“Tiers”) provide context on how an organization views
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 22
+- April 16, 2018 Cybersecurity Framework Version 1.1 Table 1: Function and Category Unique Identifiers Function Function Category Category Unique Unique
+- Identifier Identifier ID Identify ID.AM Asset Management ID.BE Business Environment ID.GV Governance ID.RA Risk Assessment ID.RM Risk Management Strategy
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 24
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References third-party stakeholders (e.g., suppliers, ISA 62443-2-1:2009 4.3.2.3.3
+- customers, partners) are established ISO/IEC 27001:2013 A.6.1.1 NIST SP 800-53 Rev. 4 CP-2, PS-7, PM-11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 25
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References management of cybersecurity ID.GV-2: Cybersecurity roles and CIS CSC 19
+- risk. responsibilities are coordinated and aligned COBIT 5 APO01.02, APO10.03, APO13.02, with internal roles and external partners DSS05.04 ISA 62443-2-1:2009 4.3.2.3.3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 26
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RA-3: Threats, both internal and CIS CSC 4
+- external, are identified and documented COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04 ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12 ISO/IEC 27001:2013 Clause 6.1.2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 27
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RM-3: The organization’s COBIT 5 APO12.02
+- determination of risk tolerance is informed ISO/IEC 27001:2013 Clause 6.1.3, Clause 8.3 by its role in critical infrastructure and NIST SP 800-53 Rev. 4 SA-14, PM-8, PM-9, PM

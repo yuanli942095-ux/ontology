@@ -1,0 +1,62 @@
+Source title: COM(2021) 206 AI Act proposal official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- point (iii) thereof, the competent authorities may be authorised to use those systems for the purpose of law enforcement. TITLE III HIGH-RISK AI SYSTEMS
+- CHAPTER 1 CLASSIFICATION OF AI SYSTEMS AS HIGH-RISK Article 6 Classification rules for high-risk AI systems 1. Irrespective of whether an AI system is placed on the market or put into service
+- independently from the products referred to in points (a) and (b), that AI system shall be considered high-risk where both of the following conditions are fulfilled:
+- the function performed by the AI system, but also on the specific purpose and modalities for
+- Chapter 1 of Title III sets the classification rules and identifies two main categories of high
+- risk AI systems:  AI systems intended to be used as safety component of products that are subject to third party ex-ante conformity assessment;
+- credit institutions regulated by Directive 2013/36/EU. (81) The development of AI systems other than high-risk AI systems in accordance with
+- the requirements of this Regulation may lead to a larger uptake of trustworthy artificial intelligence in the Union. Providers of non-high-risk AI systems should be encouraged
+- to create codes of conduct intended to foster the voluntary application of the mandatory requirements applicable to high-risk AI systems. Providers should also be
+- TITLE I GENERAL PROVISIONS Article 1 Subject matter This Regulation lays down: (a) harmonised rules for the placing on the market, the putting into service and the
+- use of artificial intelligence systems (‘AI systems’) in the Union; (a) prohibitions of certain artificial intelligence practices; (b) specific requirements for high-risk AI systems and obligations for operators of
+- such systems; (c) harmonised transparency rules for AI systems intended to interact with natural persons, emotion recognition systems and biometric categorisation systems,
+- flexibility is particularly important, because it allows providers of AI systems to choose the
+- High-Level Expert Group on Artificial Intelligence, Ethics Guidelines for Trustworthy AI, 2019.
+- They were also endorsed by the Commission in its 2019 Communication on human-centric approach to
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- burning gaseous fuels, medical devices, and in vitro diagnostic medical devices.
+- (31) The classification of an AI system as high-risk pursuant to this Regulation should not
+- necessarily mean that the product whose safety component is the AI system, or the AI
+- meets the requirements set out in Chapter 2 of this Title. The EU declaration of conformity shall contain the information set out in Annex V and shall be translated
+- into an official Union language or languages required by the Member State(s) in which the high-risk AI system is made available. 3. Where high-risk AI systems are subject to other Union harmonisation legislation
+- which also requires an EU declaration of conformity, a single EU declaration of conformity shall be drawn up in respect of all Union legislations applicable to the
+- testing datasets used by the provider, including through application programming interfaces (‘API’) or other appropriate technical means and tools enabling remote
+- access. 2. Where necessary to assess the conformity of the high-risk AI system with the requirements set out in Title III, Chapter 2 and upon a reasoned request, the market
+- surveillance authorities shall be granted access to the source code of the AI system. 3. National public authorities or bodies which supervise or enforce the respect of
+- assessment of conformity of the AI system with the requirements set out in Title III, Chapter 2. Whenever the notified body is not satisfied with the tests carried out by
+- the provider, the notified body shall directly carry out adequate tests, as appropriate. 4.5. Where necessary to assess the conformity of the high-risk AI system with the
+- requirements set out in Title III, Chapter 2 and upon a reasoned request, the notified body shall also be granted access to the source code of the AI system.
+-  Option 1: EU legislative instrument setting up a voluntary labelling scheme;  Option 2: a sectoral, “ad-hoc” approach;  Option 3: Horizontal EU legislative instrument following a proportionate risk
+- based approach;  Option 3+: Horizontal EU legislative instrument following a proportionate risk based approach + codes of conduct for non-high-risk AI systems;
+-  Option 4: Horizontal EU legislative instrument establishing mandatory requirements for all AI systems, irrespective of the risk they pose.
+- charge of monitoring the effects of the proposal. It will establish a system for registering
+- stand-alone high-risk AI applications in a public EU-wide database. This registration will also
+- enable competent authorities, users and other interested people to verify if the high-risk AI
+- requirements of the regulation and compliance with robust quality and risk management systems and post-market monitoring. After the provider has performed the relevant
+- conformity assessment, it should register those stand-alone high-risk AI systems in an EU database that will be managed by the Commission to increase public transparency and
+- oversight and strengthen ex post supervision by competent authorities. By contrast, for
+- Title VII aims to facilitate the monitoring work of the Commission and national authorities
+- through the establishment of an EU-wide database for stand-alone high-risk AI systems with
+- mainly fundamental rights implications. The database will be operated by the Commission
+- providers of high-risk AI systems other than those related to products falling within the scope of relevant existing Union harmonisation legislation, should be required to
+- register their high-risk AI system in a EU database, to be established and managed by the Commission. The Commission should be the controller of that database, in
+- accordance with Regulation (EU) 2018/1725 of the European Parliament and of the EN 33 EN Council55. In order to ensure the full functionality of the database, when deployed, the
+- in relation to the quality management system of providers and the monitoring obligation placed on users of high-risk AI systems to the extent that these apply to
+- harmonised standards referred to in Article 40 of this Regulation shall be taken into account. Article 18 Obligation to draw up technical documentation
+- 1. Providers of high-risk AI systems shall draw up the technical documentation referred to in Article 11 in accordance with Annex IV. 2. Providers that are credit institutions regulated by Directive 2013/36/EU shall
+- maintain the technical documentation as part of the documentation concerning internal governance, arrangements, processes and mechanisms pursuant to Article 74
+- for a period that is appropriate in the light of the intended purpose of high-risk AI system and applicable legal obligations under Union or national law.
+- 2. Providers that are credit institutions regulated by Directive 2013/36/EU shall maintain the logs automatically generated by their high-risk AI systems as part of the
+- documentation under Articles 74 of that Directive. EN 54 EN Article 21 Corrective actions
+- after the AI system has been placed on the market or put into service. The EU declaration of conformity shall identify the AI system for which it has been drawn
+- up. A copy of the EU declaration of conformity shall be given to the relevant national competent authorities upon request. 2. The EU declaration of conformity shall state that the high-risk AI system in question
+- 8. When Union institutions, agencies and bodies fall within the scope of this Regulation, the European Data Protection Supervisor shall act as the competent
+- authority for their supervision. TITLE VII EU DATABASE FOR STAND-ALONE HIGH-RISK AI SYSTEMS Article 60 EU database for stand-alone high-risk AI systems
+- 1. The Commission shall, in collaboration with the Member States, set up and maintain a EU database containing information referred to in paragraph 2 concerning high-risk

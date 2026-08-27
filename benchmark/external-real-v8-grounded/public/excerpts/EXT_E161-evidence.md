@@ -1,0 +1,126 @@
+# EXT_E161 Evidence
+
+- Source title: Regulation (EU) 2024/1689 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: COM(2021) 206 AI Act proposal official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- ‘When adopting detailed measures related to technical specifications and procedures for approval and use of security
+- equipment concerning Artificial Intelligence systems within the meaning of Regulation (EU) 2024/1689 of the European
+- Parliament and of the Council (*), the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into
+- 2024/1689/oj).’. Article 105 Amendment to Directive 2014/90/EU In Article 8 of Directive 2014/90/EU, the following paragraph is added:
+- ‘5. For Artificial Intelligence systems which are safety components within the meaning of Regulation (EU) 2024/1689 of
+- the European Parliament and of the Council (*), when carrying out its activities pursuant to paragraph 1 and when adopting
+- (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU)
+- 2020/1828 (Artificial Intelligence Act) (OJ L, 2024/1689, 12.7.2024, ELI: http://data.europa.eu/eli/reg/
+- 2024/1689/oj).’. Article 103 Amendment to Regulation (EU) No 167/2013 In Article 17(5) of Regulation (EU) No 167/2013, the following subparagraph is added:
+- Official Journal EN of the European Union L series 2024/1689 12.7.2024 REGULATION (EU) 2024/1689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008,
+- (6) European Parliament resolution of 20 October 2020 with recommendations to the Commission on a framework of ethical aspects
+- of artificial intelligence, robotics and related technologies, 2020/2012(INL). 2/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (9) Harmonised rules applicable to the placing on the market, the putting into service and the use of high-risk AI
+- (*) Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised
+- rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013,
+- ‘When adopting delegated acts pursuant to the first subparagraph concerning artificial intelligence systems which are safety
+- components within the meaning of Regulation (EU) 2024/1689 of the European Parliament and of the Council (*), the
+- requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account.
+- ‘4. When adopting delegated acts pursuant to paragraphs 1 and 2 concerning Artificial Intelligence systems which
+- are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III,
+- Section 2, of that Regulation shall be taken into account.’; (3) in Article 43, the following paragraph is added:
+- ‘When adopting those implementing acts concerning Artificial Intelligence systems which are safety components within
+- the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2, of that Regulation shall
+- be taken into account.’; 120/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (6) in Article 58, the following paragraph is added:
+- (f) the measures to be taken in the case of the materialisation of those risks, including the arrangements for internal
+- governance and complaint mechanisms. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 69/144 EN OJ L, 12.7.2024
+- 2. The obligation laid down in paragraph 1 applies to the first use of the high-risk AI system. The deployer may, in
+- to lay down requirements for high-risk AI systems and obligations for the relevant operators, and to lay down
+- transparency obligations for certain AI systems. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 7/144 EN OJ L, 12.7.2024
+- (27) While the risk-based approach is the basis for a proportionate and effective set of binding rules, it is important to
+- for Cybersecurity) and on information and communications technology cybersecurity certification and repealing Regulation
+- (EU) No 526/2013 (Cybersecurity Act) (OJ L 151, 7.6.2019, p. 15). 22/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (79) It is appropriate that a specific natural or legal person, defined as the provider, takes responsibility for the placing on
+- point of contact vis-à-vis the public and other counterparts at Member State and Union levels, each Member State
+- should designate a market surveillance authority to act as a single point of contact. 38/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj
+- (154) The national competent authorities should exercise their powers independently, impartially and without bias, so as
+- (a) harmonised rules for the placing on the market, the putting into service, and the use of AI systems in the Union;
+- 44/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (b) prohibitions of certain AI practices;
+- (c) specific requirements for high-risk AI systems and obligations for operators of such systems;
+- AI model, regardless of whether the AI model is provided by themselves and vertically integrated or provided by
+- another entity based on contractual relations. 50/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 4 AI literacy
+- Providers and deployers of AI systems shall take measures to ensure, to their best extent, a sufficient level of AI literacy of
+- (d) examination, test and validation procedures to be carried out before, during and after the development of the high-risk
+- AI system, and the frequency with which they have to be carried out; 62/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (e) technical specifications, including standards, to be applied and, where the relevant harmonised standards are not
+- 3. Any information obtained by a competent authority pursuant to this Article shall be treated in accordance with the
+- confidentiality obligations set out in Article 78. 64/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 22 Authorised representatives of providers of high-risk AI systems
+- 1. Prior to making their high-risk AI systems available on the Union market, providers established in third countries
+- a high-risk AI system made available on the market by the distributors, in particular to reduce or mitigate the risk posed by
+- it. 66/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 25 Responsibilities along the AI value chain
+- 1. Any distributor, importer, deployer or other third-party shall be considered to be a provider of a high-risk AI system
+- requirement, the general-purpose AI model does not present, due to its specific characteristics, systemic risks and therefore
+- should not be classified as a general-purpose AI model with systemic risk. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 83/144 EN OJ L, 12.7.2024
+- 3. Where the Commission concludes that the arguments submitted pursuant to paragraph 2 are not sufficiently
+- (d) draw up and make publicly available a sufficiently detailed summary about the content used for training of the
+- general-purpose AI model, according to a template provided by the AI Office. 84/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- 2. The obligations set out in paragraph 1, points (a) and (b), shall not apply to providers of AI models that are released
+
+Prior source excerpt windows:
+
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- account when setting the fees for conformity assessment under Article 43, reducing those fees proportionately to their size and market size.
+- EN 71 EN TITLE VI GOVERNANCE CHAPTER 1 EUROPEAN ARTIFICIAL INTELLIGENCE BOARD Article 56 Establishment of the European Artificial Intelligence Board
+- 1. A ‘European Artificial Intelligence Board’ (the ‘Board’) is established. 2. The Board shall provide advice and assistance to the Commission in order to:
+- EUROPEAN COMMISSION Brussels, 21.4.2021 COM(2021) 206 final 2021/0106 (COD) Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS {SEC(2021) 167 final} - {SWD(2021) 84 final} - {SWD(2021) 85 final}
+- EN EN EXPLANATORY MEMORANDUM 1. CONTEXT OF THE PROPOSAL 1.1. Reasons for and objectives of the proposal This explanatory memorandum accompanies the proposal for a Regulation laying down
+- harmonised rules on artificial intelligence (Artificial Intelligence Act). Artificial Intelligence
+- (AI) is a fast evolving family of technologies that can bring a wide array of economic and
+- European Council, which have repeatedly expressed calls for legislative action to ensure a
+- well-functioning internal market for artificial intelligence systems (‘AI systems’) where both
+- benefits and risks of AI are adequately addressed at Union level. It supports the objective of
+- respect of proportionality, subsidiarity and better law making principles. Against this political context, the Commission puts forward the proposed regulatory
+- framework on Artificial Intelligence with the following specific objectives:  ensure that AI systems placed on the Union market and used are safe and respect
+- existing law on fundamental rights and Union values;  ensure legal certainty to facilitate investment and innovation in AI;  enhance governance and effective enforcement of existing law on fundamental
+- building on already existing structures, and a cooperation mechanism at Union level with the
+- establishment of a European Artificial Intelligence Board. Additional measures are also proposed to support innovation, in particular through AI regulatory sandboxes and other
+- measures to reduce the regulatory burden and to support Small and Medium-Sized Enterprises
+- flexibility is particularly important, because it allows providers of AI systems to choose the
+- High-Level Expert Group on Artificial Intelligence, Ethics Guidelines for Trustworthy AI, 2019.
+- They were also endorsed by the Commission in its 2019 Communication on human-centric approach to
+- parties concerned. EN 16 EN 2021/0106 (COD) Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE
+- (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION, Having regard to the Treaty on the Functioning of the European Union, and in particular
+- Articles 16 and 114 thereof, Having regard to the proposal from the European Commission, After transmission of the draft legislative act to the national parliaments,
+- explicitly authorised by this Regulation.
+- (2) Artificial intelligence systems (AI systems) can be easily deployed in multiple sectors
+- of the economy and society, including cross border, and circulate throughout the Union. Certain Member States have already explored the adoption of national rules to
+- access to high quality data for the training, validation and testing of AI systems. For example, in health, the European health data space will facilitate non-discriminatory
+- access to health data and the training of artificial intelligence algorithms on those datasets, in a privacy-preserving, secure, timely, transparent and trustworthy manner,
+- and with an appropriate institutional governance. Relevant competent authorities, EN 29 EN including sectoral ones, providing or supporting the access to data may also support
+- credit institutions regulated by Directive 2013/36/EU. (81) The development of AI systems other than high-risk AI systems in accordance with
+- the requirements of this Regulation may lead to a larger uptake of trustworthy artificial intelligence in the Union. Providers of non-high-risk AI systems should be encouraged
+- to create codes of conduct intended to foster the voluntary application of the mandatory requirements applicable to high-risk AI systems. Providers should also be
+- TITLE I GENERAL PROVISIONS Article 1 Subject matter This Regulation lays down: (a) harmonised rules for the placing on the market, the putting into service and the
+- use of artificial intelligence systems (‘AI systems’) in the Union; (a) prohibitions of certain artificial intelligence practices; (b) specific requirements for high-risk AI systems and obligations for operators of
+- such systems; (c) harmonised transparency rules for AI systems intended to interact with natural persons, emotion recognition systems and biometric categorisation systems,
+- the corresponding provisions of the Digital Services Act]. Article 3 Definitions For the purpose of this Regulation, the following definitions apply:
+- (1) ‘artificial intelligence system’ (AI system) means software that is developed with one
+- or more of the techniques and approaches listed in Annex I and can, for a given set of human-defined objectives, generate outputs such as content, predictions,
+- particular, national competent authorities shall have a sufficient number of personnel permanently available whose competences and expertise shall include an in-depth
+- understanding of artificial intelligence technologies, data and data computing, fundamental rights, health and safety risks and knowledge of existing standards and
+- legal requirements. 5. Member States shall report to the Commission on an annual basis on the status of the financial and human resources of the national competent authorities with an
+- (c) any similar previous infringements by the Union institution, agency or body; 2. The following infringements shall be subject to administrative fines of up to 500 000
+- EUR: (a) non-compliance with the prohibition of the artificial intelligence practices referred to in Article 5; (b) non-compliance of the AI system with the requirements laid down in Article
+- 10. 3. The non-compliance of the AI system with any requirements or obligations under this Regulation, other than those laid down in Articles 5 and 10, shall be subject to
+- In Article 4(3) of Regulation (EC) No 300/2008, the following subparagraph is added: “When adopting detailed measures related to technical specifications and procedures for
+- approval and use of security equipment concerning Artificial Intelligence systems in the meaning of Regulation (EU) YYY/XX [on Artificial Intelligence] of the European Parliament
+- and of the Council*, the requirements set out in Chapter 2, Title III of that Regulation shall be
+- taken into account.” __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).” Article 76 Amendment to Regulation (EU) No 167/2013
+- In Article 17(5) of Regulation (EU) No 167/2013, the following subparagraph is added: EN 84 EN “When adopting delegated acts pursuant to the first subparagraph concerning artificial
+- intelligence systems which are safety components in the meaning of Regulation (EU) YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- requirements set out in Title III, Chapter 2 of that Regulation shall be taken into account.
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).” Article 77 Amendment to Regulation (EU) No 168/2013 In Article 22(5) of Regulation (EU) No 168/2013, the following subparagraph is added:
+- “When adopting delegated acts pursuant to the first subparagraph concerning Artificial Intelligence systems which are safety components in the meaning of Regulation (EU)

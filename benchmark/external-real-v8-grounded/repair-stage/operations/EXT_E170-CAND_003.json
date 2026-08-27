@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Regulation__EU__2024_1689_Artificial_Intelligence_Act____AI_Act_codes_of_practice",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#practice_rule",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "aiact_codes_of_practice=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "rule=codes_of_practice",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

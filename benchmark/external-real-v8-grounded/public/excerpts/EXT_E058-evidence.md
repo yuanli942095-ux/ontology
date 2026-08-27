@@ -1,0 +1,106 @@
+# EXT_E058 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- entries for non-hazardous plastic waste in Annex II (entry Y48) and Annex IX (entry B3011) to the Basel
+- Convention. Those changes will become effective on 1 January 2021.
+- (2) It is appropriate for the Union, which is a Party to the Basel Convention, to modify the relevant Annexes to
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Annexes to Regulation (EC) No 1013/2006 to take account of these changes.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- Y48 Plastic waste, including mixtures of such waste, with the exception of the following: — Plastic waste that is hazardous waste (see entry A3210 in part 1 of list A in Annex V)
+- — Plastic waste listed below, provided it is destined for recycling ** in an environmentally sound manner and
+- Regulation (EC) No 1013/2006 to take account of changes relating to entries on plastic waste in the Annexes to the
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- (4) This Regulation takes account of the fact that no agreement has been reached within the OECD to incorporate the
+- from third countries, Annexes III, IV and V to Regulation (EC) No 1013/2006 should be amended to take account of
+- the changes to Annexes II, VIII and IX to the Basel Convention and of the changes to Appendix 4 to the OECD
+- Decision. As a result, from 1 January 2021, the export from the Union and import into the Union of plastic waste
+- Secretariat of the Basel Convention under Article 11 of that Convention, there is no requirement for the Union to
+- implement the changes to the Annexes to the Basel Convention relating to non-hazardous plastic waste (entries
+- B3011 and Y48) in Union law, for shipments between Member States. However, to ensure legal clarity, new entries
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- (1) The Conference of the Parties to the Basel Convention decided at its fourteenth meeting held in May 2019, by
+- Decision BC-14/12, to include a new entry for hazardous plastics waste (entry A3210) in Annex VIII and two new
+- the procedure of prior written notification and consent. In accordance with points (a) and (b) of Article 36(1) and
+- Annex V of Regulation (EC) No 1013/2006, export of plastic waste under entries A3210 and Y48 will be
+- prohibited to third countries to which the OECD Decision does not apply.
+- waste streams were adopted at the last meetings of the Conference of the Parties to the Basel Convention. Those
+- technical guidelines and guidance documents provide useful guidance and should therefore be added in Annex VIII
+- to Regulation (EC) No 1013/2006. (1) OJ L 190, 12.7.2006, p. 1.
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (1) in Annex IC, the second paragraph of point 25(e) is replaced by the following:
+- ‘Such codes may be included in Annexes IIIA, IIIB, IV (EU48) or IVA of this Regulation. In that case, the Annex number
+- should be stated in front of the codes. As regards Annex IIIA, the relevant code(s) as indicated in Annex IIIA should be
+
+Prior source excerpt windows:
+
+- quantities). Some types of ammonium nitrate may give rise to an explosion hazard under extreme conditions
+- and the ‘Resistance to detonation test’ (BC Code, Annex 3, Test 5) can be used to assess this hazard.
+- Appropriate information shall be made in the SDS. Note 2
+- aspiration hazard and classified according to sections 3.10.2 and 3.10.3 of Annex I and labelled according to
+- section 3.10.4.1 of Annex I, with the exception of substances and mixtures placed on the market in the form of
+- aerosols or in a container fitted with a sealed spray attachment, shall be fitted with child-resistant fastenings.
+- 015-181-00-1 phosphine 232-260-8 7803-51-2 Flam. Gas 1 H220 GHS02 H220 U EN Press. Gas H330 GHS04 H330 Acute Tox. 2 * H314 GHS06 H314 Skin Corr. 1B H400 GHS05 H400
+- Aquatic Acute 1 GHS09 Dgr 015-184-00-8 Salts of glyphosate, with the exception of — — Aquatic H411 GHS09 H411 A those specified elsewhere in this Annex Chronic 2
+- 015-186-00-9 chlorpyrifos-methyl (ISO) 227-011-5 5598-13-0 Skin Sens. 1 H317 GHS07 H317 M = 10000
+- dophenylazo)-2-naphtholato)chromate(1-) Aquatic ** Wng H413 Chronic 4 H413 Official Journal of the European Union 024-017-00-8 Chromium (VI) compounds, with the — — Carc. 1B H350i GHS08 H350i A
+- exception of barium chromate and of Skin Sens. 1 H317 GHS07 H317 compounds specified elsewhere in this Aquatic Acute 1 H400 GHS09 H410 Annex
+- Aquatic H410 Dgr Chronic 1 024-018-00-3 sodium chromate 231-889-5 7775-11-3 Carc. 1B H350 GHS06 H350 Resp. Sens.; 3 Muta. 1B H340 GHS08 H340 H334: C ≥ 0,2 %
+- 080-002-00-6 inorganic compounds of mercury with the — — Acute Tox. 2 * H330 GHS06 H330 * A
+- exception of mercuric sulphide and those Acute Tox. 1 H310 GHS08 H310 STOT RE 2; 1 specified elsewhere in this Annex Acute Tox. 2 * H300 GHS09 H300 H373: C ≥ 0,1 %
+- STOT RE 2 * H373 Dgr H373 Official Journal of the European Union Aquatic Acute 1 ** H410 Aquatic H400 Chronic 1 H410 080-003-00-1 dimercury dichloride; 233-307-5 10112-91-1 Acute Tox. 4 * H302 GHS07 H302
+- Acute Tox. 4 * H302 GHS09 H302 Eye Irrit. 2 H319 Wng H319 Skin Irrit. 2 H315 H315 Aquatic Acute 1 H400 H410 Aquatic H410 Chronic 1 602-042-00-0 1,2,3,4,5,6-hexachlorcyclohexanes with the — — Carc. 2 H351 GHS06 H351 AC
+- exception of those specified elsewhere in Acute Tox. 3 * H301 GHS08 H301 this Annex Acute Tox. 4 * H312 GHS09 H312 Aquatic Acute 1 H400 Dgr H410
+- Aquatic H410 Chronic 1 602-043-00-6 lindane (ISO); 200-401-2 58-89-9 Acute Tox. 3 * H301 GHS06 H301 M=10 γ-HCH or γ-BHC; Acute Tox. 4 * H332 GHS08 H332
+- 607-133-00-9 monoalkyl or monoaryl or monoalkylaryl — — Eye Irrit. 2 H319 GHS07 H319 STOT SE 3; A
+- esters of acrylic acid with the exception of STOT SE 3 H335 GHS09 H335 H335: C ≥ 10 % those specified elsewhere in this Annex Skin Irrit. 2 H315 Wng H315
+- 607-134-00-4 monoalkyl or monoaryl or monoalkyaryl — — Eye Irrit. 2 H319 GHS07 H319 STOT SE 3; A
+- 609-026-00-2 salts and esters of dinoseb, with the — — Repr. 1B H360- GHS06 H360Df EUH044 A
+- exception of those specified elsewhere in Acute Tox. 3 * Df GHS08 H311 this Annex Acute Tox. 3 * H311 GHS09 H301 Eye Irrit. 2 H301 Dgr H319 Aquatic Acute 1 H319 H410
+- Aquatic H400 Chronic 1 H410 609-027-00-8 dinocton; — 63919-26-6 Acute Tox. 4 * H302 GHS07 H302 reaction mass of isomers: methyl 2-octyl- Aquatic Acute 1 H400 GHS09 H410
+- ylamino)-4-hydroxy-3-(4-(2-(sulfonatooxy) Wng ethylsulfonyl)phenylazo) naphthalene-2-sul fonate 611-024-00-1 Benzidine based azo dyes; — — Carc. 1B H350 GHS08 H350 A
+- 4,4'-diarylazobiphenyl dyes, with the Dgr exception of those specified elsewhere in this Annex
+- 611-025-00-7 disodium 4-amino-3-[[4'-[(2,4-diaminophe- 217-710-3 1937-37-7 Carc. 1B H350 GHS08 H350
+- Official Journal of the European Union Dgr 611-029-00-9 o-dianisidine based azo dyes; — — Carc. 1B H350 GHS08 H350 AH 4,4'-diarylazo-3,3'-dimethoxybiphenyl dyes Dgr
+- with the exception of those mentioned elsewhere in this Annex 611-030-00-4 o-tolidine based dyes; — — Carc. 1B H350 GHS08 H350 AH 4,4'-diarylazo-3,3'-dimethylbiphenyl dyes, Dgr
+- with the exception of those mentioned elsewhere in this Annex
+- 611-031-00-X 4,4'-(4-iminocyclohexa-2,5-dienylidene- 209-321-2 569-61-9 Carc. 1B H350 GHS08 H350
+- Aquatic Acute 1 ** H410 L 353/643 Aquatic H400 Chronic 1 H410 L 353/644 Specific Conc. Lim Classification Labelling Notes its, M-factors Index No International Chemical Identification EC No CAS No Hazard
+- 612-027-00-0 xylidines with the exception of those — — Acute Tox. 3 * H331 GHS06 H331 C EN specified elsewhere in this Annex; Acute Tox. 3 * H311 GHS08 H311
+- dimethyl anilines with the exception of Acute Tox. 3 * H301 GHS09 H301 those specified elsewhere in this Annex STOT RE 2 * H373 Dgr H373 Aquatic ** H411
+- Chronic 2 H411 612-028-00-6 p-phenylenediamine 203-404-7 106-50-3 Acute Tox. 3 * H331 GHS06 H331 Acute Tox. 3 * H311 GHS09 H311 Official Journal of the European Union
+- mine; Skin Sens. 1 H317 GHS07 H317 Official Journal of the European Union pentacthylenehexamine Aquatic Acute 1 H400 GHS09 H410 Aquatic H410 Dgr
+- Chronic 1 612-065-00-8 polyethlyenepolyamines with the exception — — Acute Tox. 4 * H312 GHS05 H312 of those specified elsewhere in this Annex Acute Tox. 4 * H302 GHS07 H302
+- Skin Corr. 1B H314 GHS09 H314 Skin Sens. 1 H317 Dgr H317 Aquatic Acute 1 H400 H410 Aquatic H410 Chronic 1 612-066-00-3 dicyclohexylamine 202-980-7 101-83-7 Acute Tox. 4 * H302 GHS05 H302
+- EN 5,10-dihydro-5,10-dioxonaphtho(2,3-b) Aquatic Acute 1 H400 GHS09 H410 (1,4)dithiazine-2,3-dicarbonitrile Aquatic H410 Wng Chronic 1 613-022-00-6 pyrethrins including cinerins, with the — — Acute Tox. 4 * H332 GHS07 H332 A
+- exception of those specified elsewhere in Acute Tox. 4 * H312 GHS09 H312 this Annex Acute Tox. 4 * H302 Wng H302 Aquatic Acute 1 H400 H410 Aquatic H410
+- Official Journal of the European Union Chronic 1
+- Dgr 647-002-00-3 cellulase 232-734-4 9012-54-8 Resp. Sens. 1 H334 GHS08 H334 Dgr 647-003-00-9 cellobiohydrolase, exo- 253-465-9 37329-65-0 Resp. Sens. 1 H334 GHS08 H334
+- Dgr 647-004-00-4 cellulases with the exception of those — — Resp. Sens. 1 H334 GHS08 H334 A specified elsewhere in this Annex Dgr 647-005-00-X bromelain, juice 232-572-4 9001-00-7 Eye Irrit. 2 H319 GHS08 H319
+- L 353/735 STOT SE 3 H335 GHS07 H335 Skin Irrit. 2 H315 Dgr H315 Resp. Sens. 1 H334 H334 L 353/736 Specific Conc. Lim Classification Labelling Notes
+- alkali earth oxide (Na2O+K2O+CaO+MgO+ BaO) content greater than 18 % by weight] 650-017-00-8 Refractory Ceramic Fibres; — — Carc. 1B H350i GHS08 H350i AR
+- Special Purpose Fibres, with the exception of Skin Irrit. 2 H315 GHS07 H315 those specified elsewhere in this Annex; Dgr [Man-made vitreous (silicate) fibres with
+- random orientation with alkaline oxide and alkali earth oxide (Na2O+K2O+CaO+ MgO+ L 353/919 BaO) content less or equal to 18 % by weight] L 353/920
+- 603-004-00-6 butan-1-ol; 200-751-6 71-36-3 R10 Xn n-butanol Xn; R22 R: 10-22-37/38-41 Xi; R37/38- 67 41 S: (2-)7/9-13-26-37/ R67 39-46 EN 603-005-00-1 2-methylpropan-2-ol; 200-889-7 75-65-0 F; R11 F; Xn
+- tert-butyl alcohol Xn; R20 R: 11-20 S: (2-)9-16 603-006-00-7 pentanol isomers, with the exception fo those specified 250-378-8 R10 Xn C elsewhere in this Annex Xn; R20 R: 10-20-37-66
+- Xi; R37 S: (2-)46 R66 Official Journal of the European Union 603-007-00-2 2-methylbutan-2-ol; 200-908-9 75-85-4 F; R11 F; Xn tert-pentanol Xn; R20 R: 11-20-37/38
+- 607-133-00-9 monoalkyl or monoaryl or monoalkylaryl esters of acrylic — — Xi; R36/37/ Xi; N Xi; R36/37/38: C ≥ 10 % A
+- acid with the exception of those specified elsewhere in this 38 R: 36/37/38-51/53 Annex N; R51-53 S: (2-)26-28-61
+- 607-134-00-4 monoalkyl or monoaryl or monoalkyaryl esters of — — Xi; R36/37/ Xi Xi; R36/37/38: C ≥ 10 % A
+- methacrylic acid with the exception of those specified 38 R: 36/37/38 elsewhere in this Annex S: (2-)26-28 607-135-00-X butyric acid 203-532-3 107-92-6 C; R34 C
+- R: 34 S: (1/2-)26-36-45 607-136-00-5 butyryl chloride 205-498-5 141-75-3 F; R11 F; C C; R34 R: 11-34 S: (1/2-)16-23-26-36 45 L 353/1081 607-137-00-0 methyl acetoacetate 203-299-8 105-45-3 Xi; R36 Xi

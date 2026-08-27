@@ -1,0 +1,107 @@
+# EXT_E006 Evidence
+
+- Source title: Guidance on Applying WCAG 2.2 to Mobile Applications
+- Source URL: https://www.w3.org/TR/wcag2mobile-22/
+- Prior source title: W3C mobile accessibility guidance
+- Prior source URL: https://www.w3.org/WAI/standards-guidelines/mobile/
+
+Raw source excerpt windows:
+
+- If a mobile platform does not include a way for users to override text style properties, this success criterion is not applicable.
+- Success Criterion 1.4.13 Content on Hover or Focus (Level AA) WCAG: Success Criterion 1.4.13 Content on Hover or Focus
+- Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:
+- An animation that occurs as part of a preload phase or similar situation can be considered essential if interaction cannot occur during that phase for all users and if not indicating progress could confuse users or cause them to think that content was frozen or broken.
+- While the success criterion uses the term “information”, the WCAG 2 Intent section makes it clear that this is to be applied to all content. Any content, whether informative or decorative, that is updated automatically, blinks, or moves may create an accessibility barrier.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-2-2-pause-stop-hide-to-non-web-documents-and-software
+- Success Criterion 1.4.5 Images of Text Success Criterion 1.4.10 Reflow Success Criterion 1.4.11 Non-text Contrast Success Criterion 1.4.12 Text Spacing
+- Success Criterion 1.4.13 Content on Hover or Focus Success Criterion 2.1.1 Keyboard Success Criterion 2.1.2 No Keyboard Trap Success Criterion 2.1.4 Character Key Shortcuts
+- Success Criterion 2.2.1 Timing Adjustable Success Criterion 2.2.2 Pause, Stop, Hide Success Criterion 2.3.1 Three Flashes or Below Threshold
+- Success Criterion 1.3.4 Orientation Success Criterion 1.3.5 Identify Input Purpose Success Criterion 1.4.10 Reflow Success Criterion 1.4.11 Non-text Contrast
+- Success Criterion 1.4.12 Text Spacing Success Criterion 1.4.13 Content on Hover or Focus Success Criterion 2.1.4 Character Key Shortcuts Success Criterion 2.5.1 Pointer Gestures
+- Success Criterion 2.5.2 Pointer Cancellation Success Criterion 2.5.3 Label in Name Success Criterion 2.5.4 Motion Actuation Success Criterion 4.1.3 Status Messages
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-4-5-multiple-ways-to-non-web-documents-and-software
+- Placeholder Note: Work In Progress Read issue #13 on GitHub Success Criterion 2.4.6 Headings and Labels (Level AA) WCAG: Success Criterion 2.4.6 Headings and Labels
+- Headings and labels describe topic or purpose. https://www.w3.org/TR/WCAG22/#headings-and-labels WCAG2ICT: Applying SC 2.4.6 Headings and Labels to Non-Web Documents and Software
+- Copyright © 2022-2025 World Wide Web Consortium. W3C® liability, trademark and document use rules apply. Abstract
+- This document describes how Web Content Accessibility Guidelines (WCAG) 2.2 [WCAG22] principles, guidelines, and success criteria can be applied to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps. It provides informative guidance (guidance that is not normative and does not set requirements).
+- Status of This Document This section describes the status of this document at the time of its publication. A list of current W3C publications and the latest revision of this technical report can be found
+- For information on related work, see Mobile Accessibility at W3C. 1.1 Guidance in this document
+- This document provides informative guidance (guidance that is not normative and that does not set requirements) with regard to the interpretation and application of Web Content Accessibility Guidelines (WCAG) to mobile applications. Specifically, this document provides informative guidance on applying WCAG 2.2 Level A and AA success criteria to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps.
+- 1.1.1 Interpretation of Web Terminology in a Mobile Context
+- When certain Web-specific terms or phrases like “web page(s)” were used in success criteria, those were replaced with mobile terms or phrases like “screen(s)” or “view(s)”. Additional notes were also provided to explain the terminology replacements.
+- A small number of success criteria are written to apply to “a set of web pages” or “multiple web pages” and depend upon all pages in the set to share some characteristic or behavior. Since the unit of conformance in WCAG 2 is a single web page, the task force agreed that the equivalent unit of conformance for mobile applications is a single screen within the application. It follows that an equivalent unit of evaluation for a “set of web pages” would be a “set of screens”, not — as previously interpreted in WCAG2ICT — as a “set of software”. These terms are defined in the Key Terms section of this document. See “set of screens” to determine when a group of screens in a mobile application are considered a set.
+- The glossary terms were also reviewed and most of them applied to mobile applications, as written. Some applied with additional notes or edits (largely related to phrases like “Web page(s)”), and a small number of terms were only used in Level AAA success criteria, which are not addressed by the WCAG2Mobile Note at this time.
+- This document includes all the relevant WCAG 2.2 Level A and AA success criteria: Success Criterion 2.4.11 Focus Not Obscured (Minimum) Success Criterion 2.5.7 Dragging Movements
+- Success Criterion 2.5.8 Target Size (Minimum) Success Criterion 3.2.6 Consistent Help Success Criterion 3.3.7 Redundant Entry Success Criterion 3.3.8 Accessible Authentication (Minimum)
+- The intention of MATF is to publish WCAG2Mobile as a Group Note, just like WCAG2ICT.
+- WCAG2ICT is organized to mirror the principle, guideline and success criterion structure of WCAG; this model is also used in WCAG2Mobile. WCAG2ICT clarifies when and how WCAG Level A and Level AA success criteria could be applied to non-web documents and software; WCAG2Mobile narrows the scope of this work to mobile applications.
+- https://www.w3.org/TR/WCAG22/#audio-control WCAG2ICT: Applying SC 1.4.2 Audio Control to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 1.4.2, replacing “on a Web page” with “in a non-web document or software”, “any content” with “any part of a non-web document or software”, “whole page” with “whole document or software”, and “on the Web page” with “in the document or software”; and removing “See Conformance Requirement 5: Non-Interference”.
+- With these substitutions, it would read:
+- "Content implemented using markup languages" includes parts of software that use markup internally to define a user interface. Examples of markup languages that are used internally to define a software user interface include but are not limited to: HTML (e.g., in Electron applications or iOS application Web views), XAML, XML (e.g., in Android application layouts), and XUL.
+- There are several mechanisms that allow users to modify text spacing properties of content implemented in markup languages. For example, an eBook technology may have an available user agent that allows users to override document text styles, or a software application may provide a "user style sheet" facility to modify the appearance of the software's own user interface. This success criterion does not mean that documents and software need to implement their own mechanisms to allow users to set text spacing; however, when such a mechanism is available, the success criterion requires that content respond appropriately to it.
+- Note Note 4 (Added) See also the Comments on Closed Functionality.
+- progress could confuse users or cause them to think that content was frozen or broken. https://www.w3.org/TR/WCAG22/#pause-stop-hide WCAG2ICT: Applying SC 2.2.2 Pause, Stop, Hide to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 2.2.2, replacing “page” and “Web page” with “non-web documents and software” and removing “See Conformance Requirement 5: Non-Interference” in Note 2 of the success criterion.
+- 2.2.2 Pause, Stop, Hide: For moving, blinking, scrolling, or auto-updating information, all of the following are true:
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-2-3-1-three-flashes-or-below-threshold-to-non-web-documents-and-software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 2.3.1, replacing “Web pages” with “views”, “the whole page” with “the whole view”, and “the Web page” with “the view”; and removing “See Conformance Requirement 5: Non-Interference”.
+- 2.3.1 Three Flashes or Below Threshold: Views do not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.
+- criterion when used according to specification. https://www.w3.org/TR/WCAG22/#name-role-value WCAG2ICT: Applying SC 4.1.2 Name, Role, Value to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 4.1.2, replacing the note with: “This success criterion is primarily for software developers who develop or use custom user interface components. For example, standard user interface components on most accessibility-supported platforms already meet this success criterion when used according to specification.”
+- 4.1.2 Name, Role, Value: For all user interface components (including but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.
+- This success criterion is primarily for software developers who develop or use custom user interface components. Standard user interface components on most accessibility-supported platforms already meet this success criterion when used according to specification.
+- For conforming to this success criterion, it is usually best practice for software user interfaces to use the accessibility services provided by platform software. These accessibility services enable interoperability between software user interfaces and both assistive technologies and accessibility features of software in standardized ways. Most platform accessibility services go beyond programmatic exposure of name and role, and programmatic setting of states, properties and values (and notification of same), and specify additional information that could be exposed and / or set (for instance, a list of the available actions for a given user interface component, and a means to programmatically execute one of the listed actions).
+- For document formats that support interoperability with assistive technology, standard user interface components often meet this success criterion when used according to the general design and accessibility guidance for the document format.
+- https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus WCAG2ICT: Applying SC 1.4.13 Content on Hover or Focus to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 1.4.13, replacing "user agent" with "user agent or platform software", "browser tooltips" with "tooltips", and "the HTML title attribute" with "user interface object attributes".
+- 1.4.13 Content on Hover or Focus: Where receiving and then removing pointer hover or keyboard focus triggers additional content to become visible and then hidden, the following are true:
+- in the W3C standards and drafts index at https://www.w3.org/TR/.
+- This is a W3C Group Note on "Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)". The purpose of this work is to build upon "Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile" [mobile-accessibility-mapping], but also to have a stronger focus on mobile applications and include changes made in WCAG 2.1 and 2.2.
+- To comment, file an issue in the W3C MATF GitHub repository. The Mobile Accessibility Task Force (MATF) requests that public comments be filed as new issues, one issue per discrete comment. It is free to create a GitHub account to file issues. If filing issues in GitHub is not feasible, email public-agwg-comments@w3.org (comment archive).
+- This document does not propose changes to WCAG 2 or its supporting documents; it does not include interpretations for implementing WCAG 2 in web technologies.
+- This document is not sufficient by itself to ensure accessibility in mobile applications — as a web standard, WCAG does not fully cover all accessibility requirements for non-user interface aspects of platforms, user-interface components as individual items, or closed product software (where there is no assistive technology to communicate programmatic information).
+- This document does not comment on hardware aspects of products, because the basic constructs on which WCAG 2 is built do not apply to these.
+
+Prior source excerpt windows:
+
+- 한국어 русский язык 简体中文 All Translations Translating WAI Resources Mobile Accessibility at W3C Summary
+- Mobile accessibility is covered in existing W3C accessibility standards/guidelines, including Web Content Accessibility Guidelines (WCAG). W3C does not have separate guidelines for mobile accessibility.
+- W3C provides specific guidance on mobile accessibility:
+- WCAG2ICT: Applying WCAG 2 to Non-Web Information and Communications Technologies — a more general resource that also includes mobile apps
+- What’s New in WCAG 2.1 and What’s New in WCAG 2.2 — introduce requirements (‘success criteria’) addressing mobile accessibility that have been added to WCAG 2.1 and WCAG 2.2
+- User Agent Accessibility Guidelines (UAAG) covers web browsers and other ‘user agents’, including mobile browsers:
+- Menu Get Involved About W3C WAI Search: Accessibility Fundamentals Planning & Policies Design & Develop Test & Evaluate Teach & Advocate Standards/Guidelines
+- Home Standards/Guidelines Mobile Accessibility at W3C Standards/Guidelines Web Content – WCAG 2 How to Meet WCAG 2 (Quick Reference) At a Glance
+- The Documents Applying to Non-Web ICT New in 2.2 New in 2.1 Translations Commenting Conformance Logos FAQ WCAG 3 Draft Authoring Tools – ATAG
+- At a Glance For LMS For No-Code Tools For Social Media Platforms User Agents – UAAG WAI-ARIA Evaluation – ACT & EARL Accessibility Conformance Testing – ACT
+- W3C accessibility standards address mobile accessibility. There are four accessibility standards:
+- Web Content Accessibility Guidelines (WCAG) — covers web pages and web applications, including content used on mobile devices:
+- To learn how WCAG 2 can be applied to mobile web content, mobile web apps, native apps, and hybrid apps using web components inside native apps, see:
+- W3C technologies and mobile accessibility
+- In addition to ensuring mobile is addressed in W3C’s accessibility standards, WAI ensures that the core W3C technologies, including those that are essential for the mobile web, also support accessibility. All W3C work is reviewed for accessibility by the Accessible Platform Architectures (APA) Working Group.
+- For a summary of technologies developed in W3C that increase the capabilities of web applications and how they apply specifically to the mobile context, see Standards for Web Applications on Mobile.
+- Evaluation and Report Language – EARL WAI-Adapt Pronunciation Standards Harmonization is Essential W3C Process for Developing Standards Referencing and Linking to Standards
+- Mobile Accessibility at W3C | Web Accessibility Initiative (WAI) | W3C Skip to Content Change Text Size or Colors This page in: English العربية
+- čeština español français Bahasa Indonesia 한국어 русский язык 简体中文 All Translations Show Customization, Languages, Translations Strategies, standards, resources to make the Web accessible to people with disabilities
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile) — an in-progress draft of guidance for WCAG 2.2
+- Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile — the previous resource for WCAG 2.0
+- Page Contents More than ‘mobile’ W3C addresses mobile accessibility Get updates Get involved About W3C and WAI More than ‘mobile’
+- ‘Mobile accessibility’ refers to making websites and applications more accessible to people with disabilities when they are using mobile phones and other devices. WAI’s work in this area addresses accessibility issues of people using a broad range of devices to interact with the web, including:
+- phones and tablets digital TVs wearables such as smart watches devices in car dashboards and airplane seatbacks devices in household appliances
+- Mobile Accessibility Examples from UAAG — contains examples of how web browsers that follow UAAG benefit people with disabilities who use the web on mobile devices
+- Applying UAAG to Mobile Phones — explores the issues with user agents
+- Authoring Tool Accessibility Guidelines (ATAG) — covers software used to create web pages and applications, including for mobile
+- WAI-ARIA (Accessible Rich Internet Applications) — defines ways to make web content more accessible, especially dynamic content and advanced user interface controls; it applies to web applications and to accessing websites with mobile devices
+- W3C best practices for mobile accessibility For more on W3C best practices for mobile accessibility, see: Mobile Web Application Best Practices
+- Mobile Web Best Practices Get updates
+- To be notified about future work on mobile accessibility at W3C, see Subscribe to WAI News.
+- Most of WAI’s work related to mobile accessibility is through the Mobile Accessibility Task Force. If you would like to be more involved in WAI’s work on mobile accessibility, send an email with information about your interests and time availability to the Task Force chair and CC WAI Staff at wai@w3.org.
+- The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop web standards. W3C primarily pursues its mission through the creation of web standards and guidelines designed to ensure long-term growth for the web. To learn more, see About W3C.
+- W3C’s Web Accessibility Initiative (WAI) brings together individuals and organizations from around the world to develop strategies, guidelines, and resources to help make the web accessible to people with disabilities. To learn more, see the WAI website.
+- Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list wai@w3.org or via GitHub.
+- E-mailFork & Edit on GitHubNew GitHub Issue Back to Top Updated: 6 May 2025. Latest changes. First published January 2008. Editor: Shawn Lawton Henry.
+- W3C Web Accessibility Initiative (WAI) Strategies, standards, resources to make the Web accessible to people with disabilities Get News in Email
+- LinkedIn Mastodon YouTube Home Contact Site map Support WAI News Accessibility statement All Translations Resources for roles Copyright © 2026 World Wide Web Consortium.
+- W3C® liability, trademark and permissive license rules apply unless otherwise noted. See Permission to Use WAI Material.
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)

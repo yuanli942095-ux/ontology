@@ -1,0 +1,125 @@
+# EXT_E099 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- (1) The Conference of the Parties to the Basel Convention decided at its fourteenth meeting held in May 2019, by
+- Decision BC-14/12, to include a new entry for hazardous plastics waste (entry A3210) in Annex VIII and two new
+- entries for non-hazardous plastic waste in Annex II (entry Y48) and Annex IX (entry B3011) to the Basel
+- Convention. Those changes will become effective on 1 January 2021.
+- the procedure of prior written notification and consent. In accordance with points (a) and (b) of Article 36(1) and
+- Annex V of Regulation (EC) No 1013/2006, export of plastic waste under entries A3210 and Y48 will be
+- prohibited to third countries to which the OECD Decision does not apply.
+- waste streams were adopted at the last meetings of the Conference of the Parties to the Basel Convention. Those
+- technical guidelines and guidance documents provide useful guidance and should therefore be added in Annex VIII
+- to Regulation (EC) No 1013/2006. (1) OJ L 190, 12.7.2006, p. 1.
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+
+Prior source excerpt windows:
+
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- exemptions or specific provisions are defined in Part 2 of Location of information on the label
+- Annex II. 1. The hazard pictograms, signal word, hazard statements and precautionary statements shall be located together on the label. 5. The Commission may request the Agency to prepare and
+- submit to it further draft exemptions from labelling and packaging requirements. 2. The supplier may decide the order of the hazard statements
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- in accordance with Regulation (EC) No 1272/2008, the reproductive toxicity, category 1A or 1B, and could be used review shall be carried out by 1 June 2014.’;
+- by consumers and for which restrictions to consumer use are proposed by the Commission, Annex XVII shall be
+- amended in accordance with the procedure referred to in 9. Annex III shall be amended as follows:
+- with the results of the new evaluation except where there are (h) where applicable, a section for supplemental information in
+- harmonised hazard classes or differentiations for substances accordance with Article 25. included in Part 3 of Annex VI. 2. The label shall be written in the official language(s) of the
+- 5. For paragraphs 1 to 4 of this Article, when the substance or Member State(s) where the substance or mixture is placed on the
+- the classification and labelling inventory is a harmonised (hereinafter referred to as ‘safety data sheet’), without prejudice to
+- classification included in Part 3 of Annex VI. Article 17(2) of this Regulation. L 353/16 EN Official Journal of the European Union 31.12.2008
+- 2. The product identifier for a substance shall consist of at least 2. Subject to Article 33, hazard pictograms shall fulfil the
+- intended to convey specific information on the hazard 4. The precautionary statements shall be worded in accordance
+- concerned. with Part 2 of Annex IV. 31.12.2008 EN Official Journal of the European Union L 353/17 Article 23 5. The Agency shall inform competent authorities of the
+- outcome of the request in accordance with paragraph 3 or 4 and
+- pursuant to Regulation (EC) No 1907/2006, or if it has already classification and labelling at Community level by inclusion
+- been notified by that notifier. in Part 3 of Annex VI; 31.12.2008 EN Official Journal of the European Union L 353/23
+- (b) whether, in respect of the entry, it is a joint entry between 2. The appointed bodies shall provide all requisite guarantees
+- Directive 67/548/EEC shall be amended as follows: (b) in point (c), the words ‘Annex I’ shall be replaced by ‘Part 3 of Annex VI to Regulation (EC) No 1272/
+- 1. in Article 1(2), the second subparagraph shall be deleted; 2008’; L 353/26 EN Official Journal of the European Union 31.12.2008 (c) in point (d), the words ‘Annex I’ shall be replaced by — point 2.1.1 (a) and (b),
+- ‘Part 3 of Annex VI to Regulation (EC) No 1272/ 2008’; — point 2.2 (a) and (b), (d) in point (e), the words ‘Annex I’ shall be replaced by — point 2.3 (a) and (b),
+- (b) 0,1 % weight by weight (w/w), if the substance meets result in the classification of the mixture as
+- the criteria in Annex XIII to this Regulation.’; hazardous.’; L 353/34 EN Official Journal of the European Union 31.12.2008
+- 4. in Article 65 the words ‘and Directive 1999/45/EC’ shall be (ii) point 2 (d) shall be replaced by the following:
+- generic concentration limit for classification in the relevant sections of Parts 3, 4 and 5 of this
+- Annex. L 353/38 EN Official Journal of the European Union 31.12.2008 (b) For aquatic environmental hazards in section 4.1 of this Annex:
+- (i) for substances where an M-factor has been set for the relevant hazard category either in Part 3 of
+- quantities). Some types of ammonium nitrate may give rise to an explosion hazard under extreme conditions
+- and the ‘Resistance to detonation test’ (BC Code, Annex 3, Test 5) can be used to assess this hazard.
+- Appropriate information shall be made in the SDS. Note 2
+- class in accordance with Table 5.2 Table 5.2 Label elements for Hazardous to the Ozone Layer Symbol/pictogram Signal Word Danger Hazard Statement EUH059: Hazardous to the Ozone Layer
+- Precautionary Statements P273 P501 (1) OJ L 244, 29.9.2000, p. 1. 31.12.2008 EN Official Journal of the European Union L 353/141 ANNEX II SPECIAL RULES FOR LABELLING AND PACKAGING OF CERTAIN SUBSTANCES AND MIXTURES
+- — Part 1 contains special rules for the labelling of certain classified substances and mixtures.
+- PT Eliminar o conteúdo/recipiente em … RO Aruncaţi conţinutul/recipientul la … SK Zneškodnite obsah/nádobu … SL Odstraniti vsebino/posodo … FI Hävitä sisältö/pakkaus …
+- SV Innehållet/behållaren lämnas till… 31.12.2008 EN Official Journal of the European Union L 353/325 ANNEX V HAZARD PICTOGRAMS INTRODUCTION
+- The hazard pictograms for each hazard class, differentiation of a hazard class and hazard category shall satisfy the provisions
+- EN methylbromide Muta. 2 H331 GHS06 H331 Acute Tox. 3 * H301 GHS08 H301 Acute Tox. 3 * H373 GHS09 H373 STOT RE 2 * ** Dgr H319 Eye Irrit. 2 H319 H335
+- STOT SE 3 H335 H315 Skin Irrit. 2 H315 H400 Aquatic Acute 1 H400 Ozone EU H059 Official Journal of the European Union 602-003-00-8 dibromomethane 200-824-2 74-95-3 Acute Tox. 4 * H332 GHS07 H332
+- Aquatic H412 Wng H412 Chronic 3 602-004-00-3 dichloromethane; 200-838-9 75-09-2 Carc. 2 H351 GHS08 H351 methylene chloride Wng 602-005-00-9 methyl iodide; 200-819-5 74-88-4 Carc. 2 H351 GHS06 H351
+- 602-013-00-2 1,1,1-trichloroethane; 200-756-3 71-55-6 Acute Tox. 4 * H332 GHS07 H332 EUH059 F
+- methyl chloroform Ozone EU- Wng H059 Official Journal of the European Union 602-014-00-8 1,1,2-trichloroethane 201-166-9 79-00-5 Carc. 2 H351 GHS08 H351 EUH066
+- Acute Tox. 4 * H332 GHS07 H332 Acute Tox. 4 * H312 Wng H312 Acute Tox. 4 * H302 H302 602-015-00-3 1,1,2,2-tetrachloroethane 201-197-8 79-34-5 Acute Tox. 2 * H330 GHS06 H330
+- EN STOT SE 3 H335 GHS07 H335 Skin Irrit. 2 H315 Dgr H315 Resp. Sens. 1 H334 H334 647-014-00-9 proteases with the exception of those — — Eye Irrit. 2 H319 GHS08 H319
+- specified elsewhere in this Annex STOT SE 3 H335 GHS07 H335 Skin Irrit. 2 H315 Dgr H315 Resp. Sens. 1 H334 H334 Official Journal of the European Union
+- 647-015-00-4 amylase, α- 232-565-6 9000-90-2 Resp. Sens. 1 H334 GHS08 H334 Dgr 647-016-00-X amylases with the exception of those — — Resp. Sens. 1 H334 GHS08 H334
+- sulphoselenide (xCdS.yCdSe), reaction mass of cadmium 22 R: 20/21/22-50/53 1 sulphide with zinc sulphide (xCdS.yZnS), reaction mass of N; R50-53 S: (2-)60-61
+- cadmium sulphide with mercury sulphide (xCdS.yHgS), and those specified elsewhere in this Annex Official Journal of the European Union 048-002-00-0 cadmium (non-pyrophoric); [1] 231-152-8 7440-43-9 Carc. Cat. 2; T+; N E
+- cadmium oxide (non-pyrophoric) [2] [1] [1] R45 R: 45-26-48/23/25 215-146-2 1306-19-0 Muta. Cat. 3; 62-63-68-50/53 [2] [2] R68 S: 53-45-60-61
+- 050-013-00-0 trioctyltin compounds, with the exception of those specified — — Xi; R36/37/ Xi Xi; R36/37/38: C ≥ 1 % A
+- elsewhere in this Annex 38 R: 36/37/38-53 1 R53 S: (2-)61 Official Journal of the European Union 050-017-00-2 fenbutatin oxide (ISO); 236-407-7 13356-08-6 T+; R26 T+; N
+- bis(tris(2-methyl-2-phenylpropyl)tin)oxide Xi; R36/38 R: 26-36/38-50/53 N; R50-53 S: (1/2-)28-36/37-45 60-61 050-018-00-8 tin(II) methanesulphonate 401-640-7 53408-94-9 C; R34 C
+- 080-004-00-7 organic compounds of mercury with the exception of those — — T+; R26/27/ T+; N T+; R26/27/28: C ≥ 2 % A
+- specified elsewhere in this Annex 28 Official Journal of the European Union R: 26/27/28-33-50/ T; R23/24/25: 0,5 % ≤ C < 2 % 1 R33 53 Xn; R20/21/22: 0,05 % ≤ C
+- N; R50-53 S: (1/2-)13-28-36-45- < 0,5 % 60-61 R33: C ≥ 0,05 % 080-005-00-2 mercury difulminate; 211-057-8 628-86-4 E; R3 E; T; N mercuric fulminate; T; R23/24/25 R: 3-23/24/25-33-50/

@@ -1,0 +1,63 @@
+Source title: NIST Cybersecurity Framework 1.1
+Source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt window:
+
+- on business and organizational needs without placing additional regulatory requirements on
+- businesses. The Framework focuses on using business drivers to guide cybersecurity activities and
+- considering cybersecurity risks as part of the organization’s risk management processes. The
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- and the data it produces and processes are increasingly used to deliver critical services and
+- support business/mission decisions, the potential impacts of a cybersecurity incident on an
+- Executive Order no. 13636, Improving Critical Infrastructure Cybersecurity, DCPD-201300091, February 12,
+- economy and society should be considered.
+- To manage cybersecurity risks, a clear understanding of the organization’s business drivers and
+- security considerations specific to its use of technology is required. Because each organization’s
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- decisions regarding cybersecurity. It supports recurring risk assessments and validation of
+- business drivers to help organizations select target states for cybersecurity activities that reflect
+- desired outcomes. Thus, the Framework gives organizations the ability to dynamically select and
+- cybersecurity risk to internal and external stakeholders. It can be used to help identify and
+- prioritize actions for reducing cybersecurity risk, and it is a tool for aligning policy, business, and
+- technological approaches to managing that risk. It can be used to manage cybersecurity risk
+-  Identify – Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities. The activities in the Identify Function are foundational for effective use of the
+- Framework. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enables an organization to focus and
+- prioritize its efforts, consistent with its risk management strategy and business needs. Examples of outcome Categories within this Function include: Asset Management;
+- The Tier definitions are as follows: Tier 1: Partial  Risk Management Process – Organizational cybersecurity risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
+- Prioritization of cybersecurity activities may not be directly informed by organizational risk objectives, the threat environment, or business/mission requirements.
+-  Integrated Risk Management Program – There is limited awareness of cybersecurity risk at the organizational level. The organization implements cybersecurity risk management
+- activities and protection needs is directly informed by organizational risk objectives, the
+- threat environment, or business/mission requirements.  Integrated Risk Management Program – There is an awareness of cybersecurity risk at the organizational level, but an organization-wide approach to managing cybersecurity
+- risk has not been established. Cybersecurity information is shared within the organization
+- currently being achieved. The Target Profile indicates the outcomes needed to achieve the
+- desired cybersecurity risk management goals. Profiles support business/mission requirements
+- and aid in communicating risk within and between organizations. This Framework does not prescribe Profile templates, allowing for flexibility in implementation.
+- expenditures to maximize the impact of the investment.
+- The Framework is designed to complement existing business and cybersecurity operations. It can
+- serve as the foundation for a new cybersecurity program or a mechanism for improving an
+- existing program. The Framework provides a means of expressing cybersecurity requirements to
+- business partners and customers and can help identify gaps in an organization’s cybersecurity
+- practices. It also provides a general set of considerations and processes for considering privacy
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- Framework for Cyber Cyber Supply Chain Risk Management (SCRM), while a new Supply Chain Risk Section 3.4 Buying Decisions highlights use of the Framework
+- been renamed to Identity Management and Access Control (PR.AC) to better represent the scope of the Category and corresponding Subcategories.
+- Better explanation of the Added language to Section 3.2 Establishing or Improving a relationship between Cybersecurity Program on using Framework Tiers in
+- Implementation Tiers and Framework implementation. Added language to Framework Profiles Tiers to reflect integration of Framework considerations within
+- processes; an organization can use its current process and overlay it onto the Framework to
+- determine gaps in its current cybersecurity risk approach and develop a roadmap to improvement. Using the Framework as a cybersecurity risk management tool, an organization
+- can determine activities that are most important to critical service delivery and prioritize

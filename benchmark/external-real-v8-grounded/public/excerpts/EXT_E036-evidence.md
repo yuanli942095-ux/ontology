@@ -1,0 +1,107 @@
+# EXT_E036 Evidence
+
+- Source title: Guidance on Applying WCAG 2.2 to Mobile Applications
+- Source URL: https://www.w3.org/TR/wcag2mobile-22/
+- Prior source title: W3C mobile accessibility guidance
+- Prior source URL: https://www.w3.org/WAI/standards-guidelines/mobile/
+
+Raw source excerpt windows:
+
+- In this Draft Note, most of the existing sections have undergone significant review and updates. The current Draft has been restructured to align with WCAG2ICT rather than continue with the structure and format of the 2015 Mobile Accessibility Mapping document.
+- With this perspective in mind, the following list highlights where this current document differs from the 2015 Mobile Accessibility Mapping document to apply all success criteria of WCAG 2.0, WCAG 2.1, WCAG 2.2, and acknowledge the change to 4.1.1 Parsing to mobile applications:
+- New Background section to explain the changes in scope for the current document Modifications to key terms introduced by WCAG2ICT: closed functionality
+- Copyright © 2022-2025 World Wide Web Consortium. W3C® liability, trademark and document use rules apply. Abstract
+- This document describes how Web Content Accessibility Guidelines (WCAG) 2.2 [WCAG22] principles, guidelines, and success criteria can be applied to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps. It provides informative guidance (guidance that is not normative and does not set requirements).
+- Status of This Document This section describes the status of this document at the time of its publication. A list of current W3C publications and the latest revision of this technical report can be found
+- For information on related work, see Mobile Accessibility at W3C. 1.1 Guidance in this document
+- This document provides informative guidance (guidance that is not normative and that does not set requirements) with regard to the interpretation and application of Web Content Accessibility Guidelines (WCAG) to mobile applications. Specifically, this document provides informative guidance on applying WCAG 2.2 Level A and AA success criteria to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps.
+- 1.1.1 Interpretation of Web Terminology in a Mobile Context
+- This document does not propose changes to WCAG 2 or its supporting documents; it does not include interpretations for implementing WCAG 2 in web technologies.
+- This document is not sufficient by itself to ensure accessibility in mobile applications — as a web standard, WCAG does not fully cover all accessibility requirements for non-user interface aspects of platforms, user-interface components as individual items, or closed product software (where there is no assistive technology to communicate programmatic information).
+- This document does not comment on hardware aspects of products, because the basic constructs on which WCAG 2 is built do not apply to these.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-3-3-7-redundant-entry-to-non-web-documents-and-software
+- Success Criterion 3.3.8 Accessible Authentication (Minimum) (Level AA) WCAG: Success Criterion 3.3.8 Accessible Authentication (Minimum) New
+- A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:
+- copy and paste to reduce the cognitive burden of re-typing. https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum
+- WCAG2ICT: Applying SC 3.3.8 Accessible Authentication (Minimum) to Non-Web Documents and Software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 3.3.8, replacing “the Web site” with “a Web site, non-web document, or software”.
+- 3.3.8 Accessible Authentication (Minimum): A cognitive function test (such as remembering a password or solving a puzzle) is not required for any step in an authentication process unless that step provides at least one of the following:
+- The cognitive function test is to identify non-text content the user provided to [a Web site, non-web document, or software].
+- There are cases where non-web software has an authentication process and no alternative or assistance mechanism is feasible, for example when entering a password when starting, powering on / turning on an ICT (device or otherwise). In such situations, it may not be possible for the non-web software to meet this success criterion.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-3-3-8-accessible-authentication-minimum-to-non-web-documents-and-software
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 3.3.8, replacing “the Web site” with “a view”.
+- Success Criterion 3.2.4 Consistent Identification (Level AA) Success Criterion 3.3.2 Labels or Instructions (Level A) Success Criterion 3.3.5 Help (Level AAA)
+- Supporting documentation in the Mobile Mapping Appendix included WCAG 2.0 Techniques that Apply to Mobile to address mobile web use cases for the rest of the WCAG 2.0 success criteria at Level A, Level AA, and Level AAA, as they were available in 2015 when the webpage was published. However, most listed techniques have limited application to native mobile applications and cross-platform frameworks like Flutter and React Native.
+- This document includes all the relevant WCAG 2.1 Level A and AA success criteria and guidelines:
+- in the W3C standards and drafts index at https://www.w3.org/TR/.
+- This is a W3C Group Note on "Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)". The purpose of this work is to build upon "Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile" [mobile-accessibility-mapping], but also to have a stronger focus on mobile applications and include changes made in WCAG 2.1 and 2.2.
+- To comment, file an issue in the W3C MATF GitHub repository. The Mobile Accessibility Task Force (MATF) requests that public comments be filed as new issues, one issue per discrete comment. It is free to create a GitHub account to file issues. If filing issues in GitHub is not feasible, email public-agwg-comments@w3.org (comment archive).
+- A.2 Enabling funders B. References B.1 Informative references 1. Background
+- This document is an iteration on Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile [mobile-accessibility-mapping], published in February 2015. The document was intended to become a Group Note but it did not move to the next maturity stage. The most recent publication was an Editor's Draft in December 2018.
+- After 2018, the Mobile Accessibility Task Force (MATF) ensured that mobile considerations were included in WCAG 2.1 and WCAG 2.2, such as:
+- 1.3.4 Orientation (AA), to support multiple display orientations; 1.4.10 Reflow (AA), to improve presentation on small screens; 2.5.1 Pointer Gestures (A), to provide single-pointer alternatives for touch gestures;
+- Any passwords used to unlock underlying platform software (running below the non-web software) are out of scope for this requirement since these are not under control of the non-web software’s author.
+- This applies directly as written, and as described in Intent from Understanding Success Criterion 4.1.3.
+- For non-web documents and software where status messages are not implemented using markup languages, there is still a user need to have status messages be programmatically exposed so that they can be presented to the user by assistive technologies without receiving focus. This is typically enabled through the use of accessibility services of the user agent or platform software.
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-4-1-3-status-messages-to-non-web-documents-and-software
+- Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile. Kimberly Patch; Jeanne F Spellman; Kathleen Wahlbin. W3C. 26 February 2015. FPWD. URL: https://www.w3.org/TR/mobile-accessibility-mapping/
+- Web Content Accessibility Guidelines (WCAG) 2.2. Michael Cooper; Andrew Kirkpatrick; Alastair Campbell; Rachael Bradley Montgomery; Charles Adams. W3C. 12 December 2024. W3C Recommendation. URL: https://www.w3.org/TR/WCAG22/
+- Guidance on Applying WCAG 2 to Non-Web Information and Communications Technologies (WCAG2ICT). Mary Jo Mueller; Chris Loiselle; Phil Day. W3C. 15 November 2024. W3C Working Group Note. URL: https://www.w3.org/TR/wcag2ict-22/
+- (for non-web software) Note Note 5 (Added)
+- The intent section refers to the ability for content to reflow (for vertical scrolling content at a width equivalent to 320 CSS pixels, or for horizontal scrolling content at a height equivalent to 256 CSS pixels) when user agent zooming is used to scale content or when the viewport changes in width. For non-web software, this means that when users scale content, adjust the size of a window, dialog, or other resizable content area, or change the screen resolution, the content will reflow without loss of information or functionality, and without requiring scrolling in two dimensions; or that the application works with platform features that meet this success criterion.
+- Non-web software will have more frequent cases where two-dimensional layout is relied upon for usage or meaning than what occurs on the Web. For example:
+- Placeholder Note: Work In Progress Read issue #42 on GitHub Success Criterion 3.2.3 Consistent Navigation (Level AA) WCAG: Success Criterion 3.2.3 Consistent Navigation
+- Navigational mechanisms that are repeated on multiple web pages within a set of web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.
+- https://www.w3.org/TR/WCAG22/#consistent-navigation WCAG2ICT: Applying SC 3.2.3 Consistent Navigation to Non-Web Documents and Software
+- Placeholder Note: Work In Progress Read issue #55 on GitHub Success Criterion 3.2.6 Consistent Help (Level A) WCAG: Success Criterion 3.2.6 Consistent Help
+- If a web page contains any of the following help mechanisms, and those mechanisms are repeated on multiple web pages within a set of web pages, they occur in the same order relative to other page content, unless a change is initiated by the user:
+- Human contact details; Human contact mechanism; Self-help option; A fully automated contact mechanism. Note Note 1
+- Help mechanisms may be provided directly [in the non-web document or software], or may be provided via a direct link to a [different non-web document, software, or Web page] containing the information.
+- For this success criterion, "the same order relative to other [content]" can be thought of as how the content is ordered when the [non-web document or software content is serialized]. The visual position of a help mechanism is likely to be consistent across [non-web documents or software] for the same [content layout variation] (e.g., CSS break-point). The user can initiate a change, such as changing the [non-web document’s or software's] zoom or orientation, which may trigger a different [content layout variation]. This criterion is concerned with relative order across [non-web documents or software] displayed in the same [content layout variation] (e.g., same zoom level and orientation).
+- https://www.w3.org/TR/wcag2ict-22/#applying-sc-3-2-6-consistent-help-to-non-web-documents-and-software
+- In January 2024, MATF regrouped and welcomed new participants to work on updated guidance for applying WCAG 2.2 to mobile applications.
+- This current document, “Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)” maps directly to the W3C supporting document, Guidance on Applying WCAG 2 to Non-Web Information and Communications Technologies (WCAG2ICT) [wcag2ict-22], which was published as a Group Note in October 2024, describing how WCAG 2.2 could be applied to non-web documents and software.
+- The intention of MATF is to publish WCAG2Mobile as a Group Note, just like WCAG2ICT.
+
+Prior source excerpt windows:
+
+- Page Contents More than ‘mobile’ W3C addresses mobile accessibility Get updates Get involved About W3C and WAI More than ‘mobile’
+- ‘Mobile accessibility’ refers to making websites and applications more accessible to people with disabilities when they are using mobile phones and other devices. WAI’s work in this area addresses accessibility issues of people using a broad range of devices to interact with the web, including:
+- phones and tablets digital TVs wearables such as smart watches devices in car dashboards and airplane seatbacks devices in household appliances
+- W3C technologies and mobile accessibility
+- In addition to ensuring mobile is addressed in W3C’s accessibility standards, WAI ensures that the core W3C technologies, including those that are essential for the mobile web, also support accessibility. All W3C work is reviewed for accessibility by the Accessible Platform Architectures (APA) Working Group.
+- For a summary of technologies developed in W3C that increase the capabilities of web applications and how they apply specifically to the mobile context, see Standards for Web Applications on Mobile.
+- E-mailFork & Edit on GitHubNew GitHub Issue Back to Top Updated: 6 May 2025. Latest changes. First published January 2008. Editor: Shawn Lawton Henry.
+- W3C Web Accessibility Initiative (WAI) Strategies, standards, resources to make the Web accessible to people with disabilities Get News in Email
+- LinkedIn Mastodon YouTube Home Contact Site map Support WAI News Accessibility statement All Translations Resources for roles Copyright © 2026 World Wide Web Consortium.
+- Mobile Accessibility at W3C | Web Accessibility Initiative (WAI) | W3C Skip to Content Change Text Size or Colors This page in: English العربية
+- čeština español français Bahasa Indonesia 한국어 русский язык 简体中文 All Translations Show Customization, Languages, Translations Strategies, standards, resources to make the Web accessible to people with disabilities
+- 한국어 русский язык 简体中文 All Translations Translating WAI Resources Mobile Accessibility at W3C Summary
+- Mobile accessibility is covered in existing W3C accessibility standards/guidelines, including Web Content Accessibility Guidelines (WCAG). W3C does not have separate guidelines for mobile accessibility.
+- W3C provides specific guidance on mobile accessibility:
+- WCAG2ICT: Applying WCAG 2 to Non-Web Information and Communications Technologies — a more general resource that also includes mobile apps
+- What’s New in WCAG 2.1 and What’s New in WCAG 2.2 — introduce requirements (‘success criteria’) addressing mobile accessibility that have been added to WCAG 2.1 and WCAG 2.2
+- User Agent Accessibility Guidelines (UAAG) covers web browsers and other ‘user agents’, including mobile browsers:
+- The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop web standards. W3C primarily pursues its mission through the creation of web standards and guidelines designed to ensure long-term growth for the web. To learn more, see About W3C.
+- W3C’s Web Accessibility Initiative (WAI) brings together individuals and organizations from around the world to develop strategies, guidelines, and resources to help make the web accessible to people with disabilities. To learn more, see the WAI website.
+- Please share your ideas, suggestions, or comments via e-mail to the publicly-archived list wai@w3.org or via GitHub.
+- Menu Get Involved About W3C WAI Search: Accessibility Fundamentals Planning & Policies Design & Develop Test & Evaluate Teach & Advocate Standards/Guidelines
+- Home Standards/Guidelines Mobile Accessibility at W3C Standards/Guidelines Web Content – WCAG 2 How to Meet WCAG 2 (Quick Reference) At a Glance
+- The Documents Applying to Non-Web ICT New in 2.2 New in 2.1 Translations Commenting Conformance Logos FAQ WCAG 3 Draft Authoring Tools – ATAG
+- W3C accessibility standards address mobile accessibility. There are four accessibility standards:
+- Web Content Accessibility Guidelines (WCAG) — covers web pages and web applications, including content used on mobile devices:
+- To learn how WCAG 2 can be applied to mobile web content, mobile web apps, native apps, and hybrid apps using web components inside native apps, see:
+- At a Glance For LMS For No-Code Tools For Social Media Platforms User Agents – UAAG WAI-ARIA Evaluation – ACT & EARL Accessibility Conformance Testing – ACT
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile) — an in-progress draft of guidance for WCAG 2.2
+- Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile — the previous resource for WCAG 2.0
+- other ‘Internet of Things’ It addresses a wide range of issues, including: touchscreens small screen sizes different input modalities, including speech and 3D touch enabled by
+- pressure sensors device use in different settings, such as bright sunlight W3C addresses mobile accessibility W3C standards and mobile accessibility
+- Mobile Accessibility Examples from UAAG — contains examples of how web browsers that follow UAAG benefit people with disabilities who use the web on mobile devices
+- Applying UAAG to Mobile Phones — explores the issues with user agents
+- Authoring Tool Accessibility Guidelines (ATAG) — covers software used to create web pages and applications, including for mobile
+- WAI-ARIA (Accessible Rich Internet Applications) — defines ways to make web content more accessible, especially dynamic content and advanced user interface controls; it applies to web applications and to accessing websites with mobile devices
+- W3C best practices for mobile accessibility For more on W3C best practices for mobile accessibility, see: Mobile Web Application Best Practices
+- Mobile Web Best Practices Get updates
+- To be notified about future work on mobile accessibility at W3C, see Subscribe to WAI News.
+- Most of WAI’s work related to mobile accessibility is through the Mobile Accessibility Task Force. If you would like to be more involved in WAI’s work on mobile accessibility, send an email with information about your interests and time availability to the Task Force chair and CC WAI Staff at wai@w3.org.

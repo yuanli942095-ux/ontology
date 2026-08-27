@@ -1,0 +1,214 @@
+event_id,domain,source_id,source_card_title,alignment_score,alignment_status
+EXT_E001,insurance,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E002,insurance,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E003,insurance,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E004,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E005,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E006,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E007,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E008,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E009,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E010,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E011,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E012,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E013,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E014,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E015,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E016,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E017,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E018,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E019,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E020,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E021,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E022,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E023,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E024,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E025,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E026,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E027,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E028,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E029,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E030,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E031,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E032,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E033,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E034,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E035,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E036,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E037,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E038,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E039,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E040,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E041,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E042,web_accessibility,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E043,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E044,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E045,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E046,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E047,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E048,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E049,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E050,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E051,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E052,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E053,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E054,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E055,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E056,digital_identity,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E057,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E058,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E059,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E060,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E061,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E062,eu_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E063,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E064,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E065,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E066,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E067,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E068,us_regulation,INHERITED_EVENT_SPECIFIC,,1.0,INHERITED
+EXT_E069,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E070,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E071,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E072,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9304,PASS
+EXT_E073,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E074,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9304,PASS
+EXT_E075,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E076,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9304,PASS
+EXT_E077,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9292,PASS
+EXT_E078,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9304,PASS
+EXT_E079,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9304,PASS
+EXT_E080,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9318,PASS
+EXT_E081,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9333,PASS
+EXT_E082,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9318,PASS
+EXT_E083,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9318,PASS
+EXT_E084,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9318,PASS
+EXT_E085,insurance,NAT_INS_BEIJING_2026_TERMS,Beijing 2026 policy agricultural insurance reference terms,0.9333,PASS
+EXT_E086,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9292,PASS
+EXT_E087,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E088,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E089,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.93,PASS
+EXT_E090,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.93,PASS
+EXT_E091,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.93,PASS
+EXT_E092,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E093,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E094,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E095,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.93,PASS
+EXT_E096,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.93,PASS
+EXT_E097,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E098,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E099,eu_regulation,NAT_EU_CLP_2020_2174,Commission Delegated Regulation (EU) 2020/2174,0.9286,PASS
+EXT_E100,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.8835,PASS
+EXT_E101,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.8835,PASS
+EXT_E102,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.8835,PASS
+EXT_E103,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.885,PASS
+EXT_E104,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.893,PASS
+EXT_E105,us_regulation,NAT_SEC_CYBER_FEDREG_2023,"Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules",0.8884,PASS
+EXT_E106,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7116,PASS
+EXT_E107,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7116,PASS
+EXT_E108,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7106,PASS
+EXT_E109,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7106,PASS
+EXT_E110,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7087,PASS
+EXT_E111,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7096,PASS
+EXT_E112,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7106,PASS
+EXT_E113,us_regulation,NAT_EPA_LCR_MAIN,Lead and Copper Rule Improvements,0.7106,PASS
+EXT_E114,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E115,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E116,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E117,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E118,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E119,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E120,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E121,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E122,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E123,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E124,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E125,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E126,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9118,PASS
+EXT_E127,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E128,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E129,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E130,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E131,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E132,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9111,PASS
+EXT_E133,cybersecurity_controls,NAT_NIST_CSF_20,Cybersecurity Framework 2.0,0.9105,PASS
+EXT_E134,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E135,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E136,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E137,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E138,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E139,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E140,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5547,REVIEW
+EXT_E141,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E142,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5547,REVIEW
+EXT_E143,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E144,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E145,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E146,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5614,REVIEW
+EXT_E147,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5547,REVIEW
+EXT_E148,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5547,REVIEW
+EXT_E149,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E150,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E151,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5558,REVIEW
+EXT_E152,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5565,REVIEW
+EXT_E153,privacy_framework,NAT_NIST_PRIVACY_11,Privacy Framework 1.1 Initial Public Draft,0.5553,REVIEW
+EXT_E154,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9381,PASS
+EXT_E155,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E156,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E157,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E158,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E159,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E160,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E161,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E162,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E163,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E164,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9381,PASS
+EXT_E165,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E166,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9333,PASS
+EXT_E167,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E168,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E169,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E170,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E171,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E172,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9364,PASS
+EXT_E173,ai_regulation,NAT_EU_AI_ACT_EURLEX,Regulation (EU) 2024/1689 Artificial Intelligence Act,0.9348,PASS
+EXT_E174,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8095,PASS
+EXT_E175,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E176,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E177,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E178,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E179,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8047,PASS
+EXT_E180,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E181,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E182,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.7997,PASS
+EXT_E183,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E184,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E185,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E186,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E187,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E188,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8051,PASS
+EXT_E189,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E190,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8008,PASS
+EXT_E191,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E192,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8032,PASS
+EXT_E193,medical_device_cybersecurity,NAT_FDA_MED_CYBER_MAIN,Cybersecurity in Medical Devices guidance update,0.8019,PASS
+EXT_E194,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9235,PASS
+EXT_E195,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.92,PASS
+EXT_E196,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9263,PASS
+EXT_E197,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9211,PASS
+EXT_E198,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9211,PASS
+EXT_E199,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9278,PASS
+EXT_E200,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9278,PASS
+EXT_E201,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.9263,PASS
+EXT_E202,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.925,PASS
+EXT_E203,sustainability_reporting,NAT_IFRS_S1,IFRS S1 General Requirements,0.925,PASS
+EXT_E204,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9278,PASS
+EXT_E205,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.925,PASS
+EXT_E206,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9278,PASS
+EXT_E207,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.925,PASS
+EXT_E208,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.925,PASS
+EXT_E209,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9278,PASS
+EXT_E210,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9316,PASS
+EXT_E211,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9316,PASS
+EXT_E212,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9286,PASS
+EXT_E213,sustainability_reporting,NAT_IFRS_S2,IFRS S2 Climate-related Disclosures,0.9294,PASS

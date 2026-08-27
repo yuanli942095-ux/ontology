@@ -1,0 +1,64 @@
+Source title: Regulation (EC) No 1272/2008 official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- shall be readable horizontally when the package is set down intermediate packaging shall be labelled in accordance with this
+- normally. Regulation. The outer packaging may also be labelled in L 353/20 EN Official Journal of the European Union 31.12.2008
+- accordance with this Regulation. Where the hazard pictogram(s) (c) the packaging and fastenings shall be strong and solid
+- …’ or ‘extract of …’ may be used instead of the chemical names of the components of that essential oil or
+- extract as referred to in Article 18(3)(b). L 353/42 EN Official Journal of the European Union 31.12.2008 1.5. Exemptions from labelling and packaging requirements
+- 1.5.1. Exemptions from Article 31 [(Article 29(1))]
+- class in accordance with Table 5.2 Table 5.2 Label elements for Hazardous to the Ozone Layer Symbol/pictogram Signal Word Danger Hazard Statement EUH059: Hazardous to the Ozone Layer
+- Precautionary Statements P273 P501 (1) OJ L 244, 29.9.2000, p. 1. 31.12.2008 EN Official Journal of the European Union L 353/141 ANNEX II SPECIAL RULES FOR LABELLING AND PACKAGING OF CERTAIN SUBSTANCES AND MIXTURES
+- — Part 1 contains special rules for the labelling of certain classified substances and mixtures.
+- EN methylbromide Muta. 2 H331 GHS06 H331 Acute Tox. 3 * H301 GHS08 H301 Acute Tox. 3 * H373 GHS09 H373 STOT RE 2 * ** Dgr H319 Eye Irrit. 2 H319 H335
+- STOT SE 3 H335 H315 Skin Irrit. 2 H315 H400 Aquatic Acute 1 H400 Ozone EU H059 Official Journal of the European Union 602-003-00-8 dibromomethane 200-824-2 74-95-3 Acute Tox. 4 * H332 GHS07 H332
+- Aquatic H412 Wng H412 Chronic 3 602-004-00-3 dichloromethane; 200-838-9 75-09-2 Carc. 2 H351 GHS08 H351 methylene chloride Wng 602-005-00-9 methyl iodide; 200-819-5 74-88-4 Carc. 2 H351 GHS06 H351
+- 602-013-00-2 1,1,1-trichloroethane; 200-756-3 71-55-6 Acute Tox. 4 * H332 GHS07 H332 EUH059 F
+- methyl chloroform Ozone EU- Wng H059 Official Journal of the European Union 602-014-00-8 1,1,2-trichloroethane 201-166-9 79-00-5 Carc. 2 H351 GHS08 H351 EUH066
+- Acute Tox. 4 * H332 GHS07 H332 Acute Tox. 4 * H312 Wng H312 Acute Tox. 4 * H302 H302 602-015-00-3 1,1,2,2-tetrachloroethane 201-197-8 79-34-5 Acute Tox. 2 * H330 GHS06 H330
+- Baseoil — unspecified; R45 R: 45 [A complex combination by hydrocarbons obtained as the S: 53-45 solvent insoluble fraction from solvent refining of a residuum
+- Official Journal of the European Union using a polar organic solvent such as phenol or furfural. It consists of hydrocarbons having carbon numbers predomi
+- 649-460-00-X Distillates (petroleum), clay-treated paraffinic; 265-137-2 64742-36-5 Carc. Cat. 2; T HL
+- nity, and in particular Article 95 thereof, classification and labelling for supply and use and, on the
+- other hand, those for transport. Having regard to the proposal from the Commission, (5) With a view to facilitating worldwide trade while protecting
+- Having regard to the opinion of the European Economic and human health and the environment, harmonised criteria for
+- liament and of the Council of 27 October 1998 on in vitro European Parliament and of the Council of 31 May 1999
+- diagnostic medical devices (7), Commission Decision 1999/ concerning the approximation of the laws, regulations and
+- 217/EC of 23 February 1999 adopting a register of administrative provisions of the Member States relating to
+- appropriate with the relevant requirements for the protec tion of laboratory animals, set out in Directive 86/609/EEC,
+- (26) The test methods in Commission Regulation (EC) No 440/ and, in the case of ecotoxicological and toxicological tests,
+- 2008 of 30 May 2008 laying down test methods pursuant good laboratory practice, set out in Directive 2004/10/EC
+- view to reducing testing on vertebrate animals and the and the verification of their application for tests on
+- number of animals involved. The European Centre for the chemical substances (3). Validation of Alternative Methods (ECVAM) of the Commission's Joint Research Centre plays an important
+- role in the scientific assessment and validation of alternative (32) The criteria for classification in different hazard classes and
+- opinion on the proposal while interested parties should responsible for the enforcement of the obligations set out
+- have an opportunity to comment. The Commission should in this Regulation. Member States should put in place
+- submit a draft decision on the final classification and effective monitoring and control measures in order to
+- By subjecting all future harmonisations of classifications to cooperation and coordination between the Member States,
+- this Regulation, inconsistencies in harmonised classifica- the Agency and the Commission. tions of the same substance under the existing and the new
+- criteria should be avoided. (62) In order to provide focal points for information on hazardous substances and mixtures, Member States should
+- and mixtures. Regulation should be adopted in accordance with Council Decision 1999/468/EC of 28 June 1999 laying down the procedures for the exercise of implementing powers
+- conferred on the Commission (2). (69) While many of the obligations on enterprises laid down in Regulation (EC) No 1907/2006 are triggered by classifica
+- tion, this Regulation should not alter the scope and impact
+- of that Regulation, except for its provisions on safety data (77) In particular, the Commission should be empowered to
+- sheets. To ensure this, that Regulation should be amended adapt this Regulation to technical and scientific progress,
+- allow all parties involved, authorities, enterprises as well as biannual working rhythm at UN level should be taken into
+- stakeholders, to focus resources on preparing for new account. Furthermore, the Commission should be empow
+- duties at the right times. Therefore, and because the ered to decide on the harmonised classification and
+- (78) When, on imperative grounds of urgency, the normal time 2. This Regulation shall not apply to the following:
+- limits for the regulatory procedure with scrutiny cannot be complied with, the Commission should be able to apply the
+- urgency procedure provided for in Article 5a(6) of (a) radioactive substances and mixtures within the scope of
+- technical progress. down basic safety standards for the protection of the health of workers and the general public against the danger arising
+- from ionising radiation (1); (79) The Commission should also for the purposes of this Regulation be assisted by the Committee established by
+- Regulation (EC) No 1907/2006, with a view to ensuring a (b) substances and mixtures which are subject to customs
+- puts the confidential nature of his business at risk, he can be made in the format referred to in Article 111 of continue to use the agreed alternative name for the purposes of
+- Regulation (EC) No 1907/2006 and shall be accompanied by a this Regulation. fee. The level of the fees shall be determined by the Commission in Article 25
+- accordance with the regulatory procedure referred to in Article 54(2) of this Regulation. Supplemental information on the label
+- exemptions or specific provisions are defined in Part 2 of Location of information on the label
+- Annex II. 1. The hazard pictograms, signal word, hazard statements and precautionary statements shall be located together on the label. 5. The Commission may request the Agency to prepare and
+- submit to it further draft exemptions from labelling and packaging requirements. 2. The supplier may decide the order of the hazard statements

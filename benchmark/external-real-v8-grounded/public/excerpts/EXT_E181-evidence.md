@@ -1,0 +1,106 @@
+# EXT_E181 Evidence
+
+- Source title: FDA postmarket cybersecurity final-guidance notice 2016
+- Source URL: https://public-inspection.federalregister.gov/2016-31406.pdf
+- Prior source title: FDA postmarket cybersecurity draft-guidance notice 2016
+- Prior source URL: https://public-inspection.federalregister.gov/2016-01172.pdf
+
+Raw source excerpt windows:
+
+- This document is scheduled to be published in the Federal Register on 12/28/2016 and available online at https://federalregister.gov/d/2016-31406, and on FDsys.gov
+- 4164-01-P DEPARTMENT OF HEALTH AND HUMAN SERVICES Food and Drug Administration [Docket No. FDA-2015-D-5105] Postmarket Management of Cybersecurity in Medical Devices; Guidance for Industry and Food
+- and Drug Administration; Availability AGENCY: Food and Drug Administration, HHS. ACTION: Notice of availability. SUMMARY: The Food and Drug Administration (FDA or Agency) is announcing the
+- availability of the guidance entitled “Postmarket Management of Cybersecurity in Medical Devices.” FDA is issuing this guidance to inform industry and FDA staff of the Agency’s
+- recommendations for managing postmarket cybersecurity vulnerabilities for marketed medical
+- safety and effectiveness of marketed medical devices. II. Significance of Guidance This guidance is being issued consistent with FDA’s good guidance practices regulation
+- (21 CFR 10.115). The guidance represents the current thinking of FDA on “Postmarket Management of Cybersecurity in Medical Devices.” It does not establish any rights for any
+- person and is not binding on FDA or the public. You can use an alternative approach if it satisfies the requirements of the applicable statutes and regulations.
+- submitted, marked and identified, as confidential, if submitted as detailed in "Instructions." Instructions: All submissions received must include the Docket No. FDA-2015-D-5105
+- for “Postmarket Management of Cybersecurity in Medical Devices.” Received comments will be
+- placed in the docket and, except for those submitted as "Confidential Submissions," publicly
+- the guidance. Submit written requests for a single hard copy of the guidance document entitled “
+- “Postmarket Management of Cybersecurity in Medical Devices” to the Office of the Center
+- Director, Guidance and Policy Development, Center for Devices and Radiological Health, Food
+- cybersecurity vulnerabilities and exploits that may pose a risk to health, the FDA would require
+- medical device manufacturers to notify the Agency. This guidance clarifies changes to devices to be considered cybersecurity routine updates
+- and patches (e.g., certain actions to maintain a controlled risk to health). In addition, the
+- nces/default.htm or http://www.regulations.gov. Persons unable to download an electronic copy
+- of “Postmarket Management of Cybersecurity in Medical Devices” may send an email request to
+- CDRH-Guidance@fda.hhs.gov to receive an electronic copy of the document. Please use the document number 1400044 to identify the guidance you are requesting.
+- cybersecurity threats and vulnerabilities and a significant step towards assuring the ongoing
+- Agency considers voluntary participation in an Information ISAO a critical component of a
+- medical device manufacturer’s comprehensive proactive approach to management of postmarket
+- address cybersecurity vulnerabilities and exploits as part of the postmarket management of their
+- medical devices. DATES: Submit either electronic or written comments on this guidance at any time. General comments on Agency guidance documents are welcome at any time.
+- ADDRESSES: You may submit comments as follows: Electronic Submissions Submit electronic comments in the following way:  Federal eRulemaking Portal: http://www.regulations.gov. Follow the instructions for
+- devices. The guidance clarifies FDA’s postmarket recommendations with regards to addressing
+- cybersecurity vulnerabilities and emphasizes that manufacturers should monitor, identify, and
+- 7 III. Electronic Access Persons interested in obtaining a copy of the guidance may do so by downloading an electronic copy from the Internet. A search capability for all Center for Devices and
+- Radiological Health guidance documents is available at http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/GuidanceDocuments/defaul
+- and Budget (OMB) under the Paperwork Reduction Act of 1995 (44 U.S.C. 3501-3520). The
+- collections of information in 21 CFR part 803 (medical device reporting) have been approved
+- under OMB control number 0910-0437; the collections of information in 21 CFR part 806 (reports of corrections and removals) have been approved under OMB control number 0910
+- guidance outlines circumstances in which FDA does not intend to enforce reporting requirements
+- under part 806 for specific vulnerabilities with uncontrolled risk. Specifically, FDA does not
+- IV. Paperwork Reduction Act of 1995 This guidance refers to previously approved collections of information found in FDA
+- regulations. These collections of information are subject to review by the Office of Management
+- encourages all public and private stakeholders to share responsibility in achieving these outcomes. In recognition of the shared responsibility for cybersecurity, the security industry has
+- established resources including standards, guidelines, best practices and frameworks for stakeholders to adopt a culture of cybersecurity risk management. Best practices include
+- collaboratively assessing cybersecurity intelligence information for risks to device functionality
+- number, found in brackets in the heading of this document, into the "Search" box and follow the
+- 4 prompts and/or go to the Division of Dockets Management, 5630 Fishers Lane, rm. 1061, Rockville, MD 20852. An electronic copy of the guidance document is available for download from the Internet.
+- See the SUPPLEMENTARY INFORMATION section for information on electronic access to
+- and clinical risk. FDA believes that, in alignment with Executive Order 13636 and PPD-21,
+
+Prior source excerpt windows:
+
+- Food and Drug Administration Staff; Availability AGENCY: Food and Drug Administration, HHS ACTION: Notice of availability. SUMMARY: The Food and Drug Administration (FDA) is announcing the availability of a draft
+- guidance entitled “Postmarket Management of Cybersecurity in Medical Devices.” This draft guidance informs industry and FDA staff of the Agency’s recommendations for identifying,
+- addressing, and monitoring cybersecurity vulnerabilities and exploits for postmarket
+- 4164-01-P DEPARTMENT OF HEALTH AND HUMAN SERVICES Food and Drug Administration [Docket No. FDA-2015-D-5105]
+- Postmarket Management of Cybersecurity in Medical Devices; Draft Guidance for Industry and
+- will post your comment, as well as any attachments, except for information submitted, marked and identified, as confidential, if submitted as detailed in “Instructions.”
+- Instructions: All submissions received must include the Docket No. FDA-2015-D- 5105 for “Postmarket Management of Cybersecurity in Medical Devices.” Received comments will
+- be placed in the docket and, except for those submitted as “Confidential Submissions,” publicly
+- regulation (21 CFR 10.115). The draft guidance, when finalized, will represent the Agency’s
+- current thinking on postmarket management of cybersecurity in medical devices. It neither
+- creates nor confers any rights for or on any person and is not binding on FDA or the public. An
+- nces/default.htm or http://www.regulations.gov. Persons unable to download an electronic copy
+- of "Postmarket Management of Cybersecurity in Medical Devices” may send an email request to
+- CDRH-Guidance@fda.hhs.gov to receive an electronic copy of the document. Please use the document number 1400044 to identify the guidance you are requesting.
+- management of medical devices. This draft guidance is neither final nor is it in effect at this
+- time. DATES: Although you can comment on any guidance at any time (see 21 CFR 10.115(g)(5)), to
+- • What are the characteristics (participation, expertise, policies, and practices) of an ISAO
+- that would make it qualified to participate in the sharing and analysis of medical device cybersecurity vulnerabilities? What are the benefits and disadvantages of FDA
+- “recognizing” specific ISAOs as possessing specialized expertise relevant to sharing and analysis of medical device vulnerabilities and what should such recognition entail?
+- device cybersecurity and, therefore, enhance patient safety. FDA has contributed to these efforts
+- through guidance, multistakeholder engagement, outreach, and by hosting a 2014 public workshop on cybersecurity entitled “Collaborative Approaches for Medical Device and
+- Healthcare Cybersecurity” (79 FR 56814, September 23, 2014). The 2016 public workshop will
+- maintenance throughout the product life cycle to assure an adequate degree of protection against
+- such exploits. Proactively addressing cybersecurity risks in medical devices reduces the patient
+- safety impact and the overall risk to public health. For the majority of cases, actions taken by manufacturers to address cybersecurity
+- assessment and mitigation of cybersecurity threats, and their impact on medical device safety and
+- effectiveness. FDA plans to hold a public workshop entitled “Moving Forward: Collaborative Approaches to Medical Device Cybersecurity” on January 20-21, 2016 (80 FR 76022, December
+- 7, 2015). FDA, in collaboration with the National Health Information Sharing Analysis Center,
+- cybersecurity status, standards, and tools in development; and to engage the multi-stakeholder
+- community in focused discussions on unresolved gaps and challenges that have hampered progress in advancing medical device cybersecurity. In the last few years, Healthcare and Public Health Critical Infrastructure Sector
+- stakeholders have been engaged in many collaborative activities that seek to strengthen medical
+- 0910-0449. V. Other Issues for Consideration The Agency invites comments on the “Postmarket Management of Cybersecurity in
+- Medical Devices” draft guidance, in general, and on the following questions, in particular:
+- • What factors contribute to a manufacturer’s decision whether or not to participate in an
+- clinical performance of a device and present a reasonable probability of serious adverse health
+- consequences or death, the FDA would require medical device manufacturers to notify the Agency. In February 2013, the President issued Executive Order 13636 (E.O. 13636), “Improving
+- Critical Infrastructure Cybersecurity,” which recognized that resilient infrastructure is essential
+- rm. 7301, Silver Spring, MD 20993-0002, 240-402-7911. SUPPLEMENTARY INFORMATION: I. Background This draft guidance proposes to inform industry and FDA staff of the Agency’s
+- recommendations as it relates to monitoring, identifying, and addressing cybersecurity vulnerabilities and exploits as part of manufacturers’ postmarket management of medical
+- devices. A growing number of medical devices are designed to be networked to facilitate patient
+- community, and medical device community. These collaborations can lead to the consistent
+- to bring together diverse stakeholders to discuss complex challenges in medical device
+- cybersecurity that impact the medical device ecosystem. The purpose of this workshop is to
+- highlight past collaborative efforts; increase awareness of existing maturity models (i.e.,
+- build upon previous work by featuring some of the collaborative efforts that address medical
+- device cybersecurity through education and training, information sharing, standards, risk assessment, and tools development. II. Significance of Guidance
+- This draft guidance is being issued consistent with FDA’s good guidance practices
+- under OMB control number 0910-0073; and the collections of information in 21 CFR part 822 (postmarket surveillance of medical devices) have been approved under OMB control number
+- • When cybersecurity vulnerability information is not reported to FDA, what information should be reported to the ISAO, and when? • How should the FDA interact with ISAOs, manufacturers, HDOs, security researchers
+- and other stakeholders to maximize the sharing of information concerning cybersecurity threats while maintaining confidentiality and protecting commercial confidential

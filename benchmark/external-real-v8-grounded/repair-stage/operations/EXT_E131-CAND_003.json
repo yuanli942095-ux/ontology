@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Framework_2_0____CSF_enterprise_risk_manager_pathway",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#audience",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "csf2_risk_manager_pathway=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "audience=enterprise_risk_manager",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

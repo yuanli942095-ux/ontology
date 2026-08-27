@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#IFRS_S2_Climate_related_Disclosures____IFRS_S2_climate_related_risks",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#scope",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "ifrs_s2_climate_risks=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "scope=climate_risks_opportunities",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_in_Medical_Devices_guidance_update____FDA_2025_guidance_supersedes_2023_guidance",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#version_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "fda_2025_supersedes_2023=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "status=2025_supersedes_2023",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

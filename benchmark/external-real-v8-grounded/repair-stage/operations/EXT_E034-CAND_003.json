@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#WCAG_2_2_Focus_Not_Obscured_family",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#versioned_requirement_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "wcag21_status=previous_target",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "wcag22_family=focus_not_obscured;criteria=2.4.11_2.4.12_alternative",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

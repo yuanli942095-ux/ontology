@@ -1,0 +1,65 @@
+Source title: NIST Privacy Framework 1.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.01162020
+
+Raw source excerpt window:
+
+- cybersecurity incidents, as illustrated by loss of confidentiality, events processing Figure 2. Having a general understanding integrity, or
+- of the different origins of cybersecurity availability and privacy risks is important for determining the most effective solutions to address the risks. Figure 2: Cybersecurity and Privacy Risk
+- The Privacy Framework approach to privacy Relationship
+- (NIST SP 800-63-3 [8]) of format. For example, for the attribute “birthday,” a value could be
+- “12/1/1980” or “December 1, 1980.” Availability Ensuring timely and reliable access to and use of information. (44 U.S.C. [13]) Category The subdivision of a Function into groups of privacy outcomes closely tied
+- to programmatic needs and particular activities. Communicate-P Develop and implement appropriate activities to enable organizations (Function) and individuals to have a reliable understanding and engage in a dialogue
+- Integrity Guarding against improper information Identify-P, Govern-P, modification or destruction; includes ensuring Protect-P information non-repudiation and authenticity
+- Availability Ensuring timely and reliable access to and use Identify-P, Govern-P, of information Protect-P Defining Privacy Requirements
+- Privacy requirements specify the way a system, product, or service needs to function to meet
+- Once an organization can identify the likelihood of any given problem arising from the data processing,
+- which the Privacy Framework refers to as a problematic data action, it can assess the impact should the
+- problematic data action occur. This impact assessment is where privacy risk and organizational risk
+- parity with other risks they are managing in their broader portfolio and drive more informed decision
+- making about resource allocation to strengthen privacy programs. Figure 3 illustrates this relationship
+- between privacy risk and organizational risk. Problem Individual Organization arises from data experiences direct impact resulting impact processing (e.g., embarrassment, (e.g., customer abandonment,
+- the Cybersecurity Framework. The following legend can be used to identify this relationship in
+- Table 2. A complete crosswalk between the two frameworks can be found in the resource repository at https://www.nist.gov/privacy-framework. The Function, Category, or Subcategory aligns with the Cybersecurity
+- Framework, but the text has been adapted for the Privacy Framework. The Category or Subcategory is identical to the Cybersecurity Framework.
+- implemented the processes to identify, objectives of an organization’s privacy program.
+- assess, and manage privacy risks within ID.DE-P4: Interoperability frameworks or similar multi-party
+- the data processing ecosystem. approaches are used to manage data processing ecosystem privacy
+- depending on certain resources may find that they either do not exist, or may not sufficiently address
+- privacy. In these circumstances, the dependent component can consider the purpose of the resource
+- and either seek the information through other sources or make the best decision it can with the
+- NIST has developed a Privacy Risk Assessment Methodology (PRAM) that can help organizations identify,
+- assess, and respond to privacy risks. It is comprised of a set of worksheets available at [3].
+- 20 See NIST SP 800-30, Rev. 1, Guide for Conducting Risk Assessments [12] at p. 8. 21
+- confusion with Cybersecurity Framework Functions. 6 NIST Privacy Framework January 16, 2020 leveraged to further support the management of risks associated with
+- cybersecurity-related privacy events by using the Detect, Respond, and Privacy Cybersecurity Recover Functions. Alternatively, Cybersecurity- Risks
+- Risks related privacy organizations may use all five of the Cybersecurity Framework Functions in IDENTIFY events IDENTIFY-P conjunction with Identify-P, Govern-P, PROTECT PROTECT-P GOVERN-P
+- Principles: Privacy Principles for Vehicle Technologies and Services, available at https://autoalliance.org/wp
+- content/uploads/2017/01/Consumer_Privacy_Principlesfor_VehicleTechnologies_Services-03-21-19.pdf.
+- 10 NIST Privacy Framework January 16, 2020
+- to achieve accountability within and between organizations. 14 Establishing or Improving a Privacy Program
+- Using a simple model of “ready, set, go” phases, the Privacy Framework can support the creation of a
+- new privacy program or improvement of an existing program. As an organization goes through these
+- system to verify that all privacy capabilities and requirements are implemented. The privacy outcomes
+- determined by using the Privacy Framework should then serve as a basis for ongoing operation of the
+- system. This includes occasional reassessment, capturing results in a Current Profile, to verify that
+- Within the SDLC, organizations may employ a variety of development methodologies (e.g., waterfall, spiral, or
+- agile). 12 NIST Privacy Framework January 16, 2020 Using within the Data Processing Ecosystem A key factor in the management of privacy risk is an entity’s role(s) in the
+- data processing ecosystem, which can Public/ affect not only its legal obligations, but Government also the measures it may take to manage Services
+- NIST Privacy Framework Request for Information. (National Institute of Standards and Technology, Gaithersburg, MD). https://www.nist.gov/sites/default/files/documents/2019/02/27/
+- rfi_response_analysis_privacyframework_2.27.19.pdf [3] National Institute of Standards and Technology (2019) NIST Privacy Risk Assessment Methodology (PRAM). (National Institute of Standards and Technology, Gaithersburg, MD).
+- https://www.nist.gov/itl/applied-cybersecurity/privacy-engineering/resources
+- established and used to support risk providers, customers, partners, product manufacturers, application
+- decisions associated with managing developers) are identified, prioritized, and assessed using a privacy
+- privacy risk and third parties within the risk assessment process.
+- such as where or how they move through the city. 9 Problems also can arise where there is a loss of
+- confidentiality, integrity, or availability at some point in the data processing, such as data theft by
+- external attackers or the unauthorized access or use of data by employees. Figure 2 shows these types
+- senior executives can better understand and respond appropriately.
+- Figure 7 provides a graphical representation of this bi-directional collaboration and communication and
+- how elements of the Privacy Framework can be incorporated to facilitate the process. In this way,
+- individuals’ privacy and maintain data formally managed throughout removal, transfers, and disposition.
+- confidentiality, integrity, and availability. PR.DS-P4: Adequate capacity to ensure availability is maintained.
+- PR.DS-P5: Protections against data leaks are implemented. PR.DS-P6: Integrity checking mechanisms are used to verify software, firmware, and information integrity.
+- Improving Critical organization prompting the need for response and recovery. Infrastructure Cybersecurity [1]) (OMB 17-12 [9]) An occurrence that (1) actually or imminently jeopardizes, without lawful
+- authority, the integrity, confidentiality, or availability of information or an information system; or (2) constitutes a violation or imminent threat of
+- violation of law, security policies, security procedures, or acceptable use policies. Data A representation of information, including digital and non-digital formats.

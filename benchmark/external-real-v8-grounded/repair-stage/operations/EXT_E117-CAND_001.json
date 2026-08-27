@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Cybersecurity_Framework_2_0____CSF_2_0_profile_resources",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#resource_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "csf2_profiles_resources=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "profiles=expanded_resources",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

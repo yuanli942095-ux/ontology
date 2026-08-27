@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#梨种植保险",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#冻害损失赔偿公式",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "formula=effective_amount_times_loss_minus_50_over_50",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "formula=effective_amount_times_loss_rate",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

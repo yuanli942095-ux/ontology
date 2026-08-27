@@ -1,0 +1,119 @@
+# EXT_E129 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- • Quick-Start Guides that give actionable guidance on using the CSF and its online resources, including transitioning from previous CSF versions to version 2.0
+- • Community Profiles and Organizational Profile Templates that help an organization put the CSF into practice and set priorities for managing cybersecurity risks
+- An organization can use the CSF Core, Profiles, and Tiers with the supplementary resources to
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- This section defines the concepts of CSF Profiles and Tiers. 3.1. CSF Profiles
+- A CSF Organizational Profile describes an organization’s current and/or target cybersecurity
+- posture in terms of the Core’s outcomes. Organizational Profiles are used to understand, tailor,
+- which the Profile will be based to define its scope. An organization can have as many Organizational Profiles as desired, each with a different scope. For example, a Profile
+- The NIST CSF website provides additional information on using Profiles and Tiers. It includes
+- pointers to NIST-hosted Organizational Profile templates and a repository of Community Profiles in a variety of machine-readable and human-usable formats.
+- 1 For the purposes of this document, the terms “organization-wide” and “enterprise” have the same meaning.
+- changes to business/mission objectives in how risk is approached and communicated. 25 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Appendix C. Glossary CSF Category A group of related cybersecurity outcomes that collectively comprise a CSF Function. CSF Community Profile
+- A baseline of CSF outcomes that is created and published to address shared interests and goals among a number of
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- intelligence systems. The CSF Core is forward-looking and intended to apply to future changes
+- in technologies and environments. 5 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 3. Introduction to CSF Profiles and Tiers
+- should include for the selected CSF outcomes, and document the needed information. Consider the risk implications of the Current Profile to inform Target Profile planning
+- and prioritization. Also, consider using a Community Profile as the basis for the Target Profile. 4. Analyze the gaps between the Current and Target Profiles, and create an action plan.
+- Conduct a gap analysis to identify and analyze the differences between the Current and
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- indicates a feasible and cost-effective reduction of negative cybersecurity risks.
+- cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk governance; cybersecurity risk
+- management; enterprise risk management; Profiles; Tiers. Audience Individuals responsible for developing and leading cybersecurity programs are the primary
+- audience for the CSF. The CSF can also be used by others involved in managing risk — including
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- (or attempting to achieve) and characterizes how or to what extent each outcome is being achieved. 2. A Target Profile specifies the desired outcomes that an organization has selected and
+- prioritized for achieving its cybersecurity risk management objectives. A Target Profile considers anticipated changes to the organization’s cybersecurity posture, such as new
+- requirements, new technology adoption, and threat intelligence trends.
+- those financial systems. 2. Gather the information needed to prepare the Organizational Profile. Examples of information may include organizational policies, risk management priorities and
+- resources, enterprise risk profiles, business impact analysis (BIA) registers, cybersecurity
+- requirements and standards followed by the organization, practices and tools (e.g., procedures and safeguards), and work roles. 3. Create the Organizational Profile. Determine what types of information the Profile
+- to document and communicate the organization’s cybersecurity capabilities and known opportunities for improvement with external stakeholders, such as business partners or
+- prospective customers. Also, a Target Profile can help express the organization’s cybersecurity
+- risk management requirements and expectations to suppliers, partners, and other third parties
+- Regardless of the CSF’s utilization, an organization may benefit from using the CSF as guidance
+- to help it understand, assess, prioritize, and communicate cybersecurity risks and the actions
+- that will manage those risks. The selected outcomes can be used to focus on and implement strategic decisions to improve cybersecurity postures and maintain continuity of mission
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+
+Prior source excerpt windows:
+
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+-  A critical infrastructure sector may establish a Target Profile that can be used among its
+- constituents as an initial baseline Profile to build their tailored Target Profiles.  An organization can better manage cybersecurity risk among stakeholders by assessing
+- their position in the critical infrastructure and the broader digital economy using Implementation Tiers.
+- address gaps – reflecting mission drivers, costs and benefits, and risks – to achieve the outcomes
+- in the Target Profile. The organization then determines resources, including funding and workforce, necessary to address the gaps. Using Profiles in this manner encourages the
+- organization to make informed decisions about cybersecurity activities, supports risk
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- Framework consists of three parts: the Framework Core, the Implementation Tiers, and the
+- Framework Profiles. The Framework Core is a set of cybersecurity activities, outcomes, and
+- informative references that are common across sectors and critical infrastructure. Elements of the
+- Core provide detailed guidance for developing individual organizational Profiles. Through use of
+- Profiles, the Framework will help an organization to align and prioritize its cybersecurity
+- activities with its business/mission requirements, risk tolerances, and resources. The Tiers
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- can be characterized as the alignment of standards, guidelines, and practices to the Framework Core in a particular implementation scenario. Profiles can be used to identify
+- opportunities for improving cybersecurity posture by comparing a “Current” Profile (the “as is” state) with a “Target” Profile (the “to be” state). To develop a Profile, an
+- organization can review all of the Categories and Subcategories and, based on business/mission drivers and a risk assessment, determine which are most important; it
+- Level managers, as approved by the Senior Executive Level, will help set the overall tone for
+- how cybersecurity risk will be managed within the organization, and should influence prioritization within a Target Profile and assessments of progress in addressing gaps.
+- The Tier definitions are as follows: Tier 1: Partial  Risk Management Process – Organizational cybersecurity risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
+- Subcategories with the business requirements, risk tolerance, and resources of the organization.
+- A Profile enables organizations to establish a roadmap for reducing cybersecurity risk that is well
+- aligned with organizational and sector goals, considers legal/regulatory requirements and
+- Framework Profiles can be used to describe the current state or the desired target state of specific
+- cybersecurity activities. The Current Profile indicates the cybersecurity outcomes that are
+- currently being achieved. The Target Profile indicates the outcomes needed to achieve the
+- desired cybersecurity risk management goals. Profiles support business/mission requirements
+- and aid in communicating risk within and between organizations. This Framework does not prescribe Profile templates, allowing for flexibility in implementation.
+- the system cybersecurity specifications match the needs and risk disposition of the organization
+- as captured in a Framework Profile. The desired cybersecurity outcomes prioritized in a Target
+- Profile should be incorporated when a) developing the system during the build phase and b)
+- then should serve as a basis for ongoing operation of the system. This includes occasional
+- reassessment, capturing results in a Current Profile, to verify that cybersecurity requirements are
+- still fulfilled. Typically, a complex web of dependencies (e.g., compensating and common
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- interdependent stakeholders responsible for the delivery of essential critical infrastructure
+- products and services. Examples include:  An organization may use a Target Profile to express cybersecurity risk management requirements to an external service provider (e.g., a cloud provider to which it is
+- exporting data).  An organization may express its cybersecurity state through a Current Profile to report results or to compare with acquisition requirements.
+-  A critical infrastructure owner/operator, having identified an external partner on whom that infrastructure depends, may use a Target Profile to convey required Categories and
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 17
+- April 16, 2018 Cybersecurity Framework Version 1.1 3.4 Buying Decisions Since a Framework Target Profile is a prioritized list of organizational cybersecurity
+- requirements, Target Profiles can be used to inform decisions about buying products and services. This transaction varies from Communicating Cybersecurity Requirements with
+- Stakeholders (addressed in Section 3.3) in that it may not be possible to impose a set of

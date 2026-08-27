@@ -9,8 +9,10 @@ only after every selection is fixed.
 
 import argparse
 import csv
+import hashlib
 import json
 import random
+import re
 import statistics
 import sys
 from collections import defaultdict
@@ -20,11 +22,19 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
 
+from external_real_v8_layout import (
+    candidate_selection_paths,
+    construction_paths,
+    evaluation_paths,
+    hard_gate_paths,
+    is_staged_layout,
+)
 from run_semantic_benchmark_v2 import base_system_prompt, qwen_call
 from semantic_v2_common import OUTPUT_DIR, PROJECT_DIR, check_ollama, stable_seed, wilson_interval, write_csv
 
 
 BENCHMARK_DIR = PROJECT_DIR / "benchmark" / "external-real-v1"
+BENCHMARK_NAME = "external-real-v1"
 INPUT_DIR = BENCHMARK_DIR / "input"
 PRIVATE_DIR = BENCHMARK_DIR / "private"
 DOCUMENT_DIR = BENCHMARK_DIR / "documents"
@@ -85,6 +95,12 @@ FORBIDDEN_POLICY_KEY_PARTS = (
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="external-real-v1 candidate ablation")
+    parser.add_argument("--benchmark-dir", type=Path, default=BENCHMARK_DIR)
+    parser.add_argument("--benchmark-name", default=BENCHMARK_NAME)
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    parser.add_argument("--freeze-manifest", type=Path)
+    parser.add_argument("--preflight-only", action="store_true")
+    parser.add_argument("--resume", action="store_true")
     parser.add_argument("--only", default="", help="comma-separated event IDs")
     parser.add_argument("--methods", default="", help="comma-separated method names")
     parser.add_argument("--prefix", default="external-real-v1-candidate-ablation-r5-seed20260820")
@@ -97,6 +113,150 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--model", default="qwen3.5:9b")
     parser.add_argument("--keep-alive", default="30m")
     return parser.parse_args()
+
+
+def configure_paths(args: argparse.Namespace) -> None:
+    global BENCHMARK_DIR, BENCHMARK_NAME, INPUT_DIR, PRIVATE_DIR
+    global DOCUMENT_DIR, EXCERPT_DIR, RULE_DIR
+    global EVENT_CSV, DOCUMENT_CSV, CANDIDATE_CSV, ORACLE_CSV
+
+    BENCHMARK_DIR = args.benchmark_dir.resolve()
+    BENCHMARK_NAME = str(args.benchmark_name).strip() or BENCHMARK_DIR.name
+    if is_staged_layout(BENCHMARK_DIR):
+        construction = construction_paths(BENCHMARK_DIR)
+        selection = candidate_selection_paths(BENCHMARK_DIR)
+        evaluation = evaluation_paths(BENCHMARK_DIR)
+        gate = hard_gate_paths(BENCHMARK_DIR)
+        INPUT_DIR = construction["event_csv"].parent
+        PRIVATE_DIR = evaluation["oracle_csv"].parent
+        DOCUMENT_DIR = construction["document_dir"]
+        EXCERPT_DIR = construction["excerpt_dir"]
+        RULE_DIR = gate["rules_dir"]
+        EVENT_CSV = construction["event_csv"]
+        DOCUMENT_CSV = construction["document_csv"]
+        CANDIDATE_CSV = selection["candidate_csv"]
+        ORACLE_CSV = evaluation["oracle_csv"]
+    else:
+        INPUT_DIR = BENCHMARK_DIR / "input"
+        PRIVATE_DIR = BENCHMARK_DIR / "private"
+        DOCUMENT_DIR = BENCHMARK_DIR / "documents"
+        EXCERPT_DIR = DOCUMENT_DIR / "excerpts"
+        RULE_DIR = BENCHMARK_DIR / "rules"
+        EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
+        DOCUMENT_CSV = INPUT_DIR / "external-real-document-template.csv"
+        CANDIDATE_CSV = INPUT_DIR / "external-real-candidate-template.csv"
+        ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
+
+
+def remove_candidate_sections(text: str) -> str:
+    """Remove benchmark option lists while preserving public source evidence."""
+    cleaned: list[str] = []
+    skipping = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        lower = stripped.lower()
+        if (
+            "public candidate values" in lower
+            or lower in {"candidate values", "candidate values:"}
+            or lower.startswith("public candidates")
+        ):
+            skipping = True
+            continue
+        if skipping:
+            if stripped.startswith("#"):
+                skipping = False
+            else:
+                continue
+        if re.search(r"\bCAND_\d+\b", line, flags=re.I):
+            continue
+        cleaned.append(line)
+    return "\n".join(cleaned).strip()
+
+
+def evidence_leakage_markers(text: str) -> list[str]:
+    markers: list[str] = []
+    lower = text.lower()
+    checks = {
+        "candidate_id": r"\bcand_\d+\b",
+        "candidate_values_header": r"public\s+candidate\s+values|candidate\s+values\s*:",
+        "oracle_field": r"\boracle_(?:candidate_id|value)\b",
+        "gold_answer": r"\bgold\s+answer\b",
+    }
+    for name, pattern in checks.items():
+        if re.search(pattern, lower, flags=re.I):
+            markers.append(name)
+    return markers
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as file:
+        for chunk in iter(lambda: file.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def verify_freeze_manifest(path: Path | None) -> dict[str, Any]:
+    if path is None:
+        return {"status": "NOT_REQUESTED", "checked_files": 0, "mismatches": []}
+    manifest = json.loads(path.read_text(encoding="utf-8-sig"))
+    mismatches: list[dict[str, str]] = []
+    hashes = manifest.get("file_hashes", {})
+    if not isinstance(hashes, dict) or not hashes:
+        raise RuntimeError(f"freeze manifest has no file_hashes: {path}")
+    for raw_path, expected in hashes.items():
+        file_path = Path(raw_path)
+        if not file_path.is_absolute():
+            file_path = PROJECT_DIR / file_path
+        if not file_path.is_file():
+            mismatches.append({"path": str(file_path), "reason": "missing"})
+            continue
+        actual = sha256(file_path)
+        if actual != str(expected):
+            mismatches.append(
+                {"path": str(file_path), "reason": "sha256_mismatch", "actual": actual}
+            )
+    return {
+        "status": "PASS" if not mismatches else "FAIL",
+        "manifest": str(path.resolve()),
+        "checked_files": len(hashes),
+        "mismatches": mismatches,
+    }
+
+
+def prediction_key(row: dict[str, Any]) -> tuple[str, int, str]:
+    return str(row["event_id"]), int(row["run"]), str(row["method"])
+
+
+def load_prediction_checkpoint(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    if not path.is_file():
+        return rows
+    with path.open("r", encoding="utf-8-sig") as file:
+        for line_number, line in enumerate(file, start=1):
+            if not line.strip():
+                continue
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise RuntimeError(f"invalid checkpoint JSON at {path}:{line_number}") from exc
+            if row.get("benchmark") != BENCHMARK_NAME:
+                raise RuntimeError(f"checkpoint benchmark mismatch at {path}:{line_number}")
+            if any(key.startswith("oracle") for key in row):
+                raise RuntimeError(f"checkpoint contains Oracle field at {path}:{line_number}")
+            rows.append(row)
+    keys = [prediction_key(row) for row in rows]
+    if len(keys) != len(set(keys)):
+        raise RuntimeError(f"duplicate prediction keys in checkpoint: {path}")
+    return rows
+
+
+def append_prediction_checkpoint(path: Path, row: dict[str, Any]) -> None:
+    if any(key.startswith("oracle") for key in row):
+        raise RuntimeError("refusing to checkpoint Oracle-bearing prediction")
+    with path.open("a", encoding="utf-8") as file:
+        file.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+        file.flush()
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -143,6 +303,14 @@ def load_public_events(only: set[str]) -> list[dict[str, Any]]:
         candidates = candidates_by_event.get(event_id, [])
         if not documents or not candidates:
             raise RuntimeError(f"{event_id} missing public documents or candidates")
+        raw_evidence = excerpt_path.read_text(encoding="utf-8-sig")
+        clean_evidence = remove_candidate_sections(raw_evidence)
+        markers_before = evidence_leakage_markers(raw_evidence)
+        markers_after = evidence_leakage_markers(clean_evidence)
+        if markers_after:
+            raise RuntimeError(
+                f"{event_id} candidate-blind evidence still contains forbidden markers: {markers_after}"
+            )
         result.append(
             {
                 **event,
@@ -169,11 +337,85 @@ def load_public_events(only: set[str]) -> list[dict[str, Any]]:
                     }
                     for row in documents
                 ],
-                "public_evidence_note": excerpt_path.read_text(encoding="utf-8-sig"),
+                "public_evidence_note": clean_evidence,
+                "evidence_audit": {
+                    "source_path": str(excerpt_path.resolve()),
+                    "raw_sha256": sha256(excerpt_path),
+                    "raw_chars": len(raw_evidence),
+                    "clean_chars": len(clean_evidence),
+                    "markers_before": markers_before,
+                    "markers_after": markers_after,
+                },
                 "candidates": candidates,
             }
         )
     return result
+
+
+def write_preflight_report(
+    args: argparse.Namespace,
+    events: list[dict[str, Any]],
+    selected_methods: list[str],
+) -> Path:
+    freeze = verify_freeze_manifest(args.freeze_manifest)
+    if freeze["status"] == "FAIL":
+        raise RuntimeError(
+            f"freeze manifest verification failed for {len(freeze['mismatches'])} files"
+        )
+
+    policy_events = 0
+    if any(method in {"OPTION_FORMAL_POLICY", "OPTION_FORMAL_POLICY_HARD_GATE"} for method in selected_methods):
+        for event in events:
+            normalize_policy(event)
+            policy_events += 1
+
+    evidence_rows = [
+        {
+            "event_id": event["event_id"],
+            "source_path": event["evidence_audit"]["source_path"],
+            "raw_sha256": event["evidence_audit"]["raw_sha256"],
+            "raw_chars": event["evidence_audit"]["raw_chars"],
+            "clean_chars": event["evidence_audit"]["clean_chars"],
+            "markers_before": "|".join(event["evidence_audit"]["markers_before"]),
+            "markers_after": "|".join(event["evidence_audit"]["markers_after"]),
+            "candidate_blind_pass": not event["evidence_audit"]["markers_after"],
+        }
+        for event in events
+    ]
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    evidence_csv = args.output_dir / f"{args.prefix}-input-isolation-by-event.csv"
+    report_path = args.output_dir / f"{args.prefix}-preflight.json"
+    write_csv(evidence_csv, evidence_rows)
+    report = {
+        "schema_version": "1.0",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "benchmark": BENCHMARK_NAME,
+        "benchmark_dir": str(BENCHMARK_DIR),
+        "events": len(events),
+        "methods": selected_methods,
+        "freeze_verification": freeze,
+        "candidate_sections_detected_before_cleaning": sum(
+            bool(row["markers_before"]) for row in evidence_rows
+        ),
+        "candidate_sections_detected_after_cleaning": sum(
+            bool(row["markers_after"]) for row in evidence_rows
+        ),
+        "policies_validated": policy_events,
+        "online_phase_private_oracle_access": False,
+        "oracle_load_phase": "after all predictions are fixed",
+        "model_input_boundaries": {
+            "DIRECT_FREE": ["public event metadata", "public document metadata", "clean candidate-blind evidence"],
+            "OPTION_VALUE_ONLY": ["DIRECT_FREE inputs", "randomized option IDs and display values"],
+            "OPTION_FORMAL_OPERATION": ["DIRECT_FREE inputs", "randomized option IDs and neutral operations"],
+            "OPTION_FORMAL_POLICY": ["OPTION_FORMAL_OPERATION inputs", "manual facts and prioritized rules"],
+            "OPTION_FORMAL_POLICY_HARD_GATE": ["manual facts and prioritized rules", "candidate values for symbolic filtering"],
+        },
+        "forbidden_online_path": str(PRIVATE_DIR),
+        "evidence_audit_csv": str(evidence_csv),
+        "status": "PASS",
+    }
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    return report_path
 
 
 def blinded_event(event: dict[str, Any], run_seed: int) -> dict[str, Any]:
@@ -202,7 +444,7 @@ def by_value(event: dict[str, Any], value: object) -> dict[str, Any] | None:
 
 def common_payload(event: dict[str, Any]) -> dict[str, Any]:
     return {
-        "benchmark": "external-real-v1",
+        "benchmark": BENCHMARK_NAME,
         "event_id": event["event_id"],
         "semantic_type": event["semantic_type"],
         "domain": event["domain"],
@@ -585,6 +827,7 @@ def event_level_method_summary(by_event: list[dict[str, Any]]) -> list[dict[str,
 
 def main() -> int:
     args = parse_args()
+    configure_paths(args)
     if args.runs < 1:
         raise ValueError("--runs must be > 0")
     only = {item.strip().upper() for item in args.only.split(",") if item.strip()}
@@ -597,15 +840,38 @@ def main() -> int:
             raise RuntimeError(f"unknown methods: {unknown}")
         selected_methods = wanted_methods
 
+    preflight_path = write_preflight_report(args, events, selected_methods)
+    print(f"[preflight] PASS: {preflight_path}")
+    if args.preflight_only:
+        print(f"[{BENCHMARK_NAME}] preflight-only; no model call and no private Oracle read")
+        return 0
+
+    checkpoint_path = args.output_dir / f"{args.prefix}-predictions.jsonl"
+    if checkpoint_path.exists() and not args.resume:
+        raise RuntimeError(
+            f"prediction checkpoint already exists; use --resume or a new --prefix: {checkpoint_path}"
+        )
+    checkpoint_rows = load_prediction_checkpoint(checkpoint_path) if args.resume else []
+    selected_event_ids = {str(event["event_id"]) for event in events}
+    details = [
+        row
+        for row in checkpoint_rows
+        if str(row["event_id"]) in selected_event_ids
+        and str(row["method"]) in selected_methods
+        and 1 <= int(row["run"]) <= args.runs
+    ]
+    completed = {prediction_key(row) for row in details}
+    if details:
+        print(f"[resume] loaded {len(details)} Oracle-free predictions from {checkpoint_path}")
+
     if any(method != "OPTION_FORMAL_POLICY_HARD_GATE" for method in selected_methods):
         print(f"[connection] Ollama={args.ollama_url}, model={args.model}")
         check_ollama(args.ollama_url, args.model, args.timeout)
         print("[connection] Ollama and model are available.")
 
     total = len(events) * args.runs * len(selected_methods)
-    print("external-real-v1 candidate ablation")
+    print(f"{BENCHMARK_NAME} candidate ablation")
     print(f"events={len(events)}, runs={args.runs}, attempts={total}")
-    details: list[dict[str, Any]] = []
     counter = 0
     for run in range(1, args.runs + 1):
         run_seed = args.seed + run - 1
@@ -613,6 +879,10 @@ def main() -> int:
             event = blinded_event(source_event, run_seed)
             for method in selected_methods:
                 counter += 1
+                key = (str(event["event_id"]), run, method)
+                if key in completed:
+                    print(f"[{counter}/{total}] {event['event_id']} run={run} {method} [checkpoint]", flush=True)
+                    continue
                 print(f"[{counter}/{total}] {event['event_id']} run={run} {method}", flush=True)
                 selected: dict[str, Any] | None = None
                 status = ""
@@ -639,8 +909,8 @@ def main() -> int:
                 original_id = selected.get("original_candidate_id", "") if selected else ""
                 displayed_id = selected.get("candidate_id", "") if selected else ""
                 display_value = selected.get("display_value", "") if selected else ""
-                details.append(
-                    {
+                prediction = {
+                        "benchmark": BENCHMARK_NAME,
                         "split": source_event["split"],
                         "event_id": event["event_id"],
                         "semantic_type": event["semantic_type"],
@@ -668,8 +938,11 @@ def main() -> int:
                         "survivor_count": extra.get("survivor_count", ""),
                         "decision_path": extra.get("decision_path", ""),
                         "qwen_called": extra.get("qwen_called", method != "OPTION_FORMAL_POLICY_HARD_GATE"),
+                        "evidence_sha256": source_event["evidence_audit"]["raw_sha256"],
                     }
-                )
+                details.append(prediction)
+                append_prediction_checkpoint(checkpoint_path, prediction)
+                completed.add(key)
                 print(
                     f"  status={status} | candidate={original_id or '-'} | "
                     f"value={display_value or '-'} | {extra.get('runtime_ms', 0)}ms",
@@ -691,13 +964,13 @@ def main() -> int:
     summary = summarize(details)
     by_event = event_summary(details)
     event_methods = event_level_method_summary(by_event)
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    detail_csv = OUTPUT_DIR / f"{args.prefix}-details.csv"
-    summary_csv = OUTPUT_DIR / f"{args.prefix}-summary.csv"
-    by_event_csv = OUTPUT_DIR / f"{args.prefix}-by-event.csv"
-    event_method_csv = OUTPUT_DIR / f"{args.prefix}-event-level.csv"
-    json_path = OUTPUT_DIR / f"{args.prefix}.json"
-    log_path = OUTPUT_DIR / f"{args.prefix}.log"
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    detail_csv = args.output_dir / f"{args.prefix}-details.csv"
+    summary_csv = args.output_dir / f"{args.prefix}-summary.csv"
+    by_event_csv = args.output_dir / f"{args.prefix}-by-event.csv"
+    event_method_csv = args.output_dir / f"{args.prefix}-event-level.csv"
+    json_path = args.output_dir / f"{args.prefix}.json"
+    log_path = args.output_dir / f"{args.prefix}.log"
     write_csv(detail_csv, details)
     write_csv(summary_csv, summary)
     write_csv(by_event_csv, by_event)
@@ -706,7 +979,10 @@ def main() -> int:
     payload = {
         "schema_version": "1.0",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "benchmark": "external-real-v1",
+        "benchmark": BENCHMARK_NAME,
+        "benchmark_dir": str(BENCHMARK_DIR),
+        "input_isolation_preflight": str(preflight_path),
+        "oracle_free_prediction_checkpoint": str(checkpoint_path),
         "oracle_loaded_after_predictions": True,
         "method_specs": METHOD_SPECS,
         "methods": selected_methods,
@@ -718,7 +994,7 @@ def main() -> int:
     }
     json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    lines = ["external-real-v1 candidate ablation", "Oracle loaded after predictions=True", ""]
+    lines = [f"{BENCHMARK_NAME} candidate ablation", "Oracle loaded after predictions=True", ""]
     print("\ncall-level summary")
     for row in summary:
         if row["semantic_type"] != "ALL":
@@ -758,5 +1034,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except Exception as exc:
-        print(f"\n[external-real-v1 candidate ablation stopped] {type(exc).__name__}: {exc}", file=sys.stderr)
+        print(f"\n[candidate ablation stopped] {type(exc).__name__}: {exc}", file=sys.stderr)
         raise SystemExit(2)

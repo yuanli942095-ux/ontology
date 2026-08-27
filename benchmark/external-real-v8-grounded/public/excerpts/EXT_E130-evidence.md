@@ -1,0 +1,122 @@
+# EXT_E130 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- which the Profile will be based to define its scope. An organization can have as many Organizational Profiles as desired, each with a different scope. For example, a Profile
+- operational availability of systems and services affected by cybersecurity incidents o RC.RP-01: The recovery portion of the incident response plan is executed once initiated
+- from the incident response process 22 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 o RC.RP-02: Recovery actions are selected, scoped, prioritized, and performed
+- o RC.RP-03: The integrity of backups and other restoration assets is verified before using
+- Unless otherwise noted, documents cited, referenced, or excerpted in this publication are not
+- wholly incorporated into this publication. Before version 2.0, the Cybersecurity Framework was called the “Framework for Improving Critical Infrastructure Cybersecurity.” This title is not used for CSF 2.0.
+- i NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Acknowledgments The CSF is the result of a multi-year collaborative effort across industry, academia, and
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- An organization can use the CSF Core, Profiles, and Tiers with the supplementary resources to
+- Function provides outcomes to inform what an organization may do to achieve and prioritize the outcomes of the other five Functions in the context of its mission and
+- stakeholder expectations. Governance activities are critical for incorporating cybersecurity into an organization’s broader enterprise risk management (ERM)
+- strategy. GOVERN addresses an understanding of organizational context; the establishment of cybersecurity strategy and cybersecurity supply chain risk
+- Regardless of the CSF’s utilization, an organization may benefit from using the CSF as guidance
+- to help it understand, assess, prioritize, and communicate cybersecurity risks and the actions
+- that will manage those risks. The selected outcomes can be used to focus on and implement strategic decisions to improve cybersecurity postures and maintain continuity of mission
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+- Framework (RMF). For an organization using the NIST RMF and its suite of publications, the CSF can be used to complement the RMF’s approach to selecting and prioritizing
+- controls from SP 800-53, Security and Privacy Controls for Information Systems and Organizations. • Privacy risks: While cybersecurity and privacy are independent disciplines, their
+- objectives overlap in certain circumstances, as illustrated in Fig. 6. 12 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024
+- influenced by technologies, laws, policies, procedures, and practices. Given the complex and interconnected relationships in this ecosystem, supply chain risk
+- management (SCRM) is critical for organizations. Cybersecurity SCRM (C-SCRM) is a systematic process for managing exposure to cybersecurity risk throughout supply
+- chains and developing appropriate response strategies, policies, processes, and procedures. The Subcategories within the CSF C-SCRM Category [GV.SC] provide a
+- them for restoration o RC.RP-04: Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms
+- o RC.RP-05: The integrity of restored assets is verified, systems and services are restored,
+- The NIST Cybersecurity Framework (CSF) 2.0 National Institute of Standards and Technology This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.29
+- February 26, 2024 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Abstract The NIST Cybersecurity Framework (CSF) 2.0 provides guidance to industry, government
+- agencies, and other organizations to manage cybersecurity risks. It offers a taxonomy of high
+- sector, or maturity — to better understand, assess, prioritize, and communicate its
+- cybersecurity efforts. The CSF does not prescribe how outcomes should be achieved. Rather, it
+- links to online resources that provide additional guidance on practices and controls that could
+- be used to achieve those outcomes. This document describes CSF 2.0, its components, and some of the many ways that it can be used. Keywords
+- cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk governance; cybersecurity risk
+- management; enterprise risk management; Profiles; Tiers. Audience Individuals responsible for developing and leading cybersecurity programs are the primary
+- managers, lawyers, human resources specialists, and cybersecurity and risk management
+- auditors — to guide their cybersecurity-related decisions. Additionally, the CSF can be useful to
+- those making and influencing policy (e.g., associations, professional organizations, regulators)
+
+Prior source excerpt windows:
+
+- Framework for Improving Critical Infrastructure Cybersecurity Version 1.1 National Institute of Standards and Technology April 16, 2018 April 16, 2018 Cybersecurity Framework Version 1.1
+- Version 1.1 of this Cybersecurity Framework refines, clarifies, and enhances Version 1.0, which
+- convening private- and public-sector organizations and individuals in 2013. Published in 2014
+- and revised during 2017 and 2018, this Framework for Improving Critical Infrastructure Cybersecurity has relied upon eight public workshops, multiple Requests for Comment or
+- Information, and thousands of direct interactions with stakeholders from across all sectors of the
+- on:  Feedback and frequently asked questions to NIST since release of Framework Version 1.0;  105 responses to the December 2015 request for information (RFI), Views on the
+- Framework for Improving Critical Infrastructure Cybersecurity;  Over 85 comments on a December 5, 2017 proposed second draft of Version 1.1;
+-  Over 120 comments on a January 10, 2017, proposed first draft Version 1.1; and  Input from over 1,200 attendees at the 2016 and 2017 Framework workshops.
+- In addition, NIST previously released Version 1.0 of the Cybersecurity Framework with a
+- companion document, NIST Roadmap for Improving Critical Infrastructure Cybersecurity. This
+- Roadmap highlighted key “areas of improvement” for further development, alignment, and collaboration. Through private and public-sector efforts, some areas of improvement have
+- April 16, 2018 Cybersecurity Framework Version 1.1 Executive Summary
+- The United States depends on the reliable functioning of critical infrastructure. Cybersecurity
+- threats exploit the increased complexity and connectivity of critical infrastructure systems,
+- role of the National Institute of Standards and Technology (NIST) to include identifying and
+- developing cybersecurity risk frameworks for voluntary use by critical infrastructure owners and
+- operators. Through CEA, NIST must identify “a prioritized, flexible, repeatable, performance
+- Expanded and more effective use and sharing of best practices of this voluntary Framework are
+- the next steps to improve the cybersecurity of our Nation’s critical infrastructure – providing
+- evolving guidance for individual organizations while increasing the cybersecurity posture of the
+- This formalized NIST’s previous work developing Framework Version 1.0 under Executive
+- Order 13636, “Improving Critical Infrastructure Cybersecurity,” issued in February 20133, and
+- provided guidance for future Framework evolution.
+- support business/mission decisions, the potential impacts of a cybersecurity incident on an
+- Executive Order no. 13636, Improving Critical Infrastructure Cybersecurity, DCPD-201300091, February 12,
+- 2013. https://www.gpo.gov/fdsys/pkg/CFR-2014-title3-vol1/pdf/CFR-2014-title3-vol1-eo13636.pdf
+- public trust, the Framework includes a methodology to protect individual privacy and civil
+- liberties when critical infrastructure organizations conduct cybersecurity activities. Many
+- organizations already have processes for addressing privacy and civil liberties. The methodology
+- the Framework to strengthen their own cybersecurity efforts, and the Framework can contribute
+- to developing a common language for international cooperation on critical infrastructure cybersecurity. 1.1 Overview of the Framework The Framework is a risk-based approach to managing cybersecurity risk, and is composed of
+- three parts: the Framework Core, the Framework Implementation Tiers, and the Framework Profiles. Each Framework component reinforces the connection between business/mission
+- needed (e.g., staffing, funding) to achieve cybersecurity goals in a cost-effective, prioritized
+- manner. Furthermore, the Framework is a risk-based approach where the applicability and fulfillment of a given Subcategory is subject to the Profile’s scope.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 11
+- high-level organizational priorities. With this information, the organization makes strategic
+- decisions regarding cybersecurity implementations and determines the scope of systems and
+- assets that support the selected business line or process. The Framework can be adapted to
+- different business needs and associated risk tolerance. Risk tolerances may be reflected in a
+- target Implementation Tier. Step 2: Orient. Once the scope of the cybersecurity program has been determined for the
+- business line or process, the organization identifies related systems and assets, regulatory
+- understanding of its organizational objectives, the relationship between those objectives and
+- supportive cybersecurity outcomes, and how those discrete cybersecurity outcomes are implemented and managed. While measurements of all those items is beyond the scope of the
+- Framework, the cybersecurity outcomes of the Framework Core support self-assessment of investment effectiveness and cybersecurity activities in the following ways:
+- including information security measures and controls that may be voluntarily adopted by owners
+- and operators of critical infrastructure to help them identify, assess, and manage cyber risks.”
+- constituents as an initial baseline Profile to build their tailored Target Profiles.  An organization can better manage cybersecurity risk among stakeholders by assessing
+- their position in the critical infrastructure and the broader digital economy using Implementation Tiers.
+- Communication is especially important among stakeholders up and down supply chains. Supply
+- The United States depends on the reliable functioning of its critical infrastructure. Cybersecurity
+- To strengthen the resilience of this infrastructure, the Cybersecurity Enhancement Act of 20142
+- (CEA) updated the role of the National Institute of Standards and Technology (NIST) to
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 46
+- April 16, 2018 Cybersecurity Framework Version 1.1 Supplier Product and service providers used for an organization’s internal purposes (e.g., IT infrastructure) or integrated into the products of
+- services provided to that organization’s Buyers. Taxonomy A scheme of classification.

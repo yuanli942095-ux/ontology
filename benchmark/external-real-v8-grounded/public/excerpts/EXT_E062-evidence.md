@@ -1,0 +1,109 @@
+# EXT_E062 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- entries for non-hazardous plastic waste in Annex II (entry Y48) and Annex IX (entry B3011) to the Basel
+- Convention. Those changes will become effective on 1 January 2021.
+- (2) It is appropriate for the Union, which is a Party to the Basel Convention, to modify the relevant Annexes to
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Annexes to Regulation (EC) No 1013/2006 to take account of these changes.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+- Regulation (EC) No 1013/2006 to take account of changes relating to entries on plastic waste in the Annexes to the
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- (4) This Regulation takes account of the fact that no agreement has been reached within the OECD to incorporate the
+- from third countries, Annexes III, IV and V to Regulation (EC) No 1013/2006 should be amended to take account of
+- the changes to Annexes II, VIII and IX to the Basel Convention and of the changes to Appendix 4 to the OECD
+- Decision. As a result, from 1 January 2021, the export from the Union and import into the Union of plastic waste
+- Secretariat of the Basel Convention under Article 11 of that Convention, there is no requirement for the Union to
+- implement the changes to the Annexes to the Basel Convention relating to non-hazardous plastic waste (entries
+- B3011 and Y48) in Union law, for shipments between Member States. However, to ensure legal clarity, new entries
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- (1) The Conference of the Parties to the Basel Convention decided at its fourteenth meeting held in May 2019, by
+- Decision BC-14/12, to include a new entry for hazardous plastics waste (entry A3210) in Annex VIII and two new
+- the procedure of prior written notification and consent. In accordance with points (a) and (b) of Article 36(1) and
+- Annex V of Regulation (EC) No 1013/2006, export of plastic waste under entries A3210 and Y48 will be
+- prohibited to third countries to which the OECD Decision does not apply.
+- waste streams were adopted at the last meetings of the Conference of the Parties to the Basel Convention. Those
+- technical guidelines and guidance documents provide useful guidance and should therefore be added in Annex VIII
+- to Regulation (EC) No 1013/2006. (1) OJ L 190, 12.7.2006, p. 1.
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (1) in Annex IC, the second paragraph of point 25(e) is replaced by the following:
+- ‘Such codes may be included in Annexes IIIA, IIIB, IV (EU48) or IVA of this Regulation. In that case, the Annex number
+- should be stated in front of the codes. As regards Annex IIIA, the relevant code(s) as indicated in Annex IIIA should be
+- used, as appropriate in sequence. Certain Basel entries such as B1100 and B3020 are restricted to particular waste
+
+Prior source excerpt windows:
+
+- quantities). Some types of ammonium nitrate may give rise to an explosion hazard under extreme conditions
+- and the ‘Resistance to detonation test’ (BC Code, Annex 3, Test 5) can be used to assess this hazard.
+- Appropriate information shall be made in the SDS. Note 2
+- However, where that information permits the application neither included in Part 3 of Annex VI for which an M-factor is given in
+- of the bridging principles nor the principles for using expert that Part. judgement and weight of evidence determination as described in Part 1 of Annex I, manufacturers, importers and downstream
+- users shall evaluate the information by applying the other However, where an M-factor is not given in Part 3 of Annex VI method or methods described in each section of Parts 3 and 4 of
+- ment point 1.1 (a) and (b); aquatic environment, if an M-factor has been set in an agreed entry in the classification and (i) Annex V, section A points 3 and 4; labelling inventory referred to in Article 42 of
+- Regulation (EC) No 1272/2008, the cut-off value in Table 1.1 of Annex I to that Regulation (j) Annex V, section B point 9; adjusted using the calculation set out in
+- section 4.1 of Annex I to that Regulation;’; (k) Annex VI, Part A, the third column of the table under point 2; 2. Article 31 shall be amended as follows:
+- (m) Annex VIII, Appendix 1, second column of the table; ‘8. A safety data sheet shall be provided free of
+- charge on paper or electronically no later than the date on which the substance or mixture is first (n) Annex VIII, Appendix 2, second column of the table; supplied.’;
+- 3. in Annex VI, Part B, point 1, paragraph 3 first indent and (b) the following paragraph shall be added:
+- tion (EC) No 1272/2008, the cut-off value in concentration limits specified in Directive 1999/45/
+- Table 1.1 of Annex I to that Regulation EC or in Part 3 of Annex VI to Regula adjusted using the calculation set out in tion (EC) No 1272/2008 which result in the
+- section 4.1 of Annex I to that Regulation; classification of the mixture as dangerous.’; (*) OJ L 353, 31.12.2008, p. 1’; 4. Article 59(2) and 3 shall be amended as follows:
+- ‘— the relevant generic concentration limit importers and downstream users may amend the classification of
+- specified in Part 3 of Annex I of Regula- the substance or mixture using the conversion table in Annex VII
+- tion (EC) No 1272/2008.’; to this Regulation. 31.12.2008 EN Official Journal of the European Union L 353/35
+- Annex VI, or in the classification and labelling inventory referred to in Article 42, the generic cut
+- off value in Table 1.1 adjusted using the calculation set out in section 4.1 of this Annex; or
+- (ii) for substances where no M-factor is set for the relevant hazard category either in Part 3 of
+- crude coal tar acids. Composed primarily of hydrocarbons and aromatic nitrogen bases.] 31.12.2008
+- 648-111-00-9 Phenols, ammonia liquor ext.; 284-881-9 84988-93-2 Carc. Cat. 2; T HJM Alkaline Extract; R45 R: 45 [The combination of phenols extracted, using isobutyl acetate, S: 53-45
+- from the ammonia liquor condensed from the gas evolved in low-temperature (less than 700 oC (1292 oF)) destructive distillation of coal. It consists predominantly of a mixture of
+- provisions of the Member States regarding the protection of Regulation, the results of tests that are carried out to
+- animals used for experimental and other scientific comply with other regulatory requirements, including those
+- purposes (1) is of high priority. Accordingly, where the laid down by third countries, even if the tests were not
+- (39) Substances and mixtures classified as hazardous should be numbers are used in reference works, databases, and
+- labelled and packaged according to their classification, so as regulatory compliance documents throughout the world to
+- to ensure appropriate protection and to provide essential identify substances without the ambiguity of chemical
+- should only be applied after the reclassification of all elements of this Regulation, they must be adopted in
+- substances. Operators should be allowed to apply the accordance with the regulatory procedure with scrutiny
+- classification criteria contained in this Regulation earlier on provided for in Article 5a of Decision 1999/468/EC.
+- (78) When, on imperative grounds of urgency, the normal time 2. This Regulation shall not apply to the following:
+- limits for the regulatory procedure with scrutiny cannot be complied with, the Commission should be able to apply the
+- urgency procedure provided for in Article 5a(6) of (a) radioactive substances and mixtures within the scope of
+- Regulation (EC) No 1907/2006 and shall be accompanied by a this Regulation. fee. The level of the fees shall be determined by the Commission in Article 25
+- accordance with the regulatory procedure referred to in Article 54(2) of this Regulation. Supplemental information on the label
+- A reduced fee shall be set for SMEs. 1. Statements shall be included in the section for supplemental
+- demonstrating the need for such action at Community level. That measure, designed to amend non-essential elements of this
+- Regulation, shall be adopted in accordance with the regulatory procedure with scrutiny referred to in Article 54(3). On Article 37 imperative grounds of urgency, the Commission may have
+- recourse to the urgency procedure referred to in Article 54(4). Procedure for harmonisation of classification and labelling of substances 6. Manufacturers, importers and downstream users who have
+- labelling of a substance in accordance with Article 36(3), it shall mined in accordance with Article 25(1);
+- be accompanied by the fee determined by the Commission in accordance with the regulatory procedure referred to in (e) any other parameter enabling an assessment to be made of
+- Article 54(2). the health or environmental hazard of mixtures containing the hazardous substance in question or of substances containing such hazardous substances as identified impu
+- and useful support to this end. Those measures, designed to amend non-essential elements of
+- this Regulation, by supplementing it, shall be adopted in accordance with the regulatory procedure with scrutiny referred Article 44 to in Article 54(3).
+- Helpdesk Article 46 Member States shall establish national helpdesks to provide Enforcement and reporting advice to manufacturers, importers, distributors, downstream
+- may require the supplier to submit to it any information referred Member State, the Commission shall in accordance with the
+- to in the first subparagraph of paragraph 1. regulatory procedure referred to in Article 54(2) either authorise
+- the provisional measure for a time period defined in the decision
+- grammes and of the data from accident databases. Those measures, designed to amend non-essential elements of this
+- Regulation, shall be adopted in accordance with the regulatory 3. Article 5 shall be amended as follows:
+- procedure with scrutiny referred to in Article 54(3). On
+- have an opportunity to comment. The Commission should in this Regulation. Member States should put in place
+- submit a draft decision on the final classification and effective monitoring and control measures in order to
+- labelling elements. ensure compliance with this Regulation. (53) In order to take full account of the work and experience
+- States, it is necessary for Member States to set up an Regulation does not go beyond what is necessary in order
+- appropriate framework with a view to imposing effective, to achieve those objectives. proportionate and dissuasive penalties for non-compliance
+- with this Regulation, as non-compliance can result in damage to human health and the environment. (73) This Regulation observes the fundamental rights and

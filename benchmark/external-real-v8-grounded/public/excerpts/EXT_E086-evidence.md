@@ -1,0 +1,121 @@
+# EXT_E086 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- (1) The Conference of the Parties to the Basel Convention decided at its fourteenth meeting held in May 2019, by
+- Decision BC-14/12, to include a new entry for hazardous plastics waste (entry A3210) in Annex VIII and two new
+- entries for non-hazardous plastic waste in Annex II (entry Y48) and Annex IX (entry B3011) to the Basel
+- Convention. Those changes will become effective on 1 January 2021.
+- ‘(g) For waste shipped within the Union, Basel entry B3011 does not apply and the following entry applies instead:
+- EU3011 Plastic waste (note the related entry AC300 in part II of Annex IV, and the related entry EU48 in part
+- Plastic waste listed below, provided it is almost free from contamination and other types of waste *:
+- (f) For waste shipped within the Union, Basel entry Y48 does not apply and the following entry applies
+- an extent that it exhibits an Annex III characteristic (note the related entry EU3011 in part I of Annex III,
+- and the related entry EU48 in part I)’; (5) Annex V is amended as follows: (a) Part 1 is amended as follows: (i) in List A, section A3, the following entry is added:
+- ‘A3210 Plastic waste, including mixtures of such waste, containing or contaminated with Annex I
+- constituents, to an extent that it exhibits an Annex III characteristic (note the related entry B3011, in
+- list B of this Part, and entry Y48, in list A of Part 3)’; (ii) in List B, section B3 is amended as follows: — entry B3010 is deleted; — the following entry is inserted before entry B3020:
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- Y48 Plastic waste, including mixtures of such waste, with the exception of the following: — Plastic waste that is hazardous waste (see entry A3210 in part 1 of list A in Annex V)
+- — Plastic waste listed below, provided it is destined for recycling ** in an environmentally sound manner and
+- environmentally sound manner and almost free from contamination and other types of wastes.
+- _____________ Unless appropriately classified under a single entry in Annex III.
+- Recycling/reclamation of organic substances that are not used as solvents (R3 in Annex IV, sect. B) or, if
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+
+Prior source excerpt windows:
+
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- the classification and labelling inventory is a harmonised (hereinafter referred to as ‘safety data sheet’), without prejudice to
+- classification included in Part 3 of Annex VI. Article 17(2) of this Regulation. L 353/16 EN Official Journal of the European Union 31.12.2008
+- 2. The product identifier for a substance shall consist of at least 2. Subject to Article 33, hazard pictograms shall fulfil the
+- differentiations covered by that entry. (a) data generated in accordance with any of the methods However, where the substance also falls within one or more referred to in Article 8(3);
+- hazard classes or differentiations not covered by an entry in Part 3 of Annex VI, classification under Title II shall be carried
+- out for those hazard classes or differentiations. (b) epidemiological data and experience on the effects on
+- Annex VI, that substance shall be classified in accordance with the purposes of determining whether the substance entails a
+- that entry, and a classification of that substance in accordance physical, health or environmental hazard as set out in Annex I,
+- with Title II shall not be performed for the hazard classes or and, in particular, the following:
+- is set out in the tables indicating the label elements required for each hazard class in Annex I. (b) if the substance is not included in Part 3 of Annex VI, but
+- appears in the classification and labelling inventory, a name Article 20 and an identification number as given therein; Signal words (c) if the substance is not included in Part 3 of Annex VI nor in
+- the classification and labelling inventory, the number 1. The label shall include the relevant signal word in
+- substances, the procedures set out in Article 37, paragraphs 1, 4, concerning the inclusion of that substance together with the
+- 5 and 6 shall apply. relevant classification and labelling elements in Table 3.1 of Part 3 of Annex VI and, where appropriate, the specific concentration limits or M-factors.
+- 3. Where a substance fulfils the criteria for other hazard classes or differentiations than those referred to in paragraph 1 and does A corresponding entry shall be included in Table 3.2 of Part 3 of
+- not fall under paragraph 2, a harmonised classification and Annex VI subject to the same conditions, until 31 May 2015. labelling in accordance with Article 37 may also be added to
+- Annex VI on a case-by-case basis, if justification is provided
+- M-factors, or a proposal for a revision thereof. market. The proposal shall follow the format set out in Part 2 of Article 38 Annex VI and contain the relevant information provided for in
+- Part 1 of Annex VI. Content of opinions and decisions for harmonised classification and labelling in Part 3 of Annex VI; accessibility of information
+- 2. A manufacturer, importer or downstream user of a
+- The classification and labelling inventory (a) the identity of the notifier(s) responsible for placing the substance or substances on the market as specified in
+- section 1 of Annex VI to Regulation (EC) No 1907/2006; 1. The Agency shall establish and maintain a classification and
+- labelling inventory in the form of a database. (b) the identity of the substance or substances as specified in
+- — point 8.1 (a) and (b), Directive 1999/45/EC shall be amended as follows: — point 8.2 (a) and (b), 1. in Article 3(2), first indent, the words ‘Annex I to Directive
+- 67/548/EEC’ shall be replaced by ‘Part 3 of Annex VI to — point 9.1 (a) and (b), Regulation (EC) No 1272/2008 of the European Parliament and of the Council of 16 December 2008 on classification,
+- — point 9.2 (a) and (b), labelling and packaging of substances and mixtures (*). — point 9.3 (a) and (b), (*) OJ L 353, 31.12.2008, p. 1’; — point 9.4 (a) and (b);
+- (h) Annex III, Part A, section (b) Non-aquatic environ- (ea) for substances classified as hazardous to the
+- ment point 1.1 (a) and (b); aquatic environment, if an M-factor has been set in an agreed entry in the classification and (i) Annex V, section A points 3 and 4; labelling inventory referred to in Article 42 of
+- Regulation (EC) No 1272/2008, the cut-off value in Table 1.1 of Annex I to that Regulation (j) Annex V, section B point 9; adjusted using the calculation set out in
+- ‘Annex I to Directive 67/548/EEC (19th adaptation)’ shall period from its entry into force until 1 December
+- be replaced by ‘Part 3 of Annex VI to Regulation (EC) 2010, that classification may be added in the safety
+- No 1272/2008’. data sheet together with the classification in accor dance with Directive 67/548/EEC. Article 57 From 1 December 2010 until 1 June 2015, the safety
+- ‘(b) the specific concentration limits that have been labelled in accordance with Regulation (EC) No 1272/
+- set in Part 3 of Annex VI to Regula- 2008 that classification shall be provided in the safety
+- tion (EC) No 1272/2008 of the European data sheet, together with the classification in accor
+- (i) for substances where a specific concentration limit is set for the relevant hazard class or
+- differentiation either in Part 3 of Annex VI or in the classification and labelling inventory referred
+- to in Article 42, and where the hazard class or differentiation is mentioned in Table 1.1, the lower
+- to in Article 42, and where the hazard class or differentiation is not mentioned in Table 1.1, the
+- specific concentration limit set either in Part 3 of Annex VI or in the classification and labelling
+- (iii) for substances where no specific concentration limit is set for the relevant hazard class or
+- (i) for substances where an M-factor has been set for the relevant hazard category either in Part 3 of
+- Annex VI, or in the classification and labelling inventory referred to in Article 42, the generic cut
+- off value in Table 1.1 adjusted using the calculation set out in section 4.1 of this Annex; or
+- Section 4.1: Hazardous to the aquatic environment — Chronic hazard categories 3, 4 31.12.2008 EN Official Journal of the European Union L 353/329
+- ANNEX VI Harmonised classification and labelling for certain hazardous substances
+- Part 1 of this Annex provides an introduction to the list of harmonised classification and labelling, including information
+- Community level. In Table 3.1 the classification and labelling are based on the criteria in Annex I to this Regulation. In
+- Table 3.2 classification and labelling are based on the criteria in Annex VI to Directive 67/548/EEC.
+- 1. PART 1: INTRODUCTION TO THE LIST OF HARMONISED CLASSIFICATIONS AND LABELLING 1.1. Information listed for each entry 1.1.1. Numbering of entries and identification of a substance
+- 1.1.2. Information related to the classification and labelling of each entry in Table 3.1 1.1.2.1. Classification codes 1.1.2.1.1. H a z a r d c l a s s a n d c a t e g o r y c o d e s
+- The classification for each entry is based on the criteria set out in Annex I, in accordance with Article 13(a) and
+- is presented in the form of a code representing the hazard class and the category or categories/divisions/types
+- Classification under Directive 67/ substance when rele- Hazard Note 548/EEC Hazard Class-and-Category vant statement R53 Aquatic Chronic 4 H413
+- For these classes it is possible to use the recommended minimum classification as defined in section 1.2.1.1 in Annex VI. Data or other
+- information may be available to indicate that re-classification in a more severe category is appropriate.

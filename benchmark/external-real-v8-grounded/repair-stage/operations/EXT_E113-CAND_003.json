@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Lead_and_Copper_Rule_Improvements____EPA_tap_sampling_scope",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#sampling_scope",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "epa_sampling_scope=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "scope=customer_tap_monitoring",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

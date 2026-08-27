@@ -1,0 +1,58 @@
+Source title: COM(2021) 206 AI Act proposal official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- TITLE VIII POST-MARKET MONITORING, INFORMATION SHARING, MARKET SURVEILLANCE CHAPTER 1 POST-MARKET MONITORING Article 61 Post-market monitoring by providers and post-market monitoring plan for high-risk AI
+- systems 1. Providers shall establish and document a post-market monitoring system in a manner that is proportionate to the nature of the artificial intelligence technologies and the
+- risks of the high-risk AI system. EN 74 EN 2. The post-market monitoring system shall actively and systematically collect, document and analyse relevant data provided by users or collected through other
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- European Council, which have repeatedly expressed calls for legislative action to ensure a
+- well-functioning internal market for artificial intelligence systems (‘AI systems’) where both
+- benefits and risks of AI are adequately addressed at Union level. It supports the objective of
+- respect of proportionality, subsidiarity and better law making principles. Against this political context, the Commission puts forward the proposed regulatory
+- framework on Artificial Intelligence with the following specific objectives:  ensure that AI systems placed on the Union market and used are safe and respect
+- existing law on fundamental rights and Union values;  ensure legal certainty to facilitate investment and innovation in AI;  enhance governance and effective enforcement of existing law on fundamental
+- Title VIII sets out the monitoring and reporting obligations for providers of AI systems with
+- regard to post-market monitoring and reporting and investigating on AI-related incidents and
+- malfunctioning. Market surveillance authorities would also control the market and investigate
+- Chapter 2 of this Regulation and other applicable Union legislation harmonising the conditions for the marketing of products (‘Union harmonisation legislation’)
+- providing for its affixing; (25) ‘post-market monitoring’ means all activities carried out by providers of AI systems to proactively collect and review experience gained from the use of AI systems they
+- place on the market or put into service for the purpose of identifying any need to immediately apply any necessary corrective or preventive actions;
+- high-risk AI system with respect to the occurrence of situations that may result in the AI system presenting a risk within the meaning of Article 65(1) or lead to a
+- substantial modification, and facilitate the post-market monitoring referred to in Article 61. 4. For high-risk AI systems referred to in paragraph 1, point (a) of Annex III, the
+- logging capabilities shall provide, at a minimum: (a) recording of the period of each use of the system (start date and time and end date and time of each use);
+- aggregation, data retention and any other operation regarding the data that is performed before and for the purposes of the placing on the market or putting
+- into service of high-risk AI systems; (g) the risk management system referred to in Article 9; (h) the setting-up, implementation and maintenance of a post-market monitoring
+- system, in accordance with Article 61; (i) procedures related to the reporting of serious incidents and of malfunctioning in accordance with Article 62;
+- 5. The Commission shall be the controller of the EU database. It shall also ensure to providers adequate technical and administrative support.
+- sources on the performance of high-risk AI systems throughout their lifetime, and allow the provider to evaluate the continuous compliance of AI systems with the
+- requirements set out in Title III, Chapter 2. 3. The post-market monitoring system shall be based on a post-market monitoring plan. The post-market monitoring plan shall be part of the technical documentation
+- referred to in Annex IV. The Commission shall adopt an implementing act laying down detailed provisions establishing a template for the post-market monitoring plan
+- and the list of elements to be included in the plan. 4. For high-risk AI systems covered by the legal acts referred to in Annex II, where a post-market monitoring system and plan is already established under that legislation,
+- the elements described in paragraphs 1, 2 and 3 shall be integrated into that system and plan as appropriate. The first subparagraph shall also apply to high-risk AI systems referred to in point
+- 3. The provider examines the information contained in the technical documentation in order to assess the compliance of the AI system with the relevant essential
+- requirements set out in Title III, Chapter 2. 4. The provider also verifies that the design and development process of the AI system and its post-market monitoring as referred to in Article 61 is consistent with the
+- technical documentation. EN 9 EN ANNEX VII CONFORMITY BASED ON ASSESSMENT OF QUALITY MANAGEMENT SYSTEM AND ASSESSMENT OF TECHNICAL DOCUMENTATION
+- adopted to meet the requirements set out in Title III, Chapter 2, including a list of other relevant standards and technical specifications applied;
+- 7. A copy of the EU declaration of conformity; 8. A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 61, including the post-market
+- monitoring plan referred to in Article 61(3). EN 7 EN ANNEX V EU DECLARATION OF CONFORMITY
+- and rights that are protected by Union law. Such harm might be material or immaterial. (5) A Union legal framework laying down harmonised rules on artificial intelligence is
+- therefore needed to foster the development, use and uptake of artificial intelligence in the internal market that at the same time meets a high level of protection of public
+- interests, such as health and safety and the protection of fundamental rights, as recognised and protected by Union law. To achieve that objective, rules regulating the
+- coordinating the activities entrusted to that Member State, for acting as the single contact point for the Commission, and for representing the Member State at the
+- European Artificial Intelligence Board; EN 42 EN (43) ‘national competent authority’ means the national supervisory authority, the notifying authority and the market surveillance authority;
+- (44) ‘serious incident’ means any incident that directly or indirectly leads, might have led
+-  an action redirected towards a new action 1.4. Objective(s) 1.4.1. General objective(s) The general objective of the intervention is to ensure the proper functioning of the
+- single market by creating the conditions for the development and use of trustworthy artificial intelligence in the Union. 1.4.2. Specific objective(s)
+- Specific objective No 1 To set requirements specific to AI systems and obligations on all value chain participants in order to ensure that AI systems placed on the market and used are safe
+- European Parliament, the Council and the European Economic and Social Committee. 2.2. Management and control system(s) 2.2.1. Justification of the management mode(s), the funding implementation mechanism(s),
+- the payment modalities and the control strategy proposed The Regulation establishes a new policy with regard to harmonised rules for the provision of artificial intelligence systems in the internal market while ensuring the
+- respect of safety and fundamental rights. These new rules require a consistency mechanism for the cross-border application of the obligations under this Regulation
+- EUROPEAN COMMISSION Brussels, 21.4.2021 COM(2021) 206 final 2021/0106 (COD) Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS {SEC(2021) 167 final} - {SWD(2021) 84 final} - {SWD(2021) 85 final}
+- EN EN EXPLANATORY MEMORANDUM 1. CONTEXT OF THE PROPOSAL 1.1. Reasons for and objectives of the proposal This explanatory memorandum accompanies the proposal for a Regulation laying down
+- harmonised rules on artificial intelligence (Artificial Intelligence Act). Artificial Intelligence
+- (AI) is a fast evolving family of technologies that can bring a wide array of economic and

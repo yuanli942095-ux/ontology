@@ -1,0 +1,65 @@
+Source title: NIST Cybersecurity Framework 1.1
+Source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt window:
+
+- Profiles.  Section 3 presents examples of how the Framework can be used.  Section 4 describes how to use the Framework for self-assessing and demonstrating
+- cybersecurity through measurements.  Appendix A presents the Framework Core in a tabular format: the Functions, Categories, Subcategories, and Informative References.
+-  Appendix B contains a glossary of selected terms.  Appendix C lists acronyms used in this document. 6
+- actions to perform. It presents key cybersecurity outcomes identified by stakeholders as helpful
+- in managing cybersecurity risk. The Core comprises four elements: Functions, Categories, Subcategories, and Informative References, depicted in Figure 1:
+- Figure 1: Framework Core Structure The Framework Core elements work together as follows:
+- other management actions. The Profile also provides the organization a method for assessing if
+- the product meets cybersecurity outcomes through periodic review and testing mechanisms. 3.5 Identifying Opportunities for New or Revised Informative
+- The Framework can be used to identify opportunities for new or revised standards, guidelines, or
+-  Measuring the degree of implementation for controls catalogs or technical guidance listed
+- as Informative References. The development of cybersecurity performance metrics is evolving. Organizations should be
+- thoughtful, creative, and careful about the ways in which they employ measurements to optimize
+- This appendix presents the Framework Core: a listing of Functions, Categories, Subcategories,
+- and Informative References that describe specific cybersecurity activities that are common
+- across all critical infrastructure sectors. The chosen presentation format for the Framework Core
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 23
+- April 16, 2018 Cybersecurity Framework Version 1.1 Table 2: Framework Core Function Category Subcategory Informative References IDENTIFY Asset Management (ID.AM): ID.AM-1: Physical devices and systems CIS CSC 1
+- (ID) The data, personnel, devices, within the organization are inventoried COBIT 5 BAI09.01, BAI09.02
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 24
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References third-party stakeholders (e.g., suppliers, ISA 62443-2-1:2009 4.3.2.3.3
+- customers, partners) are established ISO/IEC 27001:2013 A.6.1.1 NIST SP 800-53 Rev. 4 CP-2, PS-7, PM-11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 25
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References management of cybersecurity ID.GV-2: Cybersecurity roles and CIS CSC 19
+- risk. responsibilities are coordinated and aligned COBIT 5 APO01.02, APO10.03, APO13.02, with internal roles and external partners DSS05.04 ISA 62443-2-1:2009 4.3.2.3.3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 26
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RA-3: Threats, both internal and CIS CSC 4
+- external, are identified and documented COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04 ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12 ISO/IEC 27001:2013 Clause 6.1.2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 27
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RM-3: The organization’s COBIT 5 APO12.02
+- determination of risk tolerance is informed ISO/IEC 27001:2013 Clause 6.1.3, Clause 8.3 by its role in critical infrastructure and NIST SP 800-53 Rev. 4 SA-14, PM-8, PM-9, PM
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 28
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AU-2, AU-6, AU-12, AU
+- 16, PS-7, SA-9, SA-12 ID.SC-5: Response and recovery planning CIS CSC 19, 20 and testing are conducted with suppliers COBIT 5 DSS04.04 and third-party providers ISA 62443-2-1:2009 4.3.2.5.7, 4.3.4.5.11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 29
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AC-1, AC-17, AC-19,
+- AC-20, SC-15 PR.AC-4: Access permissions and CIS CSC 3, 5, 12, 14, 15, 16, 18 authorizations are managed, incorporating COBIT 5 DSS05.04 the principles of least privilege and ISA 62443-2-1:2009 4.3.3.7.3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 30
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ISA 62443-3-3:2013 SR 1.1, SR 1.2, SR 1.5, SR
+- 1.7, SR 1.8, SR 1.9, SR 1.10 ISO/IEC 27001:2013 A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3, A.18.1.4 NIST SP 800-53 Rev. 4 AC-7, AC-8, AC-9, AC
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 31
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AT-3, IR-2, PM-13
+- Data Security (PR.DS): PR.DS-1: Data-at-rest is protected CIS CSC 13, 14 Information and records (data) are COBIT 5 APO01.06, BAI02.01, BAI06.01,
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 32
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1,
+- A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3 NIST SP 800-53 Rev. 4 AC-4, AC-5, AC-6, PE 19, PS-3, PS-6, SC-7, SC-8, SC-13, SC-31, SI-4 PR.DS-6: Integrity checking mechanisms CIS CSC 2, 3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 33
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ISO/IEC 27001:2013 A.6.1.5, A.14.1.1, A.14.2.1,
+- A.14.2.5 NIST SP 800-53 Rev. 4 PL-8, SA-3, SA-4, SA-8, SA-10, SA-11, SA-12, SA-15, SA-17, SI-12, SI 13, SI-14, SI-16, SI-17 PR.IP-3: Configuration change control CIS CSC 3, 11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 34
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References PR.IP-7: Protection processes are COBIT 5 APO11.06, APO12.06, DSS04.05
+- improved ISA 62443-2-1:2009 4.4.3.1, 4.4.3.2, 4.4.3.3, 4.4.3.4, 4.4.3.5, 4.4.3.6, 4.4.3.7, 4.4.3.8 ISO/IEC 27001:2013 A.16.1.6, Clause 9, Clause
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 35
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References PR.IP-12: A vulnerability management CIS CSC 4, 18, 20
+- plan is developed and implemented COBIT 5 BAI03.10, DSS05.01, DSS05.02 ISO/IEC 27001:2013 A.12.6.1, A.14.2.3, A.16.1.3, A.18.2.2, A.18.2.3 NIST SP 800-53 Rev. 4 RA-3, RA-5, SI-2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 39
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References COBIT 5 BAI03.10, DSS05.01 ISA 62443-2-1:2009 4.2.3.1, 4.2.3.7
+- ISO/IEC 27001:2013 A.12.6.1 NIST SP 800-53 Rev. 4 RA-5 Detection Processes (DE.DP): DE.DP-1: Roles and responsibilities for CIS CSC 19
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 40
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References RESPOND (RS) Response Planning (RS.RP): RS.RP-1: Response plan is executed CIS CSC 19
+- Response processes and during or after an incident COBIT 5 APO12.06, BAI01.10 procedures are executed and ISA 62443-2-1:2009 4.3.4.5.1 maintained, to ensure response to

@@ -1,0 +1,64 @@
+Source title: Regulation (EC) No 1272/2008 official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- class in accordance with Table 3.10.2. Table 3.10.2 Aspiration toxicity label elements Classification Category 1 GHS Pictogram Signal Word Danger
+- Hazard Statement H304: May be fatal if swallowed and enters airways 31.12.2008 EN Official Journal of the European Union L 353/129 Classification Category 1
+- Precautionary Statement Prevention Precautionary Statement P301 + P310 Response P331 Precautionary Statement P405 Storage Precautionary Statement P501
+- class in accordance with Table 4.1.4. Table 4.1.4 Label elements for hazardous to the aquatic environment ACUTE Category 1 GHS Pictogram Signal Word Warning
+- Hazard Statement H400: Very toxic to aquatic life 31.12.2008 EN Official Journal of the European Union L 353/139 ACUTE Category 1 Precautionary Statement Prevention P273
+- Precautionary Statement Response P391 Precautionary Statement Storage Precautionary Statement Disposal P501 CHRONIC Category 1 Category 2 Category 3 Category 4
+- exemptions or specific provisions are defined in Part 2 of Location of information on the label
+- Annex II. 1. The hazard pictograms, signal word, hazard statements and precautionary statements shall be located together on the label. 5. The Commission may request the Agency to prepare and
+- submit to it further draft exemptions from labelling and packaging requirements. 2. The supplier may decide the order of the hazard statements
+- substance or the producer or importer of an article submitting a registration for a substance under Regula (b) ‘Warning’ means a signal word indicating the less tion (EC) No 1907/2006;
+- 5. ‘hazard statement’ means a phrase assigned to a hazard 14. ‘manufacturing’ means production or extraction of sub
+- class and category that describes the nature of the hazards stances in the natural state; of a hazardous substance or mixture, including, where
+- (a) the trade name or the designation of the mixture; 3. Where a substance is included in Part 3 of Annex VI, the
+- hazard statement relevant for each specific classification covered by the entry in that Part shall be used on the label, together with
+- (b) the identity of all substances in the mixture that contribute the hazard statements referred to in paragraph 2 for any other
+- substance on the market is required to state on the label the correct name, due account being ‘Note H: taken of Section 1.1.1.4 of Annex VI to
+- Regulation (EC) No 1272/2008. The classification and label shown for this substance applies to the hazard or hazards indicated by the hazard statement or hazard
+- In accordance with Regulation (EC) No 1272/ statements in combination with the hazard
+- 1) Flammable gases of category 2; 2) Reproductive toxicity: effects on or via lactation; 3) Hazardous to the aquatic environment — Chronic of category 3 or 4.
+- 1.5.2.1.3. The pictogram, the hazard statement and the precautionary statement linked to the hazard categories listed
+- below may be omitted from the label elements required by Article 17 where: (a) the contents of the package do not exceed 125 ml; and
+- NOTE to Table 2.1.2: Unpackaged explosives or explosives repacked in packaging other than the original or
+- similar packaging shall include all of the following label elements: (a) the pictogram: exploding bomb; (b) the signal word: ‘Danger’; and (c) the hazard statement: ‘explosive; mass explosion hazard’
+- unless the hazard is shown to correspond to one of the hazard categories in Table 2.1.2, in which case the
+- corresponding symbol, the signal word and/or the hazard statement shall be assigned. Table 2.1.2 L 353/46 Label elements for explosives
+- Classification Unstable Explosive Division 1.1 Division 1.2 Division 1.3 Division 1.4 Division 1.5 Division 1.6
+- GHS Pictograms EN Signal Word Danger Danger Danger Danger Warning Danger No signal word
+- Hazard Statement H200: Unstable Explo- H201: Explosive; mass H202: Explosive; severe H203: Explosive; fire, H204: Fire or projec- H205: May mass No hazard statement
+- sive explosion hazard projection hazard blast or projection tion hazard explode in fire hazard Precautionary Statement P201 P210 P210 P210 P210 P210 No precautionary state
+- class in accordance with Table 2.2.2. Table 2.2.2 Label elements for flammable gases Classification Category 1 Category 2 GHS Pictogram No pictogram
+- Signal Word Danger Warning Hazard Statement H220: Extremely flammable gas H221: Flammable gas Precautionary Statement P210 P210 Prevention Precautionary Statement P377 P377
+- Response P381 P381 Precautionary Statement P403 P403 Storage Precautionary Statement Disposal 2.2.4. Additional Classification Considerations
+- class in accordance with Table 2.3.2. Table 2.3.2 Label elements for flammable aerosols Classification Category 1 Category 2 GHS Pictograms Signal Word Danger Warning
+- Hazard Statement H222: Extremely flammable H223: Flammable aerosol aerosol Precautionary Statement P210 P210 Prevention P211 P211 P251 P251 Precautionary Statement
+- Response Precautionary Statement P410 + P412 P410 + P412 Storage Precautionary Statement Disposal 31.12.2008 EN Official Journal of the European Union L 353/57
+- class in accordance with Table 2.4.2. Table 2.4.2 Label elements for oxidising gases Classification Category 1 GHS Pictogram L 353/58 EN Official Journal of the European Union 31.12.2008
+- Classification Category 1 Signal Word Danger Hazard Statement H270: May cause or intensify fire; oxidiser Precautionary Statement P220 Prevention P244
+- Precautionary Statement P370 + P376 Response Precautionary Statement P403 Storage Precautionary Statement Disposal 2.4.4. Additional Classification Considerations
+- class in accordance with Table 2.5.2. Table 2.5.2 Label elements for gases under pressure Refrigerated lique Classification Compressed gas Liquefied gas Dissolved gas
+- fied gas GHS Pictograms Signal Word Warning Warning Warning Warning Hazard Statement H280: Contains H280: Contains H281: Contains H280: Contains gas
+- gas under pres- gas under pres- refrigerated gas; under pressure; sure; may explode sure; may explode may cause cryo- may explode if if heated if heated genic burns or heated
+- class in accordance with Table 2.6.2. Table 2.6.2 Label elements for flammable liquids Classification Category 1 Category 2 Category 3 GHS Pictograms
+- Signal Word Danger Danger Warning Hazard Statement H224: Extremely flam- H225: Highly flam- H226: Flammable liquid mable liquid and mable liquid and and vapour
+- vapour vapour Precautionary Statement P210 P210 P210 Prevention P233 P233 P233 P240 P240 P240 P241 P241 P241 P242 P242 P242 P243 P243 P243 P280 P280 P280
+- class in accordance with Table 2.7.2. Table 2.7.2 Label elements for flammable solids Classification Category 1 Category 2 GHS Pictograms Signal Word Danger Warning
+- Hazard Statement H228: Flammable Solid H228: Flammable Solid Precautionary Statement P210 P210 Prevention P240 P240 P241 P241 P280 P280 Precautionary Statement P370 + P378 P370 + P378
+- Response Precautionary Statement Storage Precautionary Statement Disposal 2.8. Self-reactive substances and mixtures 2.8.1. Definition
+- class in accordance with Table 2.9.2. Table 2.9.2 Label elements for pyrophoric liquids Classification Category 1 GHS Pictogram Signal Word Danger
+- Hazard Statement H250: Catches fire spontaneously if exposed to air Precautionary Statement P210 Prevention P222 P280 Precautionary Statement P302 + P334
+- Response P370 + P378 Precautionary Statement P422 Storage Precautionary Statement Disposal 2.9.4. Additional Classification Considerations
+- class in accordance with Table 2.11.2. Table 2.11.2 Label elements for self-heating substances and mixtures Classification Category 1 Category 2
+- GHS Pictograms Signal Word Danger Warning Hazard Statement H251: Self-heating; may catch H252: Self-heating in large quan fire tities; may catch fire
+- Precautionary Statement P235 + P410 P235 + P410 Prevention P280 P280 Precautionary Statement Response Precautionary Statement P407 P407 Storage P413 P413
+- Label elements for substances or mixtures which in contact with water emit flammable gases
+- Classification Category 1 Category 2 Category 3 GHS Pictograms Signal Word Danger Danger Warning Hazard Statement H260: In contact with H261: In contact with H261: In contact with
+- water releases flam- water releases flam- water releases flammable mable gases which may mable gases gases ignite spontaneously Precautionary Statement P223 P223 P231 + P232
+- L 353/74 EN Official Journal of the European Union 31.12.2008 Classification Category 1 Category 2 Category 3 Signal Word Danger Danger Warning
+- Hazard Statement H271:May cause fire or H272: May intensify H272: May intensify fire; explosion; strong oxi- fire; oxidiser oxidiser diser Precautionary Statement P210 P210 P210
+- Prevention P220 P220 P220 P221 P221 P221 P280 P280 P280 P283 Precautionary Statement P306 + P360 P370 + P378 P370 + P378 Response P371 + P380 + P375

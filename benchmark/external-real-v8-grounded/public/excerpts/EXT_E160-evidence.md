@@ -1,0 +1,125 @@
+# EXT_E160 Evidence
+
+- Source title: Regulation (EU) 2024/1689 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: COM(2021) 206 AI Act proposal official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- ‘When adopting detailed measures related to technical specifications and procedures for approval and use of security
+- equipment concerning Artificial Intelligence systems within the meaning of Regulation (EU) 2024/1689 of the European
+- Parliament and of the Council (*), the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into
+- 2024/1689/oj).’. Article 105 Amendment to Directive 2014/90/EU In Article 8 of Directive 2014/90/EU, the following paragraph is added:
+- ‘5. For Artificial Intelligence systems which are safety components within the meaning of Regulation (EU) 2024/1689 of
+- the European Parliament and of the Council (*), when carrying out its activities pursuant to paragraph 1 and when adopting
+- Official Journal EN of the European Union L series 2024/1689 12.7.2024 REGULATION (EU) 2024/1689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008,
+- (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU)
+- 2020/1828 (Artificial Intelligence Act) (OJ L, 2024/1689, 12.7.2024, ELI: http://data.europa.eu/eli/reg/
+- 2024/1689/oj).’. Article 103 Amendment to Regulation (EU) No 167/2013 In Article 17(5) of Regulation (EU) No 167/2013, the following subparagraph is added:
+- (*) Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised
+- rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013,
+- ‘When adopting delegated acts pursuant to the first subparagraph concerning artificial intelligence systems which are safety
+- components within the meaning of Regulation (EU) 2024/1689 of the European Parliament and of the Council (*), the
+- requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account.
+- ‘4. When adopting delegated acts pursuant to paragraphs 1 and 2 concerning Artificial Intelligence systems which
+- are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III,
+- Section 2, of that Regulation shall be taken into account.’; (3) in Article 43, the following paragraph is added:
+- ‘When adopting those implementing acts concerning Artificial Intelligence systems which are safety components within
+- the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2, of that Regulation shall
+- be taken into account.’; 120/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (6) in Article 58, the following paragraph is added:
+- (6) European Parliament resolution of 20 October 2020 with recommendations to the Commission on a framework of ethical aspects
+- of artificial intelligence, robotics and related technologies, 2020/2012(INL). 2/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (9) Harmonised rules applicable to the placing on the market, the putting into service and the use of high-risk AI
+- (d) examination, test and validation procedures to be carried out before, during and after the development of the high-risk
+- AI system, and the frequency with which they have to be carried out; 62/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (e) technical specifications, including standards, to be applied and, where the relevant harmonised standards are not
+- 3. Any information obtained by a competent authority pursuant to this Article shall be treated in accordance with the
+- confidentiality obligations set out in Article 78. 64/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 22 Authorised representatives of providers of high-risk AI systems
+- 1. Prior to making their high-risk AI systems available on the Union market, providers established in third countries
+- requirement, the general-purpose AI model does not present, due to its specific characteristics, systemic risks and therefore
+- should not be classified as a general-purpose AI model with systemic risk. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 83/144 EN OJ L, 12.7.2024
+- 3. Where the Commission concludes that the arguments submitted pursuant to paragraph 2 are not sufficiently
+- — participation in a criminal organisation involved in one or more of the offences listed above.
+- 126/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN ANNEX III High-risk AI systems referred to in Article 6(2)
+- High-risk AI systems pursuant to Article 6(2) are the AI systems listed in any of the following areas:
+- pseudonymisation of judicial decisions, documents or data, communication between personnel, administrative tasks.
+- (62) Without prejudice to the rules provided for in Regulation (EU) 2024/900 of the European Parliament and of the
+- Council (34), and in order to address the risks of undue external interference with the right to vote enshrined in
+- withdrawing international protection (OJ L 180, 29.6.2013, p. 60).
+- (34) Regulation (EU) 2024/900 of the European parliament and of the Council of 13 March 2024 on the transparency and targeting of
+- political advertising (OJ L, 2024/900, 20.3.2024, ELI: http://data.europa.eu/eli/reg/2024/900/oj).
+- Visa Information System (OJ L 248, 13.7.2021, p. 11). 3. Eurodac
+- Regulation (EU) 2024/1358 of the European Parliament and of the Council of 14 May 2024 on the establishment of
+- ‘Eurodac’ for the comparison of biometric data in order to effectively apply Regulations (EU) 2024/1315 and (EU)
+- to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context
+- in which the system is intended to be used. 56/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- 6. High-risk AI systems shall be tested for the purpose of identifying the most appropriate and targeted risk management
+- Regulation (EU) 2016/794 for the purpose of establishing a European Travel Information and Authorisation
+- System (ETIAS) (OJ L 236, 19.9.2018, p. 72). ELI: http://data.europa.eu/eli/reg/2024/1689/oj 139/144 EN OJ L, 12.7.2024
+- 6. European Criminal Records Information System on third-country nationals and stateless persons
+- to lay down requirements for high-risk AI systems and obligations for the relevant operators, and to lay down
+- transparency obligations for certain AI systems. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 7/144 EN OJ L, 12.7.2024
+- (27) While the risk-based approach is the basis for a proportionate and effective set of binding rules, it is important to
+- for Cybersecurity) and on information and communications technology cybersecurity certification and repealing Regulation
+- (EU) No 526/2013 (Cybersecurity Act) (OJ L 151, 7.6.2019, p. 15). 22/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (79) It is appropriate that a specific natural or legal person, defined as the provider, takes responsibility for the placing on
+
+Prior source excerpt windows:
+
+- the corresponding provisions of the Digital Services Act]. Article 3 Definitions For the purpose of this Regulation, the following definitions apply:
+- (1) ‘artificial intelligence system’ (AI system) means software that is developed with one
+- or more of the techniques and approaches listed in Annex I and can, for a given set of human-defined objectives, generate outputs such as content, predictions,
+- (c) any similar previous infringements by the Union institution, agency or body; 2. The following infringements shall be subject to administrative fines of up to 500 000
+- EUR: (a) non-compliance with the prohibition of the artificial intelligence practices referred to in Article 5; (b) non-compliance of the AI system with the requirements laid down in Article
+- 10. 3. The non-compliance of the AI system with any requirements or obligations under this Regulation, other than those laid down in Articles 5 and 10, shall be subject to
+- credit institutions regulated by Directive 2013/36/EU. (81) The development of AI systems other than high-risk AI systems in accordance with
+- the requirements of this Regulation may lead to a larger uptake of trustworthy artificial intelligence in the Union. Providers of non-high-risk AI systems should be encouraged
+- to create codes of conduct intended to foster the voluntary application of the mandatory requirements applicable to high-risk AI systems. Providers should also be
+- TITLE I GENERAL PROVISIONS Article 1 Subject matter This Regulation lays down: (a) harmonised rules for the placing on the market, the putting into service and the
+- use of artificial intelligence systems (‘AI systems’) in the Union; (a) prohibitions of certain artificial intelligence practices; (b) specific requirements for high-risk AI systems and obligations for operators of
+- such systems; (c) harmonised transparency rules for AI systems intended to interact with natural persons, emotion recognition systems and biometric categorisation systems,
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- accomplishment of the required conformity assessment procedure, draw up the relevant documentation and establish a robust post-market monitoring system. Public
+- authorities which put into service high-risk AI systems for their own use may adopt and implement the rules for the quality management system as part of the quality
+- management system adopted at a national or regional level, as appropriate, taking into account the specificities of the sector and the competences and organisation of the
+- documentation into the existing obligations and procedures under Directive 2013/36/EU. In order to avoid overlaps, limited derogations should also be envisaged
+- in relation to the quality management system of providers and the monitoring obligation placed on users of high-risk AI systems to the extent that these apply to
+- Annex IV, the content of the EU declaration of conformity in Annex V, the provisions regarding the conformity assessment procedures in Annex VI and VII and the
+- provisions establishing the high-risk AI systems to which the conformity assessment procedure based on assessment of the quality management system and assessment of
+- the technical documentation should apply. It is of particular importance that the Commission carry out appropriate consultations during its preparatory work, including
+- CHAPTER 2 REQUIREMENTS FOR HIGH-RISK AI SYSTEMS Article 8 Compliance with the requirements 1. High-risk AI systems shall comply with the requirements established in this Chapter.
+- 2. The intended purpose of the high-risk AI system and the risk management system referred to in Article 9 shall be taken into account when ensuring compliance with
+- those requirements. Article 9 Risk management system 1. A risk management system shall be established, implemented, documented and maintained in relation to high-risk AI systems.
+- 2. The risk management system shall consist of a continuous iterative process run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic
+- updating. It shall comprise the following steps: EN 46 EN (a) identification and analysis of the known and foreseeable risks associated with
+- placing on the market or the putting into service. Testing shall be made against preliminarily defined metrics and probabilistic thresholds that are appropriate to the
+- intended purpose of the high-risk AI system. EN 47 EN 8. When implementing the risk management system described in paragraphs 1 to 7, specific consideration shall be given to whether the high-risk AI system is likely to
+- be accessed by or have an impact on children. 9. For credit institutions regulated by Directive 2013/36/EU, the aspects described in paragraphs 1 to 8 shall be part of the risk management procedures established by
+- OBLIGATIONS OF PROVIDERS AND USERS OF HIGH-RISK AI SYSTEMS AND OTHER PARTIES Article 16 Obligations of providers of high-risk AI systems Providers of high-risk AI systems shall:
+- (a) ensure that their high-risk AI systems are compliant with the requirements set out in Chapter 2 of this Title; (b) have a quality management system in place which complies with Article 17;
+- (c) draw-up the technical documentation of the high-risk AI system; (d) when under their control, keep the logs automatically generated by their high-risk AI
+- (i) to affix the CE marking to their high-risk AI systems to indicate the conformity with this Regulation in accordance with Article 49; (j) upon request of a national competent authority, demonstrate the conformity of the
+- high-risk AI system with the requirements set out in Chapter 2 of this Title. Article 17 Quality management system 1. Providers of high-risk AI systems shall put a quality management system in place
+- that ensures compliance with this Regulation. That system shall be documented in a systematic and orderly manner in the form of written policies, procedures and
+- instructions, and shall include at least the following aspects: (a) a strategy for regulatory compliance, including compliance with conformity
+- assessment procedures and procedures for the management of modifications to the high-risk AI system; (b) techniques, procedures and systematic actions to be used for the design, design
+- control and design verification of the high-risk AI system; (c) techniques, procedures and systematic actions to be used for the development,
+- aggregation, data retention and any other operation regarding the data that is performed before and for the purposes of the placing on the market or putting
+- into service of high-risk AI systems; (g) the risk management system referred to in Article 9; (h) the setting-up, implementation and maintenance of a post-market monitoring
+- system, in accordance with Article 61; (i) procedures related to the reporting of serious incidents and of malfunctioning in accordance with Article 62;
+- follow one of the following procedures: (a) the conformity assessment procedure based on internal control referred to in Annex VI; (b) the conformity assessment procedure based on assessment of the quality
+- management system and assessment of the technical documentation, with the involvement of a notified body, referred to in Annex VII. Where, in demonstrating the compliance of a high-risk AI system with the
+- requirements set out in Chapter 2 of this Title, the provider has not applied or has applied only in part harmonised standards referred to in Article 40, or where such
+- purpose of the AI system; the human oversight measures needed in accordance with Article 14, including the technical measures put in place to facilitate the
+- interpretation of the outputs of AI systems by the users; specifications on input data, as appropriate; 4. A detailed description of the risk management system in accordance with Article 9;
+- 5. A description of any change made to the system through its lifecycle; 6. A list of the harmonised standards applied in full or in part the references of which
+- meets the requirements set out in Chapter 2 of this Title. The EU declaration of conformity shall contain the information set out in Annex V and shall be translated
+- into an official Union language or languages required by the Member State(s) in which the high-risk AI system is made available. 3. Where high-risk AI systems are subject to other Union harmonisation legislation
+- which also requires an EU declaration of conformity, a single EU declaration of conformity shall be drawn up in respect of all Union legislations applicable to the
+- testing datasets used by the provider, including through application programming interfaces (‘API’) or other appropriate technical means and tools enabling remote
+- access. 2. Where necessary to assess the conformity of the high-risk AI system with the requirements set out in Title III, Chapter 2 and upon a reasoned request, the market
+- surveillance authorities shall be granted access to the source code of the AI system. 3. National public authorities or bodies which supervise or enforce the respect of

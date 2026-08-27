@@ -1,0 +1,116 @@
+# EXT_E125 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- management programs. • Appendix A is the CSF Core. • Appendix B contains a notional illustration of the CSF Tiers. • Appendix C is a glossary of CSF terminology.
+- 2 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 2. Introduction to the CSF Core Appendix A is the CSF Core — a set of cybersecurity outcomes arranged by Function, then
+- Category, and finally Subcategory, as depicted in Fig. 1. These outcomes are not a checklist of
+- organization to prioritize its efforts consistent with its risk management strategy and the
+- mission needs identified under GOVERN. This Function also includes the identification of 3 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 improvement opportunities for the organization’s policies, plans, processes, procedures, and practices that support cybersecurity risk management to inform efforts under all six
+- RECOVER Functions. GOVERN is in the center of the wheel because it informs how an organization
+- will implement the other five Functions. 4 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Fig. 2. CSF Functions
+- The Functions should be addressed concurrently. Actions that support GOVERN, IDENTIFY, PROTECT,
+- that will manage those risks. The selected outcomes can be used to focus on and implement strategic decisions to improve cybersecurity postures and maintain continuity of mission
+- essential functions while taking priorities and available resources into account. 5.1. Improving Risk Management Communication The CSF provides a basis for improved communication regarding cybersecurity expectations,
+- planning, and resources. The CSF fosters bidirectional information flow (as shown in the top
+- are established o ID.RA-09: The authenticity and integrity of hardware and software are assessed prior to acquisition and use o ID.RA-10: Critical suppliers are assessed prior to acquisition
+- • Improvement (ID.IM): Improvements to organizational cybersecurity risk management processes, procedures and activities are identified across all CSF Functions
+- o ID.IM-01: Improvements are identified from evaluations
+- changes to business/mission objectives in how risk is approached and communicated. 25 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Appendix C. Glossary CSF Category A group of related cybersecurity outcomes that collectively comprise a CSF Function. CSF Community Profile
+- A baseline of CSF outcomes that is created and published to address shared interests and goals among a number of
+- attempting to achieve) and characterizes how or to what extent each outcome is being achieved.
+- The highest level of organization for cybersecurity outcomes. There are six CSF Functions: Govern, Identify,
+- Protect, Detect, Respond, and Recover. CSF Implementation Example
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- An organization can use the CSF Core, Profiles, and Tiers with the supplementary resources to
+- Functions. • PROTECT (PR) — Safeguards to manage the organization’s cybersecurity risks are used. Once assets and risks are identified and prioritized, PROTECT supports the ability to
+- secure those assets to prevent or lower the likelihood and impact of adverse cybersecurity events, as well as to increase the likelihood and impact of taking
+- • DETECT (DE) — Possible cybersecurity attacks and compromises are found and analyzed. DETECT enables the timely discovery and analysis of anomalies, indicators of
+- compromise, and other potentially adverse events that may indicate that cybersecurity attacks and incidents are occurring. This Function supports successful incident response
+- and recovery activities. • RESPOND (RS) — Actions regarding a detected cybersecurity incident are taken. RESPOND supports the ability to contain the effects of cybersecurity incidents. Outcomes within
+- this Function cover incident management, analysis, mitigation, reporting, and communication. • RECOVER (RC) — Assets and operations affected by a cybersecurity incident are restored.
+- RECOVER supports the timely restoration of normal operations to reduce the effects of cybersecurity incidents and enable appropriate communication during recovery efforts.
+- and DETECT should all happen continuously, and actions that support RESPOND and RECOVER
+- should be ready at all times and happen when cybersecurity incidents occur. All Functions have
+- vital roles related to cybersecurity incidents. GOVERN, IDENTIFY, and PROTECT outcomes help
+- Each Function is named after a verb that summarizes its contents. Each Function is divided into
+- Categories, which are related cybersecurity outcomes that collectively comprise the Function.
+- Subcategories further divide each Category into more specific outcomes of technical and management activities. The Subcategories are not exhaustive, but they describe detailed
+- Regardless of the CSF’s utilization, an organization may benefit from using the CSF as guidance
+- to help it understand, assess, prioritize, and communicate cybersecurity risks and the actions
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+
+Prior source excerpt windows:
+
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- into Categories and Subcategories. The five functions are Identify, Protect, Detect, Respond, and Recover. Identify (function) Develop the organizational understanding to manage cybersecurity
+- risk to systems, assets, data, and capabilities. Informative A specific section of standards, guidelines, and practices common Reference among critical infrastructure sectors that illustrates a method to
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 ii
+- April 16, 2018 Cybersecurity Framework Version 1.1 Consideration of A Subcategory related to the vulnerability disclosure lifecycle Coordinated Vulnerability was added.
+- As with Version 1.0, Version 1.1 users are encouraged to customize the Framework to maximize
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- five concurrent and continuous Functions—Identify, Protect, Detect, Respond, Recover. When considered together, these Functions provide a high-level, strategic view of the
+- lifecycle of an organization’s management of cybersecurity risk. The Framework Core then identifies underlying key Categories and Subcategories – which are discrete
+- outcomes – for each Function, and matches them with example Informative References such as existing standards, guidelines, and practices for each Subcategory.
+- Profiles.  Section 3 presents examples of how the Framework can be used.  Section 4 describes how to use the Framework for self-assessing and demonstrating
+- cybersecurity through measurements.  Appendix A presents the Framework Core in a tabular format: the Functions, Categories, Subcategories, and Informative References.
+-  Appendix B contains a glossary of selected terms.  Appendix C lists acronyms used in this document. 6
+- actions to perform. It presents key cybersecurity outcomes identified by stakeholders as helpful
+- in managing cybersecurity risk. The Core comprises four elements: Functions, Categories, Subcategories, and Informative References, depicted in Figure 1:
+- Figure 1: Framework Core Structure The Framework Core elements work together as follows:
+-  Functions organize basic cybersecurity activities at their highest level. These Functions
+- are Identify, Protect, Detect, Respond, and Recover. They aid an organization in expressing its management of cybersecurity risk by organizing information, enabling risk
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 6
+- April 16, 2018 Cybersecurity Framework Version 1.1  Categories are the subdivisions of a Function into groups of cybersecurity outcomes closely tied to programmatic needs and particular activities. Examples of Categories
+- include “Asset Management,” “Identity Management and Access Control,” and “Detection Processes.”  Subcategories further divide a Category into specific outcomes of technical and/or
+- concurrently and continuously to form an operational culture that addresses the dynamic cybersecurity risk. See Appendix A for the complete Framework Core listing.
+-  Identify – Develop an organizational understanding to manage cybersecurity risk to systems, people, assets, data, and capabilities. The activities in the Identify Function are foundational for effective use of the
+- Framework. Understanding the business context, the resources that support critical functions, and the related cybersecurity risks enables an organization to focus and
+- prioritize its efforts, consistent with its risk management strategy and business needs. Examples of outcome Categories within this Function include: Asset Management;
+- Business Environment; Governance; Risk Assessment; and Risk Management Strategy.  Protect – Develop and implement appropriate safeguards to ensure delivery of critical
+- services. The Protect Function supports the ability to limit or contain the impact of a potential cybersecurity event. Examples of outcome Categories within this Function include:
+- Identity Management and Access Control; Awareness and Training; Data Security; Information Protection Processes and Procedures; Maintenance; and Protective
+- Technology.  Detect – Develop and implement appropriate activities to identify the occurrence of a cybersecurity event. The Detect Function enables timely discovery of cybersecurity events. Examples of
+- outcome Categories within this Function include: Anomalies and Events; Security Continuous Monitoring; and Detection Processes.
+- April 16, 2018 Cybersecurity Framework Version 1.1  Respond – Develop and implement appropriate activities to take action regarding a detected cybersecurity incident.
+- The Respond Function supports the ability to contain the impact of a potential cybersecurity incident. Examples of outcome Categories within this Function include:
+- Response Planning; Communications; Analysis; Mitigation; and Improvements.  Recover – Develop and implement appropriate activities to maintain plans for resilience
+- and to restore any capabilities or services that were impaired due to a cybersecurity incident. The Recover Function supports timely recovery to normal operations to reduce the
+- impact from a cybersecurity incident. Examples of outcome Categories within this Function include: Recovery Planning; Improvements; and Communications.
+- 2.2 Framework Implementation Tiers The Framework Implementation Tiers (“Tiers”) provide context on how an organization views
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the

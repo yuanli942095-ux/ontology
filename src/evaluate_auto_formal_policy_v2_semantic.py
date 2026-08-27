@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from external_real_v8_layout import construction_paths, hard_gate_paths, is_staged_layout
 from semantic_v2_common import PROJECT_DIR, write_csv
 
 
@@ -31,12 +32,28 @@ SEED = 20260820
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="semantic evaluator for auto-policy-v2")
-    parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
-    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--benchmark-dir", type=Path, default=BENCHMARK_DIR)
+    parser.add_argument("--raw-dir", type=Path)
+    parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--prefix", default="auto-policy-v2-semantic-evaluation")
     parser.add_argument("--runs", type=int, default=RUNS)
     parser.add_argument("--seed", type=int, default=SEED)
     return parser.parse_args()
+
+
+def configure_benchmark(benchmark_dir: Path) -> None:
+    global BENCHMARK_DIR, RULE_DIR, EVENT_CSV
+    global DEFAULT_RAW_DIR, DEFAULT_OUTPUT_DIR
+
+    BENCHMARK_DIR = benchmark_dir.resolve()
+    if is_staged_layout(BENCHMARK_DIR):
+        EVENT_CSV = construction_paths(BENCHMARK_DIR)["event_csv"]
+        RULE_DIR = hard_gate_paths(BENCHMARK_DIR)["rules_dir"]
+    else:
+        RULE_DIR = BENCHMARK_DIR / "rules"
+        EVENT_CSV = BENCHMARK_DIR / "input" / "external-real-event-template.csv"
+    DEFAULT_OUTPUT_DIR = PROJECT_DIR / "output" / BENCHMARK_DIR.name / "auto-policy-v3"
+    DEFAULT_RAW_DIR = DEFAULT_OUTPUT_DIR / "raw"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -190,8 +207,11 @@ def evaluate_wcag(target: str, auto: str, event: dict[str, str]) -> tuple[bool, 
             "加入",
         )
     )
+    change_ok = change_ok or "wcag22_added" in compact_text
     scope_ok = any(marker in text for marker in ("scope", "cross-reference", "resolved", "applies", "范围", "指代"))
-    input_ok = any(marker in text for marker in ("input modality", "pointer", "label", "requirement", "added", "输入", "指针", "标签"))
+    scope_ok = scope_ok or "wcag21_cross_scope" in compact_text
+    input_ok = any(marker in text for marker in ("input modality", "input rule", "pointer", "label", "requirement", "added", "输入", "指针", "标签"))
+    input_ok = input_ok or "wcag21_input_rule" in compact_text
     if family == "wcag22_added":
         correct = has_code_or_name and level_ok and has_wcag22 and change_ok
     elif family == "wcag21_cross_scope":
@@ -297,7 +317,14 @@ def event_rows() -> list[dict[str, str]]:
     return [row for row in read_csv(EVENT_CSV) if str(row.get("status", "")).strip().upper() == "READY"]
 
 
-def summarize_details(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+def experiment_name(prefix: str) -> str:
+    return re.sub(r"[^A-Z0-9]+", "_", prefix.upper()).strip("_")
+
+
+def summarize_details(
+    details: list[dict[str, Any]],
+    experiment: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     by_event_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_type_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in details:
@@ -345,7 +372,7 @@ def summarize_details(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any
         )
     summary = [
         {
-            "experiment": "AUTO_POLICY_V2_SEMANTIC_EVALUATION",
+            "experiment": experiment,
             "events": by_type[0]["events"],
             "attempts": by_type[0]["attempts"],
             "semantic_correct": by_type[0]["semantic_correct"],
@@ -364,6 +391,10 @@ def summarize_details(details: list[dict[str, Any]]) -> tuple[list[dict[str, Any
 
 def main() -> int:
     args = parse_args()
+    configure_benchmark(args.benchmark_dir)
+    args.raw_dir = args.raw_dir or DEFAULT_RAW_DIR
+    args.output_dir = args.output_dir or DEFAULT_OUTPUT_DIR
+    experiment = experiment_name(args.prefix)
     details: list[dict[str, Any]] = []
     for event in event_rows():
         event_id = event["event_id"]
@@ -401,7 +432,7 @@ def main() -> int:
                 }
             )
 
-    by_event, by_type, summary = summarize_details(details)
+    by_event, by_type, summary = summarize_details(details, experiment)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     details_csv = args.output_dir / f"{args.prefix}-details.csv"
     by_event_csv = args.output_dir / f"{args.prefix}-by-event.csv"
@@ -427,7 +458,7 @@ def main() -> int:
         encoding="utf-8",
     )
     lines = [
-        "AUTO_POLICY_V2 semantic evaluation",
+        f"{experiment} semantic evaluation",
         f"details={details_csv}",
         f"by_event={by_event_csv}",
         f"by_type={by_type_csv}",

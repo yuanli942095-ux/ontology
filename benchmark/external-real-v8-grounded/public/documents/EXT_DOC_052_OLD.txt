@@ -1,0 +1,14 @@
+Source title: SP 800-63-3 Digital Identity Guidelines
+Source URL: https://pages.nist.gov/800-63-3/
+
+Raw source excerpt window:
+
+- SP 800-63C Federation and Assertions https://doi.org/10.6028/NIST.SP.800-63c Links to the online version of the SP 800-63 suite are below. SP 800-63-3
+- Digital Identity Guidelines SP 800-63A Enrollment & Identity Proofing SP 800-63B Authentication & Lifecycle Management SP 800-63C Federation & Assertions
+- Additional informative resources: Frequently Asked Questions (FAQ) NIST SP 800-63-3 Implementation Resources (PDF) Conformance Criteria for SP 800-63A Enrollment and Identity Proofing (PDF)
+- PDF versions of the documents are available from: Document Title URL SP 800-63-3 Digital Identity Guidelines https://doi.org/10.6028/NIST.SP.800-63-3
+- SP 800-63A Enrollment and Identity Proofing https://doi.org/10.6028/NIST.SP.800-63a SP 800-63B Authentication and Lifecycle Management https://doi.org/10.6028/NIST.SP.800-63b
+- Conformance Criteria for SP 800-63B Authentication and Lifecycle Management (PDF) Conformance Criteria for SP 800-63C Federation and Assertions (PDF)
+- NIST SP 800-63 Digital Identity Guidelines Digital Identity Guidelines
+- This revision of NIST SP 800-63 has been superseded by NIST SP 800-63-4 as of August 1, 2025. Please refer to those documents for the current guidelines.
+- The four-volume SP 800-63 Digital Identity Guidelines document suite is available in both PDF format and online.

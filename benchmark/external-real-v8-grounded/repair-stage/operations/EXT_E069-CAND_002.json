@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Beijing_2026_policy_agricultural_insurance_reference_terms____greenhouse_vegetable_insurance_amount_split",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#insured_amount_facet",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "greenhouse_vegetable_rate_split=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "greenhouse_vegetable_rate_split=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

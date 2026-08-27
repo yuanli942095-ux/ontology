@@ -1,0 +1,58 @@
+Source title: NIST Privacy Framework 1.1 Initial Public Draft
+Source URL: https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf
+
+Raw source excerpt window:
+
+- 49 management; tiers. i CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 50 Note to Reviewers
+- 51 This NIST Privacy Framework 1.1 Initial Public Draft (IPD) has been developed in response to stakeholder
+- 52 desire for a Privacy Framework update that: 53 • Addresses current privacy risk management needs 54 • Realigns with the NIST Cybersecurity Framework (CSF) 2.0
+- 14 See, e.g., NIST Data Governance and Management Profile. Available at https://www.nist.gov/privacy-framework/new-projects/data
+- governance-and-management-profile. 8 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 361 proportionality. 15 Organizations may choose to prioritize and respond to privacy risk in different
+- 13 See NIST Artificial Intelligence (AI) Risk Management Framework (AI RMF 1.0), NIST AI 100-1 at [6].
+- 559 implementation of the Privacy Framework is based upon achieving the outcomes described in
+- 560 an organization’s Target Profile(s) and not upon Tier determination. 15 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025
+- 561 3. How to Use the Privacy Framework
+- 238 management practices, the degree of integration of privacy risk into its enterprise risk
+- 239 management portfolio, its data processing ecosystem relationships, and its workforce 240 composition and training program. 4 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1
+- April 14, 2025 241 1.2. Privacy Risk Management
+- 596 • Informing Buying Decisions. A Privacy Framework 1.1 Profile can be used to generate a
+- 597 prioritized list of privacy requirements 16 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 598 For more details on how to use Privacy Framework 1.1, please visit the “Using Privacy
+- 599 Framework 1.1” webpage. Informative References, informational videos, and the Privacy
+- 694 other entities to adapt or add additional Functions, Categories, and Subcategories to 695 their Profiles. 696 Roles: 697 • Ecosystem Roles: The Core is intended to be usable by any organization or entity
+- 698 regardless of its role(s) in the data processing ecosystem. Although the Privacy 20 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1
+- April 14, 2025 699 Framework does not classify ecosystem roles, an organization should review the Core
+- disclosed to the organization from internal and external sources (e.g., internal discovery, privacy researchers, professional events). GV.MT-P6: Policies, processes, and procedures incorporate lessons
+- learned from problematic data actions. 27 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 Function Category Subcategory
+- GV.MT-P7: Policies, processes, and procedures for receiving, tracking, and responding to complaints, concerns, and questions from individuals about organizational privacy practices are established and
+- CT.DM-P9: Log records are determined, documented, implemented, and reviewed in accordance with policy and incorporating the principle of data minimization.
+- 28 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 Function Category Subcategory CT.DM-P10: Technical measures implemented to manage data
+- processing are tested and assessed. CT.DM-P11: Stakeholder privacy preferences are included in algorithmic design objectives and outputs are evaluated against
+- PR.DS-P8: The authenticity and integrity of hardware and software are assessed prior to acquisition and use. PR.DS-P9: The confidentiality, integrity, and availability of data-in
+- use are protected. 31 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 Function Category Subcategory PR.DS-P10: Backups of data are created, protected, maintained,
+- Platform Security (PR.PS-P): The PR.PS-P1: Configuration management practices are established and
+- 775 The complex and interconnected relationships among entities involved in creating or deploying systems, products,
+- 776 or services or any components that process data. 33 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 777 Derived Attribute Value (NIST SP 800-63-4 2pd [9])
+- 778 A statement that asserts a limited identity attribute of a subscriber without containing the attribute value from
+- 815 where (1) a person other than an authorized user accesses or potentially accesses data or (2) an authorized user
+- 816 accesses data for an other than authorized purpose. 34 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 817 Privacy Control (Adapted from NIST SP 800-37 [8])
+- 818 The administrative, technical, and physical safeguards employed within an organization to satisfy privacy
+- 1 NIST Cybersecurity White Paper 2 CSWP 40 ipd (Initial Public Draft) 3 NIST Privacy Framework 1.1 4 Initial Public Draft 5 6 National Institute of Standards and Technology
+- 8 This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.40.ipd
+- 37 related content, potential updates, and document history. 38 All comments are subject to release under the Freedom of Information Act (FOIA).
+- CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 39 Abstract 40 The NIST Privacy Framework 1.1 is a voluntary tool developed in collaboration with
+- 41 stakeholders intended to help organizations identify and manage privacy risk to build
+- 48 framework; privacy; privacy framework; privacy risk; privacy risk management; profiles; risk
+- 80 from the PDF (e.g., Appendices) and relocating it? 81  If so, what content should be relocated? 82  What format or type of materials would best convey the relocated content (e.g.,
+- 83 Quick Start Guide, interactive online resources, etc.)? ii CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 84 Table of Contents
+- 87 88 92 94 95 96 104 List of Tables 108 List of Figures iii CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 116 Acknowledgments
+- 117 This publication is the result of a collaborative effort between NIST and organizational and
+- 1 More information on Privacy Framework 1.1 development can be found at https://www.nist.gov/privacy-framework/new
+- projects/privacy-framework-version-11. iv CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 121 Executive Summary
+- 122 For more than two decades, the Internet and associated information technologies have driven
+- 169 foundations by bringing privacy risk into parity with their broader enterprise risk portfolio.
+- 2 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 170 1. Privacy Framework Introduction
+- 171 For more than two decades, the Internet and associated information technologies have driven
+- Philosophy of Technology, eds Pitt J, Shew A (Taylor & Francis, New York, NY), Chapter 12, 1st Ed. Available at
+- https://doi.org/10.4324/9780203735657. 3 CSWP 40 ipd (Initial Public Draft) NIST Privacy Framework 1.1 April 14, 2025 200 1.1. Overview of the Privacy Framework
+- 201 As shown in Figure 1, the The Core provides an increasingly granular set of activities and outcomes that enable an 202 Privacy Framework is composed

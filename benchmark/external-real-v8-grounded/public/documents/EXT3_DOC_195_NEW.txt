@@ -1,0 +1,57 @@
+Source title: Applying IFRS S1 when reporting only climate-related disclosures under IFRS S2
+Source URL: https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf
+
+Raw source excerpt window:
+
+- Standards Board (ISSB) issued its inaugural to disclose information on only climate‑related
+- Standards, IFRS S1 General Requirements for risks and opportunities (in accordance Disclosure of Sustainability-related Financial with IFRS S2) and consequently apply the
+- Information and IFRS S2 Climate-related requirements in [IFRS S1] only insofar as
+- IFRS S1 paragraphs Topic or section Replicated paragraphs in IFRS S2 or explanation for exclusion Risk management IFRS S1.43, 44 Risk management IFRS S2.24–25
+- Metrics and targets IFRS S1.45–46(a), Metrics and targets IFRS S2.27–28, 29–32, 33–37 47–48, 51 GENERAL REQUIREMENTS Sources of guidance IFRS S1.54 Identifying sustainability-related risks IFRS S2.11
+- and opportunities This paragraph in IFRS S1 refers to specific requirements in other ISSB Standards, so it is not necessary to apply this paragraph when reporting
+- IFRS S1.C1-C3 requirements applicable in the absence of a specific ISSB Standard. JUDGEMENTS, UNCERTAINTIES AND ERRORS Judgements IFRS S1.76 Judgements These paragraphs acknowledge
+- IFRS S1.82 Measurement uncertainty applicability of specific requirements in other ISSB Standards. A company reporting only climate-related information applying IFRS S2 will have
+- 7 IFRS S2 Climate-related Disclosures requires a company to refer to and consider the applicability of the industry-based metrics associated
+- on climate-related information using IFRS S2. IFRS S1.55(a) Identifying sustainability-related risks IFRS S2.127 and opportunities IFRS S1.56 Identifying applicable disclosure This paragraph requires a company
+- requirements to apply the specific ISSB Standard. A company reporting only climate‑related financial information applying IFRS S2 will have applied the specific ISSB
+- Disclosures. The ISSB is committed to supporting the they relate to the disclosure of information on
+- This means that a company would need to apply
+- all the requirements of IFRS S1 and IFRS S2 to • applies the requirements in IFRS S2 to report on
+- be able to assert compliance. However, electing climate-related risks and opportunities. to use the transition relief allows a company to Jurisdictional and voluntary considerations
+- Applying IFRS S1 when reporting only climate-related disclosures in accordance with IFRS S2 | January 2025 | 2
+- IFRS S1 requirements that are applicable when applying IFRS S2
+- To assist companies applying a climate-first approach using ISSB Standards, Table 1 provides a description of
+- requirement to use ‘reasonable and supportable information that is available to the company at the reporting date without undue cost or effort’. These paragraphs explain how this mechanism works,
+- which is useful for companies applying the relevant requirements in IFRS S1 and IFRS S2. IFRS S1 includes a requirement that applies this mechanism in a context that is also relevant for IFRS S2—when
+- determining the scope of a company’s value chain in relation to its sustainability-related risks and opportunities. IFRS S2 also applies this mechanism in the application of the following requirements:
+- A company is required to apply IFRS S1 when disclosing information about climate-related risks and
+- opportunities in accordance with IFRS S2. However, some of the requirements in IFRS S1 are not applicable
+- when reporting on only climate-related risks and opportunities (in accordance with IFRS S2) because either:
+- • the requirements in IFRS S1 are applicable only in the absence of a specific requirement in another ISSB
+- • the requirements in IFRS S1 refer to specific requirements in another ISSB Standard, for example IFRS S2.
+- Table A1 provides the IFRS S1 paragraph references in the first column, the topic or section in the Standard in
+- in IFRS S2 or an explanation for excluding it. Table A1—Paragraphs in IFRS S1 that are not included in Table 1 IFRS S1 paragraphs Topic or section Replicated paragraphs in IFRS S2 or
+- explanation for exclusion SCOPE IFRS S1.6 Scope IFRS S2.4 CORE CONTENT IFRS S1.25 Core content IFRS S2 includes specific corresponding requirements for
+- climate‑related disclosures on the topics. Governance IFRS S1.26–27 Governance IFRS S2.5–6 Strategy IFRS S1.28–29 Strategy IFRS S2.8–9 IFRS S1.30 Sustainability-related risks and IFRS S2.10
+- opportunities IFRS S1.32 Business model and value chain IFRS S2.13 IFRS S1.33(a)–(b) Strategy and decision-making IFRS S2.14(a), (c) IFRS S1.34–40 Financial position, financial IFRS S2.15–21
+- Applying IFRS S1 when reporting only climate-related disclosures in accordance with IFRS S2 | January 2025 | 13
+- IFRS S1 paragraphs Topic or section Replicated paragraphs in IFRS S2 or explanation for exclusion APPENDIX B—APPLICATION GUIDANCE IFRS S1.B6(a) Identifying sustainability-related risks IFRS S2.11
+- and opportunities IFRS S1.B7 Identifying sustainability-related risks This paragraph refers to other and opportunities paragraphs in IFRS S1 that are either
+- Defined terms IFRS S1 which are applicable when preparing and providing climate related disclosures—for example, definitions of ‘material information’,
+- ‘reporting entity’ and ‘scenario analysis’. Appendix E— These paragraphs set out the effective date of IFRS S1 and IFRS S1.E1–E2 Effective date requirements on early application.6
+- Appendix E— These paragraphs describe the transition reliefs available to a IFRS S1.E4–E6 Transition company in its first year of applying ISSB Standards, including reliefs
+- January 2025 Educational material Applying IFRS S1 when reporting only climate-related disclosures in accordance with IFRS S2 Introduction In the first annual reporting period in which an
+- In June 2023, the International Sustainability entity applies [IFRS S1], the entity is permitted
+- providing information about climate-related risks and
+- Applying IFRS S1 when reporting only climate-related disclosures in accordance with IFRS S2 | January 2025 | 1
+- opportunities in its first year of application. Such an assert such compliance in a company’s first year of
+- transition reliefs in IFRS S1 and IFRS S2. A company opportunities in accordance with IFRS S2.
+- is required to apply IFRS S1 and IFRS S2 together Using this transition relief gives a company time but paragraph E5 of IFRS S1 allows a company, in
+- to prepare to report on all sustainability-related its first year of applying ISSB Standards, to disclose risks and opportunities that could reasonably be
+- Note that paragraphs B1–B5 explain what sustainability-related risks and opportunities are and how they might arise, which is helpful for understanding how to identify such sustainability-related risks
+- and opportunities. These paragraphs also explain that IFRS S1 sets out the general requirements for the content and presentation of sustainability‑related
+- financial information—including climate-related disclosures. SCOPE Scope These paragraphs explain the scope of reporting using ISSB IFRS S1.5, 7–9
+- guidance or industries specified in IFRS S2, the SASB Standards or other sources of guidance relating to a particular industry or industries
+- that the company has applied in preparing its sustainability-related financial disclosures. Location of disclosures Location of These paragraphs set out requirements for the location of IFRS S1.60–62
+- disclosures disclosures provided in accordance with ISSB Standards. These include the requirement that information provided in accordance with ISSB Standards (including climate-related
+- • identifying climate-related risks and opportunities; • preparing disclosures about anticipated financial effects; • performing climate-related scenario analysis;

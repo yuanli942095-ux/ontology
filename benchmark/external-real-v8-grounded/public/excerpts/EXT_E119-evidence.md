@@ -1,0 +1,123 @@
+# EXT_E119 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- additional guidance on practices and controls that could be used to achieve outcomes and are
+- intended to help an organization understand, adopt, and use the CSF. They include: • Informative References that point to sources of guidance on each outcome from existing
+- global standards, guidelines, frameworks, regulations, policies, etc. • Implementation Examples that illustrate potential ways to achieve each outcome
+- • Section 3 defines the concepts of CSF Profiles and Tiers. • Section 4 provides an overview of selected components of the CSF’s suite of online
+- resources: Informative References, Implementation Examples, and Quick Start Guides. • Section 5 discusses how an organization can integrate the CSF with other risk
+- management programs. • Appendix A is the CSF Core. • Appendix B contains a notional illustration of the CSF Tiers. • Appendix C is a glossary of CSF terminology.
+- on the path to improving their cybersecurity posture and management of associated risks. The
+- guides are revised in their own time frames, and new guides are added as needed. Suggestions for new Informative References for CSF 2.0 can always be shared with NIST at
+- olir@nist.gov. Suggestions for other resources to reference on the NIST CSF website, including
+- Incident Mitigation RS.MI Recover (RC) Incident Recovery Plan Execution RC.RP Incident Recovery Communication RC.CO
+- The CSF Core, Informative References, and Implementation Examples are available on the CSF
+- 2.0 website and through the CSF 2.0 Reference Tool, which allows users to explore them and
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- relevant and readily accessible by smaller organizations as well as their larger counterparts.
+- NIST now provides Implementation Examples and Informative References, which are available
+- online and updated regularly. Creating current and target state Organizational Profiles helps
+- stability to its users, and be available in machine-readable formats. This section provides an
+- overview of three types of online resources: Informative References, Implementation Examples,
+- Informative References are mappings that indicate relationships between the Core and various
+- standards, guidelines, regulations, and other content. Informative References help inform how
+- an organization may achieve the Core’s outcomes. Informative References can be sector- or
+- technology-specific. They may be produced by NIST or another organization. Some Informative
+- many references needed to achieve the outcome described in one Subcategory. Other
+- Informative References may be higher-level, such as a requirement from a policy that partially
+- addresses numerous Subcategories. When using the CSF, an organization can identify the most
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+- Framework (RMF). For an organization using the NIST RMF and its suite of publications, the CSF can be used to complement the RMF’s approach to selecting and prioritizing
+- controls from SP 800-53, Security and Privacy Controls for Information Systems and Organizations. • Privacy risks: While cybersecurity and privacy are independent disciplines, their
+- objectives overlap in certain circumstances, as illustrated in Fig. 6. 12 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024
+- The NIST Cybersecurity Framework (CSF) 2.0 National Institute of Standards and Technology This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.29
+- February 26, 2024 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Abstract The NIST Cybersecurity Framework (CSF) 2.0 provides guidance to industry, government
+- agencies, and other organizations to manage cybersecurity risks. It offers a taxonomy of high
+- sector, or maturity — to better understand, assess, prioritize, and communicate its
+- cybersecurity efforts. The CSF does not prescribe how outcomes should be achieved. Rather, it
+- links to online resources that provide additional guidance on practices and controls that could
+- be used to achieve those outcomes. This document describes CSF 2.0, its components, and some of the many ways that it can be used. Keywords
+- cybersecurity; Cybersecurity Framework (CSF); cybersecurity risk governance; cybersecurity risk
+- management; enterprise risk management; Profiles; Tiers. Audience Individuals responsible for developing and leading cybersecurity programs are the primary
+- managers, lawyers, human resources specialists, and cybersecurity and risk management
+- auditors — to guide their cybersecurity-related decisions. Additionally, the CSF can be useful to
+- those making and influencing policy (e.g., associations, professional organizations, regulators)
+- Unless otherwise noted, documents cited, referenced, or excerpted in this publication are not
+- wholly incorporated into this publication. Before version 2.0, the Cybersecurity Framework was called the “Framework for Improving Critical Infrastructure Cybersecurity.” This title is not used for CSF 2.0.
+- i NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Acknowledgments The CSF is the result of a multi-year collaborative effort across industry, academia, and
+
+Prior source excerpt windows:
+
+- Profiles.  Section 3 presents examples of how the Framework can be used.  Section 4 describes how to use the Framework for self-assessing and demonstrating
+- cybersecurity through measurements.  Appendix A presents the Framework Core in a tabular format: the Functions, Categories, Subcategories, and Informative References.
+-  Appendix B contains a glossary of selected terms.  Appendix C lists acronyms used in this document. 6
+- actions to perform. It presents key cybersecurity outcomes identified by stakeholders as helpful
+- in managing cybersecurity risk. The Core comprises four elements: Functions, Categories, Subcategories, and Informative References, depicted in Figure 1:
+- Figure 1: Framework Core Structure The Framework Core elements work together as follows:
+-  Measuring the degree of implementation for controls catalogs or technical guidance listed
+- as Informative References. The development of cybersecurity performance metrics is evolving. Organizations should be
+- thoughtful, creative, and careful about the ways in which they employ measurements to optimize
+- This appendix presents the Framework Core: a listing of Functions, Categories, Subcategories,
+- and Informative References that describe specific cybersecurity activities that are common
+- across all critical infrastructure sectors. The chosen presentation format for the Framework Core
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 23
+- April 16, 2018 Cybersecurity Framework Version 1.1 Table 2: Framework Core Function Category Subcategory Informative References IDENTIFY Asset Management (ID.AM): ID.AM-1: Physical devices and systems CIS CSC 1
+- (ID) The data, personnel, devices, within the organization are inventoried COBIT 5 BAI09.01, BAI09.02
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 24
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References third-party stakeholders (e.g., suppliers, ISA 62443-2-1:2009 4.3.2.3.3
+- customers, partners) are established ISO/IEC 27001:2013 A.6.1.1 NIST SP 800-53 Rev. 4 CP-2, PS-7, PM-11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 25
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References management of cybersecurity ID.GV-2: Cybersecurity roles and CIS CSC 19
+- risk. responsibilities are coordinated and aligned COBIT 5 APO01.02, APO10.03, APO13.02, with internal roles and external partners DSS05.04 ISA 62443-2-1:2009 4.3.2.3.3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 26
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RA-3: Threats, both internal and CIS CSC 4
+- external, are identified and documented COBIT 5 APO12.01, APO12.02, APO12.03, APO12.04 ISA 62443-2-1:2009 4.2.3, 4.2.3.9, 4.2.3.12 ISO/IEC 27001:2013 Clause 6.1.2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 27
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ID.RM-3: The organization’s COBIT 5 APO12.02
+- determination of risk tolerance is informed ISO/IEC 27001:2013 Clause 6.1.3, Clause 8.3 by its role in critical infrastructure and NIST SP 800-53 Rev. 4 SA-14, PM-8, PM-9, PM
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 28
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AU-2, AU-6, AU-12, AU
+- 16, PS-7, SA-9, SA-12 ID.SC-5: Response and recovery planning CIS CSC 19, 20 and testing are conducted with suppliers COBIT 5 DSS04.04 and third-party providers ISA 62443-2-1:2009 4.3.2.5.7, 4.3.4.5.11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 29
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AC-1, AC-17, AC-19,
+- AC-20, SC-15 PR.AC-4: Access permissions and CIS CSC 3, 5, 12, 14, 15, 16, 18 authorizations are managed, incorporating COBIT 5 DSS05.04 the principles of least privilege and ISA 62443-2-1:2009 4.3.3.7.3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 30
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ISA 62443-3-3:2013 SR 1.1, SR 1.2, SR 1.5, SR
+- 1.7, SR 1.8, SR 1.9, SR 1.10 ISO/IEC 27001:2013 A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3, A.18.1.4 NIST SP 800-53 Rev. 4 AC-7, AC-8, AC-9, AC
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 31
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References NIST SP 800-53 Rev. 4 AT-3, IR-2, PM-13
+- Data Security (PR.DS): PR.DS-1: Data-at-rest is protected CIS CSC 13, 14 Information and records (data) are COBIT 5 APO01.06, BAI02.01, BAI06.01,
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 32
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1,
+- A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3 NIST SP 800-53 Rev. 4 AC-4, AC-5, AC-6, PE 19, PS-3, PS-6, SC-7, SC-8, SC-13, SC-31, SI-4 PR.DS-6: Integrity checking mechanisms CIS CSC 2, 3
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 33
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References ISO/IEC 27001:2013 A.6.1.5, A.14.1.1, A.14.2.1,
+- A.14.2.5 NIST SP 800-53 Rev. 4 PL-8, SA-3, SA-4, SA-8, SA-10, SA-11, SA-12, SA-15, SA-17, SI-12, SI 13, SI-14, SI-16, SI-17 PR.IP-3: Configuration change control CIS CSC 3, 11
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 34
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References PR.IP-7: Protection processes are COBIT 5 APO11.06, APO12.06, DSS04.05
+- improved ISA 62443-2-1:2009 4.4.3.1, 4.4.3.2, 4.4.3.3, 4.4.3.4, 4.4.3.5, 4.4.3.6, 4.4.3.7, 4.4.3.8 ISO/IEC 27001:2013 A.16.1.6, Clause 9, Clause
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 35
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References PR.IP-12: A vulnerability management CIS CSC 4, 18, 20
+- plan is developed and implemented COBIT 5 BAI03.10, DSS05.01, DSS05.02 ISO/IEC 27001:2013 A.12.6.1, A.14.2.3, A.16.1.3, A.18.2.2, A.18.2.3 NIST SP 800-53 Rev. 4 RA-3, RA-5, SI-2
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 39
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References COBIT 5 BAI03.10, DSS05.01 ISA 62443-2-1:2009 4.2.3.1, 4.2.3.7
+- ISO/IEC 27001:2013 A.12.6.1 NIST SP 800-53 Rev. 4 RA-5 Detection Processes (DE.DP): DE.DP-1: Roles and responsibilities for CIS CSC 19
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 40
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References RESPOND (RS) Response Planning (RS.RP): RS.RP-1: Response plan is executed CIS CSC 19
+- Response processes and during or after an incident COBIT 5 APO12.06, BAI01.10 procedures are executed and ISA 62443-2-1:2009 4.3.4.5.1 maintained, to ensure response to
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 41
+- April 16, 2018 Cybersecurity Framework Version 1.1 Function Category Subcategory Informative References Analysis (RS.AN): Analysis is RS.AN-1: Notifications from detection CIS CSC 4, 6, 8, 19
+- conducted to ensure effective systems are investigated COBIT 5 DSS02.04, DSS02.07 response and support recovery ISA 62443-2-1:2009 4.3.4.5.6, 4.3.4.5.7, 4.3.4.5.8

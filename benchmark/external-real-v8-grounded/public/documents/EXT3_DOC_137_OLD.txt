@@ -1,0 +1,63 @@
+Source title: NIST Privacy Framework 1.0
+Source URL: https://doi.org/10.6028/NIST.CSWP.01162020
+
+Raw source excerpt window:
+
+- Accountability is generally considered a key privacy principle, although conceptually it is not unique to
+- privacy. 13 Accountability occurs throughout an organization, and it can be expressed at varying degrees
+- of abstraction, for example as a C O L L A B O R A T I O N cultural value, as governance policies and procedures, or as traceability Tier selection and Profile development
+- entities within the data processing ecosystem. The need for this communication can be particularly
+- 13 NIST Privacy Framework January 16, 2020
+- notable when the data processing ecosystem crosses national boundaries, such as with international
+- (NIST SP 800-63-3 [8]) of format. For example, for the attribute “birthday,” a value could be
+- “12/1/1980” or “December 1, 1980.” Availability Ensuring timely and reliable access to and use of information. (44 U.S.C. [13]) Category The subdivision of a Function into groups of privacy outcomes closely tied
+- to programmatic needs and particular activities. Communicate-P Develop and implement appropriate activities to enable organizations (Function) and individuals to have a reliable understanding and engage in a dialogue
+- about how data are processed and associated privacy risks. Confidentiality Preserving authorized restrictions on information access and disclosure,
+- (44 U.S.C. [13]) including means for protecting personal privacy and proprietary information.
+- Control-P (Function) Develop and implement appropriate activities to enable organizations or
+- Once an organization can identify the likelihood of any given problem arising from the data processing,
+- which the Privacy Framework refers to as a problematic data action, it can assess the impact should the
+- problematic data action occur. This impact assessment is where privacy risk and organizational risk
+- implemented the processes to identify, objectives of an organization’s privacy program.
+- assess, and manage privacy risks within ID.DE-P4: Interoperability frameworks or similar multi-party
+- the data processing ecosystem. approaches are used to manage data processing ecosystem privacy
+- NIST National Institute of Standards and Technology OASIS Organization for the Advancement of Structured Information Standards OECD Organisation for Economic Co-operation and Development
+- OMB Office of Management and Budget PMRM Privacy Management Reference Model and Methodology PRAM Privacy Risk Assessment Methodology RFC Request for Comment
+- RFI Request for Information SDLC System Development Life Cycle SP Special Publication 31 NIST Privacy Framework January 16, 2020 Appendix D: Privacy Risk Management Practices
+- NIST has developed a Privacy Risk Assessment Methodology (PRAM) that can help organizations identify,
+- assess, and respond to privacy risks. It is comprised of a set of worksheets available at [3].
+- 20 See NIST SP 800-30, Rev. 1, Guide for Conducting Risk Assessments [12] at p. 8. 21
+- (National Institute of Standards and Technology, Gaithersburg, MD), NIST Special Publication (SP)
+- 800-30, Rev. 1. https://doi.org/10.6028/NIST.SP.800-30r1 [13] “Definitions,” Title 44 U.S. Code, Sec. 3542. 2011 ed. https://www.govinfo.gov/app/details/USCODE-2011-title44/USCODE-2011-title44-chap35
+- subchapIII-sec3542 16 NIST Privacy Framework January 16, 2020 Appendix A: Privacy Framework Core
+- and whether it has sufficient processes and resources in place to manage that risk. Individual A single person or a group of persons, including at a societal level.
+- Integrity Guarding against improper information modification or destruction, and (44 U.S.C. [13]) includes ensuring information non-repudiation and authenticity.
+- Lineage The history of processing of a data element, which may include point-to point data flows and the data actions performed upon the data element.
+- confusion with Cybersecurity Framework Functions. 6 NIST Privacy Framework January 16, 2020 leveraged to further support the management of risks associated with
+- cybersecurity-related privacy events by using the Detect, Respond, and Privacy Cybersecurity Recover Functions. Alternatively, Cybersecurity- Risks
+- Risks related privacy organizations may use all five of the Cybersecurity Framework Functions in IDENTIFY events IDENTIFY-P conjunction with Identify-P, Govern-P, PROTECT PROTECT-P GOVERN-P
+- to achieve accountability within and between organizations. 14 Establishing or Improving a Privacy Program
+- Using a simple model of “ready, set, go” phases, the Privacy Framework can support the creation of a
+- new privacy program or improvement of an existing program. As an organization goes through these
+- system to verify that all privacy capabilities and requirements are implemented. The privacy outcomes
+- determined by using the Privacy Framework should then serve as a basis for ongoing operation of the
+- system. This includes occasional reassessment, capturing results in a Current Profile, to verify that
+- Within the SDLC, organizations may employ a variety of development methodologies (e.g., waterfall, spiral, or
+- agile). 12 NIST Privacy Framework January 16, 2020 Using within the Data Processing Ecosystem A key factor in the management of privacy risk is an entity’s role(s) in the
+- data processing ecosystem, which can Public/ affect not only its legal obligations, but Government also the measures it may take to manage Services
+- established and used to support risk providers, customers, partners, product manufacturers, application
+- decisions associated with managing developers) are identified, prioritized, and assessed using a privacy
+- privacy risk and third parties within the risk assessment process.
+- senior executives can better understand and respond appropriately.
+- Figure 7 provides a graphical representation of this bi-directional collaboration and communication and
+- how elements of the Privacy Framework can be incorporated to facilitate the process. In this way,
+- authority, the integrity, confidentiality, or availability of information or an information system; or (2) constitutes a violation or imminent threat of
+- violation of law, security policies, security procedures, or acceptable use policies. Data A representation of information, including digital and non-digital formats.
+- 28 NIST Privacy Framework January 16, 2020
+- Version 1.0 NIST PRIVACY FRAMEWORK: A TOOL FOR IMPROVING PRIVACY THROUGH ENTERPRISE RISK MANAGEMENT, VERSION 1.0 January 16, 2020 This publication is available free of charge from:
+- https://doi.org/10.6028/NIST.CSWP.01162020 The contents of this document do not have the force and effect of law and are not meant to bind the public in any way.
+- NIST Privacy Framework January 16, 2020 Executive Summary
+- For more than two decades, the Internet and associated information technologies have driven
+- are fueled by data about individuals that flow through a complex ecosystem. As a result, individuals may
+- not be able to understand the potential consequences for their privacy as they interact with systems,
+- products, and services. At the same time, organizations may not realize the full extent of these

@@ -1,0 +1,62 @@
+{
+  "event_id": "EXT_E003",
+  "semantics": "revised_exception_compensation_formula",
+  "facts": {
+    "source_revision_year": "2026",
+    "target_product": "pear_planting_insurance",
+    "damage_type": "freeze_damage",
+    "formula_basis": "accident_date_compensation_limit"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E003_2026_ACCIDENT_DATE_LIMIT_FORMULA",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "source_revision_year",
+          "operator": "equals",
+          "value": "2026"
+        },
+        {
+          "fact": "damage_type",
+          "operator": "equals",
+          "value": "freeze_damage"
+        },
+        {
+          "fact": "formula_basis",
+          "operator": "equals",
+          "value": "accident_date_compensation_limit"
+        }
+      ],
+      "allowed_values": [
+        "formula=accident_date_limit_times_loss_rate"
+      ]
+    },
+    {
+      "rule_id": "EXT_E003_OLD_THRESHOLD_FORMULA",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "source_revision_year",
+          "operator": "equals",
+          "value": "2025"
+        },
+        {
+          "fact": "damage_type",
+          "operator": "equals",
+          "value": "freeze_damage"
+        }
+      ],
+      "allowed_values": [
+        "formula=effective_amount_times_loss_minus_50_over_50"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT_DOC_003_2025",
+      "EXT_DOC_003_2026"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_MANUAL_FORMALIZATION"
+  }
+}

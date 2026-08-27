@@ -1,0 +1,93 @@
+# EXT_E042 Evidence
+
+- Source title: Guidance on Applying WCAG 2.2 to Mobile Applications
+- Source URL: https://www.w3.org/TR/wcag2mobile-22/
+- Prior source title: W3C mobile accessibility guidance
+- Prior source URL: https://www.w3.org/WAI/standards-guidelines/mobile/
+
+Raw source excerpt windows:
+
+- in the W3C standards and drafts index at https://www.w3.org/TR/.
+- This is a W3C Group Note on "Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)". The purpose of this work is to build upon "Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile" [mobile-accessibility-mapping], but also to have a stronger focus on mobile applications and include changes made in WCAG 2.1 and 2.2.
+- To comment, file an issue in the W3C MATF GitHub repository. The Mobile Accessibility Task Force (MATF) requests that public comments be filed as new issues, one issue per discrete comment. It is free to create a GitHub account to file issues. If filing issues in GitHub is not feasible, email public-agwg-comments@w3.org (comment archive).
+- For information on related work, see Mobile Accessibility at W3C. 1.1 Guidance in this document
+- This document provides informative guidance (guidance that is not normative and that does not set requirements) with regard to the interpretation and application of Web Content Accessibility Guidelines (WCAG) to mobile applications. Specifically, this document provides informative guidance on applying WCAG 2.2 Level A and AA success criteria to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps.
+- 1.1.1 Interpretation of Web Terminology in a Mobile Context
+- In January 2024, MATF regrouped and welcomed new participants to work on updated guidance for applying WCAG 2.2 to mobile applications.
+- This current document, “Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)” maps directly to the W3C supporting document, Guidance on Applying WCAG 2 to Non-Web Information and Communications Technologies (WCAG2ICT) [wcag2ict-22], which was published as a Group Note in October 2024, describing how WCAG 2.2 could be applied to non-web documents and software.
+- The intention of MATF is to publish WCAG2Mobile as a Group Note, just like WCAG2ICT.
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile) Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile) W3C Group Draft Note 06 May 2025
+- More details about this document This version: https://www.w3.org/TR/2025/DNOTE-wcag2mobile-22-20250506/ Latest published version: https://www.w3.org/TR/wcag2mobile-22/
+- Copyright © 2022-2025 World Wide Web Consortium. W3C® liability, trademark and document use rules apply. Abstract
+- This document describes how Web Content Accessibility Guidelines (WCAG) 2.2 [WCAG22] principles, guidelines, and success criteria can be applied to mobile applications, including native mobile apps, mobile web apps and hybrid apps using web components inside native mobile apps. It provides informative guidance (guidance that is not normative and does not set requirements).
+- Status of This Document This section describes the status of this document at the time of its publication. A list of current W3C publications and the latest revision of this technical report can be found
+- 2.5.8 Target Size (Minimum) (AA), to providing minimum touch target sizes; 3.3.7 Redundant Entry (A), to reduce the amount of repetitive typing.
+- WCAG2ICT is organized to mirror the principle, guideline and success criterion structure of WCAG; this model is also used in WCAG2Mobile. WCAG2ICT clarifies when and how WCAG Level A and Level AA success criteria could be applied to non-web documents and software; WCAG2Mobile narrows the scope of this work to mobile applications.
+- This document does not propose changes to WCAG 2 or its supporting documents; it does not include interpretations for implementing WCAG 2 in web technologies.
+- This document is not sufficient by itself to ensure accessibility in mobile applications — as a web standard, WCAG does not fully cover all accessibility requirements for non-user interface aspects of platforms, user-interface components as individual items, or closed product software (where there is no assistive technology to communicate programmatic information).
+- This document does not comment on hardware aspects of products, because the basic constructs on which WCAG 2 is built do not apply to these.
+- A small number of success criteria are written to apply to “a set of web pages” or “multiple web pages” and depend upon all pages in the set to share some characteristic or behavior. Since the unit of conformance in WCAG 2 is a single web page, the task force agreed that the equivalent unit of conformance for mobile applications is a single screen within the application. It follows that an equivalent unit of evaluation for a “set of web pages” would be a “set of screens”, not — as previously interpreted in WCAG2ICT — as a “set of software”. These terms are defined in the Key Terms section of this document. See “set of screens” to determine when a group of screens in a mobile application are considered a set.
+- The glossary terms were also reviewed and most of them applied to mobile applications, as written. Some applied with additional notes or edits (largely related to phrases like “Web page(s)”), and a small number of terms were only used in Level AAA success criteria, which are not addressed by the WCAG2Mobile Note at this time.
+- 1.2 Excluded from scope The following are out of scope for this document:
+- user agent user interface component Added to Glossary specifically for WCAG2Mobile: navigational mechanisms 2. Key Terms
+- WCAG2Mobile defines key glossary terms to refine the broader scope of WCAG2ICT for mobile applications. It introduces terms that do not exist in WCAG2ICT or WCAG but are important to define for a mobile application context.
+- “Content” and “user agent” are glossary terms from WCAG2ICT that need to be interpreted significantly differently when applied to mobile applications.
+- Web Content Accessibility Guidelines (WCAG) 2.2. Michael Cooper; Andrew Kirkpatrick; Alastair Campbell; Rachael Bradley Montgomery; Charles Adams. W3C. 12 December 2024. W3C Recommendation. URL: https://www.w3.org/TR/WCAG22/
+- Guidance on Applying WCAG 2 to Non-Web Information and Communications Technologies (WCAG2ICT). Mary Jo Mueller; Chris Loiselle; Phil Day. W3C. 15 November 2024. W3C Working Group Note. URL: https://www.w3.org/TR/wcag2ict-22/
+- In this Draft Note, most of the existing sections have undergone significant review and updates. The current Draft has been restructured to align with WCAG2ICT rather than continue with the structure and format of the 2015 Mobile Accessibility Mapping document.
+- With this perspective in mind, the following list highlights where this current document differs from the 2015 Mobile Accessibility Mapping document to apply all success criteria of WCAG 2.0, WCAG 2.1, WCAG 2.2, and acknowledge the change to 4.1.1 Parsing to mobile applications:
+- New Background section to explain the changes in scope for the current document Modifications to key terms introduced by WCAG2ICT: closed functionality
+- References to glossary items in this document are presented in <cite> elements that are visually styled as ordinary text with a dark gray underline.
+- Hereafter, the short title “WCAG2Mobile” is used to reference this document. 1.5 Comparison with the 2015 Mobile Accessibility Working Draft Note
+- A.2 Enabling funders B. References B.1 Informative references 1. Background
+- This document is an iteration on Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile [mobile-accessibility-mapping], published in February 2015. The document was intended to become a Group Note but it did not move to the next maturity stage. The most recent publication was an Editor's Draft in December 2018.
+- After 2018, the Mobile Accessibility Task Force (MATF) ensured that mobile considerations were included in WCAG 2.1 and WCAG 2.2, such as:
+- When certain Web-specific terms or phrases like “web page(s)” were used in success criteria, those were replaced with mobile terms or phrases like “screen(s)” or “view(s)”. Additional notes were also provided to explain the terminology replacements.
+- Success Criterion 3.2.4 Consistent Identification (Level AA) Success Criterion 3.3.2 Labels or Instructions (Level A) Success Criterion 3.3.5 Help (Level AAA)
+- Supporting documentation in the Mobile Mapping Appendix included WCAG 2.0 Techniques that Apply to Mobile to address mobile web use cases for the rest of the WCAG 2.0 success criteria at Level A, Level AA, and Level AAA, as they were available in 2015 when the webpage was published. However, most listed techniques have limited application to native mobile applications and cross-platform frameworks like Flutter and React Native.
+- This document includes all the relevant WCAG 2.1 Level A and AA success criteria and guidelines:
+- The remaining glossary terms from WCAG2ICT and WCAG 2 are addressed in WCAG2ICT: Comments on Definitions in WCAG 2 Glossary.
+- Terms defined and used in WCAG2Mobile are applicable only to the interpretation of the guidance in this document. The particular definitions should not be interpreted as having applicability to situations beyond the scope of WCAG2Mobile. Further information on usage of these terms follows.
+- Note Work in Progress. See Issues labeled as 'definition' on GitHub. 3. Comments by Principle, Guideline and Success Criterion
+- The sections that follow are organized according to the principles, guidelines and success criteria from WCAG 2.2. The text of each principle, guideline and success criterion from WCAG 2.2 is provided as quoted text. Following that, the WCAG2ICT guidance is provided as quoted text. Next, the WCAG2Mobile guidance itself is provided.
+- Work in Progress. The document currently only includes guidance for success criteria. The guidance for principles and guidelines will be added at a later stage.
+- Inclusion of all WCAG 2.2 Level A and AA success criteria and not just those specifically affected by mobile phone usage.
+- The prior 2015 Mobile Working Draft Note included specific guidance on the following WCAG 2.0 success criteria for mobile, primarily for a mobile web context:
+- Success Criterion 1.4.3 Contrast (Minimum) (Level AA) Success Criterion 1.4.4 Resize Text (Level AA) Success Criterion 1.4.6 Contrast (Enhanced) (Level AAA)
+- The glossary terms “document” and “software” in WCAG2ICT are replaced with the defined terms “screen” and “view”. The glossary terms “set of web pages”, “set of documents” and “set of software programs” are replaced with the defined term “set of screens”.
+- The term “accessibility services of platform software”, introduced by WCAG2ICT, has been modified to reflect its different use in mobile applications. Additionally, “closed functionality” has a different meaning in the context of mobile applications.
+
+Prior source excerpt windows:
+
+- W3C provides specific guidance on mobile accessibility:
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile) — an in-progress draft of guidance for WCAG 2.2
+- Mobile Accessibility: How WCAG 2.0 and Other W3C/WAI Guidelines Apply to Mobile — the previous resource for WCAG 2.0
+- To learn how WCAG 2 can be applied to mobile web content, mobile web apps, native apps, and hybrid apps using web components inside native apps, see:
+- Guidance on Applying WCAG 2.2 to Mobile Applications (WCAG2Mobile)
+- WCAG2ICT: Applying WCAG 2 to Non-Web Information and Communications Technologies — a more general resource that also includes mobile apps
+- Page Contents More than ‘mobile’ W3C addresses mobile accessibility Get updates Get involved About W3C and WAI More than ‘mobile’
+- ‘Mobile accessibility’ refers to making websites and applications more accessible to people with disabilities when they are using mobile phones and other devices. WAI’s work in this area addresses accessibility issues of people using a broad range of devices to interact with the web, including:
+- phones and tablets digital TVs wearables such as smart watches devices in car dashboards and airplane seatbacks devices in household appliances
+- W3C accessibility standards address mobile accessibility. There are four accessibility standards:
+- Web Content Accessibility Guidelines (WCAG) — covers web pages and web applications, including content used on mobile devices:
+- Applying UAAG to Mobile Phones — explores the issues with user agents
+- Authoring Tool Accessibility Guidelines (ATAG) — covers software used to create web pages and applications, including for mobile
+- WAI-ARIA (Accessible Rich Internet Applications) — defines ways to make web content more accessible, especially dynamic content and advanced user interface controls; it applies to web applications and to accessing websites with mobile devices
+- Menu Get Involved About W3C WAI Search: Accessibility Fundamentals Planning & Policies Design & Develop Test & Evaluate Teach & Advocate Standards/Guidelines
+- Home Standards/Guidelines Mobile Accessibility at W3C Standards/Guidelines Web Content – WCAG 2 How to Meet WCAG 2 (Quick Reference) At a Glance
+- The Documents Applying to Non-Web ICT New in 2.2 New in 2.1 Translations Commenting Conformance Logos FAQ WCAG 3 Draft Authoring Tools – ATAG
+- In addition to ensuring mobile is addressed in W3C’s accessibility standards, WAI ensures that the core W3C technologies, including those that are essential for the mobile web, also support accessibility. All W3C work is reviewed for accessibility by the Accessible Platform Architectures (APA) Working Group.
+- For a summary of technologies developed in W3C that increase the capabilities of web applications and how they apply specifically to the mobile context, see Standards for Web Applications on Mobile.
+- W3C best practices for mobile accessibility For more on W3C best practices for mobile accessibility, see: Mobile Web Application Best Practices
+- What’s New in WCAG 2.1 and What’s New in WCAG 2.2 — introduce requirements (‘success criteria’) addressing mobile accessibility that have been added to WCAG 2.1 and WCAG 2.2
+- Mobile accessibility is covered in existing W3C accessibility standards/guidelines, including Web Content Accessibility Guidelines (WCAG). W3C does not have separate guidelines for mobile accessibility.
+- Mobile Accessibility at W3C | Web Accessibility Initiative (WAI) | W3C Skip to Content Change Text Size or Colors This page in: English العربية
+- čeština español français Bahasa Indonesia 한국어 русский язык 简体中文 All Translations Show Customization, Languages, Translations Strategies, standards, resources to make the Web accessible to people with disabilities
+- 한국어 русский язык 简体中文 All Translations Translating WAI Resources Mobile Accessibility at W3C Summary
+- User Agent Accessibility Guidelines (UAAG) covers web browsers and other ‘user agents’, including mobile browsers:
+- Mobile Accessibility Examples from UAAG — contains examples of how web browsers that follow UAAG benefit people with disabilities who use the web on mobile devices
+- W3C technologies and mobile accessibility
+- Mobile Web Best Practices Get updates
+- To be notified about future work on mobile accessibility at W3C, see Subscribe to WAI News.
+- Most of WAI’s work related to mobile accessibility is through the Mobile Accessibility Task Force. If you would like to be more involved in WAI’s work on mobile accessibility, send an email with information about your interests and time availability to the Task Force chair and CC WAI Staff at wai@w3.org.
+- The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop web standards. W3C primarily pursues its mission through the creation of web standards and guidelines designed to ensure long-term growth for the web. To learn more, see About W3C.

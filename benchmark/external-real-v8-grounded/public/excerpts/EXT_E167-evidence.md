@@ -1,0 +1,123 @@
+# EXT_E167 Evidence
+
+- Source title: Regulation (EU) 2024/1689 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: COM(2021) 206 AI Act proposal official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- ‘When adopting detailed measures related to technical specifications and procedures for approval and use of security
+- equipment concerning Artificial Intelligence systems within the meaning of Regulation (EU) 2024/1689 of the European
+- Parliament and of the Council (*), the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into
+- 2024/1689/oj).’. Article 105 Amendment to Directive 2014/90/EU In Article 8 of Directive 2014/90/EU, the following paragraph is added:
+- ‘5. For Artificial Intelligence systems which are safety components within the meaning of Regulation (EU) 2024/1689 of
+- the European Parliament and of the Council (*), when carrying out its activities pursuant to paragraph 1 and when adopting
+- Official Journal EN of the European Union L series 2024/1689 12.7.2024 REGULATION (EU) 2024/1689 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008,
+- (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU)
+- 2020/1828 (Artificial Intelligence Act) (OJ L, 2024/1689, 12.7.2024, ELI: http://data.europa.eu/eli/reg/
+- 2024/1689/oj).’. Article 103 Amendment to Regulation (EU) No 167/2013 In Article 17(5) of Regulation (EU) No 167/2013, the following subparagraph is added:
+- (*) Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised
+- rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013,
+- ‘When adopting delegated acts pursuant to the first subparagraph concerning artificial intelligence systems which are safety
+- components within the meaning of Regulation (EU) 2024/1689 of the European Parliament and of the Council (*), the
+- requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account.
+- ‘4. When adopting delegated acts pursuant to paragraphs 1 and 2 concerning Artificial Intelligence systems which
+- are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III,
+- Section 2, of that Regulation shall be taken into account.’; (3) in Article 43, the following paragraph is added:
+- ‘When adopting those implementing acts concerning Artificial Intelligence systems which are safety components within
+- the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2, of that Regulation shall
+- be taken into account.’; 120/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (6) in Article 58, the following paragraph is added:
+- (6) European Parliament resolution of 20 October 2020 with recommendations to the Commission on a framework of ethical aspects
+- of artificial intelligence, robotics and related technologies, 2020/2012(INL). 2/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (9) Harmonised rules applicable to the placing on the market, the putting into service and the use of high-risk AI
+- point of contact vis-à-vis the public and other counterparts at Member State and Union levels, each Member State
+- should designate a market surveillance authority to act as a single point of contact. 38/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj
+- (154) The national competent authorities should exercise their powers independently, impartially and without bias, so as
+- pseudonymisation of judicial decisions, documents or data, communication between personnel, administrative tasks.
+- (62) Without prejudice to the rules provided for in Regulation (EU) 2024/900 of the European Parliament and of the
+- Council (34), and in order to address the risks of undue external interference with the right to vote enshrined in
+- withdrawing international protection (OJ L 180, 29.6.2013, p. 60).
+- (34) Regulation (EU) 2024/900 of the European parliament and of the Council of 13 March 2024 on the transparency and targeting of
+- political advertising (OJ L, 2024/900, 20.3.2024, ELI: http://data.europa.eu/eli/reg/2024/900/oj).
+- Visa Information System (OJ L 248, 13.7.2021, p. 11). 3. Eurodac
+- Regulation (EU) 2024/1358 of the European Parliament and of the Council of 14 May 2024 on the establishment of
+- ‘Eurodac’ for the comparison of biometric data in order to effectively apply Regulations (EU) 2024/1315 and (EU)
+- powers laid down in this Section, where that is necessary and proportionate to assist with the fulfilment of their tasks under
+- this Regulation. 110/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN Article 89 Monitoring actions
+- 1. For the purpose of carrying out the tasks assigned to it under this Section, the AI Office may take the necessary
+- of a natural person in the areas of workplace and education institutions, except where the use of the AI system is
+- intended to be put in place or into the market for medical or safety reasons; ELI: http://data.europa.eu/eli/reg/2024/1689/oj 51/144 EN OJ L, 12.7.2024
+- (g) the placing on the market, the putting into service for this specific purpose, or the use of biometric categorisation
+- (iv) providing advice on the classification of various general-purpose AI models and systems;
+- 98/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN (v) contributing to the development of tools and templates; (b) supporting the work of market surveillance authorities, at their request;
+- (c) supporting cross-border market surveillance activities as referred to in Article 74(11), without prejudice to the powers
+- independent technical or scientific advice at the request of the Board, the Commission, or of market surveillance authorities.
+- ELI: http://data.europa.eu/eli/reg/2024/1689/oj 109/144 EN OJ L, 12.7.2024 SECTION 4 Remedies Article 85 Right to lodge a complaint with a market surveillance authority
+- Without prejudice to other administrative or judicial remedies, any natural or legal person having grounds to consider that
+- 15. Regulation (EU) No 167/2013 of the European Parliament and of the Council of 5 February 2013 on the approval
+- and market surveillance of agricultural and forestry vehicles (OJ L 60, 2.3.2013, p. 1); 124/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj
+- 16. Directive 2014/90/EU of the European Parliament and of the Council of 23 July 2014 on marine equipment and
+- to lay down requirements for high-risk AI systems and obligations for the relevant operators, and to lay down
+- transparency obligations for certain AI systems. ELI: http://data.europa.eu/eli/reg/2024/1689/oj 7/144 EN OJ L, 12.7.2024
+- (27) While the risk-based approach is the basis for a proportionate and effective set of binding rules, it is important to
+- for Cybersecurity) and on information and communications technology cybersecurity certification and repealing Regulation
+- (EU) No 526/2013 (Cybersecurity Act) (OJ L 151, 7.6.2019, p. 15). 22/144 ELI: http://data.europa.eu/eli/reg/2024/1689/oj OJ L, 12.7.2024 EN
+- (79) It is appropriate that a specific natural or legal person, defined as the provider, takes responsibility for the placing on
+
+Prior source excerpt windows:
+
+- TITLE VIII POST-MARKET MONITORING, INFORMATION SHARING, MARKET SURVEILLANCE CHAPTER 1 POST-MARKET MONITORING Article 61 Post-market monitoring by providers and post-market monitoring plan for high-risk AI
+- systems 1. Providers shall establish and document a post-market monitoring system in a manner that is proportionate to the nature of the artificial intelligence technologies and the
+- risks of the high-risk AI system. EN 74 EN 2. The post-market monitoring system shall actively and systematically collect, document and analyse relevant data provided by users or collected through other
+- YYY/XX [on Artificial Intelligence] of the European Parliament and of the Council*, the
+- __________ Regulation (EU) YYY/XX [on Artificial Intelligence] (OJ …).”. Article 83 AI systems already placed on the market or put into service
+- 1. This Regulation shall not apply to the AI systems which are components of the large scale IT systems established by the legal acts listed in Annex IX that have been
+- European Council, which have repeatedly expressed calls for legislative action to ensure a
+- well-functioning internal market for artificial intelligence systems (‘AI systems’) where both
+- benefits and risks of AI are adequately addressed at Union level. It supports the objective of
+- respect of proportionality, subsidiarity and better law making principles. Against this political context, the Commission puts forward the proposed regulatory
+- framework on Artificial Intelligence with the following specific objectives:  ensure that AI systems placed on the Union market and used are safe and respect
+- existing law on fundamental rights and Union values;  ensure legal certainty to facilitate investment and innovation in AI;  enhance governance and effective enforcement of existing law on fundamental
+- Title VIII sets out the monitoring and reporting obligations for providers of AI systems with
+- regard to post-market monitoring and reporting and investigating on AI-related incidents and
+- malfunctioning. Market surveillance authorities would also control the market and investigate
+- Chapter 2 of this Regulation and other applicable Union legislation harmonising the conditions for the marketing of products (‘Union harmonisation legislation’)
+- providing for its affixing; (25) ‘post-market monitoring’ means all activities carried out by providers of AI systems to proactively collect and review experience gained from the use of AI systems they
+- place on the market or put into service for the purpose of identifying any need to immediately apply any necessary corrective or preventive actions;
+- high-risk AI system with respect to the occurrence of situations that may result in the AI system presenting a risk within the meaning of Article 65(1) or lead to a
+- substantial modification, and facilitate the post-market monitoring referred to in Article 61. 4. For high-risk AI systems referred to in paragraph 1, point (a) of Annex III, the
+- logging capabilities shall provide, at a minimum: (a) recording of the period of each use of the system (start date and time and end date and time of each use);
+- aggregation, data retention and any other operation regarding the data that is performed before and for the purposes of the placing on the market or putting
+- into service of high-risk AI systems; (g) the risk management system referred to in Article 9; (h) the setting-up, implementation and maintenance of a post-market monitoring
+- system, in accordance with Article 61; (i) procedures related to the reporting of serious incidents and of malfunctioning in accordance with Article 62;
+- 5. The Commission shall be the controller of the EU database. It shall also ensure to providers adequate technical and administrative support.
+- sources on the performance of high-risk AI systems throughout their lifetime, and allow the provider to evaluate the continuous compliance of AI systems with the
+- requirements set out in Title III, Chapter 2. 3. The post-market monitoring system shall be based on a post-market monitoring plan. The post-market monitoring plan shall be part of the technical documentation
+- referred to in Annex IV. The Commission shall adopt an implementing act laying down detailed provisions establishing a template for the post-market monitoring plan
+- and the list of elements to be included in the plan. 4. For high-risk AI systems covered by the legal acts referred to in Annex II, where a post-market monitoring system and plan is already established under that legislation,
+- the elements described in paragraphs 1, 2 and 3 shall be integrated into that system and plan as appropriate. The first subparagraph shall also apply to high-risk AI systems referred to in point
+- 3. The provider examines the information contained in the technical documentation in order to assess the compliance of the AI system with the relevant essential
+- requirements set out in Title III, Chapter 2. 4. The provider also verifies that the design and development process of the AI system and its post-market monitoring as referred to in Article 61 is consistent with the
+- technical documentation. EN 9 EN ANNEX VII CONFORMITY BASED ON ASSESSMENT OF QUALITY MANAGEMENT SYSTEM AND ASSESSMENT OF TECHNICAL DOCUMENTATION
+- adopted to meet the requirements set out in Title III, Chapter 2, including a list of other relevant standards and technical specifications applied;
+- 7. A copy of the EU declaration of conformity; 8. A detailed description of the system in place to evaluate the AI system performance in the post-market phase in accordance with Article 61, including the post-market
+- monitoring plan referred to in Article 61(3). EN 7 EN ANNEX V EU DECLARATION OF CONFORMITY
+- and rights that are protected by Union law. Such harm might be material or immaterial. (5) A Union legal framework laying down harmonised rules on artificial intelligence is
+- therefore needed to foster the development, use and uptake of artificial intelligence in the internal market that at the same time meets a high level of protection of public
+- interests, such as health and safety and the protection of fundamental rights, as recognised and protected by Union law. To achieve that objective, rules regulating the
+- coordinating the activities entrusted to that Member State, for acting as the single contact point for the Commission, and for representing the Member State at the
+- European Artificial Intelligence Board; EN 42 EN (43) ‘national competent authority’ means the national supervisory authority, the notifying authority and the market surveillance authority;
+- (44) ‘serious incident’ means any incident that directly or indirectly leads, might have led
+-  an action redirected towards a new action 1.4. Objective(s) 1.4.1. General objective(s) The general objective of the intervention is to ensure the proper functioning of the
+- single market by creating the conditions for the development and use of trustworthy artificial intelligence in the Union. 1.4.2. Specific objective(s)
+- Specific objective No 1 To set requirements specific to AI systems and obligations on all value chain participants in order to ensure that AI systems placed on the market and used are safe
+- European Parliament, the Council and the European Economic and Social Committee. 2.2. Management and control system(s) 2.2.1. Justification of the management mode(s), the funding implementation mechanism(s),
+- the payment modalities and the control strategy proposed The Regulation establishes a new policy with regard to harmonised rules for the provision of artificial intelligence systems in the internal market while ensuring the
+- respect of safety and fundamental rights. These new rules require a consistency mechanism for the cross-border application of the obligations under this Regulation
+- EUROPEAN COMMISSION Brussels, 21.4.2021 COM(2021) 206 final 2021/0106 (COD) Proposal for a REGULATION OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+- LAYING DOWN HARMONISED RULES ON ARTIFICIAL INTELLIGENCE (ARTIFICIAL INTELLIGENCE ACT) AND AMENDING CERTAIN UNION LEGISLATIVE ACTS {SEC(2021) 167 final} - {SWD(2021) 84 final} - {SWD(2021) 85 final}
+- EN EN EXPLANATORY MEMORANDUM 1. CONTEXT OF THE PROPOSAL 1.1. Reasons for and objectives of the proposal This explanatory memorandum accompanies the proposal for a Regulation laying down
+- harmonised rules on artificial intelligence (Artificial Intelligence Act). Artificial Intelligence
+- (AI) is a fast evolving family of technologies that can bring a wide array of economic and

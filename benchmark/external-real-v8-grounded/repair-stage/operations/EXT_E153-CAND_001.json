@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#Privacy_Framework_1_1_Initial_Public_Draft____Privacy_Framework_engagement_channels",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#resource_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "pf11_engagement_channels=previous_or_not_encoded",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "engagement=website_email_social",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

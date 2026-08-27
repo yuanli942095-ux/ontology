@@ -1,0 +1,15 @@
+{
+  "operator": "REPLACE_PROPERTY_VALUE",
+  "subject_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#WCAG_2_2_Accessible_Authentication_scope",
+  "predicate_iri": "file:///G:/LearnAI/ontology-evolution/external-real-v4-evidence-aligned#versioned_requirement_status",
+  "old_value": {
+    "kind": "literal",
+    "lexical": "wcag21_status=previous_target",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  },
+  "new_value": {
+    "kind": "literal",
+    "lexical": "wcag22_accessible_authentication=minimum_and_enhanced",
+    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+  }
+}

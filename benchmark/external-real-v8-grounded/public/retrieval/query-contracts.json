@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-27T14:14:07.742169+00:00",
+  "FULL_METADATA": [
+    "title",
+    "case_context",
+    "subject_label",
+    "predicate_label",
+    "domain",
+    "semantic_type"
+  ],
+  "LIGHT_METADATA": [
+    "subject_label",
+    "predicate_label",
+    "domain",
+    "semantic_type"
+  ],
+  "support_gate_version": "v8.1-semantic-adjudication",
+  "frozen": true,
+  "note": "Do not rewrite retrieval queries or evidence windows after freeze to chase model errors."
+}

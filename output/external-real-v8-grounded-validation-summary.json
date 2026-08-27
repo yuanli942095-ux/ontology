@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-27T14:29:55.002814+00:00",
+  "benchmark": "external-real-v8-grounded",
+  "layout": "staged",
+  "ready_events": 200,
+  "domains": {
+    "insurance": 20,
+    "web_accessibility": 33,
+    "digital_identity": 18,
+    "eu_regulation": 20,
+    "us_regulation": 20,
+    "cybersecurity_controls": 20,
+    "privacy_framework": 14,
+    "ai_regulation": 18,
+    "medical_device_cybersecurity": 19,
+    "sustainability_reporting": 18
+  },
+  "semantic_types": {
+    "TEMPORAL_VERSION": 69,
+    "CROSS_SENTENCE_SCOPE": 68,
+    "GENERAL_RULE_EXCEPTION": 63
+  },
+  "structured_excerpt_rate": 0.0,
+  "isolation_pass": true,
+  "public_candidate_csv": false,
+  "repair_stage_candidates": true,
+  "private_oracle_present": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "min_ready_events": 198,
+  "target_ready_events": 198,
+  "short_of_target": 0,
+  "curation_not_inference": true
+}

@@ -1,0 +1,56 @@
+{
+  "event_id": "EXT_E183",
+  "semantics": "cross_sentence_scope",
+  "facts": {
+    "public_change_present": true,
+    "selected_revision": "new",
+    "source_family": "V3_SRC_FDA_MED_DEVICE_CYBER_2025"
+  },
+  "rules": [
+    {
+      "rule_id": "EXT_E183_CURRENT_PUBLIC_SOURCE",
+      "priority": 300,
+      "conditions": [
+        {
+          "fact": "public_change_present",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "new"
+        },
+        {
+          "fact": "source_family",
+          "operator": "equals",
+          "value": "V3_SRC_FDA_MED_DEVICE_CYBER_2025"
+        }
+      ],
+      "allowed_values": [
+        "requirement=security_updates"
+      ]
+    },
+    {
+      "rule_id": "EXT_E183_PREVIOUS_STATE",
+      "priority": 100,
+      "conditions": [
+        {
+          "fact": "selected_revision",
+          "operator": "equals",
+          "value": "old"
+        }
+      ],
+      "allowed_values": [
+        "fda_security_updates=previous_or_not_encoded"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_documents": [
+      "EXT3_DOC_183_OLD",
+      "EXT3_DOC_183_NEW"
+    ],
+    "annotation_status": "EXTERNAL_PUBLIC_STRUCTURED_FORMALIZATION"
+  }
+}

@@ -1,0 +1,118 @@
+# EXT_E123 Evidence
+
+- Source title: NIST Cybersecurity Framework 2.0
+- Source URL: https://doi.org/10.6028/NIST.CSWP.29
+- Prior source title: NIST Cybersecurity Framework 1.1
+- Prior source URL: https://doi.org/10.6028/NIST.CSWP.04162018
+
+Raw source excerpt windows:
+
+- NIST resources that describe the mutual relationship between cybersecurity risk management
+- and ERM include: • NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide • NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk
+- Management (ERM) • IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management • IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management
+- The NIST Cybersecurity Framework (CSF) 2.0 National Institute of Standards and Technology This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.29
+- February 26, 2024 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Abstract The NIST Cybersecurity Framework (CSF) 2.0 provides guidance to industry, government
+- agencies, and other organizations to manage cybersecurity risks. It offers a taxonomy of high
+- cybersecurity challenges or whether it has been active for many years with a sophisticated,
+- well-resourced cybersecurity team. The CSF is designed to be valuable for any type of organization and is expected to provide appropriate guidance over a long time.
+- iv NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Cybersecurity Framework (CSF) Overview This document is version 2.0 of the NIST Cybersecurity Framework (Framework or CSF). It
+- understand, assess, prioritize, and communicate cybersecurity risks. • Understand and Assess: Describe the current or target cybersecurity posture of part or
+- all of an organization, determine gaps, and assess progress toward addressing those gaps. 1 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- • Prioritize: Identify, organize, and prioritize actions for managing cybersecurity risks that
+- includes the following components: • CSF Core, the nucleus of the CSF, which is a taxonomy of high-level cybersecurity outcomes that can help any organization manage its cybersecurity risks. The CSF Core
+- components are a hierarchy of Functions, Categories, and Subcategories that detail each outcome. These outcomes can be understood by a broad audience, including
+- organization with the flexibility needed to address its unique risks, technologies, and mission considerations. • CSF Organizational Profiles, which are a mechanism for describing an organization’s
+- current and/or target cybersecurity posture in terms of the CSF Core’s outcomes.
+- • CSF Tiers, which can be applied to CSF Organizational Profiles to characterize the rigor of
+- management programs. • Appendix A is the CSF Core. • Appendix B contains a notional illustration of the CSF Tiers. • Appendix C is a glossary of CSF terminology.
+- 2 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 2. Introduction to the CSF Core Appendix A is the CSF Core — a set of cybersecurity outcomes arranged by Function, then
+- Category, and finally Subcategory, as depicted in Fig. 1. These outcomes are not a checklist of
+- The steps shown in Fig. 3 and summarized below illustrate one way that an organization could
+- use an Organizational Profile to help inform continuous improvement of its cybersecurity. Fig. 3. Steps for creating and using a CSF Organizational Profile
+- 6 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 1. Scope the Organizational Profile. Document the high-level facts and assumptions on
+- technologies. The left side of the figure indicates the importance of practitioners sharing their
+- updates, insights, and concerns with managers and executives. Fig. 5. Using the CSF to improve risk management communication 10 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0
+- February 26, 2024 Preparing to create and use Organizational Profiles involves gathering information about organizational priorities, resources, and risk direction from executives. Managers then
+- deployment, evaluation, and use of AI systems. The AI RMF Core uses Functions, Categories, and Subcategories to describe AI outcomes and help manage risks related to
+- AI. 14 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024 Appendix A. CSF Core
+- This appendix describes the Functions, Categories, and Subcategories of the CSF Core. Table 1
+- global standards, guidelines, frameworks, regulations, policies, etc. • Implementation Examples that illustrate potential ways to achieve each outcome
+- • Quick-Start Guides that give actionable guidance on using the CSF and its online resources, including transitioning from previous CSF versions to version 2.0
+- • Community Profiles and Organizational Profile Templates that help an organization put the CSF into practice and set priorities for managing cybersecurity risks
+- cybersecurity capabilities and externally to oversee or communicate with third parties.
+- Regardless of the CSF’s utilization, an organization may benefit from using the CSF as guidance
+- to help it understand, assess, prioritize, and communicate cybersecurity risks and the actions
+- organization with the flexibility needed to address their unique risks, technologies, and mission
+- considerations. Outcomes are mapped directly to a list of potential security controls for immediate consideration to mitigate cybersecurity risks.
+- Although not prescriptive, the CSF assists its users in learning about and selecting specific
+- An organization can use the CSF Core, Profiles, and Tiers with the supplementary resources to
+- that will manage those risks. The selected outcomes can be used to focus on and implement strategic decisions to improve cybersecurity postures and maintain continuity of mission
+- Practitioners focus on implementing the target state and measuring changes in operational risk
+- to help plan, carry out, and monitor specific cybersecurity activities. As controls are implemented to manage risk at an acceptable level, practitioners provide managers and
+- executives with the information (e.g., key performance indicators, key risk indicators) they need
+- Framework (RMF). For an organization using the NIST RMF and its suite of publications, the CSF can be used to complement the RMF’s approach to selecting and prioritizing
+- controls from SP 800-53, Security and Privacy Controls for Information Systems and Organizations. • Privacy risks: While cybersecurity and privacy are independent disciplines, their
+- objectives overlap in certain circumstances, as illustrated in Fig. 6. 12 NIST CSWP 29 The NIST Cybersecurity Framework (CSF) 2.0 February 26, 2024
+- sector, or maturity — to better understand, assess, prioritize, and communicate its
+- cybersecurity efforts. The CSF does not prescribe how outcomes should be achieved. Rather, it
+- links to online resources that provide additional guidance on practices and controls that could
+- be used to achieve those outcomes. This document describes CSF 2.0, its components, and some of the many ways that it can be used. Keywords
+
+Prior source excerpt windows:
+
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 45
+- April 16, 2018 Cybersecurity Framework Version 1.1 Framework A representation of the outcomes that a particular system or Profile organization has selected from the Framework Categories and
+- Subcategories. Function One of the main components of the Framework. Functions provide the highest level of structure for organizing basic cybersecurity activities
+- to various Framework organization means that phrases like “compliance with the stakeholders Framework” can be confusing. A new section on self- Added Section 4.0 Self-Assessing Cybersecurity Risk with the
+- assessment Framework to explain how the Framework can be used by organizations to understand and assess their cybersecurity risk, including the use of measurements.
+- Greatly expanded An expanded Section 3.3 Communicating Cybersecurity explanation of using Requirements with Stakeholders helps users better understand
+- Framework Version 1.0 under Executive Order (EO) 13636, “Improving Critical Infrastructure
+- Cybersecurity” (February 2013), and provided guidance for future Framework evolution. The Framework that was developed under EO 13636, and continues to evolve according to CEA,
+- uses a common language to address and manage cybersecurity risk in a cost-effective way based
+- the next steps to improve the cybersecurity of our Nation’s critical infrastructure – providing
+- evolving guidance for individual organizations while increasing the cybersecurity posture of the
+- Nation’s critical infrastructure and the broader economy and society.
+- organizations already have processes for addressing privacy and civil liberties. The methodology
+- is designed to complement such processes and provide guidance to facilitate privacy risk management consistent with an organization’s approach to cybersecurity risk management.
+- Integrating privacy and cybersecurity can benefit organizations by increasing customer confidence, enabling more standardized sharing of information, and simplifying operations
+- 1) Describe their current cybersecurity posture; 2) Describe their target state for cybersecurity; 3) Identify and prioritize opportunities for improvement within the context of a
+- continuous and repeatable process; 4) Assess progress toward the target state; 5) Communicate among internal and external stakeholders about cybersecurity risk.
+- This publication is available free of charge from: https://doi.org/10.6028/NIST.CSWP.04162018 2
+- provide a concise way for senior executives and others to distill the fundamental concepts of
+- cybersecurity risk so that they can assess how identified risks are managed, and how their
+- organization stacks up at a high level against existing cybersecurity standards, guidelines, and
+- determine which standards, guidelines, and practices, including those that are sector specific,
+- An organization repeats the steps as needed to continuously assess and improve its cybersecurity.
+- For instance, organizations may find that more frequent repetition of the orient step improves the
+- Anomalous activity detection and system and assets monitoring  Process is in place to conduct a privacy review of an organization’s anomalous activity
+- detection and cybersecurity monitoring. Response activities, including information sharing or other mitigation efforts  Process is in place to assess and address whether, when, how, and the extent to which
+- personal information is shared outside the organization as part of cybersecurity information sharing activities.  Process is in place to conduct a privacy review of an organization’s cybersecurity
+- Framework for Cyber Cyber Supply Chain Risk Management (SCRM), while a new Supply Chain Risk Section 3.4 Buying Decisions highlights use of the Framework
+- been renamed to Identity Management and Access Control (PR.AC) to better represent the scope of the Category and corresponding Subcategories.
+- Better explanation of the Added language to Section 3.2 Establishing or Improving a relationship between Cybersecurity Program on using Framework Tiers in
+- Implementation Tiers and Framework implementation. Added language to Framework Profiles Tiers to reflect integration of Framework considerations within
+- on business and organizational needs without placing additional regulatory requirements on
+- businesses. The Framework focuses on using business drivers to guide cybersecurity activities and
+- considering cybersecurity risks as part of the organization’s risk management processes. The
+- Framework consists of three parts: the Framework Core, the Implementation Tiers, and the
+- Framework Profiles. The Framework Core is a set of cybersecurity activities, outcomes, and
+- informative references that are common across sectors and critical infrastructure. Elements of the
+- Framework’s five Functions to analyze its entire risk management portfolio; that analysis may or
+- may not rely on more detailed companion guidance, such as controls catalogs. There sometimes
+- is discussion about “compliance” with the Framework, and the Framework has utility as a
+- three parts: the Framework Core, the Framework Implementation Tiers, and the Framework Profiles. Each Framework component reinforces the connection between business/mission
+- drivers and cybersecurity activities. These components are explained below.  The Framework Core is a set of cybersecurity activities, desired outcomes, and
+- applicable references that are common across critical infrastructure sectors. The Core presents industry standards, guidelines, and practices in a manner that allows for
+- communication of cybersecurity activities and outcomes across the organization from the executive level to the implementation/operations level. The Framework Core consists of
+- five concurrent and continuous Functions—Identify, Protect, Detect, Respond, Recover. When considered together, these Functions provide a high-level, strategic view of the
+- lifecycle of an organization’s management of cybersecurity risk. The Framework Core then identifies underlying key Categories and Subcategories – which are discrete
+- outcomes – for each Function, and matches them with example Informative References such as existing standards, guidelines, and practices for each Subcategory.
+- Profiles.  Section 3 presents examples of how the Framework can be used.  Section 4 describes how to use the Framework for self-assessing and demonstrating
+- cybersecurity through measurements.  Appendix A presents the Framework Core in a tabular format: the Functions, Categories, Subcategories, and Informative References.
+-  Appendix B contains a glossary of selected terms.  Appendix C lists acronyms used in this document. 6
+- common Profiles. 2.1 Framework Core
+- The Framework Core provides a set of activities to achieve specific cybersecurity outcomes, and
+- references examples of guidance to achieve those outcomes. The Core is not a checklist of
+- actions to perform. It presents key cybersecurity outcomes identified by stakeholders as helpful
+- in managing cybersecurity risk. The Core comprises four elements: Functions, Categories, Subcategories, and Informative References, depicted in Figure 1:
+- Figure 1: Framework Core Structure The Framework Core elements work together as follows:

@@ -1,0 +1,125 @@
+# EXT_E094 Evidence
+
+- Source title: Commission Delegated Regulation (EU) 2020/2174 official English PDF
+- Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=
+- Prior source title: Regulation (EC) No 1272/2008 official English PDF
+- Prior source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt windows:
+
+- 22.12.2020 EN Official Journal of the European Union L 433/11 COMMISSION DELEGATED REGULATION (EU) 2020/2174 of 19 October 2020
+- amending Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 of the European
+- This Regulation shall be binding in its entirety and directly applicable in all Member States.
+- Done at Brussels, 19 October 2020. For the Commission The President Ursula VON DER LEYEN 22.12.2020 EN Official Journal of the European Union L 433/13
+- Annexes IC, III, IIIA, IV, V and VII to Regulation (EC) No 1013/2006 are amended as follows:
+- (3) Decision C(2001)107/Final of the OECD Council concerning the revision of Decision C(92)39/Final on control of transboundary
+- movements of wastes destined for recovery operations. L 433/12 EN Official Journal of the European Union 22.12.2020 (8) Regulation (EC) No 1013/2006 should therefore be amended accordingly.
+- (9) Since the changes to the Annexes to the Basel Convention and the Appendices to the OECD Decision will become
+- — Perfluoroethylene/propylene (FEP) — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA)
+- L 433/14 EN Official Journal of the European Union 22.12.2020 — Polyvinylfluoride (PVF) — Polyvinylidenefluoride (PVDF) — Polytetrafluoroethylene (PTFE)
+- — Polyvinyl chloride (PVC). _____________
+- EU48: Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as
+- well as mixtures of plastic waste not covered by point 4 of Annex IIIA.’; 22.12.2020 EN Official Journal of the European Union L 433/15 (c) In Part II, the following entry is inserted after the entry AC270:
+- ‘AC300 Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents, to
+- — Perfluoroalkoxy alkanes: — Tetrafluoroethylene/perfluoroalkyl vinyl ether (PFA) — Tetrafluoroethylene/perfluoromethyl vinyl ether (MFA) — Polyvinylfluoride (PVF)
+- — Polyvinylidenefluoride (PVDF) L 433/16 EN Official Journal of the European Union 22.12.2020 — Mixtures of plastic waste, consisting of polyethylene (PE), polypropylene (PP) and/or
+- polyethylene terephthalate (PET), provided they are destined for separate recycling ***** of
+- waste numbered AC300 has been deleted since the waste in question is covered by entry A3210 in List A of
+- part 1.’; (6) Annex VII is amended as follows: In block 10, the following is added: ‘(vii) Other (please specify):’. L 433/18 EN Official Journal of the European Union 22.12.2020
+- ANNEX II ‘ANNEX VIII GUIDELINES ON ENVIRONMENTALLY SOUND MANAGEMENT (ARTICLE 49) I. Guidelines and guidance documents adopted under the Basel Convention:
+- (6) Adopted by the thirteenth meeting of the Conference of the Parties to the Basel Convention on the Control of Transboundary
+- Movements of Hazardous Wastes and Their Disposal, May 2017. 22.12.2020 EN Official Journal of the European Union L 433/19
+- 14. Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated
+- (3) The Environment Policy Committee to the OECD adopted changes to Appendix 4 of the OECD Decision (2), relating
+- to hazardous plastic waste and clarifications in Appendices 3 and 4 of the OECD Decision on 7 September 2020.
+- Those changes will become effective on 1 January 2021. It is appropriate for the Union to modify the relevant
+- Parliament and of the Council on shipments of waste (Text with EEA relevance) THE EUROPEAN COMMISSION, Having regard to the Treaty on the Functioning of the European Union,
+- Having regard to Regulation (EC) No 1013/2006 of the European Parliament and of the Council of 14 June 2006 on
+- (2) Annex VIII is replaced by the text in Annex II to this Regulation. Article 2
+- This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the
+- European Union. Article 1(1) shall apply from 1 January 2021.
+- or, if needed, temporary storage limited to one instance, provided that it is followed by operation
+- R3 and evidenced by contractual or relevant official documentation.
+- In relation to “almost free from contamination and other types of wastes”, international and
+- B), with prior sorting and, if needed, temporary storage limited to one instance, provided that it
+- is followed by operation R3 and evidenced by contractual or relevant official documentation.’;
+- (b) in Part 3, List A is replaced by the following: ‘List A (Annex II to the Basel Convention) Y46 Waste collected from households Y47 Residues arising from the incineration of household wastes
+- prior sorting and, if needed, temporary storage limited to one instance, provided that it is followed by
+- operation R3 and evidenced by contractual or relevant official documentation.’; (c) in Part 3, the heading of List B is replaced by the following:
+- ‘List B (Waste from Appendix 4, Part II of the OECD Decision) _____________
+- effective on 1 January 2021, the amendments to Regulation (EC) No 1013/2006 that relate to those changes should
+- also become effective on 1 January 2021, HAS ADOPTED THIS REGULATION: Article 1 Regulation (EU) No 1013/2006 is amended as follows:
+- (1) Annexes IC, III, IIIA, IV, V and VII are amended in accordance with Annex I to this Regulation;
+- ‘(g) For waste shipped within the Union, Basel entry B3011 does not apply and the following entry applies instead:
+- EU3011 Plastic waste (note the related entry AC300 in part II of Annex IV, and the related entry EU48 in part
+- Plastic waste listed below, provided it is almost free from contamination and other types of waste *:
+- an extent that it exhibits an Annex III characteristic (note the related entry EU3011 in part I of Annex III,
+- and the related entry EU48 in part I)’; (5) Annex V is amended as follows: (a) Part 1 is amended as follows: (i) in List A, section A3, the following entry is added:
+- ‘A3210 Plastic waste, including mixtures of such waste, containing or contaminated with Annex I
+- constituents, to an extent that it exhibits an Annex III characteristic (note the related entry B3011, in
+- list B of this Part, and entry Y48, in list A of Part 3)’; (ii) in List B, section B3 is amended as follows: — entry B3010 is deleted; — the following entry is inserted before entry B3020:
+- ‘B3011 Plastic waste (note the related entry A3210, in list A of this Part, and entry Y48, in list A of Part 3)
+- — Plastic waste listed below, provided it is destined for recycling * in an environmentally sound
+
+Prior source excerpt windows:
+
+- classification and labelling, within three months of the date of ‘3. Where an entry containing the harmonised
+- the Commission decision. classification and labelling for a particular substance has been included in Part 3 of Annex VI to Regulation (EC) No 1272/2008 of the European
+- Article 53 Parliament and of the Council of 16 December 2008 on classification, labelling and packaging of
+- tion of their mixtures, to ensure that the classification is appropriate to use these names for the purposes of this
+- based on up-to-date information, unless there is sufficient Regulation. evidence that the classification would not change. Suppliers should update the labels accordingly.
+- (45) The Chemical Abstracts Service (CAS) provides a system whereby substances are added to the CAS Registry and are assigned a unique CAS Registry Number. Those CAS
+- effects among the substances in a mixture for which the dispensers (1). evaluation was decided on the basis of the information for the substances in the mixture. (1) OJ L 147, 9.6.1975, p. 40.
+- 31.12.2008 EN Official Journal of the European Union L 353/15 Article 15 TITLE III HAZARD COMMUNICATION IN THE FORM OF LABELLING Review of classification for substances and mixtures
+- CHAPTER 1 1. Manufacturers, importers and downstream users shall take all reasonable steps available to them to make themselves aware of new scientific or technical information that may affect the Content of the label
+- the classification and labelling inventory is a harmonised (hereinafter referred to as ‘safety data sheet’), without prejudice to
+- classification included in Part 3 of Annex VI. Article 17(2) of this Regulation. L 353/16 EN Official Journal of the European Union 31.12.2008
+- 2. The product identifier for a substance shall consist of at least 2. Subject to Article 33, hazard pictograms shall fulfil the
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- with Article 37(1) of this Regulation by 1 June 2009. This Regulation shall enter into force on the 20th day following
+- It is a precondition that a decision on the proposed classification its publication in the Official Journal of the European Union.
+- and labelling by the Commission in accordance with the
+- transport) L 353/50 EN Official Journal of the European Union 31.12.2008 Figure 2.1.3 Procedure for assignment to a division in the class of explosives (Class 1 for transport)
+- 31.12.2008 EN Official Journal of the European Union L 353/51 Figure 2.1.4 Procedure for classification of ammonium nitrate emulsions, suspensions or gels
+- L 353/52 EN Official Journal of the European Union 31.12.2008 2.1.4.2. Screening procedure
+- and fitted with a release device allowing the contents to be ejected as solid or liquid particles in suspension in
+- a gas, as a foam, paste or powder or in a liquid state or in a gaseous state. L 353/54 EN Official Journal of the European Union 31.12.2008 2.3.2. Classification criteria
+- 2.3.2.1. Aerosols shall be considered for classification as flammable in accordance with 2.3.2.2 if they contain any
+- amended or 10156-2 as amended. 2.4.3. Hazard Communication
+- class in accordance with Table 2.4.2. Table 2.4.2 Label elements for oxidising gases Classification Category 1 GHS Pictogram L 353/58 EN Official Journal of the European Union 31.12.2008
+- Classification Category 1 Signal Word Danger Hazard Statement H270: May cause or intensify fire; oxidiser Precautionary Statement P220 Prevention P244
+- or mixtures which, by interaction with water, are liable to become spontaneously flammable or to give off
+- flammable gases in dangerous quantities. L 353/72 EN Official Journal of the European Union 31.12.2008 2.12.2. Classification criteria
+- 2.12.2.1. A substance or mixture which, in contact with water, emits flammable gases shall be classified in one of the
+- Prevention P231 + P232 P231 + P232 P280 P280 P280 Precautionary Statement P335 + P334 P335 + P334 P370 + P378 Response P370 + P378 P370 + P378
+- Precautionary Statement P402 + P404 P402 + P404 P402 + P404 Storage 31.12.2008 EN Official Journal of the European Union L 353/73 Classification Category 1 Category 2 Category 3
+- Precautionary Statement P501 P501 P501 Disposal 2.12.4. Additional Classification Considerations 2.12.4.1. The classification procedure for this class need not be applied if:
+- class in accordance with Table 2.13.2. Table 2.13.2 Label elements for oxidising liquids Classification Category 1 Category 2 Category 3 GHS Pictograms
+- L 353/74 EN Official Journal of the European Union 31.12.2008 Classification Category 1 Category 2 Category 3 Signal Word Danger Danger Warning
+- Hazard Statement H271:May cause fire or H272: May intensify H272: May intensify fire; explosion; strong oxi- fire; oxidiser oxidiser diser Precautionary Statement P210 P210 P210
+- If a Category 2 carcinogen is present in the mixture as an ingredient at a concentration ≥ 0,1 % a SDS shall be
+- available for the mixture upon request. 31.12.2008 EN Official Journal of the European Union L 353/107 3.6.3.2. Classification of mixtures when data are available for the complete mixture
+- 3.6.3.2.1. Classification of mixtures will be based on the available test data for the individual ingredients of the mixture
+- to the reproductive organs, including irritation, must be interpreted with extreme caution and on their own
+- are not normally the basis for classification. 31.12.2008 EN Official Journal of the European Union L 353/113
+- 3.7.2.5.7. There is general agreement about the concept of a limit dose, above which the production of an adverse effect
+- (e) substance-induced species-specific mechanisms of toxicity, i.e. demonstrated with reasonable certainty
+- to be not relevant for human health, shall not justify classification. L 353/118 EN Official Journal of the European Union 31.12.2008
+- 3.8.2.1.9. Guidance values to assist with classification based on the results obtained from
+- 3.8.4.1 Label elements shall be used in accordance with Table 3.8.4., for substances or mixtures meeting the criteria
+- for classification in this hazard class. 31.12.2008 EN Official Journal of the European Union L 353/121 Table 3.8.4 Label elements for specific target organ toxicity after single exposure
+- Classification Category 1 Category 2 Category 3 GHS Pictograms Signal Word Danger Warning Warning Hazard Statement H370: Causes damage H371: May cause H335: May cause
+- organ toxicity — Single exposure (section 3.8) and are therefore excluded from section 3.9.
+- L 353/122 EN Official Journal of the European Union 31.12.2008 3.9.2. Classification criteria for substances
+- 3.9.2.1. Substances are classified as specific target organ toxicants following repeated exposure by the use of expert
+- exposure studies, such as on carcinogenicity, neurotoxicity or reproductive toxicity, may also provide evidence
+- of specific target organ toxicity that could be used in the assessment of classification. 31.12.2008 EN Official Journal of the European Union L 353/123
+- 3.9.2.6. In exceptional cases, based on expert judgement, it is appropriate to place certain substances with human
+- study conducted in experimental animals are seen to occur within the guidance value ranges as indicated in
+- Table 3.9.3: 31.12.2008 EN Official Journal of the European Union L 353/125 Table 3.9.3 Guidance values to assist in Category 2 classification
+- Guidance Value Ranges: Route of Exposure Units (dose/concentration) Oral (rat) mg/kg body weight/day 10 < C ≤ 100 Dermal (rat or rabbit) mg/kg body weight/day 20 < C ≤ 200
+- mechanism may be removed, and the contents are available to be swallowed then the classification of the
+- substance or mixture shall be considered. L 353/128 EN Official Journal of the European Union 31.12.2008 3.10.2. Classification criteria for substances
+- Table 3.10.1 Hazard category for aspiration toxicity Category Criteria Substances known to cause human aspiration toxicity hazards or to be regarded as if they

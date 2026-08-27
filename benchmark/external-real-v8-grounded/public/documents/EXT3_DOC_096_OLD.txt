@@ -1,0 +1,64 @@
+Source title: Regulation (EC) No 1272/2008 official English PDF
+Source URL: https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=
+
+Raw source excerpt window:
+
+- (78) When, on imperative grounds of urgency, the normal time 2. This Regulation shall not apply to the following:
+- limits for the regulatory procedure with scrutiny cannot be complied with, the Commission should be able to apply the
+- urgency procedure provided for in Article 5a(6) of (a) radioactive substances and mixtures within the scope of
+- demonstrating the need for such action at Community level. That measure, designed to amend non-essential elements of this
+- Regulation, shall be adopted in accordance with the regulatory procedure with scrutiny referred to in Article 54(3). On Article 37 imperative grounds of urgency, the Commission may have
+- recourse to the urgency procedure referred to in Article 54(4). Procedure for harmonisation of classification and labelling of substances 6. Manufacturers, importers and downstream users who have
+- labelling of a substance in accordance with Article 36(3), it shall mined in accordance with Article 25(1);
+- be accompanied by the fee determined by the Commission in accordance with the regulatory procedure referred to in (e) any other parameter enabling an assessment to be made of
+- Article 54(2). the health or environmental hazard of mixtures containing the hazardous substance in question or of substances containing such hazardous substances as identified impu
+- Agency shall forward this opinion and any comments to the cle 118(2) and Article 119 of Regulation (EC) No 1907/2006
+- Commission. shall apply. L 353/22 EN Official Journal of the European Union 31.12.2008 CHAPTER 2 The notifier shall submit this information in the format specified
+- pursuant to Article 111 of Regulation (EC) No 1907/2006. Classification and labelling inventory Article 39 2. The information listed in paragraph 1 shall be updated and
+- EN methylbromide Muta. 2 H331 GHS06 H331 Acute Tox. 3 * H301 GHS08 H301 Acute Tox. 3 * H373 GHS09 H373 STOT RE 2 * ** Dgr H319 Eye Irrit. 2 H319 H335
+- STOT SE 3 H335 H315 Skin Irrit. 2 H315 H400 Aquatic Acute 1 H400 Ozone EU H059 Official Journal of the European Union 602-003-00-8 dibromomethane 200-824-2 74-95-3 Acute Tox. 4 * H332 GHS07 H332
+- Aquatic H412 Wng H412 Chronic 3 602-004-00-3 dichloromethane; 200-838-9 75-09-2 Carc. 2 H351 GHS08 H351 methylene chloride Wng 602-005-00-9 methyl iodide; 200-819-5 74-88-4 Carc. 2 H351 GHS06 H351
+- 602-013-00-2 1,1,1-trichloroethane; 200-756-3 71-55-6 Acute Tox. 4 * H332 GHS07 H332 EUH059 F
+- methyl chloroform Ozone EU- Wng H059 Official Journal of the European Union 602-014-00-8 1,1,2-trichloroethane 201-166-9 79-00-5 Carc. 2 H351 GHS08 H351 EUH066
+- Acute Tox. 4 * H332 GHS07 H332 Acute Tox. 4 * H312 Wng H312 Acute Tox. 4 * H302 H302 602-015-00-3 1,1,2,2-tetrachloroethane 201-197-8 79-34-5 Acute Tox. 2 * H330 GHS06 H330
+- Baseoil — unspecified; R45 R: 45 [A complex combination by hydrocarbons obtained as the S: 53-45 solvent insoluble fraction from solvent refining of a residuum
+- Official Journal of the European Union using a polar organic solvent such as phenol or furfural. It consists of hydrocarbons having carbon numbers predomi
+- 649-460-00-X Distillates (petroleum), clay-treated paraffinic; 265-137-2 64742-36-5 Carc. Cat. 2; T HL
+- nity, and in particular Article 95 thereof, classification and labelling for supply and use and, on the
+- other hand, those for transport. Having regard to the proposal from the Commission, (5) With a view to facilitating worldwide trade while protecting
+- Having regard to the opinion of the European Economic and human health and the environment, harmonised criteria for
+- liament and of the Council of 27 October 1998 on in vitro European Parliament and of the Council of 31 May 1999
+- diagnostic medical devices (7), Commission Decision 1999/ concerning the approximation of the laws, regulations and
+- 217/EC of 23 February 1999 adopting a register of administrative provisions of the Member States relating to
+- provisions of the Member States regarding the protection of Regulation, the results of tests that are carried out to
+- animals used for experimental and other scientific comply with other regulatory requirements, including those
+- purposes (1) is of high priority. Accordingly, where the laid down by third countries, even if the tests were not
+- appropriate with the relevant requirements for the protec tion of laboratory animals, set out in Directive 86/609/EEC,
+- (26) The test methods in Commission Regulation (EC) No 440/ and, in the case of ecotoxicological and toxicological tests,
+- 2008 of 30 May 2008 laying down test methods pursuant good laboratory practice, set out in Directive 2004/10/EC
+- view to reducing testing on vertebrate animals and the and the verification of their application for tests on
+- number of animals involved. The European Centre for the chemical substances (3). Validation of Alternative Methods (ECVAM) of the Commission's Joint Research Centre plays an important
+- role in the scientific assessment and validation of alternative (32) The criteria for classification in different hazard classes and
+- be necessary, except if the data are already available or if a
+- derogation is provided for in this Regulation. (35) Multiplying factors (M-factors) for substances classified as
+- hazardous to the aquatic environment, acute category 1 or chronic category 1, should be assigned to a substance by a
+- (39) Substances and mixtures classified as hazardous should be numbers are used in reference works, databases, and
+- labelled and packaged according to their classification, so as regulatory compliance documents throughout the world to
+- to ensure appropriate protection and to provide essential identify substances without the ambiguity of chemical
+- opinion on the proposal while interested parties should responsible for the enforcement of the obligations set out
+- have an opportunity to comment. The Commission should in this Regulation. Member States should put in place
+- submit a draft decision on the final classification and effective monitoring and control measures in order to
+- By subjecting all future harmonisations of classifications to cooperation and coordination between the Member States,
+- this Regulation, inconsistencies in harmonised classifica- the Agency and the Commission. tions of the same substance under the existing and the new
+- criteria should be avoided. (62) In order to provide focal points for information on hazardous substances and mixtures, Member States should
+- and mixtures. Regulation should be adopted in accordance with Council Decision 1999/468/EC of 28 June 1999 laying down the procedures for the exercise of implementing powers
+- conferred on the Commission (2). (69) While many of the obligations on enterprises laid down in Regulation (EC) No 1907/2006 are triggered by classifica
+- tion, this Regulation should not alter the scope and impact
+- of that Regulation, except for its provisions on safety data (77) In particular, the Commission should be empowered to
+- sheets. To ensure this, that Regulation should be amended adapt this Regulation to technical and scientific progress,
+- allow all parties involved, authorities, enterprises as well as biannual working rhythm at UN level should be taken into
+- stakeholders, to focus resources on preparing for new account. Furthermore, the Commission should be empow
+- duties at the right times. Therefore, and because the ered to decide on the harmonised classification and
+- should only be applied after the reclassification of all elements of this Regulation, they must be adopted in
+- substances. Operators should be allowed to apply the accordance with the regulatory procedure with scrutiny
+- classification criteria contained in this Regulation earlier on provided for in Article 5a of Decision 1999/468/EC.

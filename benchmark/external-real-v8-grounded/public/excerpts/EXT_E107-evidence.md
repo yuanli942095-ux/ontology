@@ -1,0 +1,130 @@
+# EXT_E107 Evidence
+
+- Source title: Lead and Copper Rule final rule 2007
+- Source URL: https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf
+- Prior source title: Lead and Copper Rule final rule 2000
+- Prior source URL: https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf
+
+Raw source excerpt windows:
+
+- The clarified timing of actions and would incur a violation for not alter compliance action schedules. In having already completed water quality
+- following a lead or copper action level response to these commenters, EPA is exceedance is also intended to ensure parameter monitoring. Therefore, EPA is
+- modifying § 141.85(b)(3)(iv) to allow revising the requirement in § 141.87(d) that the system and the State begin States flexibility in extending the
+- monitoring even if they exceeded the their monitoring requirements. As stated approval by the State to add a new
+- lead or copper action level if they could in the proposal, EPA did consider source of water or make any long-term
+- demonstrate their corrosion control requiring that all systems meet both the change in water treatment process prior
+- Proposed Rule (Friday, April 12, 1996), ■ For the reasons set forth in the 16348–16371. (60 FR 16348). (e) preamble, title 40, chapter I, of the Code
+- U.S. EPA, 1996b. Regulatory Impact Analysis (1) * * * A system exceeding the lead of Federal Regulations is amended as Addendum. EPA 812–B–96–002, January or copper action level shall recommend
+- follows: 1996. optimal corrosion control treatment
+- EPA proposed to revise the public Revisions? education requirements of the LCR in program before re-exceeding the lead
+- the areas of message content, delivery action level. For more information and In the original Lead and Copper Rule
+- requirements, and the Consumer EPA’s response to significant public of 1991, the term ‘‘site’’ is used to refer
+- with the timing of actions following a year period. not be taking water quality parameters
+- lead or copper action level exceedance, and would have automatically incurred 3. What Were the Key Issues Raised by and to address the timing of samples a violation based on the requirement in
+- Commenters on the Compliance and that should be taken under reduced § 141.87(d). The end of the 6-month Monitoring Period Definition Revisions
+- Source: For medium and large systems, January 2005 Summary of lead action level, http://www.epa.gov/safewater/lcrmr/lead_data.html; for
+- small systems, Summary, lead action level exceedances for public water systems subject to the Lead and Copper Rule (For data through Sep
+- The number of systems on reduced For the number of additional in three years under regular monitoring
+- period during which such system inventory by 13). For those systems that much enters your body from drinking
+- exceeds the lead or copper action level. have completed a 15-year lead service water or other sources. It can cause
+- line replacement program, the State will damage to the brain and kidneys, and determine a schedule for replacing or can interfere with the production of red
+- writing when it determines the system distribution system under the following in this paragraph in which the system
+- is eligible to reduce the frequency of conditions: exceeds the lead or copper action level.
+- monitoring to once every three years. (1) * * * This sampling shall begin For any such small and medium-size
+- system which exceeds the lead or paragraph (a)(1) introductory text; required in § 141.86(a), identify the
+- copper action level at the tap shall ■ c. In paragraph (a)(2) introductory text initial number of lead service lines in its
+- collect one source water sample from remove the citation ‘‘§§ 141.85(c)(7)(i) distribution system at the time the
+- end of the monitoring period during ■ d. Revising paragraph (a)(3); annually replacing at least 7 percent of
+- ■ e. Revising paragraph (e)(1); the initial number of lead service lines which the lead or copper action level ■ f. Revising paragraph (e)(2)
+- was exceeded. For monitoring periods in its distribution system. introductory text; (2) No later than 12 months after the that are annual or less frequent, the end ■ g. Revising the last sentence of
+- rule’s basic requirements. serving 100 people or fewer. EPA proposed a revision that would C. Why Is EPA Promulgating the LCR 2. Final Revision disallow water systems that exceeded
+- Short-Term Regulatory Revisions? EPA’s final revision to the minimum the lead action level from initiating or
+- number of samples requirement adds a remaining on a reduced lead and copper
+- In response to providing a level of addition, there is a similar statement in contaminant level goal (MCLG) and the lead that is a health concern, EPA § 141.85. In order to clarify that all
+- action level for lead, along with the believes the current MCLG is the best systems must complete this definitions for these two terms from estimate below which there is no known requirement, EPA reordered the
+- § 141.153(c) in the consumer notice of or expected risk to health from lead in sentences in § 141.80 and § 141.85 to lead tap results. Some commenters
+- identify clear threshold exposure levels notify all users of a facility. It was not of the message provided to consumers
+- below which there are no risks of EPA’s intent to have these systems after a lead action level exceedance by
+- adverse health effects; (2) the Agency’s notify all of their users of the results of shortening and simplifying the
+- served may contact the water system to media outlets that specifically reach the consumers as long as they continue to
+- obtain a translated copy of the public target population. exceed the lead action level. EPA
+- education materials or to request In addition, this rule removes the believes the additional activities
+- 1The Estimate for systems <3,300 is based upon data from systems >3,300.
+- estimates that only 854 small systems impacts separately for these 3 categories shown in Table V.6. This table
+- will exceed the lead action level, at of small systems allows EPA to better compares the average costs of the
+- most only 854 small systems or 1.3 identify potential impacts to the regulatory changes to the average
+- costs. Those systems that do not exceed revenue are shown in Table V.6 and systems from these regulatory revisions
+- the lead action level face a maximum reflect updates to EPA’s revenue are all less than one percent of average
+- potential annual cost of $220. analysis in the proposed rule. For more revenue for each of the small system
+- annual total costs of $2,743 is 854, those substantial number of small entities, Regulatory Change III.C requires
+- that exceed the lead action level. This EPA nonetheless has tried to reduce the systems that exceed the lead action level
+- maximum cost represents impact of this rule on small entities. For to resume tap monitoring for lead on a
+- EPA limited the requirement to only particularly with respect to water the regulatory requirements.
+- include lead action level exceedances. system revenue estimates. Examples of EPA has determined that this rule
+- Regulatory Change III.E requires these steps include linking municipal does not contain a Federal mandate that
+- alternative sampling requirement for available taps. Although other June–September). NTNCWS with fewer than five taps that In this case and consistent with these
+- commenters believed that there was no can be used for human consumption. definitions, systems will be deemed to better statistical representation than be exceeding the action level as of the
+- The water systems would be required to sampling 100 percent of taps in a date on which the monitoring period sample 100 percent of the taps that can
+
+Prior source excerpt windows:
+
+- required to monitor tap and source or ‘‘transient’’ depending on the number percent of the sites (13) exceeded the
+- water lead and copper levels at least of the same people regularly served over action level of 15 ppb. The average one
+- once every nine years. The commenter 6 months of the year. A non-community minute purged sample was 2.3 ppb,
+- will allow ground water systems to limit Register, (b)(3) systems that exceeded of monitoring in the past three years.
+- entry point WQP sampling to those the copper action level during the initial (C) Today’s action. EPA has added
+- entry points that are representative of rounds of monitoring have time to make provisions at § 141.81(b)(3)(ii)
+- requirement that (b)(3) systems meet the less frequent than once every 3 years for not, and is not intended to categorically
+- copper action level. EPA agrees that these systems. require monitoring when treatment
+- there will be additional costs incurred EPA also received comments on the changes are made. The additional
+- and ‘‘less than or equal to one-half the contrast to copper, the action level for able to meet the 90th percentile
+- copper action level specified in lead is set at 0.015 mg/L, which is threshold for one of the contaminants
+- § 141.80(c)(2),’’ which is 0.65 mg/L. higher than its MCLG of zero. Since it but not the other. While EPA wishes to
+- copper levels fall significantly below the whose 90th percentile lead level is one- contaminant has a 90th percentile level
+- lead and copper action levels during half the action level. above the specified threshold level.
+- two consecutive six-month monitoring A few commenters expressed concern (D) Monitoring less frequently than
+- especially when present in water or mean that water systems with buildings threshold for waivers at one-half the
+- beverages, can cause nausea, vomiting containing materials such as copper lead action level is as protective of
+- and/or diarrhea. The MCLG for copper wiring, brass screws, or any copper- public health as setting it at the PQL.8
+- plans to add a chain of custody that allows States the flexibility to rely the same monitoring period that an
+- requirement to the lead and copper on information reported to the State by action level is exceeded. To avoid this
+- regulations. certified laboratories in lieu of system situation, EPA strongly encourages
+- time needed by water systems exceeding identification of sampling sites utilized ‘‘When used with respect to plumbing
+- the lead and/or copper action level(s) to during the current monitoring period fittings and fixtures intended by the
+- collect water quality parameter samples. that were not sampled during previous manufacturer to dispense water for
+- actually do not exceed either the lead or confusion and redundancy. action contains several conforming
+- copper action levels, the system may EPA also is revising § 141.43 to changes to the State recordkeeping discontinue with any follow-up actions amend the definition of ‘‘lead free’’ to
+- requirements associated with the LCR. it has begun. reflect the provisions of Sections These requirements are codified at (iii) Today’s action. EPA has therefore 1417(d) and (e) of the 1996 SDWA
+- • Section § 142.14(d)(8)(xi) has been date of the exceedance; requirements. Under the April 1998
+- added to require States to maintain • Copper action level exceedance and option, EPA would require the
+- records of any system-specific date of the exceedance; following:
+- • Section § 142.14(d)(8)(xii) has been and date State received the results of the • 90th percentile values that exceed
+- added to require States to maintain study; the lead action level for small systems; • State designation of CCT and date • 90th percentile copper values that
+- records of any system-specific or case of the determination; exceed the copper action level for all by-case designations of sampling • State designation of source water systems;
+- monitoring periods that it does not exceed either exceed 0.015 mg/L for two consecutive monitoring Although the Agency has no plans to
+- the lead or the copper action level. periods. change the actual due dates at the
+- VerDate 04-JAN-2000 16:24 Jan 11, 2000 Jkt 190000 PO 00000 Frm 00043 Fmt 4701 Sfmt 4700 E:\FR\FM\12JAR2.XXX pfrm01 PsN: 12JAR2
+- small and medium systems exceeding Assess Corrosion Control Effectiveness such systems would be developed and
+- the lead or copper action level must a. Burden reduction suggestion and implemented to determine OCCT.
+- perform corrosion control studies if the background. In the April 1996 Proposal, EPA’s basic rationale for tap
+- (4) Within 60 days after it exceeds the of this section and/or limit the monitoring period from sites that
+- distribution of the public education contain lead pipes, or copper pipes with lead action level (unless it already is materials required under paragraph lead solder, and 50 percent of the
+- repeating public education tasks (c)(2)(iii) of this section to facilities and samples from sites served by a lead pursuant to paragraph (c)(5) of this
+- contaminant along with the monitoring (ii) If the system meets both the lead paragraph (b) of this section.
+- results. Such a system also must and the copper action level, the system continue to monitor for the non-waived must monitor for lead and copper at the (c)
+- contaminant in accordance with tap no less frequently than once every (2) Except as provided in paragraph
+- untreated ground water sources mixes paragraph in which the system exceeds reduced monitoring frequency that fails
+- with water from treated ground water the lead or copper action level. For any to operate at or above the minimum
+- sources, the system must monitor for such small and medium-size system that value or within the range of values for
+- composite; or 12. Section 141.89 is amended by (a) * * * (B) If duplicates of or sufficient (1) A water system that fails to meet revising paragraph (a)(1)(iii) to read as
+- quantities from the original samples follows: the lead or copper action level on the from each sampling point used in the basis of tap samples collected in § 141.89 Analytical methods.
+- composite are available, the system may accordance with § 141.86 shall collect use these instead of resampling. (a) lead and copper source water samples
+- threshold for copper. Some commenters of public health than setting the level at the contaminant levels is less than the
+- suggested that using the PQL for lead is one-half the lead action level (0.0075 threshold level and that there is more
+- too restrictive and that one-half the lead mg/L). In addition, EPA believes that it uncertainty in the case where one of the
+- taken from this facility have lead levels mains (service lines). In 1986, Congress accordance with § 141.86, and that is
+- above the EPA action level of 15 parts banned the use of lead solder containing not already repeating public education
+- per billion (ppb), or 0.015 milligrams of greater than 0.2% lead, and restricted tasks pursuant to paragraph (c)(3), (c)(7),
+- are carrying out the requirements of the the water in a faucet has gone unused not include a billing within 60 days of
+- lead regulation please give us a call at for more than six hours. The longer exceeding the action level, or that
+- [insert water system’s phone number]. water resides in plumbing the more lead cannot insert information in the water
