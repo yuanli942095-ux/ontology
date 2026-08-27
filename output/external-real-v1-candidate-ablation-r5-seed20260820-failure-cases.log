@@ -1,0 +1,18 @@
+source=output\external-real-v1-candidate-ablation-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-failure-cases-summary.csv
+by_method=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-failure-cases-by-method.csv
+failed_runs=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-failure-cases-failed-runs.csv
+markdown=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-failure-cases.md
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-failure-cases.json
+
+ [DIRECT_FREE/EXT_E003] success=0/5 | failures=5 | wrong=0 | abstain=0 | failed_values=
+ [DIRECT_FREE/EXT_E026] success=0/5 | failures=5 | wrong=0 | abstain=0 | failed_values=
+ [DIRECT_FREE/EXT_E028] success=2/5 | failures=3 | wrong=0 | abstain=0 | failed_values=
+ [OPTION_FORMAL_OPERATION/EXT_E003] success=3/5 | failures=2 | wrong=0 | abstain=2 | failed_values=
+ [OPTION_FORMAL_OPERATION/EXT_E025] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+ [OPTION_VALUE_ONLY/EXT_E004] success=4/5 | failures=1 | wrong=0 | abstain=1 | failed_values=
+
+[DIRECT_FREE] failed_runs=13/150 | failed_events=3 | focus_failed=
+[OPTION_FORMAL_OPERATION] failed_runs=3/150 | failed_events=2 | focus_failed=
+[OPTION_FORMAL_POLICY] failed_runs=0/150 | failed_events=0 | focus_failed=
+[OPTION_VALUE_ONLY] failed_runs=1/150 | failed_events=1 | focus_failed=

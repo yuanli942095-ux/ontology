@@ -1,0 +1,46 @@
+{
+  "event_id": "EXT_E009",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260821,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E009-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E009-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 6799,
+  "done_reason": "stop",
+  "prompt_eval_count": 902,
+  "eval_count": 245,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "previous_revision": "WCAG 2.1",
+      "current_revision": "WCAG 2.2",
+      "effective_condition": "adoption of WCAG 2.2",
+      "target_subject": "WCAG success criterion 3.2.6",
+      "changed_property": "versioned requirement status",
+      "semantic_change": "addition of new success criterion 3.2.6 Consistent Help with conformance level A"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "event_id",
+            "operator": "equals",
+            "value": "EXT_E009"
+          }
+        ],
+        "semantic_result": "WCAG success criterion 3.2.6 is active in version WCAG 2.2 with conformance level A, replacing the absence of this specific criterion in WCAG 2.1"
+      }
+    ]
+  }
+}

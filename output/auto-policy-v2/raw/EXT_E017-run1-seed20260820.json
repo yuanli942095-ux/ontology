@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E017",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260820,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E017-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E017-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 9301,
+  "done_reason": "stop",
+  "prompt_eval_count": 898,
+  "eval_count": 325,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 1.4.11",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "the listed addition includes 1.4.11 Non-text Contrast at level AA",
+      "scope_target": "conformance level and criterion identifier preservation",
+      "resolved_semantics": "The scope of the cross-reference requirement applies to WCAG success criterion 1.4.11 with a conformance level of AA, preserving both the criterion identifier and the specified conformance level."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 1.4.11"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "cross-reference requirement scope"
+          }
+        ],
+        "semantic_result": "The cross-reference requirement scope for WCAG success criterion 1.4.11 is defined as Non-text Contrast at conformance level AA, ensuring the preservation of the criterion identifier and conformance level."
+      }
+    ]
+  }
+}

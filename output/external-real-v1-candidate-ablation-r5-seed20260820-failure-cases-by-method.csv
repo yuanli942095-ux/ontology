@@ -1,0 +1,5 @@
+﻿method,attempts,failed_runs,failure_rate,wrong_selections,abstains,invalid_outputs,failed_events,failed_event_ids,focus_failed_events,focus_failed_event_ids
+DIRECT_FREE,150,13,0.08666666666666667,0,0,13,3,EXT_E003|EXT_E026|EXT_E028,0,
+OPTION_FORMAL_OPERATION,150,3,0.02,0,3,0,2,EXT_E003|EXT_E025,0,
+OPTION_FORMAL_POLICY,150,0,0.0,0,0,0,0,,0,
+OPTION_VALUE_ONLY,150,1,0.006666666666666667,0,1,0,1,EXT_E004,0,

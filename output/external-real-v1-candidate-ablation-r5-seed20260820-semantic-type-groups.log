@@ -1,0 +1,20 @@
+source=output\external-real-v1-candidate-ablation-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-semantic-type-groups-summary.csv
+pivot=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-semantic-type-groups-pivot.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-semantic-type-groups.json
+
+[DIRECT_FREE/CROSS_SENTENCE_SCOPE] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[DIRECT_FREE/GENERAL_RULE_EXCEPTION] Oracle=74.00% | strict=7/10 | wrong=0.00% | abstain=0.00%
+[DIRECT_FREE/TEMPORAL_VERSION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_OPERATION/CROSS_SENTENCE_SCOPE] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_OPERATION/GENERAL_RULE_EXCEPTION] Oracle=94.00% | strict=8/10 | wrong=0.00% | abstain=6.00%
+[OPTION_FORMAL_OPERATION/TEMPORAL_VERSION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY/CROSS_SENTENCE_SCOPE] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY/GENERAL_RULE_EXCEPTION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY/TEMPORAL_VERSION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE/CROSS_SENTENCE_SCOPE] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE/GENERAL_RULE_EXCEPTION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE/TEMPORAL_VERSION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_VALUE_ONLY/CROSS_SENTENCE_SCOPE] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_VALUE_ONLY/GENERAL_RULE_EXCEPTION] Oracle=100.00% | strict=10/10 | wrong=0.00% | abstain=0.00%
+[OPTION_VALUE_ONLY/TEMPORAL_VERSION] Oracle=98.00% | strict=9/10 | wrong=0.00% | abstain=2.00%

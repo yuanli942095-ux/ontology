@@ -576,7 +576,6 @@ def policy_text(event: EventSpec) -> str:
                 f"EXT_DOC_{event.event_id[-3:]}_NEW",
             ],
             "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION",
-            "oracle_used": False,
         },
     }
     return json.dumps(policy, ensure_ascii=False, indent=2) + "\n"

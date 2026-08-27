@@ -1,0 +1,7 @@
+external-real-v1 formal policy source/complexity audit
+oracle_loaded=False
+policy_complexity_points is a heuristic proxy, not measured annotation time.
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-formal-policy-source-cost-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-formal-policy-source-cost-summary.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-formal-policy-source-cost.json

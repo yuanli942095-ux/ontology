@@ -1,0 +1,20 @@
+external-real-v1 candidate ablation
+Oracle loaded after predictions=True
+
+[DIRECT_FREE] Oracle=91.33% | wrong=0.00% | invalid=8.67% | ABSTAIN=0.00%
+[OPTION_FORMAL_OPERATION] Oracle=98.00% | wrong=0.00% | invalid=0.00% | ABSTAIN=2.00%
+[OPTION_FORMAL_POLICY] Oracle=100.00% | wrong=0.00% | invalid=0.00% | ABSTAIN=0.00%
+[OPTION_FORMAL_POLICY_HARD_GATE] Oracle=100.00% | wrong=0.00% | invalid=0.00% | ABSTAIN=0.00%
+[OPTION_VALUE_ONLY] Oracle=99.33% | wrong=0.00% | invalid=0.00% | ABSTAIN=0.67%
+
+[DIRECT_FREE] strict=27/30 (90.00%) | macro=91.33% | stable=29/30
+[OPTION_FORMAL_OPERATION] strict=28/30 (93.33%) | macro=98.00% | stable=28/30
+[OPTION_FORMAL_POLICY] strict=30/30 (100.00%) | macro=100.00% | stable=30/30
+[OPTION_FORMAL_POLICY_HARD_GATE] strict=30/30 (100.00%) | macro=100.00% | stable=30/30
+[OPTION_VALUE_ONLY] strict=29/30 (96.67%) | macro=99.33% | stable=29/30
+
+details=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-details.csv
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-summary.csv
+by_event=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-by-event.csv
+event_level=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-event-level.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820.json

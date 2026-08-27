@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E002",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260821,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E002-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E002-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 9044,
+  "done_reason": "stop",
+  "prompt_eval_count": 1049,
+  "eval_count": 402,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "小麦种植及小麦完全成本保险条款中倒伏危害释义范围",
+      "primary_statement": "2026 年政策性农业保险统颁参考条款生效后，倒伏程度定义需补充五级释义范围",
+      "qualifier_or_scope_clause": "释义部分增加五级倒伏程度定义：无倒伏、轻微倒伏（小于 30 度）、中度倒伏（30-45 度）、较重倒伏（45-60 度）、严重倒伏（大于 60 度）",
+      "scope_target": "本体中关于倒伏危害的定义属性需扩展至包含上述五级程度划分",
+      "resolved_semantics": "倒伏危害的语义定义必须涵盖从‘无倒伏’到‘严重倒伏’的五级量化标准，且该定义范围跨越条款正文与释义部分"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "事件涉及小麦种植及小麦完全成本保险",
+            "operator": "equals",
+            "value": "小麦种植及小麦完全成本保险"
+          },
+          {
+            "fact": "倒伏程度定义包含五级划分",
+            "operator": "greater_than_or_equal",
+            "value": "5"
+          }
+        ],
+        "semantic_result": "本体应包含倒伏危害的五级释义范围：无倒伏、轻微倒伏（<30 度）、中度倒伏（30-45 度）、较重倒伏（45-60 度）、严重倒伏（>60 度）"
+      }
+    ]
+  }
+}

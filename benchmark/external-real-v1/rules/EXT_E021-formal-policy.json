@@ -47,7 +47,6 @@
       "EXT_DOC_021_OLD",
       "EXT_DOC_021_NEW"
     ],
-    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION",
-    "oracle_used": false
+    "annotation_status": "EXTERNAL_PUBLIC_SCRIPTED_FORMALIZATION"
   }
 }

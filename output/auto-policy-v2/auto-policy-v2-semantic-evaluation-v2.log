@@ -1,0 +1,10 @@
+AUTO_POLICY_V2 semantic evaluation
+details=G:\LearnAI\ontology-evolution\output\auto-policy-v2\auto-policy-v2-semantic-evaluation-v2-details.csv
+by_event=G:\LearnAI\ontology-evolution\output\auto-policy-v2\auto-policy-v2-semantic-evaluation-v2-by-event.csv
+by_type=G:\LearnAI\ontology-evolution\output\auto-policy-v2\auto-policy-v2-semantic-evaluation-v2-by-type.csv
+summary=G:\LearnAI\ontology-evolution\output\auto-policy-v2\auto-policy-v2-semantic-evaluation-v2-summary.json
+
+[ALL] semantic_accuracy=82.67% strict=13/30 generation=150/150
+[CROSS_SENTENCE_SCOPE] semantic_accuracy=76.00% strict=0/10 generation=50/50
+[GENERAL_RULE_EXCEPTION] semantic_accuracy=94.00% strict=9/10 generation=50/50
+[TEMPORAL_VERSION] semantic_accuracy=78.00% strict=4/10 generation=50/50

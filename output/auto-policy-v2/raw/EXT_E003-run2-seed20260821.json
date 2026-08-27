@@ -1,0 +1,45 @@
+{
+  "event_id": "EXT_E003",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260821,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E003-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E003-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 5304,
+  "done_reason": "stop",
+  "prompt_eval_count": 991,
+  "eval_count": 218,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "target_subject": "梨种植保险",
+      "general_rule": null,
+      "exception_condition": "2026 年政策性农业保险统颁参考条款生效",
+      "exception_effect": "冻害损失赔偿公式由基于有效保额和 50% 损失阈值的计算方式，变更为事故日期每亩赔偿限额乘以损失率",
+      "changed_property": "冻害损失赔偿公式"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "2026 年政策性农业保险统颁参考条款生效",
+            "operator": "equals",
+            "value": true
+          }
+        ],
+        "semantic_result": "梨种植保险冻害损失赔偿公式变更为：事故日期每亩赔偿限额 × 损失率"
+      }
+    ]
+  }
+}

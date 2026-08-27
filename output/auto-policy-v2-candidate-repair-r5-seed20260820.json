@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-27T00:04:00.548404+00:00",
+  "oracle_loaded_after_selection": true,
+  "details": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2-candidate-repair-r5-seed20260820-details.csv",
+  "by_event": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2-candidate-repair-r5-seed20260820-by-event.csv",
+  "by_type": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2-candidate-repair-r5-seed20260820-by-type.csv",
+  "summary": [
+    {
+      "experiment": "AUTO_POLICY_V2_CANDIDATE_REPAIR",
+      "events": 30,
+      "attempts": 150,
+      "selected": 124,
+      "oracle_correct": 124,
+      "oracle_accuracy": 0.8266666666666667,
+      "full_closure_success": 124,
+      "full_closure_accuracy": 0.8266666666666667,
+      "strict_event_successes": 13,
+      "strict_event_accuracy": 0.43333333333333335,
+      "abstains": 26
+    }
+  ]
+}

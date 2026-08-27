@@ -1,0 +1,5 @@
+﻿semantic_type,events,attempts,semantic_correct,semantic_accuracy,strict_event_successes,strict_event_accuracy,generation_successes
+ALL,30,150,124,0.8266666666666667,13,0.43333333333333335,150
+CROSS_SENTENCE_SCOPE,10,50,38,0.76,0,0.0,50
+GENERAL_RULE_EXCEPTION,10,50,47,0.94,9,0.9,50
+TEMPORAL_VERSION,10,50,39,0.78,4,0.4,50

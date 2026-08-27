@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E020",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 5,
+  "seed": 20260824,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E020-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E020-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 7832,
+  "done_reason": "stop",
+  "prompt_eval_count": 895,
+  "eval_count": 280,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 2.1.4",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "The listed addition includes 2.1.4 Character Key Shortcuts at level A.",
+      "scope_target": "conformance level",
+      "resolved_semantics": "The scope of the cross-reference requirement for criterion 2.1.4 is restricted to conformance level A."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 2.1.4"
+          },
+          {
+            "fact": "qualifier_or_scope_clause",
+            "operator": "contains",
+            "value": "level A"
+          }
+        ],
+        "semantic_result": "The conformance level for WCAG success criterion 2.1.4 is A."
+      }
+    ]
+  }
+}

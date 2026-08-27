@@ -1,0 +1,45 @@
+{
+  "event_id": "EXT_E023",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260822,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E023-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E023-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 10217,
+  "done_reason": "stop",
+  "prompt_eval_count": 876,
+  "eval_count": 255,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "target_subject": "WCAG success criterion 2.5.2",
+      "general_rule": null,
+      "exception_condition": "The W3C WCAG 2.1 change page lists new input modality related success criteria including 2.5.2 Pointer Cancellation at level A.",
+      "exception_effect": "WCAG 2.1 adds an input modality requirement for 2.5.2 Pointer Cancellation with conformance level A.",
+      "changed_property": "input modality rule status"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "The W3C WCAG 2.1 change page lists new input modality related success criteria",
+            "operator": "equals",
+            "value": "true"
+          }
+        ],
+        "semantic_result": "WCAG 2.1 adds an input modality requirement for 2.5.2 Pointer Cancellation at level A"
+      }
+    ]
+  }
+}

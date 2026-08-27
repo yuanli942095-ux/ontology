@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-27T00:01:14.956979+00:00",
+  "details": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2\\auto-policy-v2-semantic-evaluation-v2-details.csv",
+  "by_event": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2\\auto-policy-v2-semantic-evaluation-v2-by-event.csv",
+  "by_type": "G:\\LearnAI\\ontology-evolution\\output\\auto-policy-v2\\auto-policy-v2-semantic-evaluation-v2-by-type.csv",
+  "summary": [
+    {
+      "experiment": "AUTO_POLICY_V2_SEMANTIC_EVALUATION",
+      "events": 30,
+      "attempts": 150,
+      "semantic_correct": 124,
+      "semantic_accuracy": 0.8266666666666667,
+      "strict_event_successes": 13,
+      "strict_event_accuracy": 0.43333333333333335,
+      "generation_successes": 150,
+      "boundary": "semantic evaluator uses family-level canonical matching; it is not a new manual per-event oracle and does not read candidate IDs"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "event_id": "EXT_E026",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 1,
+  "seed": 20260820,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E026-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E026-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 7846,
+  "done_reason": "stop",
+  "prompt_eval_count": 902,
+  "eval_count": 227,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "target_subject": "NIST SP 800-63-4 continuous_evaluation_metrics",
+      "general_rule": null,
+      "exception_condition": "The NIST SP 800-63-4 Revision 4 was released as final in July 2025.",
+      "exception_effect": "Adds recommended continuous evaluation metrics.",
+      "changed_property": "revision change status"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "event_id",
+            "operator": "equals",
+            "value": "EXT_E026"
+          }
+        ],
+        "semantic_result": "The NIST SP 800-63-4 Revision 4 final release (July 2025) introduces recommended continuous evaluation metrics as a substantial content change."
+      }
+    ]
+  }
+}

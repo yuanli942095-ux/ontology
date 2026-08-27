@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E019",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260822,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E019-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E019-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 10709,
+  "done_reason": "stop",
+  "prompt_eval_count": 902,
+  "eval_count": 344,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 1.4.13",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "the listed addition includes 1.4.13 Content on Hover or Focus at level AA",
+      "scope_target": "conformance level and criterion identifier preservation",
+      "resolved_semantics": "The scope of the cross-reference requirement applies to the specific success criterion 1.4.13 'Content on Hover or Focus' with a conformance level of AA, ensuring the addition is treated as a new criterion within the WCAG 2.1 framework."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 1.4.13"
+          },
+          {
+            "fact": "qualifier_or_scope_clause",
+            "operator": "contains",
+            "value": "level AA"
+          }
+        ],
+        "semantic_result": "The cross-reference requirement scope is resolved to include the specific success criterion identifier '1.4.13 Content on Hover or Focus' and its conformance level 'AA', preserving these attributes in the semantic representation."
+      }
+    ]
+  }
+}

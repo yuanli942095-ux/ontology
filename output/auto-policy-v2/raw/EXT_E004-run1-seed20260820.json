@@ -1,0 +1,51 @@
+{
+  "event_id": "EXT_E004",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260820,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E004-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E004-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 7812,
+  "done_reason": "stop",
+  "prompt_eval_count": 913,
+  "eval_count": 287,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "previous_revision": "WCAG 2.1",
+      "current_revision": "WCAG 2.2",
+      "effective_condition": "Adoption of WCAG 2.2 standard",
+      "target_subject": "WCAG success criterion 2.4.11",
+      "changed_property": "versioned requirement status",
+      "semantic_change": "Addition of new success criterion 'Focus Not Obscured Minimum' with conformance level AA"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 2.4.11"
+          },
+          {
+            "fact": "semantic_type",
+            "operator": "equals",
+            "value": "TEMPORAL_VERSION"
+          }
+        ],
+        "semantic_result": "The requirement status for WCAG success criterion 2.4.11 is active in WCAG 2.2 with conformance level AA, representing an addition relative to WCAG 2.1."
+      }
+    ]
+  }
+}

@@ -306,6 +306,34 @@ External-real-v1 symbolic closure:
 - Closure details: every selected candidate removed one old triple, added one new triple, passed the Reasoner gate, triggered the source repair CQ, and satisfied the candidate repair CQ.
 - Boundary: this is an external-real smoke validation with public source documents and balanced semantic types. It is stronger than the earlier 3-event smoke check, but it is still not a large independently annotated external benchmark. The W3C/NIST events are script-formalized from official public change-summary material, so the paper should describe this as public-source external validation, not as a fully independent real-world corpus.
 
+External-real-v1 candidate-information ablation:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_external_real_v1_candidate_ablation.py --runs 5 --seed 20260820 --methods DIRECT_FREE,OPTION_VALUE_ONLY,OPTION_FORMAL_OPERATION,OPTION_FORMAL_POLICY,OPTION_FORMAL_POLICY_HARD_GATE --prefix external-real-v1-candidate-ablation-r5-seed20260820`
+- Result: 30 events, 5 runs, 5 methods, 750 total method attempts.
+
+| Method | Attempts | Oracle Accuracy | Strict Event Success | Qwen Calls | Qwen Tokens | Qwen Runtime | Policy Complexity |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `DIRECT_FREE` | 150 | 91.33% | 27/30 | 150 | 151254 | 8.94 min | 0 |
+| `OPTION_VALUE_ONLY` | 150 | 99.33% | 29/30 | 150 | 167651 | 8.19 min | 0 |
+| `OPTION_FORMAL_OPERATION` | 150 | 98.00% | 28/30 | 150 | 250537 | 8.28 min | 0 |
+| `OPTION_FORMAL_POLICY` | 150 | 100.00% | 30/30 | 150 | 299019 | 7.31 min | 1330 |
+| `OPTION_FORMAL_POLICY_HARD_GATE` | 150 | 100.00% | 30/30 | 0 | 0 | 0.00 min | 1330 |
+
+Semantic-type grouping on external-real-v1 shows `OPTION_FORMAL_POLICY` and `OPTION_FORMAL_POLICY_HARD_GATE` reach 100% in all three groups. `DIRECT_FREE` remains weakest on `GENERAL_RULE_EXCEPTION`, with 74.00% call-level accuracy. The policy complexity score is the same heuristic point unit used in the controlled benchmark and is not measured annotation time.
+
+External-real-v1 automatic formal-policy construction:
+
+- Generation method: `AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND`.
+- Input boundary: public evidence only; no Oracle, no candidate IDs/values, no manually written formal-policy file.
+- Generation result: 150/150 generated policies, 0 abstains, 0 forbidden outputs, 0 invalid JSON, 0 invalid schema.
+- Semantic evaluation result: 124/150 semantically correct, 82.67% call-level semantic accuracy, 13/30 strict event success.
+- Semantic-type accuracy: `TEMPORAL_VERSION` 78.00%, `GENERAL_RULE_EXCEPTION` 94.00%, `CROSS_SENTENCE_SCOPE` 76.00%.
+- Auto Policy V2 candidate repair result: selected 124/150, Oracle correct 124/150, full OWL closure 124/150, strict event success 13/30.
+
+Interpretation:
+
+This is the current strongest answer to the manual-rule leakage concern. The manually structured `OPTION_FORMAL_POLICY` and hard gate remain policy-available upper-bound settings. `AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND` shows that public evidence can be converted into useful formal-policy semantics without seeing candidates or Oracle, but it is not yet solved: the main remaining failures are missing criterion identifiers/levels or insufficiently canonicalized scope wording, especially in `TEMPORAL_VERSION` and `CROSS_SENTENCE_SCOPE`.
+
 External-real-v1 evidence files:
 
 - `src/extend_external_real_v1_to_30.py`
@@ -313,6 +341,11 @@ External-real-v1 evidence files:
 - `src/generate_external_real_v1_freeze_manifest.py`
 - `src/generate_external_real_v1_repair_artifacts.py`
 - `src/run_external_real_v1_symbolic_closure.py`
+- `src/run_external_real_v1_candidate_ablation.py`
+- `src/audit_external_real_v1_policy_costs.py`
+- `src/run_auto_formal_policy_batch_v2.py`
+- `src/evaluate_auto_formal_policy_v2_semantic.py`
+- `src/run_auto_policy_v2_candidate_repair.py`
 - `benchmark/external-real-v1/source-intake/external-real-source-intake.csv`
 - `benchmark/external-real-v1/input/external-real-event-template.csv`
 - `benchmark/external-real-v1/input/external-real-document-template.csv`
@@ -327,6 +360,16 @@ External-real-v1 evidence files:
 - `output/external-real-v1-symbolic-closure-30-fixed-summary.csv`
 - `output/external-real-v1-symbolic-closure-30-fixed-details.csv`
 - `output/external-real-v1-symbolic-closure-30-fixed.json`
+- `output/external-real-v1-candidate-ablation-r5-seed20260820-summary.csv`
+- `output/external-real-v1-candidate-ablation-r5-seed20260820-event-level.csv`
+- `output/external-real-v1-candidate-ablation-r5-seed20260820-semantic-type-groups-summary.csv`
+- `output/external-real-v1-candidate-ablation-r5-seed20260820-runtime-policy-costs-summary.csv`
+- `output/external-real-v1-candidate-ablation-r5-seed20260820-failure-cases-summary.csv`
+- `output/auto-policy-v2/auto-policy-v2-generation-summary.json`
+- `output/auto-policy-v2/auto-policy-v2-semantic-evaluation-v2-summary.json`
+- `output/auto-policy-v2/auto-policy-v2-semantic-evaluation-v2-by-type.csv`
+- `output/auto-policy-v2-candidate-repair-r5-seed20260820-summary.csv`
+- `output/auto-policy-v2-candidate-repair-r5-seed20260820-by-type.csv`
 
 ## 7. Template-Policy Hard Gate
 
@@ -631,6 +674,8 @@ Automation validity:
 
 `LLM_EXTRACTED_FACTS_TEMPLATE_POLICY` only replaces manual fact values with Qwen-extracted fact values. Fact names, fact types, and rule templates remain manually specified. The 86.00% result shows that automatic fact normalization is not solved. This experiment must not be described as automatic policy extraction or automatic rule construction.
 
+External Auto Policy V2 improves this boundary because it is candidate-blind and does not consume the manually written formal-policy files during generation. However, its current repair-closure result is 82.67%, not 100%. Therefore it should be framed as an important feasibility result and a concrete next-step method, not as a solved automatic policy-construction pipeline.
+
 Repair-closure validity:
 
 The repair closure validates selected finite repair candidates as executable OWL artifacts using Reasoner and CQ regression. It does not prove fully automatic repair candidate generation from raw documents. Candidate operations and candidate OWLs are generated from the benchmark candidate set, and the method's main contribution remains evidence-constrained selection and validation among those candidates.
@@ -644,7 +689,7 @@ The hard gate is a lightweight symbolic rule executor, not a new general-purpose
 The largest remaining gaps are now narrower:
 
 1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
-2. Automatic or semi-automatic construction of template rules from policy documents.
+2. Automatic or semi-automatic construction of template rules from policy documents. Auto Policy V2 is now a working candidate-blind baseline, but its external repair closure is still 82.67%.
 3. Expand `external-real-v1` beyond the current 30 public-source smoke-validation events with independently annotated real revision events.
 4. A larger multi-annotator cost study, because the completed annotation-time pilot is still small, single-annotator, and single-benchmark.
 5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
@@ -668,6 +713,8 @@ Safe:
 - The frozen benchmark state now has a completed post-freeze Qwen headline rerun and a post-freeze repair-closure rerun.
 - The external-real-v1 public-source validation set now contains 30 READY events balanced across the three semantic types.
 - On external-real-v1, the symbolic closure workflow selects 30/30 repairs correctly and validates 30/30 selected OWL repair artifacts with Reasoner and CQ checks.
+- On external-real-v1, `OPTION_FORMAL_POLICY` reaches 100.00% under policy-available prompting, while `DIRECT_FREE` reaches 91.33%.
+- Auto Policy V2 is candidate-blind and Oracle-blind, generates 150/150 policies, and reaches 82.67% semantic accuracy / repair closure when connected back to candidate selection.
 
 Unsafe:
 
@@ -680,3 +727,4 @@ Unsafe:
 - Claiming `policy_complexity_points` are measured annotation minutes or validated human labor estimates.
 - Claiming the current closure proves fully automatic OWL repair from raw documents; it validates selected finite repair candidates, not automatic candidate generation.
 - Claiming external-real-v1 is a large independently annotated real-world benchmark; the current 30-event set is a public-source smoke validation, and the W3C/NIST rows are script-formalized from official change summaries.
+- Claiming Auto Policy V2 solves automatic formal-policy construction; it currently exposes the remaining normalization failures after removing candidate and Oracle access.

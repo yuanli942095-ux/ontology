@@ -1,0 +1,11 @@
+AUTO_POLICY_V2 candidate repair
+details=G:\LearnAI\ontology-evolution\output\auto-policy-v2-candidate-repair-r5-seed20260820-details.csv
+by_event=G:\LearnAI\ontology-evolution\output\auto-policy-v2-candidate-repair-r5-seed20260820-by-event.csv
+by_type=G:\LearnAI\ontology-evolution\output\auto-policy-v2-candidate-repair-r5-seed20260820-by-type.csv
+summary=G:\LearnAI\ontology-evolution\output\auto-policy-v2-candidate-repair-r5-seed20260820-summary.csv
+json=G:\LearnAI\ontology-evolution\output\auto-policy-v2-candidate-repair-r5-seed20260820.json
+
+[ALL] oracle=82.67% closure=82.67% strict=13/30 abstains=26/150
+[CROSS_SENTENCE_SCOPE] oracle=76.00% closure=76.00% strict=0/10 abstains=12/50
+[GENERAL_RULE_EXCEPTION] oracle=94.00% closure=94.00% strict=9/10 abstains=3/50
+[TEMPORAL_VERSION] oracle=78.00% closure=78.00% strict=4/10 abstains=11/50

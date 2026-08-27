@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E016",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260820,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E016-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E016-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 8532,
+  "done_reason": "stop",
+  "prompt_eval_count": 896,
+  "eval_count": 292,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 1.4.10",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "the listed addition includes 1.4.10 Reflow at level AA",
+      "scope_target": "conformance level of the criterion",
+      "resolved_semantics": "The scope of the cross-reference requirement for criterion 1.4.10 is restricted to conformance level AA."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 1.4.10"
+          },
+          {
+            "fact": "qualifier_or_scope_clause",
+            "operator": "contains",
+            "value": "level AA"
+          }
+        ],
+        "semantic_result": "The cross-reference requirement scope for WCAG success criterion 1.4.10 is defined as conformance level AA."
+      }
+    ]
+  }
+}

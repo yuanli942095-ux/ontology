@@ -1,0 +1,46 @@
+{
+  "event_id": "EXT_E004",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260821,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E004-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E004-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 5350,
+  "done_reason": "stop",
+  "prompt_eval_count": 913,
+  "eval_count": 220,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "previous_revision": "WCAG 2.1",
+      "current_revision": "WCAG 2.2",
+      "effective_condition": "adoption of WCAG 2.2",
+      "target_subject": "WCAG success criterion 2.4.11",
+      "changed_property": "versioned requirement status",
+      "semantic_change": "addition of new success criterion with conformance level AA"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_family",
+            "operator": "equals",
+            "value": "WCAG 2.2"
+          }
+        ],
+        "semantic_result": "success criterion 2.4.11 Focus Not Obscured Minimum is active with conformance level AA"
+      }
+    ]
+  }
+}

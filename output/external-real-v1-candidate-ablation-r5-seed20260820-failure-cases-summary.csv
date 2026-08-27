@@ -1,0 +1,7 @@
+﻿method,event_id,semantic_type,focus_event,focus_family,attempts,oracle_successes,failures,failure_rate,wrong_selections,abstains,invalid_outputs,status_counts,failed_selected_candidate_counts,failed_selected_value_counts,oracle_candidate_id,oracle_value,failure_pattern
+DIRECT_FREE,EXT_E003,GENERAL_RULE_EXCEPTION,False,,5,0,5,1.0,0,0,5,REJECTED_OUT_OF_CANDIDATE:5,,,CAND_002,formula=accident_date_limit_times_loss_rate,free generation selects/abstains without candidate grounding
+DIRECT_FREE,EXT_E026,GENERAL_RULE_EXCEPTION,False,,5,0,5,1.0,0,0,5,REJECTED_OUT_OF_CANDIDATE:5,,,CAND_002,continuous_evaluation_metrics=recommended_added,free generation selects/abstains without candidate grounding
+DIRECT_FREE,EXT_E028,GENERAL_RULE_EXCEPTION,False,,5,2,3,0.6,0,0,3,REJECTED_OUT_OF_CANDIDATE:3,,,CAND_002,identity_proofing_controls=restructured_roles_and_types,free generation selects/abstains without candidate grounding
+OPTION_FORMAL_OPERATION,EXT_E003,GENERAL_RULE_EXCEPTION,False,,5,3,2,0.4,0,2,0,ABSTAIN:2,,,CAND_002,formula=accident_date_limit_times_loss_rate,formal operation is insufficient; model abstains
+OPTION_FORMAL_OPERATION,EXT_E025,GENERAL_RULE_EXCEPTION,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_002,risk_management_text=updated_context_setting,formal operation is insufficient; model abstains
+OPTION_VALUE_ONLY,EXT_E004,TEMPORAL_VERSION,False,,5,4,1,0.2,0,1,0,ABSTAIN:1,,,CAND_002,wcag22_added=2.4.11;level=AA,candidate values alone do not identify applicable rule

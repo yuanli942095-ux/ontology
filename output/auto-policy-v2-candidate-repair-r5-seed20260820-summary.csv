@@ -1,0 +1,2 @@
+﻿experiment,events,attempts,selected,oracle_correct,oracle_accuracy,full_closure_success,full_closure_accuracy,strict_event_successes,strict_event_accuracy,abstains
+AUTO_POLICY_V2_CANDIDATE_REPAIR,30,150,124,124,0.8266666666666667,124,0.8266666666666667,13,0.43333333333333335,26

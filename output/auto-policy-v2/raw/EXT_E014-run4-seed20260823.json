@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E014",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 4,
+  "seed": 20260823,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E014-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E014-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 8162,
+  "done_reason": "stop",
+  "prompt_eval_count": 893,
+  "eval_count": 256,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 1.3.5",
+      "primary_statement": "Identify Input Purpose",
+      "qualifier_or_scope_clause": "at level AA",
+      "scope_target": "conformance level",
+      "resolved_semantics": "The cross-reference requirement applies to WCAG success criterion 1.3.5 with a conformance level of AA."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 1.3.5"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "cross-reference requirement scope"
+          }
+        ],
+        "semantic_result": "The scope of the cross-reference requirement is defined as applying to WCAG success criterion 1.3.5 at conformance level AA."
+      }
+    ]
+  }
+}

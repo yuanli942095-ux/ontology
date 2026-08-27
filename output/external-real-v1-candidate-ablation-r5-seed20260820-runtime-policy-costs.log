@@ -1,0 +1,12 @@
+source_details=output\external-real-v1-candidate-ablation-r5-seed20260820-details.csv
+source_policy_costs=output\external-real-v1-formal-policy-source-cost-details.csv
+rows=750
+summary=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-runtime-policy-costs-summary.csv
+by_type=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-runtime-policy-costs-by-type.csv
+json=G:\LearnAI\ontology-evolution\output\external-real-v1-candidate-ablation-r5-seed20260820-runtime-policy-costs.json
+
+[DIRECT_FREE] acc=91.33% | qwen=150/150 | tokens=151254 | runtime_min=8.94 | policy_complexity_points=0
+[OPTION_FORMAL_OPERATION] acc=98.00% | qwen=150/150 | tokens=250537 | runtime_min=8.28 | policy_complexity_points=0
+[OPTION_FORMAL_POLICY] acc=100.00% | qwen=150/150 | tokens=299019 | runtime_min=7.31 | policy_complexity_points=1330
+[OPTION_FORMAL_POLICY_HARD_GATE] acc=100.00% | qwen=0/150 | tokens=0 | runtime_min=0.00 | policy_complexity_points=1330
+[OPTION_VALUE_ONLY] acc=99.33% | qwen=150/150 | tokens=167651 | runtime_min=8.19 | policy_complexity_points=0

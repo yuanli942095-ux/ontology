@@ -52,7 +52,6 @@
       "EXT_DOC_002_2025",
       "EXT_DOC_002_2026"
     ],
-    "annotation_status": "EXTERNAL_PUBLIC_MANUAL_FORMALIZATION",
-    "oracle_used": false
+    "annotation_status": "EXTERNAL_PUBLIC_MANUAL_FORMALIZATION"
   }
 }

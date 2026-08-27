@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E018",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260820,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E018-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E018-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 9391,
+  "done_reason": "stop",
+  "prompt_eval_count": 898,
+  "eval_count": 307,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 1.4.12",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "the listed addition includes 1.4.12 Text Spacing at level AA",
+      "scope_target": "cross-reference requirement scope",
+      "resolved_semantics": "The cross-reference requirement applies specifically to the newly added success criterion 1.4.12 Text Spacing with conformance level AA, preserving its identifier and level within the WCAG 2.1 framework."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_family",
+            "operator": "equals",
+            "value": "WCAG 2.1"
+          },
+          {
+            "fact": "event_type",
+            "operator": "equals",
+            "value": "CROSS_SENTENCE_SCOPE"
+          }
+        ],
+        "semantic_result": "The cross-reference requirement scope is defined as the newly added success criterion 1.4.12 Text Spacing at level AA."
+      }
+    ]
+  }
+}

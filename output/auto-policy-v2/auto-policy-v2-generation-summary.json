@@ -1,0 +1,54 @@
+{
+  "experiment": "AUTO_FORMAL_POLICY_BATCH_V2",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "model": "qwen3.5:9b",
+  "events": 30,
+  "runs": 5,
+  "attempts": 150,
+  "generated": 150,
+  "generated_rate": 1.0,
+  "abstains": 0,
+  "abstain_rate": 0.0,
+  "forbidden_output": 0,
+  "invalid_json": 0,
+  "invalid_schema": 0,
+  "empty_response": 0,
+  "errors": 0,
+  "strict_all_runs_generated_events": 30,
+  "strict_event_generation_rate": 1.0,
+  "average_runtime_ms": 7979.46,
+  "candidate_blind": true,
+  "semantic_type_aware": true,
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "by_semantic_type": {
+    "CROSS_SENTENCE_SCOPE": {
+      "attempts": 50,
+      "generated": 50,
+      "generated_rate": 1.0,
+      "abstains": 0,
+      "abstain_rate": 0.0,
+      "forbidden_outputs": 0,
+      "invalid_schema": 0
+    },
+    "GENERAL_RULE_EXCEPTION": {
+      "attempts": 50,
+      "generated": 50,
+      "generated_rate": 1.0,
+      "abstains": 0,
+      "abstain_rate": 0.0,
+      "forbidden_outputs": 0,
+      "invalid_schema": 0
+    },
+    "TEMPORAL_VERSION": {
+      "attempts": 50,
+      "generated": 50,
+      "generated_rate": 1.0,
+      "abstains": 0,
+      "abstain_rate": 0.0,
+      "forbidden_outputs": 0,
+      "invalid_schema": 0
+    }
+  }
+}

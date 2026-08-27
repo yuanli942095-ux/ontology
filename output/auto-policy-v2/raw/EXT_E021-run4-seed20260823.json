@@ -1,0 +1,50 @@
+{
+  "event_id": "EXT_E021",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 4,
+  "seed": 20260823,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E021-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E021-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 10317,
+  "done_reason": "stop",
+  "prompt_eval_count": 891,
+  "eval_count": 277,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "target_subject": "WCAG success criterion 4.1.3",
+      "primary_statement": "The W3C WCAG 2.1 change page lists new success criteria added after WCAG 2.0.",
+      "qualifier_or_scope_clause": "the listed addition includes 4.1.3 Status Messages at level AA.",
+      "scope_target": "conformance level",
+      "resolved_semantics": "The scope of the cross-reference requirement for criterion 4.1.3 is restricted to conformance level AA."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 4.1.3"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "cross-reference requirement scope"
+          }
+        ],
+        "semantic_result": "The conformance level for WCAG success criterion 4.1.3 is AA."
+      }
+    ]
+  }
+}

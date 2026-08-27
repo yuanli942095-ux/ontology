@@ -1,0 +1,45 @@
+{
+  "event_id": "EXT_E027",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 4,
+  "seed": 20260823,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E027-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E027-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 7603,
+  "done_reason": "stop",
+  "prompt_eval_count": 920,
+  "eval_count": 236,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "target_subject": "NIST SP 800-63-4 fraud_requirements_identity_proofing",
+      "general_rule": null,
+      "exception_condition": "The NIST SP 800-63-4 Revision 4 was released as final in July 2025.",
+      "exception_effect": "Expands fraud requirements and recommendations for identity proofing processes.",
+      "changed_property": "fraud_requirements_identity_proofing"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "event_id",
+            "operator": "equals",
+            "value": "EXT_E027"
+          }
+        ],
+        "semantic_result": "The NIST SP 800-63-4 fraud requirements and recommendations for identity proofing processes were expanded in the July 2025 final release."
+      }
+    ]
+  }
+}

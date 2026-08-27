@@ -1,0 +1,46 @@
+{
+  "event_id": "EXT_E001",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 4,
+  "seed": 20260823,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E001-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E001-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 6825,
+  "done_reason": "stop",
+  "prompt_eval_count": 1162,
+  "eval_count": 314,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "previous_revision": "2025 source PDF: EXT_SRC_001_BEIJING_AGRI_INSURANCE_2025_TERMS.pdf",
+      "current_revision": "2026 source PDF: EXT_SRC_001_BEIJING_AGRI_INSURANCE_2026_TERMS.pdf",
+      "effective_condition": "北京市农业农村局发布的 2026 年政策性农业保险统颁参考条款生效后",
+      "target_subject": "叶类、根茎类蔬菜、茄果类及其他类蔬菜轮作",
+      "changed_property": "每亩保险金额分项",
+      "semantic_change": "从单一的总保险金额 2000 元变更为按种植季节拆分为春季 1100 元和夏秋季 900 元"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "target_subject",
+            "operator": "equals",
+            "value": "叶类、根茎类蔬菜、茄果类及其他类蔬菜轮作"
+          }
+        ],
+        "semantic_result": "每亩保险金额分项为：春季 1100 元，夏秋季 900 元"
+      }
+    ]
+  }
+}

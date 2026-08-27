@@ -1,0 +1,46 @@
+{
+  "event_id": "EXT_E007",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 4,
+  "seed": 20260823,
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND",
+  "source_type": "CANDIDATE_BLIND_PUBLIC_EVIDENCE",
+  "source_file": "benchmark\\external-real-v1\\documents\\excerpts\\EXT_E007-evidence.md",
+  "candidate_blind_file": "output\\auto-policy-v2\\candidate-blind-evidence\\EXT_E007-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "manual_formal_policy_used": false,
+  "status": "GENERATED",
+  "runtime_ms": 6174,
+  "done_reason": "stop",
+  "prompt_eval_count": 904,
+  "eval_count": 229,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "previous_revision": "WCAG 2.1",
+      "current_revision": "WCAG 2.2",
+      "effective_condition": "Adoption of WCAG 2.2 standard",
+      "target_subject": "WCAG success criterion 2.5.7",
+      "changed_property": "versioned requirement status",
+      "semantic_change": "Introduction of new success criterion 'Dragging Movements' with conformance level AA"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 2.5.7"
+          }
+        ],
+        "semantic_result": "The requirement 'Dragging Movements' is active and applicable under WCAG 2.2 with conformance level AA."
+      }
+    ]
+  }
+}
