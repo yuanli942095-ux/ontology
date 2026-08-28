@@ -1,0 +1,86 @@
+{
+  "event_id": "EXT_E097",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E097-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16787,
+  "done_reason": "stop",
+  "prompt_eval_count": 2408,
+  "eval_count": 534,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "event_id": "",
+      "domain": "eu_regulation",
+      "subject_label": "Commission Delegated Regulation (EU) 2020/2174 :: entry deletion marker",
+      "predicate_label": "entry status",
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "effective_date": "2021-01-01",
+      "action_type": "deletion",
+      "target_entry_code": "AC300",
+      "reason_for_deletion": "covered by entry A3210 in List A of part 1"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_entry_status_change",
+      "regulation_id": "EU_2020_2174",
+      "target_code": "AC300",
+      "previous_status": "active",
+      "current_status": "deleted",
+      "effective_date": "2021-01-01",
+      "deletion_reason": "covered by entry A3210 in List A of part 1"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Commission Delegated Regulation (EU) 2020/2174 :: entry deletion marker"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "entry status"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_entry_status_change",
+          "regulation_id": "EU_2020_2174",
+          "target_code": "AC300",
+          "previous_status": "active",
+          "current_status": "deleted",
+          "effective_date": "2021-01-01",
+          "deletion_reason": "covered by entry A3210 in List A of part 1"
+        },
+        "semantic_result": "AC300 deleted effective 2021-01-01 due to coverage by A3210"
+      }
+    ]
+  }
+}

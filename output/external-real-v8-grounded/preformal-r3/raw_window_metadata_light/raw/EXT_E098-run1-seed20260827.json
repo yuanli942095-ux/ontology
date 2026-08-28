@@ -1,0 +1,76 @@
+{
+  "event_id": "EXT_E098",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E098-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16266,
+  "done_reason": "stop",
+  "prompt_eval_count": 2408,
+  "eval_count": 448,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "effective_date": "2021-01-01",
+      "amended_regulation": "Regulation (EC) No 1013/2006",
+      "action_type": "entry insertion marker",
+      "subject": "Plastic waste not covered by entry AC300 in part II or by entry EU3011 in part I of Annex III, as well as mixtures of plastic waste not covered by point 4 of Annex IIIA"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_entry_status",
+      "entry_code": "AC300",
+      "status_change": "inserted_after_AC270",
+      "description": "Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Commission Delegated Regulation (EU) 2020/2174"
+          },
+          {
+            "fact": "action_type",
+            "operator": "equals",
+            "value": "entry insertion marker"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_entry_status",
+          "entry_code": "AC300",
+          "status_change": "inserted_after_AC270",
+          "description": "Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents"
+        },
+        "semantic_result": "AC300 inserted after AC270 for plastic waste with Annex I constituents"
+      }
+    ]
+  }
+}

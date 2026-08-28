@@ -1,0 +1,107 @@
+{
+  "totals": {
+    "n_fail_closed": 163,
+    "unique_events": 75,
+    "invalid_output": 48,
+    "retrieval_failed": 75,
+    "incomplete_ir": 40,
+    "j_counts": {
+      "J7": 34,
+      "J6": 8,
+      "J1_J2": 6
+    },
+    "retrieval_unique_events": 25,
+    "incomplete_unique_events": 23,
+    "j7_unique_events": 24,
+    "invalid_json_attempts": 14,
+    "i_counts": {
+      "I_NONCRITICAL": 40
+    },
+    "salvage_family_counts": {
+      "RETRIEVAL_GAP": 75,
+      "DETERMINISTIC_COMPLETE": 40,
+      "FORMAT_REPAIRABLE": 34,
+      "RAW_TEXT_LOST": 14
+    },
+    "salvage_ir_ok": 16,
+    "replay_selected": 10,
+    "replay_oracle_correct": 10,
+    "format_or_complete": 74,
+    "true_semantic_gap": 0,
+    "raw_text_lost": 14,
+    "retrieval_gap": 75,
+    "next_cut": "retrieval_then_robust_parser_for_rules_missing"
+  },
+  "summary": [
+    {
+      "bucket": "INCOMPLETE_IR",
+      "fine_class": "I_NONCRITICAL",
+      "label": "missing only deterministically completable fields:scope_relation",
+      "n": 40,
+      "format_repairable": 0,
+      "deterministic_complete": 40,
+      "raw_text_lost": 0,
+      "retrieval_gap": 0,
+      "true_semantic_gap": 0,
+      "salvage_ir_ok": 0,
+      "replay_selected": 0,
+      "replay_oracle_correct": 0
+    },
+    {
+      "bucket": "INVALID_OUTPUT",
+      "fine_class": "J1_J2",
+      "label": "JSON unparseable; raw Qwen text not saved so syntax vs extra-text cannot be split",
+      "n": 6,
+      "format_repairable": 0,
+      "deterministic_complete": 0,
+      "raw_text_lost": 6,
+      "retrieval_gap": 0,
+      "true_semantic_gap": 0,
+      "salvage_ir_ok": 0,
+      "replay_selected": 0,
+      "replay_oracle_correct": 0
+    },
+    {
+      "bucket": "INVALID_OUTPUT",
+      "fine_class": "J6",
+      "label": "output truncated",
+      "n": 8,
+      "format_repairable": 0,
+      "deterministic_complete": 0,
+      "raw_text_lost": 8,
+      "retrieval_gap": 0,
+      "true_semantic_gap": 0,
+      "salvage_ir_ok": 0,
+      "replay_selected": 0,
+      "replay_oracle_correct": 0
+    },
+    {
+      "bucket": "INVALID_OUTPUT",
+      "fine_class": "J7",
+      "label": "semantic present but structure parse failed",
+      "n": 34,
+      "format_repairable": 34,
+      "deterministic_complete": 0,
+      "raw_text_lost": 0,
+      "retrieval_gap": 0,
+      "true_semantic_gap": 0,
+      "salvage_ir_ok": 16,
+      "replay_selected": 10,
+      "replay_oracle_correct": 10
+    },
+    {
+      "bucket": "RETRIEVAL_FAILED",
+      "fine_class": "R_RETRIEVAL",
+      "label": "retrieval failed; Qwen never ran",
+      "n": 75,
+      "format_repairable": 0,
+      "deterministic_complete": 0,
+      "raw_text_lost": 0,
+      "retrieval_gap": 75,
+      "true_semantic_gap": 0,
+      "salvage_ir_ok": 0,
+      "replay_selected": 0,
+      "replay_oracle_correct": 0
+    }
+  ]
+}

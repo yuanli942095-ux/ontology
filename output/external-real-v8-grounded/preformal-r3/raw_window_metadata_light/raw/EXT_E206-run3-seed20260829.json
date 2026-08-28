@@ -1,0 +1,80 @@
+{
+  "event_id": "EXT_E206",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E206-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16496,
+  "done_reason": "stop",
+  "prompt_eval_count": 2096,
+  "eval_count": 535,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 climate-related risks",
+      "predicate_label": "scope",
+      "evidence_source_1": "Applying IFRS S1 when reporting only climate-related disclosures under IFRS S2",
+      "evidence_source_2": "IFRS S1 and S2 project summary",
+      "key_statement_1": "A company applying IFRS S1 is required to apply Climate-related risks refers to the potential - IFRS S1 General Requirements for Disclosure of Sustainability-related Financial Information—specifies the requirements for the disclosure of sustainability - IFRS S2 Climate-related Disclosures—specifies the requirements for the disclosure of climate-related financial information.",
+      "key_statement_2": "of the scope of the scope of sustainability-related risks and opportunities (including sustainability- climate-related risks and opportunities) throughout its value chain.",
+      "key_statement_3": "A company reporting only climate‑related financial information applying IFRS S2 will have applied the specific ISSB - January 2025 Educational material Applying IFRS S1 when reporting only climate-related disclosures in accordance with IFRS S2",
+      "scope_definition": "sustainability-related risks and opportunities throughout its value chain",
+      "integration_mechanism": "IFRS S1 General Requirements applied to IFRS S2 specific requirements"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "scope_definition_integration",
+      "change_value": "sustainability_related_risks_opportunities_throughout_value_chain"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "sustainability_reporting"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "scope_definition_integration",
+          "change_value": "sustainability_related_risks_opportunities_throughout_value_chain"
+        },
+        "semantic_result": "scope: sustainability-related risks and opportunities throughout its value chain"
+      }
+    ]
+  }
+}

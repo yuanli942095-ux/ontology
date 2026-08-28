@@ -1,0 +1,79 @@
+{
+  "event_id": "EXT_E208",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E208-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14829,
+  "done_reason": "stop",
+  "prompt_eval_count": 1801,
+  "eval_count": 420,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 transition risks",
+      "predicate_label": "risk subtype",
+      "scope_condition": "Reporting only climate-related disclosures under IFRS S2",
+      "applicable_standard": "IFRS S1 General Requirements",
+      "applicability_limitation": "Requirements in IFRS S1 not applicable if specific corresponding requirements for climate-related disclosures are already included in IFRS S2",
+      "equivalent_objective_paragraph_s1": 45,
+      "equivalent_objective_paragraph_s2": 27,
+      "transition_risk_context": "Metrics and targets disclosure"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "climate_disclosure_scope_application",
+      "change_value": "apply_s1_general_requirements_except_where_s2_specific_climate_requirements_exist"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "sustainability_reporting"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "risk subtype"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "climate_disclosure_scope_application",
+          "change_value": "apply_s1_general_requirements_except_where_s2_specific_climate_requirements_exist"
+        },
+        "semantic_result": "IFRS S1 general requirements apply to climate disclosures unless IFRS S2 has specific corresponding requirements"
+      }
+    ]
+  }
+}

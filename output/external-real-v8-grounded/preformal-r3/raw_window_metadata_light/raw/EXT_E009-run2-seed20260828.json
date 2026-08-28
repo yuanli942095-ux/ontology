@@ -1,0 +1,85 @@
+{
+  "event_id": "EXT_E009",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E009-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/wcag2mobile-22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 11119,
+  "done_reason": "stop",
+  "prompt_eval_count": 2807,
+  "eval_count": 351,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag22_added",
+    "criterion_id": "3.2.6",
+    "level": "AAA",
+    "revision": "WCAG 2.2",
+    "action": "added"
+  },
+  "canonical_semantic_result": "wcag22_added=3.2.6;level=AAA",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG success criterion 3.2.6",
+      "predicate_label": "versioned requirement status",
+      "criterion_id": "3.2.6",
+      "level": "A",
+      "revision": "WCAG 2.2",
+      "family": "wcag22_added",
+      "action": "added",
+      "scope": "mobile_applications"
+    },
+    "canonical_result": {
+      "family": "wcag22_added",
+      "criterion_id": "3.2.6",
+      "level": "AAA",
+      "revision": "WCAG 2.2",
+      "action": "added"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 3.2.6"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag22_added",
+          "criterion_id": "3.2.6",
+          "level": "AAA",
+          "revision": "WCAG 2.2",
+          "action": "added"
+        },
+        "semantic_result": "wcag22_added=3.2.6;level=AAA"
+      }
+    ],
+    "canonical_semantic_result": "wcag22_added=3.2.6;level=AAA",
+    "canonical_normalized": true
+  }
+}

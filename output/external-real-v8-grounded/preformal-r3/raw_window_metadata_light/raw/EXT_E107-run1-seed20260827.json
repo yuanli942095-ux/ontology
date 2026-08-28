@@ -1,0 +1,83 @@
+{
+  "event_id": "EXT_E107",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E107-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 13010,
+  "done_reason": "stop",
+  "prompt_eval_count": 1450,
+  "eval_count": 362,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA copper action level",
+      "predicate_label": "action level",
+      "source_title": "Lead and Copper Rule final rule 2007",
+      "event_id": null,
+      "case_context": null,
+      "title": null
+    },
+    "canonical_result": {
+      "family": "us_regulation_action_level",
+      "action_type": "copper",
+      "regulation_version": "2007_final_rule",
+      "status": "proposed_revision_consideration"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "us_regulation"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "EPA copper action level"
+          },
+          {
+            "fact": "source_title",
+            "operator": "equals",
+            "value": "Lead and Copper Rule final rule 2007"
+          }
+        ],
+        "canonical_result": {
+          "family": "us_regulation_action_level",
+          "action_type": "copper",
+          "regulation_version": "2007_final_rule",
+          "status": "proposed_revision_consideration"
+        },
+        "semantic_result": "EPA copper action level under 2007 final rule with proposed revision consideration"
+      }
+    ]
+  }
+}

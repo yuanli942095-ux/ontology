@@ -1,0 +1,105 @@
+{
+  "event_id": "EXT_E091",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E091-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 22808,
+  "done_reason": "stop",
+  "prompt_eval_count": 2353,
+  "eval_count": 740,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "amendment_date": "2020-12-22",
+      "subject_scope": "packaging scope",
+      "predicate_type": "scope rule",
+      "evidence_source": "Official Journal of the European Union L 433/11-16"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_amendment",
+      "regulation_id": "2020/2174",
+      "amended_annexes": [
+        "IC",
+        "III",
+        "IIIA",
+        "IV",
+        "V",
+        "VII",
+        "VIII"
+      ],
+      "change_description": "Amendment of Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 regarding waste shipment procedures and plastic waste classifications",
+      "specific_changes": [
+        "Insertion of entry AC300 in Part II of Annex III concerning plastic waste containing Annex I constituents",
+        "Addition of block 10(vii) 'Other (please specify)' in Annex VII",
+        "Deletion of waste covered by entry AC300 as it is now covered by entry A3210"
+      ],
+      "effective_date": "2020-12-22"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Commission Delegated Regulation (EU) 2020/2174"
+          },
+          {
+            "fact": "subject_scope",
+            "operator": "equals",
+            "value": "packaging scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_amendment",
+          "regulation_id": "2020/2174",
+          "amended_annexes": [
+            "IC",
+            "III",
+            "IIIA",
+            "IV",
+            "V",
+            "VII",
+            "VIII"
+          ],
+          "change_description": "Amendment of Annexes IC, III, IIIA, IV, V, VII and VIII to Regulation (EC) No 1013/2006 regarding waste shipment procedures and plastic waste classifications",
+          "specific_changes": [
+            "Insertion of entry AC300 in Part II of Annex III concerning plastic waste containing Annex I constituents",
+            "Addition of block 10(vii) 'Other (please specify)' in Annex VII",
+            "Deletion of waste covered by entry AC300 as it is now covered by entry A3210"
+          ],
+          "effective_date": "2020-12-22"
+        },
+        "semantic_result": "EU 2020/2174 amends waste shipment annexes IC, III, IIIA, IV, V, VII, VIII; adds AC300 for plastic waste with Annex I constituents; adds 'Other' in Annex VII block 10; deletes AC300 waste covered by A3210"
+      }
+    ]
+  }
+}

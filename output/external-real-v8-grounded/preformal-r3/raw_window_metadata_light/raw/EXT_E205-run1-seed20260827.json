@@ -1,0 +1,86 @@
+{
+  "event_id": "EXT_E205",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E205-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14597,
+  "done_reason": "stop",
+  "prompt_eval_count": 2102,
+  "eval_count": 404,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "standard_pair": "IFRS S1 and IFRS S2",
+      "reporting_scope": "climate-related disclosures only",
+      "application_condition": "entity applies IFRS S1 for sustainability-related financial information when reporting under IFRS S2"
+    },
+    "canonical_result": {
+      "family": "insurance_formula",
+      "formula_relation": "mandatory_application_of_s1_for_climate_disclosures",
+      "operands": [
+        {
+          "operand_type": "standard_requirement",
+          "operand_value": "IFRS S1"
+        },
+        {
+          "operand_type": "reporting_context",
+          "operand_value": "IFRS S2 climate-related disclosures"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "reporting_scope",
+            "operator": "equals",
+            "value": "climate-related disclosures only"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_formula",
+          "formula_relation": "mandatory_application_of_s1_for_climate_disclosures",
+          "operands": [
+            {
+              "operand_type": "standard_requirement",
+              "operand_value": "IFRS S1"
+            },
+            {
+              "operand_type": "reporting_context",
+              "operand_value": "IFRS S2 climate-related disclosures"
+            }
+          ]
+        },
+        "semantic_result": "IFRS_S1_Mandatory_For_Climate_Disclosures_Under_IFRS_S2"
+      }
+    ]
+  }
+}

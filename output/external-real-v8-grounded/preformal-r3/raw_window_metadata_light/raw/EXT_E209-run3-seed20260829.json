@@ -1,0 +1,80 @@
+{
+  "event_id": "EXT_E209",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E209-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 10960,
+  "done_reason": "stop",
+  "prompt_eval_count": 2012,
+  "eval_count": 345,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "standard_family": "IFRS_S2",
+      "disclosure_topic": "climate_opportunities",
+      "scope_definition": "value_chain",
+      "reassessment_requirement": true,
+      "applicable_paragraph_reference": "IFRS S1.5, 7–9"
+    },
+    "canonical_result": {
+      "family": "scope_boundary_extension",
+      "subject": "climate_related_risks_and_opportunities",
+      "predicate": "scope_of_disclosure",
+      "value": "throughout_its_value_chain",
+      "condition": "reassessment_required"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "disclosure_topic",
+            "operator": "equals",
+            "value": "climate_opportunities"
+          },
+          {
+            "fact": "standard_family",
+            "operator": "equals",
+            "value": "IFRS_S2"
+          }
+        ],
+        "canonical_result": {
+          "family": "scope_boundary_extension",
+          "subject": "climate_related_risks_and_opportunities",
+          "predicate": "scope_of_disclosure",
+          "value": "throughout_its_value_chain",
+          "condition": "reassessment_required"
+        },
+        "semantic_result": "IFRS_S2_climate_opportunities_scope_value_chain_reassessment"
+      }
+    ]
+  }
+}

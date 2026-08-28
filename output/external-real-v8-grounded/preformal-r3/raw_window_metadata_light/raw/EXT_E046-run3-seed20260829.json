@@ -1,0 +1,79 @@
+{
+  "event_id": "EXT_E046",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E046-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://pages.nist.gov/800-63-3/",
+    "https://pages.nist.gov/800-63-4/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 11080,
+  "done_reason": "stop",
+  "prompt_eval_count": 1852,
+  "eval_count": 361,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "nist_revision_change",
+    "change_key": "identity_proofing_controls",
+    "change_value": "restructured_roles_and_types"
+  },
+  "canonical_semantic_result": "identity_proofing_controls=restructured_roles_and_types",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "event_id": "",
+      "domain": "digital_identity",
+      "subject_label": "NIST SP 800-63-4 EXT_E046",
+      "predicate_label": "revision status",
+      "source_title": "SP 800-63-4 Digital Identity Guidelines",
+      "superseded_by": "NIST SP 800-63-4",
+      "supersedure_date": "2025-08-01",
+      "previous_version": "SP 800-63-3"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "identity_proofing_controls",
+      "change_value": "restructured_roles_and_types"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title",
+            "operator": "equals",
+            "value": "SP 800-63-3 Digital Identity Guidelines"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "identity_proofing_controls",
+          "change_value": "restructured_roles_and_types"
+        },
+        "semantic_result": "identity_proofing_controls=restructured_roles_and_types"
+      }
+    ],
+    "canonical_semantic_result": "identity_proofing_controls=restructured_roles_and_types",
+    "canonical_normalized": true
+  }
+}

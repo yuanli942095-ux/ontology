@@ -1,0 +1,97 @@
+{
+  "event_id": "EXT_E210",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E210-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 22697,
+  "done_reason": "stop",
+  "prompt_eval_count": 1952,
+  "eval_count": 675,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 governance disclosure",
+      "predicate_label": "disclosure topic",
+      "source_title_1": "IFRS S1 and S2 project summary",
+      "source_url_1": "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+      "source_title_2": "Applying IFRS S1 when reporting only climate-related disclosures under IFRS S2",
+      "source_url_2": "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf",
+      "key_requirement_text": "IFRS S2 requires a company to disclose information about: how responsibilities for climate-related risks and opportunities are reflected in the terms of reference, target, how it sets and reviews each target, and its circumstances.",
+      "scope_definition": "Paragraph 28(c) of IFRS S2 requires companies to disclose metrics used by the governance body or management to measure progress towards the targets set by the company, and any targets it is required to meet by law or regulation."
+    },
+    "canonical_result": {
+      "family": "insurance_formula",
+      "formula_relation": "disclosure_scope_includes_metrics_for_targets",
+      "operands": [
+        {
+          "operand_type": "governance_body_metrics",
+          "description": "metrics used by the governance body or management to measure progress towards targets"
+        },
+        {
+          "operand_type": "legal_regulatory_targets",
+          "description": "targets required to be met by law or regulation"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "IFRS S2 Climate-related Disclosures :: IFRS S2 governance disclosure"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "disclosure topic"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_formula",
+          "formula_relation": "disclosure_scope_includes_metrics_for_targets",
+          "operands": [
+            {
+              "operand_type": "governance_body_metrics",
+              "description": "metrics used by the governance body or management to measure progress towards targets"
+            },
+            {
+              "operand_type": "legal_regulatory_targets",
+              "description": "targets required to be met by law or regulation"
+            }
+          ]
+        },
+        "semantic_result": "IFRS_S2_governance_disclosure_scope_formula"
+      }
+    ]
+  }
+}

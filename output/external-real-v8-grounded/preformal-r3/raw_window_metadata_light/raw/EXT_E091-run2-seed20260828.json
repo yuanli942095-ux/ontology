@@ -1,0 +1,128 @@
+{
+  "event_id": "EXT_E091",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E091-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 28935,
+  "done_reason": "stop",
+  "prompt_eval_count": 2353,
+  "eval_count": 943,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "subject": "packaging scope",
+      "predicate": "scope rule",
+      "domain": "eu_regulation",
+      "revision_date": "2020-12-22",
+      "amended_annexes": [
+        "IC",
+        "III",
+        "IIIA",
+        "IV",
+        "V",
+        "VII",
+        "VIII"
+      ],
+      "change_description": "Amendment of Annexes to Regulation (EC) No 1013/2006 regarding waste categories including plastic waste and specific fluorinated polymers.",
+      "scope_change_type": "addition_of_entries_and_deletion_of_overlapping_categories"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_scope_update",
+      "regulation_id": "EU_2020_2174",
+      "target_document": "Regulation (EC) No 1013/2006",
+      "modified_part": "Annexes IC, III, IIIA, IV, V, VII, VIII",
+      "action_type": "amendment",
+      "specific_changes": [
+        {
+          "type": "addition",
+          "target": "Part II of Annex III",
+          "content": "Entry AC300: Plastic waste containing or contaminated with specific constituents (FEP, PFA, MFA, PVF, PVDF, PTFE, PVC)",
+          "note": "Inserted after entry AC270"
+        },
+        {
+          "type": "deletion",
+          "target": "Entry AC300 in Part II of Annex III",
+          "reason": "Covered by entry A3210 in List A of part 1"
+        },
+        {
+          "type": "addition",
+          "target": "Block 10 of Annex VII",
+          "content": "(vii) Other (please specify)"
+        }
+      ],
+      "effective_date": "2020-12-22"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_id",
+            "operator": "equals",
+            "value": "EU_2020_2174"
+          },
+          {
+            "fact": "subject",
+            "operator": "equals",
+            "value": "packaging scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_scope_update",
+          "regulation_id": "EU_2020_2174",
+          "target_document": "Regulation (EC) No 1013/2006",
+          "modified_part": "Annexes IC, III, IIIA, IV, V, VII, VIII",
+          "action_type": "amendment",
+          "specific_changes": [
+            {
+              "type": "addition",
+              "target": "Part II of Annex III",
+              "content": "Entry AC300: Plastic waste containing or contaminated with specific constituents (FEP, PFA, MFA, PVF, PVDF, PTFE, PVC)",
+              "note": "Inserted after entry AC270"
+            },
+            {
+              "type": "deletion",
+              "target": "Entry AC300 in Part II of Annex III",
+              "reason": "Covered by entry A3210 in List A of part 1"
+            },
+            {
+              "type": "addition",
+              "target": "Block 10 of Annex VII",
+              "content": "(vii) Other (please specify)"
+            }
+          ],
+          "effective_date": "2020-12-22"
+        },
+        "semantic_result": "EU_2020_2174_amends_Regulation_1013/2006_Annexes_for_plastic_waste_scope"
+      }
+    ]
+  }
+}

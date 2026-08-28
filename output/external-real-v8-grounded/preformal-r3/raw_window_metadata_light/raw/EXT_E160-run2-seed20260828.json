@@ -1,0 +1,89 @@
+{
+  "event_id": "EXT_E160",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E160-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 18444,
+  "done_reason": "stop",
+  "prompt_eval_count": 2148,
+  "eval_count": 595,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689",
+      "subject_matter": "AI systems which are safety components",
+      "applicable_regulations_amended": [
+        "Regulation (EC) No 300/2008",
+        "Regulation (EU) No 167/2013",
+        "Regulation (EU) No 168/2013",
+        "Regulation (EU) 2018/858",
+        "Regulation (EU) 2018/1139",
+        "Regulation (EU) 2019/2144",
+        "Directive 2014/90/EU",
+        "Directive (EU) 2016/797",
+        "Directive (EU) 2020/1828"
+      ],
+      "chapter_reference": "Chapter III, Section 2",
+      "requirement_type": "harmonised rules on artificial intelligence",
+      "action_scope": "adoption of delegated acts and implementing acts"
+    },
+    "canonical_result": {
+      "family": "regulatory_integration_requirement",
+      "condition": "AI system is a safety component within the meaning of Regulation (EU) 2024/1689",
+      "obligation": "requirements set out in Chapter III, Section 2 shall be taken into account",
+      "applicable_act_types": [
+        "delegated acts",
+        "implementing acts"
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_matter",
+            "operator": "equals",
+            "value": "AI systems which are safety components"
+          }
+        ],
+        "canonical_result": {
+          "family": "regulatory_integration_requirement",
+          "condition": "AI system is a safety component within the meaning of Regulation (EU) 2024/1689",
+          "obligation": "requirements set out in Chapter III, Section 2 shall be taken into account",
+          "applicable_act_types": [
+            "delegated acts",
+            "implementing acts"
+          ]
+        },
+        "semantic_result": "safety_component_ai_system_requires_chapter_iii_section_ii_compliance_in_delegated_and_implementing_acts"
+      }
+    ]
+  }
+}

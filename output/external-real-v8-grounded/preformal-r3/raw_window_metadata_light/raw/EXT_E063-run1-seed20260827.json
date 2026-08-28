@@ -1,0 +1,70 @@
+{
+  "event_id": "EXT_E063",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E063-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2022/03/23/2022-05480.html",
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 12110,
+  "done_reason": "stop",
+  "prompt_eval_count": 3757,
+  "eval_count": 276,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "eCFR EXT_E063",
+      "predicate_label": "regulatory text status",
+      "event_id": "",
+      "title": "SEC 2023 final cybersecurity disclosure rule raw text"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "filing_deadline_calculation",
+      "change_value": "four_business_days_excluding_weekends_holidays"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "us_regulation"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "filing_deadline_calculation",
+          "change_value": "four_business_days_excluding_weekends_holidays"
+        },
+        "semantic_result": "SEC_filing_deadline_excludes_weekends_holidays"
+      }
+    ]
+  }
+}

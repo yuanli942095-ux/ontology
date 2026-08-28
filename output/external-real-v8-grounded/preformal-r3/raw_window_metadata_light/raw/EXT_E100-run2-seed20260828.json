@@ -1,0 +1,83 @@
+{
+  "event_id": "EXT_E100",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E100-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14650,
+  "done_reason": "stop",
+  "prompt_eval_count": 2503,
+  "eval_count": 475,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Form 8-K Item 1.05 disclosure",
+      "predicate_label": "disclosure deadline",
+      "regulatory_body": "SEC",
+      "rule_reference": "Form 8-K Item 1.05 and Regulation S-K Item 106",
+      "trigger_condition": "materiality determination",
+      "timeframe_description": "four business day timeframe from the date of a materiality determination",
+      "applicable_entity_type": "registrant including smaller reporting companies",
+      "disclosure_scope": "cybersecurity incidents and cybersecurity risk management, strategy, and governance"
+    },
+    "canonical_result": {
+      "family": "temporal_deadline_rule",
+      "deadline_trigger": "materiality determination",
+      "deadline_duration_days": 4,
+      "deadline_unit": "business days",
+      "start_point_reference": "date of materiality determination",
+      "regulation_section": "17 CFR 229.106 and Form 8-K Item 1.05"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "disclosure deadline"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "Form 8-K Item 1.05"
+          }
+        ],
+        "canonical_result": {
+          "family": "temporal_deadline_rule",
+          "deadline_trigger": "materiality determination",
+          "deadline_duration_days": 4,
+          "deadline_unit": "business days",
+          "start_point_reference": "date of materiality determination"
+        },
+        "semantic_result": "four business days from materiality determination"
+      }
+    ]
+  }
+}

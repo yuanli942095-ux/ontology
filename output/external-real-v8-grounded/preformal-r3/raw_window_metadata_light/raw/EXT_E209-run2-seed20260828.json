@@ -1,0 +1,89 @@
+{
+  "event_id": "EXT_E209",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E209-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 13733,
+  "done_reason": "stop",
+  "prompt_eval_count": 2012,
+  "eval_count": 445,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "standard": "IFRS S2",
+      "subject": "climate-related opportunities",
+      "predicate": "scope",
+      "mechanism": "IFRS S1 application mechanism",
+      "value_chain_scope": "throughout its value chain",
+      "reassessment_requirement": "required to reassess the scope of all climate-related risks and opportunities throughout its value chain",
+      "exclusion_clause": "not necessary to apply IFRS S1 paragraph when reporting on climate-related information using IFRS S2"
+    },
+    "canonical_result": {
+      "family": "scope_definition",
+      "standard_family": "IFRS_S2",
+      "subject_category": "climate_related_opportunities",
+      "scope_boundary": "value_chain",
+      "applicable_mechanism": "IFRS_S1_application",
+      "reassessment_trigger": "annual_reporting_period"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "standard",
+            "operator": "equals",
+            "value": "IFRS S2"
+          },
+          {
+            "fact": "subject",
+            "operator": "equals",
+            "value": "climate-related opportunities"
+          },
+          {
+            "fact": "predicate",
+            "operator": "equals",
+            "value": "scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "scope_definition",
+          "standard_family": "IFRS_S2",
+          "subject_category": "climate_related_opportunities",
+          "scope_boundary": "value_chain",
+          "applicable_mechanism": "IFRS_S1_application",
+          "reassessment_trigger": "annual_reporting_period"
+        },
+        "semantic_result": "IFRS S2 climate opportunities scope defined by IFRS S1 application mechanism throughout value chain with annual reassessment"
+      }
+    ]
+  }
+}

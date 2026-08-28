@@ -1,0 +1,103 @@
+{
+  "event_id": "EXT_E117",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E117-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.04162018",
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 22370,
+  "done_reason": "stop",
+  "prompt_eval_count": 1545,
+  "eval_count": 714,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF 2.0 profile resources",
+      "predicate_label": "resource status",
+      "source_title_1": "NIST Cybersecurity Framework 2.0",
+      "source_url_1": "https://doi.org/10.6028/NIST.CSWP.29",
+      "source_title_2": "NIST Cybersecurity Framework 1.1",
+      "source_url_2": "https://doi.org/10.6028/NIST.CSWP.04162018",
+      "documented_relationship": "mutual relationship between cybersecurity risk management and ERM",
+      "tier_definitions_source": "NIST Cybersecurity Framework 1.1",
+      "profile_purpose_current": "describe the current state or the desired target state of specific cybersecurity activities",
+      "profile_purpose_transition": "help an organization put the CSF into practice and set priorities for managing cybersecurity risks",
+      "tier_1_description": "Partial - Risk Management Process not formalized, managed in ad hoc and sometimes reactive manner"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "profile_resource_status_definition",
+      "change_value": "transition_from_version_1_to_version_2_with_erm_integration"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title_1",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 2.0"
+          },
+          {
+            "fact": "documented_relationship",
+            "operator": "contains",
+            "value": "cybersecurity risk management - and ERM"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "profile_resource_status_definition",
+          "change_value": "transition_from_version_1_to_version_2_with_erm_integration"
+        },
+        "semantic_result": "csf_v2_profile_resources_integrate_cybersecurity_risk_management_and_erm"
+      },
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title_2",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 1.1"
+          },
+          {
+            "fact": "tier_definitions_source",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 1.1"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "tier_definition_retention",
+          "change_value": "tier_1_partial_ad_hoc_risk_management_preserved"
+        },
+        "semantic_result": "csf_v1_tier_definitions_retained_in_v2_context"
+      }
+    ]
+  }
+}

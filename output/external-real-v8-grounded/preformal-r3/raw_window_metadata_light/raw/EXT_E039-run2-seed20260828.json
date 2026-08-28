@@ -1,0 +1,91 @@
+{
+  "event_id": "EXT_E039",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E039-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/wcag2mobile-22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14275,
+  "done_reason": "stop",
+  "prompt_eval_count": 1779,
+  "eval_count": 448,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag21_cross_scope",
+    "criterion_id": "1.1.1",
+    "level": "AA",
+    "revision": "WCAG 2.1",
+    "scope": "criterion_and_level"
+  },
+  "canonical_semantic_result": "wcag21_cross_scope=1.1.1;level=AA",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG2Mobile EXT_E039",
+      "predicate_label": "mobile application guidance scope",
+      "source_title": "Guidance on Applying WCAG 2.2 to Mobile Applications",
+      "source_url": "https://www.w3.org/TR/wcag2mobile-22/",
+      "document_type": "W3C Group Note",
+      "scope_narrowing": "WCAG2ICT non-web scope narrowed to mobile applications",
+      "exclusion_statement": "does not propose changes to WCAG 2 or its supporting documents; does not include interpretations for implementing WCAG 2 in web technologies",
+      "applicability_limitation": "not sufficient by itself to ensure accessibility in mobile applications regarding non-user interface aspects, closed product software, or hardware aspects",
+      "alignment_target": "WCAG2ICT"
+    },
+    "canonical_result": {
+      "family": "wcag21_cross_scope",
+      "criterion_id": "1.1.1",
+      "level": "AA",
+      "revision": "WCAG 2.1",
+      "scope": "criterion_and_level"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "mobile application guidance scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag21_cross_scope",
+          "criterion_id": "1.1.1",
+          "level": "AA",
+          "revision": "WCAG 2.1",
+          "scope": "criterion_and_level"
+        },
+        "semantic_result": "wcag21_cross_scope=1.1.1;level=AA"
+      }
+    ],
+    "canonical_semantic_result": "wcag21_cross_scope=1.1.1;level=AA",
+    "canonical_normalized": true
+  }
+}

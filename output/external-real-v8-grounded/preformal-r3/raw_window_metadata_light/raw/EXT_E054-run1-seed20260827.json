@@ -1,0 +1,81 @@
+{
+  "event_id": "EXT_E054",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E054-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://pages.nist.gov/800-63-4/sp800-63b.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 19253,
+  "done_reason": "stop",
+  "prompt_eval_count": 2914,
+  "eval_count": 537,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "digital_identity",
+      "subject_label": "NIST SP 800-63A/B EXT_E054",
+      "predicate_label": "document scope status",
+      "source_title": "SP 800-63B-4 Authentication and Authenticator Management",
+      "revision_status": "supersedes previous version",
+      "section_changes": [
+        "Section deleted: Removes verifier compromise resistance as a distinctly named requirement",
+        "Section 4: Renames section to 'Authenticator Event Management'",
+        "Section 4.1.1: Moves binding at enrollment to SP 800-63A",
+        "Section 4.1.2.1: Generalizes binding an additional authenticator to all AALs",
+        "Section 4.1.2.2: Adds requirements for binding authenticators that are not connected to an endpoint"
+      ]
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "authenticator_event_management_scope_and_requirements",
+      "change_value": "renames_section_4_to_authenticator_event_management;removes_verifier_compromise_resistance_requirement;moves_enrollment_binding_to_sp800_63a;generalizes_additional_authenticator_binding_to_all_aals;adds_requirements_for_non_endpoint_connected_authenticators"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "digital_identity"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "NIST SP 800-63A/B EXT_E054"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "authenticator_event_management_scope_and_requirements",
+          "change_value": "renames_section_4_to_authenticator_event_management;removes_verifier_compromise_resistance_requirement;moves_enrollment_binding_to_sp800_63a;generalizes_additional_authenticator_binding_to_all_aals;adds_requirements_for_non_endpoint_connected_authenticators"
+        },
+        "semantic_result": "nist_revision_change:authenticator_event_management_scope_and_requirements"
+      }
+    ]
+  }
+}

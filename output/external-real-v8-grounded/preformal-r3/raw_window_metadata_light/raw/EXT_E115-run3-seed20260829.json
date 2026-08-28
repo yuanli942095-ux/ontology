@@ -1,0 +1,82 @@
+{
+  "event_id": "EXT_E115",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E115-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.04162018",
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14816,
+  "done_reason": "stop",
+  "prompt_eval_count": 1348,
+  "eval_count": 479,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF 2.0 all-organization scope",
+      "predicate_label": "scope",
+      "source_title_1": "NIST Cybersecurity Framework 2.0",
+      "source_url_1": "https://doi.org/10.6028/NIST.CSWP.29",
+      "source_title_2": "NIST Cybersecurity Framework 1.1",
+      "source_url_2": "https://doi.org/10.6028/NIST.CSWP.04162018",
+      "framework_version_new": "CSF 2.0",
+      "framework_version_old": "CSF 1.1",
+      "release_date_new": "February 26, 2024",
+      "scope_description_new": "all-organization scope",
+      "utility_statement": "valuable for any type of organization and is expected to provide appropriate guidance over a long time"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "organizational_profile_utility_scope",
+      "change_value": "framework_valued_for_any_organization_long_term_guidance"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title_1",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 2.0"
+          },
+          {
+            "fact": "framework_version_new",
+            "operator": "equals",
+            "value": "CSF 2.0"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "organizational_profile_utility_scope",
+          "change_value": "framework_valued_for_any_organization_long_term_guidance"
+        },
+        "semantic_result": "CSF 2.0 organizational profile utility scope change"
+      }
+    ]
+  }
+}

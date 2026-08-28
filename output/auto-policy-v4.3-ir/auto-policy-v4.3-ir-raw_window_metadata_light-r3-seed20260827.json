@@ -1,0 +1,37 @@
+{
+  "method": "AUTO_POLICY_V4_3_TEMPORAL_UNIQUE_TOP1",
+  "reranker": "constraint",
+  "min_score": 0.3,
+  "min_margin": 0.0,
+  "temporal_unique_top1": true,
+  "candidate_blind_ir": true,
+  "qwen_called": false,
+  "candidate_seen_stage": "candidate_ranking_after_ir_fixed",
+  "summary": [
+    {
+      "semantic_type": "ALL",
+      "events": 200,
+      "attempts": 600,
+      "selected": 292,
+      "abstains": 308,
+      "oracle_accuracy": 0.4666666666666667,
+      "full_closure_accuracy": 0.4666666666666667,
+      "strict_event_successes": 76,
+      "strict_event_accuracy": 0.38
+    }
+  ],
+  "ir_status_counts": {
+    "OK": 437,
+    "INVALID_OUTPUT": 123,
+    "INCOMPLETE_IR": 40
+  },
+  "decision_path_counts": {
+    "IR_RANK_TIE_ABSTAIN": 25,
+    "IR_FAIL_CLOSED": 163,
+    "IR_EXACT_MATCH": 67,
+    "IR_CONSTRAINT_RANK": 68,
+    "IR_TOPK_RANK": 127,
+    "IR_RANK_ABSTAIN": 120,
+    "IR_TEMPORAL_UNIQUE_TOP1": 30
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "event_id": "EXT_E104",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E104-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 22560,
+  "done_reason": "stop",
+  "prompt_eval_count": 2053,
+  "eval_count": 714,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC governance disclosure",
+      "predicate_label": "governance rule",
+      "source_title": "SEC 2023 final cybersecurity disclosure rule raw text",
+      "event_description": "Adoption of new rules to enhance and standardize disclosures regarding cybersecurity risk management, strategy, governance, and incidents by public companies subject to the Securities Exchange Act of 1934.",
+      "key_changes": [
+        "Add affirmative cybersecurity incident disclosure obligation on Form 8-K (Item 1.05).",
+        "Centralize cybersecurity risk management, strategy, and governance disclosure requirements."
+      ],
+      "benefits": [
+        "Reduce market mispricing and information asymmetry.",
+        "Potentially lower firms' cost of capital.",
+        "Lead to more timely disclosure to investors.",
+        "Reduce compliance costs for registrants currently providing such disclosures."
+      ],
+      "affected_parties": [
+        "investors",
+        "registrants",
+        "financial analysts",
+        "investment advisers",
+        "portfolio managers"
+      ]
+    },
+    "canonical_result": {
+      "family": "governance_rule_adoption",
+      "regulation_body": "SEC",
+      "regulation_type": "final_rule",
+      "primary_item": "Item 1.05",
+      "form_reference": "Form 8-K",
+      "disclosure_scope": [
+        "cybersecurity_risk_management",
+        "cybersecurity_strategy",
+        "cybersecurity_governance",
+        "cybersecurity_incidents"
+      ],
+      "action_type": "centralize_and_standardize",
+      "effective_context": "Securities Exchange Act of 1934 reporting requirements"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "us_regulation"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "SEC governance disclosure"
+          }
+        ],
+        "canonical_result": {
+          "family": "governance_rule_adoption",
+          "regulation_body": "SEC",
+          "regulation_type": "final_rule",
+          "primary_item": "Item 1.05",
+          "form_reference": "Form 8-K",
+          "disclosure_scope": [
+            "cybersecurity_risk_management",
+            "cybersecurity_strategy",
+            "cybersecurity_governance",
+            "cybersecurity_incidents"
+          ],
+          "action_type": "centralize_and_standardize",
+          "effective_context": "Securities Exchange Act of 1934 reporting requirements"
+        },
+        "semantic_result": "SEC final rule centralizing cybersecurity risk management, strategy, governance, and incident disclosure on Form 8-K Item 1.05 under the Securities Exchange Act of 1934."
+      }
+    ]
+  }
+}

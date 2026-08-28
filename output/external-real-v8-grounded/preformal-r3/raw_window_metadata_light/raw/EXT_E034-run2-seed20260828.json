@@ -1,0 +1,98 @@
+{
+  "event_id": "EXT_E034",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E034-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16673,
+  "done_reason": "stop",
+  "prompt_eval_count": 1379,
+  "eval_count": 538,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag22_added",
+    "criterion_id": "2.4.11",
+    "level": "AA",
+    "revision": "WCAG 2.2",
+    "action": "added"
+  },
+  "canonical_semantic_result": "wcag22_added=2.4.11;level=AA",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG 2.2 Focus Not Obscured family",
+      "predicate_label": "versioned requirement status",
+      "document_title": "Web Content Accessibility Guidelines 2.2",
+      "document_url": "https://www.w3.org/TR/WCAG22/",
+      "new_criteria_list": [
+        "2.4.11 Focus Not Obscured (Minimum) (AA)",
+        "2.4.12 Focus Not Obscured (Enhanced) (AAA)",
+        "2.4.13 Focus Appearance (AAA)",
+        "2.5.7 Dragging Movements (AA)",
+        "2.5.8 Target Size (Minimum) (AA)",
+        "3.2.6 Consistent Help (A)",
+        "3.3.7 Redundant Entry (A)",
+        "3.3.8 Accessible Authentication (Minimum) (AA)"
+      ],
+      "inheritance_statement": "WCAG 2.2 inherits requirements from previous WCAG 2 versions",
+      "recommendation": "adopt WCAG 2.2 as new conformance target"
+    },
+    "canonical_result": {
+      "family": "wcag22_added",
+      "criterion_id": "2.4.11",
+      "level": "AA",
+      "revision": "WCAG 2.2",
+      "action": "added"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG 2.2 Focus Not Obscured family"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag22_added",
+          "criterion_id": "2.4.11",
+          "level": "AA",
+          "revision": "WCAG 2.2",
+          "action": "added"
+        },
+        "semantic_result": "wcag22_added=2.4.11;level=AA"
+      }
+    ],
+    "canonical_semantic_result": "wcag22_added=2.4.11;level=AA",
+    "canonical_normalized": true
+  }
+}

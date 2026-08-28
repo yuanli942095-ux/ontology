@@ -1,0 +1,85 @@
+{
+  "event_id": "EXT_E169",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E169-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=e0649735-a372-11eb-9585-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 17064,
+  "done_reason": "stop",
+  "prompt_eval_count": 2212,
+  "eval_count": 549,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689",
+      "subject_label": "Regulation (EU) 2024/1689 Artificial Intelligence Act :: AI Act GPAI obligations",
+      "predicate_label": "obligation rule",
+      "scope_description": "When adopting delegated acts or implementing acts concerning AI systems which are safety components, the requirements set out in Chapter III, Section 2 shall be taken into account.",
+      "applicable_regulations": [
+        "Regulation (EC) No 300/2008",
+        "Regulation (EU) No 167/2013",
+        "Regulation (EU) No 168/2013"
+      ],
+      "chapter_reference": "Chapter III, Section 2",
+      "action_type": "take_into_account"
+    },
+    "canonical_result": {
+      "family": "ai_regulatory_obligation",
+      "regulation_id": "EU_2024_1689",
+      "obligation_scope": "safety_component_delegated_acts",
+      "referenced_requirements": "Chapter III Section 2",
+      "action": "take_into_account"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Regulation (EU) 2024/1689"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Regulation (EU) 2024/1689 Artificial Intelligence Act :: AI Act GPAI obligations"
+          }
+        ],
+        "canonical_result": {
+          "family": "ai_regulatory_obligation",
+          "regulation_id": "EU_2024_1689",
+          "obligation_scope": "safety_component_delegated_acts",
+          "referenced_requirements": "Chapter III Section 2",
+          "action": "take_into_account"
+        },
+        "semantic_result": "AI safety component delegated acts must consider Chapter III Section 2 requirements"
+      }
+    ]
+  }
+}

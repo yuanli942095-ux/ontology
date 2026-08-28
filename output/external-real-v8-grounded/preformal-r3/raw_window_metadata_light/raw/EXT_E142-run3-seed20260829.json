@@ -1,0 +1,68 @@
+{
+  "event_id": "EXT_E142",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E142-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 8767,
+  "done_reason": "stop",
+  "prompt_eval_count": 1883,
+  "eval_count": 283,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "source_title": "NIST Privacy Framework 1.1 Initial Public Draft",
+      "domain": "privacy_framework",
+      "subject_label": "Privacy Framework 1.1 Initial Public Draft :: Privacy Framework core category trace",
+      "predicate_label": "mapping status"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "core_category_subcategory_mapping_status",
+      "change_value": "initial_public_draft_pending_finalization"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title",
+            "operator": "equals",
+            "value": "NIST Privacy Framework 1.1 Initial Public Draft"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "core_category_subcategory_mapping_status",
+          "change_value": "initial_public_draft_pending_finalization"
+        },
+        "semantic_result": "NIST PF 1.1 IPD core category subcategory mapping status is pending finalization"
+      }
+    ]
+  }
+}

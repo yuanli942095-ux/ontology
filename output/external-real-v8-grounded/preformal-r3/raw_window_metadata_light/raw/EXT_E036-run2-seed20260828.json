@@ -1,0 +1,95 @@
+{
+  "event_id": "EXT_E036",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E036-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/wcag2mobile-22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 12777,
+  "done_reason": "stop",
+  "prompt_eval_count": 2111,
+  "eval_count": 412,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag21_cross_scope",
+    "criterion_id": "1.1.1",
+    "level": "AAA",
+    "revision": "WCAG 2.1",
+    "scope": "criterion_and_level"
+  },
+  "canonical_semantic_result": "wcag21_cross_scope=1.1.1;level=AAA",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG 2.2 Accessible Authentication scope",
+      "predicate_label": "versioned requirement status",
+      "criterion_id": "3.3.8",
+      "level": "AA",
+      "revision": "WCAG 2.2",
+      "scope_context": "non-web documents and software",
+      "exception_condition": "cognitive function test identifies non-text content user provided",
+      "exception_condition_2": "cases where no alternative or assistance mechanism is feasible"
+    },
+    "canonical_result": {
+      "family": "wcag21_cross_scope",
+      "criterion_id": "1.1.1",
+      "level": "AAA",
+      "revision": "WCAG 2.1",
+      "scope": "criterion_and_level"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "criterion_id",
+            "operator": "equals",
+            "value": "3.3.8"
+          },
+          {
+            "fact": "level",
+            "operator": "equals",
+            "value": "AA"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag21_cross_scope",
+          "criterion_id": "1.1.1",
+          "level": "AAA",
+          "revision": "WCAG 2.1",
+          "scope": "criterion_and_level"
+        },
+        "semantic_result": "wcag21_cross_scope=1.1.1;level=AAA"
+      }
+    ],
+    "canonical_semantic_result": "wcag21_cross_scope=1.1.1;level=AAA",
+    "canonical_normalized": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "event_id": "EXT_E118",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E118-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 18356,
+  "done_reason": "stop",
+  "prompt_eval_count": 1757,
+  "eval_count": 592,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF 2.0 quick-start guides",
+      "predicate_label": "resource status",
+      "source_title": "NIST Cybersecurity Framework 2.0",
+      "publication_date": "2024-02-26",
+      "document_type": "Quick-Start Guide",
+      "related_documents": [
+        "NIST Interagency Report (IR) 8286",
+        "IR 8286A",
+        "IR 8286B"
+      ],
+      "sections_mentioned": [
+        "Section 3: CSF Profiles and Tiers",
+        "Section 4: Online Resources (Informative References, Implementation Examples, Quick Start Guides)",
+        "Section 5: Integration with other risk-management programs",
+        "Appendix A: CSF Core",
+        "Appendix B: Notional illustration of the CSF Tiers",
+        "Appendix C: Glossary"
+      ],
+      "target_audience": [
+        "industry",
+        "government agencies",
+        "nonprofit organizations"
+      ],
+      "purpose": "manage cybersecurity risks",
+      "transition_guidance": "transitioning from previous CSF versions to version 2.0",
+      "resource_status": "available",
+      "accessibility_note": "publication is available free of charge"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "csf_version_transition_guidance",
+      "change_value": "integration_of_qsgs_for_version_2_0_and_related_ir_documents"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Cybersecurity Framework 2.0 :: CSF 2.0 quick-start guides"
+          },
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "cybersecurity_controls"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "csf_version_transition_guidance",
+          "change_value": "integration_of_qsgs_for_version_2_0_and_related_ir_documents"
+        },
+        "semantic_result": "NIST CSF 2.0 QSG integration with IR 8286 series for risk management communication"
+      }
+    ]
+  }
+}

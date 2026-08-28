@@ -1,0 +1,78 @@
+{
+  "event_id": "EXT_E026",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E026-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://pages.nist.gov/800-63-4/sp800-63a.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 10991,
+  "done_reason": "stop",
+  "prompt_eval_count": 2231,
+  "eval_count": 346,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "nist_revision_change",
+    "change_key": "fraud_requirements",
+    "change_value": "expanded_identity_proofing"
+  },
+  "canonical_semantic_result": "fraud_requirements=expanded_identity_proofing",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "digital_identity",
+      "subject_label": "NIST SP 800-63-4 continuous_evaluation_metrics",
+      "predicate_label": "revision change status"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "fraud_requirements",
+      "change_value": "expanded_identity_proofing"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "digital_identity"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "NIST SP 800-63-4 continuous_evaluation_metrics"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "fraud_requirements",
+          "change_value": "expanded_identity_proofing"
+        },
+        "semantic_result": "fraud_requirements=expanded_identity_proofing"
+      }
+    ],
+    "canonical_semantic_result": "fraud_requirements=expanded_identity_proofing",
+    "canonical_normalized": true
+  }
+}

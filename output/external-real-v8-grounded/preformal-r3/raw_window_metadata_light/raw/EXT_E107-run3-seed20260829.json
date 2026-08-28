@@ -1,0 +1,57 @@
+{
+  "event_id": "EXT_E107",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E107-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "INVALID_SCHEMA",
+  "runtime_ms": 8034,
+  "done_reason": "stop",
+  "prompt_eval_count": 1450,
+  "eval_count": 258,
+  "forbidden_markers": [],
+  "schema_valid": false,
+  "validation_reason": "rules_missing",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA copper action level",
+      "predicate_label": "action level",
+      "source_title": "Lead and Copper Rule final rule 2007",
+      "event_id": null,
+      "case_context": null,
+      "title": null
+    },
+    "canonical_result": {
+      "family": "us_regulation_action_level",
+      "regulation_name": "Lead and Copper Rule",
+      "action_type": "copper",
+      "status": "final_rule_2007",
+      "value_defined": false,
+      "reason_value_not_defined": "公开证据仅提及 EPA 考虑了铜行动水平（consider source of water or make any long-term - demonstrate their corrosion control requiring that all systems meet both the change in water treatment process prior - Proposed Rule），但未提供具体的数值阈值、公式或明确的最终定义值。根据指令要求，不得编造公开证据没有支持的规范事实。"
+    },
+    "rules": []
+  }
+}

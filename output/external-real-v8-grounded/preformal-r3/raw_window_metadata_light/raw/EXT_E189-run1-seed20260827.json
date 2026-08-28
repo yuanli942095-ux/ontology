@@ -1,0 +1,79 @@
+{
+  "event_id": "EXT_E189",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E189-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://public-inspection.federalregister.gov/2016-31406.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14028,
+  "done_reason": "stop",
+  "prompt_eval_count": 1272,
+  "eval_count": 410,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "guidance_title": "Postmarket Management of Cybersecurity in Medical Devices",
+      "agency": "FDA",
+      "document_type": "Guidance for Industry and Food and Drug Administration",
+      "availability_date": "2016",
+      "binding_status": "non_binding",
+      "rights_established": false,
+      "public_availability": true,
+      "confidential_submission_handling": "publicly_available_except_confidential"
+    },
+    "canonical_result": {
+      "family": "regulatory_guidance_non_binding",
+      "guidance_id": "FDA-2015-D-5105",
+      "scope": "postmarket_cybersecurity_management",
+      "effectiveness_criteria": "safety_and_effectiveness_of_marketed_medical_devices"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "document_type",
+            "operator": "equals",
+            "value": "Guidance for Industry and Food and Drug Administration"
+          },
+          {
+            "fact": "agency",
+            "operator": "equals",
+            "value": "FDA"
+          }
+        ],
+        "canonical_result": {
+          "family": "regulatory_guidance_non_binding",
+          "guidance_id": "FDA-2015-D-5105",
+          "scope": "postmarket_cybersecurity_management",
+          "effectiveness_criteria": "safety_and_effectiveness_of_marketed_medical_devices"
+        },
+        "semantic_result": "regulatory_guidance_non_binding_FDA-2015-D-5105_postmarket_cybersecurity_management_safety_and_effectiveness_of_marketed_medical_devices"
+      }
+    ]
+  }
+}

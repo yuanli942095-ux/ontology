@@ -1,0 +1,72 @@
+{
+  "event_id": "EXT_E192",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E192-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://public-inspection.federalregister.gov/2016-31406.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 10346,
+  "done_reason": "stop",
+  "prompt_eval_count": 1239,
+  "eval_count": 332,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "guidance_title": "Postmarket Management of Cybersecurity in Medical Devices",
+      "agency": "FDA",
+      "document_type": "Guidance for Industry",
+      "status": "non-binding",
+      "subject_matter": "postmarket cybersecurity vulnerabilities",
+      "key_definition": "clarifies changes to devices to be considered cybersecurity routine updates and patches"
+    },
+    "canonical_result": {
+      "family": "medical_device_cybersecurity_guidance",
+      "guidance_id": "FDA-2015-D-5105",
+      "scope": "postmarket_management",
+      "rule_category": "routine_updates_and_patches_definition"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "medical_device_cybersecurity"
+          }
+        ],
+        "canonical_result": {
+          "family": "medical_device_cybersecurity_guidance",
+          "guidance_id": "FDA-2015-D-5105",
+          "scope": "postmarket_management",
+          "rule_category": "routine_updates_and_patches_definition"
+        },
+        "semantic_result": "FDA postmarket cybersecurity guidance defining routine updates and patches"
+      }
+    ]
+  }
+}

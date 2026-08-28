@@ -1,0 +1,81 @@
+{
+  "event_id": "EXT_E100",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E100-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 13795,
+  "done_reason": "stop",
+  "prompt_eval_count": 2503,
+  "eval_count": 433,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Form 8-K Item 1.05 disclosure",
+      "predicate_label": "disclosure deadline",
+      "regulation_source": "SEC 2023 final cybersecurity disclosure rule",
+      "publication_date": "2023-08-04",
+      "rule_type": "final_rule"
+    },
+    "canonical_result": {
+      "family": "temporal_version",
+      "version_status": "final",
+      "effective_deadline_days": 4,
+      "trigger_condition": "materiality_determination",
+      "applicable_entity_type": "registrant",
+      "disclosure_form": "Form 8-K Item 1.05"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Form 8-K Item 1.05 disclosure"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "disclosure deadline"
+          }
+        ],
+        "canonical_result": {
+          "family": "temporal_version",
+          "version_status": "final",
+          "effective_deadline_days": 4,
+          "trigger_condition": "materiality_determination",
+          "applicable_entity_type": "registrant",
+          "disclosure_form": "Form 8-K Item 1.05"
+        },
+        "semantic_result": "SEC_2023_final_8K_Item105_material_incident_disclosure_deadline_4_days_post_determination"
+      }
+    ]
+  }
+}

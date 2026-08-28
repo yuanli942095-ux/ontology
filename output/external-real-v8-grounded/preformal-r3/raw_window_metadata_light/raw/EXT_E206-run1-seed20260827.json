@@ -1,0 +1,99 @@
+{
+  "event_id": "EXT_E206",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E206-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 19198,
+  "done_reason": "stop",
+  "prompt_eval_count": 2096,
+  "eval_count": 552,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 climate-related risks",
+      "predicate_label": "scope",
+      "entity_scope_definition": "throughout its value chain, including reassessing which Scope 3 categories and value chain companies throughout its value chain to include in the measurement of its Scope 3 greenhouse gas emissions.",
+      "applicable_requirements": [
+        "identifying climate-related risks and opportunities",
+        "preparing disclosures about anticipated financial effects",
+        "performing climate-related scenario analysis"
+      ],
+      "measurement_context": "Scope 3 greenhouse gas emissions",
+      "reassessment_trigger": "first year that it applies IFRS S1"
+    },
+    "canonical_result": {
+      "family": "insurance_formula",
+      "formula_relation": "scope_inclusion_logic",
+      "operands": [
+        {
+          "type": "value_chain_scope",
+          "definition": "throughout its value chain"
+        },
+        {
+          "type": "reassessment_condition",
+          "definition": "including reassessing which Scope 3 categories and value chain companies throughout its value chain to include in the measurement of its Scope 3 greenhouse gas emissions"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "scope"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "IFRS S2"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_formula",
+          "formula_relation": "scope_inclusion_logic",
+          "operands": [
+            {
+              "type": "value_chain_scope",
+              "definition": "throughout its value chain"
+            },
+            {
+              "type": "reassessment_condition",
+              "definition": "including reassessing which Scope 3 categories and value chain companies throughout its value chain to include in the measurement of its Scope 3 greenhouse gas emissions"
+            }
+          ]
+        },
+        "semantic_result": "scope_inclusion_logic: value_chain_scope + reassessment_condition"
+      }
+    ]
+  }
+}

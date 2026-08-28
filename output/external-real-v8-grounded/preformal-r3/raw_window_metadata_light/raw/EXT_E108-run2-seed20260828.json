@@ -1,0 +1,101 @@
+{
+  "event_id": "EXT_E108",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E108-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf",
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 18428,
+  "done_reason": "stop",
+  "prompt_eval_count": 1530,
+  "eval_count": 603,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "event_id": null,
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA public education trigger",
+      "predicate_label": "notification trigger",
+      "regulation_title": "Lead and Copper Rule final rule 2007",
+      "regulation_url": "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf",
+      "action_type": "public education",
+      "trigger_condition": "exceeds action level",
+      "monitoring_period_start": "June",
+      "monitoring_period_end": "September",
+      "additional_monitoring_window": "end of December",
+      "notification_requirement": "mandatory notice to consumers regarding lead levels and actions to reduce exposure"
+    },
+    "canonical_result": {
+      "family": "us_regulation_trigger",
+      "regulation_name": "Lead and Copper Rule",
+      "rule_section": "§ 141.85",
+      "trigger_event": "public education requirement activation",
+      "condition": "tap sample lead concentration exceeds action level",
+      "temporal_scope": {
+        "primary_window": "June to September",
+        "secondary_window": "end of December"
+      },
+      "output_artifact": "mandatory consumer notice"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Lead and Copper Rule final rule 2007"
+          },
+          {
+            "fact": "action_type",
+            "operator": "equals",
+            "value": "public education"
+          },
+          {
+            "fact": "trigger_condition",
+            "operator": "equals",
+            "value": "exceeds action level"
+          }
+        ],
+        "canonical_result": {
+          "family": "us_regulation_trigger",
+          "regulation_name": "Lead and Copper Rule",
+          "rule_section": "§ 141.85",
+          "trigger_event": "public education requirement activation",
+          "condition": "tap sample lead concentration exceeds action level",
+          "temporal_scope": {
+            "primary_window": "June to September",
+            "secondary_window": "end of December"
+          },
+          "output_artifact": "mandatory consumer notice"
+        },
+        "semantic_result": "Lead and Copper Rule 2007 triggers mandatory public education notice when lead levels exceed action limit between June-Sept or end-Dec"
+      }
+    ]
+  }
+}

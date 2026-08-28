@@ -1,0 +1,102 @@
+{
+  "event_id": "EXT_E102",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E102-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2022/03/23/2022-05480.html",
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 20595,
+  "done_reason": "stop",
+  "prompt_eval_count": 2774,
+  "eval_count": 657,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "event_id": "SEC_2023_FINAL_ITEM_106",
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Regulation S-K Item 106 process disclosure",
+      "predicate_label": "process disclosure",
+      "regulation_name": "Regulation S-K Item 106",
+      "form_reference": "Form 10-K",
+      "disclosure_scope": "cybersecurity risk management, strategy, and governance",
+      "materiality_requirement": "material risks from cybersecurity threats",
+      "oversight_body": "board of directors",
+      "management_role": "assessing and managing material risks from cybersecurity threats"
+    },
+    "canonical_result": {
+      "family": "process_disclosure_policy",
+      "policy_type": "mandatory_annual_disclosure",
+      "disclosure_content": "cybersecurity risk management strategy and governance",
+      "applicable_entity": "registrant",
+      "trigger_condition": "material cybersecurity risks or incidents",
+      "reporting_period": "annual (Form 10-K)",
+      "additional_incident_update": "updated disclosure in periodic reports for previously disclosed incidents"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_name",
+            "operator": "equals",
+            "value": "Regulation S-K Item 106"
+          },
+          {
+            "fact": "form_reference",
+            "operator": "equals",
+            "value": "Form 10-K"
+          }
+        ],
+        "canonical_result": {
+          "family": "process_disclosure_policy",
+          "policy_type": "mandatory_annual_disclosure",
+          "disclosure_content": "cybersecurity risk management strategy and governance",
+          "applicable_entity": "registrant"
+        },
+        "semantic_result": "SEC_Item_106_Annual_Cyber_Risk_Governance_Disclosure"
+      },
+      {
+        "priority": 301,
+        "conditions": [
+          {
+            "fact": "disclosure_scope",
+            "operator": "equals",
+            "value": "cybersecurity risk management strategy and governance"
+          }
+        ],
+        "canonical_result": {
+          "family": "process_disclosure_policy",
+          "policy_type": "mandatory_annual_disclosure",
+          "disclosure_content": "cybersecurity risk management strategy and governance",
+          "applicable_entity": "registrant"
+        },
+        "semantic_result": "SEC_Item_106_Annual_Cyber_Risk_Governance_Disclosure"
+      }
+    ]
+  }
+}

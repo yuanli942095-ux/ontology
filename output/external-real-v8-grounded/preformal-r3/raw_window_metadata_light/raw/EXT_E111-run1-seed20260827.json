@@ -1,0 +1,89 @@
+{
+  "event_id": "EXT_E111",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E111-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf",
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 20218,
+  "done_reason": "stop",
+  "prompt_eval_count": 1356,
+  "eval_count": 597,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "event_id": null,
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA service-line inventory requirement",
+      "predicate_label": "inventory rule",
+      "source_title_2007": "Lead and Copper Rule final rule 2007",
+      "source_url_2007": "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf",
+      "source_title_2000": "Lead and Copper Rule final rule 2000",
+      "source_url_2000": "https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf",
+      "regulatory_body": "EPA",
+      "rule_name": "Lead and Copper Rule",
+      "inventory_requirement_description": "combination of methods for delivering the inventory of lead service lines",
+      "update_deadline_reference": "no more than 15 years to replace all"
+    },
+    "canonical_result": {
+      "family": "regulatory_versioning",
+      "regulation_name": "Lead and Copper Rule",
+      "agency": "EPA",
+      "version_2007_status": "final rule",
+      "version_2000_status": "final rule",
+      "inventory_scope": "lead service lines",
+      "methodology_reference": "combination of methods for delivering the inventory"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title_2007",
+            "operator": "equals",
+            "value": "Lead and Copper Rule final rule 2007"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Lead and Copper Rule Improvements :: EPA service-line inventory requirement"
+          }
+        ],
+        "canonical_result": {
+          "family": "regulatory_versioning",
+          "regulation_name": "Lead and Copper Rule",
+          "agency": "EPA",
+          "version_2007_status": "final rule",
+          "inventory_scope": "lead service lines",
+          "methodology_reference": "combination of methods for delivering the inventory"
+        },
+        "semantic_result": "Lead and Copper Rule 2007 final rule requires EPA to update lead service line inventory using combination of methods within 15 years."
+      }
+    ]
+  }
+}

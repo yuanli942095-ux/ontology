@@ -1,0 +1,80 @@
+{
+  "event_id": "EXT_E168",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E168-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16439,
+  "done_reason": "stop",
+  "prompt_eval_count": 2180,
+  "eval_count": 459,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689 Artificial Intelligence Act",
+      "subject_label": "AI Act conformity assessment",
+      "predicate_label": "assessment rule",
+      "scope_description": "When adopting delegated acts or implementing acts concerning AI systems which are safety components, the requirements set out in Chapter III, Section 2 shall be taken into account.",
+      "applicable_chapter_section": "Chapter III, Section 2",
+      "act_type": "delegated acts / implementing acts",
+      "system_category": "safety components"
+    },
+    "canonical_result": {
+      "family": "ai_regulation_cross_reference",
+      "reference_scope": "chapter_iii_section_2",
+      "action_requirement": "take_into_account",
+      "target_system_class": "safety_components",
+      "instrument_type": "delegated_and_implementing_acts"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Regulation (EU) 2024/1689 Artificial Intelligence Act"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "assessment rule"
+          }
+        ],
+        "canonical_result": {
+          "family": "ai_regulation_cross_reference",
+          "reference_scope": "chapter_iii_section_2",
+          "action_requirement": "take_into_account",
+          "target_system_class": "safety_components",
+          "instrument_type": "delegated_and_implementing_acts"
+        },
+        "semantic_result": "ai_regulation_cross_reference_chapter_iii_section_2_take_into_account_safety_components_delegated_implementing_acts"
+      }
+    ]
+  }
+}

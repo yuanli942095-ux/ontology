@@ -1,0 +1,86 @@
+{
+  "event_id": "EXT_E175",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E175-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2025/06/27/2025-11669.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 15635,
+  "done_reason": "stop",
+  "prompt_eval_count": 2071,
+  "eval_count": 504,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "guidance_title": "Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions",
+      "action_status": "finalized",
+      "legal_basis": "Section 524B of the FD&C Act",
+      "enactment_source": "Food and Drug Omnibus Reform Act of 2022, Section 3305",
+      "effective_date_context": "published in Federal Register on June 27, 2025",
+      "regulatory_nature": "deregulatory",
+      "scope_subject": "cyber devices meeting definition under section 524B(c)",
+      "required_submission_types": [
+        "510(k)",
+        "premarket approval application (PMA)",
+        "product development protocol (PDP)",
+        "De Novo",
+        "humanitarian device exemption (HDE)"
+      ],
+      "guidance_update_action": "identifies cybersecurity information FDA considers generally necessary to support obligations under section 524B(b)"
+    },
+    "canonical_result": {
+      "family": "medical_device_cybersecurity_policy",
+      "policy_status": "finalized_guidance",
+      "regulatory_section": "section_524b_fdca",
+      "applicable_devices": "cyber_devices",
+      "submission_requirement": "submit_information_for_section_524b_b_compliance"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "guidance_title",
+            "operator": "equals",
+            "value": "Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions"
+          },
+          {
+            "fact": "action_status",
+            "operator": "equals",
+            "value": "finalized"
+          }
+        ],
+        "canonical_result": {
+          "family": "medical_device_cybersecurity_policy",
+          "policy_status": "finalized_guidance",
+          "regulatory_section": "section_524b_fdca"
+        },
+        "semantic_result": "finalized_guidance_on_medical_device_cybersecurity_under_section_524b"
+      }
+    ]
+  }
+}

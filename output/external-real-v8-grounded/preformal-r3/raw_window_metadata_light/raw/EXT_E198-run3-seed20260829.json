@@ -1,0 +1,77 @@
+{
+  "event_id": "EXT_E198",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E198-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s1/using-sasb-standards-for-ifrs-s1.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 13316,
+  "done_reason": "stop",
+  "prompt_eval_count": 2281,
+  "eval_count": 424,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S1 General Requirements :: IFRS S1 content and presentation",
+      "predicate_label": "presentation rule",
+      "scope_condition": "information does not obscure material information about sustainability-related risks and opportunities beyond climate in the first year of application",
+      "relief_mechanism": "option to limit disclosures to information about climate-related risks and opportunities",
+      "effective_date": "annual reporting periods beginning on or after 1 January 2024"
+    },
+    "canonical_result": {
+      "family": "insurance_amount_split",
+      "amount_split": {
+        "spring": "required_information_about_all_sustainability_related_risks_and_opportunities",
+        "summer_autumn": "option_to_limit_disclosures_to_climate_related_risks_and_opportunities",
+        "total": "information_that_does_not_obscure_material_information"
+      }
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "scope_condition",
+            "operator": "equals",
+            "value": "information does not obscure material information about sustainability-related risks and opportunities beyond climate in the first year of application"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_amount_split",
+          "amount_split": {
+            "spring": "required_information_about_all_sustainability_related_risks_and_opportunities",
+            "summer_autumn": "option_to_limit_disclosures_to_climate_related_risks_and_opportunities",
+            "total": "information_that_does_not_obscure_material_information"
+          }
+        },
+        "semantic_result": "IFRS_S1_first_year_relief_split"
+      }
+    ]
+  }
+}

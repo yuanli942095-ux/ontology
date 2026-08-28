@@ -1,0 +1,72 @@
+{
+  "event_id": "EXT_E156",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E156-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16007,
+  "done_reason": "stop",
+  "prompt_eval_count": 2273,
+  "eval_count": 446,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689",
+      "subject_matter": "AI systems which are safety components",
+      "governing_chapter_section": "Chapter III, Section 2",
+      "action_type": "requirements_taken_into_account"
+    },
+    "canonical_result": {
+      "family": "ai_regulation_scope_requirement",
+      "regulation_id": "EU_2024/1689",
+      "applicable_systems": "safety_components",
+      "reference_chapter_section": "Chapter III, Section 2",
+      "policy_logic": "When adopting delegated or implementing acts concerning AI systems which are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2 of that Regulation shall be taken into account."
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_matter",
+            "operator": "equals",
+            "value": "AI systems which are safety components"
+          }
+        ],
+        "canonical_result": {
+          "family": "ai_regulation_scope_requirement",
+          "regulation_id": "EU_2024/1689",
+          "applicable_systems": "safety_components",
+          "reference_chapter_section": "Chapter III, Section 2",
+          "policy_logic": "When adopting delegated or implementing acts concerning AI systems which are safety components within the meaning of Regulation (EU) 2024/1689, the requirements set out in Chapter III, Section 2 of that Regulation shall be taken into account."
+        },
+        "semantic_result": "AI safety component acts must consider Chapter III Section 2 requirements"
+      }
+    ]
+  }
+}

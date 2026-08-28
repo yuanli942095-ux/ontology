@@ -1,0 +1,73 @@
+{
+  "event_id": "EXT_E134",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E134-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.40.ipd.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 9807,
+  "done_reason": "stop",
+  "prompt_eval_count": 1831,
+  "eval_count": 317,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "document_title": "NIST Privacy Framework 1.1 Initial Public Draft",
+      "publication_date": "April 14, 2025",
+      "status": "Initial Public Draft (IPD)",
+      "domain": "privacy_framework"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "framework_status_and_versioning",
+      "change_value": "initial_public_draft_with_stakeholder_review"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "document_title",
+            "operator": "equals",
+            "value": "NIST Privacy Framework 1.1 Initial Public Draft"
+          },
+          {
+            "fact": "status",
+            "operator": "equals",
+            "value": "Initial Public Draft (IPD)"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "framework_status_and_versioning",
+          "change_value": "initial_public_draft_with_stakeholder_review"
+        },
+        "semantic_result": "NIST Privacy Framework 1.1 is in Initial Public Draft status for stakeholder review"
+      }
+    ]
+  }
+}

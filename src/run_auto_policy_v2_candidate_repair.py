@@ -18,7 +18,14 @@ from typing import Any
 import validate_benchmark as benchmark_validator
 from evaluate_auto_formal_policy_v2_semantic import auto_semantic_result, evaluate_semantic
 from external_real_v8_layout import candidate_selection_paths, evaluation_paths, is_staged_layout
-from run_external_real_v1_symbolic_closure import graph_delta, load_graph, repair_checks
+from rdflib import URIRef
+
+from run_external_real_v1_symbolic_closure import (
+    graph_delta,
+    load_graph,
+    repair_checks,
+    term_from_spec,
+)
 from semantic_v2_common import OUTPUT_DIR, PROJECT_DIR, write_csv
 
 
@@ -26,6 +33,8 @@ BENCHMARK_DIR = PROJECT_DIR / "benchmark" / "external-real-v1"
 INPUT_DIR = BENCHMARK_DIR / "input"
 PRIVATE_DIR = BENCHMARK_DIR / "private"
 BUILT_DIR = BENCHMARK_DIR / "built"
+MUTANTS_DIR = BENCHMARK_DIR / "mutants"
+CANDIDATE_OWL_OUTPUT_DIR = OUTPUT_DIR / "candidate-owls"
 RAW_DIR = OUTPUT_DIR / "auto-policy-v2" / "raw"
 
 EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
@@ -41,12 +50,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--runs", type=int, default=5)
     parser.add_argument("--seed", type=int, default=20260820)
     parser.add_argument("--timeout", type=int, default=120)
+    parser.add_argument("--only", default="", help="comma-separated event IDs for smoke runs")
     return parser.parse_args()
 
 
 def configure_benchmark(benchmark_dir: Path) -> None:
-    global BENCHMARK_DIR, INPUT_DIR, PRIVATE_DIR, BUILT_DIR
-    global EVENT_CSV, CANDIDATE_CSV, ORACLE_CSV, RAW_DIR
+    global BENCHMARK_DIR, INPUT_DIR, PRIVATE_DIR, BUILT_DIR, MUTANTS_DIR
+    global CANDIDATE_OWL_OUTPUT_DIR, EVENT_CSV, CANDIDATE_CSV, ORACLE_CSV, RAW_DIR
 
     BENCHMARK_DIR = benchmark_dir.resolve()
     if is_staged_layout(BENCHMARK_DIR):
@@ -54,7 +64,8 @@ def configure_benchmark(benchmark_dir: Path) -> None:
         evaluation = evaluation_paths(BENCHMARK_DIR)
         INPUT_DIR = selection["event_csv"].parent
         PRIVATE_DIR = evaluation["oracle_csv"].parent
-        BUILT_DIR = BENCHMARK_DIR / "repair-stage" / "mutants"
+        MUTANTS_DIR = selection["mutants_dir"]
+        BUILT_DIR = BENCHMARK_DIR / "repair-stage"
         EVENT_CSV = selection["event_csv"]
         CANDIDATE_CSV = selection["candidate_csv"]
         ORACLE_CSV = evaluation["oracle_csv"]
@@ -62,10 +73,12 @@ def configure_benchmark(benchmark_dir: Path) -> None:
         INPUT_DIR = BENCHMARK_DIR / "input"
         PRIVATE_DIR = BENCHMARK_DIR / "private"
         BUILT_DIR = BENCHMARK_DIR / "built"
+        MUTANTS_DIR = BENCHMARK_DIR / "mutants"
         EVENT_CSV = INPUT_DIR / "external-real-event-template.csv"
         CANDIDATE_CSV = INPUT_DIR / "external-real-candidate-template.csv"
         ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
     RAW_DIR = PROJECT_DIR / "output" / BENCHMARK_DIR.name / "auto-policy-v3" / "raw"
+    CANDIDATE_OWL_OUTPUT_DIR = PROJECT_DIR / "output" / BENCHMARK_DIR.name / "candidate-owls"
 
 
 def experiment_name(prefix: str) -> str:
@@ -81,11 +94,83 @@ def ready(value: str) -> bool:
     return str(value or "").strip().upper() == "READY"
 
 
-def load_ready_events() -> list[dict[str, str]]:
-    rows = [row for row in read_csv(EVENT_CSV) if ready(row.get("status", ""))]
+def parse_only(value: str) -> set[str]:
+    return {item.strip().upper() for item in value.split(",") if item.strip()}
+
+
+def select_ready_events(rows: list[dict[str, str]], only: set[str]) -> list[dict[str, str]]:
+    selected = [row for row in rows if ready(row.get("status", ""))]
+    if only:
+        selected = [row for row in selected if str(row.get("event_id", "")).upper() in only]
+    return selected
+
+
+def load_ready_events(only: set[str] | None = None) -> list[dict[str, str]]:
+    rows = select_ready_events(read_csv(EVENT_CSV), only or set())
     if not rows:
         raise RuntimeError(f"no READY events in {EVENT_CSV}")
     return rows
+
+
+def resolve_source_owl(
+    event: dict[str, str],
+    *,
+    mutants_dir: Path,
+    project_dir: Path,
+) -> Path:
+    source = str(event.get("source_owl", "")).strip()
+    if source:
+        path = Path(source)
+        if not path.is_absolute():
+            path = project_dir / path
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        return path
+    path = mutants_dir / f"{event['event_id']}.owl"
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    return path
+
+
+def resolve_candidate_owl_path(
+    event_id: str,
+    candidate_id: str,
+    *,
+    benchmark_dir: Path,
+    built_dir: Path,
+    output_dir: Path,
+) -> Path:
+    filename = f"{candidate_id}.owl"
+    for candidate in (
+        built_dir / "candidate-owls" / event_id / filename,
+        benchmark_dir / "repair-stage" / "candidate-owls" / event_id / filename,
+        benchmark_dir / "built" / "candidate-owls" / event_id / filename,
+    ):
+        if candidate.is_file():
+            return candidate
+    return output_dir / "candidate-owls" / event_id / filename
+
+
+def materialize_candidate_owl(
+    *,
+    source_path: Path,
+    operation: dict[str, Any],
+    dest_path: Path,
+) -> Path:
+    if dest_path.is_file():
+        return dest_path
+    if operation.get("operator") != "REPLACE_PROPERTY_VALUE":
+        raise RuntimeError(f"unsupported operator: {operation.get('operator')}")
+    graph = load_graph(source_path)
+    subject = URIRef(operation["subject_iri"])
+    predicate = URIRef(operation["predicate_iri"])
+    old_term = term_from_spec(operation["old_value"])
+    new_term = term_from_spec(operation["new_value"])
+    graph.remove((subject, predicate, old_term))
+    graph.add((subject, predicate, new_term))
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    graph.serialize(destination=str(dest_path), format="xml")
+    return dest_path
 
 
 def load_candidates() -> dict[str, list[dict[str, Any]]]:
@@ -207,7 +292,7 @@ def main() -> int:
     configure_benchmark(args.benchmark_dir)
     args.raw_dir = args.raw_dir or RAW_DIR
     experiment = experiment_name(args.prefix)
-    events = load_ready_events()
+    events = load_ready_events(parse_only(args.only))
     candidates_by_event = load_candidates()
     graph_cache: dict[Path, Any] = {}
     reasoner_cache: dict[Path, dict[str, Any]] = {}
@@ -240,8 +325,23 @@ def main() -> int:
                 "eval_count": auto_record.get("eval_count", 0),
             }
             if selected:
-                source_path = PROJECT_DIR / event["source_owl"]
-                candidate_path = BUILT_DIR / "candidate-owls" / event_id / f"{selected['candidate_id']}.owl"
+                source_path = resolve_source_owl(
+                    event,
+                    mutants_dir=MUTANTS_DIR,
+                    project_dir=PROJECT_DIR,
+                )
+                candidate_path = resolve_candidate_owl_path(
+                    event_id,
+                    selected["candidate_id"],
+                    benchmark_dir=BENCHMARK_DIR,
+                    built_dir=BUILT_DIR,
+                    output_dir=CANDIDATE_OWL_OUTPUT_DIR.parent,
+                )
+                materialize_candidate_owl(
+                    source_path=source_path,
+                    operation=selected["operation"],
+                    dest_path=candidate_path,
+                )
                 source_graph = graph_cache.setdefault(source_path, load_graph(source_path))
                 candidate_graph = graph_cache.setdefault(candidate_path, load_graph(candidate_path))
                 reasoner = reasoner_cache.setdefault(

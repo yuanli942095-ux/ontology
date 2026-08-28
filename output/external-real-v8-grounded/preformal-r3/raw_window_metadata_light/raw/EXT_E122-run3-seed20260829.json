@@ -1,0 +1,67 @@
+{
+  "event_id": "EXT_E122",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E122-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 8643,
+  "done_reason": "stop",
+  "prompt_eval_count": 1449,
+  "eval_count": 280,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF 2.0 small-business audience",
+      "predicate_label": "audience"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "target_audience_scope",
+      "change_value": "expanded_to_include_executives_boards_and_acquisition_professionals"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Cybersecurity Framework 2.0 :: CSF 2.0 small-business audience"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "target_audience_scope",
+          "change_value": "expanded_to_include_executives_boards_and_acquisition_professionals"
+        },
+        "semantic_result": "audience_expanded_for_small_business"
+      }
+    ]
+  }
+}

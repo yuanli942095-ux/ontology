@@ -1,0 +1,77 @@
+{
+  "event_id": "EXT_E198",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E198-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s1/using-sasb-standards-for-ifrs-s1.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 15551,
+  "done_reason": "stop",
+  "prompt_eval_count": 2281,
+  "eval_count": 423,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S1 General Requirements :: IFRS S1 content and presentation",
+      "predicate_label": "presentation rule",
+      "scope_description": "Disclosure of material information about all sustainability-related risks and opportunities that could reasonably be expected to affect the company's future cash flows, including cross-industry and industry-specific matters.",
+      "exclusion_clause": "Information does not obscure material information; additional information beyond required reporting period is optional but must not obscure material info.",
+      "transition_relief": "In the first year of application, companies may limit disclosures to climate-related risks and opportunities if other sustainability-related risks are not yet available without undue cost or effort."
+    },
+    "canonical_result": {
+      "family": "sustainability_disclosure_scope",
+      "disclosure_requirement": "material_sustainability_risks_and_opportunities",
+      "scope_limitation": "reasonable_expectation_of_cash_flow_impact",
+      "transition_exception": "first_year_climate_only_relief"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "sustainability_reporting"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "IFRS S1 General Requirements :: IFRS S1 content and presentation"
+          }
+        ],
+        "canonical_result": {
+          "family": "sustainability_disclosure_scope",
+          "disclosure_requirement": "material_sustainability_risks_and_opportunities",
+          "scope_limitation": "reasonable_expectation_of_cash_flow_impact"
+        },
+        "semantic_result": "IFRS_S1_material_sustainability_risks_opportunities_scope"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "event_id": "EXT_E094",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E094-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 21039,
+  "done_reason": "stop",
+  "prompt_eval_count": 2334,
+  "eval_count": 596,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "amendment_date": "2020-12-22",
+      "subject": "classification note update",
+      "predicate": "note status"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_amendment",
+      "regulation_id": "EU_2020_2174",
+      "amended_instrument": "Regulation (EC) No 1013/2006",
+      "annexes_amended": [
+        "IC",
+        "III",
+        "IIIA",
+        "IV",
+        "V",
+        "VII",
+        "VIII"
+      ],
+      "change_type": "insertion_and_deletion",
+      "specific_changes": [
+        {
+          "target": "Annex III Part II",
+          "action": "insert_entry",
+          "entry_code": "AC300",
+          "description": "Plastic waste, including mixtures of such wastes, containing or contaminated with Annex I constituents"
+        },
+        {
+          "target": "Annex III Part I",
+          "action": "delete_entry",
+          "entry_code": "EU48",
+          "reason": "covered by entry A3210 in List A of part 1"
+        }
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Commission Delegated Regulation (EU) 2020/2174"
+          },
+          {
+            "fact": "amendment_date",
+            "operator": "equals",
+            "value": "2020-12-22"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_amendment",
+          "regulation_id": "EU_2020_2174",
+          "amended_instrument": "Regulation (EC) No 1013/2006",
+          "annexes_amended": [
+            "IC",
+            "III",
+            "IIIA",
+            "IV",
+            "V",
+            "VII",
+            "VIII"
+          ],
+          "change_type": "insertion_and_deletion"
+        },
+        "semantic_result": "EU_2020_2174_amends_1013/2006_annexes_IC_III_IIIA_IV_V_VII_VIII"
+      }
+    ]
+  }
+}

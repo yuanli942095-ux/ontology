@@ -1,0 +1,89 @@
+{
+  "event_id": "EXT_E040",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E040-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 2,
+  "source_urls": [
+    "https://www.w3.org/TR/WCAG21/",
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14670,
+  "done_reason": "stop",
+  "prompt_eval_count": 966,
+  "eval_count": 482,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag21_cross_scope",
+    "criterion_id": "2.4.11",
+    "level": "AA",
+    "revision": "WCAG 2.1",
+    "scope": "criterion_and_level"
+  },
+  "canonical_semantic_result": "wcag21_cross_scope=2.4.11;level=AA",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG2Mobile EXT_E040",
+      "predicate_label": "mobile application guidance scope",
+      "source_title_wcag22": "Web Content Accessibility Guidelines 2.2",
+      "source_goal_wcag22": "continue the work of WCAG 2.1: Improving accessibility guidance for three major groups: users with cognitive or learning disabilities, users with low vision, and users with disabilities on mobile devices",
+      "source_title_wcag21": "Web Content Accessibility Guidelines 2.1",
+      "source_goal_wcag21": "improve accessibility guidance for three major groups: users with cognitive or learning disabilities, users with low vision, and users with disabilities on mobile devices"
+    },
+    "canonical_result": {
+      "family": "wcag21_cross_scope",
+      "criterion_id": "2.4.11",
+      "level": "AA",
+      "revision": "WCAG 2.1",
+      "scope": "criterion_and_level"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG2Mobile EXT_E040"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag21_cross_scope",
+          "criterion_id": "2.4.11",
+          "level": "AA",
+          "revision": "WCAG 2.1",
+          "scope": "criterion_and_level"
+        },
+        "semantic_result": "wcag21_cross_scope=2.4.11;level=AA"
+      }
+    ],
+    "canonical_semantic_result": "wcag21_cross_scope=2.4.11;level=AA",
+    "canonical_normalized": true
+  }
+}

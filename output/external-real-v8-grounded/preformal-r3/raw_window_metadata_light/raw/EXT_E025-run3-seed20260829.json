@@ -1,0 +1,83 @@
+{
+  "event_id": "EXT_E025",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E025-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://pages.nist.gov/800-63-3/",
+    "https://pages.nist.gov/800-63-4/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 12516,
+  "done_reason": "stop",
+  "prompt_eval_count": 1557,
+  "eval_count": 412,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "nist_revision_change",
+    "change_key": "risk_management_text",
+    "change_value": "updated_context_setting"
+  },
+  "canonical_semantic_result": "risk_management_text=updated_context_setting",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "digital_identity",
+      "subject_label": "NIST SP 800-63-4 risk_management_context",
+      "predicate_label": "revision change status",
+      "source_title": "SP 800-63-4 Digital Identity Guidelines",
+      "revision_status": "final",
+      "superseded_revision": "SP 800-63-3",
+      "effective_date": "2025-08-01"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "risk_management_text",
+      "change_value": "updated_context_setting"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title",
+            "operator": "equals",
+            "value": "SP 800-63-4 Digital Identity Guidelines"
+          },
+          {
+            "fact": "revision_status",
+            "operator": "equals",
+            "value": "final"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "risk_management_text",
+          "change_value": "updated_context_setting"
+        },
+        "semantic_result": "risk_management_text=updated_context_setting"
+      }
+    ],
+    "canonical_semantic_result": "risk_management_text=updated_context_setting",
+    "canonical_normalized": true
+  }
+}

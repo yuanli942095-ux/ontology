@@ -1,0 +1,78 @@
+{
+  "event_id": "EXT_E213",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E213-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 11100,
+  "done_reason": "stop",
+  "prompt_eval_count": 1831,
+  "eval_count": 363,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 objective",
+      "predicate_label": "objective",
+      "equivalent_standard": "IFRS S1",
+      "equivalent_paragraph_s1": "45",
+      "equivalent_paragraph_s2": "27",
+      "scope_focus": "climate-related risks and opportunities",
+      "applicable_entity_type": "company reporting only climate-related information applying IFRS S2"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "objective_metrics_targets_scope",
+      "change_value": "climate_related_risks_and_opportunities"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "IFRS S2 Climate-related Disclosures :: IFRS S2 objective"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "objective"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "objective_metrics_targets_scope",
+          "change_value": "climate_related_risks_and_opportunities"
+        },
+        "semantic_result": "IFRS_S2_objective_equivalent_to_IFRS_S1_p45_focused_on_climate_risks_and_opportunities"
+      }
+    ]
+  }
+}

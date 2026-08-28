@@ -70,6 +70,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--benchmark", default=BENCHMARK_NAME)
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--only", default="", help="comma-separated event IDs for smoke runs")
+    parser.add_argument("--runs", type=int, default=RUNS)
     return parser.parse_args()
 
 
@@ -577,7 +579,11 @@ def save_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> N
         writer.writerows(rows)
 
 
-def write_outputs(records: list[dict[str, Any]], expected_event_ids: list[str]) -> None:
+def write_outputs(
+    records: list[dict[str, Any]],
+    expected_event_ids: list[str],
+    runs: int = RUNS,
+) -> None:
     details_fields = [
         "event_id",
         "semantic_type",
@@ -655,7 +661,7 @@ def write_outputs(records: list[dict[str, Any]], expected_event_ids: list[str]) 
         "prompt_version": PROMPT_VERSION,
         "model": MODEL,
         "events": len(expected_event_ids),
-        "runs": RUNS,
+        "runs": runs,
         "attempts": len(records),
         "generated": status_counts.get("GENERATED", 0),
         "generated_rate": status_counts.get("GENERATED", 0) / len(records) if records else 0,
@@ -698,13 +704,22 @@ def main() -> int:
     CLEAN_EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
     events = load_events()
     expected_event_ids = sorted(events)
+    if args.only.strip():
+        wanted = [item.strip() for item in args.only.split(",") if item.strip()]
+        missing = [event_id for event_id in wanted if event_id not in events]
+        if missing:
+            raise ValueError("unknown event ids: " + ", ".join(missing))
+        expected_event_ids = wanted
     if not expected_event_ids:
         raise RuntimeError(f"No READY event rows in {EVENT_CSV}")
+    runs = args.runs
+    if runs < 1:
+        raise ValueError("--runs must be > 0")
 
     print("=" * 80)
     print("AUTO FORMAL POLICY BATCH V3")
     print("=" * 80)
-    print(f"events={len(expected_event_ids)}, runs={RUNS}, attempts={len(expected_event_ids) * RUNS}")
+    print(f"events={len(expected_event_ids)}, runs={runs}, attempts={len(expected_event_ids) * runs}")
     print(f"model={MODEL}")
     print(f"prompt_version={PROMPT_VERSION}")
     print("=" * 80)
@@ -728,10 +743,10 @@ def main() -> int:
         clean_evidence_file.write_text(clean_evidence, encoding="utf-8")
         prompt = build_prompt(event_row, clean_evidence)
 
-        for run in range(1, RUNS + 1):
+        for run in range(1, runs + 1):
             seed = SEED_BASE + run - 1
             attempt_index += 1
-            print(f"[{attempt_index}/{len(expected_event_ids) * RUNS}] {event_id} run={run} seed={seed}")
+            print(f"[{attempt_index}/{len(expected_event_ids) * runs}] {event_id} run={run} seed={seed}")
             raw_output_file = RAW_OUTPUT_DIR / f"{event_id}-run{run}-seed{seed}.json"
 
             status = "ERROR"
@@ -825,7 +840,7 @@ def main() -> int:
                 }
             )
 
-    write_outputs(records, expected_event_ids)
+    write_outputs(records, expected_event_ids, runs)
     return 0
 
 

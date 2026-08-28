@@ -1,0 +1,78 @@
+{
+  "event_id": "EXT_E029",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E029-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://pages.nist.gov/800-63-4/sp800-63a.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 10070,
+  "done_reason": "stop",
+  "prompt_eval_count": 2009,
+  "eval_count": 326,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "nist_revision_change",
+    "change_key": "controls_added",
+    "change_value": "injection_attacks_and_forged_media"
+  },
+  "canonical_semantic_result": "controls_added=injection_attacks_and_forged_media",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "digital_identity",
+      "subject_label": "NIST SP 800-63-4 injection_attacks_forged_media",
+      "predicate_label": "revision change status"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "controls_added",
+      "change_value": "injection_attacks_and_forged_media"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "digital_identity"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "NIST SP 800-63-4 injection_attacks_forged_media"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "controls_added",
+          "change_value": "injection_attacks_and_forged_media"
+        },
+        "semantic_result": "controls_added=injection_attacks_and_forged_media"
+      }
+    ],
+    "canonical_semantic_result": "controls_added=injection_attacks_and_forged_media",
+    "canonical_normalized": true
+  }
+}

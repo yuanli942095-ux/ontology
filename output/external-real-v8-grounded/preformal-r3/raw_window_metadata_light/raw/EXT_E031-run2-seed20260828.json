@@ -1,0 +1,90 @@
+{
+  "event_id": "EXT_E031",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E031-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 10376,
+  "done_reason": "stop",
+  "prompt_eval_count": 1139,
+  "eval_count": 340,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag22_added",
+    "criterion_id": "4.1.1",
+    "level": "A",
+    "revision": "WCAG 2.2",
+    "action": "added"
+  },
+  "canonical_semantic_result": "wcag22_added=4.1.1;level=A",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "criterion_id": "4.1.1",
+      "revision": "WCAG 2.2",
+      "action": "removed",
+      "scope": "Parsing"
+    },
+    "canonical_result": {
+      "family": "wcag22_added",
+      "criterion_id": "4.1.1",
+      "level": "A",
+      "revision": "WCAG 2.2",
+      "action": "added"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "semantic_type",
+            "operator": "equals",
+            "value": "TEMPORAL_VERSION"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG 2.2 Parsing"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag22_added",
+          "criterion_id": "4.1.1",
+          "level": "A",
+          "revision": "WCAG 2.2",
+          "action": "added"
+        },
+        "semantic_result": "wcag22_added=4.1.1;level=A"
+      }
+    ],
+    "canonical_semantic_result": "wcag22_added=4.1.1;level=A",
+    "canonical_normalized": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "event_id": "EXT_E129",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E129-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.04162018",
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 9432,
+  "done_reason": "stop",
+  "prompt_eval_count": 1339,
+  "eval_count": 300,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF profiles templates",
+      "predicate_label": "profile scope",
+      "source_title": "NIST Cybersecurity Framework 2.0",
+      "source_url": "https://doi.org/10.6028/NIST.CSWP.29"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "profile_scope_definition",
+      "change_value": "transition_from_previous_versions_to_2.0"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 2.0"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "profile_scope_definition",
+          "change_value": "transition_from_previous_versions_to_2.0"
+        },
+        "semantic_result": "NIST CSF 2.0 profile scope transition guidance"
+      }
+    ]
+  }
+}

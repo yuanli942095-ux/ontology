@@ -1,0 +1,88 @@
+{
+  "event_id": "EXT_E113",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E113-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf",
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16074,
+  "done_reason": "stop",
+  "prompt_eval_count": 1447,
+  "eval_count": 526,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA tap sampling scope",
+      "predicate_label": "sampling scope",
+      "regulation_title_2007": "Lead and Copper Rule final rule 2007",
+      "regulation_url_2007": "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf",
+      "regulation_title_2000": "Lead and Copper Rule final rule 2000",
+      "regulation_url_2000": "https://www.gpo.gov/fdsys/pkg/FR-2000-01-12/pdf/00-3.pdf",
+      "monitoring_frequency_change": "annually to once every three years",
+      "sampling_scope_context": "water quality parameter values for lead and copper from tap sampling",
+      "optimization_condition": "optimal corrosion control"
+    },
+    "canonical_result": {
+      "family": "insurance_formula",
+      "formula_relation": "monitoring_frequency_reduction",
+      "operands": {
+        "original_interval": "annually",
+        "revised_interval": "once every three years",
+        "condition": "optimal corrosion control"
+      }
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title_2007",
+            "operator": "equals",
+            "value": "Lead and Copper Rule final rule 2007"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "sampling scope"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_formula",
+          "formula_relation": "monitoring_frequency_reduction",
+          "operands": {
+            "original_interval": "annually",
+            "revised_interval": "once every three years",
+            "condition": "optimal corrosion control"
+          }
+        },
+        "semantic_result": "LeadCopperRule2007_sampling_frequency_annual_to_triennial_given_optimal_corrosion_control"
+      }
+    ]
+  }
+}

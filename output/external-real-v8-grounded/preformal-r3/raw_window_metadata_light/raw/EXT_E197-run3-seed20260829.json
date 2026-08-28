@@ -1,0 +1,82 @@
+{
+  "event_id": "EXT_E197",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E197-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/effects-analysis.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 12101,
+  "done_reason": "stop",
+  "prompt_eval_count": 2255,
+  "eval_count": 377,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "standard": "IFRS S1",
+      "disclosure_topic": "effects_analysis",
+      "scope_definition": "overall_disclosure_requirements_for_sustainability_related_financial_information",
+      "applicable_entities": "companies_and_preparers",
+      "purpose": "provide_information_about_sustainability_related_risks_and_opportunities_useful_for_investors"
+    },
+    "canonical_result": {
+      "family": "scope_definition",
+      "standard_id": "IFRS_S1",
+      "disclosure_scope": "sustainability_related_financial_information",
+      "coverage_type": "overall_requirements",
+      "exclusion_criteria": null,
+      "temporal_validity": "effective_date_annual_reporting_period"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "standard",
+            "operator": "equals",
+            "value": "IFRS S1"
+          },
+          {
+            "fact": "disclosure_topic",
+            "operator": "equals",
+            "value": "effects_analysis"
+          }
+        ],
+        "canonical_result": {
+          "family": "scope_definition",
+          "standard_id": "IFRS_S1",
+          "disclosure_scope": "sustainability_related_financial_information",
+          "coverage_type": "overall_requirements",
+          "exclusion_criteria": null,
+          "temporal_validity": "effective_date_annual_reporting_period"
+        },
+        "semantic_result": "IFRS_S1_overall_sustainability_disclosure_scope"
+      }
+    ]
+  }
+}

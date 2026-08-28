@@ -656,6 +656,40 @@ def generate_variant(
         for run in range(1, runs + 1):
             seed = seed_base + run - 1
             index += 1
+            evidence_file = evidence_dir / f"{event_id}-run{run}-seed{seed}-candidate-blind.md"
+            raw_path = raw_dir / f"{event_id}-run{run}-seed{seed}.json"
+            print(f"[{variant} {index}/{total}] {event_id} run={run} seed={seed}", flush=True)
+            if raw_path.is_file() and not retrieval_only:
+                record = json.loads(raw_path.read_text(encoding="utf-8-sig"))
+                print(f"  [resume] {raw_path.name} status={record.get('status', '')}", flush=True)
+                rows.append(
+                    {
+                        "event_id": event_id,
+                        "semantic_type": event["semantic_type"].strip(),
+                        "run": run,
+                        "seed": seed,
+                        "variant": variant,
+                        "status": record.get("status", ""),
+                        "retrieval_status": record.get("retrieval_status", ""),
+                        "raw_source_used": record.get("raw_source_used", ""),
+                        "fallback_used": record.get("fallback_used", ""),
+                        "retrieved_doc_count": record.get("retrieved_doc_count", ""),
+                        "retrieved_window_count": record.get("retrieved_window_count", ""),
+                        "source_urls": "|".join(record.get("source_urls") or []),
+                        "forbidden_input_markers": "|".join(
+                            record.get("forbidden_input_markers") or []
+                        ),
+                        "runtime_ms": record.get("runtime_ms", 0),
+                        "prompt_eval_count": record.get("prompt_eval_count", 0),
+                        "eval_count": record.get("eval_count", 0),
+                        "canonical_status": record.get("canonical_status", ""),
+                        "canonical_semantic_result": record.get(
+                            "canonical_semantic_result", ""
+                        ),
+                        "raw_output_file": str(raw_path.relative_to(v3.ROOT)),
+                    }
+                )
+                continue
             retrieval = evidence_for_variant(
                 variant,
                 event_id,
@@ -666,10 +700,7 @@ def generate_variant(
                 seed,
             )
             assert_raw_isolation(retrieval, variant)
-            evidence_file = evidence_dir / f"{event_id}-run{run}-seed{seed}-candidate-blind.md"
             evidence_file.write_text(retrieval.evidence, encoding="utf-8")
-            raw_path = raw_dir / f"{event_id}-run{run}-seed{seed}.json"
-            print(f"[{variant} {index}/{total}] {event_id} run={run} seed={seed}", flush=True)
             retrieval_ready = retrieval.retrieval_status in {
                 "RETRIEVED",
                 "STRUCTURED_NOTE",
@@ -793,8 +824,15 @@ def run_command(args: list[str]) -> None:
     subprocess.run(args, cwd=v3.ROOT, check=True)
 
 
-def evaluate_variants(variants: list[str], runs: int, seed: int, skip_repair: bool) -> None:
+def evaluate_variants(
+    variants: list[str],
+    runs: int,
+    seed: int,
+    skip_repair: bool,
+    only: str = "",
+) -> None:
     python = sys.executable
+    only_args = ["--only", only] if only.strip() else []
     for variant in variants:
         variant_dir = OUTPUT_DIR / variant.lower()
         raw_dir = variant_dir / "raw"
@@ -803,7 +841,7 @@ def evaluate_variants(variants: list[str], runs: int, seed: int, skip_repair: bo
         run_command(
             [
                 python,
-                "src\\evaluate_auto_formal_policy_v2_semantic.py",
+                str(Path("src") / "evaluate_auto_formal_policy_v2_semantic.py"),
                 "--benchmark-dir",
                 str(BENCHMARK_DIR),
                 "--raw-dir",
@@ -816,13 +854,14 @@ def evaluate_variants(variants: list[str], runs: int, seed: int, skip_repair: bo
                 str(runs),
                 "--seed",
                 str(seed),
+                *only_args,
             ]
         )
         if not skip_repair:
             run_command(
                 [
                     python,
-                    "src\\run_auto_policy_v2_candidate_repair.py",
+                    str(Path("src") / "run_auto_policy_v2_candidate_repair.py"),
                     "--benchmark-dir",
                     str(BENCHMARK_DIR),
                     "--raw-dir",
@@ -833,6 +872,7 @@ def evaluate_variants(variants: list[str], runs: int, seed: int, skip_repair: bo
                     str(runs),
                     "--seed",
                     str(seed),
+                    *only_args,
                 ]
             )
 
@@ -906,8 +946,6 @@ def main() -> int:
     missing = [event_id for event_id in selected_event_ids if event_id not in events]
     if missing:
         raise ValueError("unknown event ids: " + ", ".join(missing))
-    if args.only.strip() and not args.skip_evaluation and not args.retrieval_only:
-        raise ValueError("--only smoke runs require --skip-evaluation")
     docs_by_event = document_rows_by_event()
     if not args.skip_generation:
         for variant in variants:
@@ -921,7 +959,7 @@ def main() -> int:
                 args.retrieval_only,
             )
     if not args.skip_evaluation and not args.retrieval_only:
-        evaluate_variants(variants, args.runs, args.seed, args.skip_repair)
+        evaluate_variants(variants, args.runs, args.seed, args.skip_repair, args.only)
     if args.skip_evaluation or args.retrieval_only:
         mode = "retrieval-only" if args.retrieval_only else "generation"
         print(f"{mode} finished; evaluation skipped", flush=True)

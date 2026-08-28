@@ -1,0 +1,103 @@
+{
+  "event_id": "EXT_E202",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E202-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/effects-analysis.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16424,
+  "done_reason": "stop",
+  "prompt_eval_count": 2496,
+  "eval_count": 531,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S1 General Requirements :: IFRS S1 metrics and targets",
+      "predicate_label": "disclosure topic",
+      "standard_name": "IFRS S1",
+      "effective_date": "2024-01-01",
+      "disclosure_scope": "sustainability-related risks and opportunities",
+      "materiality_definition": "information is material if omitting, misstating or failing to disclose it would reasonably be expected to influence decisions made by primary users of general purpose financial reports"
+    },
+    "canonical_result": {
+      "family": "insurance_formula",
+      "formula_relation": "disclosure_requirement",
+      "operands": [
+        {
+          "type": "governance",
+          "description": "information about governance, strategy and risk management"
+        },
+        {
+          "type": "metrics_targets",
+          "description": "metrics and targets in relation to sustainability-related risks and opportunities"
+        }
+      ],
+      "constraints": [
+        "materiality",
+        "reasonably expected to influence investor decisions"
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "standard_name",
+            "operator": "equals",
+            "value": "IFRS S1"
+          },
+          {
+            "fact": "disclosure_scope",
+            "operator": "contains",
+            "value": "sustainability-related risks"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_formula",
+          "formula_relation": "disclosure_requirement",
+          "operands": [
+            {
+              "type": "governance",
+              "description": "information about governance, strategy and risk management"
+            },
+            {
+              "type": "metrics_targets",
+              "description": "metrics and targets in relation to sustainability-related risks and opportunities"
+            }
+          ],
+          "constraints": [
+            "materiality",
+            "reasonably expected to influence investor decisions"
+          ]
+        },
+        "semantic_result": "IFRS S1 requires disclosure of governance, strategy, risk management, metrics and targets regarding sustainability-related risks and opportunities if material."
+      }
+    ]
+  }
+}

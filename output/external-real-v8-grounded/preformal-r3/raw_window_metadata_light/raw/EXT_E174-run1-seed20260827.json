@@ -1,0 +1,77 @@
+{
+  "event_id": "EXT_E174",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E174-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2025/06/27/2025-11669.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14989,
+  "done_reason": "stop",
+  "prompt_eval_count": 2056,
+  "eval_count": 421,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "guidance_title": "Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions",
+      "issuing_agency": "FDA",
+      "publication_date": "2025-06-27",
+      "supersedes_guidance_date": "2023-09-27",
+      "finalizes_draft_date": "2024-03-13",
+      "legal_basis_section": "524B of the FD&C Act",
+      "regulatory_action_type": "deregulatory",
+      "executive_order_reference": "EO 14192"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "guidance_document_version_status",
+      "change_value": "supersedes_2023_guidance_and_finalizes_draft_updates"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Cybersecurity in Medical Devices guidance update :: FDA 2025 guidance supersedes 2023 guidance"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "version status"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "guidance_document_version_status",
+          "change_value": "supersedes_2023_guidance_and_finalizes_draft_updates"
+        },
+        "semantic_result": "FDA 2025 guidance supersedes 2023 version and finalizes draft updates under Section 524B"
+      }
+    ]
+  }
+}

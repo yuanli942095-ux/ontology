@@ -1,0 +1,78 @@
+{
+  "event_id": "EXT_E035",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E035-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 11772,
+  "done_reason": "stop",
+  "prompt_eval_count": 1226,
+  "eval_count": 335,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG 2.2 Target Size Minimum exception family",
+      "predicate_label": "versioned requirement status"
+    },
+    "canonical_result": {
+      "family": "wcag21_cross_scope",
+      "criterion_id": null,
+      "level": null,
+      "revision": "WCAG 2.2",
+      "action": "exception_defined",
+      "scope": "target_size_minimum"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG 2.2 Target Size Minimum exception family"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag21_cross_scope",
+          "criterion_id": null,
+          "level": null,
+          "revision": "WCAG 2.2",
+          "action": "exception_defined",
+          "scope": "target_size_minimum"
+        },
+        "semantic_result": "wcag21_cross_scope:exception_defined:target_size_minimum"
+      }
+    ]
+  }
+}

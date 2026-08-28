@@ -1,0 +1,81 @@
+{
+  "event_id": "EXT_E172",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E172-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 20307,
+  "done_reason": "stop",
+  "prompt_eval_count": 2237,
+  "eval_count": 596,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689 Artificial Intelligence Act",
+      "subject_label": "AI Act penalties",
+      "predicate_label": "penalty rule",
+      "scope_description": "Requirements in Chapter III, Section 2 regarding AI systems as safety components must be taken into account when adopting delegated acts (Article 17(5) of Regulation (EU) No 167/2013), detailed measures for security equipment approval (Article 43), and implementing acts (Article 58).",
+      "cross_sentence_condition": "When adopting delegated/implementing acts concerning AI systems which are safety components within the meaning of Regulation (EU) 2024/1689",
+      "action_requirement": "the requirements set out in Chapter III, Section 2, of that Regulation shall be taken into account"
+    },
+    "canonical_result": {
+      "family": "ai_regulation_scope_integration",
+      "regulation_id": "EU_2024_1689",
+      "target_article": "Article_17_5_Article_43_Article_58",
+      "integration_object": "delegated_act_adoption_requirements",
+      "source_chapter_section": "Chapter_III_Section_2",
+      "constraint_type": "mandatory_consideration"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Regulation (EU) 2024/1689 Artificial Intelligence Act"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "penalty rule"
+          }
+        ],
+        "canonical_result": {
+          "family": "ai_regulation_scope_integration",
+          "regulation_id": "EU_2024_1689",
+          "target_article": "Article_17_5_Article_43_Article_58",
+          "integration_object": "delegated_act_adoption_requirements",
+          "source_chapter_section": "Chapter_III_Section_2",
+          "constraint_type": "mandatory_consideration"
+        },
+        "semantic_result": "EU_2024_1689_penalty_rule_requires_chapter_iii_section_2_integration_for_ai_safety_components"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "event_id": "EXT_E211",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E211-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 19437,
+  "done_reason": "stop",
+  "prompt_eval_count": 1785,
+  "eval_count": 572,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "subject_label": "IFRS S2 Climate-related Disclosures :: IFRS S2 strategy disclosure",
+      "predicate_label": "disclosure topic",
+      "source_title": "Applying IFRS S1 when reporting only climate-related disclosures under IFRS S2",
+      "key_requirement": "Company must refer to and consider applicability of industry-based metrics associated with disclosure topics in Industry-based Guidance on implementing Climate-related Disclosures—IFRS S2.",
+      "scope_definition": "IFRS S2 includes specific corresponding requirements for climate-related disclosures on the topics; IFRS S1 paragraphs replicated in IFRS S2 or addressed in Table 1 apply to identifying sustainability-related risks and opportunities.",
+      "metric_integration": "Metrics include climate change, jurisdictional commitments, GHG emissions targets, fuel economy of fleet, sales of zero-emission vehicles, physical risks, Scope 3 GHG emissions."
+    },
+    "canonical_result": {
+      "family": "sustainability_disclosure_scope",
+      "disclosure_topic": "strategy",
+      "governing_standard": "IFRS S2",
+      "reference_requirement": "refer_to_and_consider_industry_based_metrics",
+      "metric_source": "Industry-based Guidance on implementing Climate-related Disclosures—IFRS S2",
+      "risk_opportunity_scope": "cross_industry_and_industry_specific"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "sustainability_reporting"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "IFRS S2 Climate-related Disclosures :: IFRS S2 strategy disclosure"
+          }
+        ],
+        "canonical_result": {
+          "family": "sustainability_disclosure_scope",
+          "disclosure_topic": "strategy",
+          "governing_standard": "IFRS S2",
+          "reference_requirement": "refer_to_and_consider_industry_based_metrics",
+          "metric_source": "Industry-based Guidance on implementing Climate-related Disclosures—IFRS S2",
+          "risk_opportunity_scope": "cross_industry_and_industry_specific"
+        },
+        "semantic_result": "IFRS_S2_strategy_disclosure_requires_referencing_industry_based_metrics"
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "event_id": "EXT_E100",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E100-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 19179,
+  "done_reason": "stop",
+  "prompt_eval_count": 2503,
+  "eval_count": 531,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Form 8-K Item 1.05 disclosure",
+      "predicate_label": "disclosure deadline",
+      "regulation_source": "SEC 2023 final cybersecurity disclosure rule",
+      "form_reference": "Form 8-K Item 1.05",
+      "materiality_determination_trigger": true,
+      "four_business_days_from_materiality": true,
+      "smaller_reporting_companies_exemption_deadline_extension": false,
+      "regulation_s_k_item_106_integration": true
+    },
+    "canonical_result": {
+      "family": "us_regulatory_temporal_version",
+      "rule_family": "sec_form_8k_item_105_incident_disclosure",
+      "temporal_constraint": "four_business_days_from_materiality_determination",
+      "applicable_entity_type": "registrant",
+      "materiality_threshold_applies": true,
+      "revision_status": "final_rule_adopted_2023"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "us_regulation"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "SEC Form 8-K Item 1.05"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "disclosure deadline"
+          }
+        ],
+        "canonical_result": {
+          "family": "us_regulatory_temporal_version",
+          "rule_family": "sec_form_8k_item_105_incident_disclosure",
+          "temporal_constraint": "four_business_days_from_materiality_determination",
+          "applicable_entity_type": "registrant",
+          "materiality_threshold_applies": true,
+          "revision_status": "final_rule_adopted_2023"
+        },
+        "semantic_result": "SEC Form 8-K Item 1.05: Material cybersecurity incident disclosure deadline is four business days from materiality determination under final rules adopted in 2023."
+      }
+    ]
+  }
+}

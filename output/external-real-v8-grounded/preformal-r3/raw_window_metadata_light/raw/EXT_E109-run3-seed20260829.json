@@ -1,0 +1,52 @@
+{
+  "event_id": "EXT_E109",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E109-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "INVALID_SCHEMA",
+  "runtime_ms": 8291,
+  "done_reason": "stop",
+  "prompt_eval_count": 1245,
+  "eval_count": 257,
+  "forbidden_markers": [],
+  "schema_valid": false,
+  "validation_reason": "rules_missing",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "event_id": "",
+      "domain": "us_regulation",
+      "subject_label": "Lead and Copper Rule Improvements :: EPA 2024 LCRI scope",
+      "predicate_label": "scope rule",
+      "source_title": "Lead and Copper Rule final rule 2007",
+      "source_url": "https://www.gpo.gov/fdsys/pkg/FR-2007-10-10/pdf/E7-19432.pdf"
+    },
+    "canonical_result": {
+      "family": "abstain",
+      "reason": "公开证据不足以确定核心语义结果：提供的证据仅包含 2007 年最终规则的片段，无法从中提取 2024 年 LCRI（Lead and Copper Rule Improvements）的具体范围、变更对象或整合的变更效果。根据指令要求，不得编造事实或根据候选集合反推答案，且当前证据不支持构建符合 NIST Revision 4 或其他特定领域的 canonical_result。"
+    },
+    "rules": []
+  }
+}

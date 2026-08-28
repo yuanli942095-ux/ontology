@@ -1,0 +1,79 @@
+{
+  "event_id": "EXT_E186",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E186-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2025/06/27/2025-11669.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 16757,
+  "done_reason": "stop",
+  "prompt_eval_count": 1972,
+  "eval_count": 476,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "guidance_title": "Cybersecurity in Medical Devices: Quality System Considerations and Content of Premarket Submissions",
+      "action_type": "update_and_finalize",
+      "previous_version_date": "2023-09-27",
+      "draft_guidance_title": "Select Updates for the Premarket Cybersecurity Guidance: Section 524B of the FD&C Act",
+      "draft_guidance_issue_date": "2024-03-13",
+      "regulatory_basis": "Section 524B of the FD&C Act",
+      "executive_order_reference": "Executive Order 14192",
+      "omb_guidance_reference": "M-25-20",
+      "nature_of_action": "deregulatory",
+      "scope": "premarket_submissions_for_cyber_devices"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "guidance_documentation_requirements",
+      "change_value": "updated_to_align_with_section_524b_obligations_and_executive_order_14192"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "medical_device_cybersecurity"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "contains",
+            "value": "Cybersecurity in Medical Devices guidance update"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "guidance_documentation_requirements",
+          "change_value": "updated_to_align_with_section_524b_obligations_and_executive_order_14192"
+        },
+        "semantic_result": "FDA updated cybersecurity guidance to align with Section 524B obligations and Executive Order 14192, finalizing draft updates from March 2024."
+      }
+    ]
+  }
+}

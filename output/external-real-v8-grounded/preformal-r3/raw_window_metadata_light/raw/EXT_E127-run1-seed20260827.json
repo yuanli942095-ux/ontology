@@ -1,0 +1,76 @@
+{
+  "event_id": "EXT_E127",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E127-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.04162018",
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 12329,
+  "done_reason": "stop",
+  "prompt_eval_count": 1893,
+  "eval_count": 340,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF AI quick-start draft",
+      "predicate_label": "draft resource",
+      "source_title": "NIST Cybersecurity Framework 2.0",
+      "source_url": "https://doi.org/10.6028/NIST.CSWP.29",
+      "release_date": "February 26, 2024"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "framework_profiles_tiers_integration",
+      "change_value": "added language to reflect integration of Framework considerations within ERM"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "cybersecurity_controls"
+          },
+          {
+            "fact": "semantic_type",
+            "operator": "equals",
+            "value": "GENERAL_RULE_EXCEPTION"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "framework_profiles_tiers_integration",
+          "change_value": "added language to reflect integration of Framework considerations within ERM"
+        },
+        "semantic_result": "CSF 2.0 added language to Framework Profiles Tiers for ERM integration"
+      }
+    ]
+  }
+}

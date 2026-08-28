@@ -1,0 +1,90 @@
+{
+  "event_id": "EXT_E092",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E092-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 19314,
+  "done_reason": "stop",
+  "prompt_eval_count": 2217,
+  "eval_count": 555,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "amendment_date": "2020-10-19",
+      "publication_date": "2020-12-22",
+      "subject_matter": "mixture classification cross-reference",
+      "target_regulation": "Regulation (EC) No 1013/2006",
+      "amended_annexes": [
+        "IC",
+        "III",
+        "IIIA",
+        "IV",
+        "V",
+        "VII",
+        "VIII"
+      ],
+      "specific_changes": [
+        "Insertion of entry AC300 in Part II of Annex III regarding plastic waste containing Annex I constituents (FEP, PFA, MFA, PVF, PVDF, PTFE, PVC)",
+        "Deletion of waste covered by entry AC300 since it is now covered by entry A3210 in List A of part 1",
+        "Addition of 'Other' option in block 10 of Annex VII"
+      ],
+      "legal_basis": "Basel Convention and OECD Decision revisions"
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "plastic_waste_entry_ac300_insertion_and_deletion",
+      "change_value": "inserted_after_ac270_with_annex_i_constituents_deleted_if_covered_by_a3210"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Commission Delegated Regulation (EU) 2020/2174"
+          },
+          {
+            "fact": "subject_matter",
+            "operator": "equals",
+            "value": "mixture classification cross-reference"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "plastic_waste_entry_ac300_insertion_and_deletion",
+          "change_value": "inserted_after_ac270_with_annex_i_constituents_deleted_if_covered_by_a3210"
+        },
+        "semantic_result": "eu_regulation_2020_2174_plastic_waste_entry_update"
+      }
+    ]
+  }
+}

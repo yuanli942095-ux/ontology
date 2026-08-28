@@ -1,0 +1,99 @@
+{
+  "event_id": "EXT_E195",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E195-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.ifrs.org/content/dam/ifrs/project/general-sustainability-related-disclosures/project-summary.pdf",
+    "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/applying-ifrs-s1-reporting-only-climate-related-disclosures-accordance-ifrs-s2.pdf"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 31264,
+  "done_reason": "stop",
+  "prompt_eval_count": 1999,
+  "eval_count": 952,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "sustainability_reporting",
+      "standard_pair": "IFRS S1 and IFRS S2",
+      "application_scenario": "reporting_only_climate_related_disclosures_under_IFRS_S2",
+      "scope_mechanism": "apply_IFRS_S1_only_insofar_as_required_by_IFRS_S2",
+      "excluded_paragraphs": "IFRS S1.C1-C3, IFRS S1.43-44 (Risk management), IFRS S1.54 (Identifying risks and opportunities)",
+      "effective_date_context": "January 2025 educational material / June 2023 project summary",
+      "transition_relief_available": true,
+      "relief_description": "Relief from requirements to report information about sustainability-related risks and opportunities that are not required by IFRS S2"
+    },
+    "canonical_result": {
+      "family": "insurance_amount_split",
+      "amount_split": {
+        "spring": "IFRS S1 requirements applicable in the absence of a specific ISSB Standard (C1-C3)",
+        "summer_autumn": "IFRS S1 requirements replicated or referenced by IFRS S2 (e.g., Risk management, Metrics and targets)",
+        "total": "Full scope of IFRS S1 General Requirements"
+      },
+      "lodging_levels": {
+        "level1": "Entity applies IFRS S1 when reporting only climate-related disclosures under IFRS S2",
+        "level2": "Application limited to paragraphs required by IFRS S2 (e.g., S2.24-25, S2.27-37)",
+        "level3": "Exclusion of specific IFRS S1 paragraphs not referenced in IFRS S2 (e.g., S1.C1-C3, S1.43-44, S1.54)"
+      },
+      "formula_relation": "IFRS_S1_Application = IFRS_S2_Required_Paragraphs + (IFRS_S1_General_Requirements - Excluded_Paragraphs)",
+      "operands": [
+        "IFRS_S2_Required_Paragraphs",
+        "Excluded_Paragraphs"
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "application_scenario",
+            "operator": "equals",
+            "value": "reporting_only_climate_related_disclosures_under_IFRS_S2"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_amount_split",
+          "amount_split": {
+            "spring": "IFRS S1 requirements applicable in the absence of a specific ISSB Standard (C1-C3)",
+            "summer_autumn": "IFRS S1 requirements replicated or referenced by IFRS S2 (e.g., Risk management, Metrics and targets)",
+            "total": "Full scope of IFRS S1 General Requirements"
+          },
+          "lodging_levels": {
+            "level1": "Entity applies IFRS S1 when reporting only climate-related disclosures under IFRS S2",
+            "level2": "Application limited to paragraphs required by IFRS S2 (e.g., S2.24-25, S2.27-37)",
+            "level3": "Exclusion of specific IFRS S1 paragraphs not referenced in IFRS S2 (e.g., S1.C1-C3, S1.43-44, S1.54)"
+          },
+          "formula_relation": "IFRS_S1_Application = IFRS_S2_Required_Paragraphs + (IFRS_S1_General_Requirements - Excluded_Paragraphs)",
+          "operands": [
+            "IFRS_S2_Required_Paragraphs",
+            "Excluded_Paragraphs"
+          ]
+        },
+        "semantic_result": "IFRS S1 application is split into S2-required parts and general requirements, excluding C1-C3 and specific risk/opportunity paragraphs not in S2."
+      }
+    ]
+  }
+}

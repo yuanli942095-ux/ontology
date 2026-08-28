@@ -1,0 +1,74 @@
+{
+  "event_id": "EXT_E088",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E088-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=6bf54b59-7673-461b-b8e1-f24c545cbd3c&format=PDF&language=en&productionSystem=cellar&part=",
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dec9f5e7-43f8-11eb-b59f-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 15694,
+  "done_reason": "stop",
+  "prompt_eval_count": 2047,
+  "eval_count": 510,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "regulation_title": "Commission Delegated Regulation (EU) 2020/2174",
+      "amended_regulation": "Regulation (EC) No 1013/2006",
+      "effective_date": "2021-01-01",
+      "subject_matter": "Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated",
+      "source_document": "Commission Delegated Regulation (EU) 2020/2174 official English PDF"
+    },
+    "canonical_result": {
+      "family": "eu_regulation_effective_date",
+      "regulation_id": "2020/2174",
+      "effective_datetime_utc": "2021-01-01T00:00:00Z",
+      "applicable_scope": "amendments to Annexes IC, III, IIIA, IV, V and VII",
+      "preceding_regulation": "Regulation (EC) No 1013/2006"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_matter",
+            "operator": "equals",
+            "value": "Technical guidelines on the environmentally sound management of wastes consisting of, containing or contaminated"
+          }
+        ],
+        "canonical_result": {
+          "family": "eu_regulation_effective_date",
+          "regulation_id": "2020/2174",
+          "effective_datetime_utc": "2021-01-01T00:00:00Z",
+          "applicable_scope": "amendments to Annexes IC, III, IIIA, IV, V and VII",
+          "preceding_regulation": "Regulation (EC) No 1013/2006"
+        },
+        "semantic_result": "EU regulation 2020/2174 effective date 2021-01-01 for waste management amendments"
+      }
+    ]
+  }
+}

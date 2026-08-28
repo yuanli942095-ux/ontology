@@ -1,0 +1,88 @@
+{
+  "event_id": "EXT_E171",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E171-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://op.europa.eu/o/opportal-service/download-handler?identifier=dc8116a1-3fe6-11ef-865a-01aa75ed71a1&format=PDF&language=en&productionSystem=cellar&part="
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 14349,
+  "done_reason": "stop",
+  "prompt_eval_count": 2355,
+  "eval_count": 461,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "regulation_title": "Regulation (EU) 2024/1689",
+      "subject": "market surveillance authority designation",
+      "article": "58",
+      "action": "add paragraph",
+      "content": "each Member State should designate a market surveillance authority to act as a single point of contact vis-à-vis the public and other counterparts at Member State and Union levels"
+    },
+    "canonical_result": {
+      "family": "ai_regulation_market_surveillance_contact",
+      "regulation_id": "2024/1689",
+      "article_number": 58,
+      "requirement_type": "single_point_of_contact_designation",
+      "scope": "Member_State_and_Union_levels",
+      "counterpart_types": [
+        "public",
+        "other_counterparts"
+      ],
+      "obligation_subject": "each_Member_State"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_title",
+            "operator": "equals",
+            "value": "Regulation (EU) 2024/1689"
+          },
+          {
+            "fact": "article",
+            "operator": "equals",
+            "value": "58"
+          }
+        ],
+        "canonical_result": {
+          "family": "ai_regulation_market_surveillance_contact",
+          "regulation_id": "2024/1689",
+          "article_number": 58,
+          "requirement_type": "single_point_of_contact_designation",
+          "scope": "Member_State_and_Union_levels",
+          "counterpart_types": [
+            "public",
+            "other_counterparts"
+          ],
+          "obligation_subject": "each_Member_State"
+        },
+        "semantic_result": "EU-2024/1689-Art58-MSC-SPoC-designation-public-union-levels"
+      }
+    ]
+  }
+}

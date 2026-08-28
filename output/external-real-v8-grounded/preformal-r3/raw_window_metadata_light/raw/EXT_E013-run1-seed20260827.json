@@ -1,0 +1,86 @@
+{
+  "event_id": "EXT_E013",
+  "semantic_type": "CROSS_SENTENCE_SCOPE",
+  "run": 1,
+  "seed": 20260827,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E013-run1-seed20260827-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.w3.org/TR/WCAG22/"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 15018,
+  "done_reason": "stop",
+  "prompt_eval_count": 1267,
+  "eval_count": 440,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "wcag21_cross_scope",
+    "criterion_id": "1.3.4",
+    "level": "AA",
+    "revision": "WCAG 2.1",
+    "scope": "criterion_and_level"
+  },
+  "canonical_semantic_result": "wcag21_cross_scope=1.3.4;level=AA",
+  "response": {
+    "semantic_type": "CROSS_SENTENCE_SCOPE",
+    "facts": {
+      "domain": "web_accessibility",
+      "subject_label": "WCAG success criterion 1.3.4",
+      "predicate_label": "cross-reference requirement scope",
+      "source_title": "Web Content Accessibility Guidelines 2.2",
+      "evidence_summary": "SC 3.3.1 Error Identification inherits requirements from previous WCAG 2 versions; SC 2.4.11, 2.4.12, 2.4.13 are new in WCAG 2.2; SC 4.1.1 Parsing removed; conformance requires meeting requirements under conditions of non-relied-upon technology on/off."
+    },
+    "canonical_result": {
+      "family": "wcag21_cross_scope",
+      "criterion_id": "1.3.4",
+      "level": "AA",
+      "revision": "WCAG 2.1",
+      "scope": "criterion_and_level"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "web_accessibility"
+          },
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "WCAG success criterion 1.3.4"
+          }
+        ],
+        "canonical_result": {
+          "family": "wcag21_cross_scope",
+          "criterion_id": "1.3.4",
+          "level": "AA",
+          "revision": "WCAG 2.1",
+          "scope": "criterion_and_level"
+        },
+        "semantic_result": "wcag21_cross_scope=1.3.4;level=AA"
+      }
+    ],
+    "canonical_semantic_result": "wcag21_cross_scope=1.3.4;level=AA",
+    "canonical_normalized": true
+  }
+}

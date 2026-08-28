@@ -1,0 +1,6 @@
+﻿bucket,fine_class,label,n,format_repairable,deterministic_complete,raw_text_lost,retrieval_gap,true_semantic_gap,salvage_ir_ok,replay_selected,replay_oracle_correct
+INCOMPLETE_IR,I_NONCRITICAL,missing only deterministically completable fields:scope_relation,40,0,40,0,0,0,0,0,0
+INVALID_OUTPUT,J1_J2,JSON unparseable; raw Qwen text not saved so syntax vs extra-text cannot be split,6,0,0,6,0,0,0,0,0
+INVALID_OUTPUT,J6,output truncated,8,0,0,8,0,0,0,0,0
+INVALID_OUTPUT,J7,semantic present but structure parse failed,34,34,0,0,0,0,16,10,10
+RETRIEVAL_FAILED,R_RETRIEVAL,retrieval failed; Qwen never ran,75,0,0,0,75,0,0,0,0

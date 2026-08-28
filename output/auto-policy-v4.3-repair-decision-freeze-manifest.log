@@ -1,0 +1,6 @@
+AUTO_POLICY V4.3 repair-decision freeze
+manifest_sha256=626edda974b3385a0e35c414418cd7819c15bfd6c3ab38809b813ffb914b2b02
+files=613
+light_raw=600
+parent_git=47cfa4f5169e381827c9075039592c1fb95b7212
+json=output/auto-policy-v4.3-repair-decision-freeze-manifest.json

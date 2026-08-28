@@ -1,0 +1,95 @@
+{
+  "event_id": "EXT_E119",
+  "semantic_type": "GENERAL_RULE_EXCEPTION",
+  "run": 2,
+  "seed": 20260828,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E119-run2-seed20260828-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://doi.org/10.6028/NIST.CSWP.04162018",
+    "https://doi.org/10.6028/NIST.CSWP.29"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 28806,
+  "done_reason": "stop",
+  "prompt_eval_count": 1808,
+  "eval_count": 938,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "GENERAL_RULE_EXCEPTION",
+    "facts": {
+      "domain": "cybersecurity_controls",
+      "subject_label": "Cybersecurity Framework 2.0 :: CSF 2.0 informative references",
+      "predicate_label": "mapping status",
+      "source_title_1": "NIST Cybersecurity Framework 2.0",
+      "source_url_1": "https://doi.org/10.6028/NIST.CSWP.29",
+      "source_title_2": "NIST Cybersecurity Framework 1.1",
+      "source_url_2": "https://doi.org/10.6028/NIST.CSWP.04162018",
+      "informative_reference_description": "Informative References that point to sources of guidance on each outcome from existing global standards, guidelines, frameworks, regulations, policies, etc.",
+      "implementation_examples_description": "Implementation Examples that illustrate potential ways to achieve each outcome",
+      "csf_profiles_tiers_section": "Section 3 defines the concepts of CSF Profiles and Tiers",
+      "online_resources_section": "Section 4 provides an overview of selected components of the CSF's suite of online resources: Informative References, Implementation Examples, and Quick Start Guides",
+      "risk_management_integration_section": "Section 5 discusses how an organization can integrate the CSF with other risk management programs",
+      "appendix_a_content": "Appendix A is the CSF Core",
+      "appendix_b_content": "Appendix B contains a notional illustration of the CSF Tiers",
+      "appendix_c_content": "Appendix C is a glossary of CSF terminology",
+      "erm_resources": [
+        "NIST Cybersecurity Framework 2.0 – Enterprise Risk Management Quick-Start Guide",
+        "NIST Interagency Report (IR) 8286, Integrating Cybersecurity and Enterprise Risk Management (ERM)",
+        "IR 8286A, Identifying and Estimating Cybersecurity Risk for Enterprise Risk Management",
+        "IR 8286B, Prioritizing Cybersecurity Risk for Enterprise Risk Management"
+      ],
+      "framework_core_format": "Appendix A presents the Framework Core in a tabular format: the Functions, Categories, Subcategories, and Informative References",
+      "framework_core_purpose": "a listing of Functions, Categories, Subcategories, and Informative References that describe specific cybersecurity activities that are common across all critical infrastructure sectors",
+      "asset_management_example": "ID.AM-1: Physical devices and systems CIS CSC 1 - (ID) The data, personnel, devices, within the organization are inventoried COBIT 5 BAI09.01, BAI09.02",
+      "third_party_stakeholders_example": "third-party stakeholders (e.g., suppliers, ISA 62443-2-1:2009 4.3.2.3.3 - customers, partners) are established ISO/IEC 27001:2013 A.6.1.1 NIST SP 800-53 Rev."
+    },
+    "canonical_result": {
+      "family": "nist_revision_change",
+      "change_key": "informative_references_and_implementation_examples_availability",
+      "change_value": "available_online_via_csf_2_0_website_and_reference_tool"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "source_title_1",
+            "operator": "equals",
+            "value": "NIST Cybersecurity Framework 2.0"
+          },
+          {
+            "fact": "informative_reference_description",
+            "operator": "contains",
+            "value": "Informative References"
+          }
+        ],
+        "canonical_result": {
+          "family": "nist_revision_change",
+          "change_key": "informative_references_and_implementation_examples_availability",
+          "change_value": "available_online_via_csf_2_0_website_and_reference_tool"
+        },
+        "semantic_result": "CSF 2.0 provides online Informative References and Implementation Examples via website and reference tool"
+      }
+    ]
+  }
+}

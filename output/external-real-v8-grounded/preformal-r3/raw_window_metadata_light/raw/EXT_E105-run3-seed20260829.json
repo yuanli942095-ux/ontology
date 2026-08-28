@@ -1,0 +1,113 @@
+{
+  "event_id": "EXT_E105",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E105-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 25576,
+  "done_reason": "stop",
+  "prompt_eval_count": 2202,
+  "eval_count": 806,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC annual strategy disclosure",
+      "predicate_label": "annual disclosure",
+      "regulation_title": "SEC 2023 final cybersecurity disclosure rule",
+      "form_type": "Form 10-K",
+      "disclosure_items": [
+        "Item 1.05",
+        "Regulation S-K Item 106(b)",
+        "Regulation S-K Item 106(c)"
+      ],
+      "disclosure_topics": [
+        "cybersecurity incident disclosure",
+        "cybersecurity risk management",
+        "cybersecurity strategy",
+        "cybersecurity governance"
+      ],
+      "oversight_entities": [
+        "board of directors",
+        "management"
+      ],
+      "risk_scope": "material cybersecurity risks",
+      "rule_status": "final rules adopted",
+      "benefits": [
+        "reduce market mispricing",
+        "reduce information asymmetry",
+        "lower firms' cost of capital",
+        "more timely disclosure to investors"
+      ],
+      "compliance_impact": "reduce compliance costs for registrants currently providing disclosure",
+      "applicability": "public companies subject to Securities Exchange Act of 1934 reporting requirements"
+    },
+    "canonical_result": {
+      "family": "us_regulation_final_adoption",
+      "regulation_name": "SEC Cybersecurity Disclosure Rules (2023 Final)",
+      "effective_document": "Form 10-K and Form 8-K",
+      "key_provisions": [
+        "Item 1.05 of Form 8-K for incident disclosure",
+        "Regulation S-K Item 106(b) and (c) for risk management, strategy, and governance"
+      ],
+      "disclosure_mandate": "Affirmative obligation to disclose cybersecurity incidents and risk management processes",
+      "oversight_requirement": "Disclosure of board oversight and management role in assessing material risks",
+      "materiality_standard": "Material cybersecurity risks and incidents"
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "domain",
+            "operator": "equals",
+            "value": "us_regulation"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "annual disclosure"
+          }
+        ],
+        "canonical_result": {
+          "family": "us_regulation_final_adoption",
+          "regulation_name": "SEC Cybersecurity Disclosure Rules (2023 Final)",
+          "effective_document": "Form 10-K and Form 8-K",
+          "key_provisions": [
+            "Item 1.05 of Form 8-K for incident disclosure",
+            "Regulation S-K Item 106(b) and (c) for risk management, strategy, and governance"
+          ],
+          "disclosure_mandate": "Affirmative obligation to disclose cybersecurity incidents and risk management processes",
+          "oversight_requirement": "Disclosure of board oversight and management role in assessing material risks",
+          "materiality_standard": "Material cybersecurity risks and incidents"
+        },
+        "semantic_result": "SEC 2023 final rules mandate annual Form 10-K disclosure of cybersecurity risk management, strategy, governance (Items 106(b), 106(c)) and incident reporting on Form 8-K (Item 1.05) for material risks."
+      }
+    ]
+  }
+}

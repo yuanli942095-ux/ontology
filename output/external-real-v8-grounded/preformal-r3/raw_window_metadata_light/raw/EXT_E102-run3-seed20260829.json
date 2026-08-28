@@ -1,0 +1,119 @@
+{
+  "event_id": "EXT_E102",
+  "semantic_type": "TEMPORAL_VERSION",
+  "run": 3,
+  "seed": 20260829,
+  "variant": "RAW_WINDOW_METADATA_LIGHT",
+  "model": "qwen3.5:9b",
+  "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
+  "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
+  "source_file": "raw_provenance_light",
+  "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E102-run3-seed20260829-candidate-blind.md",
+  "oracle_used": false,
+  "candidate_used": false,
+  "note_used": false,
+  "manual_formal_policy_used": false,
+  "retrieval_status": "RETRIEVED",
+  "raw_source_used": true,
+  "fallback_used": false,
+  "retrieved_doc_count": 2,
+  "retrieved_window_count": 5,
+  "source_urls": [
+    "https://www.federalregister.gov/documents/full_text/html/2022/03/23/2022-05480.html",
+    "https://www.federalregister.gov/documents/full_text/html/2023/08/04/2023-16194.html"
+  ],
+  "forbidden_input_markers": [],
+  "status": "GENERATED",
+  "runtime_ms": 21230,
+  "done_reason": "stop",
+  "prompt_eval_count": 2774,
+  "eval_count": 685,
+  "forbidden_markers": [],
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "canonical_result_unresolved",
+  "canonical_result": null,
+  "canonical_semantic_result": "",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "us_regulation",
+      "subject_label": "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure rules :: SEC Regulation S-K Item 106 process disclosure",
+      "predicate_label": "process disclosure",
+      "regulation_name": "Regulation S-K Item 106",
+      "form_reference": "Form 10-K",
+      "disclosure_scope": "cybersecurity risk management, strategy, and governance",
+      "materiality_threshold": "material risks from cybersecurity threats",
+      "oversight_body": "board of directors",
+      "management_role": "assessing and managing material risks from cybersecurity threats"
+    },
+    "canonical_result": {
+      "family": "process_disclosure_requirement",
+      "regulation_section": "17 CFR 229.106",
+      "disclosure_items": [
+        "cybersecurity_risk_management",
+        "cybersecurity_strategy",
+        "cybersecurity_governance"
+      ],
+      "incident_disclosure_requirement": {
+        "form": "Form 8-K",
+        "item": "1.05",
+        "timing": "within four business days following determination of materiality"
+      },
+      "final_rule_status": "adopted",
+      "applicable_entities": [
+        "registrants",
+        "smaller_reporting_companies"
+      ]
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "regulation_name",
+            "operator": "equals",
+            "value": "Regulation S-K Item 106"
+          },
+          {
+            "fact": "form_reference",
+            "operator": "equals",
+            "value": "Form 10-K"
+          }
+        ],
+        "canonical_result": {
+          "family": "process_disclosure_requirement",
+          "disclosure_items": [
+            "cybersecurity_risk_management",
+            "cybersecurity_strategy",
+            "cybersecurity_governance"
+          ]
+        },
+        "semantic_result": "SEC Reg S-K Item 106 requires disclosure of cybersecurity risk management, strategy, and governance in Form 10-K"
+      },
+      {
+        "priority": 301,
+        "conditions": [
+          {
+            "fact": "form_reference",
+            "operator": "equals",
+            "value": "Form 8-K"
+          },
+          {
+            "fact": "incident_materiality",
+            "operator": "exists",
+            "value": "true"
+          }
+        ],
+        "canonical_result": {
+          "family": "process_disclosure_requirement",
+          "disclosure_items": [
+            "cybersecurity_incident_details"
+          ],
+          "timing_constraint": "within four business days"
+        },
+        "semantic_result": "SEC Reg S-K Item 106 requires timely disclosure of material cybersecurity incidents on Form 8-K within four business days"
+      }
+    ]
+  }
+}
