@@ -87,6 +87,13 @@ def main() -> int:
             candidate = dict(candidate)
             for field in FIELDS:
                 candidate[field] = aliases.get((event_id, field, canon(field, candidate[field])), candidate[field])
+            try:
+                candidate_conditions = json.loads(candidate.get("tuple_conditions_json", "[]") or "[]")
+            except json.JSONDecodeError:
+                candidate_conditions = []
+            context_tokens = concepts(events[event_id]["case_context"])
+            condition_tokens = concepts(" ".join(candidate_conditions))
+            condition_match = (len(context_tokens & condition_tokens) / len(condition_tokens)) if condition_tokens else 0.0
             best = 0.0
             for frame in frames:
                 quote = containment(frame.get("quote", ""), candidate["verbatim_quote"])
@@ -95,7 +102,9 @@ def main() -> int:
                 subject = containment(frame.get("subject", ""), candidate["tuple_subject_id"])
                 grounding = 1.0 if frame.get("document_id") == candidate["document_id"] and frame.get("window_id") == candidate["window_id"] else 0.0
                 best = max(best, 0.55 * quote + 0.20 * value + 0.10 * predicate + 0.05 * subject + 0.10 * grounding)
-            scored.append((best, candidate))
+            # Use the same applicability signal as the decision gate so the
+            # selected tuple and the selected action remain consistent.
+            scored.append((best + 0.20 * condition_match, candidate))
         scored.sort(key=lambda x: (-x[0], x[1]["annotator_id"], x[1]["frame_id"]))
         score, chosen = scored[0]
         field_matches = {field: canon(field, chosen[field]) == canon(field, target[field]) for field in FIELDS}
@@ -124,6 +133,13 @@ def main() -> int:
         active_candidates = list(ann_a_by_event[event_id])
         scored = []
         for candidate in active_candidates:
+            try:
+                candidate_conditions = json.loads(candidate.get("tuple_conditions_json", "[]") or "[]")
+            except json.JSONDecodeError:
+                candidate_conditions = []
+            context_tokens = concepts(events[event_id]["case_context"])
+            condition_tokens = concepts(" ".join(candidate_conditions))
+            condition_match = (len(context_tokens & condition_tokens) / len(condition_tokens)) if condition_tokens else 0.0
             best = max((
                 0.65 * containment(frame.get("quote", ""), candidate["verbatim_quote"])
                 + 0.20 * containment(frame.get("value", ""), candidate["tuple_value_id"])
@@ -131,7 +147,9 @@ def main() -> int:
                 + 0.05 * containment(frame.get("subject", ""), candidate["tuple_subject_id"])
                 for frame in frames
             ), default=0.0)
-            scored.append((best, candidate))
+            # Applicability is evidence from the case context, not an oracle hint.
+            # It disambiguates conditional alternatives such as E075 F1/F2.
+            scored.append((best + 0.20 * condition_match, candidate))
         scored.sort(key=lambda row: (-row[0], row[1]["frame_id"]))
         qualified = [(score, row) for score, row in scored if score >= 0.35]
         valued = [(score, row) for score, row in qualified if row["tuple_value_id"].strip()]

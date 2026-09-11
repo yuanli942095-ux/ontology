@@ -10,6 +10,8 @@ STRONG = {"must", "shall", "required", "always"}
 
 def concepts(value: str) -> set[str]:
     value = re.sub(r"([a-z0-9])([A-Z])", r"\1 \2", value or "").casefold()
+    value = re.sub(r"\b(can)(?:'|’)t\b", "cannot", value)
+    value = re.sub(r"\b(won)(?:'|’)t\b", "will not", value)
     return {x for x in re.findall(r"[a-z0-9]+", value) if len(x) > 1}
 
 

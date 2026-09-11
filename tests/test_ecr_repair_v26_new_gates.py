@@ -17,6 +17,11 @@ def test_current_value_mapper_handles_composite_alias() -> None:
     assert map_current_value("encryption is enabled and you can't disable it", row).equivalent
 
 
+def test_current_value_mapper_normalizes_contracted_negation() -> None:
+    row = {"tuple_value_id": "ENABLED_CANNOT_DISABLE", "tuple_modality": "MUST", "verbatim_quote": "enabled; you cannot disable it"}
+    assert map_current_value("enabled and you can't disable it", row).equivalent
+
+
 def test_unresolved_gate_keeps_unresolved_alternatives() -> None:
     rows = [(0.9, {"tuple_value_id": "VALUE_A", "tuple_conditions_json": "[]", "frame_id": "F1"}),
             (0.8, {"tuple_value_id": "VALUE_B", "tuple_conditions_json": "[]", "frame_id": "F2"})]
