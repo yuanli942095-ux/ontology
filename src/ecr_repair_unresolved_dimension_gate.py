@@ -31,6 +31,11 @@ def apply_unresolved_dimension_gate(candidates: list[tuple[float, dict[str, str]
         temporal = resolve_temporal_applicability(valued, as_of, documents)
         if temporal:
             return GateResult("CANDIDATE", "TEMPORAL_APPLICABILITY_RESOLVED", (temporal[0][1],))
+    # In the production path, dated document metadata is authoritative for
+    # temporal applicability. Do not let a weak token overlap override an
+    # unresolved date/profile/scope decision.
+    if as_of and documents is not None:
+        return GateResult("ABSTAIN", "UNRESOLVED_VERSION_PROFILE_OR_SCOPE", tuple(row for _, row in valued))
     context = concepts(case_context)
     conditional = []
     for score, row in valued:
