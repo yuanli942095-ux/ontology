@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2172" height="724" viewBox="0 0 2172 724" role="img" aria-labelledby="title desc">
+  <title id="title">Benchmark and Method Freeze Timeline</title>
+  <desc id="desc">Vector recreation of a six-step workflow timeline from dataset development to final evaluation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfbfb"/>
+    </linearGradient>
+    <linearGradient id="cardFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#f6fbff"/>
+      <stop offset="1" stop-color="#f3f9ff"/>
+    </linearGradient>
+    <linearGradient id="badgeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#123c78"/>
+      <stop offset="1" stop-color="#062659"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="145%">
+      <feDropShadow dx="8" dy="8" stdDeviation="8" flood-color="#d8d8d8" flood-opacity="0.55"/>
+    </filter>
+    <filter id="textShadow" x="-12%" y="-22%" width="124%" height="150%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1.5" flood-color="#cfcfcf" flood-opacity="0.75"/>
+    </filter>
+    <marker id="arrowHead" viewBox="0 0 14 14" refX="12" refY="7" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M0,0 L14,7 L0,14 L4,7 Z" fill="#082b62"/>
+    </marker>
+    <style>
+      .font { font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif; }
+      .title { font-size: 62px; font-weight: 800; fill: #222; }
+      .subtitle { font-size: 39px; font-weight: 400; fill: #222; }
+      .card { fill: url(#cardFill); stroke: #082b62; stroke-width: 3; filter: url(#cardShadow); }
+      .badge { fill: url(#badgeFill); filter: url(#cardShadow); }
+      .step-text { font-size: 39px; font-weight: 800; fill: #242424; }
+      .arrow { stroke: #082b62; stroke-width: 5.5; stroke-linecap: round; fill: none; marker-end: url(#arrowHead); filter: url(#textShadow); }
+    </style>
+  </defs>
+
+  <rect width="2172" height="724" fill="url(#bg)"/>
+
+  <text x="1086" y="102" text-anchor="middle" class="font title" filter="url(#textShadow)">Benchmark and Method Freeze Timeline</text>
+  <text x="1086" y="163" text-anchor="middle" class="font subtitle" filter="url(#textShadow)">Chronological workflow from dataset development to final evaluation</text>
+
+  <!-- Step 1 -->
+  <g id="step-1" class="font">
+    <rect x="54" y="288" width="288" height="269" rx="20" class="card"/>
+    <circle cx="71" cy="270" r="27" class="badge"/>
+    <text x="71" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">1</text>
+    <text x="198" y="383" text-anchor="middle" class="step-text">Development</text>
+    <text x="198" y="432" text-anchor="middle" class="step-text">Benchmark</text>
+    <text x="198" y="482" text-anchor="middle" class="step-text">Iterations</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g id="step-2" class="font">
+    <rect x="430" y="288" width="264" height="269" rx="20" class="card"/>
+    <circle cx="449" cy="270" r="27" class="badge"/>
+    <text x="449" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">2</text>
+    <text x="562" y="383" text-anchor="middle" class="step-text">ECR-Repair</text>
+    <text x="562" y="432" text-anchor="middle" class="step-text">Method</text>
+    <text x="562" y="482" text-anchor="middle" class="step-text">Freeze</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g id="step-3" class="font">
+    <rect x="737" y="288" width="256" height="269" rx="20" class="card"/>
+    <circle cx="758" cy="270" r="27" class="badge"/>
+    <text x="758" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">3</text>
+    <text x="865" y="383" text-anchor="middle" class="step-text">Final v5</text>
+    <text x="865" y="432" text-anchor="middle" class="step-text">Benchmark</text>
+    <text x="865" y="482" text-anchor="middle" class="step-text">Construction</text>
+  </g>
+
+  <!-- Step 4 -->
+  <g id="step-4" class="font">
+    <rect x="1078" y="288" width="284" height="269" rx="20" class="card"/>
+    <circle cx="1100" cy="270" r="27" class="badge"/>
+    <text x="1100" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">4</text>
+    <text x="1220" y="383" text-anchor="middle" class="step-text">Independent</text>
+    <text x="1220" y="432" text-anchor="middle" class="step-text">Oracle /</text>
+    <text x="1220" y="482" text-anchor="middle" class="step-text">Support Review</text>
+  </g>
+
+  <!-- Step 5 -->
+  <g id="step-5" class="font">
+    <rect x="1430" y="288" width="260" height="269" rx="20" class="card"/>
+    <circle cx="1452" cy="270" r="27" class="badge"/>
+    <text x="1452" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">5</text>
+    <text x="1560" y="410" text-anchor="middle" class="step-text">Benchmark</text>
+    <text x="1560" y="459" text-anchor="middle" class="step-text">Freeze</text>
+  </g>
+
+  <!-- Step 6 -->
+  <g id="step-6" class="font">
+    <rect x="1762" y="288" width="312" height="269" rx="20" class="card"/>
+    <circle cx="1889" cy="270" r="27" class="badge"/>
+    <text x="1889" y="289" text-anchor="middle" font-size="40" font-weight="800" fill="#fff">6</text>
+    <text x="1918" y="410" text-anchor="middle" class="step-text">Final Blind</text>
+    <text x="1918" y="459" text-anchor="middle" class="step-text">Evaluation</text>
+  </g>
+
+  <!-- Flow arrows -->
+  <g id="visible-arrows" filter="url(#textShadow)">
+    <line x1="354" y1="414" x2="393" y2="414" stroke="#082b62" stroke-width="5.5" stroke-linecap="round"/>
+    <polygon points="407,414 386,397 386,431" fill="#082b62"/>
+    <line x1="706" y1="414" x2="712" y2="414" stroke="#082b62" stroke-width="5.5" stroke-linecap="round"/>
+    <polygon points="728,414 707,397 707,431" fill="#082b62"/>
+    <line x1="1005" y1="414" x2="1050" y2="414" stroke="#082b62" stroke-width="5.5" stroke-linecap="round"/>
+    <polygon points="1066,414 1045,397 1045,431" fill="#082b62"/>
+    <line x1="1374" y1="414" x2="1402" y2="414" stroke="#082b62" stroke-width="5.5" stroke-linecap="round"/>
+    <polygon points="1418,414 1397,397 1397,431" fill="#082b62"/>
+    <line x1="1702" y1="414" x2="1735" y2="414" stroke="#082b62" stroke-width="5.5" stroke-linecap="round"/>
+    <polygon points="1751,414 1730,397 1730,431" fill="#082b62"/>
+  </g>
+</svg>

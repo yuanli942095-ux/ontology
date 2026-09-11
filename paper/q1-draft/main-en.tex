@@ -1,0 +1,327 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+
+\title{Evidence-Constrained Ontology Repair for Semantic Drift in Versioned Normative Documents}
+\author{Anonymous Authors}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Versioned normative documents, such as technical standards, regulatory guidance, and protocol specifications, frequently revise definitions, obligations, exceptions, and scope conditions. These changes can invalidate OWL ontologies that encode earlier normative states. Directly asking a large language model (LLM) to select a repair is attractive, but it is difficult to audit and can confuse candidate descriptions, option order, and implicit gold labels. This paper studies ontology semantic drift repair as an evidence-constrained candidate selection and verification problem. We propose an Evidence-Constrained Semantic IR Repair pipeline that first focuses public evidence, formulates the semantic task, extracts atomic facts, converts them into a typed semantic intermediate representation, ranks finite OWL repair candidates under symbolic constraints, and executes a selective repair gate before materializing OWL patches. A repair is accepted only if the selected candidate is evidence-consistent, minimally edits the ontology, passes reasoner consistency, and satisfies competency-question regression checks.
+
+On an independently held-out RFC-derived benchmark with 220 events and 5 runs per event, the final M16 pipeline achieves 1095/1100 repair closure accuracy (99.55\%, Wilson 95\% CI: 98.94--99.81\%) and 219/220 strict event success (99.55\%, Wilson 95\% CI: 97.47--99.92\%). Stage-wise ablation shows that the full method improves over the M13 base pipeline by 13.45 percentage points, with a paired exact McNemar test of $p=2.08\times10^{-15}$ and a paired bootstrap 95\% confidence interval of 11.55--15.55 percentage points. Candidate-order and candidate-id robustness checks are invariant over all scored rows, and backend comparison shows similar strict-event performance for DeepSeek and Ollama. The results support the claim that evidence-constrained semantic IR and selective symbolic verification can make LLM-assisted ontology repair auditable and robust on versioned normative-document drift tasks.
+\end{abstract}
+
+\section{Introduction}
+
+Ontologies used in compliance, standards engineering, protocol analysis, and knowledge governance often encode facts derived from normative documents. When the source documents evolve, an ontology can become semantically stale even if it remains syntactically valid. For example, a later version of a standard can supersede an older rule, an exception can override a general obligation, or a qualifier can change the scope of a statement across sentence boundaries. These changes are not merely textual edits; they alter the evidence-grounded semantics that the ontology should represent.
+
+Large language models provide a natural interface for reading normative text, but direct generation is not enough for ontology repair. A model can output well-formed JSON while distorting the underlying semantics, can choose a candidate because of option descriptions rather than evidence, or can be sensitive to candidate ordering and identifiers. A repair system must therefore separate document understanding, semantic normalization, candidate mapping, and formal verification.
+
+This paper addresses the following research question:
+
+\begin{quote}
+How can LLM-derived evidence from versioned normative documents be transformed into auditable OWL repair decisions while preserving candidate isolation, symbolic verifiability, and fail-closed behavior?
+\end{quote}
+
+We make four contributions.
+
+\begin{itemize}
+    \item We formulate versioned normative-document semantic drift as an evidence-constrained OWL repair problem with finite candidates, private oracle isolation, and repair closure criteria.
+    \item We propose an Evidence-Constrained Semantic IR Repair pipeline that combines predicate-aware evidence focusing, task formulation, semantic IR construction, constraint-aware candidate ranking, selective gating, OWL patching, reasoner checks, and competency-question regression.
+    \item We build and freeze an independently held-out RFC-derived benchmark with 220 events across temporal versioning, general-rule exception, and cross-sentence scope drift.
+    \item We evaluate the final method with blind 5-run results, stage-wise ablation, statistical tests, robustness checks, source-family/domain generalization, backend comparison, and failure analysis.
+\end{itemize}
+
+\section{Related Work}
+
+\subsection{Ontology Evolution and Repair}
+
+Ontology evolution studies how formal knowledge bases should change as their modeled domains evolve. OWL-based systems provide machine-interpretable semantics and enable reasoner-based consistency checks \citep{w3cowl2}. Repair techniques typically focus on logical inconsistency, axiom deletion, or alignment repair. Our setting differs in that the ontology can remain logically consistent while becoming semantically outdated relative to a versioned normative source. We therefore evaluate both the selected candidate and the executed OWL repair closure.
+
+\subsection{Retrieval-Augmented and Evidence-Constrained Generation}
+
+Retrieval-augmented generation connects generated answers to retrieved evidence \citep{lewis2020rag}. Recent work argues that evidence selection should consider whether evidence is useful for the generator, not only whether it is topically relevant. BAR-RAG, for example, frames reranking as boundary-aware evidence selection for robust RAG \citep{sun2026barrag}. Our predicate-aware evidence focus is a domain-specific version of this idea: evidence windows are selected and cropped around the public subject, predicate, and case context before semantic extraction.
+
+\subsection{Legal and Regulatory Information Extraction}
+
+Normative and legal texts pose persistent challenges for information extraction because they contain definitions, exceptions, conditions, obligations, and cross-references. Recent surveys summarize named-entity, relation, and event extraction challenges in legal documents \citep{premasiri2025legalie}. Closely related work on regulatory rule extraction, such as De Jure, uses LLMs and iterative self-refinement to produce structured regulatory rules \citep{guliani2026dejure}. Legal requirements translation work also uses canonical representations and executable structures to make legal text machine-checkable \citep{singhal2025legalrequirements}. Our work shares this structured-extraction motivation but targets ontology repair closure rather than standalone rule extraction.
+
+\subsection{Selective Prediction and Verified Repair}
+
+Selective prediction allows a system to abstain when confidence is insufficient \citep{geifman2017selective}. This is important in ontology repair: a wrong patch can be worse than no patch. Our pipeline uses a selective gate that accepts a repair only when evidence, semantic IR, candidate ranking, OWL materialization, reasoner consistency, and competency-question regression are jointly satisfied.
+
+\section{Problem Formulation}
+
+Let $D$ be a versioned normative document collection, $O_0$ a source ontology that may contain stale assertions, and $E$ an event describing a target subject, predicate, semantic type, and public evidence source. For each event, the benchmark provides a finite candidate set:
+
+\[
+C_E = \{c_1, c_2, \ldots, c_k\}.
+\]
+
+Each candidate contains a display value and a formal OWL edit operation. The private oracle candidate $c^*_E$ is used only for offline evaluation after all model outputs and decisions are fixed.
+
+A method returns either a selected candidate $\hat{c}_E$ or abstains. A selected repair is counted as closed only if all of the following hold:
+
+\begin{enumerate}
+    \item the selected candidate matches the private oracle;
+    \item the candidate OWL patch is materialized;
+    \item the repaired ontology is reasoner-consistent;
+    \item the repair operation is reflected in RDF graph deltas;
+    \item competency-question regression passes;
+    \item the edit is minimal under the benchmark operation contract.
+\end{enumerate}
+
+We report attempt-level closure accuracy, oracle selection accuracy, and strict event success. Strict event success requires all five runs for the same event to close successfully.
+
+\section{Method}
+
+\subsection{Overview}
+
+The final pipeline, denoted M16, consists of four major layers:
+
+\[
+\text{Evidence} \rightarrow \text{Semantic IR} \rightarrow \text{Candidate Decision} \rightarrow \text{OWL Closure}.
+\]
+
+More concretely:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Stage & Function \\
+\midrule
+Predicate-aware focus & Crop public evidence around subject, predicate, and case context \\
+Task formulation & Route the event to temporal, rule-exception, or scope extraction mode \\
+Atomic fact extraction & Extract evidence-grounded facts from focused text \\
+Semantic IR & Convert facts into typed intermediate representations \\
+Constraint ranking & Score candidates under type-specific symbolic constraints \\
+Selective gate & Select only when score and consistency conditions are satisfied \\
+OWL patching & Materialize candidate edit into OWL/RDF artifacts \\
+Reasoner and CQ closure & Verify consistency and competency-question regression \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Semantic Types}
+
+We evaluate three semantic drift types.
+
+\textbf{TEMPORAL\_VERSION} captures versioned or effective-status changes. Its IR records fields such as subject, old value, new value, effective time, relation, current value, and evidence.
+
+\textbf{GENERAL\_RULE\_EXCEPTION} captures situations where a general rule is modified by an exception, condition, or priority relation. Its IR records the subject, general rule, exception condition, exception rule, priority, result, and evidence.
+
+\textbf{CROSS\_SENTENCE\_SCOPE} captures scope attachment across sentence boundaries. Its IR records the subject, statement, qualifier, scope target, scope relation, result, and evidence.
+
+\subsection{Candidate Isolation}
+
+Candidate isolation is central to the experimental design. Generation and refinement stages may read public evidence, event metadata, source documents, and retrieval manifests. They must not read candidate display values, candidate operations, private oracle rows, or manual formal-policy artifacts. Candidates become visible only after the semantic result has been fixed and the system enters candidate ranking. This separation prevents the LLM from reverse-engineering an answer from candidate values.
+
+\subsection{Selective Repair Gate}
+
+The gate implements evidence-constrained selective repair. It fails closed when the semantic IR is incomplete, invalid, or insufficiently aligned with the candidate set. Otherwise, candidates are ranked with type-specific constraints. A selected repair must then pass OWL materialization, reasoner consistency, graph-delta checks, and competency-question regression.
+
+\section{Benchmark}
+
+\subsection{Dataset Construction}
+
+The final benchmark, \texttt{external-real-holdout-v4-blind}, contains 220 held-out events derived from public RFC normative documents. Each event contains public event metadata, source evidence, a finite candidate set, candidate OWL artifacts, and a private oracle row. The post-sanitize benchmark freeze removed oracle-bearing text from candidate notes before public release.
+
+\begin{table}[t]
+\centering
+\caption{Final blind benchmark summary.}
+\label{tab:dataset}
+\begin{tabular}{lr}
+\toprule
+Property & Value \\
+\midrule
+Events & 220 \\
+Runs per event & 5 \\
+Attempts & 1100 \\
+Domains & 11 \\
+Effective source families & 13 \\
+Semantic types & 3 \\
+Candidate rows & 660 \\
+Candidate-note leakage rows after sanitation & 0 \\
+Post-sanitize manifest SHA-256 & \texttt{4144c0ab...49e665} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Freeze and Review Protocol}
+
+The method freeze precedes the post-sanitize benchmark freeze. The final method manifest records holdout tuning as forbidden. The benchmark was manually reviewed, then candidate notes were sanitized. Offline result-equivalence checks show that the sanitation did not change any final M14/M15/M16 summary or M16 detail file.
+
+\section{Experimental Setup}
+
+\subsection{Methods}
+
+We compare the following method stages.
+
+\begin{itemize}
+    \item \textbf{M13 Base}: predicate-aware evidence focus, rule refinement, Semantic IR, and V4.3 candidate repair.
+    \item \textbf{M13+M14}: adds GRE/CSS recovery.
+    \item \textbf{M13+M14+M15}: adds temporal anchor recovery.
+    \item \textbf{Full M16}: adds candidate entailment verification.
+\end{itemize}
+
+\subsection{Metrics}
+
+We report closure accuracy, oracle accuracy, strict event accuracy, Wilson 95\% confidence intervals, paired exact McNemar tests, and paired bootstrap confidence intervals over matched event-run pairs.
+
+\section{Results}
+
+\subsection{Main Blind Result}
+
+\begin{table}[t]
+\centering
+\caption{Final M16 blind result on 220 events and 1100 attempts.}
+\label{tab:main}
+\begin{tabular}{lccc}
+\toprule
+Semantic type & Closure & Oracle & Strict event \\
+\midrule
+ALL & 1095/1100 (99.55\%) & 1095/1100 (99.55\%) & 219/220 (99.55\%) \\
+TEMPORAL\_VERSION & 365/370 (98.65\%) & 365/370 (98.65\%) & 73/74 (98.65\%) \\
+GENERAL\_RULE\_EXCEPTION & 365/365 (100.00\%) & 365/365 (100.00\%) & 73/73 (100.00\%) \\
+CROSS\_SENTENCE\_SCOPE & 365/365 (100.00\%) & 365/365 (100.00\%) & 73/73 (100.00\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Stage-Wise Ablation}
+
+\begin{table}[t]
+\centering
+\caption{Stage-wise ablation on the frozen blind benchmark.}
+\label{tab:ablation}
+\begin{tabular}{lcccc}
+\toprule
+Variant & Closure & Strict event & Gain vs M13 & Incremental gain \\
+\midrule
+M13 Base & 947/1100 (86.09\%) & 185/220 (84.09\%) & 0.00 pp & -- \\
+M13+M14 & 982/1100 (89.27\%) & 193/220 (87.73\%) & 3.18 pp & 3.18 pp \\
+M13+M14+M15 & 1080/1100 (98.18\%) & 216/220 (98.18\%) & 12.09 pp & 8.91 pp \\
+Full M16 & 1095/1100 (99.55\%) & 219/220 (99.55\%) & 13.46 pp & 1.37 pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The full method improves over M13 by 13.45 percentage points at the attempt level. The paired exact McNemar test is significant with $p=2.08\times10^{-15}$, and the paired bootstrap 95\% confidence interval for the gain is 11.55--15.55 percentage points.
+
+\subsection{Confidence Intervals and Significance}
+
+\begin{table}[t]
+\centering
+\caption{Final M16 Wilson 95\% confidence intervals.}
+\label{tab:ci}
+\begin{tabular}{llcc}
+\toprule
+Semantic type & Metric & Estimate & Wilson 95\% CI \\
+\midrule
+ALL & Attempt closure & 99.55\% & 98.94--99.81\% \\
+ALL & Strict event closure & 99.55\% & 97.47--99.92\% \\
+TEMPORAL\_VERSION & Attempt closure & 98.65\% & 96.88--99.42\% \\
+TEMPORAL\_VERSION & Strict event closure & 98.65\% & 92.73--99.76\% \\
+GENERAL\_RULE\_EXCEPTION & Attempt closure & 100.00\% & 98.96--100.00\% \\
+GENERAL\_RULE\_EXCEPTION & Strict event closure & 100.00\% & 95.00--100.00\% \\
+CROSS\_SENTENCE\_SCOPE & Attempt closure & 100.00\% & 98.96--100.00\% \\
+CROSS\_SENTENCE\_SCOPE & Strict event closure & 100.00\% & 95.00--100.00\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Paired tests for stage gains.}
+\label{tab:tests}
+\begin{tabular}{lccc}
+\toprule
+Comparison & Mean gain & Bootstrap 95\% CI & McNemar $p$ \\
+\midrule
+Full M16 vs M13 & 13.45 pp & 11.55--15.55 pp & $2.08\times10^{-15}$ \\
+M13+M14 vs M13 & 3.18 pp & 2.18--4.27 pp & $5.82\times10^{-11}$ \\
+M13+M14+M15 vs M13+M14 & 8.91 pp & 7.27--10.64 pp & $8.07\times10^{-16}$ \\
+Full M16 vs M13+M14+M15 & 1.36 pp & 0.73--2.09 pp & $6.10\times10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Robustness}
+
+Candidate-order shuffling and candidate-id renaming were tested over all rows with available candidate score traces. Both checks were invariant over 1085/1085 scored rows. Fifteen rows were not applicable because they did not contain candidate-score traces. Candidate-note leakage was also audited after sanitation, with zero leakage rows and zero method files accessing candidate notes.
+
+\subsection{Generalization and Leave-Group-Out Slices}
+
+The final method is evaluated by domain and source family under a frozen method. Ten of eleven domains reach 100\% closure; the remaining domain, \texttt{privacy\_considerations}, reaches 95\%. Twelve of thirteen effective source families reach 100\%; \texttt{IETF RFC 8288} reaches 94.44\%.
+
+\begin{table}[t]
+\centering
+\caption{Leave-domain-out test-slice results.}
+\label{tab:domain}
+\begin{tabular}{lccc}
+\toprule
+Held-out domain & Events & Closure & Strict event \\
+\midrule
+dns\_security & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+email\_authentication & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+http\_messaging & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+http\_semantics & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+internationalized\_identifiers & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+json\_formats & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+oauth\_authorization & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+privacy\_considerations & 20 & 95/100 (95.00\%) & 19/20 (95.00\%) \\
+security\_considerations & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+tls\_security & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+uri\_templates & 20 & 100/100 (100.00\%) & 20/20 (100.00\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This evaluation should be interpreted as frozen-method leave-group test-slice robustness, not as retraining-based leave-one-domain-out learning, because the method does not train a statistical model per group.
+
+\subsection{Backend Comparison}
+
+We compare the same frozen pipeline using Ollama with \texttt{qwen3.5:9b} and DeepSeek API as a backend robustness check. Ollama reaches 1085/1100 closure (98.64\%), while DeepSeek reaches 1091/1100 closure (99.18\%) on the compared holdout. Strict event success is identical at 217/220 for both backends. This suggests that the method is not solely dependent on a cloud model backend, although borderline attempts differ.
+
+\subsection{Failure Analysis}
+
+The final blind run leaves 5 failed attempts out of 1100. All failures are concentrated in a single event, \texttt{H4\_E148}, a \texttt{TEMPORAL\_VERSION} event in the \texttt{privacy\_considerations} domain. The failure class is \texttt{R2\_ORACLE\_IN\_TOPK\_NOT\_TOP1}: the oracle candidate is present in the candidate set but is not ranked first. This indicates that the remaining error is a narrow candidate-ranking boundary case rather than a broad GRE/CSS semantic extraction failure.
+
+\section{Discussion}
+
+The results show that the main challenge is not simply producing valid JSON. Earlier experiments found that constrained structure can improve parseability while distorting semantics. The final pipeline therefore separates evidence focus, semantic task formulation, typed IR, candidate-blind normalization, candidate-aware ranking, and formal closure. This modular separation makes it possible to diagnose whether a failure occurs in evidence retrieval, semantic extraction, canonicalization, candidate mapping, ranking, or verification.
+
+The ablation results show that the modules address different failure modes. M14 mainly improves general-rule exception and cross-sentence scope cases. M15 provides the largest incremental gain by repairing temporal anchor failures. M16 resolves the remaining entailment-verification cases and raises closure to 99.55\%.
+
+\section{Threats to Validity}
+
+\textbf{Source-domain limitation.} The final benchmark is derived from RFC/IETF-style public normative documents. Although it covers multiple technical domains and source families, it does not prove performance on arbitrary legal or regulatory corpora.
+
+\textbf{Structured schema dependence.} The method uses semantic types and domain-level schema assumptions. It should not be described as fully automatic open-domain rule learning.
+
+\textbf{Oracle review.} The benchmark uses a single-annotator manual oracle review. This is mitigated by evidence windows, freeze manifests, and private oracle isolation, but future work should include multi-annotator agreement.
+
+\textbf{Leave-group interpretation.} The leave-domain/source-family evaluation is a frozen-method test-slice analysis, not a retraining-based leave-one-domain-out learning experiment.
+
+\textbf{Candidate notes.} Candidate notes previously contained oracle-bearing text. The notes were sanitized, leakage audit reports zero remaining leakage rows, and offline equivalence checks show that the final results are unchanged. The public release should use only the post-sanitize benchmark manifest.
+
+\section{Conclusion}
+
+This paper presents an evidence-constrained Semantic IR repair pipeline for ontology semantic drift induced by versioned normative documents. The method separates LLM-based evidence interpretation from candidate-aware repair selection and requires selected repairs to pass OWL materialization, reasoner consistency, and competency-question regression. On a frozen 220-event blind benchmark with 1100 attempts, the final method achieves 99.55\% closure and strict event success, with statistically significant gains over the base pipeline and strong robustness to candidate order, candidate identifier changes, and model backend substitution. The study supports evidence-constrained selective repair as a practical route for auditable LLM-assisted ontology evolution.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

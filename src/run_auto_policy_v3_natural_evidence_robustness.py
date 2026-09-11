@@ -16,12 +16,19 @@ import re
 import subprocess
 import sys
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import run_auto_formal_policy_batch_v3 as v3
+from auto_policy_public_window_handoff import (
+    INPUT_CONSTRUCTION_ERROR,
+    PUBLIC_FROZEN_WINDOW,
+    RETRIEVAL_FAILED,
+    frozen_window_blocks,
+    public_ready,
+)
 from external_real_v8_layout import (
     FULL_METADATA_FIELDS,
     LIGHT_METADATA_FIELDS,
@@ -35,6 +42,8 @@ BENCHMARK_DIR = v3.ROOT / "benchmark" / BENCHMARK_NAME
 OUTPUT_DIR = v3.ROOT / "output" / BENCHMARK_NAME / "natural-evidence-robustness"
 DOCUMENT_CSV = BENCHMARK_DIR / "input" / "external-real-document-template.csv"
 DOCUMENT_DIR = BENCHMARK_DIR / "documents"
+RETRIEVAL_CSV: Path | None = None
+_PUBLIC_RETRIEVAL_INDEX: dict[str, dict[str, str]] | None = None
 RUNS = 1
 SEED_BASE = 20260827
 
@@ -43,7 +52,7 @@ VARIANTS = {
     "RAW_SHORT_WINDOW": "top raw source windows retrieved from full event metadata",
     "RAW_PROVENANCE_WINDOW": "raw source windows ranked by target and document provenance",
     "RAW_WINDOW_WITH_DISTRACTOR": "raw target windows plus deterministic raw-source distractors",
-    "RAW_WINDOW_METADATA_LIGHT": "raw source windows retrieved from frozen light metadata",
+    "RAW_WINDOW_METADATA_LIGHT": "frozen public retrieval windows with light prompt metadata",
     "RAW_WINDOW_NO_METADATA": "deterministic raw source windows without event metadata",
 }
 
@@ -62,6 +71,9 @@ class RetrievalResult:
     candidate_used: bool = False
     oracle_used: bool = False
     note_used: bool = False
+    retrieval_source: str = ""
+    retrieval_replayed: bool = False
+    manual_policy_used: bool = False
 
 
 def assert_raw_isolation(result: RetrievalResult, variant: str) -> None:
@@ -76,14 +88,24 @@ def assert_raw_isolation(result: RetrievalResult, variant: str) -> None:
         raise AssertionError(f"{variant}: oracle_used must be False")
     if result.note_used is not False:
         raise AssertionError(f"{variant}: note_used must be False")
-    if result.retrieval_status not in {"RETRIEVED", "RETRIEVAL_FAILED", "FORBIDDEN_INPUT"}:
+    if result.manual_policy_used is not False:
+        raise AssertionError(f"{variant}: manual_policy_used must be False")
+    if result.retrieval_status not in {
+        "RETRIEVED",
+        "RETRIEVAL_FAILED",
+        "FORBIDDEN_INPUT",
+        INPUT_CONSTRUCTION_ERROR,
+    }:
         raise AssertionError(f"{variant}: unexpected retrieval_status {result.retrieval_status}")
     if result.retrieval_status != "RETRIEVED" and result.evidence:
         raise AssertionError(f"{variant}: failed retrieval must not carry substitute evidence")
+    if result.retrieval_status == INPUT_CONSTRUCTION_ERROR and result.retrieval_replayed:
+        raise AssertionError(f"{variant}: input construction error must not replay retrieval")
 
 
 def configure_benchmark(benchmark_name: str, output_dir: Path | None = None) -> None:
-    global BENCHMARK_NAME, BENCHMARK_DIR, OUTPUT_DIR, DOCUMENT_CSV, DOCUMENT_DIR
+    global BENCHMARK_NAME, BENCHMARK_DIR, OUTPUT_DIR, DOCUMENT_CSV, DOCUMENT_DIR, RETRIEVAL_CSV
+    global _PUBLIC_RETRIEVAL_INDEX
 
     BENCHMARK_NAME = benchmark_name
     BENCHMARK_DIR = v3.ROOT / "benchmark" / benchmark_name
@@ -96,6 +118,10 @@ def configure_benchmark(benchmark_name: str, output_dir: Path | None = None) -> 
         OUTPUT_DIR = output_dir if output_dir.is_absolute() else v3.ROOT / output_dir
     DOCUMENT_CSV = paths["document_csv"]
     DOCUMENT_DIR = paths["document_dir"]
+    retrieval_dir = paths["retrieval_dir"]
+    staged_csv = retrieval_dir / "external-real-v8-event-retrieval.csv"
+    RETRIEVAL_CSV = staged_csv if staged_csv.is_file() else None
+    _PUBLIC_RETRIEVAL_INDEX = None
     v3.configure_benchmark(benchmark_name)
 
 
@@ -116,6 +142,12 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="build and audit blind inputs without calling the model",
     )
+    parser.add_argument(
+        "--overwrite-statuses",
+        default="",
+        help="comma-separated raw statuses to regenerate instead of resuming",
+    )
+    parser.add_argument("--qwen-timeout", type=int, default=0, help="override Qwen HTTP timeout seconds")
     return parser.parse_args()
 
 
@@ -385,7 +417,58 @@ def retrieval_result(
         candidate_used=False,
         oracle_used=False,
         note_used=False,
+        retrieval_source=source_label,
+        retrieval_replayed=False,
+        manual_policy_used=False,
     )
+
+
+def public_retrieval_index() -> dict[str, dict[str, str]]:
+    global _PUBLIC_RETRIEVAL_INDEX
+    if _PUBLIC_RETRIEVAL_INDEX is not None:
+        return _PUBLIC_RETRIEVAL_INDEX
+    if RETRIEVAL_CSV is None or not RETRIEVAL_CSV.is_file():
+        _PUBLIC_RETRIEVAL_INDEX = {}
+        return _PUBLIC_RETRIEVAL_INDEX
+    _PUBLIC_RETRIEVAL_INDEX = {row["event_id"]: row for row in read_csv(RETRIEVAL_CSV)}
+    return _PUBLIC_RETRIEVAL_INDEX
+
+
+def public_frozen_window_context(event_id: str, docs: list[dict[str, str]]) -> RetrievalResult:
+    """Handoff frozen public READY windows. Does not re-query or re-rank."""
+    row = public_retrieval_index().get(event_id)
+    ready = public_ready(row)
+    docs_by_id = {str(doc.get("document_id") or ""): doc for doc in docs}
+    blocks: list[tuple[str, str, str]] = []
+    for document_id, source_url, window in frozen_window_blocks(docs, DOCUMENT_DIR):
+        doc = docs_by_id.get(document_id, {"source_title": "", "source_url": source_url})
+        blocks.append((document_id, source_url, raw_source_block(doc, window)))
+    if ready and not blocks:
+        return RetrievalResult(
+            evidence="",
+            retrieval_status=INPUT_CONSTRUCTION_ERROR,
+            source_label=PUBLIC_FROZEN_WINDOW,
+            raw_source_used=True,
+            fallback_used=False,
+            retrieved_doc_count=0,
+            retrieved_window_count=0,
+            retrieval_source=PUBLIC_FROZEN_WINDOW,
+            retrieval_replayed=False,
+        )
+    if not ready:
+        return RetrievalResult(
+            evidence="",
+            retrieval_status=RETRIEVAL_FAILED,
+            source_label=PUBLIC_FROZEN_WINDOW,
+            raw_source_used=True,
+            fallback_used=False,
+            retrieved_doc_count=0,
+            retrieved_window_count=0,
+            retrieval_source=PUBLIC_FROZEN_WINDOW,
+            retrieval_replayed=False,
+        )
+    result = retrieval_result(blocks, PUBLIC_FROZEN_WINDOW)
+    return replace(result, retrieval_source=PUBLIC_FROZEN_WINDOW, retrieval_replayed=False)
 
 
 def provenance_source_context(
@@ -582,6 +665,8 @@ def evidence_for_variant(
     if variant == "RAW_PROVENANCE_WINDOW":
         return provenance_source_context(event, docs, metadata_mode="full")
     if variant == "RAW_WINDOW_METADATA_LIGHT":
+        if RETRIEVAL_CSV is not None:
+            return public_frozen_window_context(event_id, docs)
         return provenance_source_context(event, docs, metadata_mode="light")
     if variant == "RAW_WINDOW_NO_METADATA":
         return provenance_source_context(event, docs, metadata_mode="none")
@@ -641,6 +726,7 @@ def generate_variant(
     seed_base: int,
     selected_event_ids: list[str],
     retrieval_only: bool = False,
+    overwrite_statuses: set[str] | None = None,
 ) -> None:
     variant_dir = OUTPUT_DIR / variant.lower()
     raw_dir = variant_dir / "raw"
@@ -659,7 +745,16 @@ def generate_variant(
             evidence_file = evidence_dir / f"{event_id}-run{run}-seed{seed}-candidate-blind.md"
             raw_path = raw_dir / f"{event_id}-run{run}-seed{seed}.json"
             print(f"[{variant} {index}/{total}] {event_id} run={run} seed={seed}", flush=True)
-            if raw_path.is_file() and not retrieval_only:
+            resume = (
+                raw_path.is_file()
+                and not retrieval_only
+                and (
+                    not overwrite_statuses
+                    or str(json.loads(raw_path.read_text(encoding="utf-8-sig")).get("status") or "")
+                    not in overwrite_statuses
+                )
+            )
+            if resume:
                 record = json.loads(raw_path.read_text(encoding="utf-8-sig"))
                 print(f"  [resume] {raw_path.name} status={record.get('status', '')}", flush=True)
                 rows.append(
@@ -699,6 +794,20 @@ def generate_variant(
                 docs_by_event,
                 seed,
             )
+            if (
+                variant == "RAW_WINDOW_METADATA_LIGHT"
+                and public_ready(public_retrieval_index().get(event_id))
+                and retrieval.retrieval_status not in {"FORBIDDEN_INPUT", INPUT_CONSTRUCTION_ERROR}
+                and not str(retrieval.evidence or "").strip()
+            ):
+                retrieval = replace(
+                    retrieval,
+                    evidence="",
+                    retrieval_status=INPUT_CONSTRUCTION_ERROR,
+                    retrieval_source=PUBLIC_FROZEN_WINDOW,
+                    retrieval_replayed=False,
+                )
+                print(f"  INPUT_CONSTRUCTION_ERROR {event_id}: public READY but empty evidence", flush=True)
             assert_raw_isolation(retrieval, variant)
             evidence_file.write_text(retrieval.evidence, encoding="utf-8")
             retrieval_ready = retrieval.retrieval_status in {
@@ -718,6 +827,7 @@ def generate_variant(
             canonical_result: dict[str, Any] | None = None
             canonical_semantic_result = ""
             parsed: Any = None
+            response_text = ""
             qwen_response: dict[str, Any] = {}
             if retrieval_ready and not retrieval_only:
                 prompt = build_prompt(event_for_prompt, retrieval.evidence)
@@ -767,7 +877,10 @@ def generate_variant(
                 "oracle_used": retrieval.oracle_used,
                 "candidate_used": retrieval.candidate_used,
                 "note_used": retrieval.note_used,
-                "manual_formal_policy_used": False,
+                "manual_formal_policy_used": retrieval.manual_policy_used,
+                "manual_policy_used": retrieval.manual_policy_used,
+                "retrieval_source": retrieval.retrieval_source,
+                "retrieval_replayed": retrieval.retrieval_replayed,
                 "retrieval_status": retrieval.retrieval_status,
                 "raw_source_used": retrieval.raw_source_used,
                 "fallback_used": retrieval.fallback_used,
@@ -788,6 +901,7 @@ def generate_variant(
                 "canonical_status": canonical_status,
                 "canonical_result": canonical_result,
                 "canonical_semantic_result": canonical_semantic_result,
+                "raw_response_text": response_text,
                 "response": parsed,
             }
             raw_path.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -937,6 +1051,8 @@ def summary_rows(prefix: str, variants: list[str], runs: int, seed: int, skip_re
 def main() -> int:
     args = parse_args()
     configure_benchmark(args.benchmark, args.output_dir)
+    if args.qwen_timeout > 0:
+        v3.TIMEOUT = args.qwen_timeout
     variants = [item.strip() for item in args.variants.split(",") if item.strip()]
     unknown = [item for item in variants if item not in VARIANTS]
     if unknown:
@@ -947,6 +1063,9 @@ def main() -> int:
     if missing:
         raise ValueError("unknown event ids: " + ", ".join(missing))
     docs_by_event = document_rows_by_event()
+    overwrite_statuses = {
+        item.strip().upper() for item in str(args.overwrite_statuses or "").split(",") if item.strip()
+    }
     if not args.skip_generation:
         for variant in variants:
             generate_variant(
@@ -957,6 +1076,7 @@ def main() -> int:
                 args.seed,
                 selected_event_ids,
                 args.retrieval_only,
+                overwrite_statuses,
             )
     if not args.skip_evaluation and not args.retrieval_only:
         evaluate_variants(variants, args.runs, args.seed, args.skip_repair, args.only)

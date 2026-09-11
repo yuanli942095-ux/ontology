@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="941" viewBox="0 0 1672 941" role="img" aria-labelledby="title desc">
+  <title id="title">Failure-State Marginals: Base Semantic IR vs. ECR-Repair</title>
+  <desc id="desc">Vector recreation comparing marginal failure states in the base semantic IR pipeline and ECR-Repair.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fbfbfb"/>
+    </linearGradient>
+    <linearGradient id="boxFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fdfdfd"/>
+    </linearGradient>
+    <filter id="softShadow" x="-12%" y="-18%" width="130%" height="145%">
+      <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="#d8d8d8" flood-opacity="0.55"/>
+    </filter>
+    <filter id="textShadow" x="-10%" y="-18%" width="120%" height="145%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1.2" flood-color="#d2d2d2" flood-opacity="0.75"/>
+    </filter>
+    <style>
+      .font { font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif; }
+      .title { font-size: 56px; font-weight: 800; fill: #000; }
+      .heading { font-size: 35px; font-weight: 800; fill: #000; }
+      .box { fill: url(#boxFill); stroke: #000; stroke-width: 2.2; filter: url(#softShadow); }
+      .state { font-size: 34px; fill: #000; }
+      .state-small { font-size: 31px; fill: #000; }
+      .count { font-size: 34px; fill: #000; }
+      .center { font-size: 29px; fill: #000; }
+      .callout { font-size: 34px; font-weight: 800; fill: #000; }
+      .footnote { font-size: 27px; fill: #000; }
+      .arrow-line { stroke: #000; stroke-width: 2.4; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1672" height="941" fill="url(#bg)"/>
+  <text x="836" y="63" text-anchor="middle" class="font title" filter="url(#textShadow)">Failure-State Marginals: Base Semantic IR vs. ECR-Repair</text>
+
+  <text x="285" y="151" text-anchor="middle" class="font heading">Base Semantic IR Pipeline</text>
+  <text x="1323" y="155" text-anchor="middle" class="font heading">ECR-Repair</text>
+
+  <!-- Left marginal states -->
+  <g id="base-pipeline" class="font">
+    <rect x="111" y="182" width="463" height="113" rx="16" class="box"/>
+    <text x="342.5" y="229" text-anchor="middle" class="state">IR invalid / incomplete</text>
+    <text x="342.5" y="268" text-anchor="middle" class="count">219</text>
+
+    <rect x="111" y="315" width="463" height="110" rx="16" class="box"/>
+    <text x="342.5" y="362" text-anchor="middle" class="state">Rank/tie abstain</text>
+    <text x="342.5" y="400" text-anchor="middle" class="count">67</text>
+
+    <rect x="111" y="447" width="463" height="111" rx="16" class="box"/>
+    <text x="342.5" y="495" text-anchor="middle" class="state">Wrong select</text>
+    <text x="342.5" y="533" text-anchor="middle" class="count">12</text>
+
+    <rect x="111" y="579" width="463" height="111" rx="16" class="box"/>
+    <text x="342.5" y="626" text-anchor="middle" class="state">Success</text>
+    <text x="342.5" y="665" text-anchor="middle" class="count">1022</text>
+  </g>
+
+  <!-- Center comparison -->
+  <g id="comparison" class="font">
+    <rect x="729" y="342" width="227" height="185" rx="18" class="box"/>
+    <text x="842.5" y="393" text-anchor="middle" class="center">Aggregate</text>
+    <text x="842.5" y="426" text-anchor="middle" class="center">comparison</text>
+    <text x="842.5" y="459" text-anchor="middle" class="center">(no one-to-one</text>
+    <text x="842.5" y="492" text-anchor="middle" class="center">transition claim)</text>
+
+    <line x1="617" y1="429" x2="700" y2="429" class="arrow-line"/>
+    <polygon points="700,429 681,419 681,439" fill="#000"/>
+    <line x1="1059" y1="429" x2="978" y2="429" class="arrow-line"/>
+    <polygon points="978,429 997,419 997,439" fill="#000"/>
+  </g>
+
+  <!-- Right marginal states -->
+  <g id="ecr-repair" class="font">
+    <rect x="1107" y="184" width="463" height="111" rx="16" class="box"/>
+    <text x="1338.5" y="231" text-anchor="middle" class="state">Rank/tie abstain</text>
+    <text x="1338.5" y="270" text-anchor="middle" class="count">1</text>
+
+    <rect x="1107" y="315" width="463" height="110" rx="16" class="box"/>
+    <text x="1338.5" y="362" text-anchor="middle" class="state">Wrong select</text>
+    <text x="1338.5" y="400" text-anchor="middle" class="count">0</text>
+
+    <rect x="1107" y="447" width="463" height="111" rx="16" class="box"/>
+    <text x="1338.5" y="495" text-anchor="middle" class="state-small">Closure fail after correct select</text>
+    <text x="1338.5" y="533" text-anchor="middle" class="count">0</text>
+
+    <rect x="1107" y="579" width="463" height="111" rx="16" class="box"/>
+    <text x="1338.5" y="626" text-anchor="middle" class="state">Success</text>
+    <text x="1338.5" y="665" text-anchor="middle" class="count">1319</text>
+  </g>
+
+  <!-- Main conclusion box -->
+  <g id="conclusion" class="font">
+    <rect x="135" y="740" width="1406" height="87" fill="#fff" stroke="#000" stroke-width="2.2"/>
+    <text x="838" y="795" text-anchor="middle" class="callout">ECR-Repair reduces selection failures through staged semantic constraints.</text>
+  </g>
+
+  <text x="836" y="896" text-anchor="middle" class="font footnote">
+    Counts are marginal state totals; differences are not interpreted as paired causal recovery transitions.
+  </text>
+</svg>

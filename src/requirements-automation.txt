@@ -1,2 +1,3 @@
 rdflib>=7.0,<8
 owlready2>=0.48,<1
+pypdf>=5.0,<7

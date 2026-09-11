@@ -1,0 +1,55 @@
+{
+  "schema_version": "ecr-ir-gamma-method-freeze-v2",
+  "method_id": "ECR-IR-GAMMA-R2B-V2-WINDOW-RESOLUTION",
+  "status": "FROZEN_FOR_NEW_INDEPENDENT_HOLDOUT_ONLY",
+  "frozen_at_utc": "2026-09-09T00:27:56.201687+00:00",
+  "parent_method_id": "ECR-IR-GAMMA-R2B-V1",
+  "parent_manifest_sha256": "f49bdb89a480dc0bc34069444d957fbf5d77edf6e1bdf991c85c4906af67263d",
+  "development_dataset": "rfc-213-confirmatory-core",
+  "development_result_is_blind": false,
+  "independent_holdout_required": true,
+  "candidate_blind": true,
+  "oracle_blind_during_inference": true,
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_changed": false,
+  "window_resolution": {
+    "zero_matches": "ABSTAIN",
+    "multiple_distinct_canonical_values": "ABSTAIN",
+    "multiple_windows_same_canonical_value": "ACCEPT"
+  },
+  "development_summary_sha256": "b8743d85d5009e4366346ff7f9d20c08355537816fb9873f9c1659dcb60be9fc",
+  "files": [
+    {
+      "path": "method/ecr-ir-gamma/v2-window-resolution-development-protocol.json",
+      "sha256": "6e4130a28da1bb7ff90e562e51fdca26b45e3b2c1bac6c2e2ea5e28de54b1ff8",
+      "bytes": 819
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir_v2.py",
+      "sha256": "292ee27ed9ac6a3835cecb42cce3bf17fac1f73b0bb76d85109efdf7c150fade",
+      "bytes": 2443
+    },
+    {
+      "path": "src/evaluate_rfc213_direct_ir_v2_window_resolution.py",
+      "sha256": "5a9e6905cb17ea4a19914b6188077b1ff09a77fc21d2b4fb9a8270a4b5774a08",
+      "bytes": 9667
+    },
+    {
+      "path": "src/freeze_rfc213_direct_ir_v2_method.py",
+      "sha256": "e4676a03f4ef9923178cd4f15ea571b4acfb25711c0fe9a510b25ad8bbb53e83",
+      "bytes": 5069
+    },
+    {
+      "path": "tests/test_rfc213_direct_repair_ir_v2.py",
+      "sha256": "3412914369835a4d9b92b00611eb38538b807cc614e62a89c339cfc801d48cf3",
+      "bytes": 2687
+    },
+    {
+      "path": "scripts/run_rfc213_direct_ir_v2_development.ps1",
+      "sha256": "3bc5dc28041e5291357057bd14d325fc39eabb807ca69c501e5451cdd9c95dfa",
+      "bytes": 1992
+    }
+  ],
+  "manifest_sha256": "ed250c97d056306ccc43b661ad78face6b607aceff1076cada98afb3ef612b54"
+}

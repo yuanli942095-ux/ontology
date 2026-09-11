@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/ontology-evolution/schema/predicted-repair-ir-v1",
+  "title": "ECR-IR-Gamma Predicted Repair IR v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "decision", "operation", "target", "replacement", "evidence_spans", "confidence"],
+      "properties": {
+        "schema_version": {"const": "predicted-repair-ir-v1"},
+        "decision": {"const": "REPAIR"},
+        "operation": {"const": "UPDATE_LITERAL"},
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["subject_iri", "predicate_iri", "old_value"],
+          "properties": {
+            "subject_iri": {"type": "string", "format": "uri"},
+            "predicate_iri": {"type": "string", "format": "uri"},
+            "old_value": {"$ref": "#/$defs/literal"}
+          }
+        },
+        "replacement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["new_value"],
+          "properties": {"new_value": {"$ref": "#/$defs/literal"}}
+        },
+        "evidence_spans": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "decision", "reason"],
+      "properties": {
+        "schema_version": {"const": "predicted-repair-ir-v1"},
+        "decision": {"enum": ["NO_CHANGE", "ABSTAIN"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  ],
+  "$defs": {
+    "literal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "lexical", "datatype"],
+      "properties": {
+        "kind": {"const": "literal"},
+        "lexical": {"type": "string", "minLength": 1},
+        "datatype": {"type": "string", "format": "uri"}
+      }
+    }
+  }
+}

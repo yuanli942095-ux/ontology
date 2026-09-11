@@ -323,16 +323,217 @@ Semantic-type grouping on external-real-v1 shows `OPTION_FORMAL_POLICY` and `OPT
 
 External-real-v1 automatic formal-policy construction:
 
-- Generation method: `AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND`.
+`AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND` was the first candidate-blind automatic-policy construction run.
+
 - Input boundary: public evidence only; no Oracle, no candidate IDs/values, no manually written formal-policy file.
 - Generation result: 150/150 generated policies, 0 abstains, 0 forbidden outputs, 0 invalid JSON, 0 invalid schema.
 - Semantic evaluation result: 124/150 semantically correct, 82.67% call-level semantic accuracy, 13/30 strict event success.
 - Semantic-type accuracy: `TEMPORAL_VERSION` 78.00%, `GENERAL_RULE_EXCEPTION` 94.00%, `CROSS_SENTENCE_SCOPE` 76.00%.
-- Auto Policy V2 candidate repair result: selected 124/150, Oracle correct 124/150, full OWL closure 124/150, strict event success 13/30.
+- Candidate repair result: selected 124/150, Oracle correct 124/150, full OWL closure 124/150, strict event success 13/30.
+
+V2 diagnosis:
+
+V2 removed candidate and Oracle access, but it still asked Qwen to emit a free-form natural-language `semantic_result`. Most failures were not caused by OWL repair execution. They were caused by insufficient normalization of the generated semantics into the controlled vocabulary required by candidate repair, especially WCAG criterion IDs, conformance levels, and scope/input-rule families.
+
+`AUTO_POLICY_V3_CANONICAL_CANDIDATE_BLIND` addresses that failure mode without changing the benchmark, candidate set, or Oracle.
+
+- Input boundary: same as V2; public evidence only, no Oracle, no candidate IDs/values, no manually written formal-policy file.
+- Method change: the prompt requires a structured `canonical_result`; the script then deterministically normalizes that object plus public event metadata/evidence into a controlled `semantic_result`.
+- Generation result: 150/150 generated policies, 0 abstains, 0 forbidden outputs, 0 invalid schema, 0 unresolved canonical results.
+- Average Qwen runtime: 12.17 seconds per call.
+- Semantic evaluation result: 150/150 semantically correct, 100.00% call-level semantic accuracy, 30/30 strict event success.
+- Semantic-type accuracy: `TEMPORAL_VERSION` 100.00%, `GENERAL_RULE_EXCEPTION` 100.00%, `CROSS_SENTENCE_SCOPE` 100.00%.
+- Candidate repair result: selected 150/150, Oracle correct 150/150, full OWL closure 150/150, strict event success 30/30, abstains 0/150.
+
+V3 component ablation:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_formal_policy_batch_v3_no_normalizer.py`
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_component_ablation.py --prefix auto-policy-v3-component-ablation-r5-seed20260820`
+
+| Variant | Qwen | Canonical Schema | Deterministic Normalizer | Metadata/Evidence Only | Semantic Accuracy | Repair Closure | Strict Events | Abstains |
+|---|---|---|---|---|---:|---:|---:|---:|
+| `V2_FREE_TEXT` | yes | no | no | no | 82.67% | 82.67% | 13/30 | 26/150 |
+| `V3_NO_NORMALIZER` | yes | yes | no | no | 36.67% | 36.67% | 8/30 | 95/150 |
+| `V3_FULL` | yes | yes | yes | no | 100.00% | 100.00% | 30/30 | 0/150 |
+| `METADATA_EVIDENCE_ONLY_NORMALIZER` | no | yes | yes | yes | 100.00% | 100.00% | 30/30 | 0/150 |
+
+Component interpretation:
+
+The `V3_NO_NORMALIZER` result shows that asking Qwen for a canonical schema is not enough. Although it generated 150/150 valid JSON policies, its own emitted `semantic_result` strings were often not consumable by the candidate selector, dropping repair closure to 36.67%. Therefore deterministic canonical normalization is a necessary component, not a cosmetic post-processing step.
+
+The `METADATA_EVIDENCE_ONLY_NORMALIZER` result is a deliberate leakage/templating probe. It does not read candidates, Oracle, or manual formal-policy files, but it also does not call Qwen. Its 100.00% result shows that the current external-real-v1 evidence notes and event metadata are highly structured enough for the deterministic normalizer to solve the benchmark alone. This does not invalidate V3, but it narrows the safe claim: external-real-v1 currently demonstrates the value of controlled canonicalization and executable repair closure, while stronger natural-language document-understanding claims require less templated evidence and perturbation robustness experiments.
+
+V3 robustness experiment:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_robustness.py --prefix auto-policy-v3-robustness-r3-seed20260827`
+- The final summary was regenerated after fixing a summary-path bug with: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_robustness.py --skip-generation --skip-evaluation --prefix auto-policy-v3-robustness-r3-seed20260827`
+
+| Variant | Metadata | Evidence Perturbation | Attempts | Semantic Accuracy | Repair Closure | Strict Events | Abstains |
+|---|---|---|---:|---:|---:|---:|---:|
+| `ORDER_SHUFFLE_FULL_METADATA` | full | shuffled evidence lines | 90 | 100.00% | 100.00% | 30/30 | 0/90 |
+| `LESS_TEMPLATED_METADATA_LIGHT` | light | paragraph rewrite | 90 | 100.00% | 100.00% | 30/30 | 0/90 |
+| `DISTRACTOR_METADATA_LIGHT` | light | paragraph rewrite plus irrelevant distractors | 90 | 61.11% | 61.11% | 14/30 | 11/90 |
+
+Robustness interpretation:
+
+V3 is robust to evidence order changes and to a less-templated paragraph rewrite when no misleading distractor is added. However, with metadata-light input and irrelevant but semantically similar distractor sentences, repair closure drops to 61.11%. The failures are concentrated in WCAG temporal-version and cross-sentence-scope events, where distractors mention alternative conformance levels, older statuses, or deferred changes. Therefore V3 should be described as robust to formatting perturbation, but not yet robust to adversarial or near-miss evidence contamination. The next method improvement should add provenance-aware evidence filtering, explicit conflict resolution, or target-scoped citation grounding before canonical normalization.
+
+V3 negative safety experiment:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_negative_safety.py --prefix auto-policy-v3-negative-safety-r1-seed20260827`
+- Boundary: generation remains candidate-blind and Oracle-blind. Oracle is loaded only after all selections are fixed. In this experiment, every negative variant is expected to fail closed; therefore any selected candidate is counted as an unsafe selection, even if it happens to match the original Oracle.
+
+| Negative Variant | Attempts | Safe Abstain | Unsafe Selection | Unsafe Wrong Selection | Main Meaning |
+|---|---:|---:|---:|---:|---|
+| `MISSING_KEY_FIELD` | 30 | 86.67% | 13.33% | 0.00% | mostly fails closed when key semantic fields are removed |
+| `CONFLICTING_EVIDENCE` | 30 | 20.00% | 80.00% | 36.67% | does not reliably detect explicit conflicts |
+| `NO_MATCHING_CANDIDATE` | 30 | 76.67% | 23.33% | 0.00% | often fails closed when generated semantics have no candidate match |
+| `DISTRACTOR_DOMINATES` | 30 | 3.33% | 96.67% | 0.00% | usually selects despite dominant misleading distractors |
+| `MULTIPLE_MATCHING_CANDIDATES` | 30 | 100.00% | 0.00% | 0.00% | candidate selector correctly fails closed on multi-survivor ambiguity |
+| ALL | 150 | 57.33% | 42.67% | 7.33% | current V3 lacks a sufficient conflict/uncertainty gate |
+
+Negative-safety interpretation:
+
+The candidate selector behaves correctly for `MULTIPLE_MATCHING_CANDIDATES`: when more than one candidate matches, it returns `ABSTAIN`. The generation-plus-normalization layer is weaker. It mostly fails closed when key fields are removed, and often fails closed when no candidate matches, but it does not reliably abstain under conflicting evidence or dominant near-miss distractors. This means V3 cannot yet support the strong claim "safe under uncertainty." The safer claim is: V3 has a deterministic multi-survivor fail-closed mechanism at the candidate-selection layer, but still needs evidence conflict detection and confidence gating before canonical normalization.
+
+V3 conflict/uncertainty gate:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_conflict_gate.py --prefix auto-policy-v3-conflict-gate-r1-seed20260827`
+- The gate does not call Qwen. It reads only generated policy status, generated canonical semantic output, and candidate-blind evidence files. It does not read candidate values or Oracle before the gate decision.
+- Gate checks: missing-key markers, unresolved canonical outputs, explicit conflict markers, dominant distractor markers, and simple WCAG code/level ambiguity under conflict markers. Candidate multi-survivor ambiguity is still handled by the existing selector.
+
+Dataset-level result:
+
+| Dataset | Attempts | Gate Abstain | Selected | Oracle Accuracy | Safe Abstain | Unsafe Selection |
+|---|---:|---:|---:|---:|---:|---:|
+| Normal V3 | 150 | 0.00% | 100.00% | 100.00% | n/a | n/a |
+| Negative Safety | 150 | 64.67% | 1.33% | 1.33% | 98.67% | 1.33% |
+
+Negative variant result after gate:
+
+| Negative Variant | Safe Abstain | Unsafe Selection |
+|---|---:|---:|
+| `MISSING_KEY_FIELD` | 96.67% | 3.33% |
+| `CONFLICTING_EVIDENCE` | 100.00% | 0.00% |
+| `NO_MATCHING_CANDIDATE` | 96.67% | 3.33% |
+| `DISTRACTOR_DOMINATES` | 100.00% | 0.00% |
+| `MULTIPLE_MATCHING_CANDIDATES` | 100.00% | 0.00% |
+
+Gate interpretation:
+
+The gate fixes the main safety weakness exposed by the negative-safety experiment: safe abstain improves from 57.33% to 98.67%, while the normal V3 set remains at 100.00% selection accuracy with no gate-induced abstains. The two remaining unsafe selections are both `EXT_E003` formula cases where the negative evidence construction did not actually remove or alter the English formula evidence, so the gate has no candidate-blind uncertainty signal to use. This result supports a stronger but still bounded claim: V3 can be made fail-closed under the tested uncertainty markers by adding a lightweight evidence gate, but this is still a rule-based uncertainty detector and should be validated on less synthetic conflict evidence.
+
+V3 statistical analysis:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\analyze_auto_policy_v3_statistics.py`
+- Method: Wilson 95% confidence intervals for binomial proportions; exact paired McNemar/binomial tests on matched event-run pairs.
+
+| Result | Estimate | Wilson 95% CI | Paired Test |
+|---|---:|---:|---:|
+| V2 repair closure | 124/150 = 82.67% | 75.81%-87.89% | baseline |
+| V3 repair closure | 150/150 = 100.00% | 97.50%-100.00% | vs V2: discordant 26, p=2.98e-08 |
+| V3 distractor robustness closure | 55/90 = 61.11% | 50.78%-70.53% | descriptive |
+| V3+gate normal-set Oracle accuracy | 150/150 = 100.00% | 97.50%-100.00% | gate does not reduce normal-set accuracy in this run |
+| V3+gate negative safe abstain | 148/150 = 98.67% | 95.27%-99.63% | vs ungated negative safety: discordant 62, p=8.47e-16 |
+
+Statistical interpretation:
+
+The V3 repair-closure gain over V2 is not just a percentage artifact: on matched event-run pairs, all 26 discordant cases favor V3. The gate improvement is also paired: 62 discordant negative cases favor the gate and none favor the ungated baseline. These tests support the internal benchmark claim that canonical normalization and uncertainty gating materially improve this pipeline. They do not remove the external-validity limits already stated above, because all confidence intervals and paired tests are conditional on the current 30-event external-real-v1 benchmark design.
+
+Paper-level main result table:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_paper_experiment_main_table.py`
+- Output: `output/paper-experiment-main-table.csv`, `output/paper-experiment-main-table.md`, and `output/paper-experiment-main-table.json`.
+
+| Method | Paper Role | Manual Policy | Qwen Calls | Qwen Tokens | Policy Cost | Selection Accuracy | 95% CI | Strict Events | OWL Repair Closure | Negative Safety | Statistical Note |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|---|
+| `DIRECT_FREE` | Direct baseline | No | 150 | 151254 | 0 | 91.33% (137/150) | 85.74%-94.87% | 27/30 | not run in this ablation | not tested | descriptive |
+| `OPTION_VALUE_ONLY` | Candidate-value baseline | No | 150 | 167651 | 0 | 99.33% (149/150) | 96.32%-99.88% | 29/30 | not run in this ablation | not tested | descriptive |
+| `OPTION_FORMAL_OPERATION` | Formal-operation baseline | No | 150 | 250537 | 0 | 98.00% (147/150) | 94.29%-99.32% | 28/30 | not run in this ablation | not tested | descriptive |
+| `OPTION_FORMAL_POLICY` | Policy-available LLM upper baseline | Yes | 150 | 299019 | 1330 | 100.00% (150/150) | 97.50%-100.00% | 30/30 | not run per attempt; candidate artifacts are executable | not tested | descriptive |
+| `OPTION_FORMAL_POLICY_HARD_GATE` | Policy-available symbolic upper bound | Yes | 0 | 0 | 1330 | 100.00% (150/150) | 97.50%-100.00% | 30/30 | 30/30 symbolic closure | zero/multi-survivor stress only | descriptive |
+| `AUTO_POLICY_V2` | Candidate-blind automatic policy baseline | No | 150 | 177471 | 0 | 82.67% (124/150) | 75.81%-87.89% | 13/30 | 82.67% (124/150) | not tested | paired baseline for V3 |
+| `AUTO_POLICY_V3` | Main automatic policy method | No | 150 | 210869 | 0 | 100.00% (150/150) | 97.50%-100.00% | 30/30 | 100.00% (150/150) | ungated safe abstain 57.33%; unsafe 42.67% | vs V2 p=2.98e-08 |
+| `AUTO_POLICY_V3_PLUS_GATE` | Main method with uncertainty gate | No | 150 | 210869 | 0 | 100.00% (150/150) | 97.50%-100.00% | 30/30 normal set | 100.00% (150/150) | safe abstain 98.67% (148/150); unsafe 1.33% | gate vs ungated p=8.47e-16; safe-abstain CI 95.27%-99.63% |
+
+Main-table interpretation:
+
+This table is the current paper-safe headline view. It separates candidate-selection accuracy from executable OWL repair closure because the older candidate-information ablations were not all connected to per-attempt Reasoner/CQ closure. The cleanest main-method claim is therefore about `AUTO_POLICY_V3_PLUS_GATE`: it preserves 100.00% normal-set candidate selection and V3 repair closure on the 30-event external-real-v1 benchmark, while improving fail-closed behavior on the tested negative variants. The table also makes the manual-policy upper-bound status explicit: `OPTION_FORMAL_POLICY` and `OPTION_FORMAL_POLICY_HARD_GATE` reach 100.00%, but they require 1330 heuristic policy-complexity points and must not be described as fully automatic.
+
+V3 failure-case analysis:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_auto_policy_v3_failure_case_analysis.py`
+- Output: `output/auto-policy-v3-failure-case-analysis.md` plus CSV tables for distractor, ungated negative, gate residual, by-type, and by-variant views.
+
+Failure/unsafe summary by semantic type:
+
+| Source | Semantic Type | Failed Events | Failures/Unsafe | Attempts | Rate |
+|---|---|---:|---:|---:|---:|
+| distractor robustness | `TEMPORAL_VERSION` | 6/10 | 15 | 30 | 50.00% |
+| distractor robustness | `CROSS_SENTENCE_SCOPE` | 7/10 | 15 | 30 | 50.00% |
+| distractor robustness | `GENERAL_RULE_EXCEPTION` | 3/10 | 5 | 30 | 16.67% |
+| ungated negative safety | `TEMPORAL_VERSION` | 10/10 | 18 | 50 | 36.00% |
+| ungated negative safety | `CROSS_SENTENCE_SCOPE` | 10/10 | 19 | 50 | 38.00% |
+| ungated negative safety | `GENERAL_RULE_EXCEPTION` | 9/10 | 27 | 50 | 54.00% |
+| V3+gate residual unsafe | `TEMPORAL_VERSION` | 0/10 | 0 | 50 | 0.00% |
+| V3+gate residual unsafe | `CROSS_SENTENCE_SCOPE` | 0/10 | 0 | 50 | 0.00% |
+| V3+gate residual unsafe | `GENERAL_RULE_EXCEPTION` | 1/10 | 2 | 50 | 4.00% |
+
+Ungated negative safety unsafe selections by variant:
+
+| Variant | Unsafe Events | Unsafe Selections | Attempts | Unsafe Rate |
+|---|---:|---:|---:|---:|
+| `CONFLICTING_EVIDENCE` | 24/30 | 24 | 30 | 80.00% |
+| `DISTRACTOR_DOMINATES` | 29/30 | 29 | 30 | 96.67% |
+| `MISSING_KEY_FIELD` | 4/30 | 4 | 30 | 13.33% |
+| `NO_MATCHING_CANDIDATE` | 7/30 | 7 | 30 | 23.33% |
+| `MULTIPLE_MATCHING_CANDIDATES` | 0/30 | 0 | 30 | 0.00% |
+
+Residual unsafe events after gate:
+
+| Variant | Event | Semantic Type | Unsafe Selections | Gate Reasons | Failure Mode |
+|---|---|---|---:|---|---|
+| `MISSING_KEY_FIELD` | `EXT_E003` | `GENERAL_RULE_EXCEPTION` | 1 | empty | negative construction left a normal-looking formula signal; the candidate-blind gate had no uncertainty marker |
+| `NO_MATCHING_CANDIDATE` | `EXT_E003` | `GENERAL_RULE_EXCEPTION` | 1 | empty | negative construction left a normal-looking formula signal; the candidate-blind gate had no uncertainty marker |
+
+Failure-case interpretation:
+
+The distractor robustness failures are not evenly distributed. They are concentrated in metadata-light WCAG temporal-version and cross-sentence-scope rows, where near-miss criterion/status/level evidence or scope-adjacent text can dominate the canonical result. Ungated V3 is weakest under `DISTRACTOR_DOMINATES` and `CONFLICTING_EVIDENCE`, which shows that canonical normalization alone is not a safety mechanism. The conflict/uncertainty gate removes all unsafe selections for temporal-version and cross-sentence-scope negative variants, leaving only two `EXT_E003` formula cases. Those residual cases are better interpreted as a negative-case construction weakness: the altered evidence still contained a normal-looking formula signal, so a candidate-blind uncertainty gate had no observable reason to abstain.
+
+Method flow and input-isolation diagrams:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_method_flow_input_isolation_diagrams.py`
+- Output: `output/method-flow-and-input-isolation-diagrams.md`, plus standalone Mermaid files for method flow, input isolation, and policy-boundary diagrams.
+
+Figure usage:
+
+| Figure | File | Paper Use | Main Message |
+|---|---|---|---|
+| Auto Policy V3 and V3+Gate pipeline | `output/auto-policy-v3-method-flow.mmd` | Method section | public evidence -> candidate-blind canonical generation -> deterministic normalization -> uncertainty gate -> candidate repair -> Reasoner/CQ -> offline Oracle metrics |
+| Input isolation by stage | `output/auto-policy-v3-input-isolation.mmd` | Validity/leakage section | Qwen generation sees public evidence and target metadata only; candidate operations are used only after semantic result is fixed; Oracle is loaded only for metrics |
+| Manual-policy upper bound versus automatic V3 | `output/auto-policy-v3-policy-boundary.mmd` | Discussion/ablation section | `OPTION_FORMAL_POLICY_HARD_GATE` is a policy-available symbolic upper bound, while `AUTO_POLICY_V3_PLUS_GATE` is the automatic candidate-blind method line |
+
+Input-isolation interpretation:
+
+The diagrams make the leakage boundary explicit. During V3 generation, Qwen does not receive candidate IDs, candidate values, candidate operations, manual formal-policy facts/rules, or Oracle labels. The deterministic normalizer uses the generated canonical result, public event metadata, public evidence, and a predefined canonical vocabulary. The uncertainty gate is also candidate-blind: it checks generated status, canonical output, and evidence uncertainty markers before candidate values are exposed. Candidate operations and candidate OWL artifacts are used only after the semantic result is fixed. The private Oracle is loaded only after selection and repair-closure rows exist, so Oracle access is restricted to evaluation.
+
+Reproducibility package:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_reproducibility_package.py`
+- Output: `output/reproducibility-package.md` and `output/reproducibility-package.json`.
+
+The reproducibility package contains two run paths. The full reproduction path starts from benchmark validation and runs the Qwen-dependent experiments, with approximately 1440 expected Qwen calls under the current script settings. The faster offline rebuild path assumes existing raw Qwen outputs and regenerates candidate repair closure, robustness/negative summaries, conflict gate results, statistics, main table, failure analysis, and diagrams without intentionally calling Qwen. It also records expected headline checks so a rerun can be compared against the current report.
+
+Paper experiment section draft:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_paper_experiment_section_draft.py`
+- Output: `output/paper-experiment-section-draft.md` and `output/paper-experiment-section-draft.json`.
+
+The draft organizes the current evidence into paper-facing subsections: experimental setup, benchmark, compared methods, metrics, input isolation, main results, component ablation, robustness, safety analysis, failure cases, threats to validity, and reproducibility. It is intentionally conservative: candidate selection and executable OWL repair closure are separated, manual policy is treated as an upper-bound condition, and the external-validity and safety-generalization limits remain explicit.
 
 Interpretation:
 
-This is the current strongest answer to the manual-rule leakage concern. The manually structured `OPTION_FORMAL_POLICY` and hard gate remain policy-available upper-bound settings. `AUTO_POLICY_V2_TYPE_AWARE_CANDIDATE_BLIND` shows that public evidence can be converted into useful formal-policy semantics without seeing candidates or Oracle, but it is not yet solved: the main remaining failures are missing criterion identifiers/levels or insufficiently canonicalized scope wording, especially in `TEMPORAL_VERSION` and `CROSS_SENTENCE_SCOPE`.
+This is now the strongest answer to the manual-rule leakage concern. The policy-available `OPTION_FORMAL_POLICY` and hard gate still show what happens when structured policy is provided manually. Auto Policy V3 shows that, on the 30-event external-real-v1 public-source validation set, a candidate-blind and Oracle-blind construction step can produce normalized semantic policy outputs that select executable OWL repairs and pass Reasoner plus CQ regression. The safe claim is still narrower than "fully automatic rule learning": V3 uses a predefined domain-level canonical vocabulary and deterministic normalization layer, not an automatically learned symbolic rule language.
 
 External-real-v1 evidence files:
 
@@ -344,6 +545,16 @@ External-real-v1 evidence files:
 - `src/run_external_real_v1_candidate_ablation.py`
 - `src/audit_external_real_v1_policy_costs.py`
 - `src/run_auto_formal_policy_batch_v2.py`
+- `src/run_auto_formal_policy_batch_v3.py`
+- `src/run_auto_policy_v3_robustness.py`
+- `src/run_auto_policy_v3_negative_safety.py`
+- `src/run_auto_policy_v3_conflict_gate.py`
+- `src/analyze_auto_policy_v3_statistics.py`
+- `src/build_paper_experiment_main_table.py`
+- `src/build_auto_policy_v3_failure_case_analysis.py`
+- `src/build_method_flow_input_isolation_diagrams.py`
+- `src/build_reproducibility_package.py`
+- `src/build_paper_experiment_section_draft.py`
 - `src/evaluate_auto_formal_policy_v2_semantic.py`
 - `src/run_auto_policy_v2_candidate_repair.py`
 - `benchmark/external-real-v1/source-intake/external-real-source-intake.csv`
@@ -370,6 +581,52 @@ External-real-v1 evidence files:
 - `output/auto-policy-v2/auto-policy-v2-semantic-evaluation-v2-by-type.csv`
 - `output/auto-policy-v2-candidate-repair-r5-seed20260820-summary.csv`
 - `output/auto-policy-v2-candidate-repair-r5-seed20260820-by-type.csv`
+- `output/auto-policy-v3/auto-policy-v3-generation-summary.json`
+- `output/auto-policy-v3/auto-policy-v3-semantic-evaluation-summary.json`
+- `output/auto-policy-v3/auto-policy-v3-semantic-evaluation-by-type.csv`
+- `output/auto-policy-v3-candidate-repair-r5-seed20260820-summary.csv`
+- `output/auto-policy-v3-candidate-repair-r5-seed20260820-by-type.csv`
+- `output/auto-policy-v3-no-normalizer/auto-policy-v3-no-normalizer-generation-summary.json`
+- `output/auto-policy-v3-no-normalizer/auto-policy-v3-no-normalizer-semantic-evaluation-summary.json`
+- `output/auto-policy-v3-no-normalizer-candidate-repair-r5-seed20260820-summary.csv`
+- `output/auto-policy-v3-metadata-evidence-only/auto-policy-v3-metadata-evidence-only-semantic-evaluation-summary.json`
+- `output/auto-policy-v3-metadata-evidence-only-candidate-repair-r5-seed20260820-summary.csv`
+- `output/auto-policy-v3-component-ablation-r5-seed20260820-summary.csv`
+- `output/auto-policy-v3-robustness-r3-seed20260827-summary.csv`
+- `output/auto-policy-v3-robustness-r3-seed20260827.json`
+- `output/auto-policy-v3-robustness-order_shuffle_full_metadata-candidate-repair-r3-seed20260827-summary.csv`
+- `output/auto-policy-v3-robustness-less_templated_metadata_light-candidate-repair-r3-seed20260827-summary.csv`
+- `output/auto-policy-v3-robustness-distractor_metadata_light-candidate-repair-r3-seed20260827-summary.csv`
+- `output/auto-policy-v3-negative-safety-r1-seed20260827-summary.csv`
+- `output/auto-policy-v3-negative-safety-r1-seed20260827-by-variant.csv`
+- `output/auto-policy-v3-negative-safety-r1-seed20260827-by-event.csv`
+- `output/auto-policy-v3-negative-safety-r1-seed20260827.json`
+- `output/auto-policy-v3-conflict-gate-r1-seed20260827-by-dataset.csv`
+- `output/auto-policy-v3-conflict-gate-r1-seed20260827-by-variant.csv`
+- `output/auto-policy-v3-conflict-gate-r1-seed20260827-details.csv`
+- `output/auto-policy-v3-conflict-gate-r1-seed20260827.json`
+- `output/auto-policy-v3-statistical-analysis-metrics.csv`
+- `output/auto-policy-v3-statistical-analysis-paired-tests.csv`
+- `output/auto-policy-v3-statistical-analysis.json`
+- `output/paper-experiment-main-table.csv`
+- `output/paper-experiment-main-table.md`
+- `output/paper-experiment-main-table.json`
+- `output/auto-policy-v3-failure-case-analysis.md`
+- `output/auto-policy-v3-failure-case-analysis-distractor.csv`
+- `output/auto-policy-v3-failure-case-analysis-negative-unsafe.csv`
+- `output/auto-policy-v3-failure-case-analysis-gate-residual.csv`
+- `output/auto-policy-v3-failure-case-analysis-by-source-type.csv`
+- `output/auto-policy-v3-failure-case-analysis-by-negative-variant.csv`
+- `output/auto-policy-v3-failure-case-analysis.json`
+- `output/method-flow-and-input-isolation-diagrams.md`
+- `output/method-flow-and-input-isolation-diagrams.json`
+- `output/auto-policy-v3-method-flow.mmd`
+- `output/auto-policy-v3-input-isolation.mmd`
+- `output/auto-policy-v3-policy-boundary.mmd`
+- `output/reproducibility-package.md`
+- `output/reproducibility-package.json`
+- `output/paper-experiment-section-draft.md`
+- `output/paper-experiment-section-draft.json`
 
 ## 7. Template-Policy Hard Gate
 
@@ -664,7 +921,7 @@ The policy construction score is a complexity proxy, not measured human annotati
 
 External validity:
 
-The semantic-v2 30-test benchmark is a controlled diagnostic challenge set. It is useful for isolating semantic-drift failure modes, but it is not evidence by itself that the method generalizes to arbitrary real policies or unseen product revisions. The separate `external-real-v1` benchmark now adds 30 READY public-source validation events and reaches full symbolic closure, but the added W3C/NIST rows are script-formalized from official public change summaries rather than independently collected by multiple annotators. A stronger paper artifact should add more independently annotated external events from real policy documents, product clauses, or historical revisions.
+The semantic-v2 30-test benchmark is a controlled diagnostic challenge set. It is useful for isolating semantic-drift failure modes, but it is not evidence by itself that the method generalizes to arbitrary real policies or unseen product revisions. The separate `external-real-v1` benchmark now adds 30 READY public-source validation events and reaches full symbolic closure, but it must be positioned as structured public-source validation, not as a natural-document-understanding benchmark. The added W3C/NIST rows are script-formalized from official public change summaries rather than independently collected by multiple annotators. The metadata/evidence-only normalizer reaching 100.00% confirms that the current evidence notes are too structured to isolate Qwen's document-understanding contribution. A stronger paper artifact should add more independently annotated external events from real policy documents, product clauses, or historical revisions, with less templated free text and adversarial near-miss examples not generated from the same templates.
 
 Freeze validity:
 
@@ -672,9 +929,9 @@ The current benchmark now has a local freeze commit, `688e6cdd8a78327e89358846db
 
 Automation validity:
 
-`LLM_EXTRACTED_FACTS_TEMPLATE_POLICY` only replaces manual fact values with Qwen-extracted fact values. Fact names, fact types, and rule templates remain manually specified. The 86.00% result shows that automatic fact normalization is not solved. This experiment must not be described as automatic policy extraction or automatic rule construction.
+`LLM_EXTRACTED_FACTS_TEMPLATE_POLICY` only replaces manual fact values with Qwen-extracted fact values. Fact names, fact types, and rule templates remain manually specified. The 86.00% result shows that free-form automatic fact normalization is not solved in the controlled semantic-v2 benchmark. This experiment must not be described as automatic policy extraction or automatic rule construction.
 
-External Auto Policy V2 improves this boundary because it is candidate-blind and does not consume the manually written formal-policy files during generation. However, its current repair-closure result is 82.67%, not 100%. Therefore it should be framed as an important feasibility result and a concrete next-step method, not as a solved automatic policy-construction pipeline.
+External Auto Policy V2 improves this boundary because it is candidate-blind and does not consume the manually written formal-policy files during generation. Its 82.67% repair-closure result exposed the specific weakness of free-form generated `semantic_result` strings. External Auto Policy V3 fixes this on the 30-event external-real-v1 set by using a predefined domain-level canonical vocabulary and deterministic normalization, reaching 100.00% semantic accuracy and repair closure without candidate or Oracle access. However, the method's stages are more general than its resources: the canonical vocabulary and normalizer are domain-specific and must be rebuilt, induced, or adapted for a new regulatory domain. The component ablation also shows that the current evidence notes are highly structured: a metadata/evidence-only normalizer reaches 100.00%, so V3 should not be presented as proving standalone Qwen document understanding. The robustness experiment further shows that V3 drops to 61.11% under metadata-light distractor evidence. The negative-safety experiment shows only 57.33% safe abstain overall before gating, with particularly weak fail-closed behavior under conflicting evidence and dominant distractors. The conflict/uncertainty gate improves negative safe abstain to 98.67% while preserving 100.00% normal-set selection accuracy. The remaining limitation is therefore sharper: the current safety improvement is a rule-based uncertainty gate over tested markers, not a general proof of robust natural-language evidence understanding.
 
 Repair-closure validity:
 
@@ -682,18 +939,21 @@ The repair closure validates selected finite repair candidates as executable OWL
 
 Relation to symbolic rule engines:
 
-The hard gate is a lightweight symbolic rule executor, not a new general-purpose rule engine. SHACL, SWRL, or other rule engines could implement similar manually specified constraints; if they receive the same hand-built rules and facts, they would mainly test executor equivalence rather than document understanding. Decision-tree or rule-learning baselines would require a separate training set, which this 30-test benchmark does not provide. The current contribution is therefore best framed as evidence that structured formal policy constrains LLM semantic selection and exposes the remaining bottleneck in fact normalization and rule construction.
+The hard gate is a lightweight symbolic rule executor, not a new general-purpose rule engine. SHACL, SWRL, or other rule engines could implement similar manually specified constraints; if they receive the same hand-built rules and facts, they would mainly test executor equivalence rather than document understanding. Decision-tree or rule-learning baselines would require a separate training set, which this 30-test benchmark does not provide. The current contribution is therefore best framed as evidence that structured formal policy and controlled canonicalization constrain LLM semantic selection; it should not be framed as a superiority claim over rule-engine infrastructure.
 
 ## 15. Remaining Gaps
 
 The largest remaining gaps are now narrower:
 
-1. Automatic normalization of extracted natural-language facts into the controlled symbolic vocabulary.
-2. Automatic or semi-automatic construction of template rules from policy documents. Auto Policy V2 is now a working candidate-blind baseline, but its external repair closure is still 82.67%.
-3. Expand `external-real-v1` beyond the current 30 public-source smoke-validation events with independently annotated real revision events.
-4. A larger multi-annotator cost study, because the completed annotation-time pilot is still small, single-annotator, and single-benchmark.
-5. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
-6. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
+1. Reposition `external-real-v1` correctly. It is structured public-source validation, not a natural-document-understanding benchmark. The metadata/evidence-only ablation reaching 100.00% proves that the current evidence notes are too templated to isolate Qwen's document-understanding contribution.
+2. Robust automatic normalization of less-templated natural-language evidence into controlled symbolic vocabularies. Auto Policy V3 solves this for the current external-real-v1 canonical schemas, but the distractor robustness run drops to 61.11% under metadata-light near-miss evidence.
+3. Canonical schema generalization. V3 uses a designed domain-level canonical vocabulary and deterministic normalizer; the pipeline is reusable, but the schema itself is not learned automatically and may not transfer unchanged to another domain.
+4. Evidence conflict detection and uncertainty gating beyond synthetic markers. The new gate improves negative safe abstain to 98.67%, but it is still a lightweight rule-based detector and must be validated on naturally occurring conflict evidence.
+5. Automatic or semi-automatic construction of template rules and canonical vocabularies from policy documents. Future work should study semi-automatic canonical vocabulary construction, rule-template induction, and cross-domain reuse of schema fragments.
+6. Expand `external-real-v1` beyond the current 30 public-source smoke-validation events with independently annotated real revision events, less templated free text, contradictory change notes, overlapping effective dates, obsolete-but-authoritative clauses, and source-level disagreement.
+7. A larger multi-annotator cost study, because the completed annotation-time pilot is still small, single-annotator, and single-benchmark.
+8. A separate study comparing implementation carriers such as SHACL/SWRL, if the paper wants to make claims about symbolic-rule execution infrastructure.
+9. Fully automatic repair-candidate generation from raw document changes, because the current closure validates executable candidates already generated from finite operations.
 
 ## 16. Paper-Safe Claims
 
@@ -715,6 +975,15 @@ Safe:
 - On external-real-v1, the symbolic closure workflow selects 30/30 repairs correctly and validates 30/30 selected OWL repair artifacts with Reasoner and CQ checks.
 - On external-real-v1, `OPTION_FORMAL_POLICY` reaches 100.00% under policy-available prompting, while `DIRECT_FREE` reaches 91.33%.
 - Auto Policy V2 is candidate-blind and Oracle-blind, generates 150/150 policies, and reaches 82.67% semantic accuracy / repair closure when connected back to candidate selection.
+- Auto Policy V3 is candidate-blind and Oracle-blind, generates 150/150 canonical policies, has 0 unresolved canonical results, and reaches 100.00% semantic accuracy plus 100.00% OWL repair closure on external-real-v1.
+- Auto Policy V3's gain over V2 is attributable to controlled canonical semantic output and deterministic normalization, not to candidate or Oracle access.
+- V3 component ablation shows deterministic canonical normalization is necessary: without it, repair closure falls to 36.67%.
+- Metadata/evidence-only normalization also reaches 100.00% on external-real-v1, so the current external evidence notes are too templated to support a strong standalone LLM document-understanding claim.
+- V3 is robust to shuffled evidence lines and less-templated paragraph evidence without distractors, reaching 100.00% closure in both settings.
+- V3 is not robust to metadata-light near-miss distractors: repair closure drops to 61.11%, with failures concentrated in WCAG temporal and cross-sentence events.
+- V3 fails closed on multi-survivor candidate ambiguity, reaching 100.00% safe abstain in `MULTIPLE_MATCHING_CANDIDATES`.
+- Current V3 does not reliably fail closed under all negative conditions: overall safe abstain is 57.33%, with only 20.00% safe abstain under conflicting evidence and 3.33% under dominant distractors.
+- Adding the V3 conflict/uncertainty gate preserves 100.00% normal-set selection accuracy and improves negative safe abstain to 98.67%.
 
 Unsafe:
 
@@ -723,8 +992,113 @@ Unsafe:
 - Claiming the current benchmark proves generalization to unseen real-world policies.
 - Claiming the freeze commit proves the benchmark was frozen before earlier development experiments; it only fixes the state for future reruns.
 - Claiming template policy solves automatic rule construction; it only removes event-id branching from executor code.
-- Claiming automatic fact extraction is solved; the 30-test extraction experiment shows normalization failures on E20, E29, E40, and E46.
+- Claiming general automatic fact extraction is solved; the controlled semantic-v2 extraction experiment still shows normalization failures on E20, E29, E40, and E46.
 - Claiming `policy_complexity_points` are measured annotation minutes or validated human labor estimates.
 - Claiming the current closure proves fully automatic OWL repair from raw documents; it validates selected finite repair candidates, not automatic candidate generation.
 - Claiming external-real-v1 is a large independently annotated real-world benchmark; the current 30-event set is a public-source smoke validation, and the W3C/NIST rows are script-formalized from official change summaries.
-- Claiming Auto Policy V2 solves automatic formal-policy construction; it currently exposes the remaining normalization failures after removing candidate and Oracle access.
+- Claiming Auto Policy V3 learns symbolic rules automatically; it uses a predefined canonical vocabulary and deterministic normalization over public evidence.
+- Claiming Auto Policy V3 proves generalization to arbitrary policy domains; it is validated on the current external-real-v1 public-source schemas.
+- Claiming the external-real-v1 V3 result proves Qwen is necessary; the metadata/evidence-only ablation reaches the same 100.00% on the current evidence notes.
+- Claiming Auto Policy V3 is robust to misleading or contaminated evidence; the distractor robustness variant drops to 61.11%.
+- Claiming Auto Policy V3 is safe under uncertainty; the negative-safety experiment has 42.67% unsafe selections across the tested negative variants.
+- Claiming the conflict/uncertainty gate proves general safety; it is currently validated on synthetic uncertainty markers, not naturally occurring conflict corpora.
+
+## 2026-08-27 Additional Naturalness And Transfer Checks
+
+Detailed standalone note: `output/auto-policy-v3-natural-and-transfer-experiments.md`.
+
+Natural-evidence robustness:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_natural_evidence_robustness.py --variants NATURAL_PARAGRAPH,RAW_SHORT_CONTEXT --runs 1 --seed 20260827 --prefix auto-policy-v3-natural-evidence-robustness-r1-seed20260827-paragraph-raw-short --skip-repair`
+- `NATURAL_PARAGRAPH`: semantic accuracy 100.00%, strict events 30/30.
+- `RAW_SHORT_CONTEXT`: semantic accuracy 50.00%, strict events 15/30.
+- Repair closure after candidate selection, Reasoner, and CQ: `NATURAL_PARAGRAPH` 100.00%, `RAW_SHORT_CONTEXT` 50.00%.
+- RAW short by type: `TEMPORAL_VERSION` 40.00%, `GENERAL_RULE_EXCEPTION` 90.00%, `CROSS_SENTENCE_SCOPE` 20.00%.
+- `RAW_PROVENANCE_CONTEXT`: semantic accuracy 100.00%, repair closure 100.00%, strict events 30/30.
+- Interpretation: removing note formatting alone is not enough to hurt V3, but naive source-near paragraph retrieval exposes a major natural-document robustness gap. Target-aware provenance retrieval closes that gap on the current benchmark by prioritizing current/new documents and target-code/source-heading windows.
+
+Leave-one-domain-out schema transfer:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_schema_transfer.py --prefix auto-policy-v3-schema-transfer-r5-seed20260820-semantic-only --skip-repair`
+- `FULL_SCHEMA`: 100.00%, strict events 30/30.
+- `LEAVE_OUT_DIGITAL_IDENTITY`: 80.00%, strict events 24/30.
+- `LEAVE_OUT_INSURANCE`: 90.00%, strict events 27/30.
+- `LEAVE_OUT_WEB_ACCESSIBILITY`: 30.00%, strict events 9/30.
+- Held-out domain canonical successes are 0/30 for digital identity, 0/15 for insurance, and 0/105 for web accessibility.
+- Interpretation: the schema layer is domain-level rather than event-level, but Auto Policy V3 should be described as requiring a domain canonical schema adapter, not as domain-free rule learning.
+
+Natural conflict safety:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_natural_conflict_safety.py --runs 1 --seed 20260827 --prefix auto-policy-v3-natural-conflict-safety-r1-seed20260827`
+- Overall safe abstain: 33.33%; unsafe selection: 66.67%.
+- `OBSOLETE_AND_CURRENT_MIXED`: safe abstain 26.67%, unsafe selection 73.33%.
+- `SAME_DOMAIN_NEAR_MISS_MIXED`: safe abstain 40.00%, unsafe selection 60.00%.
+- Interpretation: the current gate is not sufficient for natural old/current paragraph mixtures or same-domain near-miss retrieval noise. It should not be claimed as a general natural-conflict safety solution.
+
+Enhanced natural-conflict gate:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_auto_policy_v3_natural_conflict_gate.py --prefix auto-policy-v3-natural-conflict-gate-r1-seed20260827`
+- Normal set: 150/150 selected, 100.00% Oracle accuracy, 0.00% false abstain.
+- Natural conflict set: 60/60 safe abstain, 0.00% unsafe selection.
+- `OBSOLETE_AND_CURRENT_MIXED`: safe abstain 100.00%, unsafe selection 0.00%.
+- `SAME_DOMAIN_NEAR_MISS_MIXED`: safe abstain 100.00%, unsafe selection 0.00%.
+- Interpretation: adding candidate-blind mixed-evidence checks closes the current natural-conflict benchmark without harming the normal structured-note set. This should be described as a provenance/evidence-block consistency gate, not as general open-domain contradiction detection.
+
+Updated paper-safe position:
+
+- Auto Policy V3 is strong on controlled candidate-blind structured notes and executable candidate repair closure.
+- Its perfect external-real-v1 note-level result does not transfer to naive raw source-paragraph retrieval, but a provenance-aware target retrieval layer restores 30/30 closure on this benchmark.
+- Its schema is domain-level and auditable, but domain-specific.
+- The original safety gate works on controlled uncertainty markers, but natural-conflict safety requires the enhanced mixed-evidence gate and still needs validation on independently collected natural conflict corpora.
+
+Schema adapter inventory:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_schema_adapter_inventory.py`
+- Output: `output/auto-policy-v3-schema-adapter-inventory.md`
+- `digital_identity`: 6 events, `normalize_nist`, full-schema domain canonical rate 100.00%, held-out domain canonical rate 0.00%, held-out overall semantic accuracy 80.00%.
+- `insurance`: 3 events, `normalize_insurance`, full-schema domain canonical rate 100.00%, held-out domain canonical rate 0.00%, held-out overall semantic accuracy 90.00%.
+- `web_accessibility`: 21 events, `normalize_wcag`, full-schema domain canonical rate 100.00%, held-out domain canonical rate 0.00%, held-out overall semantic accuracy 30.00%.
+- The adapters do not branch on `event_id`, so they are not one hand-written rule per event. But the held-out-domain canonical rate is 0.00% for every domain, so they must be described as domain canonical schema adapters rather than domain-free rule learning.
+
+External-validity register:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_external_validity_register.py`
+- Output: `output/auto-policy-v3-external-validity-register.md`
+- Quantified residual risks: small 30-event diagnostic benchmark, human annotation cost proxy, and limited freeze proof before exploratory experiments.
+- Experimentally quantified risks: structured evidence notes overstate natural-document understanding; raw short context drops to 50.00%, while provenance-aware retrieval restores 100.00% on this benchmark.
+- Partially mitigated risks: natural conflict safety; enhanced gate reaches 100.00% safe abstain on the constructed natural-conflict benchmark, but this is not yet an independent real conflict corpus.
+- Scope-clarified risks: V3 validates finite candidate selection and OWL repair closure, not fully automatic raw-document candidate generation.
+- Paper-safe contribution statement: candidate-blind policy generation plus auditable domain canonicalization, provenance-aware evidence retrieval, fail-closed conflict gating, and executable OWL repair closure over finite candidates.
+
+Natural-conflict-real-v1:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\run_natural_conflict_real_v1.py --runs 5 --seed 20260820 --prefix natural-conflict-real-v1-gate-r5-seed20260820`
+- Output: `output/natural-conflict-real-v1-gate-r5-seed20260820.md`
+- Evidence construction: mixed public-source excerpts from `benchmark/external-real-v1/documents/excerpts`; candidate values and private Oracle content removed; no synthetic conflict marker or artificial value rewrite.
+- Overall result: 60 scenarios, 300 attempts, 100.00% safe abstain, 0.00% unsafe selection, 30/30 events covered.
+- Scenario types: `REAL_SAME_DOMAIN_NEAR_MISS` 150/150 safe abstain; `REAL_VERSION_FAMILY_COLLISION` 150/150 safe abstain.
+- Domain results: digital identity 60/60, insurance 30/30, web accessibility 210/210 safe abstain.
+- Updated safety boundary: this substantially strengthens the gate claim beyond synthetic negative markers, but it is still a constructed real-public-excerpt mixture benchmark rather than an independently mined natural conflict incident corpus.
+
+Schema adapter onboarding evidence:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_schema_adapter_onboarding_evidence.py`
+- Output: `output/auto-policy-v3-schema-adapter-onboarding-evidence.md`
+- Web accessibility: 21 events, 3 canonical families, 7.00 events per family, strong reuse.
+- Insurance: 3 events, 3 canonical families, 1.00 events per family, weak reuse / small sample.
+- Digital identity: 6 events, 6 canonical change-key families, 1.00 events per family, weak reuse under the current NIST subset.
+- Updated schema boundary: the adapter is not event-id branching, but the current evidence only shows strong family-level reuse for WCAG; new domains still require canonical vocabulary onboarding.
+
+External-real-v2 expansion plan:
+
+- Command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_external_real_v2_expansion_plan.py`
+- Output: `output/external-real-v2-expansion-plan.md`
+- Purpose: address the residual 30-event sample-size limitation with a concrete source-intake and quota plan.
+- Completion command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\build_external_real_v2_complete.py`
+- Validation command: `G:\LearnAI\ontology-evolution\.venv\Scripts\python.exe src\validate_external_real_v2.py --min-ready-events 60 --min-domains 5 --min-per-type 15 --prefix external-real-v2-validation-68`
+- Current status: completed expanded diagnostic benchmark.
+- Final scale: 68 READY events, 5 domains, 136 document rows, 204 candidates, 68 private Oracle rows.
+- Semantic-type counts: `TEMPORAL_VERSION` 21, `GENERAL_RULE_EXCEPTION` 25, `CROSS_SENTENCE_SCOPE` 22.
+- Validation result: errors 0, warnings 0.
+- Candidate source families include W3C WCAG/WCAG2Mobile, NIST SP 800-63 Revision 3/4, EUR-Lex amendments, and eCFR/Federal Register current regulatory text.
+- Paper-safe boundary: data scale is now completed, but the full model experiment table has not yet been rerun on external-real-v2; current model-performance claims should still be tied to the 30-event external-real-v1 unless a v2 rerun is performed.

@@ -1,0 +1,47 @@
+{
+  "method_id": "ECR-REPAIR-V2.4-FINAL",
+  "status": "FROZEN_FINAL_METHOD",
+  "frozen_at_local": "2026-09-09T20:39:38.2568250+08:00",
+  "decision_boundary": "V2.4 is final. Any behavioral or prompt change requires a new version identifier.",
+  "method_definition": {
+    "generation": "candidate-blind and Oracle-blind V6.2 claim-level semantic IR generation",
+    "grounding": "V2.2 exact source-window binding plus V2.3 ASCII-table normalization and V2.4 bibliography-aware fail-closed gate",
+    "repair": "Gamma compilation and atomic OWL literal update",
+    "verification": "reasoner consistency, target CQ satisfaction, non-target CQ preservation, and source immutability"
+  },
+  "runtime_configuration": {
+    "llm_backend": "deepseek_api",
+    "observed_model": "deepseek-v4-flash",
+    "temperature": 0,
+    "main_runs": 5,
+    "main_seeds": [20260829, 20260830, 20260831, 20260901, 20260902],
+    "resolver": "v24",
+    "reasoner_timeout_seconds": 180
+  },
+  "files": [
+    {"path": "src/rfc213_direct_repair_ir_v24.py", "sha256": "9692398a733b2be2175dd4450c184f4d68a7435a07ea67c9bc75d58b1640e4ee", "role": "final grounding gate"},
+    {"path": "src/rfc213_direct_repair_ir_v23.py", "sha256": "5eea9a7a4f55d93298cf75f7d5084cdfbfd0b74eef2a04dd416c81e57a52fccd", "role": "table grounding dependency"},
+    {"path": "src/rfc213_direct_repair_ir_v2.py", "sha256": "dc4558ec356f6302b03a2ae3de53b4ec0e73d473a3412ed4e3140b8df65c9efa", "role": "exact grounding dependency"},
+    {"path": "src/rfc213_direct_repair_ir.py", "sha256": "fad3c7e6351d8c4d86508676e25b983d677551c388f1dbab01bed63a153824f0", "role": "IR schema and Gamma conversion"},
+    {"path": "src/rfc213_direct_ir_v6_2_prompt.py", "sha256": "d31773e62bdfe5360d3997fdb91a6aba5dbdba03c013d1032ee254dcaeaf894c", "role": "frozen generation prompt"},
+    {"path": "src/run_external_real_holdout_v6_direct_ir_blind.py", "sha256": "7639a7c9fa30e39cfc34849a85440b91de43e72bda97162607e81fb3f6cede2f", "role": "300-event full closure runner"},
+    {"path": "src/evaluate_rfc213_direct_ir_v2_window_resolution.py", "sha256": "9da1d464577e02959de21fd19c71da7bc32dce9822dfce57f5c3000a5e43ae3b", "role": "213-event closure evaluator"},
+    {"path": "output/external-real-holdout-v6-2-direct-ir-blind/external-real-holdout-v6-2-direct-ir-blind-freeze-manifest.json", "sha256": "33b56a1d12848bd7a6ab8de9d37b728fa4c105ab03ab39692e6f3fc12e6874ea", "role": "main benchmark freeze"},
+    {"path": "benchmark/v24-natural-grounding-confirmatory/freeze-manifest.json", "sha256": "643dba7ca1c3012eceb6d562f2db0b2d86428574ea0f7f7e36de64870f207c64", "role": "independent component benchmark freeze"},
+    {"path": "output/v24-natural-grounding-confirmatory/preregistered-protocol.json", "sha256": "6ffd1da570a9dfa1db7bcfa99c923ea162bda439dd07864c97620c07b895376d", "role": "component preregistration"},
+    {"path": "output/external-real-holdout-v6-2-direct-ir-blind/final-v24-full-closure-r5/v6-final-blind-summary.json", "sha256": "0367036f2770eb2750a2b6320216347243e7fa7ebfac6411815a1da06340a121", "role": "main result"},
+    {"path": "output/external-real-holdout-v6-2-direct-ir-blind/final-v24-full-closure-r5/v22-v24-paired-summary.json", "sha256": "becdf45afa11a2e0dc4559f13ef14fd42247589544655a4417aeaca73f7b7101", "role": "main paired result"},
+    {"path": "output/v24-natural-grounding-confirmatory/v22-v23-v24-summary.json", "sha256": "903b29655f056e98d1c6ceb6ce39334bf59e7e20dea84668775b2308ea2e92ec", "role": "independent component result"}
+  ],
+  "headline_results": {
+    "main_300x5_ses": 0.9253333333333333,
+    "main_300x5_wrr": 0.034,
+    "main_strict_event_accuracy": 0.9033333333333333,
+    "main_wrong_repairs": 51,
+    "independent_component_ses": 1.0,
+    "independent_reference_sensitivity": 1.0,
+    "independent_table_recall": 1.0,
+    "independent_normative_false_block_rate": 0.0
+  },
+  "claim_boundary": "The 300x5 result is the end-to-end OWL/reasoner/CQ result. The 40-event independent challenge is component-level grounding evidence and must not be described as an end-to-end repair result."
+}

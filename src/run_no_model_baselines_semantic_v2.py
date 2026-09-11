@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 r"""Run no-model baselines for the semantic-v2 benchmark.
 
 Prediction reads only public events, candidates, and documents. Oracle rows are
@@ -155,6 +156,7 @@ def summarize_by_event(details: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     if args.runs < 1:
         raise ValueError("--runs必须大于0")

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 """Run the semantic-v2 direct-value baseline.
 
 This baseline uses the same public event loading, document material, candidate
@@ -215,6 +216,7 @@ def write_outputs(
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     if args.runs < 1:
         raise ValueError("--runs must be greater than 0")

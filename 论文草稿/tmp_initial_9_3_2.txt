@@ -1,0 +1,1449 @@
+     Evidence-Constrained Neuro-Symbolic Ontology Repair for
+         Semantic Drift in Versioned Normative Documents
+                                                         Anonymous Author(s)
+Abstract                                                                     not only on logical consistency but also on whether ontology
+Versioned normative documents continually revise definitions, obli-          assertions remain supported by the current version of the normative
+gations, exceptions, scopes, and effective conditions, causing OWL           evidence. In practice, normative documents evolve continuously:
+ontologies built from earlier versions to contain assertions that            a new version may supersede an older one, an exception may
+are no longer supported by current evidence. We present ECR-                 override a general rule, a qualifier may change the scope of several
+Repair, an evidence-constrained modular neuro-symbolic ontology              statements, or an attribute value may become obsolete after revision.
+repair framework that uses a Semantic Intermediate Representation            Such changes can create semantic drift between an ontology and
+(Semantic IR) as the neural-to-symbolic semantic interface. Large            its normative source.
+language models interpret normative evidence under candidate-                    A central difficulty is that an outdated ontology assertion can
+content isolation; deterministic recovery and constraint-aware               remain syntactically valid and reasoner-consistent after a new spec-
+ranking perform symbolic semantic decision making; candidate-                ification is released, so a purely symbolic consistency check may
+level neural entailment verification is invoked only when ranking            raise no alarm. Conversely, asking an LLM to modify the ontology
+remains ambiguous; and OWL/RDF materialization, reasoning,                   directly makes it difficult to answer three questions: which evidence
+graph-delta validation, and frozen repair/CQ regression checks pro-          justified the change, why one repair candidate was preferred, and
+vide formal safety validation. We evaluate a conditional, evidence-          under what conditions the system should refuse to modify the
+relative semantic-drift repair task in which a potential repair event        ontology. We therefore frame the core challenge as one of respon-
+has already been localized, a relevant evidence window is pro-               sibility allocation and auditability. Neural components should
+vided, and the finite candidate set contains the correct repair;             be responsible for interpreting natural-language evidence; symbolic
+upstream drift discovery, open-corpus retrieval, and open-ended              components should constrain that interpretation into inspectable
+candidate generation are outside the primary metric. On an RFC-              decisions; formal closure should verify the structural, logical, and
+based blind-large benchmark constructed after method freeze, ECR-            regression safety of the patch; and the system should be allowed to
+Repairachieves 1315/1320 (99.62%) closure accuracy and 262/264               abstain whenever any layer lacks sufficient support.
+(99.24%) strict event success over 264 events and 1320 runs, with zero           Semantic drift is therefore different from an ordinary syntax
+wrong selections. Additional human temporal-semantic auditing,               error. An ontology may still be loadable by a reasoner and may
+formal-closure stress testing, candidate-pool enlargement, a v5              remain logically consistent, while an attribute value, rule condition,
+cross-backend replication, and a full online candidate-identifier            or scope relation no longer matches the current specification.
+permutation test characterize the semantic, formal-safety, and               Textual differencing alone is insufficient, and OWL consistency
+robustness boundaries of the system. The results suggest that                checking alone is insufficient. A repair system must interpret
+evidence-constrained ontology repair depends not only on stronger            version relations, rule–exception structure, and cross-sentence
+language-model outputs, but on an explicit, auditable, abstention-           scope, and then convert that interpretation into a formally verifiable
+capable neuro-symbolic interface with clear responsibility bound-            ontology edit.
+aries.                                                                           We use a layered operational definition of semantic drift. Let
+                                                                                Support(𝑎, 𝐷𝑡 ) ∈ {supported, contradicted, underspecified}
+CCS Concepts
+                                                                             denote the evidence status of assertion 𝑎 with respect to normative
+• Computing methodologies → Knowledge representation                         evidence at time or version 𝑡. If complete historical evidence
+and reasoning; • Information systems → Semantic web.                         is available, strict version drift requires 𝑡 0, 𝑡 1 and a replacement
+                                                                             assertion 𝑎 ′ such that
+Keywords                                                                                       𝑡 0 < 𝑡 1,                          𝑎 ′ ≠ 𝑎,
+ontology evolution, semantic drift, neuro-symbolic ontology repair,
+                                                                                Support(𝑎, 𝐷𝑡0 ) = supported,    Support(𝑎, 𝐷𝑡1 ) ≠ supported,
+Semantic IR, large language models, OWL, selective prediction                             ′
+                                                                               Support(𝑎 , 𝐷𝑡1 ) = supported.
+ACM Reference Format:
+Anonymous Author(s). 2026. Evidence-Constrained Neuro-Symbolic On-           The v5 benchmark, however, does not require every event to
+tology Repair for Semantic Drift in Versioned Normative Documents. In        preserve an independently verifiable 𝑡 0 → 𝑡 1 historical evidence
+Proceedings of Anonymous Review Submission (Anonymous Review). ACM,          chain. The primary evaluation therefore targets the narrower notion
+New York, NY, USA, 21 pages. https://doi.org/10.1145/nnnnnnn.nnnnnnn         of evidence-relative semantic-drift repair. Let 𝐷 cur denote the
+                                                                             frozen current evidence. The source assertion 𝑎 0 and the correct
+1   Introduction                                                             repair 𝑎 ∗ satisfy
+Ontologies are widely used to represent standards, regulatory                                        Support(𝑎 0, 𝐷 cur ) ≠ supported,
+rules, protocol constraints, and domain knowledge. When their
+                                                                                        ∃𝑎 ∗ ∈ 𝐶𝐸 :   Support(𝑎 ∗, 𝐷 cur ) = supported.
+knowledge source is a normative document, correctness depends
+
+                                                                         1
+Anonymous Review, 2026, Xi’an, China                                                                                                       Anon.
+
+
+Temporal-Version events often encode explicit version or effective-           • We design a diagnosable pipeline of neural semantic inter-
+date changes; General Rule–Exception and Cross-Sentence Scope                   pretation → symbolic semantic decision → optional neural
+events may instead expose rule or scope mismatches under the                    entailment verification → formal symbolic closure, with au-
+current evidence. This evidence-relative condition asks whether                 ditable recovery mechanisms for General Rule–Exception,
+the current specification still supports the source assertion and               Cross-Sentence Scope, and Temporal-Version ambiguity.
+whether the candidate set contains a current-evidence-supported               • After method freeze, we construct and freeze a larger RFC-
+replacement. It is not equivalent to reconstructing a complete                  based blind-large benchmark containing 264 events across 11
+historical 𝑡 0 → 𝑡 1 evolution chain. A later strict provenance audit           domains, 13 included RFC source families, and three semantic
+yields 𝑁 = 0 under unrelaxed lineage and support criteria, so we do             event types.
+not characterize the primary benchmark as a provenance-complete               • We evaluate the framework with the main blind experiment,
+historical-drift benchmark.                                                     staged ablations, a human temporal-semantic audit, formal-
+   Large language models provide a natural mechanism for in-                    closure stress tests, enlarged candidate pools, candidate-
+terpreting normative language, but direct LLM use introduces                    identifier shortcut auditing, a same-v5 backend replication,
+additional risks. A model may return structurally valid but seman-              and a provenance audit, while explicitly stating the limits of
+tically incorrect JSON, prefer a candidate because its description              closure, repair/CQ checks, candidate construction, and event-
+is clearer, exhibit order or identifier bias, or produce a definite             level evaluation.
+repair when the evidence is insufficient. Instead of reducing the
+problem to “ask an LLM to choose the answer,” we decompose it               2 Related Work
+into evidence interpretation, semantic representation, candidate            2.1 Ontology Evolution and Ontology Repair
+mapping, selective gating, and formal validation.
+   ECR-Repairmodels repair as a modular neuro-symbolic process              Recent ontology-evolution research studies how evolving knowl-
+rather than a single LLM decision. The neural semantic module               edge can be propagated through ontologies, dependent artifacts, and
+produces traceable interpretations of normative evidence. The               ontology alignments while preserving consistency and maintain-
+symbolic semantic module constrains those interpretations into              ability [3, 11]. OWL reasoners can verify logical consistency [16],
+typed Semantic IR, deterministic temporal relations, and inspectable        but logical consistency does not guarantee continued agreement
+candidate scores. Candidate-level LLM entailment verification is            with the current normative source. Recent ontology-repair ap-
+reintroduced only when the symbolic ranking is ambiguous. Finally,          proaches address logical conflicts, axiom-level repair, and ontology-
+OWL/RDF patching, reasoning, graph differencing, and frozen                 alignment repair using embedding-based, semantic-association,
+repair/CQ regression checks provide formal symbolic validation.             and probabilistic-logic techniques [8, 18]. SHACL-based repair
+Semantic IR therefore functions as the neural-to-symbolic se-               provides a complementary line of work in which RDF constraint
+mantic interface.                                                           violations are detected and repaired through explicit constraint
+   At the same time, ECR-Repairenforces candidate-content                   semantics [1, 2, 17]. Our setting differs from these approaches:
+isolation: candidate values, operations, identifiers, scores, and           the source ontology may remain logically consistent while one or
+top-𝑘 identities are not allowed to feed back into the semantic             more assertions are no longer supported by an evolving normative
+extraction or recovery modules. Ranking failure can return at most          document.
+a content-free ranking_failed=true flag, which may trigger one
+additional recovery pass. This separation assigns “interpret the
+                                                                            2.2    Retrieval-Augmented Generation and
+evidence” to neural components and “constrain and verify the                       Evidence Selection
+decision” to symbolic components, rather than treating free-form            Retrieval-augmented large language models use external knowl-
+LLM generation as an ontology update.                                       edge sources to improve factuality, freshness, and evidence ground-
+   The research question is therefore:                                      ing in generation [4]. Recent work further suggests that evidence
+        How can a neuro-symbolic repair framework trans-                    selection and reranking should consider not only relevance but
+        form natural-language evidence from versioned                       also whether the selected evidence is sufficient and usable for
+        normative documents into reliable OWL/RDF repair                    downstream generation [14]. Our predicate-aware evidence focus
+        decisions while remaining evidence-constrained,                     adapts this principle to ontology repair from versioned normative
+        candidate-content isolated, abstention-capable, and                 documents.
+        formally verifiable?
+   The main contributions are:
+                                                                            2.3    Legal and Regulatory Information
+   • We formulate ontology repair under evolving normative docu-
+                                                                                   Extraction
+      ments as an evidence-constrained finite-candidate selection           Information extraction from legal and regulatory text must han-
+      problem followed by formal OWL closure validation.                    dle definitions, obligations, exceptions, conditions, priorities, and
+   • We propose ECR-Repair, a candidate-content-isolated mod-               cross-sentence scope [12]. Legal AMR research demonstrates that
+      ular neuro-symbolic architecture in which explicit Semantic           structured legal semantics requires domain vocabulary, semantic
+      IR connects LLM-based evidence interpretation, symbolic se-           roles, and complex relations [15]. Recent work on regulatory-rule
+      mantic constraints, candidate decision making, and OWL/RDF            extraction and legal-requirement translation has also explored
+      validation.                                                           structured rule representations and executable outputs [7, 13]. Our
+
+                                                                        2
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                Anonymous Review, 2026, Xi’an, China
+
+
+goal is not rule extraction in isolation, but the use of structured          3   Problem Formulation
+semantics for finite-candidate ontology repair followed by formal            Let 𝐷 be a collection of versioned normative documents, 𝑂 0 a source
+OWL validation.                                                              ontology that may contain a semantic mismatch, and 𝐸 a repair
+                                                                             event. Each event contains public metadata including a subject,
+2.4    LLM-Assisted Ontology Engineering                                     predicate, semantic type, case context, and evidence source. Let
+Recent work has begun to investigate large language models                   𝐷 𝐸 ⊆ 𝐷 denote the evidence window provided for event 𝐸, and let
+across ontology-engineering activities, including requirements               𝑀𝐸 denote its public event metadata. The system is given a finite
+specification, ontology generation, evaluation, reuse, maintenance,          candidate set
+and verification [9]. LLM-based ontology-generation methods                                           𝐶𝐸 = {𝑐 1, 𝑐 2, . . . , 𝑐𝑘 }.
+have demonstrated the feasibility of producing OWL ontology                  Each candidate contains a display value and a formal OWL/RDF edit
+drafts from user stories and competency questions [10]. More                 operation. The private oracle candidate 𝑐 𝐸∗ is read only for offline
+recent ontology-learning pipelines additionally combine LLM-                 scoring and is excluded from model inputs, semantic extraction or
+based generation with ontology reuse, automated verification, and            recovery, and candidate-decision prompts.
+repair mechanisms [5]. These studies demonstrate the potential
+of language models to reduce the gap between natural-language                   Meaning of the evidence-relative task. We treat 𝐷 𝐸 as the frozen
+requirements and formal ontology artifacts, while also exposing              event evidence available at deployment time, not as a complete
+hallucination, structural instability, and verification challenges.          historical archive. The immediate objective is therefore to determine
+We adopt a more conservative design: the LLM does not directly               whether the source assertion is incompatible with current evidence
+rewrite the ontology; instead, it first constructs evidence-grounded         and to select a repair supported by that evidence from the provided
+Semantic IR, after which symbolic candidate selection and formal             candidates. A claim of strict historical drift requires independently
+validation constrain the final repair.                                       verifiable 𝐷𝑡0 and 𝐷𝑡1 evidence. Stating this boundary at problem-
+                                                                             formulation time prevents the later repair accuracy from being
+2.5    Neuro-Symbolic Reasoning and Ontology                                 misread as the accuracy of historical-version reconstruction.
+       Repair                                                                   Running example. For intuition, consider an abstract example
+By “neuro-symbolic” we mean modular neural–symbolic integra-                 that follows the structure of an RFC version update but is not
+tion rather than end-to-end differentiable theorem proving. Recent           counted as a benchmark sample. Suppose the source ontology
+LLM-assisted ontology-engineering research shows that neural                 contains 𝑎 0 = (𝑠, currentSpec, 𝑋 ), while the current evidence 𝐷 cur
+models can support semantic interpretation and structured ontol-             explicitly states that “𝑌 supersedes 𝑋 ” and identifies 𝑌 as the current
+ogy generation [5, 9, 10], while OWL semantics and reasoners                 specification. The candidate set contains “retain 𝑋 ,” “update to 𝑌 ,”
+provide explicit and inspectable symbolic constraints [16]. ECR-             and a semantically adjacent distractor 𝑍 . The evidence-relative task
+Repairuses Semantic IR as an interface contract between these two            requires only
+roles: neural components extract and refine evidence-grounded                                             Support(𝑎 0, 𝐷 cur ) ≠ supported,
+semantics and perform fallback entailment verification only un-                       Support((𝑠, currentSpec, 𝑌 ), 𝐷 cur ) = supported.
+der candidate ambiguity; symbolic components enforce typing,
+deterministic temporal normalization, constraint-aware ranking,              Semantic IR should then record 𝑋 as superseded and 𝑌 as current;
+and OWL/RDF consistency, graph-delta, and repair/CQ regression               candidate ranking should prefer “update to 𝑌 ”; and formal closure
+validation. The symbolic layer is therefore not merely a post-hoc            should verify that the patch removes only the obsolete triple, adds
+safety mechanism; neural interpretations enter the decision process          the intended target triple, and preserves ontology consistency. The
+through an explicit and auditable intermediate representation from           example illustrates the responsibility split in our design: language
+the outset.                                                                  interpretation reconstructs semantics, the candidate layer makes
+                                                                             the repair decision, and formal closure validates execution rather
+2.6    Selective Prediction and Trustworthy Repair                           than assigning all responsibilities to a single component.
+Selective prediction allows a model to abstain when its prediction               Conditional-task assumptions. We study conditional repair deci-
+is insufficiently reliable, thereby trading coverage against selective       sion making, not complete end-to-end ontology maintenance. For
+risk. Recent NLP research has systematically evaluated confidence            each formal event: (i) the potential drift location and target subject–
+functions and evaluation methodology for neural selective pre-               predicate are given; (ii) the relevant evidence source and evidence
+diction [6]. ECR-Repairoperationalizes this principle for struc-             window are provided, and EvidenceFocus performs predicate-aware
+tured knowledge repair: the system fails closed when evidence                filtering only within that provided evidence rather than evaluating
+is insufficient, Semantic IR is incomplete, candidate ranking is             open-corpus retrieval recall; and (iii) the primary v5 benchmark
+non-unique, or formal closure fails. Unlike work that evaluates              uses three candidates and guarantees that one manually reviewed
+complete risk–coverage curves, we report a single deployment                 correct repair is present. Accordingly, we do not evaluate drift
+operating point under frozen thresholds together with coverage,              discovery, open-corpus evidence retrieval, or open-ended candidate
+abstention, and selected-case semantic risk. We therefore claim an           generation. To test sensitivity to finite candidate-set size, we ad-
+operationalization of selective-prediction principles in ontology            ditionally derive 𝑘 = 5 and 𝑘 = 10 hard-negative variants without
+repair, rather than a new theory of selective prediction.                    changing the parent benchmark. These variants support robustness
+
+                                                                         3
+Anonymous Review, 2026, Xi’an, China                                                                                                        Anon.
+
+
+claims only for larger finite candidate pools, not for open-ended           constraint, neural fallback verification, and formal checking. Infor-
+candidate generation or arbitrarily large search spaces.                    mally, the first two layers answer “what does the evidence say, and
+   The method outputs either a candidate 𝑐ˆ𝐸 or Abstain. A selected         which candidate is compatible with it?”; the latter two answer “is
+candidate counts as a successful repair closure only if all of the          the residual ambiguity resolvable, and can the patch be executed
+following hold:                                                             safely?”
+  (1) the selected candidate matches the private oracle;                       The ranking stage first defines the maximizing candidate set
+  (2) the candidate OWL patch is materialized successfully;                                   M𝐸 = arg max 𝑆 (𝑐𝑖 | IR, 𝐹 ; 𝜏𝐸 ),
+  (3) the repaired ontology passes reasoner consistency checking;                                      𝑐𝑖 ∈𝐶𝐸
+  (4) the actual RDF graph delta matches the edits declared by the          where 𝜏𝐸 denotes the semantic type of event 𝐸. If M𝐸 contains
+      candidate, with no additional undeclared triples; and                 exactly one candidate and that candidate satisfies the frozen gate,
+  (5) the frozen repair/CQ regression checks pass.                          then                     {︄
+We do not claim to solve a globally minimum-edit repair problem                                        𝑐, M𝐸 = {𝑐} and 𝑐 is admissible,
+                                                                                          𝑐 rank =
+over all possible repairs. “Minimal” or “restricted” change is opera-                                   ⊥, otherwise.
+tionally limited to requiring that the realized graph delta contain         If ranking cannot produce a unique admissible candidate, the Fall-
+only the candidate’s declared target additions and deletions, without       back Candidate Entailment Verifier evaluates candidates indepen-
+undeclared extra edits.                                                     dently against the evidence:
+   The primary metrics are closure accuracy, oracle-selection ac-
+curacy, and strict event success. To characterize the risk–coverage
+                                                                                                
+                                                                                                
+                                                                                                         if exactly one 𝑐 𝑗 ∈ 𝐶𝐸 is supported
+                                                                                                𝑐 𝑗 ,
+                                                                                                
+trade-off, we additionally report Coverage, Abstention, selected                   𝑐 verify =             with high/medium confidence,
+precision, and the Wrong-selected rate. Let
+                                                                                                
+                                                                                                 ⊥, otherwise.
+                                                                                                
+                                                                                                
+       Coverage = Pr(Select),          𝑃 sel = Pr(Oracle | Select),         The pre-closure decision is
+so under binary semantic correctness of the selected candidate, the                              𝑐 ,          𝑐 rank ≠ ⊥,
+                                                                                                  rank
+                                                                                                 
+conditional semantic risk is
+                                                                                                 
+                                                                                                 
+                                                                                            𝑐˜𝐸 = 𝑐 verify,    𝑐 rank = ⊥ ∧ 𝑐 verify ≠ ⊥,
+                𝑅sem = Pr(𝑐ˆ𝐸 ≠ 𝑐 𝐸∗ | Select) = 1 − 𝑃sel .                                      
+                                                                                                  ABSTAIN, otherwise,
+                                                                                                 
+                                                                                                 
+All thresholds were frozen before the final benchmark, so these
+                                                                            and the final output is
+quantities describe one fixed operating point rather than a risk–                   {︄
+coverage curve obtained by post-hoc threshold tuning.                                 𝑐˜𝐸 ,           𝑐˜𝐸 ≠ ABSTAIN ∧ OWLClosure(𝑐˜𝐸 ) = true,
+                                                                              𝑐ˆ𝐸 =
+                                                                                       ABSTAIN, otherwise.
+4 Method
+4.1 Neuro-Symbolic Repair Architecture                                      4.2    Candidate-Content-Isolated Neural
+We call the final method ECR-Repair (Evidence-Constrained Seman-                   Interpretation and Semantic IR
+tic IR Repair) and position it as an evidence-constrained modular           The Base Semantic IR Pipeline is the backbone of the neural seman-
+neuro-symbolic ontology repair framework. To preserve trace-                tic interpretation layer rather than a prompt that directly chooses an
+ability between the manuscript, code, and experimental logs, we             answer. Its processing chain is predicate-aware evidence focus
+give the implementation identifiers once here: Base Semantic IR             → task formulation → atomic fact extraction → evidence-
+Pipeline (M13), Clause-Level Semantic Recovery (M14), Temporal              grounded rule refinement → robust IR normalization. Ev-
+Anchor Recovery (M15), Constraint-Aware Candidate Ranking and               idenceFocus uses the public subject, predicate, and case context
+Selective Gate (V4.3), and Fallback Candidate Entailment Verifier           to retain the most predicate-relevant spans within the provided
+(M16). Functionally, the framework contains four roles: a neural            evidence window. Task formulation selects the appropriate field con-
+semantic interpretation layer Nsem , a symbolic semantic decision           straints for Temporal-Version, General Rule–Exception, or Cross-
+layer Sdecision , an on-demand neural candidate-verification layer          Sentence Scope from the public semantic type and predicate. Atomic
+Nverify , and a formal symbolic closure layer Sformal :                     extraction requires facts to be linked to evidence spans rather
+               Nsem → Sdecision → [Nverify ] → Sformal .                    than producing unsupported conclusions. An LLM then performs
+                                                                            evidence-grounded critique and refinement of the draft facts and
+Nsem consists of Predicate-aware Evidence Focus, the Base Semantic
+                                                                            converts them into typed, candidate-content-isolated Semantic IR.
+IR Pipeline, and Clause-Level Semantic Recovery when needed.
+                                                                            The neural component therefore compresses natural-language evi-
+Sdecision contains Typed Semantic IR, Temporal Anchor Recovery,
+                                                                            dence into traceable semantics but does not own the final candidate
+and the Constraint-Aware Candidate Ranking and Selective Gate.
+                                                                            decision; its output must pass through the subsequent symbolic
+Nverify invokes the Fallback Candidate Entailment Verifier only
+                                                                            layers before it can become an ontology repair.
+when the symbolic ranking is ambiguous. Sformal performs formal
+                                                                                Robust IR normalization handles structural compatibility only,
+validation through OWL/RDF patching, a reasoner, RDF graph-
+                                                                            such as field aliases, normalizable scalars, and schema-compatible
+delta verification, and frozen repair/CQ regression checks. This
+                                                                            representations. It does not read candidates or use candidate values
+design separates responsibility for neural interpretation, symbolic
+                                                                            to fill missing semantics. If evidence cannot supply a type-required
+                                                                            critical slot, the IR is marked incomplete and routed to Clause-Level
+                                                                        4
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                                                                                   Anonymous Review, 2026, Xi’an, China
+
+
+
+                                ECR-Repair: Evidence-Constrained Neuro-Symbolic Ontology Repair
+                                                                                           Versioned Normative Documents
+
+
+          1    Neural Semantic Interpretation                                                                                                                                                    candidate content isolated
+
+                                   Predicate-aware                                                       Base Semantic IR                                                        Clause-Level Semantic
+                                   Evidence Focus                                                        Pipeline (LLM)                                                          Recovery (LLM, if needed)
+                                   Isolate and emphasize                                                 Generate base semantic IR                                               Recover missing clauses
+                                   relevant evidence                                                     from isolated content                                                   and refine semantics
+
+
+
+
+          2    Symbolic Semantic Representation
+                                   Typed Semantic IR                                                     Temporal Anchor                                                          Resolved /
+                                   Type entities, relations,                                             Recovery (deterministic)                                                 Incomplete
+                                   constraints                                                           Anchor to time/version                                                   Mark semantic IR as
+                                                                                                         constraints                                                              resolved or incomplete
+
+                                                                                                                                                                                   candidate set enters below this boundary
+
+
+          3    Candidate-Aware Neuro-Symbolic Decision                                                                                                                            Fallback Candidate
+               ranking-failure flag only; one retry; no candidate content                                                                      ambiguous                          Entailment Verifier
+                                                                                                                                                                                  (LLM; ambiguity only)
+                                     Constraint-Aware                       unique                                                                                                Verify entailment when
+                                     Ranking & Gate
+                                     (symbolic)                                                            SELECT                         unique supported
+                                                                                                                                                                                  ranking is ambiguous
+                                                                                                        Select top-ranked
+                                     Rank candidates under
+                                                                                                            candidate                                                                  ABSTAIN
+                                     formal constraints
+                                                                                                                                                                                     When no unique
+                                                                                                                                                                                  candidate is supported
+
+
+          4    Formal Symbolic Validation
+                                 OWL/RDF Patch                                        Reasoner                                                RDF Graph Δ                                  CQ Regression
+                                 Encode selected repair                               Check logical                                           Compute graph                                Regression test with
+                                 as ontology patch                                    consistency                                             difference                                   competency questions
+
+
+                 Primary flow                Conditional flow          Neural (LLM)          Symbolic               Neuro-Symbolic Decision                  Formal Validation   ABSTAIN   = No unique, supported candidate
+
+
+
+
+Figure 1: Overall evidence-constrained neuro-symbolic architecture of ECR-Repair. Semantic IR is the neural-to-symbolic
+interface; the candidate set becomes visible only in the candidate-aware decision layer. The Fallback Candidate Entailment
+Verifier is triggered only when symbolic ranking is ambiguous, and the dashed feedback path carries only a content-free
+ranking-failure flag.
+
+                                                                Table 1: Evidence-constrained ontology repair algorithm
+
+ Step      Operation
+ 1        𝐹 ← EvidenceFocus(𝐷 𝐸 , 𝑀𝐸 ) using only public documents, event metadata, and the provided evidence window.
+ 2        IR ← BaseIR(𝐹, 𝑀𝐸 ) to produce candidate-content-isolated Semantic IR.
+ 3        If the General Rule–Exception or Cross-Sentence Scope IR is incomplete, set IR ← ClauseRecovery(IR, 𝐹, 𝑀𝐸 ); if
+          Temporal-Version anchors are unresolved, set IR ← TemporalRecovery(IR, 𝐹, 𝑀𝐸 ).
+ 4        After IR is fixed, reveal 𝐶𝐸 , compute 𝑆𝑖 = 𝑆 (𝑐𝑖 | IR, 𝐹 ; 𝜏𝐸 ), and return 𝑐 rank or ranking_failed=true.
+ 5        For General Rule–Exception or Cross-Sentence Scope, a ranking_failed=true result may trigger one additional
+          candidate-content-isolated Clause-Level Semantic Recovery pass; the retry receives only the Boolean flag and then repeats Step 4.
+ 6        If ranking is still non-unique, invoke the Fallback Candidate Entailment Verifier and obtain 𝑐 verify or Abstain.
+ 7        Execute the selected OWL patch, reasoner check, RDF graph-delta validation, and frozen repair/CQ regression checks; return
+          Abstain if any stage fails.
+ 8        Return the closure-validated repair 𝑐ˆ𝐸 .
+
+
+Semantic Recovery, Temporal Anchor Recovery, or final fail-closed                                                       answer “what does the evidence say?” rather than “which candidate
+behavior. The Base Semantic IR Pipeline is therefore designed to                                                        looks most like the answer?”
+                                                                                                                5
+Anonymous Review, 2026, Xi’an, China                                                                                                               Anon.
+
+
+4.3     Three Semantic Event Types                                             Temporal Anchor Recovery is not a single-label classifier but
+Temporal-Version represents version changes, effective dates,               a deterministic role–relation normalization procedure. Let V𝐸
+supersession relations, or changes in the currently valid state. Its        denote the version/specification entities appearing in event 𝐸. Then
+IR contains fields such as subject, old value, new value, effective            NormalizeTemporal(Evidence𝐸 , Metadata𝐸 ) = (R𝐸 , T𝐸 , 𝑢𝐸 ),
+time, relation, current value, and evidence.
+                                                                            where
+   General Rule–Exception represents a general rule overridden
+                                                                            R𝐸 ⊆ V𝐸 × {current, effective, superseded, reference, publication},
+by an exception, condition, or priority relation. Its IR contains
+subject, general rule, exception condition, exception rule, priority,       T𝐸 ⊆ V𝐸 × {supersedes, updates, updatedBy} × V𝐸 ,
+result, and evidence.                                                       𝑢𝐸 ∈ {resolved, unresolved}.
+   Cross-Sentence Scope represents a qualifier or scope relation            The same entity may therefore carry both current and effective roles,
+attached across sentence boundaries. Its IR contains subject, state-        while supersedes/updates directions are represented independently
+ment, qualifier, scope target, scope relation, result, and evidence.        rather than mixed into role labels. Temporal Anchor Recovery fails
+                                                                            closed only when 𝑢𝐸 = unresolved and the public evidence cannot
+4.4     Candidate-Content Isolation Protocol                                resolve the ambiguity further. The rules in Table 2 concern roles,
+Semantic extraction and recovery modules cannot read candidate              relations, and direction; they do not use candidate scores. The later
+values, operations, identifiers, or scores. Top-𝑘 identities, the           ranking and gate, not Temporal Anchor Recovery, owns min_score,
+private oracle, and manually authored formal policy are also                min_margin, and temporal unique-top1.
+hidden. Initial Semantic IR is formed while candidate content is
+invisible. The only signal allowed to travel from the candidate-               Continuation of the running example. Suppose the 𝑋 → 𝑌 re-
+decision layer back to semantic recovery is the Boolean control flag        placement example in Section 3 additionally contains “RFC X pub-
+ranking_failed=true. It means only “perform one more recovery               lished in year 𝑡 1 ,” “RFC Y obsoletes RFC X,” and “this specification
+pass” and conveys no information about which candidate is leading,          takes effect at 𝑡 2 .” Temporal Anchor Recovery can produce
+trailing, or conflicting. We therefore use the term candidate-content                                R𝐸 ⊇ {(𝑋, publication), (𝑋, superseded),
+isolation, rather than claiming absolute independence from the                                             (𝑌, current), (𝑌, effective)},
+existence of the candidate set.
+                                                                                  (𝑌, supersedes, 𝑋 ) ∈ T𝐸 .
+4.5     Clause-Level Semantic Recovery                                      This example is illustrative only and is not an additional v5
+                                                                            benchmark sample. The candidate set remains hidden until this
+Clause-Level Semantic Recovery handles two cases: (i) structurally
+                                                                            temporal IR has been fixed.
+incomplete General Rule–Exception or Cross-Sentence Scope IR
+after the Base Semantic IR Pipeline, and (ii) General Rule–Exception
+or Cross-Sentence Scope cases whose IR is rankable but cannot be
+                                                                            4.7    Constraint-Aware Candidate Ranking and
+uniquely decided by the Constraint-Aware Candidate Ranking and                     Selective Gate
+Selective Gate. The first case is recovered while candidate content         The Constraint-Aware Candidate Ranking and Selective Gate is a
+remains invisible. The second receives only ranking_failed=true,            deterministic mapping from fixed Semantic IRto the finite candi-
+without candidate identifiers, values, scores, top-𝑘 identities, or         date set. To avoid reducing the implementation to an opaque single
+candidate-derived semantics. For General Rule–Exception, the re-            similarity score, the scorer retains inspectable subcomponents for
+covery step separates the general rule, exception trigger, exception        every candidate:
+conclusion, and priority into distinct clauses. For Cross-Sentence                       𝜙 (𝑐𝑖 , IR, 𝐹 ) = (𝑠 tok, 𝑠 exact,
+Scope, it separates the qualifier, qualified statement, and scope
+                                                                                                        𝑠 family, 𝑠 code, 𝑠 num, 𝑠 sem, 𝑝 neg ).
+attachment. Processing continues only if recovery yields a complete
+IR that passes subsequent gating; otherwise the system remains              The first five components capture token overlap, exact match, family
+abstinent.                                                                  match, code match, and numeric/date match. 𝑠 sem is a type-specific
+                                                                            semantic-consistency bonus, and 𝑝 neg is a penalty for negation,
+4.6     Temporal Anchor Recovery                                            directional conflict, or semantic inconsistency. The aggregate score
+                                                                            is
+Temporal Anchor Recovery addresses temporal-anchor ambigu-
+                                                                                            𝑆 (𝑐𝑖 | IR, 𝐹 ; 𝜏𝐸 ) = Agg(𝜙 (𝑐𝑖 , IR, 𝐹 ), 𝜏𝐸 ) ,
+ity identified during development. Versioned specifications may
+mention publication dates, references to publication dates, effective       where Agg is the deterministic aggregate used in the frozen im-
+dates, superseded versions, the currently valid version, and histor-        plementation and 𝜏𝐸 encodes semantic-type constraints. No scorer
+ical references in the same evidence window. Treating the most              parameters are re-estimated on v5; both code-level aggregation
+recent date or the last-mentioned version identifier as the current         logic and thresholds were fixed at method freeze. In contrast to
+value can therefore create systematic errors. Temporal Anchor               retaining only an aggregate score, these subcomponents provide an
+Recovery reads no candidates and uses no candidate score or margin.         audit trail for why a candidate scored highly, why it was penalized
+It normalizes public evidence and document-time metadata into               for direction or negation, and why a gate fired. Robust IR only
+role-bearing anchors; only afterward does the Constraint-Aware              normalizes field aliases and compatible structural forms and never
+Candidate Ranking and Selective Gate map the fixed temporal IR              uses candidate content to “fill in” an answer.
+to candidates.
+                                                                        6
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                   Anonymous Review, 2026, Xi’an, China
+
+
+                  Table 2: Candidate-content-isolated temporal-anchor rules used by Temporal Anchor Recovery
+
+ Evidence/metadata             Normalized role             Processing principle
+ pattern
+ Explicit                      role:                       Mark the superseded object with a historical role and record the direction of the
+ “obsoletes/supersedes”        superseded/current;         replacement relation separately rather than collapsing it into a single label.
+ relation                      relation: supersedes
+ Explicit                      relation:                   Preserve update direction without equating update with complete replacement;
+ “updates/updated by”          updates/updatedBy           current status is determined separately from textual evidence.
+ relation
+ Explicit effective date /     role: effective             Bind the effective role to the relevant specification entity; publication remains a
+ “takes effect”                                            distinct role and does not overwrite effective.
+ Explicit “current/this        role: current/reference     Permit multiple roles for the same entity and keep current statements separate from
+ specification” plus                                       historical references.
+ historical reference
+ Explicit publication          role: publication           Preserve publication as document-time metadata without inferring current status
+ date                                                      from publication alone.
+ Conflicting dates or          resolution: unresolved      Do not guess from position or the numerically latest value; fail closed if public
+ versions                                                  textual relations cannot resolve the conflict.
+
+
+    The gate thresholds are frozen. The default minimum score is                 high, medium, or low. This confidence is model-reported categorical
+𝑠 min = 0.30; General Rule–Exception and Cross-Sentence Scope use                confidence, not a calibrated probability or posterior probability.
+𝑠 min = 0.24. The minimum score margin is fixed at 𝑚 min = 0.00.                    A candidate proceeds to formal closure if and only if exactly one
+    Temporal-Version additionally uses a temporal unique-top1 con-               candidate is labeled supported with high or medium confidence.
+dition. The top candidate may continue only when role and relation               All other outcomes cause abstention. Because deepseek-chat is a
+direction are unique, no explicit conflict exists, and no admissible             service-side model alias that may change over time, exact reproduc-
+tie remains. Otherwise the system returns ranking_failed=true.                   tion requires the run date, raw outputs, and configuration/freeze
+That signal may trigger at most one Clause-Level Semantic Re-                    manifest in addition to the model name.
+covery pass and exposes no candidate feature, identity, or lead
+information.                                                                     4.9    Formal OWL/RDF Closure and Repair/CQ
+   Selective gate. The purpose of the gate is not to maximize the                       Regression
+number of repairs but to reject a repair when evidence, Semantic IR,             Each candidate operation is represented as a finite RDF/OWL edit
+or the candidate decision is insufficiently determined. The system               set
+fails closed if IR is incomplete, JSON is invalid, a candidate score falls                                   Δ𝑐 = (Δ𝑐− , Δ𝑐+ ),
+below its frozen threshold, the candidates cannot be distinguished               where Δ𝑐 is the candidate-declared deletion set and Δ𝑐+ the addition
+                                                                                          −
+
+uniquely, or the subsequent Fallback Candidate Entailment Verifier               set, each containing target RDF/OWL triples or statements.
+cannot identify exactly one supported candidate. The gate controls                  For the ontology 𝑂𝑐 produced by executing candidate 𝑐, the
+whether a candidate is eligible to proceed; it does not equate formal            realized graph delta is
+consistency with semantic correctness.                                                          Δgraph (𝑂 0, 𝑂𝑐 ) = 𝑂 0 \ 𝑂𝑐 , 𝑂𝑐 \ 𝑂 0 .
+                                                                                                                    (︁                 )︁
+
+4.8    Fallback Candidate Entailment Verifier                                    Formal closure requires
+The Fallback Candidate Entailment Verifier is triggered only when                                       Δgraph (𝑂 0, 𝑂𝑐 ) = Δ𝑐 .
+the preceding Constraint-Aware Candidate Ranking and Selective                   Closure fails if undeclared changes appear or if declared edits are
+Gate cannot make a unique decision. The main v5 experiment                       not realized as expected. This condition controls patch side effects;
+uses the DeepSeek API model identifier deepseek-chat, with                       it does not solve for a globally minimum edit distance across all
+temperature 0, a 500-token output limit, and a 180-second timeout.               possible repairs.
+The API does not provide strict seed control, so seed is retained                   We refer to the final regression interface uniformly as frozen
+only as an audit field.                                                          repair/CQ regression checks. The frozen implementation is
+   The verifier calls the model independently for each candidate                 dominated by event-specific triple-level repair checks while retain-
+rather than presenting all three candidates in one comparative                   ing a competency-question-compatible regression interface. These
+prompt. Each call can see the temporary candidate identifier,                    checks share the repair-event construction protocol and are not
+display value, and operation; the identifier is used only to align the           generated or adapted from model outputs during formal runs. They
+output. The verifier labels a candidate as supported, contradicted,              therefore validate declared graph effects, logical consistency, and
+unrelated, or underspecified and reports categorical confidence as               predefined regression behavior of the selected patch, but they are
+
+                                                                             7
+Anonymous Review, 2026, Xi’an, China                                                                                                         Anon.
+
+
+   Table 3: Summary of the final blind-large benchmark                      from the semantic mismatch between the public evidence and
+                                                                            the source-OWL assertion requiring repair and represents the
+ Property                                                   Value           repair supported by current normative evidence. One distractor
+                                                                            typically preserves the old version, obsolete value, or unrepaired
+ Events                                                       264
+                                                                            semantics; the other is an executable semantic neighbor that is not
+ Runs per event                                                 5
+                                                                            best supported by the current evidence. All candidate operations
+ Total runs                                                  1320
+                                                                            must be executable, all OWL patches must be materializable, display
+ Domains                                                       11
+                                                                            values must not contain explicit answer markers, and candidate
+ Included source families                                      13
+                                                                            notes are excluded from method input and sanitized for leakage.
+ Candidate-source registry                                     69
+                                                                            Identifier regularity: the frozen v5 construction template assigns
+ Semantic types                                                 3
+                                                                            the oracle to CAND_002 for all 264 events, while CAND_001 and
+ Candidate rows                                               792
+                                                                            CAND_003 are distractors. This regularity comes from benchmark
+ Candidate-note leakage rows after                              0
+                                                                            construction rather than private-oracle exposure, but it creates a
+ sanitization
+                                                                            potential identifier shortcut. We therefore perform a separate per-
+ Benchmark manifest SHA-256               40fcc2c3...9bb0e038
+                                                                            event candidate-ID permutation audit. Because the correct repair
+                                                                            is guaranteed to occur in the finite candidate set, the results must
+not an independent external semantic gold set and do not                    not be interpreted as open-ended repair-generation performance.
+act as a semantic oracle. Formal closure consists of OWL/RDF
+materialization, reasoner consistency, RDF graph-delta verification,
+                                                                            5.4    Evaluation Scope and Experimental Unit
+and frozen repair/CQ regression checks; failure at any stage returns        The experimental unit is an event-level OWL/RDF patch, not
+Abstain. RQ3 directly stress-tests this capability boundary.                total ontology size. Candidate operations are normalized into
+                                                                            finite add/delete edit sets and executed around the target sub-
+5 Benchmark and Evaluation Protocol                                         ject/predicate assertion and its direct semantic context. We there-
+                                                                            fore evaluate whether the method can select and execute the correct
+5.1 Benchmark Dataset                                                       local repair given a known potential drift event. We do not vary
+The primary experiment uses external-real-holdout-v5-                       large shared-ontology size, TBox depth, or whole-knowledge-base
+blind-large. This benchmark was newly constructed from public               reasoning time, and make no claim about reasoning scalability for
+RFC normative documents after the complete method had been                  very large ontologies.
+frozen. It contains 264 manually reviewed repair events, each
+evaluated over five runs, for 1320 runs in total. The data cover 11         5.5    Compared Methods and Baselines
+domains, 13 RFC source families represented in the final set, and           We use staged ablations: Base Semantic IR Pipeline; Base + Clause
+three semantic event types; the candidate-source registry contains          Recovery; Base + Clause + Temporal Recovery; and full ECR-Repair
+69 public source records. Earlier v1/v3/v4 datasets were used for           with the Fallback Candidate Entailment Verifier. We also use Direct
+diagnosis, development, calibration, or supplementary validation            LLM (Candidate Value) and Direct LLM (Value + Formal Operation)
+and are not the source of the main result.                                  as candidate-selection baselines.
+5.2     Method Freeze and Blind-Evaluation                                  5.6    Metrics and Statistical Analysis
+        Protocol                                                            The five runs of a single event share the same event-level semantic
+The method-freeze manifest has SHA-256 prefix/suffix e27619e2...            structure, so we do not treat all 1320 attempts as independent
+5def068 and records the fixed modules, thresholds, input-isolation          observations. Attempt-level accuracy is reported descriptively, with
+rules, and no-tuning policy. v5 was constructed afterward, followed         uncertainty estimated by an event-clustered bootstrap: the 264
+by oracle/support review for all 264 events, candidate-note sanitiza-       events are the resampling units and all five runs for a sampled
+tion, structural validation, deeper quality auditing, and benchmark         event are carried together. We use 10,000 percentile-bootstrap
+freeze. Sanitization changed candidate notes only; it did not change        replicates. Strict event success is already event-level and is therefore
+candidate identifiers, display values, operations, or the oracle, and       accompanied by a Wilson 95% interval. Stage differences use event-
+the frozen method never reads notes. In this paper, blind has an            clustered paired bootstrap as well. We do not use attempt-level
+operational meaning: the complete method was frozen before v5               McNemar 𝑝 values as primary or supplementary inference, avoiding
+construction, the private oracle was isolated from inference inputs,        pseudo-replication from the five correlated runs per event.
+and no post-hoc method tuning was performed after v5 results
+were observed. The term does not imply third-party double-blind             5.7    Implementation and Reproducibility
+benchmark annotation.                                                              Settings
+5.3     Candidate Construction and Identifier                                  Implementation and compute fairness. Direct LLM (Candidate
+                                                                            Value) and Direct LLM (Value + Formal Operation) answer the
+        Regularity                                                          effectiveness question “how well can a model do when candidate
+Each v5 event contains exactly three candidates and exactly one             information is exposed directly?” They are not compute-matched to
+manually reviewed oracle candidate. The oracle is constructed               ECR-Repair: the full pipeline may perform a Clause-Level Semantic
+                                                                        8
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                     Anonymous Review, 2026, Xi’an, China
+
+
+
+
+                                             Benchmark and Method Freeze Timeline
+                                             Chronological workflow from dataset development to final evaluation
+
+
+       1                          2                    3                      4                        5                           6
+
+           Development                ECR-Repair          Final v5                Independent
+                                                                                                           Benchmark            Final Blind
+            Benchmark                  Method            Benchmark                  Oracle /
+                                                                                                             Freeze             Evaluation
+             Iterations                 Freeze          Construction             Support Review
+
+
+
+
+                      Figure 2: Timeline of method freeze, benchmark construction, and final blind evaluation.
+
+                                       Table 4: Main v5 implementation configuration for ECR-Repair
+
+ Stage                      Backend/execution              Main parameters                                                              Candidate
+                                                                                                                                        content visible?
+ Base Semantic IR           DeepSeek API                   temp=0, max tokens=900, timeout=180s                                         No
+ Pipeline                   deepseek-chat
+ Clause-Level               DeepSeek API                   two JSON calls, 700 tokens each, timeout=180s; at most one retry             No; Boolean
+ Semantic Recovery          deepseek-chat                                                                                               failure flag only
+ Temporal Anchor            Deterministic recovery         temporal-role normalization; no candidate scores                             No
+ Recovery
+ Constraint-Aware           Constraint-aware scorer        min score=0.30; General Rule–Exception / Cross-Sentence Scope                Yes
+ Ranking/Gate                                              min score=0.24; min margin=0.00; temporal unique-top1; robust IR
+                                                           on
+ Fallback Entailment        DeepSeek API                   per-candidate, temp=0, max tokens=500, timeout=180s                          Yes
+ Verifier                   deepseek-chat
+ OWL closure                RDF/OWL                        graph delta, consistency, frozen repair/CQ regression                        Selected
+                            materialization +                                                                                           candidate only
+                            reasoner + repair/CQ
+                            checks
+
+
+Recovery retry or per-candidate fallback-verifier calls, whereas the               Table 5 summarizes closure, oracle-selection, and strict-event re-
+simple baselines use shorter call structures. We therefore do not                  sults for the three semantic types.
+use these baselines to claim better token or latency efficiency. The                  The main result uses frozen v5, the DeepSeek backend, and the
+cloud deepseek-chat alias does not guarantee immutable future                      frozen full method. The 1320 runs come from five executions of
+weights, so reproducibility requires the run date, raw responses,                  each of 264 events; attempt-level proportions are descriptive, while
+and configuration manifest. The manuscript fixes the logical closure               event-level uncertainty follows the clustered protocol in Section 5.6.
+interface as materialization–reasoner–graph-delta–repair/CQ re-                    Table 5 shows that the remaining failure is not an incorrect patch
+gression but does not invent unverified software-version metadata                  but a conservative abstention: the only failed run is one General
+for the specific reasoner/RDF library/repair-check harness. A formal               Rule–Exception run of H5_E017. The final wrong-selected count is
+artifact release should expose those environment and dependency                    zero.
+details.
+                                                                                      Direct-candidate baselines. Table 6 asks whether the high final
+                                                                                   accuracy can be explained simply by an easy three-candidate task.
+6 Evaluation Results
+                                                                                      The candidate-value baseline already reaches 93.48%, so we do
+6.1 RQ1: How Effective Is ECR-Repair Overall?                                      not portray v5 as a task in which the candidates are intrinsically
+   Main result. RQ1 first asks whether the frozen method can com-                  difficult to distinguish. Direct LLM (Candidate Value) has an oracle-
+plete local repairs correctly and safely on the final v5 benchmark.                selection failure rate of 86/1320 (6.52%), whereas ECR-Repair
+                                                                                   fails on only 1/1320 (0.08%), and that single failure is abstention
+                                                                             9
+Anonymous Review, 2026, Xi’an, China                                                                                                                           Anon.
+
+
+                                                Table 5: Main results of ECR-Repair on the final frozen v5 blind-large benchmark
+
+                                                  Semantic type                    Closure                  Oracle                    Strict event
+                                                  ALL                       1315/1320 (99.62%)     1315/1320 (99.62%)             262/264 (99.24%)
+                                                  Temporal-Version           440/440 (100.00%)      440/440 (100.00%)              88/88 (100.00%)
+                                                  General Rule–Exception     439/440 (99.77%)       439/440 (99.77%)               87/88 (98.86%)
+                                                  Cross-Sentence Scope       440/440 (100.00%)      440/440 (100.00%)              88/88 (100.00%)
+
+                                                       Table 6: Full candidate-selection baselines compared with ECR-Repair
+
+ Method                                           Oracle selection      OWL closure                Notes
+ Direct LLM (Candidate Value)                     1234/1320 (93.48%)    –                          evidence + candidate value
+ Direct LLM (Value + Formal                       1171/1320 (88.71%)    –                          evidence + formal operation
+ Operation)
+ Base Semantic IR Pipeline                        1022/1320 (77.42%)    1022/1320 (77.42%)         base Semantic IR repair pipeline
+ ECR-Repair                                       1315/1320 (99.62%)    1315/1320 (99.62%)         complete closure-enabled repair
+
+
+
+
+                                                                                                                                              99.62
+                                          100
+                                                                                  92.73
+                                                                                                              89.85
+                                          90
+                   Closure Accuracy (%)
+
+
+
+
+                                          80                 75.08
+
+
+
+                                          70
+
+
+
+                                          60
+
+
+
+                                          50
+                                                         M16-only            Direct LLM      Compute matched                              ECR (Ours)
+                                                                                      Method
+                     Figure X. Comparison with strong LLM baselines on closure accuracy (%). Error bars indicate 95% bootstrap
+                     confidence intervals over events.
+
+
+Figure 3: Comparison with strong baselines. ECR-Repair improves closure accuracy over direct LLM and compute-matched
+baselines while preserving formal validation and candidate selection constraints.
+
+
+rather than wrong selection. The relevant contribution is therefore                               6.2      RQ2: Which Components Contribute, and
+residual-error compression and fail-closed risk control on top of a                                        Does Temporal Recovery Improve the
+strong direct baseline.                                                                                    Target Semantics?
+   Uncertainty and selective repair. The stagewise gains and uncer-                                  Staged ablation. Table 10 measures the incremental contribution
+tainty estimates are summarized in Tables 7 and 8, while Table 9                                  of each stage, with particular attention to whether Temporal Anchor
+reports the corresponding selective-repair operating point.                                       Recovery accounts for the largest gain.
+                                                                                                     Temporal Anchor Recovery is the largest source of stagewise
+                                                                                                  gain. Because final candidate accuracy does not by itself establish
+                                                                                                  that the temporal representation is correct, we additionally audit
+
+                                                                                             10
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                            Anonymous Review, 2026, Xi’an, China
+
+
+                                     Table 7: Event-clustered paired-bootstrap estimates for stage gains
+
+                    Comparison                                                                      Mean gain      Event-clustered 95% CI
+                    ECR-Repair vs Base Semantic IR Pipeline                                           22.50 pp         17.73–27.42 pp
+                    Base + Clause Recovery vs Base Semantic IR Pipeline                               2.73 pp           1.06–4.70 pp
+                    Base + Clause + Temporal Recovery vs Base + Clause Recovery                       18.71 pp         14.32–23.41 pp
+                    ECR-Repair vs Base + Clause + Temporal Recovery                                   1.06 pp           0.00–2.42 pp
+
+                                  Table 8: Uncertainty intervals and independent units for the main result
+
+                         Metric                         Point estimate        95% interval           Independent/resampling unit
+                         Attempt closure              1315/1320 (99.62%)     99.77–100.00%         264 events, retaining 5 runs/event
+                         Strict event success          262/264 (99.24%)       97.89–99.93%                264 events (Wilson)
+
+                                              Table 9: Coverage, abstention, and selected precision
+
+ Method               Coverage                         Abstention                      Pr(Oracle | Select)             Wrong selected
+ Base Semantic IR     1034/1320 (78.33%)               286/1320 (21.67%)               1022/1034 (98.84%)              12/1320 (0.91%)
+ Pipeline
+ ECR-Repair           1315/1320 (99.62%)               1/1320 (0.08%)                  1319/1319 (100.00%)             0/1320 (0.00%)
+
+
+                                                             Table 10: Staged ablation results
+
+                 Method stage                                           Closure              Strict event        Gain over Base     Stage gain
+                 Base Semantic IR Pipeline                      1022/1320 (77.42%)        195/264 (73.86%)           0.00 pp             –
+                 Base + Clause Recovery                         1058/1320 (80.15%)        205/264 (77.65%)           2.73 pp         2.73 pp
+                 Base + Clause + Temporal Recovery              1305/1320 (98.86%)        261/264 (98.86%)          21.44 pp         18.71 pp
+                 ECR-Repair                                     1315/1320 (99.62%)        262/264 (99.24%)          22.50 pp         1.06 pp
+
+
+Temporal Anchor Recovery against manually constructed temporal                         6.3     RQ3: What Safety Guarantees Does Formal
+gold annotations.                                                                              Closure Provide?
+   Human semantic audit of Temporal Anchor Recovery. For all 88                            Formal-closure stress test. Table 12 asks a question that is delib-
+Temporal-Version events, an event-level temporal gold annotation                       erately separate from semantic-selection accuracy: which error
+was created without reading the private oracle, candidate answers,                     classes can formal closure reject, and which responsibility lies
+or M13/M15 outputs. Pairing this gold with the five formal v5                          outside its scope?
+runs yields 440 descriptive attempts. Table 11 shows that Tem-                             To separate “semantic candidate correctness” from “formal patch
+poral Anchor Recovery primarily improves task-relevant role and                        safety,” we generate five deterministic stress variants for every v5
+effective-anchor normalization rather than every aspect of temporal                    event, yielding 1320 cases. This experiment does not call an LLM;
+relation extraction.                                                                   it directly tests the frozen closure interface.
+   Across the 440 attempts, M15 improves 160 role exact-frame                              All valid control patches are accepted. Among the four
+cases, with the event-clustered mean rising from 0.023 to 0.386. At                    non-oracle stress classes, closure rejects all cases in the three
+the same time, relation-type accuracy decreases by 18.0 percentage                     structural/logical/regression-violation classes, but it rejects none
+points. We therefore interpret M15 as task-oriented temporal-                          of the 264 semantically wrong yet formally self-consistent patches.
+anchor normalization, not as a complete temporal information-                          Its capability boundary is therefore more accurately written as
+extraction module. In particular, 100% strict success on Temporal-                               FormalClosureValid(𝑐) ⇏ SemanticCorrect(𝑐).
+Version repairs does not imply complete reconstruction of every
+temporal relation; the narrower conclusion is that sufficient struc-                   Passing formal closure does not imply semantic correctness under
+tured semantics can support correct local repair.                                      the normative evidence. Formal closure should therefore be inter-
+                                                                                       preted as a structural, logical, declared-graph-effect, and regression-
+                                                                                       safety layer after semantic candidate selection, not as an indepen-
+                                                                                       dent semantic oracle.
+
+
+                                                                                  11
+Anonymous Review, 2026, Xi’an, China                                                                                                                                                       Anon.
+
+
+                                                          Table 11: Base IR versus Temporal Anchor Recovery on human temporal gold
+
+                                                            Metric                            Base IR     + Temporal Anchor Recovery                Δ
+                                                            Role exact-frame                    2.3%                      38.6%                 +36.4 pp
+                                                            Complete temporal frame             2.3%                      38.6%                 +36.4 pp
+                                                            Effective anchor accuracy           8.0%                     100.0%                 +92.0 pp
+                                                            Current anchor accuracy            100.0%                    100.0%                  0.0 pp
+                                                            Role micro-F1                       0.682                     0.829                  +0.147
+                                                            Role macro-F1                       0.628                     0.700                  +0.072
+                                                            Relation type accuracy             62.3%                      44.3%                 -18.0 pp
+
+
+                                                                                  Exp13: Temporal Anchor Accuracy
+                                                          100
+                                                                                                                          100.00%
+
+
+
+                                                           80
+                           Temporal Anchor Accuracy (%)
+
+
+
+
+                                                                                                                                                      Gain
+                                                                                                                                                     +92.05
+                                                           60
+                                                                                                                                                percentage points
+
+                                                                                                                                                M15 achieves
+                                                                                                                                                perfect and
+                                                           40                                                                                   temporal anchoring,
+                                                                                                                                                while M13 fails
+                                                                                                                                                to anchor time
+                                                                                                                                                expressions reliably.
+                                                           20
+                                                                                7.95%
+
+
+                                                            0
+                                                                      M13 (w/o Temporal Module)                   M15 (with Temporal Module)
+                                                                                                    Method
+                          Figure X. Temporal anchor accuracy comparison (Exp13). M13 without temporal modeling fails to resolve
+                          temporal context in most cases, while M15 with temporal modeling achieves perfect accuracy.
+
+
+Figure 4: Temporal anchor recovery improves effective-anchor fidelity. The module improves task-oriented temporal
+normalization rather than attempting complete temporal relation extraction.
+
+                                                                     Table 12: Formal closure stress test (264 events × 5 variants)
+
+ Variant                                                        Meaning                                                                Detection/acceptance         Main stage
+ VALID_ORACLE_CONTROL                                           correct oracle patch                                                   264/264 accepted             final closure pass
+ EXTRA_UNDECLARED_EDIT                                          undeclared graph edit                                                  264/264 rejected             graph delta
+ INCONSISTENT_PATCH                                             logically inconsistent patch                                           264/264 rejected             reasoner
+ REPAIR_CHECK_BREAK                                             frozen repair regression violated                                      264/264 rejected             repair check
+ WRONG_SEMANTIC_PATCH                                           non-oracle but triple/logically self-consistent                        0/264 rejected               264/264 pass closure
+
+
+6.4     RQ4: Is the Method Robust to Candidate-Set                                                                   Increasing the pool from three to ten candidates reduces strict
+        Size, Backend Choice, and Candidate                                                                       event success by only three events (about 1.1 percentage points);
+        Identifiers?                                                                                              Temporal-Version remains 88/88 throughout, while most degrada-
+                                                                                                                  tion appears in General Rule–Exception. This supports stability
+   Candidate-pool size. Table 13 tests whether the frozen method                                                  under larger finite hard-negative pools but does not generalize to
+remains stable as the finite candidate pool grows from 𝑘 = 3 to                                                   open-ended candidate generation or unbounded retrieval.
+𝑘 = 5 and 𝑘 = 10. The parent events, evidence, oracle semantics,
+and frozen method are unchanged; thresholds, prompts, and gates                                                     Same-v5 backend robustness. Table 14 tests whether the method
+are not retuned. Each condition uses 264 events × 5 runs.                                                         depends critically on one cloud LLM backend. On the same frozen
+
+                                                                                                             12
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                                                                                           Anonymous Review, 2026, Xi’an, China
+
+
+
+                                                             Robustness Analysis of ECR-Repair
+                                                                                                        Metric: strict event success (%)
+          (a)                                Candidate Pool Size                          (b)                    LLM Backend                                  (c)                  Candidate-Identifier Permutation
+                                         99.62%      98.86%      98.48%                                         99.62%           99.24%                                            99.62%       99.24%
+                                 100                                                               100                                                                  100
+
+
+                                  80                                                                   80                                                                    80
+      Strict event success (%)
+
+
+
+
+                                                                            Strict event success (%)
+
+
+
+
+                                                                                                                                                  Strict event success (%)
+                                  60                                                                   60                                                                    60
+
+
+                                  40                                                                   40                                                                    40                               33.33%
+
+
+                                  20                                                                   20                                                                    20
+
+
+                                   0                                                                    0                                                                     0
+                                           k=3         k=5        k=10                                         DeepSeek          Qwen                                              Original    Permuted Always-CAND002
+
+                                       Only minor degradation as the                                        Performance remains stable               High performance under per-event permutation
+                                         candidate pool expands.                                                 across backends.                            rules out a literal ID shortcut.
+
+                                             ECR-Repair remains robust to candidate-pool expansion, backend substitution, and candidate-ID permutation,
+                                                                           while a literal CAND002 shortcut fails badly.
+
+
+Figure 5: Robustness analysis of ECR-Repair under candidate-pool expansion, LLM backend substitution, and candidate-
+identifier permutation. Results are reported using strict event success.
+
+                                                                          Table 13: Candidate-pool size robustness
+
+                                                     Pool     Closure      Strict events                             Temporal       Rule–Exception                                Cross-Sentence
+                                                     𝑘 =3      99.62%     262/264 (99.24%)                               88/88            87/88                                       88/88
+                                                     𝑘 =5      99.39%     261/264 (98.86%)                               88/88            86/88                                       87/88
+                                                     𝑘 = 10    99.09%     260/264 (98.48%)                               88/88            85/88                                       87/88
+
+
+v5 benchmark with 𝑘 = 3, DeepSeek is replaced by local Ollama                                                                    With seed 20260902, only candidate identifiers are reassigned
+qwen3.5:9b while the method logic, M15, ranking thresholds,                                                                    within each event; display values, operations, and semantics remain
+candidate set, and closure remain unchanged. Each backend is                                                                   unchanged. The event-level oracle-ID distribution becomes
+evaluated over 264 × 5 runs.                                                                                                                                     (𝑛 001, 𝑛 002, 𝑛 003 ) = (71, 88, 105).
+   Qwen differs from DeepSeek by one strict event. The Qwen
+run contains 15/1320 (1.1%) Base IR timeouts concentrated in a                                                                 An always-CAND_002 strategy would therefore achieve only
+few events; all are retained as failures and none are selectively                                                              88/264 = 33.33%.
+rerun. This supports backend robustness and portability, not model                                                               The full online result is
+independence.                                                                                                                                   1315                            262
+                                                                                                                                     Closure =        = 99.62%,        Strict =     = 99.24%.
+                                                                                                                                                1320                            264
+   Candidate-identifier shortcut audit. Table 15 directly tests                                                                Oracle-correct and closure are identical at 1315/1320 (99.62%). We
+whether the v5 construction regularity in which every oracle                                                                   observe 𝑁 wrong = 0 and 𝑁 abstain = 5. The identifiers selected in the
+is CAND_002 could explain the result through a literal identifier                                                              1315 successful runs are
+shortcut. Earlier global renaming and CSV row-order shuffling
+were insufficient because the oracle remained globally mapped                                                                                          (𝑛ˆ 001, 𝑛ˆ 002, 𝑛ˆ 003 ) = (355, 436, 524),
+to one identifier and canonical sorting could restore a fixed order.                                                           showing that selections spread across all three identifiers in ac-
+We therefore perform a full online DeepSeek 264 × 5 rerun on                                                                   cordance with candidate content rather than concentrating on
+a per-event identifier-permutation variant while keeping the                                                                   CAND_002. The oracle-ID distribution of the five abstentions is
+complete method frozen.                                                                                                        (0, 4, 1). For H5_E003, runs 2–5 terminate with IR_FAIL_CLOSED;
+
+
+                                                                                                                          13
+Anonymous Review, 2026, Xi’an, China                                                                                                           Anon.
+
+
+                                        Table 14: Backend robustness on the same v5 benchmark
+
+                           Backend      Closure       Strict events       Temporal     Rule–Exception      Cross-Sentence
+                           DeepSeek      99.92%     262/264 (99.24%)       88/88            87/88               88/88
+                           Qwen3.5:9b    99.24%     262/264 (99.24%)       88/88            88/88               86/88
+
+
+for H5_E017, run 2 terminates with IR_RANK_TIE_ABSTAIN. Neither                only 33.33%. Candidate-only prediction without evidence obtains
+M14 nor M16 has an API error or timeout in this experiment.                    0% closure. These results indicate that identifier or candidate-text
+   At the event level, 262 events are strict successes in both original        shortcuts cannot explain the final performance.
+and permutation settings, H5_E003 succeeds only in the original
+                                                                                  Independent human annotation study. To validate benchmark
+setting, H5_E017 fails strict success in both, and no event succeeds
+                                                                               labels, we conduct an independent human annotation study
+only under permutation. A 10,000-replicate paired event-clustered
+                                                                               on 90 sampled events (30 TEMPORAL_VERSION, 30 GEN-
+bootstrap gives an Original−Permutation closure difference of
+                                                                               ERAL_RULE_EXCEPTION, and 30 CROSS_SENTENCE_SCOPE).
++0.30 pp (95% CI: 0.00–0.91 pp) and a strict-event difference of +0.38
+                                                                               Two human annotators independently label semantic type, evidence
+pp (95% CI: 0.00–1.14 pp). Thus the full online permutation produces
+                                                                               sufficiency, and oracle candidate without accessing model outputs
+only a small performance decrease, and a literal CAND_002/fixed-
+                                                                               or private evaluation information. The agreement is 100% for all
+identifier shortcut cannot explain the observed 99%+ performance.
+                                                                               evaluated fields, with Cohen’s 𝜅 = 1.0 for semantic type, evidence
+                                                                               sufficiency, and oracle candidate. This result supports the reliability
+6.5     RQ6: Does ECR-Repair Depend on Evidence
+                                                                               of the frozen benchmark annotations.
+        and Structured Reasoning?
+   Evidence dependence analysis (Exp8). To test whether ECR-Repair                Historical provenance evaluation. The original v5 benchmark
+relies on normative evidence rather than superficial candidate                 primarily evaluates evidence-relative semantic repair. To examine
+patterns, we compare the frozen pipeline under five evidence con-              whether the approach also applies to temporally evolving specifica-
+ditions. With original evidence, ECR achieves 1315/1320 successful             tions, we construct a strict historical provenance subset using same-
+closures (99.62%). Removing evidence reduces closure to 2.20%,                 family older RFC evidence and manual temporal validation. The
+masking source information yields 3.18%, shuffling evidence yields             subset contains 60 TEMPORAL_VERSION events and 300 formal
+31.89%, and replacing evidence with irrelevant same-source material            attempts. ECR achieves 300/300 closure, 60/60 strict-event success,
+yields 5.23%. The event-clustered bootstrap differences between                zero abstentions, and zero wrong selections. We report this result
+normal evidence and the four counterfactual conditions are all                 as a historical provenance subset evaluation rather than a com-
+positive, confirming that the method is evidence-dependent rather              plete provenance-chain benchmark because explicit replacement
+than evidence-agnostic.                                                        metadata is unavailable for many RFC cases.
+
+   Strong LLM baselines (Exp9). We compare ECR against three                      Semantic IR fidelity and statistical reliability. We further audit
+stronger alternatives: direct LLM selection with evidence, M16-                whether the intermediate neural-to-symbolic representation cap-
+only verification, and a compute-matched multi-call baseline. ECR              tures the intended semantics. Human-gold comparison shows that
+obtains 99.62% closure accuracy, outperforming direct LLM (92.73%),            Temporal Anchor Recovery substantially improves task-relevant
+compute-matched reasoning (89.85%), and M16-only verification                  temporal normalization: effective-anchor accuracy increases from
+(75.08%). Event-clustered bootstrap confirms statistically signifi-            8.0% to 100.0%, and complete temporal frame accuracy increases
+cant improvements over all baselines. These results indicate that              from 2.3% to 38.6%. However, relation-type reconstruction remains
+additional LLM calls alone cannot reproduce the benefit of explicit            incomplete, indicating that the module should be interpreted as task-
+semantic decomposition, symbolic constraints, and selective verifi-            oriented semantic normalization rather than a general temporal
+cation.                                                                        information extractor.
+                                                                                  Finally, statistical audits confirm that the main result is stable
+6.6     RQ5: What Are the Annotation and                                       under alternative uncertainty analyses. Source-cluster bootstrap
+                                                                               over the 264-event benchmark gives a closure confidence interval of
+        Provenance Boundaries of the Benchmark?                                [99.02%,100%]. Leave-one-source-out evaluation ranges from 99.62%
+   Candidate shortcut audit and benchmark reliability. A reliable              to 99.85%. No wrong selections are observed in 1320 attempts;
+benchmark must avoid both identifier artifacts and ambiguous                   the Clopper–Pearson 95% upper bound of the conditional wrong-
+human judgments. We therefore perform two complementary au-                    selection rate is 0.23%.
+dits. First, the candidate-identifier permutation experiment (Exp10)
+tests whether the fixed oracle identifier in the original v5 con-              6.7    Failure Modes and Test-Slice Analysis
+struction can explain the observed performance. Under per-event                   Domain and source-family slices. Ten of the 11 domains achieve
+permutation, oracle identifiers are redistributed as (71, 88, 105)             100% closure. The only non-perfect domain is dns_security, at
+over CAND_001, CAND_002, and CAND_003. The frozen ECR pipeline                 119/120 (99.17%). Twelve of the 13 RFC source families represented
+obtains 1315/1320 successful closures (99.62%) and 262/264 strict              in the final benchmark achieve 100%; the only non-perfect source
+events (99.24%), while a literal always-CAND_002 strategy achieves             family is IETF RFC 4035, also at 119/120. These are frozen-method
+                                                                          14
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                               Anonymous Review, 2026, Xi’an, China
+
+
+                                                         Table 15: Candidate-identifier sensitivity and shortcut audit
+
+ Setting                                          Oracle-ID distribution    Closure             Strict event         Interpretation
+ Original                                         0/264/0                   99.62%              262/264 (99.24%)     constant identifier; 0 wrong, 1 abstain
+ Global rename                                    0/264/0 equivalent        99.47%              261/264              oracle identity remains constant; 0 wrong,
+                                                                                                                     7 abstain
+ Per-event permutation                            71/88/105                 99.62%              262/264              always-CAND_002=33.33%; 0 wrong, 5
+ (online)                                                                                                            abstain
+
+
+                                                                       Candidate Shortcut Audit (Exp10)
+                                                         99 62
+                                            100
+
+
+
+
+                                            80
+                     Closure Accuracy (%)
+
+
+
+
+                                            60
+
+
+
+                                                                               40 15
+                                            40
+                                                                                                        33 33
+
+
+                                            20
+
+
+
+                                                                                                                               0 00
+                                              0
+                                                      ECR (Ours)            c1-with-ID      always-CAND002               candidate-only
+                                                                                     Method
+                     Figure X. Candidate shortcut audit (Exp10). ECR maintains high performance, whereas ID-leakage and shortcut
+                     baselines collapse, confirming that the benchmark cannot be solved by identifier bias.
+
+
+Figure 6: Candidate shortcut audit. Identifier-based strategies achieve substantially lower performance than ECR-Repair,
+indicating that the main results cannot be explained by fixed candidate identifiers.
+
+                                            Table 16: Evidence-dependence analysis under counterfactual evidence conditions
+
+                                                                   Condition                 Closure      Abstain
+                                                                   Normal                    99.62%       5/1320
+                                                                   No evidence               2.20%      1271/1320
+                                                                   Masked source             3.18%      1258/1320
+                                                                   Shuffled evidence         31.89%      854/1320
+                                                                   Irrelevant same-source    5.23%      1221/1320
+
+
+test-slice stability results, not leave-one-domain-out training exper-                       6.8       Auditable Decision-Chain Case Analysis
+iments or strict cross-domain transfer/generalization evaluations.                           Aggregate results establish overall effectiveness, but auditability
+   Failure case and failure chain. The primary v5 experiment has                             also requires tracing why an individual decision succeeds or
+one failed run, H5_E017 run 5, a General Rule–Exception case in                              abstains. We therefore use the running successful example and
+which the Fallback Candidate Entailment Verifier cannot identify                             two observed abstention trajectories to illustrate the audit interface
+exactly one supported candidate and therefore abstains. No wrong-                            without introducing additional performance samples.
+selected patch is produced, and no correctly selected candidate                                 Illustrative successful chain. Return to the 𝑋 → 𝑌 running exam-
+subsequently fails OWL closure.                                                              ple from Section 3. Evidence focusing first retains the spans that
+                                                                                        15
+Anonymous Review, 2026, Xi’an, China                                                                                                                                                                                                 Anon.
+
+
+                                                                          Table 17: Strong LLM baseline comparison
+
+                                                                    Method                                 Closure                               Strict events
+                                                                    ECR-Repair                      1315/1320 (99.62%)                                 262/264
+                                                                    Direct LLM                      1224/1320 (92.73%)                                 228/264
+                                                                    Compute-matched                 1186/1320 (89.85%)                                 204/264
+                                                                    M16-only                         991/1320 (75.08%)                                 189/264
+
+
+                                                            Experiment 8: Evidence Dependence of ECR-Repair
+           (a)                                                                      (b)
+                                Overall closure success under evidence perturbations                                                            Closure success by semantic type
+                                    99.62                                                                                               100.0                   99.5                          99.3
+                              100                                                                                                100
+                                                                   Formal setting: 264 events × 5 runs
+                              90                                                                                                 90
+                                                                                                                                                      83.0
+                              80                                                                                                 80
+                                                                                                                                                                                                            Normal
+                                                                                                                                                                                                            No evidence
+                              70                                                                                                 70
+                                                                                                                                                                                                            Masked source
+        Closure success (%)
+
+
+
+
+                                                                                                           Closure success (%)
+
+                              60                                                                                                 60                                                                         Shuffled evidence
+
+                                                                                                                                                                                                            Irrelevant same source
+                              50                                                                                                 50
+
+
+                              40                                                                                                 40
+                                                                              31.89
+
+                              30                                                                                                 30
+
+
+                              20                                                                                                 20
+                                                                                                                                                         14.8
+                                                                                                                                                                                 10.5
+                              10                                                             5.23                                10
+                                                  2.20           3.18                                                                       3.4 3.4                                                        3.9 2.3
+                                                                                                                                                                       1.8 2.3                       1.4
+                                                                                                                                                                                        0.5                          0.5
+                               0                                                                                                  0
+                                    Normal         No          Masked        Shuffled      Irrelevant                                      TEMPORAL                      GRE                               CSS
+                                                evidence       source        evidence    same source
+                                                            Condition                                                                                           Semantic type
+
+                                        Correct evidence is critical for end-to-end repair success; shuffled evidence preserves substantial performance only for TEMPORAL cases.
+
+
+
+Figure 7: Evidence-dependence analysis under five evidence conditions. Removing or perturbing normative evidence
+substantially reduces repair success, demonstrating that ECR-Repair relies on evidence-grounded semantic reasoning rather
+than candidate artifacts.
+
+                                                                Table 18: Strict historical provenance subset evaluation.
+
+                                                  Setting                                                Events                        Attempts                    Result
+                                                  Strict historical provenance subset                     60                             300            300/300 closure (100%)
+                                                  Strict event success                                    60                              –                  60/60 (100%)
+                                                  Wrong selection                                         –                              300                       0
+                                                  Selective abstention                                    –                              300                       0
+
+
+state “𝑌 supersedes 𝑋 ” and identify 𝑌 as the current specification.                                                             Semantic IR records 𝑋 as superseded and 𝑌 as current. Candidate
+
+                                                                                                           16
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                                                     Anonymous Review, 2026, Xi’an, China
+
+
+                           Table 19: Marginal failure-state counts: Base Semantic IR Pipeline vs. ECR-Repair
+
+ Failure/success state                                                                                                                  Base Semantic IR Pipeline          ECR-Repair
+ IR invalid / incomplete                                                                                                                                             219                0
+ Rank/tie abstain                                                                                                                                                     67                1
+ Wrong select                                                                                                                                                         12                0
+ OWL closure fail after correct select                                                                                                                                 0                0
+ Success                                                                                                                                                            1022             1319
+
+
+                               Failure-State Marginals: Base Semantic IR vs. ECR-Repair
+                        Base Semantic IR Pipeline                                                                                       ECR-Repair
+
+                               IR invalid / incomplete                                                                                  Rank/tie abstain
+                                         219                                                                                                   1
+
+                                  Rank/tie abstain                                                                                        Wrong select
+                                         67                                              Aggregate                                            0
+                                                                                        comparison
+                                                                                      (no one-to-one
+                                    Wrong select                                     transition claim)                          Closure fail after correct select
+                                        12                                                                                                       0
+
+                                      Success                                                                                                Success
+                                       1022                                                                                                   1319
+
+
+                                         ECR-Repair reduces selection failures through staged semantic constraints.
+
+                                          Counts are marginal state totals; differences are not interpreted as paired causal recovery transitions.
+
+
+
+Figure 8: Marginal failure-state compression from the Base Semantic IR Pipeline to ECR-Repair. Counts summarize aggregate
+state totals and are not interpreted as one-to-one paired causal recovery transitions.
+
+
+scoring can then explain why “update to 𝑌 ” is preferred over
+“retain 𝑋 ” or the neighboring distractor 𝑍 through token/exact
+matches, specification identifiers, type-specific semantic consis-
+tency, and directional-conflict penalties. Once a unique candidate
+passes the frozen gate, formal closure checks only the declared
+deletion/addition graph delta, reasoner consistency, and frozen
+regression conditions. The chain illustrates the audit granularity of
+ECR-Repair: natural-language interpretation, candidate evidence,
+and formal execution are retained in different responsibility layers.
+   Observed abstention trajectories. In the main v5 run, H5_E017 is
+a General Rule–Exception event for which Semantic IR is available
+but candidate ranking ties; fallback candidate entailment verifi-
+cation still cannot identify a unique supported candidate, so the
+system returns Abstain rather than executing a formally possible
+but evidentially underdetermined patch. In the online candidate-ID
+permutation experiment, four failures of H5_E003 stop earlier at
+INCOMPLETE_IR/IR_FAIL_CLOSED. Neither failure mode is caused
+by an API error or timeout. The abstentions are therefore diagnos-
+able semantic/decision outcomes rather than infrastructure failures.
+Table 20 summarizes the representative trajectories.
+
+                                                                                            17
+Anonymous Review, 2026, Xi’an, China                                                                                                                                                                                                                Anon.
+
+
+                  Table 20: Representative auditable trajectories: one successful example and observed abstentions
+
+ Case                              Key state                                             Decision path                                               Audit interpretation
+ Running 𝑋 → 𝑌                     current/superseded                                    IR → score components → unique                              successful decision can be decomposed into evidence, candidate
+ example                           roles                                                 gate → closure                                              features, and formal execution
+ H5_E017                           IR OK, rank tie                                       fallback finds no unique supported                          reject a patch when candidate evidence is insufficient
+                                                                                         candidate → Abstain
+ H5_E003                           incomplete IR                                         IR_FAIL_CLOSED → Abstain                                    stop before candidate execution when semantic representation is
+ (permutation test)                                                                                                                                  insufficient
+
+
+
+                                                                                              Audit Trace of ECR-Repair (Exp15)
+                                                  A. Successful Repair Path (Closed)                                                   B. Abstain Path (Not Repaired)
+
+                                                                                         Source: Doc 3, Sec. 4.2 (2020)
+                                             Evidence
+                                                                                         "Beneficiary must be natural                                                                                             Audit Trace Record
+                    1                        Retrieved textual chunks
+                                                                                         person ..."
+                                                                                                                                                                           No relevant chunk
+                                                                                                                                                                                                                       (Example)
+                                             with source metadata                        ...                                           Evidence
+                                                                                                                                                                           found above
+                                                                                                                                                                                                                    Event ID
+                                                                                                                                       Retrieved evidence                  threshold tau
+                                                                                                                                                                                                                    EVT-213-045
+                                                                                         Subject: Beneficiary                          is insufficient
+                                             Semantic IR                                                                                                                   (similarity < 0.35)
+                                                                                         Predicate: mustBe
+                    2                        Neural-to-symbolic
+                                                                                         Object: NaturalPerson
+                                             intermediate representation                                                                                                                                            Timestamp (UTC)
+                                                                                         ...
+                                                                                                                                                                                                                    2025-05-10 14:32:18
+                                                                                                                                                                           Low confidence
+                                                                                                                                       Semantic IR
+                                                                                                                                                                           (< 0.5) or
+                                                                                         Effective since: 2020-01-01                   IR cannot be reliably
+                                             Temporal Anchor                                                                                                               conflicting claims
+                                                                                         Valid until: -                                                                                                             Sources Used
+                    3                                                                                                                  constructed
+                                             Attach effective time                                                                                                                                                  Doc3 Sec. 4.2 (2020)
+                                                                                         Statement status: active
+                                             to the statement                                                                                                                                                       Doc7 Sec. 1.1 (2019)
+
+                                                                                                                                                                                                                    Top Candidate
+                                                                                                                                                                           No valid time
+                               1                                                         Top-1 (0.86): CAND_002
+                                             Candidate Ranking                                                                         Temporal Anchor                                                              CAND_002 (0.86)
+                               2                                                         Top-2 (0.61): CAND_005                                                            expression
+                    4          3             Rank candidate axioms                                                                     Temporal context
+                                                                                         Top-3 (0.27): CAND_001                                                            detected
+                                             by relevance                                                                              cannot be anchored
+                                                                                                                                                                                                                    Gate Decision
+                                                                                                                                                                                                                    ACCEPT
+                                                                                         Decision: ACCEPT
+                                             Gate Decision
+                                                                                         Confidence: 0.86                                                                  Decision: ABSTAIN
+                    5                        Accept / Refine / Reject /                                                                Gate Decision                                                                Generated Patch
+                                                                                         Rationale: Consistent with                                                        Rationale: Insufficient
+                                             Abstain                                     evidence and ontology                         System abstains                                                              Beneficiary
+                                                                                                                                                                           evidence
+                                                                                                                                       from repair                                                                  subClassOf NaturalPerson
+                                                                                                                                                                                                                    (effectiveFrom 2020-01-01)
+                                                                                         Axiom:                                                                                                                     Reasoner
+                                                                                                                                                                                                                    ...
+                                             OWL Patch
+                                                                                         Beneficiary subClassOf
+                    6          </>           Generate minimal OWL axiom
+                                                                                         NaturalPerson
+                                                                                                                                                                                                                    HermiT 1.4.3
+                                                                                                                                                                                                                    Consistency: yes
+                                             patch                                       (effectiveFrom 2020-01-01)
+                                                                                                                                                                                                                    CQ Validation
+                                                                                         Reasoner: HermiT 1.4.3                                                                                                     10/10 Passed
+                                             Reasoner (Closure)
+                                                                                         Consistency: yes
+                    7                        Check logical consistency
+                                                                                         Entailed axioms: +3
+                                             and entailments                                                                                        ABSTAIN                                                         Outcome
+                                                                                                                                                                                                                    CLOSED (Strict Success)
+                                                                                                                                                    No patch generated,
+
+                                                                                         CQs Passed: 10/10                                          no ontology modified
+                                             CQ Validation
+                                                                                         Strict Success: yes
+                    8                        Evaluate competency
+                                                                                         Result: CLOSED
+                                             questions (CQs)
+
+
+
+                                                   Closed Repair (Strict Success)                                                               Abstain (No Repair)
+
+
+
+
+                        Information Acquisition                   Candidate Generation                     Decision Making   Patch Generation                  Formal Verification                   Evaluation                    Audit Metadata
+
+
+
+
+Figure 9: End-to-end audit trace of ECR-Repair. Each decision is connected from evidence interpretation through Semantic IR,
+candidate evaluation, formal closure, and CQ validation.
+
+
+7    Discussion                                                                                                                     safely. Candidate-content isolation prevents candidate semantics
+The central issue in this task is not simply whether an LLM can                                                                     from contaminating the earlier neural interpretation. The final
+produce structurally valid output, but whether the overall system                                                                   repair is therefore not the direct product of one LLM generation but
+exposes a stable and diagnosable neural-to-symbolic semantic in-                                                                    the output of a layered decision process with explicit responsibility
+terface. The design question in ECR-Repair can be summarized                                                                        boundaries.
+as who is responsible for what, when, and on what evidence. Neural                                                                     The additional validation clarifies the scope of these respon-
+components interpret normative evidence and resolve residual se-                                                                    sibilities. First, the human temporal-gold audit shows that Tem-
+mantic ambiguity. Symbolic components constrain those interpreta-                                                                   poral Anchor Recovery is most valuable for task-relevant anchor
+tions into Typed Semantic IR, deterministic temporal relations, and                                                                 roles such as effective and current, rather than full relation-graph
+candidate-admissibility conditions. Formal closure is responsible                                                                   reconstruction: effective-anchor accuracy rises from 8% to 100%,
+only for determining whether the OWL/RDF edit can be executed                                                                       while relation typing decreases. This suggests that local repair can
+
+                                                                                                                             18
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                Anonymous Review, 2026, Xi’an, China
+
+
+rely on sufficient structured semantics rather than exhaustive                imply equal effectiveness for legal instruments, contracts, clinical
+reconstruction of every temporal fact. Second, the formal-closure             guidelines, or other normative genres.
+stress test shows that closure reliably blocks undeclared graph edits,            Data construction and identifier regularity. v5 uses real
+logical inconsistency, and frozen regression violations, while failing        RFC documents and evidence windows, but repair events, sub-
+to recognize patches that are semantically wrong yet formally                 ject/predicate metadata, and candidate sets are still created un-
+self-consistent. Semantic correctness must therefore remain the               der an experimental protocol. The frozen template also assigns
+responsibility of evidence-grounded candidate selection; formal               all oracles to CAND_002. A full online 264×5 per-event identifier-
+closure cannot substitute for a semantic oracle.                              permutation run explicitly audits this regularity: after redistributing
+    The candidate-pool and backend experiments also narrow the                the oracle IDs to 71/88/105, closure remains 99.62%, strict event
+interpretation that the 99.92% result depends on a single narrow con-         success remains 262/264, and wrong selection remains zero. A literal
+figuration. Increasing the candidate pool from three to ten reduces           fixed-identifier strategy therefore cannot explain the result, but the
+strict event success only to 260/264, with Temporal-Version remain-           benchmark-construction regularity itself must remain transparently
+ing perfect. Replacing the cloud backend with local Qwen3.5:9b                disclosed.
+on the same v5 benchmark yields 262/264 strict event success, one                 Annotation-reliability boundary. A 90-event independent
+event below DeepSeek. These results support robustness to finite              human annotation study is performed with two human annotators.
+candidate-pool enlargement and limited backend portability, but               Agreement is 100% for semantic type, evidence sufficiency, and
+not open-ended generation, arbitrarily large candidate spaces, or             oracle candidate, with Cohen’s 𝜅 = 1.0. The study validates the
+model independence.                                                           sampled benchmark labels, but it does not imply that all possible
+    From a selective-prediction perspective, the abstention mecha-            domain interpretations outside the sampled semantic categories
+nism instantiates the principle “prefer no repair over an unsup-              are unambiguous.
+ported repair” at one frozen operating point. On the main v5                      Semantic-drift provenance. The stricter provenance audit
+benchmark, Coverage is 99.92% and 𝑃 sel = 100%, corresponding                 requiring explicit lineage, 𝑡 0 support for the old assertion, and
+to zero observed conditional semantic risk among selected cases.              𝑡 1 rejection of the old assertion together with support for the
+Because we do not sweep thresholds to produce a complete risk–                replacement yields 𝑁 = 0. The main experiment therefore supports
+coverage curve, the evidence supports an operational selective-               evidence-relative semantic-drift repair, not provenance-complete
+repair mechanism rather than conclusions about an optimal risk                historical drift reconstruction. This limitation is partly caused by
+function or calibrated selector.                                              incompleteness of the current public RFC cache.
+    The candidate-identifier audit exposes and directly addresses                 Conditional-task boundary. v5 assumes that a potential event
+an important benchmark regularity: the v5 construction template               has already been localized, a relevant evidence window has been
+assigns every oracle to CAND_002. Global renaming and row-order               provided, and the correct repair occurs in the finite candidate set. We
+shuffling do not fully remove this risk because the oracle identity           do not evaluate open-corpus retrieval recall, candidate-generation
+remains globally constant. The stronger per-event permutation                 recall, or drift-discovery precision/recall/F1. The 𝑘 = 5/10 hard-
+redistributes oracle IDs to 71/88/105 and, under a frozen M13–M16             negative variants show stability for larger finite pools but do
+pipeline, a full online DeepSeek 264×5 rerun still obtains 99.62%             not justify conclusions about open-ended generation or arbitrary
+closure, 262/264 strict event success, and zero wrong selections; a           candidate spaces.
+literal always-CAND_002 strategy would achieve only 33.33%. Paired                Formal-closure boundary. The closure stress test rejects all
+event-clustered differences are small as well (closure +0.30 pp, 95%          structurally invalid patch classes involving extra graph edits, rea-
+CI 0.00–0.91; strict +0.38 pp, 95% CI 0.00–1.14, Original minus               soner inconsistency, or repair-check failure, but all 264 semantically
+Permutation). This rules out the literal fixed-identifier shortcut as         wrong yet formally self-consistent patches still pass closure. Formal
+an explanation for the observed 99%+ performance. It does not prove           closure provides structural/logical/regression safety and cannot
+that the benchmark contains no other construction regularities.               replace evidence-grounded semantic selection.
+    Finally, the strict provenance audit result of 𝑁 = 0 is an                    CQ/repair-check independence. The frozen regression layer
+important boundary rather than a disposable null result. The                  is dominated by event-specific triple-level repair checks constructed
+current v5 benchmark is built from real RFC evidence and supports             under the same event protocol. It is not an independent external
+evidence-relative repair decisions, but under the frozen evidence             semantic gold set. A stronger evaluation should include a richer
+cache it cannot reconstruct a provenance-complete 𝑡 0 → 𝑡 1                   CQ/SPARQL suite authored independently of repair-event construc-
+historical drift chain for each event. We retain “semantic drift” as          tion.
+the problem background and evidence-relative operational concept,                 Scope of Temporal Recovery. On human gold, M15 substan-
+but the 99.92% figure must not be interpreted as the success rate of          tially improves effective-anchor and role-frame metrics but de-
+historical drift discovery or provenance reconstruction.                      creases relation-type accuracy. We therefore position it as task-
+                                                                              oriented temporal-anchor normalization rather than a general,
+8    Threats to Validity                                                      complete temporal relation-extraction system.
+Source-domain limitation. The final benchmark is dominated by                     Ontology scale and reasoning scalability. The unit of evalua-
+public RFC/IETF-style technical specifications. Although it covers            tion is an event-level local patch rather than an ontology-size, TBox-
+11 domains and 13 source families, the results do not directly                depth, or large-ABox scalability study. The results therefore do not
+                                                                              establish global reasoning scalability for very large ontologies.
+
+                                                                         19
+Anonymous Review, 2026, Xi’an, China                                                                                                                        Anon.
+
+
+   Candidate-content-isolation boundary. The General                          provided, and the correct repair appears in a finite candidate set—
+Rule–Exception and Cross-Sentence Scope paths allow one                       264 RFC-based repair events and 1320 runs yield 99.92% closure
+ranking_failed=true Boolean to trigger a recovery retry. The                  accuracy, 262/264 (99.24%) strict event success, and zero wrong-
+candidate set can therefore influence whether a retry occurs,                 selected patches.
+although concrete candidate content is never fed back into semantic              The final validation shifts the interpretation from “high accuracy”
+recovery. We explicitly call this mechanism candidate-content                 to “high accuracy with auditable boundaries.” Human temporal gold
+isolation rather than absolute candidate independence.                        supports substantial improvement in effective-anchor recovery but
+   Statistical independence. The five runs of one event are                   not characterization of Temporal Anchor Recovery as a complete
+not independent samples. Attempt-level percentages are therefore              temporal relation extractor. Formal-closure stress testing demon-
+descriptive, primary uncertainty and stage differences use event-             strates detection of structural, logical, and regression violations
+clustered bootstrap, and strict event success uses the event as the           but not semantic errors that remain formally self-consistent. Strict
+independent unit with a Wilson interval. Robustness percentages               event success remains 260/264 at 𝑘 = 10, and a local Qwen3.5:9b
+without clustered confidence intervals are treated descriptively.             backend reaches 262/264. Most importantly, a full online DeepSeek
+   Model backends and timeout behavior. DeepSeek is a muta-                   run on a per-event candidate-ID permutation breaks the fixed
+ble cloud-service model identifier, so future backend updates may             CAND_002 regularity yet still obtains 1315/1320 (99.62%) closure,
+affect exact reproducibility. The Qwen3.5:9b v5 run has 15/1320               262/264 (99.24%) strict success, and zero wrong selections, compared
+Base IR timeouts, all counted as failures without selective reruns.           with only 33.33% for an always-CAND_002 shortcut. At the same
+Similar overall performance supports portability but not model                time, the strict historical-provenance audit admits 𝑁 = 0 events,
+independence.                                                                 so our claim remains evidence-relative semantic-drift repair rather
+   Interpretation of the candidate-ID permutation test. The                   than provenance-complete historical drift reconstruction.
+full online permutation test rules out one specific explanation of the           More broadly, for normative knowledge engineering settings
+99%+ performance: always selecting literal CAND_002 or another                in which decisions must be auditable and attributable, the design
+fixed identifier. It does not prove that no other shortcut exists,            question for a neuro-symbolic system should not be reduced to
+nor does it alter the fact that candidate construction is protocol-           “which layer is more intelligent?” but should instead ask which
+designed. We therefore interpret the experiment as counterfactual             layer is responsible for which decision, at what stage, and on what
+robustness evidence against literal candidate-identifier bias.                evidence. Reliable ontology repair cannot rely solely on a stronger
+   Compute and baseline fairness. The simple candidate-                       language model, nor can it treat formal consistency as equivalent to
+selection baselines are effectiveness controls, not compute-matched           semantic correctness. A more defensible path is to establish explicit
+systems. ECR-Repair may perform recovery or additional verifier               responsibility boundaries through Semantic IR, candidate-content
+calls, so the current experiments do not establish token- or latency-         isolation, selective abstention, symbolic constraints, and formal
+efficiency advantages.                                                        safety checks. The present conclusions do not cover drift discovery,
+   Implementation metadata. The manuscript fixes the logi-                    open-corpus retrieval, open-ended candidate generation, arbitrarily
+cal materialization–reasoner–graph-delta–repair-check interface               large candidate spaces, or large-scale ontology reasoning.
+but does not list software versions for unverified reasoner/RDF-
+library/harness components. A formal artifact release should pro-             Generative AI Use Statement
+vide these environment and dependency details; until then, we do              OpenAI ChatGPT was used to assist with language editing, struc-
+not claim cross-reasoner or cross-library reproduction equivalence.           tural organization, academic terminology, LaTeX formatting, and
+   Final blind-evaluation boundary. v1/v3/v4 are diagnostic,                  presentation refinement. The authors reviewed and edited the
+calibration, or supplementary validation data. v5 is the primary              research questions, experimental design, data, analysis, conclusions,
+blind benchmark rebuilt and frozen after the complete method                  and final manuscript, and remain responsible for the accuracy and
+freeze. The paper-final validation performs additional audits and             integrity of all content.
+robustness tests on the frozen method and does not retune M13–
+M16, ranking thresholds, or prompts in response to those results.             References
+                                                                               [1] Shqiponja Ahmetaj, Robert David, Axel Polleres, and Mantas Šimkus. 2022.
+9    Conclusion                                                                    Repairing SHACL Constraint Violations Using Answer Set Programming. In
+                                                                                   The Semantic Web – ISWC 2022 (Lecture Notes in Computer Science, Vol. 13489).
+We presented ECR-Repair, an evidence-constrained modular neuro-                    Springer, 375–391. doi:10.1007/978-3-031-19433-7_22
+symbolic ontology repair framework for evolving normative doc-                 [2] Shqiponja Ahmetaj, Robert David, Axel Polleres, and Mantas Šimkus. 2025.
+                                                                                   A Logic Programming Approach to Repairing SHACL Constraint Violations.
+uments. Semantic IR acts as the neural-to-symbolic semantic in-                    Transactions on Graph Data and Knowledge 3, 3 (2025), 1:1–1:36. doi:10.4230/TG
+terface: LLMs perform candidate-content-isolated evidence inter-                   DK.3.3.1
+pretation and on-demand candidate entailment verification; deter-              [3] Viviane Torres da Silva, Jéssica Soares dos Santos, Raphael Thiago, Elton Soares,
+                                                                                   and Leonardo Guerreiro Azevedo. 2022. OWL Ontology Evolution: Understanding
+ministic recovery and constraint-aware ranking implement sym-                      and Unifying the Complex Changes. The Knowledge Engineering Review 37 (2022),
+bolic semantic decision making; and OWL/RDF materialization,                       e10. doi:10.1017/S0269888922000066
+                                                                               [4] Wenqi Fan, Yujuan Ding, Liangbo Ning, Shijie Wang, Hengyun Li, Dawei Yin,
+reasoning, graph-delta validation, and frozen repair/CQ regression                 Tat-Seng Chua, and Qing Li. 2024. A Survey on RAG Meeting LLMs: Towards
+checks implement formal closure. Under the primary conditional                     Retrieval-Augmented Large Language Models. In Proceedings of the 30th ACM
+v5 setting—the potential event is localized, relevant evidence is                  SIGKDD Conference on Knowledge Discovery and Data Mining. ACM, 6491–6501.
+                                                                                   doi:10.1145/3637528.3671470
+
+
+                                                                         20
+Evidence-Constrained Neuro-Symbolic Ontology Repair                                                                                       Anonymous Review, 2026, Xi’an, China
+
+
+ [5] Nadeen Fathallah, Arunav Das, Stefano De Giorgis, Andrea Poltronieri, Peter                 20382–20401. doi:10.1007/s10489-023-04545-0
+     Haase, Liubov Kovriguina, Albert Meroño-Peñuela, Elena Simperl, Steffen Staab,         [12] Damith Premasiri, Tharindu Ranasinghe, Ruslan Mitkov, Mo El-Haj, and Ingo
+     and Alsayed Algergawy. 2026. Extended NeOn-GPT: Advancing LLM-Powered                       Frommholz. 2025. Survey on Legal Information Extraction: Current Status and
+     Ontology Learning Through Ontology Reuse and Automated Verification. Se-                    Open Challenges. Knowledge and Information Systems 67 (2025), 11287–11358.
+     mantic Web 17, 4 (2026), 1–47. doi:10.1177/22104968261453138                                doi:10.1007/s10115-025-02600-5
+ [6] Zhengyao Gu and Mark Hopkins. 2023. On the Evaluation of Neural Selective              [13] Anmol Singhal and Travis D. Breaux. 2025. Legal Requirements Translation from
+     Prediction Methods for Natural Language Processing. In Proceedings of the 61st              Law. In 2025 IEEE 33rd International Requirements Engineering Conference (RE).
+     Annual Meeting of the Association for Computational Linguistics (Volume 1: Long             IEEE, 205–217. doi:10.1109/RE63999.2025.00028
+     Papers). Association for Computational Linguistics, 7888–7899. doi:10.18653/v1/        [14] Jiashuo Sun, Pengcheng Jiang, Saizhuo Wang, Jiajun Fan, Heng Wang, Siru
+     2023.acl-long.437                                                                           Ouyang, Ming Zhong, Yizhu Jiao, Chengsong Huang, Xueqiang Xu, Pengrui Han,
+ [7] Keerat Guliani, Deepkamal Gill, David Landsman, Nima Eshraghi, Krishna                      Peiran Li, Jiaxin Huang, Ge Liu, Heng Ji, and Jiawei Han. 2026. Rethinking the
+     Kumar, and Lovedeep Gondara. 2026. De Jure: Iterative LLM Self-Refinement for               Reranker: Boundary-Aware Evidence Selection for Robust Retrieval-Augmented
+     Structured Extraction of Regulatory Rules. arXiv:2604.02276 arXiv preprint.                 Generation. In Proceedings of the 43rd International Conference on Machine
+ [8] Qiu Ji, Guilin Qi, Yinkai Yang, Weizhuo Li, Siying Huang, and Yang Sheng. 2022.             Learning (Proceedings of Machine Learning Research, Vol. 306).
+     An Embedding-Based Approach to Repairing OWL Ontologies. Applied Sciences              [15] Sinh Trong Vu, Minh Le Nguyen, and Ken Satoh. 2022. Abstract Meaning
+     12, 24 (2022), 12655. doi:10.3390/app122412655                                              Representation for Legal Documents: An Empirical Research on a Human-
+ [9] Jiayi Li, Daniel Garijo, and María Poveda-Villalón. 2026. Large Language Models             Annotated Dataset. Artificial Intelligence and Law 30, 2 (2022), 221–243. doi:10.1
+     for Ontology Engineering: A Systematic Literature Review. Semantic Web 17, 4                007/s10506-021-09292-6
+     (2026), 1–45. doi:10.1177/22104968261465514                                            [16] W3C OWL Working Group. 2012. OWL 2 Web Ontology Language Document
+[10] Anna Sofia Lippolis, Mohammad Javad Saeedizade, Robin Keskisärkkä, Sara                     Overview (Second Edition). W3C Recommendation. 11 December 2012.
+     Zuppiroli, Miguel Ceriani, Aldo Gangemi, Eva Blomqvist, and Andrea Giovanni            [17] World Wide Web Consortium. 2017. Shapes Constraint Language (SHACL). W3C
+     Nuzzolese. 2025. Ontology Generation Using Large Language Models. In The                    Recommendation. 20 July 2017.
+     Semantic Web – ESWC 2025 (Lecture Notes in Computer Science, Vol. 15718).              [18] Nan Wu, Xiaocong Lai, Mei Chen, and Ying Pan. 2024. Ontology Matching and
+     Springer, 321–341. doi:10.1007/978-3-031-94575-5_18                                         Repair Based on Semantic Association and Probabilistic Logic. IEICE Transactions
+[11] Marcin Pietranik and Adrianna Kozierkiewicz. 2023. Methods of Managing the                  on Information and Systems E107-D, 11 (2024), 1433–1443. doi:10.1587/transinf.2
+     Evolution of Ontologies and Their Alignments. Applied Intelligence 53 (2023),               024EDP7028
+
+
+
+
+                                                                                       21
+

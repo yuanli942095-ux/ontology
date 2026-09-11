@@ -1,0 +1,413 @@
+  Evidence-Constrained Neuro-Symbolic Ontology
+  Repair for Semantic Drift in Versioned Normative
+                    Documents
+                                                       Anonymous Authors
+                                                      Anonymous Affiliation
+                                                 Email: anonymous@example.com
+
+
+   Abstract—Versioned normative documents continuously revise        semantically outdated but logically valid assertions remain
+definitions, obligations, exceptions, scopes, and effective condi-   difficult to identify. An outdated ontology assertion may still
+tions. Ontologies built from earlier document versions may there-    be well formed, may satisfy the declared ontology vocabulary,
+fore remain logically consistent while containing assertions that
+are no longer semantically supported by the current evidence.        and may pass a reasoner consistency check. For example, an
+This paper presents ECR-Repair, an evidence-constrained neuro-       assertion saying that a standard version X is current may
+symbolic framework for finite-candidate ontology repair under        remain logically consistent after version Y supersedes X,
+semantic drift. The central design is a Semantic Intermediate        because the ontology contains no contradiction unless the
+Representation (Semantic IR) that acts as a neural-symbolic          supersession semantics have been represented and checked.
+interface between natural-language normative evidence and sym-
+bolic OWL/RDF repair decisions. Large language models are            Thus, logical consistency ̸⇒ semantic correctness. Textual dif-
+used to interpret evidence and, when needed, verify candidate        ferencing alone is also insufficient, since versioned normative
+entailment, but candidate content is isolated from semantic          documents often express changes through dispersed temporal
+extraction so that repair is not reduced to an “Evidence +           anchors, exception clauses, and cross-sentence scope relations.
+Candidate → LLM → Answer” prompt. Symbolic components
+perform typed semantic normalization, constraint-aware candi-
+                                                                        Large language models (LLMs) offer a natural mechanism
+date ranking, selective gating, and formal validation through        for interpreting such normative language. However, directly
+OWL consistency, RDF graph-delta checking, and competency-           asking an LLM to repair an ontology introduces three practical
+question regression. On an RFC-based benchmark containing            risks. First, the model may hallucinate an unsupported repair,
+264 repair events and 1320 runs across three semantic drift          especially when the evidence is incomplete or linguistically
+types, ECR-Repair achieves 99.62% closure accuracy and 99.24%
+strict event success, outperforming both a direct LLM baseline
+                                                                     complex [1]. Second, a direct prompt may not expose a
+and a base Semantic IR pipeline. The results show that reliable      traceable path from evidence to ontology edit. Third, even
+ontology repair for evolving normative sources requires not          a plausible natural-language answer may not produce an
+only language-model interpretation, but also explicit evidence       OWL/RDF patch that preserves declared graph effects and
+constraints, candidate-content isolation, and formal symbolic        downstream competency-question behavior. These limitations
+closure.
+                                                                     are particularly problematic when the ontology is used as an
+   Index Terms—ontology repair, semantic drift, neuro-symbolic
+reasoning, Semantic IR, large language models, OWL, RDF,             operational representation of normative constraints.
+evidence grounding                                                      This paper proposes ECR-Repair, an evidence-constrained
+                                                                     neuro-symbolic ontology repair framework. Instead of treating
+                      I. I NTRODUCTION                               repair as direct generation, ECR-Repair decomposes the task
+                                                                     into five roles:
+   Ontologies are widely used to represent regulatory re-
+quirements, protocol standards, domain policies, and other            Normative Evidence → Semantic IR → Symbolic Decision
+normative knowledge. In these settings, correctness depends               → Fallback Verification → OWL/RDF Validation.
+not only on whether an ontology is internally consistent, but
+also on whether its assertions are still supported by the current    The Semantic Intermediate Representation (Semantic IR) is
+version of the underlying normative documents. Normative             the central neural-symbolic interface: it converts evidence into
+documents are not static. A new version may supersede an             typed semantic fields before candidates are ranked. For exam-
+earlier specification; an exception may override a general           ple, if an old ontology states that specification X is current
+rule; a qualifier may change the scope of multiple statements;       while the current normative evidence says that specification
+or an effective date may alter which condition is currently          Y updates X and governs the target requirement, Semantic
+applicable. These changes can create semantic drift between          IR records the entities X and Y , the update relation, the
+an ontology and its evidence source.                                 current/effective role of Y , the obsolete or historical role of
+   The key difficulty is that semantic drift is not the same as      X, and the supporting evidence span. Candidate ranking then
+syntactic invalidity or logical inconsistency. Existing ontology     prefers the repair that replaces X with Y and rejects candidates
+repair methods mainly detect logical inconsistency, while            that retain X or reverse the update direction.
+   This workflow explicitly separates evidence interpretation        B. LLM-Based Ontology Engineering
+from candidate selection. The semantic interpretation module            Recent work has explored LLMs for ontology learning,
+does not read candidate values, candidate operations, candidate      requirements elicitation, competency-question generation, on-
+identifiers, candidate scores, or top-k identities. Only after a     tology drafting, and ontology testing [6]–[9]. LLMs can reduce
+candidate-blind Semantic IR has been fixed does the system           the cost of moving from textual requirements to structured
+reveal the finite candidate set. This avoids the shortcut            knowledge, and broader work on LLMs and knowledge graphs
+          Evidence + Candidate → LLM → Answer                        suggests many opportunities for combining language models
+                                                                     with symbolic graph representations [10]. At the same time,
+and instead follows                                                  LLM outputs may be hallucinated, structurally unstable, or
+                                                                     difficult to validate [1].
+      Evidence → Semantic IR → Candidate Ranking.
+                                                                        ECR-Repair therefore adopts a conservative use of LLMs.
+If ranking remains ambiguous, a fallback verifier may evaluate       The model does not directly rewrite the ontology. It first
+candidates independently, but only in the candidate-aware            interprets evidence into Semantic IR, and only a later sym-
+decision layer and under fixed abstention rules.                     bolic decision layer maps that IR to candidate edits. When
+   This conference version focuses on the method and an initial      candidate ambiguity remains, LLM-based verification is used
+empirical validation. It frames the task as evidence-relative        as a fallback entailment check, not as an unconstrained repair
+semantic repair with a provided event, evidence window, and          generator.
+finite candidate set; automatic drift discovery, open-corpus
+                                                                     C. Neuro-Symbolic Reasoning
+retrieval, and open-ended candidate generation are outside
+scope.                                                                  Neuro-symbolic AI combines neural models’ pattern-
+   The contributions are:                                            recognition and language-understanding strengths with sym-
+   • We propose ECR-Repair, an evidence-constrained neuro-
+                                                                     bolic systems’ explicit structure, constraints, and reasoning
+      symbolic ontology repair framework for semantic drift in       [11]. Knowledge graphs provide a natural symbolic substrate
+      versioned normative documents.                                 for such integration, since they encode entities, relations, con-
+   • We introduce Semantic IR as an explicit interface be-
+                                                                     straints, and graph structure in machine-checkable form [12].
+      tween LLM-based evidence interpretation and symbolic           Retrieval-augmented generation further shows that language
+      reasoning, together with a candidate-content isolation         models can benefit from external evidence when generation is
+      protocol that prevents candidate leakage before ranking.       grounded in retrieved or selected context [13], [14].
+   • We define formal closure validation for selected
+                                                                        ECR-Repair follows this general direction but applies it
+      OWL/RDF repairs and evaluate the method on 264 RFC-            to ontology repair under versioned normative evidence. The
+      based repair events and 1320 runs, showing substantial         neural layer converts evidence into a structured semantic rep-
+      gains over direct LLM and base Semantic IR baselines.          resentation. The symbolic layer enforces type constraints, can-
+                                                                     didate admissibility, graph-delta consistency, and competency-
+                      II. R ELATED W ORK                             question regression. Selective prediction also informs the
+A. Ontology Evolution and Repair                                     design: when the available evidence or ranking signal is
+                                                                     insufficient, the system should abstain rather than force a repair
+   Ontology evolution studies how changes in a knowledge             [15].
+source or conceptualization should be propagated to an on-
+tology while maintaining usability and consistency [2]. Tra-                         III. P ROBLEM F ORMULATION
+ditional ontology repair often targets logical inconsistency,
+                                                                       Let O be a source ontology that may contain an assertion
+unsatisfiable concepts, or alignment conflicts [3]. SHACL
+                                                                     no longer supported by current normative evidence. Let D be
+and related constraint-repair work provides another setting in
+                                                                     a collection of versioned normative documents, and let C =
+which RDF graph violations are detected and repaired against
+                                                                     {c1 , . . . , ck } be a finite candidate set for a localized repair
+explicit shapes [4], [5]. These approaches are essential for
+                                                                     event. Each candidate ci contains a display value and a formal
+structural and logical quality, but they do not by themselves
+                                                                     OWL/RDF edit operation. The output is either a selected repair
+guarantee that an assertion remains supported by a revised
+                                                                     candidate c∗ or A BSTAIN.
+normative document.
+                                                                       The input is therefore:
+   Our setting is narrower and different. We assume that a
+potential local repair event has been identified and that a finite                              (O, D, C),
+set of executable repair candidates is available. The task is to
+select the candidate whose semantics are supported by current        where the event metadata specify the target subject, predicate,
+evidence and then validate the resulting OWL/RDF patch. This         semantic type, and evidence window. The output is:
+places semantic interpretation before formal closure: formal                              c∗ ∈ C ∪ {A BSTAIN}.
+checks can reject malformed, inconsistent, or undeclared edits,
+but they cannot determine whether a formally valid candidate         A selected candidate is accepted only if it is supported by
+is the one best supported by the current normative evidence.         the current evidence and its OWL/RDF patch passes formal
+validation. The private oracle, used only for evaluation, is        says about the target assertion before any candidate content
+excluded from all model prompts and decision inputs.                is visible.
+   This paper studies evidence-relative semantic repair rather         For each repair event, Semantic IR records:
+than automatic drift discovery. The task assumes that a poten-         • Entity: the subject, object, version, standard, condition,
+tial drift location has already been localized. It also assumes           or other normative entity involved in the assertion;
+that a relevant evidence window has been provided and that             • Relation: the relevant predicate, rule relation, exception
+the correct repair appears in the finite candidate set. The               relation, version relation, or scope relation;
+method is therefore not evaluated as an end-to-end system for          • Temporal information: current version, superseded ver-
+scanning a complete document corpus, retrieving all relevant              sion, effective date, publication date, reference date, or
+evidence, generating all possible candidate patches, or proving           unresolved temporal anchor;
+historical drift across all document versions. These are natural       • Scope: the statement or set of statements governed by a
+extensions, but they are outside the conference version.                  qualifier, exception, condition, or cross-sentence modifier;
+   The distinction matters because semantic drift is defined rel-      • Constraint: type restrictions, rule priority, negation, nu-
+ative to evidence support. Let Support(a, Dt ) denote whether             meric/date constraints, and admissibility conditions;
+assertion a is supported by document evidence at time or               • Evidence: explicit spans or document fragments support-
+version t. Strict historical drift would require showing that an          ing the extracted fields.
+old assertion was supported at t0 and no longer supported at t1 ,
+                                                                       The representation is type specific. Temporal-Version events
+while a replacement assertion is supported at t1 . The present
+                                                                    encode current, superseded, effective, publication, and refer-
+task uses the narrower current-evidence condition: the old
+                                                                    ence roles. General Rule-Exception events encode a general
+assertion is not supported by the current evidence window, and
+                                                                    rule, exception trigger, exception result, and priority. Cross-
+one candidate repair is supported by it. This is the appropriate
+                                                                    Sentence Scope events encode the qualified statement, qual-
+scope for a conference paper centered on method design and
+                                                                    ifier, scope target, and attachment relation. If required fields
+initial validation.
+                                                                    cannot be supported by evidence, the IR is marked incomplete
+               IV. ECR-R EPAIR F RAMEWORK                           and the system abstains or invokes a candidate-blind recovery
+A. Overview                                                         step.
+                                                                       This structure is what makes the method neuro-symbolic:
+   Fig. 1 shows the overall architecture. ECR-Repair is or-
+                                                                    the neural component interprets complex normative language,
+ganized as a modular neuro-symbolic pipeline. Normative
+                                                                    while the symbolic component receives a typed object whose
+evidence is first filtered and interpreted into Semantic IR. The
+                                                                    fields can be inspected, constrained, and mapped to formal
+fixed IR is then used by a symbolic decision layer to rank
+                                                                    ontology edits.
+candidates under semantic and structural constraints. If ranking
+is ambiguous, a fallback verifier evaluates candidate entailment    C. Candidate-Content Isolation
+under fixed rules. Finally, the selected repair is materialized
+                                                                       A central design constraint is candidate-content isolation.
+as an OWL/RDF patch and validated through formal checks.
+                                                                    During evidence interpretation, the model sees the evidence
+   The framework follows five stages:
+                                                                    window and public event metadata, but not candidate values,
+   1) Normative Evidence. The system receives a versioned
+                                                                    candidate operations, candidate identifiers, candidate scores,
+      normative evidence window and public event metadata.
+                                                                    or the private oracle. Candidate information enters only after
+   2) Semantic IR. An LLM-supported interpretation module
+                                                                    Semantic IR has been produced and normalized.
+      converts evidence into typed semantic fields without
+                                                                       This avoids an important leakage path. If a prompt contains
+      access to candidate content.
+                                                                    both evidence and candidate text, an LLM may choose the
+   3) Symbolic Decision. A deterministic scorer ranks candi-
+                                                                    candidate whose wording best matches the evidence without
+      date operations against the fixed IR and applies selective
+                                                                    constructing an independent semantic representation. Such a
+      gates.
+                                                                    system can appear accurate on finite-choice benchmarks while
+   4) Fallback Verification. If ranking cannot identify a
+                                                                    failing to provide a stable evidence-to-ontology interface.
+      unique admissible candidate, a candidate-level entail-
+                                                                    ECR-Repair instead fixes the semantic interpretation first:
+      ment verifier evaluates candidates independently.
+   5) OWL/RDF Validation. The selected edit is material-                  Evidence → Semantic IR → Candidate Ranking.
+      ized, checked for OWL consistency, compared through
+      RDF graph delta, and tested by competency-question            Only a content-free failure signal may flow backward. For
+      regression.                                                   General Rule-Exception and Cross-Sentence Scope events, if
+                                                                    candidate ranking fails to produce a unique admissible candi-
+B. Semantic IR as Neural-Symbolic Interface                         date, the semantic recovery module may receive the Boolean
+   Semantic IR is the central interface contract between lan-       flag ranking_failed=true and perform at most one
+guage interpretation and symbolic repair. It is not a new name      additional candidate-blind recovery pass. It does not receive
+for prompt engineering, a free-form rationale, or a candidate       the leading candidate, the scores, the candidate values, or any
+answer; it is a typed representation of what the evidence           candidate-derived semantics.
+                           ECR-Repair: Evidence-Constrained Neuro-Symbolic Ontology Repair
+                                                                                      Versioned Normative Documents
+
+     1    Neural Semantic Interpretation                                                                                                                                                  candidate content isolated
+
+                              Predicate-aware                                                       Base Semantic IR                                                      Clause-Level Semantic
+                              Evidence Focus                                                        Pipeline (LLM)                                                        Recovery (LLM, if needed)
+                              Isolate and emphasize                                                 Generate base semantic IR                                             Recover missing clauses
+                              relevant evidence                                                     from isolated content                                                 and refine semantics
+
+
+
+
+     2    Symbolic Semantic Representation
+                              Typed Semantic IR                                                     Temporal Anchor                                                        Resolved /
+                              Type entities, relations,                                             Recovery (deterministic)                                               Incomplete
+                              constraints                                                           Anchor to time/version                                                 Mark semantic IR as
+                                                                                                    constraints                                                            resolved or incomplete
+
+                                                                                                                                                                            candidate set enters below this boundary
+
+
+     3    Candidate-Aware Neuro-Symbolic Decision                                                                                                                          Fallback Candidate
+          ranking-failure flag only; one retry; no candidate content                                                                    ambiguous                          Entailment Verifier
+                                                                                                                                                                           (LLM; ambiguity only)
+                                Constraint-Aware                       unique
+                                Ranking & Gate                                                                                                                             Verify entailment when
+                                (symbolic)                                                            SELECT                       unique supported
+                                                                                                                                                                           ranking is ambiguous
+                                                                                                   Select top-ranked
+                                Rank candidates under
+                                                                                                       candidate                                                                ABSTAIN
+                                formal constraints
+                                                                                                                                                                              When no unique
+                                                                                                                                                                           candidate is supported
+
+
+     4    Formal Symbolic Validation
+                            OWL/RDF Patch                                        Reasoner                                              RDF Graph Δ                                  CQ Regression
+                            Encode selected repair                               Check logical                                         Compute graph                                Regression test with
+                            as ontology patch                                    consistency                                           difference                                   competency questions
+
+
+            Primary flow                Conditional flow          Neural (LLM)          Symbolic             Neuro-Symbolic Decision                  Formal Validation   ABSTAIN   = No unique, supported candidate
+
+
+
+
+Fig. 1. Overall evidence-constrained neuro-symbolic architecture of ECR-Repair. Semantic IR is the neural-symbolic interface; candidate content becomes
+visible only after evidence interpretation has been fixed.
+
+
+
+D. Symbolic Decision and Constraint Scoring                                                                   scorer with type-specific rules, thresholds, and conflict penal-
+  After Semantic IR is fixed, ECR-Repair reveals the finite                                                   ties fixed before evaluation.
+candidate set and scores each candidate against the evidence-                                                    The gate accepts a ranked candidate only if it is unique and
+grounded representation. The decision layer is symbolic in the                                                admissible. A candidate may be rejected because the Semantic
+sense that it uses typed fields, deterministic constraints, and                                               IR is incomplete, its score is below the threshold, another
+explicit gate conditions rather than free-form generation.                                                    candidate ties under the relevant constraints, or an explicit
+                                                                                                              conflict is detected. The gate is selective: abstention is a valid
+  For exposition, we write the candidate score as:
+                                                                                                              outcome and is preferred to an unsupported ontology edit.
+Score(ci ) = αSsemantic (ci ) + βSconstraint (ci ) − γSconflict (ci ).
+                                                                                                              E. Fallback Verification
+Ssemantic measures whether the candidate matches the en-                                                         The fallback verifier is invoked only when symbolic ranking
+tities, relations, temporal anchors, and scoped meanings in                                                   remains ambiguous. Unlike the initial Semantic IR stage, the
+Semantic IR. Sconstraint rewards satisfaction of type con-                                                    verifier is candidate aware. However, it evaluates each candi-
+straints, effective-date constraints, rule priorities, and declared                                           date independently rather than asking the model to compare
+operation requirements. Sconflict penalizes negation mismatch,                                                all candidates in one prompt. For each candidate, the verifier
+reversed version relations, contradicted scope, obsolete values,                                              determines whether the candidate operation is supported,
+or graph edits inconsistent with the fixed IR. The symbols α,                                                 contradicted, unrelated, or underspecified with
+β, and γ describe the priority of these components; they are                                                  respect to the fixed evidence and Semantic IR.
+not learned parameters fitted on the final benchmark. In the                                                     A candidate can proceed only when exactly one candidate is
+experiments, the implementation uses a frozen deterministic                                                   supported with sufficient confidence. Multiple supported can-
+didates, no supported candidates, low confidence, contradic-                                      TABLE I
+tion, or underspecification all lead to A BSTAIN. This preserves                              DATASET SUMMARY
+the division of responsibility: the verifier may resolve residual
+                                                                                            Item               Value
+semantic ambiguity, but it does not replace the symbolic gate
+                                                                                            Events              264
+or formal closure.                                                                          Runs               1320
+                                                                                            Types                 3
+F. Formal Validation                                                                        Candidates/event      3
+   The final stage validates the selected repair as an OWL/RDF
+operation under the standard graph and ontology representa-
+tion model [16], [17]. Each candidate has a declared edit set:          select and validate the correct local OWL/RDF patch once
+                                                                        a potential drift event and its evidence window have been
+                        ∆ci = (∆−     +
+                                ci , ∆ci ),                             provided.
+where ∆−                                    +
+          ci contains target deletions and ∆ci contains target
+additions. Applying the candidate to O yields a repaired                B. Compared Methods
+ontology O′ . ECR-Repair accepts the patch only if all formal              We compare three methods. Direct LLM receives evidence
+validation checks pass:                                                 and candidate content and directly selects among candidates.
+  • OWL consistency: the repaired ontology is materialized              It represents the natural prompting baseline, but it does
+     and checked for logical consistency under the configured           not enforce candidate-content isolation or formal closure.
+     reasoner;                                                          Base Semantic IR uses evidence-grounded Semantic IR and
+  • RDF graph delta: the realized graph difference matches              symbolic repair logic, but does not include the full ECR-
+     the candidate-declared additions and deletions, with no            Repair recovery and fallback verification design. ECR-Repair
+     undeclared side effects;                                           uses the complete pipeline described in Section IV, including
+  • CQ regression: frozen competency-question or repair-                candidate-content-isolated Semantic IR, constraint-aware sym-
+     regression checks continue to return the expected results          bolic decision, fallback verification, and OWL/RDF validation.
+     after the patch.                                                      The goal of these baselines is not to compare token cost or
+  These checks provide formal safety, but they do not replace           latency. Direct LLM and ECR-Repair have different call struc-
+semantic selection. A semantically wrong candidate may still            tures because ECR-Repair separates semantic interpretation,
+be logically consistent. Therefore, ECR-Repair treats formal            ranking, verification, and formal closure. The comparison in-
+validation as a necessary but not sufficient condition for              stead asks whether explicit neuro-symbolic structure improves
+semantic repair.                                                        repair reliability over direct candidate selection and over the
+                                                                        base Semantic IR pipeline.
+                        V. E XPERIMENTS
+A. Dataset                                                              C. Metrics
+
+   To the best of our knowledge, there is no off-the-shelf                 Closure accuracy is the percentage of runs in which the
+benchmark that directly evaluates evidence-relative ontology            method selects the evidence-supported candidate and the cor-
+repair for semantic drift in versioned normative documents.             responding OWL/RDF repair passes formal validation. Strict
+Existing resources for ontology repair, knowledge-graph com-            success is the event-level success rate: an event is strictly
+pletion, or document-grounded question answering do not                 successful only if the method succeeds across the repeated runs
+jointly provide evolving normative evidence, localized ontol-           for that event. For Direct LLM, strict success is not reported
+ogy assertions, executable OWL/RDF repair candidates, and               because the baseline directly selects a candidate and does not
+formal closure checks. We therefore construct an RFC-based              execute the full formal closure pipeline.
+finite-candidate benchmark for this study. Each event provides
+a localized ontology assertion, current normative evidence, a           D. Main Result
+semantic type, and three executable repair candidates. The can-            Table II reports the main comparison. ECR-Repair achieves
+didate set contains one manually reviewed evidence-supported            99.62% closure accuracy and 99.24% strict success, improving
+repair and two distractors designed to be executable but seman-         substantially over both baselines. The Direct LLM baseline
+tically wrong, such as retaining an obsolete version, reversing         reaches 93.48% under direct candidate exposure, showing that
+a supersession relation, mismatching an exception condition,            the task is not impossible for a language model. However,
+or attaching a scope qualifier to the wrong statement. Table I          the remaining errors motivate a design that separates evi-
+summarizes the benchmark.                                               dence interpretation from candidate choice and validates the
+   The three event types correspond to the main semantic drift          final repair formally. The Base Semantic IR pipeline reaches
+patterns addressed by the framework: Temporal-Version, Gen-             77.42% closure accuracy and 73.86% strict success, indicating
+eral Rule-Exception, and Cross-Sentence Scope. The evalua-              that structured evidence interpretation alone is not enough;
+tion unit is a local repair event, not the size of the full ontology.   candidate-content isolation must be combined with constraint-
+The experiment therefore measures whether a method can                  aware ranking, selective gating, and fallback verification.
+                           TABLE II                                  aration: evidence interpretation, symbolic decision, selective
+          M AIN RESULT ON THE CONFERENCE BENCHMARK                   abstention, and formal closure must work together.
+        Method             Closure Accuracy   Strict Success                                      R EFERENCES
+        Direct LLM             93.48%               –                 [1] Z. Ji, N. Lee, R. Frieske, T. Yu, D. Su, Y. Xu, E. Ishii, Y. J. Bang,
+        Base Semantic IR       77.42%            73.86%                   A. Madotto, and P. Fung, “Survey of hallucination in natural language
+        ECR-Repair             99.62%            99.24%                   generation,” ACM Computing Surveys, vol. 55, no. 12, pp. 1–38, 2023.
+                                                                      [2] G. Flouris, D. Manakanatas, H. Kondylakis, D. Plexousakis, and G. An-
+                                                                          toniou, “Ontology change: Classification and survey,” The Knowledge
+                                                                          Engineering Review, vol. 23, no. 2, pp. 117–152, 2008.
+E. Error Analysis                                                     [3] A. Kalyanpur, B. Parsia, E. Sirin, and B. Cuenca Grau, “Repairing un-
+                                                                          satisfiable concepts in owl ontologies,” in The Semantic Web: Research
+   The remaining failures occur as abstentions rather than                and Applications. Springer, 2006, pp. 170–184.
+unsupported patches. They are concentrated in cases where             [4] S. Ahmetaj, R. David, A. Polleres, and M. Šimkus, “Repairing shacl
+evidence supports overlapping exception or scope readings and             constraint violations using answer set programming,” in The Semantic
+                                                                          Web – ISWC 2022. Springer International Publishing, 2022, pp. 375–
+the verifier cannot identify exactly one supported repair under           391.
+the fixed gate. The residual risk is therefore underdetermined        [5] ——, “A logic programming approach to repairing shacl constraint
+semantic competition among executable candidates, not OWL                 violations,” Transactions on Graph Data and Knowledge, vol. 3, no. 3,
+                                                                          pp. 1:1–1:36, 2025.
+materialization failure.                                              [6] H. Babaei Giglou, J. D’Souza, and S. Auer, “Llms4ol 2024 overview:
+                                                                          The 1st large language models for ontology learning challenge,” 2024.
+                       VI. D ISCUSSION                                    [Online]. Available: https://arxiv.org/abs/2409.10146
+                                                                      [7] A. S. Lippolis, M. J. Saeedizade, R. Keskisarkka, S. Zuppiroli, M. Ce-
+   The conference version establishes ECR-Repair as a method              riani, A. Gangemi, E. Blomqvist, and A. G. Nuzzolese, “Ontology gen-
+for evidence-relative ontology repair, not as a complete ontol-           eration using large language models,” in The Semantic Web. Springer
+                                                                          Nature Switzerland, 2025, pp. 321–341.
+ogy maintenance system. Its main boundary is the conditional          [8] B. Zhang, V. A. Carriero, K. Schreiberhuber, S. Tsaneva, L. S. Gonzalez,
+task assumption: a potential repair event, evidence window,               J. Kim, and J. de Berardinis, “Ontochat: A framework for conversational
+and finite candidate set are already available. It therefore eval-        ontology engineering using language models,” in The Semantic Web:
+                                                                          ESWC 2024 Satellite Events. Springer Nature Switzerland, 2025, pp.
+uates repair decision quality, not full-corpus drift discovery.           102–121.
+   The second boundary concerns formal validation. OWL                [9] N. Fathallah, A. Das, S. De Giorgis, A. Poltronieri, P. Haase, and
+consistency, RDF graph-delta checking, and CQ regression                  L. Kovriguina, “Neon-gpt: A large language model-powered pipeline for
+                                                                          ontology learning,” in The Semantic Web: ESWC 2024 Satellite Events.
+are necessary because an ontology edit may have unintended                Springer Nature Switzerland, 2025, pp. 36–50.
+logical or graph-level effects, but they cannot decide whether       [10] S. Pan, L. Luo, Y. Wang, C. Chen, J. Wang, and X. Wu, “Unifying
+a candidate is semantically supported. The intended guarantee             large language models and knowledge graphs: A roadmap,” IEEE
+                                                                          Transactions on Knowledge and Data Engineering, vol. 36, no. 7, pp.
+is not “reasoner consistency implies correctness,” but rather             3580–3599, 2024.
+“an evidence-supported candidate must also survive formal            [11] D. Yu, B. Yang, D. Liu, H. Wang, and S. Pan, “A survey on neural-
+validation.”                                                              symbolic learning systems,” Neural Networks, vol. 166, pp. 105–126,
+                                                                          2023.
+   The third boundary concerns LLM responsibility. ECR-              [12] A. Hogan, E. Blomqvist, M. Cochez, C. D’amato, G. de Melo, C. Gutier-
+Repair uses LLMs for evidence interpretation and residual                 rez, S. Kirrane, J. E. Labra Gayo, R. Navigli, S. Neumaier, A.-C. N.
+candidate-entailment ambiguity, but not as unrestricted on-               Ngomo, A. Polleres, S. M. Rashid, A. Rula, L. Schmelzeisen, J. Sequeda,
+                                                                          S. Staab, and A. Zimmermann, “Knowledge graphs,” ACM Computing
+tology editors. These boundaries preserve room for journal                Surveys, vol. 54, no. 4, pp. 1–37, 2021.
+extension, including broader drift discovery, richer evidence        [13] Y. Gao, Y. Xiong, X. Gao, K. Jia, J. Pan, Y. Bi, Y. Dai,
+retrieval, larger candidate-generation protocols, and more ex-            J. Sun, M. Wang, and H. Wang, “Retrieval-augmented generation
+                                                                          for large language models: A survey,” 2024. [Online]. Available:
+tensive deployment validation.                                            https://arxiv.org/abs/2312.10997
+                                                                     [14] A. Asai, Z. Wu, Y. Wang, A. Sil, and H. Hajishirzi, “Self-rag:
+                      VII. C ONCLUSION                                    Learning to retrieve, generate, and critique through self-reflection,”
+                                                                          2023. [Online]. Available: https://arxiv.org/abs/2310.11511
+   This paper presented ECR-Repair, an evidence-constrained          [15] Z. Gu and M. Hopkins, “On the evaluation of neural selective prediction
+neuro-symbolic framework for ontology repair under semantic               methods for natural language processing,” in Proceedings of the 61st
+                                                                          Annual Meeting of the Association for Computational Linguistics, 2023,
+drift in versioned normative documents. ECR-Repair uses                   pp. 7888–7899.
+Semantic IR as a neural-symbolic interface, isolates candi-          [16] R. Cyganiak, D. Wood, and M. Lanthaler, “Rdf 1.1 concepts
+date content during semantic interpretation, ranks candidates             and abstract syntax,” W3C, W3C Recommendation, 2014. [Online].
+                                                                          Available: https://www.w3.org/TR/rdf11-concepts/
+through symbolic constraints, invokes fallback verification          [17] W3C OWL Working Group, “Owl 2 web ontology language document
+only under ambiguity, and validates selected patches through              overview,” W3C, W3C Recommendation, 2012. [Online]. Available:
+OWL consistency, RDF graph delta, and CQ regression.                      https://www.w3.org/TR/owl2-overview/
+   On an RFC-based benchmark with 264 repair events and
+1320 runs, ECR-Repair reaches 99.62% closure accuracy and
+99.24% strict event success, outperforming direct LLM and
+base Semantic IR baselines. The result suggests that reliable
+repair of evolving normative ontologies depends less on un-
+constrained generation than on disciplined responsibility sep-
+

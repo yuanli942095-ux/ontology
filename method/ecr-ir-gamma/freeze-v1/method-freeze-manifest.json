@@ -1,0 +1,109 @@
+{
+  "schema_version": "ecr-ir-gamma-method-freeze-v1",
+  "method_id": "ECR-IR-GAMMA-R2B-V1",
+  "status": "FROZEN_FOR_RFC213_ENGINEERING_213X1",
+  "frozen_at_utc": "2026-09-08T12:59:38.537801+00:00",
+  "benchmark": {
+    "name": "rfc-213-confirmatory-core",
+    "manifest_sha256": "edb8a7f7b2a51c98ac65d182c938b3a8e06cf4393dee436f289f4354d7c43dc6",
+    "events": 213,
+    "verified_benchmark_files": 873
+  },
+  "llm": {
+    "backend": "deepseek_api",
+    "requested_model": "deepseek-chat",
+    "observed_model_in_smoke_v2": "deepseek-v4-flash",
+    "temperature": 0,
+    "max_tokens": 900,
+    "timeout_seconds": 180,
+    "transport_max_attempts": 3,
+    "seed": 20260829
+  },
+  "candidate_blind_generation": true,
+  "target_contract_audit_sha256": "528e4f78bca52e2838d0cfb07aa749e9dffec05820496c26167b988ab39130a0",
+  "smoke_v2_summary_sha256": "45f49bf6ffb4b0157cafc3ce006cb2ee5feb0af00a24cda2c6e41aa914801aae",
+  "full_213x5_locked": true,
+  "files": [
+    {
+      "path": "method/ecr-ir-gamma/predicted-repair-ir-v1.schema.json",
+      "sha256": "f87d7d43699d740bfcf282e6d2e5d48bdc2aa1e95a3a6b0753cb85d1ec5531e8",
+      "bytes": 2028
+    },
+    {
+      "path": "method/ecr-ir-gamma/direct-ir-method-draft-v1.json",
+      "sha256": "6504a9cb47f1952976deec48e7c05c632f5143269f270fc525d3223c05743e97",
+      "bytes": 1744
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir.py",
+      "sha256": "fad3c7e6351d8c4d86508676e25b983d677551c388f1dbab01bed63a153824f0",
+      "bytes": 11562
+    },
+    {
+      "path": "src/run_rfc213_direct_ir_gamma.py",
+      "sha256": "2bdcc464edba1ec7425c9ce5432a00a579547dc305c45d90b879d465852cb514",
+      "bytes": 16916
+    },
+    {
+      "path": "src/audit_rfc213_direct_ir_target_contract.py",
+      "sha256": "7b861086345694399c868256b57c381f4501323059d8a216c54736c033b86525",
+      "bytes": 3812
+    },
+    {
+      "path": "src/freeze_rfc213_direct_ir_method.py",
+      "sha256": "d654c875dfcee901fa639c5213fe906bdb2faa626e9cb7e58424f4fc15935331",
+      "bytes": 5764
+    },
+    {
+      "path": "src/m13_llm_backends.py",
+      "sha256": "d07e5e7bc8642894a5e2b44660b0321d49f86935a72f461243246fac4d799081",
+      "bytes": 6106
+    },
+    {
+      "path": "src/auto_policy_m12_deepseek_client.py",
+      "sha256": "ebb899cbf5e57932ba695a6aca22705c3e8efea328bacc8e42f4247047c73ffa",
+      "bytes": 6583
+    },
+    {
+      "path": "src/run_auto_formal_policy_batch_v3.py",
+      "sha256": "c189b716d81d22b917f634b173f31a40ce4a608c38befe186bc49678e75dfa36",
+      "bytes": 32252
+    },
+    {
+      "path": "src/run_auto_policy_v2_candidate_repair.py",
+      "sha256": "eb5bf19fd7bbe47ddb72043c69f9638425bfa082ff902e4766bced785180df6c",
+      "bytes": 17988
+    },
+    {
+      "path": "src/run_external_real_v1_symbolic_closure.py",
+      "sha256": "8e96f9ecb0946bb0a0ec2321b88e997f91b9d6a8d95bf9b15a4836a5d5c94cef",
+      "bytes": 15044
+    },
+    {
+      "path": "src/run_gamma_gold_ir_compile_eval.py",
+      "sha256": "c9cb95295b6371eb243571387f71610ae56793bd18727f04f8bd0836f89f4828",
+      "bytes": 6383
+    },
+    {
+      "path": "src/run_gamma_gold_ir_closure_eval.py",
+      "sha256": "c5361f03d7d54e564db1afc232b4db42ab239aff30119531dd4750c830871be5",
+      "bytes": 11829
+    },
+    {
+      "path": "src/evaluate_rfc213_phase3_gamma_closure.py",
+      "sha256": "fcebf11b54d57253064f87093b7d9f18074130f30814476c9700cbc1ee7c4d2d",
+      "bytes": 10082
+    },
+    {
+      "path": "src/validate_benchmark.py",
+      "sha256": "2ce4aebd3e5bf90af660f7661aa0acf32e93ae226b51a4dcdfeca70d92381eee",
+      "bytes": 14423
+    },
+    {
+      "path": "src/semantic_v2_common.py",
+      "sha256": "d473892323953d54a75a534a5c5195200b9fbc399d5e525e1b6837627900e8de",
+      "bytes": 6623
+    }
+  ],
+  "manifest_sha256": "f49bdb89a480dc0bc34069444d957fbf5d77edf6e1bdf991c85c4906af67263d"
+}

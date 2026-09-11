@@ -1,0 +1,26 @@
+{
+  "schema_version": "ecr-ir-gamma-v2-1-compatibility-protocol",
+  "method_id": "ECR-IR-GAMMA-R2B-V2.1-PROPERTY-DIMENSION-RESOLUTION",
+  "status": "FROZEN_FOR_V6_2_SAMPLE70_AND_FULL_BLIND_EVALUATION",
+  "change_type": "CANDIDATE_BLIND_INTERFACE_COMPATIBILITY_FIX",
+  "rationale": "When old_value has no dimension prefix, derive the canonical benchmark dimension from public target predicate IRI instead of old_value lexical text.",
+  "uses_candidate": false,
+  "uses_oracle": false,
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_semantics_changed": false,
+  "decision_threshold_changed": false,
+  "allowed_public_inputs": [
+    "target.predicate_iri",
+    "evidence_spans",
+    "public evidence windows"
+  ],
+  "forbidden_inputs": [
+    "candidate ids",
+    "candidate values",
+    "candidate operations",
+    "oracle",
+    "gold window",
+    "gold replacement"
+  ]
+}

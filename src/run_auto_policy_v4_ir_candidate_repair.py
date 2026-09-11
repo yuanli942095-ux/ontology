@@ -5,6 +5,10 @@ from __future__ import annotations
 V4 does not call Qwen. It reads already frozen Auto Policy raw outputs, converts
 them into a candidate-blind Semantic IR, normalizes deterministic surface forms,
 and only then ranks public repair candidates.
+
+V4.4 robust IR: empty ``rules`` does not fail-closed when facts/canonical_result
+already suffice. CSS unique slot completion fills ``scope_relation`` only when
+existing Auto Policy fields uniquely determine it. V4.3 ranking gates stay frozen.
 """
 
 import argparse
@@ -18,6 +22,7 @@ from pathlib import Path
 from typing import Any
 
 import validate_benchmark as benchmark_validator
+from auto_policy_v4_css_slot import complete_css_scope_relation
 from evaluate_auto_formal_policy_v2_semantic import evaluate_semantic
 from external_real_v8_layout import candidate_selection_paths, evaluation_paths, is_staged_layout
 from rdflib import URIRef
@@ -31,6 +36,7 @@ from run_auto_policy_v2_candidate_repair import (
     term_from_spec,
 )
 from semantic_v2_common import PROJECT_DIR, write_csv
+from method_experiment_guard import add_legacy_opt_in_arg, guard_frozen_v43_config, guard_holdout_benchmark
 
 
 BENCHMARK_DIR = PROJECT_DIR / "benchmark" / "external-real-v8-grounded"
@@ -260,15 +266,40 @@ def flatten_text(value: Any) -> str:
     return str(value or "")
 
 
+def _nonempty_mapping(value: Any) -> bool:
+    return isinstance(value, dict) and any(item not in (None, "", [], {}) for item in value.values())
+
+
+def schema_payload_usable(response: dict[str, Any]) -> bool:
+    """True when facts or canonical_result already carry IR-usable content.
+
+    An empty ``rules`` list is not a death sentence by itself.
+    """
+    return _nonempty_mapping(response.get("facts")) or _nonempty_mapping(response.get("canonical_result"))
+
+
+def result_from_canonical(canonical: Any) -> str:
+    if not isinstance(canonical, dict):
+        return ""
+    for key in ("semantic_result", "change_value", "canonical_value", "value", "result"):
+        item = canonical.get(key)
+        if item not in (None, "", [], {}) and not isinstance(item, (dict, list)):
+            return str(item).strip()
+    return ""
+
+
 def auto_semantic_result(record: dict[str, Any]) -> str:
     response = record.get("response", {})
     if not isinstance(response, dict):
         return ""
     rules = response.get("rules", [])
-    if not isinstance(rules, list) or not rules:
-        return ""
-    top = max(rules, key=lambda rule: int(rule.get("priority", 0)) if isinstance(rule, dict) else 0)
-    return str(top.get("semantic_result", "")).strip() if isinstance(top, dict) else ""
+    if isinstance(rules, list) and rules:
+        top = max(rules, key=lambda rule: int(rule.get("priority", 0)) if isinstance(rule, dict) else 0)
+        if isinstance(top, dict):
+            text = str(top.get("semantic_result", "")).strip()
+            if text:
+                return text
+    return result_from_canonical(response.get("canonical_result"))
 
 
 def relation_from_text(text: str) -> str:
@@ -402,14 +433,20 @@ def infer_source_family(raw_semantic: str, response: dict[str, Any]) -> str:
     return ""
 
 
-def parse_semantic_ir(record: dict[str, Any], event: dict[str, str]) -> SemanticIR:
+def parse_semantic_ir(record: dict[str, Any], event: dict[str, str], *, robust_ir: bool = True) -> SemanticIR:
+    status = str(record.get("status") or "")
+    if status == "RETRIEVAL_FAILED":
+        return SemanticIR(event["event_id"], event["semantic_type"], "RETRIEVAL_FAILED", "model_input_retrieval_failed", {})
+    if status == "INPUT_CONSTRUCTION_ERROR":
+        return SemanticIR(event["event_id"], event["semantic_type"], "INPUT_CONSTRUCTION_ERROR", "public_ready_empty_evidence", {})
     response = record.get("response", {})
     if not isinstance(response, dict):
         return SemanticIR(event["event_id"], event["semantic_type"], "INVALID_OUTPUT", "response_not_object", {})
-    if record.get("status") == "RETRIEVAL_FAILED":
-        return SemanticIR(event["event_id"], event["semantic_type"], "RETRIEVAL_FAILED", "model_input_retrieval_failed", {})
-    if record.get("status") in {"INVALID_SCHEMA", "INVALID_JSON"}:
-        return SemanticIR(event["event_id"], event["semantic_type"], "INVALID_OUTPUT", str(record.get("validation_reason", record.get("status"))), {})
+    if status == "INVALID_JSON":
+        return SemanticIR(event["event_id"], event["semantic_type"], "INVALID_OUTPUT", str(record.get("validation_reason", status)), {})
+    if status == "INVALID_SCHEMA":
+        if not robust_ir or not schema_payload_usable(response):
+            return SemanticIR(event["event_id"], event["semantic_type"], "INVALID_OUTPUT", str(record.get("validation_reason", status)), {})
     if response.get("abstain") is True:
         return SemanticIR(event["event_id"], event["semantic_type"], "INCOMPLETE_IR", "model_abstained", {})
 
@@ -446,8 +483,12 @@ def parse_semantic_ir(record: dict[str, Any], event: dict[str, str]) -> Semantic
         fields["priority"] = "EXCEPTION" if relation_from_text(bundle) == "EXCEPTION_OVERRIDES" else "UNKNOWN"
     if semantic_type == "CROSS_SENTENCE_SCOPE" and "scope_relation" not in fields:
         rel = relation_from_text(bundle)
-        if rel in {"APPLIES_TO", "REMAINS_VALID", "ADDED"}:
+        if rel in {"APPLIES_TO", "REMAINS_VALID", "ADDED", "AMENDS"}:
             fields["scope_relation"] = rel
+        else:
+            chosen, klass, _reason = complete_css_scope_relation(response, fields)
+            if klass == "S1" and chosen:
+                fields["scope_relation"] = chosen
     if semantic_type == "TEMPORAL_VERSION" and fields.get("relation") == "UNKNOWN":
         if any(marker in compact(bundle) for marker in ("revision", "revised", "updated", "amend", "effective", "生效", "修订", "修改")):
             fields["relation"] = "EFFECTIVE_FROM"
@@ -775,6 +816,29 @@ def parse_only(value: str) -> set[str]:
     return {item.strip().upper() for item in value.split(",") if item.strip()}
 
 
+RAW_NAME_RE = re.compile(r"^(?P<event_id>.+)-run(?P<run>\d+)-seed(?P<seed>\d+)\.json$")
+
+
+def discover_raw_jobs(
+    raw_dir: Path,
+    *,
+    only: set[str],
+    ready_event_ids: set[str],
+) -> list[tuple[str, int, int, Path]]:
+    jobs: list[tuple[str, int, int, Path]] = []
+    for path in sorted(raw_dir.glob("*.json")):
+        match = RAW_NAME_RE.match(path.name)
+        if not match:
+            continue
+        event_id = match.group("event_id")
+        if event_id not in ready_event_ids:
+            continue
+        if only and event_id.upper() not in only:
+            continue
+        jobs.append((event_id, int(match.group("run")), int(match.group("seed")), path))
+    return jobs
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="AUTO_POLICY_V4 Semantic-IR candidate repair")
     parser.add_argument("--benchmark-dir", type=Path, default=BENCHMARK_DIR)
@@ -786,14 +850,40 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=120)
     parser.add_argument("--min-score", type=float, default=0.42)
     parser.add_argument("--min-margin", type=float, default=0.08)
+    parser.add_argument(
+        "--gre-css-min-score",
+        type=float,
+        default=None,
+        help="Optional type-specific min_score for GENERAL_RULE_EXCEPTION and CROSS_SENTENCE_SCOPE.",
+    )
     parser.add_argument("--reranker", choices=["lexical", "constraint", "constraint-all"], default="lexical")
     parser.add_argument(
         "--temporal-unique-top1",
         action="store_true",
         help="V4.3: TEMPORAL unique Top-1 with no contradiction may select below min_score",
     )
+    parser.add_argument(
+        "--robust-ir",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="V4.4: INVALID_SCHEMA with usable facts/canonical_result is parsed instead of fail-closed",
+    )
     parser.add_argument("--only", default="")
+    parser.add_argument("--method-name", default="")
+    parser.add_argument(
+        "--skip-missing-raw",
+        action="store_true",
+        help="skip attempts whose raw JSON file is absent (partial reruns)",
+    )
+    parser.add_argument(
+        "--discover-raw",
+        action="store_true",
+        help="discover event/run/seed from raw filenames instead of seed+run-1 formula",
+    )
+    add_legacy_opt_in_arg(parser)
     args = parser.parse_args()
+    guard_holdout_benchmark(args.benchmark_dir, __file__)
+    guard_frozen_v43_config(args, script=__file__)
     args.benchmark_dir = args.benchmark_dir.resolve()
     args.raw_dir = args.raw_dir.resolve()
     args.output_dir = args.output_dir.resolve()
@@ -806,82 +896,112 @@ def main() -> int:
         if ready(row.get("status", "")) and (not only or row["event_id"].upper() in only)
     ]
     candidates_by_event = load_candidates(paths["candidate_csv"])
+    event_by_id = {row["event_id"]: row for row in events}
     details: list[dict[str, Any]] = []
     graph_cache: dict[Path, Any] = {}
     reasoner_cache: dict[Path, dict[str, Any]] = {}
 
-    for event in events:
-        event_id = event["event_id"]
-        for run in range(1, args.runs + 1):
-            seed = args.seed + run - 1
-            raw_path = args.raw_dir / f"{event_id}-run{run}-seed{seed}.json"
-            record = load_json(raw_path)
-            ir = parse_semantic_ir(record, event)
-            selected, status, reason, score_rows, decision_path = select_candidate_v4(
-                event,
-                candidates_by_event.get(event_id, []),
-                ir,
-                min_score=args.min_score,
-                min_margin=args.min_margin,
-                reranker=args.reranker,
-                temporal_unique_top1=args.temporal_unique_top1,
+    if args.discover_raw:
+        raw_jobs = discover_raw_jobs(
+            args.raw_dir,
+            only=only,
+            ready_event_ids=set(event_by_id),
+        )
+    else:
+        raw_jobs = []
+        for event in events:
+            event_id = event["event_id"]
+            for run in range(1, args.runs + 1):
+                seed = args.seed + run - 1
+                raw_path = args.raw_dir / f"{event_id}-run{run}-seed{seed}.json"
+                if not raw_path.is_file():
+                    if args.skip_missing_raw:
+                        continue
+                    raise FileNotFoundError(raw_path)
+                raw_jobs.append((event_id, run, seed, raw_path))
+
+    for event_id, run, seed, raw_path in raw_jobs:
+        event = event_by_id[event_id]
+        record = load_json(raw_path)
+        ir = parse_semantic_ir(record, event, robust_ir=args.robust_ir)
+        effective_min_score = args.min_score
+        if (
+            args.gre_css_min_score is not None
+            and event.get("semantic_type") in {"GENERAL_RULE_EXCEPTION", "CROSS_SENTENCE_SCOPE"}
+        ):
+            effective_min_score = args.gre_css_min_score
+        selected, status, reason, score_rows, decision_path = select_candidate_v4(
+            event,
+            candidates_by_event.get(event_id, []),
+            ir,
+            min_score=effective_min_score,
+            min_margin=args.min_margin,
+            reranker=args.reranker,
+            temporal_unique_top1=args.temporal_unique_top1,
+        )
+        row: dict[str, Any] = {
+            "event_id": event_id,
+            "semantic_type": event["semantic_type"],
+            "domain": event.get("domain", ""),
+            "run": run,
+            "seed": seed,
+            "generation_status": record.get("status", ""),
+            "ir_status": ir.ir_status,
+            "ir_reason": ir.ir_reason,
+            "ir_json": json.dumps(ir.fields, ensure_ascii=False, sort_keys=True),
+            "ir_semantic_string": semantic_ir_string(ir),
+            "source_family": ir.source_family,
+            "normalized_numbers": "|".join(ir.numbers),
+            "normalized_dates": "|".join(ir.dates),
+            "normalized_codes": "|".join(ir.codes),
+            "selection_status": status,
+            "selected_candidate_id": selected["candidate_id"] if selected else "",
+            "selected_value": selected["display_value"] if selected else "",
+            "selection_reason": reason,
+            "decision_path": decision_path,
+            "candidate_scores_json": json.dumps(score_rows, ensure_ascii=False, sort_keys=True),
+            "effective_min_score": effective_min_score,
+            "effective_min_margin": args.min_margin,
+            "runtime_ms": record.get("runtime_ms", 0),
+            "prompt_eval_count": record.get("prompt_eval_count", 0),
+            "eval_count": record.get("eval_count", 0),
+            "generation_reliability_mode": record.get("generation_reliability_mode", ""),
+            "format_constraint": record.get("format_constraint", ""),
+            "raw_output_file": str(raw_path.relative_to(PROJECT_DIR)),
+        }
+        if selected:
+            source_path = resolve_source_owl(event, mutants_dir=paths["mutants_dir"], project_dir=PROJECT_DIR)
+            candidate_path = resolve_candidate_owl_path(
+                event_id,
+                selected["candidate_id"],
+                benchmark_dir=args.benchmark_dir,
+                built_dir=paths["built_dir"],
+                output_dir=args.output_dir,
             )
-            row: dict[str, Any] = {
-                "event_id": event_id,
-                "semantic_type": event["semantic_type"],
-                "domain": event.get("domain", ""),
-                "run": run,
-                "seed": seed,
-                "generation_status": record.get("status", ""),
-                "ir_status": ir.ir_status,
-                "ir_reason": ir.ir_reason,
-                "ir_json": json.dumps(ir.fields, ensure_ascii=False, sort_keys=True),
-                "ir_semantic_string": semantic_ir_string(ir),
-                "source_family": ir.source_family,
-                "normalized_numbers": "|".join(ir.numbers),
-                "normalized_dates": "|".join(ir.dates),
-                "normalized_codes": "|".join(ir.codes),
-                "selection_status": status,
-                "selected_candidate_id": selected["candidate_id"] if selected else "",
-                "selected_value": selected["display_value"] if selected else "",
-                "selection_reason": reason,
-                "decision_path": decision_path,
-                "candidate_scores_json": json.dumps(score_rows, ensure_ascii=False, sort_keys=True),
-                "runtime_ms": record.get("runtime_ms", 0),
-                "prompt_eval_count": record.get("prompt_eval_count", 0),
-                "eval_count": record.get("eval_count", 0),
-                "raw_output_file": str(raw_path.relative_to(PROJECT_DIR)),
-            }
-            if selected:
-                source_path = resolve_source_owl(event, mutants_dir=paths["mutants_dir"], project_dir=PROJECT_DIR)
-                candidate_path = resolve_candidate_owl_path(
-                    event_id,
-                    selected["candidate_id"],
-                    benchmark_dir=args.benchmark_dir,
-                    built_dir=paths["built_dir"],
-                    output_dir=args.output_dir,
-                )
-                materialize_candidate_owl(source_path=source_path, operation=selected["operation"], dest_path=candidate_path)
-                source_graph = graph_cache.setdefault(source_path, load_graph(source_path))
-                candidate_graph = graph_cache.setdefault(candidate_path, load_graph(candidate_path))
-                reasoner = reasoner_cache.setdefault(candidate_path, benchmark_validator.run_reasoner(candidate_path, args.timeout))
-                source_trigger, candidate_repair, repair_message = repair_checks(source_graph, candidate_graph, selected["operation"])
-                removed, added = graph_delta(source_graph, candidate_graph)
-                row.update(
-                    {
-                        "candidate_owl": str(candidate_path.relative_to(PROJECT_DIR)),
-                        "triples_removed": removed,
-                        "triples_added": added,
-                        "minimal_edit_gate": removed == 1 and added == 1,
-                        "reasoner_result": reasoner.get("status", ""),
-                        "reasoner_runtime_ms": reasoner.get("runtime_ms", 0),
-                        "reasoner_gate": reasoner.get("status") == "CONSISTENT",
-                        "source_triggers_repair_cq": source_trigger,
-                        "candidate_satisfies_repair_cq": candidate_repair,
-                        "repair_cq_message": repair_message,
-                    }
-                )
-            details.append(row)
+            materialize_candidate_owl(source_path=source_path, operation=selected["operation"], dest_path=candidate_path)
+            source_graph = graph_cache.setdefault(source_path, load_graph(source_path))
+            candidate_graph = graph_cache.setdefault(candidate_path, load_graph(candidate_path))
+            reasoner = reasoner_cache.setdefault(candidate_path, benchmark_validator.run_reasoner(candidate_path, args.timeout))
+            source_trigger, candidate_repair, repair_message = repair_checks(source_graph, candidate_graph, selected["operation"])
+            removed, added = graph_delta(source_graph, candidate_graph)
+            row.update(
+                {
+                    "candidate_owl": str(candidate_path.relative_to(PROJECT_DIR)),
+                    "triples_removed": removed,
+                    "triples_added": added,
+                    "minimal_edit_gate": removed == 1 and added == 1,
+                    "reasoner_result": reasoner.get("status", ""),
+                    "reasoner_runtime_ms": reasoner.get("runtime_ms", 0),
+                    "reasoner_gate": reasoner.get("status") == "CONSISTENT",
+                    "source_triggers_repair_cq": source_trigger,
+                    "candidate_satisfies_repair_cq": candidate_repair,
+                    "repair_cq_message": repair_message,
+                }
+            )
+        details.append(row)
+
+    if not details:
+        raise RuntimeError(f"no raw records processed under {args.raw_dir}")
 
     oracles = {row["event_id"]: row for row in read_csv(paths["oracle_csv"]) if ready(row.get("status", ""))}
     for row in details:
@@ -914,16 +1034,23 @@ def main() -> int:
         json.dumps(
             {
                 "method": (
-                    "AUTO_POLICY_V4_3_TEMPORAL_UNIQUE_TOP1"
+                    args.method_name
+                    if args.method_name
+                    else "AUTO_POLICY_V4_4_CSS_SLOT_COMPLETION"
+                    if args.robust_ir
+                    else "AUTO_POLICY_V4_3_TEMPORAL_UNIQUE_TOP1"
                     if args.temporal_unique_top1
                     else "AUTO_POLICY_V4_2_CONSTRAINT_RERANK"
                     if args.reranker == "constraint"
                     else "AUTO_POLICY_V4_SEMANTIC_IR"
                 ),
+                "css_slot_completion": True,
                 "reranker": args.reranker,
                 "min_score": args.min_score,
+                "gre_css_min_score": args.gre_css_min_score,
                 "min_margin": args.min_margin,
                 "temporal_unique_top1": args.temporal_unique_top1,
+                "robust_ir": args.robust_ir,
                 "candidate_blind_ir": True,
                 "qwen_called": False,
                 "candidate_seen_stage": "candidate_ranking_after_ir_fixed",

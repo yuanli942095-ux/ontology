@@ -1,0 +1,35 @@
+{
+  "method_id": "ECR-REPAIR-V2.5-NATURAL-LITERAL-ADAPTER",
+  "status": "FROZEN_POST_HOC_ADAPTER",
+  "frozen_at_utc": "2026-09-10T05:55:28.439640+00:00",
+  "parent_method_id": "ECR-REPAIR-V2.4-FINAL",
+  "change_scope": "Preserve predicted natural-language replacement literal after V2.4 grounding; correct reporting partition groups.",
+  "development_timing": "Specified after aggregate V2.4 method-benchmark incompatibility was observed.",
+  "claim_boundary": "Diagnostic post-hoc compatibility analysis only; requires a new untouched benchmark for confirmatory reporting.",
+  "files": [
+    {
+      "path": "src/rfc213_direct_repair_ir_v25.py",
+      "sha256": "795f2f794b693c49b53acefdac4f5f80b36290c200eb37dee29ae87afac76a4e"
+    },
+    {
+      "path": "src/run_ecr_repair_post_freeze_blind_v1_v25_posthoc.py",
+      "sha256": "fa1d149bdfbbc8f57453152a21139f90f92d8e9346f67aad478400467486cdb1"
+    },
+    {
+      "path": "tests/test_rfc213_direct_repair_ir_v25.py",
+      "sha256": "a12c24dd5cd24f46b30c2c0534282a6ab6ada6dcfb81417e9cdfca833775e6b8"
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir_v24.py",
+      "sha256": "9692398a733b2be2175dd4450c184f4d68a7435a07ea67c9bc75d58b1640e4ee"
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir_v23.py",
+      "sha256": "5eea9a7a4f55d93298cf75f7d5084cdfbfd0b74eef2a04dd416c81e57a52fccd"
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir_v2.py",
+      "sha256": "dc4558ec356f6302b03a2ae3de53b4ec0e73d473a3412ed4e3140b8df65c9efa"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "method_id": "ECR-IR-GAMMA-R2B-DRAFT-V1",
+  "status": "FROZEN_V1",
+  "purpose": "Candidate-blind direct Predicted Repair IR generation followed by the frozen Gamma compiler.",
+  "allowed_generation_inputs": [
+    "public event metadata",
+    "frozen public evidence excerpt",
+    "current ontology literal assertions",
+    "predicted-repair-ir-v1 schema"
+  ],
+  "prohibited_generation_inputs": [
+    "repair candidates",
+    "candidate identifiers",
+    "candidate descriptions",
+    "private Oracle",
+    "Gold Repair IR",
+    "post-repair target ontology"
+  ],
+  "schema": "method/ecr-ir-gamma/predicted-repair-ir-v1.schema.json",
+  "supported_operation": "UPDATE_LITERAL",
+  "surface_canonicalization": "The LLM selects one contiguous, sufficient, verbatim span from one public SOURCE_WINDOW. A deterministic candidate-blind normalizer applies the frozen v5 ordered unique-token encoding and the current literal dimension prefix.",
+  "execution": "validated REPAIR outputs are mapped mechanically to the frozen Gamma REPLACE_PROPERTY_VALUE input contract",
+  "evaluation_only_private_access": "candidate operations and Gold IDs may be opened only after prediction for exact-match scoring and CQ evaluation",
+  "current_run_permission": "five-event smoke without a freeze manifest; RFC-213 engineering 213x1 only after freeze-manifest verification",
+  "full_run_locked": true,
+  "target_contract_gate": "RFC-213 exact Gold literals are synthetic canonical strings; the offline target-contract audit must pass before this benchmark can support a confirmatory Direct-IR exact-match claim.",
+  "freeze_requirement": "Prompt, schema, validator, model configuration, and routing must be frozen before any untouched confirmatory evaluation."
+}

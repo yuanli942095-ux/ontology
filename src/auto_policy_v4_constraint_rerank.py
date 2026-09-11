@@ -278,14 +278,20 @@ def score_structured(
         ontology_constraint_score = 0.25
 
     small_token_score = _token_overlap(ir.raw, candidate.raw)
+    exact_candidate_value_match = 0.0
+    ir_blob = compact(" ".join([ir.raw, ir.new_value, " ".join(ir.assignments.values())]))
+    candidate_blob = compact(candidate.new_value)
+    if candidate_blob and (candidate_blob == ir_blob or candidate_blob in ir_blob):
+        exact_candidate_value_match = 1.0
 
     score = (
-        0.32 * structured_value_match
+        0.42 * exact_candidate_value_match
+        + 0.26 * structured_value_match
         + 0.22 * temporal_role_match
         + 0.10 * relation_direction_match
-        + 0.12 * status_consistency
-        + 0.08 * ontology_constraint_score
-        + 0.06 * small_token_score
+        + 0.08 * status_consistency
+        + 0.06 * ontology_constraint_score
+        + 0.04 * small_token_score
         - contradiction_penalty
     )
     score = max(0.0, min(1.0, score))
@@ -297,6 +303,7 @@ def score_structured(
         "status_consistency": round(status_consistency, 4),
         "ontology_constraint_score": round(ontology_constraint_score, 4),
         "small_token_score": round(small_token_score, 4),
+        "exact_candidate_value_match": round(exact_candidate_value_match, 4),
         "contradiction_penalty": round(contradiction_penalty, 4),
     }
 

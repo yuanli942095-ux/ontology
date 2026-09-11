@@ -1,0 +1,8 @@
+{
+  "method_id": "ECR-REPAIR-V2.4-FINAL",
+  "sealed_at_local": "2026-09-09T20:39:38.2568250+08:00",
+  "manifest": "method/final-v24/final-method-manifest.json",
+  "manifest_sha256": "1385ce2e6b82f647ee87ae29389391919c78d81f3849a4052f90cd6e49420f81",
+  "verification_status": "PASS",
+  "bound_files": 13
+}

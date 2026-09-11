@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 """Stress-test hard-gate behavior when survivor count is not exactly one.
 
 This script does not call Qwen. Oracle is loaded only after all gate decisions.
@@ -230,6 +231,7 @@ def summarize(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     events = load_public_events(args.split)
     if args.only:

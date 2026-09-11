@@ -1,0 +1,9 @@
+{
+  "method_id": "ECR-REPAIR-V2.6-TYPED-EXTRACTION-PILOT-V1",
+  "status": "DEVELOPMENT_NOT_FROZEN",
+  "supported_constructs": ["NUMERIC_THRESHOLD", "ENUMERATION", "CONDITIONAL_RULE"],
+  "type_detection_inputs": ["public predicate label", "public case context", "public evidence"],
+  "unsupported_policy": "ABSTAIN_UNSUPPORTED_CONSTRUCT",
+  "oracle_access": "evaluation only",
+  "event_specific_rules_prohibited": true
+}

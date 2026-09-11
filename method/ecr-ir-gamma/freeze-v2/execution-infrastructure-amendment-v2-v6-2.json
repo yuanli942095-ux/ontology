@@ -1,0 +1,25 @@
+{
+  "schema_version": "ecr-ir-gamma-execution-infrastructure-amendment-v2",
+  "status": "REGISTERED_BEFORE_V6_2_MODEL_EXECUTION",
+  "base_method_id": "ECR-IR-GAMMA-R2B-V2-WINDOW-RESOLUTION",
+  "base_method_manifest_sha256": "ed250c97d056306ccc43b661ad78face6b607aceff1076cada98afb3ef612b54",
+  "benchmark_id": "external-real-holdout-v6-2-direct-ir-blind",
+  "benchmark_manifest_sha256": "018907a5970b97401ada95a8ff6db3b52a8a3ea6451c45d4be3c85f0f35c9389",
+  "scope": "TRANSPORT_AND_RESUME_ONLY",
+  "changed_file": "src/m13_llm_backends.py",
+  "frozen_expected_sha256": "d07e5e7bc8642894a5e2b44660b0321d49f86935a72f461243246fac4d799081",
+  "execution_sha256": "d6c9b62aec64e1e405efd9722cd8986697377ad3853ef4496b43a22a6fe56545",
+  "allowed_behavior": {
+    "transport_max_attempts": 3,
+    "transport_backoff_seconds": [1.0, 2.0],
+    "resume_retries_transport_failed_artifacts": true
+  },
+  "semantic_method_changes": {
+    "prompt": false,
+    "schema": false,
+    "normalization": false,
+    "window_resolution": false,
+    "gamma": false,
+    "decision_threshold": false
+  }
+}

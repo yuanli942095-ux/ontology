@@ -1,0 +1,17 @@
+{
+  "method_id": "ECR-IR-GAMMA-R2B-V2-WINDOW-RESOLUTION",
+  "status": "DEVELOPMENT_NOT_FROZEN",
+  "parent_method_freeze_sha256": "f49bdb89a480dc0bc34069444d957fbf5d77edf6e1bdf991c85c4906af67263d",
+  "development_dataset": "rfc-213-confirmatory-core engineering-v1 raw outputs",
+  "independent_blind_claim_allowed": false,
+  "change": "Resolve each predicted verbatim span to containing frozen public SOURCE_WINDOW values before canonical literal encoding.",
+  "candidate_blind": true,
+  "oracle_blind_during_resolution": true,
+  "zero_window_policy": "ABSTAIN",
+  "multiple_distinct_canonical_values_policy": "ABSTAIN",
+  "same_value_multiple_windows_policy": "ACCEPT",
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_changed": false,
+  "model_calls_required_for_offline_development_evaluation": false
+}

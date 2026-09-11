@@ -1,0 +1,52 @@
+{
+  "schema_version": "ecr-ir-gamma-method-freeze-v2-1",
+  "method_id": "ECR-IR-GAMMA-R2B-V2.1-PROPERTY-DIMENSION-RESOLUTION",
+  "status": "FROZEN_FOR_V6_2_SAMPLE70_AND_FULL_BLIND_EVALUATION",
+  "frozen_at_utc": "2026-09-09T07:45:01.459227+00:00",
+  "parent_method_id": "ECR-IR-GAMMA-R2B-V2-WINDOW-RESOLUTION",
+  "parent_manifest_sha256": "ed250c97d056306ccc43b661ad78face6b607aceff1076cada98afb3ef612b54",
+  "development_dataset": "external-real-holdout-v6-2-direct-ir-blind sample70 preflight compatibility check",
+  "development_result_is_blind": false,
+  "full_blind_required_after_freeze": true,
+  "candidate_blind": true,
+  "oracle_blind_during_inference": true,
+  "compatibility_fix": {
+    "name": "property_dimension_resolution",
+    "old_value_with_equals": "preserve V2 behavior",
+    "old_value_without_equals": "derive dimension from public target predicate IRI fragment",
+    "candidate_or_oracle_visible": false
+  },
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_changed": false,
+  "decision_threshold_changed": false,
+  "experiment_runner_in_manifest": false,
+  "files": [
+    {
+      "path": "method/ecr-ir-gamma/freeze-v2-1/property-dimension-resolution-protocol.json",
+      "sha256": "4c2879d0b7edd997d0bfd60fd1162428d29d8a14fa040514aa4f677346c27f23",
+      "bytes": 912
+    },
+    {
+      "path": "src/rfc213_direct_repair_ir_v2.py",
+      "sha256": "dc4558ec356f6302b03a2ae3de53b4ec0e73d473a3412ed4e3140b8df65c9efa",
+      "bytes": 3863
+    },
+    {
+      "path": "src/rfc213_direct_ir_v6_2_prompt.py",
+      "sha256": "d31773e62bdfe5360d3997fdb91a6aba5dbdba03c013d1032ee254dcaeaf894c",
+      "bytes": 1099
+    },
+    {
+      "path": "tests/test_rfc213_direct_repair_ir_v2.py",
+      "sha256": "3412914369835a4d9b92b00611eb38538b807cc614e62a89c339cfc801d48cf3",
+      "bytes": 2687
+    },
+    {
+      "path": "tests/test_external_real_holdout_v6_2_claim_contract.py",
+      "sha256": "8c65e42f8467000df762752e4007e5994bae2a751b9f25acf697683129dd1650",
+      "bytes": 4428
+    }
+  ],
+  "manifest_sha256": "9170b8ae050c30ffbbce56d034a7db1ca551634190ca51b280d75f632f5d2ea1"
+}

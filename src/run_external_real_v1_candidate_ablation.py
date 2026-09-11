@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 """Run candidate-information ablations on external-real-v1.
 
 The online phase reads only public event rows, document metadata/evidence notes,
@@ -48,6 +49,7 @@ ORACLE_CSV = PRIVATE_DIR / "external-real-oracle-template.csv"
 
 METHODS = (
     "DIRECT_FREE",
+    "OPTION_DESCRIPTION",
     "OPTION_VALUE_ONLY",
     "OPTION_FORMAL_OPERATION",
     "OPTION_FORMAL_POLICY",
@@ -56,6 +58,7 @@ METHODS = (
 
 METHOD_SPECS = {
     "DIRECT_FREE": "free generation from public event and evidence note; no candidate list",
+    "OPTION_DESCRIPTION": "candidate option IDs, display values, and public candidate notes",
     "OPTION_VALUE_ONLY": "candidate option IDs and display values only",
     "OPTION_FORMAL_OPERATION": "candidate option IDs and formal repair operations; no policy",
     "OPTION_FORMAL_POLICY": "formal repair operations plus public facts and prioritized rules",
@@ -203,7 +206,15 @@ def verify_freeze_manifest(path: Path | None) -> dict[str, Any]:
     mismatches: list[dict[str, str]] = []
     hashes = manifest.get("file_hashes", {})
     if not isinstance(hashes, dict) or not hashes:
-        raise RuntimeError(f"freeze manifest has no file_hashes: {path}")
+        files = manifest.get("files", [])
+        if isinstance(files, list) and files:
+            hashes = {
+                str(item.get("path", "")).strip(): str(item.get("sha256", "")).strip()
+                for item in files
+                if isinstance(item, dict) and item.get("path") and item.get("sha256")
+            }
+    if not isinstance(hashes, dict) or not hashes:
+        raise RuntimeError(f"freeze manifest has no file hashes: {path}")
     for raw_path, expected in hashes.items():
         file_path = Path(raw_path)
         if not file_path.is_absolute():
@@ -251,11 +262,23 @@ def load_prediction_checkpoint(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def utf8_safe(value: Any) -> Any:
+    """Replace unpaired UTF-16 surrogates so JSON/UTF-8 writes cannot crash."""
+    if isinstance(value, str):
+        return value.encode("utf-8", "replace").decode("utf-8")
+    if isinstance(value, dict):
+        return {utf8_safe(str(key)): utf8_safe(child) for key, child in value.items()}
+    if isinstance(value, list):
+        return [utf8_safe(child) for child in value]
+    return value
+
+
 def append_prediction_checkpoint(path: Path, row: dict[str, Any]) -> None:
     if any(key.startswith("oracle") for key in row):
         raise RuntimeError("refusing to checkpoint Oracle-bearing prediction")
+    payload = utf8_safe(row)
     with path.open("a", encoding="utf-8") as file:
-        file.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+        file.write(json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n")
         file.flush()
 
 
@@ -405,6 +428,7 @@ def write_preflight_report(
         "oracle_load_phase": "after all predictions are fixed",
         "model_input_boundaries": {
             "DIRECT_FREE": ["public event metadata", "public document metadata", "clean candidate-blind evidence"],
+            "OPTION_DESCRIPTION": ["DIRECT_FREE inputs", "randomized option IDs, display values, and public candidate notes"],
             "OPTION_VALUE_ONLY": ["DIRECT_FREE inputs", "randomized option IDs and display values"],
             "OPTION_FORMAL_OPERATION": ["DIRECT_FREE inputs", "randomized option IDs and neutral operations"],
             "OPTION_FORMAL_POLICY": ["OPTION_FORMAL_OPERATION inputs", "manual facts and prioritized rules"],
@@ -488,6 +512,25 @@ def qwen_direct(
     if selected is None:
         return None, "REJECTED_OUT_OF_CANDIDATE", f"value outside candidate set: {parsed['value']!r}", extra
     return selected, "SELECTED", str(parsed.get("reason", "")), extra
+
+
+def qwen_option_description(
+    event: dict[str, Any], seed: int, args: argparse.Namespace
+) -> tuple[dict[str, Any] | None, str, str, dict[str, Any]]:
+    option_ids = [str(item["candidate_id"]) for item in event["candidates"]]
+    payload = {
+        **common_payload(event),
+        "candidate_values": [
+            {
+                "option_id": item["candidate_id"],
+                "display_value": item["display_value"],
+                "description": str(item.get("notes") or item.get("description") or ""),
+            }
+            for item in event["candidates"]
+        ],
+        "instruction": "Select the applicable option_id using the public descriptions. If evidence is insufficient or non-unique, select ABSTAIN.",
+    }
+    return qwen_option_select(event, seed, args, payload, option_ids)
 
 
 def qwen_option_value_only(
@@ -826,6 +869,7 @@ def event_level_method_summary(by_event: list[dict[str, Any]]) -> list[dict[str,
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     configure_paths(args)
     if args.runs < 1:
@@ -892,6 +936,8 @@ def main() -> int:
                 try:
                     if method == "DIRECT_FREE":
                         selected, status, reason, extra = qwen_direct(event, call_seed, args)
+                    elif method == "OPTION_DESCRIPTION":
+                        selected, status, reason, extra = qwen_option_description(event, call_seed, args)
                     elif method == "OPTION_VALUE_ONLY":
                         selected, status, reason, extra = qwen_option_value_only(event, call_seed, args)
                     elif method == "OPTION_FORMAL_OPERATION":
@@ -906,6 +952,7 @@ def main() -> int:
                     status = "REJECTED_ERROR"
                     reason = f"{type(exc).__name__}: {exc}"
 
+                extra = utf8_safe(extra) if extra else extra
                 original_id = selected.get("original_candidate_id", "") if selected else ""
                 displayed_id = selected.get("candidate_id", "") if selected else ""
                 display_value = selected.get("display_value", "") if selected else ""
@@ -940,6 +987,7 @@ def main() -> int:
                         "qwen_called": extra.get("qwen_called", method != "OPTION_FORMAL_POLICY_HARD_GATE"),
                         "evidence_sha256": source_event["evidence_audit"]["raw_sha256"],
                     }
+                prediction = utf8_safe(prediction)
                 details.append(prediction)
                 append_prediction_checkpoint(checkpoint_path, prediction)
                 completed.add(key)
@@ -992,7 +1040,7 @@ def main() -> int:
         "by_event": by_event,
         "details": details,
     }
-    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    json_path.write_text(json.dumps(utf8_safe(payload), ensure_ascii=False, indent=2), encoding="utf-8")
 
     lines = [f"{BENCHMARK_NAME} candidate ablation", "Oracle loaded after predictions=True", ""]
     print("\ncall-level summary")

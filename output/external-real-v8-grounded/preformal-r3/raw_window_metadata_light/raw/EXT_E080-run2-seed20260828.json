@@ -7,29 +7,81 @@
   "model": "qwen3.5:9b",
   "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
   "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
-  "source_file": "raw_provenance_light",
+  "source_file": "PUBLIC_FROZEN_WINDOW",
   "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E080-run2-seed20260828-candidate-blind.md",
   "oracle_used": false,
   "candidate_used": false,
   "note_used": false,
   "manual_formal_policy_used": false,
-  "retrieval_status": "RETRIEVAL_FAILED",
+  "manual_policy_used": false,
+  "retrieval_source": "PUBLIC_FROZEN_WINDOW",
+  "retrieval_replayed": false,
+  "retrieval_status": "RETRIEVED",
   "raw_source_used": true,
   "fallback_used": false,
-  "retrieved_doc_count": 0,
-  "retrieved_window_count": 0,
-  "source_urls": [],
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 14,
+  "source_urls": [
+    "https://nyncj.beijing.gov.cn/nyj/zwgk/zcgk/zcwj3149/744058179/2026070319534651291.pdf"
+  ],
   "forbidden_input_markers": [],
-  "status": "RETRIEVAL_FAILED",
-  "runtime_ms": 0,
-  "done_reason": "",
-  "prompt_eval_count": 0,
-  "eval_count": 0,
+  "status": "GENERATED",
+  "runtime_ms": 14030,
+  "done_reason": "stop",
+  "prompt_eval_count": 3530,
+  "eval_count": 349,
   "forbidden_markers": [],
-  "schema_valid": false,
-  "validation_reason": "not_run",
-  "canonical_status": "not_run",
-  "canonical_result": null,
-  "canonical_semantic_result": "",
-  "response": null
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "insurance_amount_split",
+    "spring": 1100,
+    "summer_autumn": 900,
+    "total": 2000
+  },
+  "canonical_semantic_result": "spring=1100;summer_autumn=900;total=2000",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "subject_label": "Beijing 2026 policy agricultural insurance reference terms :: vegetable rotation scope",
+      "predicate_label": "scope rule",
+      "domain": "insurance",
+      "event_id": null,
+      "case_context": null,
+      "title": null
+    },
+    "canonical_result": {
+      "family": "insurance_amount_split",
+      "spring": 1100,
+      "summer_autumn": 900,
+      "total": 2000
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [
+          {
+            "fact": "subject_label",
+            "operator": "equals",
+            "value": "Beijing 2026 policy agricultural insurance reference terms :: vegetable rotation scope"
+          },
+          {
+            "fact": "predicate_label",
+            "operator": "equals",
+            "value": "scope rule"
+          }
+        ],
+        "canonical_result": {
+          "family": "insurance_amount_split",
+          "spring": 1100,
+          "summer_autumn": 900,
+          "total": 2000
+        },
+        "semantic_result": "spring=1100;summer_autumn=900;total=2000"
+      }
+    ],
+    "canonical_semantic_result": "spring=1100;summer_autumn=900;total=2000",
+    "canonical_normalized": true
+  }
 }

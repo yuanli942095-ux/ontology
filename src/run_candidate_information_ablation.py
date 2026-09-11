@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 """比较候选信息层级对Qwen语义决策的影响。
 
 预测阶段只读取公开事件、文档和形式安全候选。全部预测结束后才加载私有
@@ -658,6 +659,7 @@ def event_level_method_summary(by_event: list[dict[str, Any]]) -> list[dict[str,
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     if args.runs < 1:
         raise ValueError("--runs必须大于0")

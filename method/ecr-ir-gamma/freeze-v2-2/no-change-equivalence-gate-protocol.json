@@ -1,0 +1,27 @@
+{
+  "schema_version": "ecr-ir-gamma-v2-2-no-change-equivalence-gate-protocol",
+  "method_id": "ECR-IR-GAMMA-R2B-V2.2-NO-CHANGE-EQUIVALENCE-GATE",
+  "status": "FROZEN_AFTER_SAMPLE70_COMPATIBILITY_CHECK_FOR_FULL_BLIND_EVALUATION",
+  "change_type": "CANDIDATE_BLIND_DETERMINISTIC_DECISION_GATE",
+  "rationale": "If a predicted REPAIR resolves to identical canonical old and new literal values, the operation is semantically a NO_CHANGE decision and must not be sent to Gamma as an update.",
+  "trigger": "predicted decision is REPAIR and target.old_value equals replacement.new_value by kind, datatype, and lexical form",
+  "output": "NO_CHANGE before Gamma execution",
+  "uses_candidate": false,
+  "uses_oracle": false,
+  "uses_private_gold": false,
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_changed": false,
+  "normalization_changed": false,
+  "decision_threshold_changed": false,
+  "sample70_result_after_gate": {
+    "events": 70,
+    "successes": 63,
+    "success_rate": 0.9,
+    "repair_success": "44/50",
+    "no_change_success": "10/10",
+    "insufficient_evidence_success": "5/5",
+    "conflicting_evidence_success": "4/5",
+    "wrong_repairs": 3
+  }
+}

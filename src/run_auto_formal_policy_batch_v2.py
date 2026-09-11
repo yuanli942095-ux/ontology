@@ -1,3 +1,4 @@
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 import csv
 import json
 import re

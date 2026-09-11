@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1456" height="1080" viewBox="0 0 1456 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Experiment 8: Evidence Dependence of ECR-Repair</title>
+  <desc id="desc">Vector recreation of Experiment 8 with two bar-chart panels showing evidence perturbation closure success and semantic-type closure success.</desc>
+  <defs>
+    <linearGradient id="paperBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fdfdfd"/>
+    </linearGradient>
+    <linearGradient id="normalBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5d94c7"/>
+      <stop offset="1" stop-color="#3f74a7"/>
+    </linearGradient>
+    <linearGradient id="noEvidenceBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fb9a3b"/>
+      <stop offset="1" stop-color="#ec8426"/>
+    </linearGradient>
+    <linearGradient id="maskedBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#61bd85"/>
+      <stop offset="1" stop-color="#42a46c"/>
+    </linearGradient>
+    <linearGradient id="shuffledBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a992d1"/>
+      <stop offset="1" stop-color="#9277bf"/>
+    </linearGradient>
+    <linearGradient id="irrelevantBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#cda27b"/>
+      <stop offset="1" stop-color="#b88a63"/>
+    </linearGradient>
+    <filter id="barShadow" x="-35%" y="-8%" width="170%" height="125%">
+      <feDropShadow dx="5" dy="0" stdDeviation="5" flood-color="#d7d7d7" flood-opacity="0.72"/>
+    </filter>
+    <filter id="titleShadow" x="-20%" y="-35%" width="140%" height="180%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1.2" flood-color="#cfcfcf" flood-opacity="0.9"/>
+    </filter>
+    <style>
+      .font { font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif; }
+      .axis { stroke:#000; stroke-width:2.2; fill:none; }
+      .tick { stroke:#000; stroke-width:1.5; }
+      .outer { fill:none; stroke:#000; stroke-width:2.2; }
+      .bar { stroke:#1e1e1e; stroke-width:1.1; filter:url(#barShadow); }
+      .label { font-size:22px; fill:#000; }
+      .axis-label { font-size:28px; font-weight:700; fill:#000; }
+      .panel-title { font-size:30px; font-weight:800; fill:#000; }
+      .value { font-size:21px; font-weight:800; fill:#000; }
+      .legend { font-size:19px; fill:#000; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1456" height="1080" fill="url(#paperBg)"/>
+  <text x="728" y="42" text-anchor="middle" class="font" font-size="38" font-weight="800" filter="url(#titleShadow)">Experiment 8: Evidence Dependence of ECR-Repair</text>
+  <rect x="7" y="58" width="1436" height="1015" class="outer"/>
+
+  <!-- Panel labels and headings -->
+  <text x="21" y="108" class="font" font-size="31" font-weight="800">(a)</text>
+  <text x="403" y="134" text-anchor="middle" class="font panel-title">Overall closure success under evidence perturbations</text>
+  <text x="718" y="108" class="font" font-size="31" font-weight="800">(b)</text>
+  <text x="1081" y="134" text-anchor="middle" class="font panel-title">Closure success by semantic type</text>
+
+  <!-- Left chart -->
+  <g id="overall-chart" class="font">
+    <path d="M101 196 V865 H687" class="axis"/>
+    <g id="overall-y-ticks">
+      <line x1="94" y1="196" x2="101" y2="196" class="tick"/><text x="88" y="204" text-anchor="end" class="label">100</text>
+      <line x1="94" y1="263" x2="101" y2="263" class="tick"/><text x="88" y="271" text-anchor="end" class="label">90</text>
+      <line x1="94" y1="330" x2="101" y2="330" class="tick"/><text x="88" y="338" text-anchor="end" class="label">80</text>
+      <line x1="94" y1="397" x2="101" y2="397" class="tick"/><text x="88" y="405" text-anchor="end" class="label">70</text>
+      <line x1="94" y1="464" x2="101" y2="464" class="tick"/><text x="88" y="472" text-anchor="end" class="label">60</text>
+      <line x1="94" y1="531" x2="101" y2="531" class="tick"/><text x="88" y="539" text-anchor="end" class="label">50</text>
+      <line x1="94" y1="598" x2="101" y2="598" class="tick"/><text x="88" y="606" text-anchor="end" class="label">40</text>
+      <line x1="94" y1="665" x2="101" y2="665" class="tick"/><text x="88" y="673" text-anchor="end" class="label">30</text>
+      <line x1="94" y1="732" x2="101" y2="732" class="tick"/><text x="88" y="740" text-anchor="end" class="label">20</text>
+      <line x1="94" y1="799" x2="101" y2="799" class="tick"/><text x="88" y="807" text-anchor="end" class="label">10</text>
+      <line x1="94" y1="865" x2="101" y2="865" class="tick"/><text x="88" y="873" text-anchor="end" class="label">0</text>
+    </g>
+    <text x="42" y="531" transform="rotate(-90 42 531)" text-anchor="middle" class="font axis-label">Closure success (%)</text>
+
+    <rect x="128" y="198.5" width="63" height="666.5" class="bar" fill="url(#normalBar)"/>
+    <text x="159.5" y="187" text-anchor="middle" class="value">99.62</text>
+    <text x="159.5" y="899" text-anchor="middle" class="label">Normal</text>
+
+    <rect x="246" y="850.3" width="62" height="14.7" class="bar" fill="url(#noEvidenceBar)"/>
+    <text x="277" y="827" text-anchor="middle" class="value">2.20</text>
+    <text x="277" y="899" text-anchor="middle" class="label">No</text>
+    <text x="277" y="929" text-anchor="middle" class="label">evidence</text>
+
+    <rect x="365" y="843.7" width="61" height="21.3" class="bar" fill="url(#maskedBar)"/>
+    <text x="395.5" y="820" text-anchor="middle" class="value">3.18</text>
+    <text x="395.5" y="899" text-anchor="middle" class="label">Masked</text>
+    <text x="395.5" y="929" text-anchor="middle" class="label">source</text>
+
+    <rect x="482" y="651.6" width="62" height="213.4" class="bar" fill="url(#shuffledBar)"/>
+    <text x="513" y="630" text-anchor="middle" class="value">31.89</text>
+    <text x="513" y="899" text-anchor="middle" class="label">Shuffled</text>
+    <text x="513" y="929" text-anchor="middle" class="label">evidence</text>
+
+    <rect x="597" y="830" width="62" height="35" class="bar" fill="url(#irrelevantBar)"/>
+    <text x="628" y="809" text-anchor="middle" class="value">5.23</text>
+    <text x="628" y="899" text-anchor="middle" class="label">Irrelevant</text>
+    <text x="628" y="929" text-anchor="middle" class="label">same source</text>
+
+    <text x="394" y="971" text-anchor="middle" class="axis-label" font-weight="400">Condition</text>
+    <rect x="389" y="203" width="305" height="48" fill="#fff" stroke="#000" stroke-width="1.3"/>
+    <text x="541.5" y="235" text-anchor="middle" class="label">Formal setting: 264 events × 5 runs</text>
+  </g>
+
+  <!-- Right chart -->
+  <g id="semantic-chart" class="font">
+    <path d="M800 196 V865 H1381" class="axis"/>
+    <g id="semantic-y-ticks">
+      <line x1="793" y1="196" x2="800" y2="196" class="tick"/><text x="787" y="204" text-anchor="end" class="label">100</text>
+      <line x1="793" y1="263" x2="800" y2="263" class="tick"/><text x="787" y="271" text-anchor="end" class="label">90</text>
+      <line x1="793" y1="330" x2="800" y2="330" class="tick"/><text x="787" y="338" text-anchor="end" class="label">80</text>
+      <line x1="793" y1="397" x2="800" y2="397" class="tick"/><text x="787" y="405" text-anchor="end" class="label">70</text>
+      <line x1="793" y1="464" x2="800" y2="464" class="tick"/><text x="787" y="472" text-anchor="end" class="label">60</text>
+      <line x1="793" y1="531" x2="800" y2="531" class="tick"/><text x="787" y="539" text-anchor="end" class="label">50</text>
+      <line x1="793" y1="598" x2="800" y2="598" class="tick"/><text x="787" y="606" text-anchor="end" class="label">40</text>
+      <line x1="793" y1="665" x2="800" y2="665" class="tick"/><text x="787" y="673" text-anchor="end" class="label">30</text>
+      <line x1="793" y1="732" x2="800" y2="732" class="tick"/><text x="787" y="740" text-anchor="end" class="label">20</text>
+      <line x1="793" y1="799" x2="800" y2="799" class="tick"/><text x="787" y="807" text-anchor="end" class="label">10</text>
+      <line x1="793" y1="865" x2="800" y2="865" class="tick"/><text x="787" y="873" text-anchor="end" class="label">0</text>
+    </g>
+    <text x="746" y="531" transform="rotate(-90 746 531)" text-anchor="middle" class="font axis-label">Closure success (%)</text>
+
+    <!-- TEMPORAL -->
+    <rect x="824" y="198" width="24" height="667" class="bar" fill="url(#normalBar)"/>
+    <text x="836" y="187" text-anchor="middle" class="value">100.0</text>
+    <rect x="855" y="842.3" width="24" height="22.7" class="bar" fill="url(#noEvidenceBar)"/>
+    <text x="867" y="829" text-anchor="middle" class="value">3.4</text>
+    <rect x="886" y="842.3" width="24" height="22.7" class="bar" fill="url(#maskedBar)"/>
+    <text x="898" y="829" text-anchor="middle" class="value">3.4</text>
+    <rect x="917" y="309.8" width="24" height="555.2" class="bar" fill="url(#shuffledBar)"/>
+    <text x="929" y="299" text-anchor="middle" class="value">83.0</text>
+    <rect x="948" y="766" width="24" height="99" class="bar" fill="url(#irrelevantBar)"/>
+    <text x="960" y="752" text-anchor="middle" class="value">14.8</text>
+    <text x="898" y="908" text-anchor="middle" class="label">TEMPORAL</text>
+
+    <!-- GRE -->
+    <rect x="1008" y="201.4" width="24" height="663.6" class="bar" fill="url(#normalBar)"/>
+    <text x="1020" y="193" text-anchor="middle" class="value">99.5</text>
+    <rect x="1039" y="853" width="24" height="12" class="bar" fill="url(#noEvidenceBar)"/>
+    <text x="1051" y="839" text-anchor="middle" class="value">1.8</text>
+    <rect x="1070" y="849.6" width="24" height="15.4" class="bar" fill="url(#maskedBar)"/>
+    <text x="1082" y="836" text-anchor="middle" class="value">2.3</text>
+    <rect x="1101" y="794.8" width="24" height="70.2" class="bar" fill="url(#shuffledBar)"/>
+    <text x="1113" y="782" text-anchor="middle" class="value">10.5</text>
+    <rect x="1132" y="861.7" width="24" height="3.3" class="bar" fill="url(#irrelevantBar)"/>
+    <text x="1144" y="853" text-anchor="middle" class="value">0.5</text>
+    <text x="1082" y="908" text-anchor="middle" class="label">GRE</text>
+
+    <!-- CSS -->
+    <rect x="1203" y="202.7" width="24" height="662.3" class="bar" fill="url(#normalBar)"/>
+    <text x="1215" y="195" text-anchor="middle" class="value">99.3</text>
+    <rect x="1234" y="855.6" width="24" height="9.4" class="bar" fill="url(#noEvidenceBar)"/>
+    <text x="1246" y="842" text-anchor="middle" class="value">1.4</text>
+    <rect x="1265" y="838.9" width="24" height="26.1" class="bar" fill="url(#maskedBar)"/>
+    <text x="1277" y="826" text-anchor="middle" class="value">3.9</text>
+    <rect x="1296" y="849.6" width="24" height="15.4" class="bar" fill="url(#shuffledBar)"/>
+    <text x="1308" y="836" text-anchor="middle" class="value">2.3</text>
+    <rect x="1327" y="861.7" width="24" height="3.3" class="bar" fill="url(#irrelevantBar)"/>
+    <text x="1339" y="853" text-anchor="middle" class="value">0.5</text>
+    <text x="1277" y="908" text-anchor="middle" class="label">CSS</text>
+
+    <text x="1086" y="971" text-anchor="middle" class="axis-label" font-weight="400">Semantic type</text>
+  </g>
+
+  <!-- Legend -->
+  <g id="legend" class="font">
+    <rect x="1238" y="319" width="191" height="201" fill="#fff" stroke="#000" stroke-width="1.1"/>
+    <rect x="1249" y="334" width="16" height="21" fill="url(#normalBar)" stroke="#000" stroke-width="0.8"/>
+    <text x="1277" y="351" class="legend">Normal</text>
+    <rect x="1249" y="372" width="16" height="21" fill="url(#noEvidenceBar)" stroke="#000" stroke-width="0.8"/>
+    <text x="1277" y="389" class="legend">No evidence</text>
+    <rect x="1249" y="410" width="16" height="21" fill="url(#maskedBar)" stroke="#000" stroke-width="0.8"/>
+    <text x="1277" y="427" class="legend">Masked source</text>
+    <rect x="1249" y="448" width="16" height="21" fill="url(#shuffledBar)" stroke="#000" stroke-width="0.8"/>
+    <text x="1277" y="465" class="legend">Shuffled evidence</text>
+    <rect x="1249" y="486" width="16" height="21" fill="url(#irrelevantBar)" stroke="#000" stroke-width="0.8"/>
+    <text x="1277" y="503" class="legend">Irrelevant same source</text>
+  </g>
+
+  <text x="728" y="1036" text-anchor="middle" class="font" font-size="22">
+    Correct evidence is critical for end-to-end repair success; shuffled evidence preserves substantial performance only for TEMPORAL cases.
+  </text>
+</svg>

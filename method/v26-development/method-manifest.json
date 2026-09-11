@@ -1,0 +1,15 @@
+{
+  "method_id": "ECR-REPAIR-V2.6-DEVELOPMENT",
+  "status": "DEVELOPMENT_NOT_FROZEN",
+  "claim_boundary": "The frozen 80-event benchmark is development regression data for V2.6, not blind or confirmatory evidence.",
+  "pipeline": [
+    "candidate-independent evidence locator",
+    "candidate-blind semantic frame extraction",
+    "deterministic applicability and conflict gate",
+    "three-state safety decision",
+    "delayed finite candidate reveal and decision",
+    "existing deterministic Gamma, OWL patch, reasoner, and CQ closure"
+  ],
+  "candidate_visibility_rule": "Candidate files may be read only after REPAIR_CANDIDATES_REQUIRED.",
+  "oracle_visibility_rule": "Oracle is evaluation-only and unavailable to all generation and decision stages."
+}

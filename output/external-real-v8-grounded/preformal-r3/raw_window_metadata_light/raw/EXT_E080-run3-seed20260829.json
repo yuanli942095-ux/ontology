@@ -7,29 +7,76 @@
   "model": "qwen3.5:9b",
   "prompt_version": "AUTO_POLICY_V3_NATURAL_EVIDENCE_RAW_WINDOW_METADATA_LIGHT",
   "source_type": "CANDIDATE_BLIND_NATURAL_EVIDENCE",
-  "source_file": "raw_provenance_light",
+  "source_file": "PUBLIC_FROZEN_WINDOW",
   "candidate_blind_file": "output\\external-real-v8-grounded\\preformal-r3\\raw_window_metadata_light\\candidate-blind-evidence\\EXT_E080-run3-seed20260829-candidate-blind.md",
   "oracle_used": false,
   "candidate_used": false,
   "note_used": false,
   "manual_formal_policy_used": false,
-  "retrieval_status": "RETRIEVAL_FAILED",
+  "manual_policy_used": false,
+  "retrieval_source": "PUBLIC_FROZEN_WINDOW",
+  "retrieval_replayed": false,
+  "retrieval_status": "RETRIEVED",
   "raw_source_used": true,
   "fallback_used": false,
-  "retrieved_doc_count": 0,
-  "retrieved_window_count": 0,
-  "source_urls": [],
+  "retrieved_doc_count": 1,
+  "retrieved_window_count": 14,
+  "source_urls": [
+    "https://nyncj.beijing.gov.cn/nyj/zwgk/zcgk/zcwj3149/744058179/2026070319534651291.pdf"
+  ],
   "forbidden_input_markers": [],
-  "status": "RETRIEVAL_FAILED",
-  "runtime_ms": 0,
-  "done_reason": "",
-  "prompt_eval_count": 0,
-  "eval_count": 0,
+  "status": "GENERATED",
+  "runtime_ms": 21484,
+  "done_reason": "stop",
+  "prompt_eval_count": 3530,
+  "eval_count": 548,
   "forbidden_markers": [],
-  "schema_valid": false,
-  "validation_reason": "not_run",
-  "canonical_status": "not_run",
-  "canonical_result": null,
-  "canonical_semantic_result": "",
-  "response": null
+  "schema_valid": true,
+  "validation_reason": "ok",
+  "canonical_status": "ok",
+  "canonical_result": {
+    "family": "insurance_amount_split",
+    "spring": 1100,
+    "summer_autumn": 900,
+    "total": 2000
+  },
+  "canonical_semantic_result": "spring=1100;summer_autumn=900;total=2000",
+  "response": {
+    "semantic_type": "TEMPORAL_VERSION",
+    "facts": {
+      "domain": "insurance",
+      "subject_label": "Beijing 2026 policy agricultural insurance reference terms :: vegetable rotation scope",
+      "predicate_label": "scope rule",
+      "evidence_source": "Beijing 2026 policy agricultural insurance reference terms",
+      "document_title": "京政农发〔2026〕26 号附件 北京市 2026 年政策性农业保险统颁参考条款",
+      "revision_year": "2026",
+      "clause_section": "第八条",
+      "category_1": "蔬菜、瓜类及其他作物温室",
+      "category_2": "花卉、苗木、育苗类温室",
+      "category_3": "高效连栋玻璃温室",
+      "category_4": "简易温室",
+      "coverage_scope_description": "涵盖蔬菜、瓜类及其他作物温室，花卉、苗木、育苗类温室，高效连栋玻璃温室，以及简易温室（含钢竹混合结构及纯竹木结构）的保险金额与费率规定。"
+    },
+    "canonical_result": {
+      "family": "insurance_amount_split",
+      "spring": 1100,
+      "summer_autumn": 900,
+      "total": 2000
+    },
+    "rules": [
+      {
+        "priority": 300,
+        "conditions": [],
+        "canonical_result": {
+          "family": "insurance_amount_split",
+          "spring": 1100,
+          "summer_autumn": 900,
+          "total": 2000
+        },
+        "semantic_result": "spring=1100;summer_autumn=900;total=2000"
+      }
+    ],
+    "canonical_semantic_result": "spring=1100;summer_autumn=900;total=2000",
+    "canonical_normalized": true
+  }
 }

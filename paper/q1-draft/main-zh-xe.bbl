@@ -1,0 +1,105 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahmetaj2022shaclrepair}
+Shqiponja Ahmetaj, Robert David, Axel Polleres, and Mantas Simkus.
+\newblock Repairing shacl constraint violations using answer set programming.
+\newblock In {\em The Semantic Web -- ISWC 2022}, volume 13489 of {\em Lecture
+  Notes in Computer Science}, pages 375--391. Springer, 2022.
+
+\bibitem{ahmetaj2025shacllogic}
+Shqiponja Ahmetaj, Robert David, Axel Polleres, and Mantas {\v{S}}imkus.
+\newblock A logic programming approach to repairing shacl constraint
+  violations.
+\newblock {\em Transactions on Graph Data and Knowledge}, 3(3), 2025.
+
+\bibitem{flouris2008ontologychange}
+Giorgos Flouris, Dimitris Manakanatas, Haridimos Kondylakis, Dimitris
+  Plexousakis, and Grigoris Antoniou.
+\newblock Ontology change: Classification and survey.
+\newblock {\em The Knowledge Engineering Review}, 23(2):117--152, 2008.
+
+\bibitem{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock {\em Advances in Neural Information Processing Systems}, 2017.
+
+\bibitem{guliani2026dejure}
+Keerat Guliani, Deepkamal Gill, David Landsman, Nima Eshraghi, Krishna Kumar,
+  and Lovedeep Gondara.
+\newblock De jure: Iterative llm self-refinement for structured extraction of
+  regulatory rules, 2026.
+
+\bibitem{hartung2013ontologyevolution}
+Michael Hartung, James~F. Terwilliger, and Erhard Rahm.
+\newblock Ontology evolution: A process-centric survey.
+\newblock {\em The Knowledge Engineering Review}, 28(1):45--75, 2013.
+
+\bibitem{jimenezruiz2015alignmentrepair}
+Ernesto Jimenez-Ruiz, Bernardo Cuenca~Grau, Yujiao Zhou, and Ian Horrocks.
+\newblock Ontology alignment repair through modularization and confidence-based
+  heuristics.
+\newblock {\em PLOS ONE}, 10(12):e0144807, 2015.
+
+\bibitem{kalyanpur2006repair}
+Aditya Kalyanpur, Bijan Parsia, Evren Sirin, and Bernardo Cuenca-Grau.
+\newblock Repairing unsatisfiable concepts in owl ontologies.
+\newblock In {\em The Semantic Web: Research and Applications}, volume 4011 of
+  {\em Lecture Notes in Computer Science}, pages 170--184. Springer, 2006.
+
+\bibitem{w3cshacl2017}
+Holger Knublauch and Dimitris Kontokostas.
+\newblock Shapes constraint language (shacl).
+\newblock W3c recommendation, W3C, July 2017.
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2020.
+
+\bibitem{llmontology2026survey}
+Jiayi Li, Daniel Garijo, and Mar{\'i}a Poveda-Villal{\'o}n.
+\newblock Large language models for ontology engineering: A systematic
+  literature review.
+\newblock {\em Semantic Web}, 2026.
+\newblock First published online July 13, 2026.
+
+\bibitem{lippolis2025ontologygeneration}
+Anna~Sofia Lippolis, Mohammad~Javad Saeedizade, Robin Keskis{\"a}rkk{\"a}, Sara
+  Zuppiroli, Miguel Ceriani, Aldo Gangemi, Eva Blomqvist, and Andrea~Giovanni
+  Nuzzolese.
+\newblock Ontology generation using large language models, 2025.
+
+\bibitem{premasiri2025legalie}
+Damith Premasiri and Tharindu Ranasinghe.
+\newblock Survey on legal information extraction: Current status and open
+  challenges.
+\newblock {\em Knowledge and Information Systems}, 2025.
+
+\bibitem{singhal2025legalrequirements}
+Anmol Singhal and Travis~D. Breaux.
+\newblock Legal requirements translation from law.
+\newblock In {\em Proceedings of the 33rd IEEE International Requirements
+  Engineering Conference}, pages 205--217, 2025.
+\newblock Also available as arXiv:2507.02846.
+
+\bibitem{sun2026barrag}
+Jiashuo Sun, Pengcheng Jiang, Saizhuo Wang, Jiajun Fan, Heng Wang, Siru Ouyang,
+  Ming Zhong, Yizhu Jiao, Chengsong Huang, Xueqiang Xu, Jiawei Han, et~al.
+\newblock Rethinking the reranker: Boundary-aware evidence selection for robust
+  retrieval-augmented generation, 2026.
+
+\bibitem{vu2022legalamr}
+Sinh~Trong Vu, Minh~Le Nguyen, and Ken Satoh.
+\newblock Abstract meaning representation for legal documents: An empirical
+  research on a human-annotated dataset.
+\newblock {\em Artificial Intelligence and Law}, 30(2):221--243, 2022.
+
+\bibitem{w3cowl2}
+{W3C OWL Working Group}.
+\newblock {OWL 2 Web Ontology Language Document Overview}.
+\newblock \url{https://www.w3.org/TR/owl2-overview/}, 2012.
+\newblock W3C Recommendation.
+
+\end{thebibliography}

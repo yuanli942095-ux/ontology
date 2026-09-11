@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from method_experiment_guard import add_legacy_opt_in_arg, block_legacy_entrypoint
 """Run a template-based hard gate over semantic-v2 policies.
 
 The goal is narrow and auditable: test whether the deterministic result depends
@@ -194,6 +195,7 @@ def summarize(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def main() -> int:
+    block_legacy_entrypoint(__file__)
     args = parse_args()
     events = load_public_events(args.split)
     if args.only:

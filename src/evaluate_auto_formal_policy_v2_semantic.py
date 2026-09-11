@@ -38,6 +38,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--prefix", default="auto-policy-v2-semantic-evaluation")
     parser.add_argument("--runs", type=int, default=RUNS)
     parser.add_argument("--seed", type=int, default=SEED)
+    parser.add_argument("--only", default="", help="comma-separated event IDs for smoke runs")
     return parser.parse_args()
 
 
@@ -257,7 +258,7 @@ def evaluate_insurance(target: str, auto: str) -> tuple[bool, dict[str, Any]]:
             "has_level_language": has_level_language,
         }
     if target.startswith("formula=accident_date_limit_times_loss_rate"):
-        canonical = "accident_date_limit_times_loss_rate" in compact(target) or "accident_date_limit_times_loss_rate" in compact(auto)
+        canonical = "accident_date_limit_times_loss_rate" in compact(auto)
         natural = (
             any(marker in text for marker in ("出险日期", "事故日期", "事故日"))
             and any(marker in text for marker in ("亩赔偿限额", "每亩赔偿限额"))
@@ -313,8 +314,23 @@ def evaluate_semantic(target: str, auto: str, event: dict[str, str]) -> tuple[bo
     return compact(target) == compact(auto), {"family": "exact_fallback"}
 
 
-def event_rows() -> list[dict[str, str]]:
-    return [row for row in read_csv(EVENT_CSV) if str(row.get("status", "")).strip().upper() == "READY"]
+def select_event_rows(
+    rows: list[dict[str, str]],
+    only: set[str] | None = None,
+) -> list[dict[str, str]]:
+    selected = [
+        row for row in rows if str(row.get("status", "")).strip().upper() == "READY"
+    ]
+    if only:
+        selected = [row for row in selected if str(row.get("event_id", "")).upper() in only]
+    return selected
+
+
+def event_rows(only: set[str] | None = None) -> list[dict[str, str]]:
+    rows = select_event_rows(read_csv(EVENT_CSV), only)
+    if not rows:
+        raise RuntimeError(f"no READY events in {EVENT_CSV}")
+    return rows
 
 
 def experiment_name(prefix: str) -> str:
@@ -395,8 +411,9 @@ def main() -> int:
     args.raw_dir = args.raw_dir or DEFAULT_RAW_DIR
     args.output_dir = args.output_dir or DEFAULT_OUTPUT_DIR
     experiment = experiment_name(args.prefix)
+    only = {item.strip().upper() for item in args.only.split(",") if item.strip()}
     details: list[dict[str, Any]] = []
-    for event in event_rows():
+    for event in event_rows(only):
         event_id = event["event_id"]
         gold_policy = load_json(RULE_DIR / f"{event_id}-formal-policy.json")
         target = gold_target(gold_policy)

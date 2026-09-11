@@ -1,0 +1,44 @@
+{
+  "schema_version": "ecr-ir-gamma-method-freeze-v2-2",
+  "method_id": "ECR-IR-GAMMA-R2B-V2.2-NO-CHANGE-EQUIVALENCE-GATE",
+  "status": "FROZEN_FOR_V6_2_FULL_BLIND_EVALUATION",
+  "frozen_at_utc": "2026-09-09T07:55:31.366865+00:00",
+  "parent_method_id": "ECR-IR-GAMMA-R2B-V2.1-PROPERTY-DIMENSION-RESOLUTION",
+  "parent_manifest_sha256": "9170b8ae050c30ffbbce56d034a7db1ca551634190ca51b280d75f632f5d2ea1",
+  "development_dataset": "external-real-holdout-v6-2-direct-ir-blind sample70 compatibility check",
+  "development_result_is_blind": false,
+  "full_blind_required_after_freeze": true,
+  "candidate_blind": true,
+  "oracle_blind_during_inference": true,
+  "no_change_equivalence_gate": {
+    "old_new_equal_by": [
+      "kind",
+      "datatype",
+      "lexical"
+    ],
+    "candidate_or_oracle_visible": false
+  },
+  "gamma_changed": false,
+  "schema_changed": false,
+  "prompt_changed": false,
+  "decision_threshold_changed": false,
+  "experiment_runner_in_manifest": false,
+  "files": [
+    {
+      "path": "method/ecr-ir-gamma/freeze-v2-2/no-change-equivalence-gate-protocol.json",
+      "sha256": "d47bf9f0f2273f77768333c2d365e64ca149bd5145a0f1ddcdf5b4908d936723",
+      "bytes": 1207
+    },
+    {
+      "path": "src/ecr_ir_gamma_v22_gate.py",
+      "sha256": "78fb90efe0ed42d670cceaf9143e649b5fb5ea27c3324002ce95a093e814b17c",
+      "bytes": 636
+    },
+    {
+      "path": "tests/test_external_real_holdout_v6_direct_ir_runner.py",
+      "sha256": "e75e9389b9b8020a57764002c11ea7644eb7fa5d21948c1a574659905e8008c3",
+      "bytes": 2385
+    }
+  ],
+  "manifest_sha256": "1bdedf0f736d261be9d7e2d1cc267bdb771f3cd9395437f334e3902fe2272c98"
+}
