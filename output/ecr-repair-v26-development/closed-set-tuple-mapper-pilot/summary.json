@@ -1,0 +1,15 @@
+{
+  "status": "DEVELOPMENT_CLOSED_SET_MAPPER_PILOT",
+  "events": 13,
+  "model_calls": 0,
+  "gold_window_selected": 13,
+  "tuple_exact_raw_ids": 12,
+  "slot_accuracy": 0.9846153846153847,
+  "matched_slots": 192,
+  "total_slots": 195,
+  "gate_decision_correct": 17,
+  "gate_events": 20,
+  "gate_decision_accuracy": 0.85,
+  "safety_wrong_repairs": 0,
+  "boundary": "Candidates were independently annotated on the same development events. This is an in-sample recoverability test, not generalization evidence."
+}
