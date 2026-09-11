@@ -154,7 +154,9 @@ def main() -> int:
         qualified = [(score, row) for score, row in scored if score >= 0.35]
         valued = [(score, row) for score, row in qualified if row["tuple_value_id"].strip()]
         selected = None
-        gate_result = apply_unresolved_dimension_gate(valued, events[event_id]["case_context"])
+        gate_result = apply_unresolved_dimension_gate(
+            valued, events[event_id]["case_context"], events[event_id].get("as_of", ""), sources
+        )
         if gate_result.decision == "ABSTAIN":
             decision, reason = "ABSTAIN", gate_result.reason
         else:

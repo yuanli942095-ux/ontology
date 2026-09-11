@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass
+from ecr_repair_temporal_applicability_resolver import resolve_temporal_applicability
 
 
 def concepts(value: str) -> set[str]:
@@ -17,7 +18,8 @@ class GateResult:
     candidates: tuple[dict[str, str], ...] = ()
 
 
-def apply_unresolved_dimension_gate(candidates: list[tuple[float, dict[str, str]]], case_context: str) -> GateResult:
+def apply_unresolved_dimension_gate(candidates: list[tuple[float, dict[str, str]]], case_context: str,
+                                    as_of: str = "", documents: dict[str, dict[str, str]] | None = None) -> GateResult:
     """Keep alternatives unless a condition/profile/version dimension is resolved by context."""
     valued = [(score, row) for score, row in candidates if row.get("tuple_value_id", "").strip()]
     if not valued:
@@ -25,6 +27,10 @@ def apply_unresolved_dimension_gate(candidates: list[tuple[float, dict[str, str]
     values = {row["tuple_value_id"] for _, row in valued}
     if len(values) <= 1:
         return GateResult("CANDIDATE", "UNIQUE_VALUE", (valued[0][1],))
+    if as_of and documents is not None:
+        temporal = resolve_temporal_applicability(valued, as_of, documents)
+        if temporal:
+            return GateResult("CANDIDATE", "TEMPORAL_APPLICABILITY_RESOLVED", (temporal[0][1],))
     context = concepts(case_context)
     conditional = []
     for score, row in valued:
