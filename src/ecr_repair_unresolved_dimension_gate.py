@@ -28,7 +28,7 @@ def apply_unresolved_dimension_gate(candidates: list[tuple[float, dict[str, str]
     if len(values) <= 1:
         return GateResult("CANDIDATE", "UNIQUE_VALUE", (valued[0][1],))
     if as_of and documents is not None:
-        temporal = resolve_temporal_applicability(valued, as_of, documents)
+        temporal = resolve_temporal_applicability(valued, as_of, documents, case_context)
         if temporal:
             return GateResult("CANDIDATE", "TEMPORAL_APPLICABILITY_RESOLVED", (temporal[0][1],))
     # In the production path, dated document metadata is authoritative for

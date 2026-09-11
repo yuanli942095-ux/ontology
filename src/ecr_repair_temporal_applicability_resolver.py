@@ -30,9 +30,17 @@ def resolve_temporal_applicability(
     candidates: list[tuple[float, dict[str, str]]],
     as_of: str,
     documents: dict[str, dict[str, str]],
+    case_context: str = "",
 ) -> tuple[tuple[float, dict[str, str]], ...] | None:
     """Return candidates uniquely active at as_of, or None when unresolved."""
     if not as_of:
+        return None
+    lowered = case_context.casefold() if isinstance(case_context, str) else ""
+    unresolved_markers = (
+        "version unrecorded", "version not recorded", "profile not specified",
+        "does not identify", "omits whether", "scope not specified", "unknown",
+    )
+    if any(marker in lowered for marker in unresolved_markers):
         return None
     active = [
         item for item in candidates
