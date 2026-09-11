@@ -1,0 +1,15 @@
+{
+  "status": "DEVELOPMENT_OFFLINE_PILOT",
+  "events": 10,
+  "model_calls": 0,
+  "exact_literal_equivalent_accepts": 2,
+  "exact_literal_equivalent_recall": 0.2,
+  "canonical_signature_equivalent_accepts": 8,
+  "canonical_signature_equivalent_recall": 0.8,
+  "negative_controls": 10,
+  "canonical_signature_false_accepts": 0,
+  "canonical_signature_false_accept_rate": 0.0,
+  "success_criterion": "canonical recall exceeds exact recall and negative-control false-accept rate is zero",
+  "criterion_pass": true,
+  "boundary": "The ten events come from the V2.6 development set. This tests representation-layer feasibility, not blind end-to-end generalization."
+}
